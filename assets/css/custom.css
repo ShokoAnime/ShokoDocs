@@ -150,3 +150,15 @@ h1 a::before, h2 a::before, h3 a::before {
 .sidenav > li > ul a.active, .sidenav > li > ul li.active a {
     font-weight: 600;
 }
+
+@media only screen and (max-width: 767px) {
+    
+    .sidebar {
+        background-color: #006cab !important;
+        color: #FFFFFF;
+    }
+    
+    .site-header .navbar {
+        background-color: #157f79 !important;
+    }
+}
