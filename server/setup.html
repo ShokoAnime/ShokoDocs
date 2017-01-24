@@ -93,14 +93,14 @@
                         <section>
                                 <h2 id="mandatory">Do I Need To Install Shoko Server?</h2>
                                 <p>The short answer, <strong>Yes</strong>.</p>
-                                <p> Shoko Server is  the backend of the entire Shoko suite, every single program and plugin we provide uses it for accessing and maintaining your anime collection. This also means you must have Shoko Server running if to use any of the programs and plugins, with the exception of importing, resource usage also remains pretty low and comparable to other programs you have constantly running in the background. We recommend installing Shoko Server first to avoid any potential problems.</p>
+                                <p> Shoko Server is  the back-end of the entire Shoko suite, every single program and plugin provided uses it for accessing and maintaining your anime collection. This also means Shoko Server <strong>must be running</strong> to use any of the programs or plugins that connect to it. With the exception of file importing, Shoko Server is no more resource intensive than other programs you probably have running in the background with </p>
                         </section>
                         <section>
                                 <h2 id="database-type">Selecting A Database Type</h2>
                                 <div class="row">
                                         <div class="col-sm-8">
-                                                <p>The first thing you'll need to do is <a href="http://shokoanime.com/downloads/#stable-releases" target="_blank">download Shoko Server</a>, extract and install it. Administrator rights are required to install and for the inital run, however after that you can run as a normal use. </p>
-                                                <p>Once installed Shoko Server will open prompting you to select a Database Type to use for your anime collection, we currently offer three different database options.</p>
+                                                <p>The first thing you'll need to do is <a href="http://shokoanime.com/downloads/#stable-releases" target="_blank">download Shoko Server</a>, extract it and install it. Administrator rights are required to install and for the initial run, however after that you can run as a normal use. </p>
+                                                <p>Once installed, Shoko Server will prompt you to select a <strong>Database Type</strong> to use for your anime collection, we currently offer three different database options.</p>
                                                 <table class ="table table-striped">
                                                         <thead>
                                                                 <tr>
@@ -115,23 +115,24 @@
                                                                 </tr>
                                                                 <tr>
                                                                         <td>MySQL</td>
-                                                                        <td>Seperate Install</td>
+                                                                        <td>Separate Install</td>
                                                                 </tr>
                                                                 <tr>
                                                                         <td>SQL Server</td>
-                                                                        <td>Seperate Install</td>
+                                                                        <td>Separate Install</td>
                                                                 </tr>
                                                         </tbody>
                                                 </table>
-                                                <p>Out of the three available database options available, SQLite is the easiest one to install, you simply click Save and Start Server and Shoko Server does the rest. The drawback to using SQLite is it's not designed to properly handle large anime collections that contain over 200 series. However with JMM Version 3.6 and the introduction of the database cache, SQLite should be able to better handle anime collections containing over 200 series.</p>
-                                                <p>The remaining two database options, MySQL and SQL Server are both designed to handle and maintain large databases making them ideal if your anime collection currently exceeds 200 series or if you believe it will sometime in the future. Both MySQL and SQL Server have also benefited from the addition of the database cache providing allowing Shoko to access your data faster reducing loading times. Both MySQL and SQL Server are standalone installs so you'll need to install one of them first if you'd like to use it with Shoko Server, we've created install guides which you can access by using the menu on the right.</p>
+                                                <p>Out of the three available database options available, SQLite is the easiest one to install, you simply click <strong>Save and Start Server</strong> and Shoko Server does the rest. The drawback to using SQLite is it's not designed to properly handle large anime collections that contain over 200 series. While improvements have been made to make SQLite more usable with larger collections, we still recommend using either MySQL or SQL Server.                                                </p>
+                                                <p>The remaining two database options, MySQL and SQL Server are both designed to handle and maintain large databases making them ideal if your anime collection currently exceeds 200 series or if you believe it will sometime in the future. Both MySQL and SQL Server have also benefited from the addition of the database cache providing allowing Shoko to access your data faster reducing loading times. </p>
+                                                <p>Both MySQL and SQL Server are standalone installs so you'll need to install one of them first if you'd like to use it with Shoko Server. Select <strong>Database Setup</strong> from the menu on the left for more information on how to install either MySQL or SQL Server.</p>
                                         </div>
                                         <div class="col-sm-4"><a href="../assets/img/server/Shoko-Server-Select-Database.png" data-lity><img src="../assets/img/server/Shoko-Server-Select-Database.png" class="img-responsive img-thumbnail" alt="Shoko Server - Select Database"/></a>
                                                 <figcaption>Shoko Server - Select Database</figcaption>
                                         </div>
                                 </div>
                             
-                             <div class="bs-callout bs-callout-warning"> <h4>Choose Your Database Type Carefully</h4> <p>Please note, at this time we don't provide a method to transfer your database from one database type to another.</p> </div>
+                             <div class="bs-callout bs-callout-warning"> <h4>Choose Your Database Type Carefully</h4> <p>Please note, at this time we do not provide a method to transfer your database from one database type to another.</p> </div>
                             
                                         <!-- Nav tabs -->
                                         <ul class="nav nav-tabs" role="tablist">
@@ -229,7 +230,7 @@
                                                                                         </tr>
                                                                                 </tbody>
                                                                         </table>
-                                                                        <p>You may need to try another browser if you are unable to select which files to download. Once you’ve downloaded both files install <strong>SQLSysClrTypes.ms</strong>i followed by <strong>SharedManagementObjects.msi</strong> and then restart Windows.</p>
+                                                                        <p>You may need to try another browser if you are unable to select which files to download. Once you’be downloaded both files install <strong>SQLSysClrTypes.ms</strong>i followed by <strong>SharedManagementObjects.msi</strong> and then restart Windows.</p>
                                                                 </div>
                                                                 <div class="col-sm-4"><a href="../assets/img/server/Shoko-Server-SQL-Server.png" data-lity><img src="../assets/img/server/Shoko-Server-SQL-Server.png" class="img-responsive img-thumbnail" alt="Shoko-Server-SQL-Server"/></a>
                                                                         <figcaption>Shoko-Server-SQL-Server</figcaption>
@@ -240,7 +241,7 @@
                         </section>
                         <section>
                                 <h2 id="shoko-server-installed">Shoko Server Installed</h2>
-                            <p>Now that you've installed Shoko Server and finished the initial setup, it's time to Configure Shoko Server to start building your anime collection. Using the menu on the left, select <strong>Configuring Shoko Server</strong> and go through each tab. We reccommend starting at the <strong>Settings</strong> tab.</p> 
+                            <p>Now that you've installed Shoko Server and finished the initial setup, it's time to Configure Shoko Server to start building your anime collection. Using the menu on the left, select <strong>Configuring Shoko Server</strong> and go through each tab. We recommend starting at the <strong>Settings</strong> tab.</p> 
                         </section>
                     <section class="github-callout">
                     <div class="bs-callout bs-callout-primary"> <h4>Help Make This Page Better</h4> <p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it and update it, instead make the update yourself so the community can benefit from it.</p>
