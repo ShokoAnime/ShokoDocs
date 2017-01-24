@@ -31,11 +31,11 @@ This documentation is written in the following languages, while you are not requ
 
 To create uniformity, we will be enforcing the following standards for any submissions to the documentation.
 
-    Indenting is 4 Spaces.
-    Unless already used, do not use abbrevations.
-    All explanations of functions must be clear and detailed.
-    Provide examples when and if needed.
-    Code commenting is optional.
+- Indenting is 4 Spaces.
+- Unless already used, do not use abbreviations.
+- All explanations of functions must be clear and detailed.
+- Provide examples when and if needed.
+- Code commenting is optional.
 
 If you have questions, please contact us on our Discord server using the Support link at the top.
 
