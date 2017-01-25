@@ -9,8 +9,29 @@
 */
 
 h1 a::before, h2 a::before, h3 a::before {
+    margin-left: -30px;
+    margin-right: 8px;
+    font-family: Glyphicons Halflings;
+    font-size: 22px;
     color: #006cab;
     opacity: 1;
+    content: "\e144";
+    -webkit-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease;
+}
+
+h4 a::before {
+    margin-left: -30px;
+    margin-right: 8px;
+    font-family: Glyphicons Halflings;
+    font-size: 18px;
+    color: #006cab;
+    opacity: 1;
+    content: "\e144";
+    -webkit-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease;
 }
 
 .bs-callout {
@@ -84,6 +105,10 @@ h1 a::before, h2 a::before, h3 a::before {
 
 .bs-callout-info h4 {
     color: #5bc0de;
+}
+
+.change {
+    font-weight: 600;
 }
 
 .github-callout {
