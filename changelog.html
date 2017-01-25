@@ -67,16 +67,16 @@
         </ul>
 </aside>
 <!-- END Sidebar -->
-<header class="site-header navbar-fullwidth">
+<header class="site-header navbar-fullwidth"> 
         <!-- Top navbar & branding -->
         <nav class="navbar navbar-default">
-                <div class="container">
+                <div class="container"> 
                         <!-- Toggle buttons and brand -->
                         <div class="navbar-header">
                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar"> <span class="glyphicon glyphicon-option-vertical"></span> </button>
                                 <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                         </div>
-                        <!-- END Toggle buttons and brand -->
+                        <!-- END Toggle buttons and brand --> 
                         <!-- Top navbar -->
                         <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
                                 <ul class="nav navbar-nav navbar-right">
@@ -87,13 +87,13 @@
                                         <li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
                                 </ul>
                         </div>
-                        <!-- END Top navbar -->
+                        <!-- END Top navbar --> 
                 </div>
         </nav>
-        <!-- END Top navbar & branding -->
+        <!-- END Top navbar & branding --> 
 </header>
 <main class="container-fluid">
-        <div class="row">
+        <div class="row"> 
                 <!-- Main content -->
                 <article class="main-content" role="main">
                         <header>
@@ -103,8 +103,114 @@
                                 <a href="http://shokoanime.com/files/other/Shoko-Archived-Changelog.txt" target="_blank">Shoko Archived Changelog</a> </header>
                         <section>
                                 <h2 id="shoko-server">Shoko Server</h2>
-                                <h3 id="s3704">Version 3.7.0.4 (In Development)</h3>
-                                <h3 id="s3703">Version 3.7.0.3 (2017-01-07)</h3>
+                                <h4 id="s3704">Version 3.7.0.4 (In Development)</h4>
+                                <table class ="table table-striped table-changelog">
+                                        <thead>
+                                                <tr>
+                                                        <th>Action</th>
+                                                        <th>Git Link</th>
+                                                        <th>Description</th>
+                                                </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td><span class="change change-added"></span></td>
+                                                        <td><a href="https://github.com/japanesemediamanager/ShokoServer/pull/546" target="_blank">#546</a></td>
+                                                        <td>Add some further API endpoints.</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><span class="change change-added"></span></td>
+                                                        <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/b420176" target="_blank">b420176</a></td>
+                                                        <td>APIv2 Season for Episode. Add convenient helper method for future use.</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><span class="change change-added"></span></td>
+                                                        <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/6133437" target="_blank">6133437</a></td>
+                                                        <td>APIv2 Season for Series.</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><span class="change change-added"></span></td>
+                                                        <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/c87a5f5" target="_blank">c87a5f5</a></td>
+                                                        <td>[api] /api/webui/theme.</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><span class="change change-added"></span></td>
+                                                        <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/9671a8b" target="_blank">9671a8b</a></td>
+                                                        <td>Add more sanity checking to file operations on Local File Systems.</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><span class="change change-updated"></span></td>
+                                                        <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/3948fd9" target="_blank">3948fd9</a></td>
+                                                        <td>Code cleanup in AniDB HTTP API, try to load from cache first if not forced to update.</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><span class="change change-updated"></span></td>
+                                                        <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/014ce87" target="_blank">014ce87</a></td>
+                                                        <td>Start changes to allow for file operation retrying.</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><span class="change change-updated"></span></td>
+                                                        <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/12c16d0" target="_blank">12c16d0</a></td>
+                                                        <td>Make Trakt Link Always Update when TvDB does.</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><span class="change change-updated"></span></td>
+                                                        <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/b848deb" target="_blank">b848deb</a></td>
+                                                        <td>Also check that fanarts and banners are not empty.</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><span class="change change-updated"></span></td>
+                                                        <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/d8fe318" target="_blank">d8fe318</a></td>
+                                                        <td>Delete old votes on updating votes from api.</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><span class="change change-fixed"></span></td>
+                                                        <td><a href="https://github.com/japanesemediamanager/ShokoServer/issues/554" target="_blank">#554</a></td>
+                                                        <td>Version check uses cached versions.xml.</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><span class="change change-fixed"></span></td>
+                                                        <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/59e88ae" target="_blank">59e88ae</a></td>
+                                                        <td>Fix a weird nullable int issue in plex/kodi serving.</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><span class="change change-fixed"></span></td>
+                                                        <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/bf04dba" target="_blank">bf04dba</a></td>
+                                                        <td>Fix an error that caused invalid url replacing.</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><span class="change change-fixed"></span></td>
+                                                        <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/1dbc913" target="_blank">1dbc913</a></td>
+                                                        <td>Fix persisting changes to removing files.</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><span class="change change-fixed"></span></td>
+                                                        <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/f8db116" target="_blank">f8db116</a></td>
+                                                        <td>Fix possible Invalid Operation Exception in Contract Generation.</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><span class="change change-fixed"></span></td>
+                                                        <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/d7f4c28" target="_blank">d7f4c28</a></td>
+                                                        <td>Make User Votes update internally properly.</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><span class="change change-fixed"></span></td>
+                                                        <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/c616dff" target="_blank">c616dff</a></td>
+                                                        <td>Fix stream playback.</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><span class="change change-fixed"></span></td>
+                                                        <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/1290904" target="_blank">1290904</a></td>
+                                                        <td>Version Check Issue.</td>
+                                                </tr>
+                                                <tr>
+                                                        <td><span class="change change-fixed"></span></td>
+                                                        <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/f2c5103" target="_blank">f2c5103</a></td>
+                                                        <td>Fix user votes updating internally (they weren't updating contracts, since they didn't need to before.</td>
+                                                </tr>
+                                        </tbody>
+                                </table>
+                                <h4 id="s3703">Version 3.7.0.3 (2017-01-07)</h4>
                                 <table class ="table table-striped table-changelog">
                                         <thead>
                                                 <tr>
@@ -156,7 +262,7 @@
                                                 </tr>
                                         </tbody>
                                 </table>
-                                <h3 id="s3701">Version 3.7.0.1 (2016-12-29)</h3>
+                                <h4 id="s3701">Version 3.7.0.1 (2016-12-29)</h4>
                                 <table class ="table table-striped table-changelog">
                                         <thead>
                                                 <tr>
@@ -198,7 +304,7 @@
                                                 </tr>
                                         </tbody>
                                 </table>
-                                <h3 id="s3700">Version 3.7.0.0 (2016-12-26)</h3>
+                                <h4 id="s3700">Version 3.7.0.0 (2016-12-26)</h4>
                                 <table class ="table table-striped table-changelog">
                                         <thead>
                                                 <tr>
@@ -420,7 +526,7 @@
                                                 </tr>
                                         </tbody>
                                 </table>
-                                <h3 id="s3610">Version 3.6.1.0 (2017-01-07)</h3>
+                                <h4 id="s3610">Version 3.6.1.0 (2017-01-07)</h4>
                                 <table class ="table table-striped table-changelog">
                                         <thead>
                                                 <tr>
@@ -450,8 +556,9 @@
                         </section>
                         <section>
                                 <h2 id="shoko-desktop">Shoko Desktop</h2>
-                                <h3 id="d3704">Version 3.7.0.4 (In Development)</h3>
-                                <h3 id="d3703">Version 3.7.0.3 (2017-01-07)</h3>
+                                <h4 id="d3704">Version 3.7.0.4 (In Development)</h4>
+                                <p>&nbsp;</p>
+                                <h4 id="d3703">Version 3.7.0.3 (2017-01-07)</h4>
                                 <table class ="table table-striped table-changelog">
                                         <thead>
                                                 <tr>
@@ -488,7 +595,7 @@
                                                 </tr>
                                         </tbody>
                                 </table>
-                                <h3 id="d3701">Version 3.7.0.1 (2016-12-29)</h3>
+                                <h4 id="d3701">Version 3.7.0.1 (2016-12-29)</h4>
                                 <table class ="table table-striped table-changelog">
                                         <thead>
                                                 <tr>
@@ -520,7 +627,7 @@
                                                 </tr>
                                         </tbody>
                                 </table>
-                                <h3 id="d3700">Version 3.7.0.0 (2016-12-26)</h3>
+                                <h4 id="d3700">Version 3.7.0.0 (2016-12-26)</h4>
                                 <table class ="table table-striped table-changelog">
                                         <thead>
                                                 <tr>
@@ -707,7 +814,7 @@
                                                 </tr>
                                         </tbody>
                                 </table>
-                                <h3 id="d3610">Version 3.6.1.0 (2016-09-09)</h3>
+                                <h4 id="d3610">Version 3.6.1.0 (2016-09-09)</h4>
                                 <table class ="table table-striped table-changelog">
                                         <thead>
                                                 <tr>
@@ -732,8 +839,9 @@
                         </section>
                         <section>
                                 <h2 id="ma3">My Anime 3</h2>
-                                <h3 id="m3704">Version 3.7.0.4 (In Development)</h3>
-                                <h3 id="m3703">Version 3.7.0.3 (2017-01-07)</h3>
+                                <h4 id="m3704">Version 3.7.0.4 (In Development)</h4>
+                                <p>&nbsp;</p>
+                                <h4 id="m3703">Version 3.7.0.3 (2017-01-07)</h4>
                                 <table class ="table table-striped table-changelog">
                                         <thead>
                                                 <tr>
@@ -775,7 +883,7 @@
                                                 </tr>
                                         </tbody>
                                 </table>
-                                <h3 id="m3701">Version 3.7.0.1 (2016-12-29)</h3>
+                                <h4 id="m3701">Version 3.7.0.1 (2016-12-29)</h4>
                                 <table class ="table table-striped table-changelog">
                                         <thead>
                                                 <tr>
@@ -812,7 +920,7 @@
                                                 </tr>
                                         </tbody>
                                 </table>
-                                <h3 id="m3700">Version 3.7.0.0 (2016-12-26)</h3>
+                                <h4 id="m3700">Version 3.7.0.0 (2016-12-26)</h4>
                                 <table class ="table table-striped table-changelog">
                                         <thead>
                                                 <tr>
@@ -999,7 +1107,7 @@
                                                 </tr>
                                         </tbody>
                                 </table>
-                                <h3 id="m3610">Version 3.6.1.0 (2016-09-09)</h3>
+                                <h4 id="m3610">Version 3.6.1.0 (2016-09-09)</h4>
                                 <table class ="table table-striped table-changelog">
                                         <thead>
                                                 <tr>
@@ -1069,8 +1177,9 @@
                         </section>
                         <section>
                                 <h2 id="shoko-on-plex">Shoko On Plex</h2>
-                                <h3 id="p3704">Version 3.7.0.4 (In Development)</h3>
-                                <h3 id="p3703">Version 3.7.0.3 (2017-01-07)</h3>
+                                <h4 id="p3704">Version 3.7.0.4 (In Development)</h4>
+                                <p>&nbsp;</p>
+                                <h4 id="p3703">Version 3.7.0.3 (2017-01-07)</h4>
                                 <table class ="table table-striped table-changelog">
                                         <thead>
                                                 <tr>
@@ -1095,7 +1204,7 @@
                         </section>
                         <section>
                                 <h2 id="anime-buddy">Anime Buddy</h2>
-                                <h3 id="a1003">Version 1.0.0.3</h3>
+                                <h4 id="a1003">Version 1.0.0.3</h4>
                                 <table class ="table table-striped table-changelog">
                                         <thead>
                                                 <tr>
@@ -1127,7 +1236,7 @@
                                                 </tr>
                                         </tbody>
                                 </table>
-                                <h3 id="a1002">Version 1.0.0.2</h3>
+                                <h4 id="a1002">Version 1.0.0.2</h4>
                                 <table class ="table table-striped table-changelog">
                                         <thead>
                                                 <tr>
@@ -1146,7 +1255,7 @@
                                 </table>
                         </section>
                 </article>
-                <!-- END Main content -->
+                <!-- END Main content --> 
                 <!-- Footer -->
                 <footer class="site-footer">
                         <div class="container-fluid"> <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
@@ -1166,11 +1275,11 @@
                                 </div>
                         </div>
                 </footer>
-                <!-- END Footer -->
+                <!-- END Footer --> 
         </div>
 </main>
-<!-- Scripts -->
-<script src="assets/js/theDocs.all.min.js"></script>
+<!-- Scripts --> 
+<script src="assets/js/theDocs.all.min.js"></script> 
 <script src="assets/js/custom.js"></script>
 </body>
 </html>
