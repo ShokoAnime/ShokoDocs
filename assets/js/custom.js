@@ -7,7 +7,7 @@
  * Changes to existing functions will be rejected unless previously discussed.  
 */
 
-$(function() {
+(function() {
 
 $(document).ready(function () {
 
@@ -29,9 +29,17 @@ $(document).ready(function () {
     
 $(document).ready(function () {
     $(document).on("scroll", onScroll);
-    
+
+    // Activate collapsibles so they can be controlled from js
+    $('a[data-toggle="collapse"]').each(function () {
+        var $target = $(this.hash);
+        $target.collapse({
+            toggle: false
+        });
+    });
+
     //smoothscroll
-    $('a[href^="#"]').not('[data-toggle="collapse"]').on('click', function (e) {
+    $('a[href^="#"]').not('a[href="#"]').not('[data-toggle="collapse"]').on('click', function (e) {
         e.preventDefault();
         $(document).off("scroll");
         
@@ -39,10 +47,18 @@ $(document).ready(function () {
             $(this).removeClass('active');
         });
         $(this).addClass('active');
-      
+
         var target = this.hash,
-            menu = target;
         $target = $(target);
+
+        // Open the panel if it is collapsed
+        $target.each(function(){
+            $(this).find('a[data-toggle="collapse"]').each(function () {
+                var $collapsible = $(this.hash);
+                $collapsible.collapse('show');
+            });
+        });
+
         $('html, body').stop().animate({
             'scrollTop': $target.offset().top+2
         }, 500, 'swing', function () {
