@@ -39,7 +39,7 @@ $(document).ready(function () {
     });
 
     //smoothscroll
-    $('a[href^="#"]').not('a[href="#"]').not('[data-toggle="collapse"]').on('click', function (e) {
+    $('a[href^="#"]').not('a[href="#"]').not('[data-toggle="collapse"]').not('[data-toggle="tab"]').on('click', function (e) {
         e.preventDefault();
         $(document).off("scroll");
         
