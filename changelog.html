@@ -4,119 +4,325 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content="">
-<title>Shoko Changelog</title>
+<meta name="description" content="Online documentation for Shoko, an anime cataloging program.">
+
+<!-- Facebook -->
+<meta property="og:title" content="Shoko Docs">
+<meta property="og:description" content="Online documentation for Shoko, an anime cataloging program.">
+<meta property="og:image" content="http://shokoanime.com/files/other/favicon.png">
+<meta property="og:url" content="http://docs.shokoanime.com">
+<meta name="twitter:card" content="http://shokoanime.com/files/other/favicon.png">
+<title>Shoko Docs</title>
+
 <!-- Styles -->
 <link href="assets/css/theDocs.all.min.css" rel="stylesheet">
 <link href="assets/css/custom.css" rel="stylesheet">
+
 <!-- Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700|Raleway:400,500,600,700" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700" rel="stylesheet">
+
 <!-- Favicons -->
-<link rel="apple-touch-icon" href="assets/img/favicon.ico">
-<link rel="icon" href="assets/img/favicon.ico">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="icon" href="assets/img/favicon.png">
 </head>
-<body>
-<!-- Sidebar -->
-<aside class="sidebar sidebar-boxed"><a class="sidebar-brand" href="index.html"><img src="assets/img/logo-sidebar.png" alt="logo"></a>
-    <ul class="sidenav dropable sticky">
-        <li><a href="#">Shoko Server</a>
-            <ul>
-                <li><a href="#s3706">Version 3.7.0.6 (2017-02-10)</a></li>
-                <li><a href="#s3705">Version 3.7.0.5 (2017-02-07)</a></li>
-                <li><a href="#s3704">Version 3.7.0.4 (2017-01-28)</a></li>
-                <li><a href="#s3703">Version 3.7.0.3 (2017-01-07)</a></li>
-                <li><a href="#s3701">Version 3.7.0.1 (2016-12-29)</a></li>
-                <li><a href="#s3700">Version 3.7.0.0 (2016-12-26)</a></li>
-            </ul>
-        </li>
-        <li><a href="#">Shoko Desktop</a>
-            <ul>
-                <li><a href="#d3704">Version 3.7.0.4 (2017-01-28)</a></li>
-                <li><a href="#d3703">Version 3.7.0.3 (2017-01-07)</a></li>
-                <li><a href="#d3701">Version 3.7.0.1 (2016-12-29)</a></li>
-                <li><a href="#d3700">Version 3.7.0.0 (2016-12-26)</a></li>
-                <li><a href="#d3610">Version 3.6.1.0 (2016-09-09)</a></li>
-            </ul>
-        </li>
-        <li><a href="#">My Anime 3</a>
-            <ul>
-                <li><a href="#m3703">Version 3.7.0.3 (2017-01-07)</a></li>
-                <li><a href="#m3701">Version 3.7.0.1 (2016-12-29)</a></li>
-                <li><a href="#m3700">Version 3.7.0.0 (2016-12-26)</a></li>
-                <li><a href="#m3610">Version 3.6.1.0 (2016-09-09)</a></li>
-            </ul>
-        </li>
-        <li><a href="#">Shoko On Plex</a>
-            <ul>
-                <li><a href="#p3704">Version 3.7.0.4 (N/A)</a></li>
-                <li><a href="#p3703">Version 3.7.0.3 (2017-01-07)</a></li>
-            </ul>
-        </li>
-        <li><a href="#">Anime Buddy</a>
-            <ul>
-                <li><a href="#a1003">Version 1.0.0.3</a></li>
-                <li><a href="#a1002">Version 1.0.0.2</a></li>
-            </ul>
-        </li>
-        <li class="hr-menu">
-            <hr/>
-        </li>
-        <li><a href="faq.html">Frequently Asked Questions</a></li>
-        <li><a href="changelog.html">Changelog</a></li>
-    </ul>
-</aside>
-<!-- END Sidebar -->
-<header class="site-header navbar-fullwidth"> 
+
+<body data-spy="scroll" data-target=".sidebar" data-offset="200">
+<header class="site-header"> 
+    
     <!-- Top navbar & branding -->
     <nav class="navbar navbar-default">
-        <div class="container"> 
+        <div class="container-fluid"> 
+            
             <!-- Toggle buttons and brand -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar"><span
-                        class="glyphicon glyphicon-option-vertical"></span></button>
-                <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
-            </div>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar"> <span class="glyphicon glyphicon-option-vertical"></span> </button>
+                <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="logo"></a> </div>
             <!-- END Toggle buttons and brand --> 
+            
             <!-- Top navbar -->
             <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="http://shokoanime.com" target="_blank">Website</a></li>
-                    <li><a href="changelog.html">Changelog</a></li>
-                    <li><a href="https://discord.gg/vpeHDsg">Support</a></li>
+                    <li><a href="http://docs.shokoanime.com">Home</a></li>
+                    <li><a href="http://shokoanime.com">Website</a></li>
+                    <li><a href="http://docs.shokoanime.com/changelog.html">Changelog</a></li>
+                    <li><a href="https://discord.gg/vpeHDsg" target="_blank">Support</a></li>
                     <li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
                 </ul>
             </div>
             <!-- END Top navbar --> 
+            
         </div>
     </nav>
     <!-- END Top navbar & branding --> 
+    
 </header>
 <main class="container-fluid">
     <div class="row"> 
+        
+        <!-- Sidebar -->
+        <aside class="col-lg-2 col-md-3 col-sm-3 sidebar">
+            <ul class="nav sidenav dropable sticky">
+                <li class="menu-title">Changelog</li>
+                <li><a class="has-child" href="#shoko-server">Shoko Server</a>
+                    <ul>
+                        <li><a href="#s3750">Version 3.7.5.0 (In Development)</a></li>
+                        <li><a href="#s3706">Version 3.7.0.6 (2017-02-10)</a></li>
+                        <li><a href="#s3705">Version 3.7.0.5 (2017-02-07)</a></li>
+                        <li><a href="#s3704">Version 3.7.0.4 (2017-01-28)</a></li>
+                        <li><a href="#s3703">Version 3.7.0.3 (2017-01-07)</a></li>
+                    </ul>
+                </li>
+                <li><a class="has-child" href="#shoko-desktop">Shoko Desktop</a>
+                    <ul>
+                        <li><a href="#d3750">Version 3.7.5.0 (In Development)</a></li>
+                        <li><a href="#d3704">Version 3.7.0.4 (2017-01-28)</a></li>
+                        <li><a href="#d3703">Version 3.7.0.3 (2017-01-07)</a></li>
+                        <li><a href="#d3701">Version 3.7.0.1 (2016-12-29)</a></li>
+                        <li><a href="#d3700">Version 3.7.0.0 (2016-12-26)</a></li>
+                    </ul>
+                </li>
+                <li><a class="has-child" href="#ma3">My Anime 3</a>
+                    <ul>
+                        <li><a href="#m3750">Version 3.7.5.0 (In Development)</a></li>
+                        <li><a href="#m3703">Version 3.7.0.3 (2017-01-07)</a></li>
+                        <li><a href="#m3701">Version 3.7.0.1 (2016-12-29)</a></li>
+                        <li><a href="#m3700">Version 3.7.0.0 (2016-12-26)</a></li>
+                        <li><a href="#m3610">Version 3.6.1.0 (2016-09-09)</a></li>
+                    </ul>
+                </li>
+                <li><a class="has-child" href="#shoko-on-plex">Shoko On Plex</a>
+                    <ul>
+                        <li><a href="#p3750">Version 3.7.5.0 (In Development)</a></li>
+                        <li><a href="#p3704">Version 3.7.0.4 (N/A)</a></li>
+                        <li><a href="#p3703">Version 3.7.0.3 (2017-01-07)</a></li>
+                    </ul>
+                </li>
+                <li><a class="has-child" href="#anime-buddy">Anime Buddy</a>
+                    <ul>
+                        <li><a href="#a1003">Version 1.0.0.3</a></li>
+                        <li><a href="#a1002">Version 1.0.0.2</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <!-- END Sidebar --> 
+        
         <!-- Main content -->
-        <article class="main-content" role="main">
+        <article class="col-lg-10 col-md-9 col-sm-9 main-content" role="main">
             <header>
                 <h1>Shoko Changelog</h1>
-                <script language="javascript" src="../assets/js/breadnav.js"> </script> 
             </header>
             <section>
                 <p>The changelog is broken down by program, use the menu on the left to select the program followed by the version number.</p>
-                <p>Only the previous <strong>five</strong> versions are shown below, for a complete list please check the archived changelog.</p>
-                <a href="http://shokoanime.com/files/other/Shoko-Archived-Changelog.txt" target="_blank">Shoko Archived Changelog</a> </section>
+                <p>Only the previous <strong>five</strong> versions are shown below, for a complete list please check the <a href="http://shokoanime.com/files/other/Shoko-Archived-Changelog.txt" target="_blank">Archived Changelog</a></p>
+                <script language="javascript" src="assets/js/breadnav.js"> </script> 
+            </section>
             <section>
-                <div>
-                    <div class="pull-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-success btn-filter" data-target="added">Added</button>
-                            <button type="button" class="btn btn-info btn-filter" data-target="updated">Updated</button>
-                            <button type="button" class="btn btn-warning btn-filter" data-target="fixed">Fixed</button>
-                            <button type="button" class="btn btn-default btn-filter" data-target="all">All</button>
-                        </div>
-                    </div>
-                    <h2 id="shoko-server">Shoko Server </h2>
-                </div>
+                <h2 class="header" id="shoko-server">Shoko Server</h2>
+                <h4 id="s3750">Version 3.7.5.0 (In Development)</h4>
+                <table class="table table-striped table-changelog">
+                    <thead>
+                        <tr data-status="head">
+                            <th>Action</th>
+                            <th>Git Link</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-status="added">
+                            <td><span class="change change-added"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/issues/545" target="_blank">#545</a></td>
+                            <td>Option to delete lower quality releases on import of new release.</td>
+                        </tr>
+                        <tr data-status="added">
+                            <td><span class="change change-added"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/3762235" target="_blank">3762235</a></td>
+                            <td>Plex webhook completion including V1 implementation.</td>
+                        </tr>
+                        <tr data-status="added">
+                            <td><span class="change change-added"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/a1f7ad5" target="_blank">a1f7ad5</a></td>
+                            <td>Add support for chapter detection.</td>
+                        </tr>
+                        <tr data-status="updated">
+                            <td><span class="change change-updated"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/pull/602" target="_blank">#602</a></td>
+                            <td>Anidb http do not cache banned response.</td>
+                        </tr>
+                        <tr data-status="updated">
+                            <td><span class="change change-updated"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/197fb64" target="_blank">197fb64</a></td>
+                            <td>Change processfile log level to trace.</td>
+                        </tr>
+                        <tr data-status="updated">
+                            <td><span class="change change-updated"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/b5195df" target="_blank">b5195df</a></td>
+                            <td>Improve some series finding logic for groups.</td>
+                        </tr>
+                        <tr data-status="updated">
+                            <td><span class="change change-updated"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/14f6266" target="_blank">14f6266</a></td>
+                            <td>Updated MediaInfo to 0.7.92.1.</td>
+                        </tr>
+                        <tr data-status="updated">
+                            <td><span class="change change-updated"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/87c5d1a" target="_blank">87c5d1a</a></td>
+                            <td>Clean up log spamming on start up and importing.</td>
+                        </tr>
+                        <tr data-status="updated">
+                            <td><span class="change change-updated"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/6dee39e" target="_blank">6dee39e</a></td>
+                            <td>Cleanup and better handling of corrupt records and migration in import.</td>
+                        </tr>
+                        <tr data-status="updated">
+                            <td><span class="change change-updated"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/d2a23a9" target="_blank">d2a23a9</a></td>
+                            <td>Improve Trakt Linking from TvDB.</td>
+                        </tr>
+                        <tr data-status="updated">
+                            <td><span class="change change-updated"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/cec7d4c" target="_blank">cec7d4c</a></td>
+                            <td>Make the Link File Command work better with multiple files.</td>
+                        </tr>
+                        <tr data-status="updated">
+                            <td><span class="change change-updated"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/790ec9f" target="_blank">790ec9f</a></td>
+                            <td>Refactor the WPF UI/UX into it's own project.</td>
+                        </tr>
+                        <tr data-status="updated">
+                            <td><span class="change change-updated"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/9863796" target="_blank">9863796</a></td>
+                            <td>Improve Speed of retrieving multiple files.</td>
+                        </tr>
+                        <tr data-status="updated">
+                            <td><span class="change change-updated"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/e22f5bd" target="_blank">e22f5bd</a></td>
+                            <td>Make the File Details obey the new quality preferences.</td>
+                        </tr>
+                        <tr data-status="updated">
+                            <td><span class="change change-updated"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/90c8c65" target="_blank">90c8c65</a></td>
+                            <td>Improve Auto Link Logic, add setting to disable auto linking.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/issues/445" target="_blank">#445</a></td>
+                            <td>Series selection for renaming adds some files twice #445.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/pull/586" target="_blank">#586</a></td>
+                            <td>Delay no longer counted as part of rate limit.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/issues/589" target="_blank">#589</a></td>
+                            <td>Large files won't stream without chunked encoding.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/issues/593" target="_blank">#593</a></td>
+                            <td>TvDB link doesn't work in a corner case.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/pull/601" target="_blank">#601</a></td>
+                            <td>Hasher Long filename fix.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/issues/594" target="_blank">#594</a></td>
+                            <td>Faulty or incomplete links being pulled from webcache.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/0aacabf" target="_blank">0aacabf</a></td>
+                            <td>Fix MySQL throwing a duplicate column error due to a typo in my plex setup.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/0b6591b" target="_blank">0b6591b</a></td>
+                            <td>Fixed TvDBSeries deserializing as TvDBEpisode.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/9c6e8d7" target="_blank">9c6e8d7</a></td>
+                            <td>Prevent AnimeGroupID with Value 0 from being used.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/56e2a2b" target="_blank">56e2a2b</a></td>
+                            <td>Fix nancy causing shoko not to start on subsiquent startups.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/304ea75" target="_blank">304ea75</a></td>
+                            <td>Fix copy error.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/97a3cd7" target="_blank">97a3cd7</a></td>
+                            <td>Fix another copy error.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/f01ca66" target="_blank">f01ca66</a></td>
+                            <td>Fix query in getLastSeason for TvDB.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/715db17" target="_blank">715db17</a></td>
+                            <td>Fix for SolutionDir having a space in it.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/432862f" target="_blank">432862f</a></td>
+                            <td>Improve Setting sanity checking. Fix an inverted logic.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/6bba640" target="_blank">6bba640</a></td>
+                            <td>Fix TvDB linking for R-18.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/13b8d4e" target="_blank">13b8d4e</a></td>
+                            <td>Fix colliding references with EnumerableExtensions.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/49c76d3" target="_blank">49c76d3</a></td>
+                            <td>Fix an error in the renamer.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/4eb6f64" target="_blank">4eb6f64</a></td>
+                            <td>Fix File Rename Utility and Import Folder Icons.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/c9450f8" target="_blank">c9450f8</a></td>
+                            <td>Stop server from autostarting with SQLite on first run.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/d704a21" target="_blank">d704a21</a></td>
+                            <td>Fix File Details throwing an error. Fix Remove Missing File.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/2cfc685" target="_blank">2cfc685</a></td>
+                            <td>Fix SQL statements for MySQL and SQLite.</td>
+                        </tr>
+                        <tr data-status="removed">
+                            <td><span class="change change-removed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/70efdcf" target="_blank">70efdcf</a></td>
+                            <td>Remove 32 bit preference for Shoko.U.</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <h4 id="s3706">Version 3.7.0.6 (2017-02-10)</h4>
                 <table class="table table-striped table-changelog">
                     <thead>
@@ -335,273 +541,111 @@
                         </tr>
                     </tbody>
                 </table>
-                <h4 id="s3701">Version 3.7.0.1 (2016-12-29)</h4>
-                <table class="table table-striped table-changelog">
-                    <thead>
-                        <tr data-status="head">
-                            <th>Action</th>
-                            <th>Git Link</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr data-status="added">
-                            <td><span class="change change-added"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/1242b2e" target="_blank">1242b2e</a></td>
-                            <td>Add button to launch WebUI.</td>
-                        </tr>
-                        <tr data-status="updated">
-                            <td><span class="change change-updated"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/ec6d52c" target="_blank">ec6d52c</a></td>
-                            <td>Improve Recently Added Episodes to take hidden tags into account when totaling.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/e92d94a " target="_blank">e92d94a </a></td>
-                            <td>Fixes to migration and added more logging.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/f20ede8 " target="_blank">f20ede8</a></td>
-                            <td>Fix NullPointer.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/9f70843" target="_blank">9f70843</a></td>
-                            <td>Fix NullPointer and hopefully fix setting folder permissions.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/681afaa" target="_blank">681afaa</a></td>
-                            <td>Fixed uninstall warning message.</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4 id="s3700">Version 3.7.0.0 (2016-12-26)</h4>
-                <table class="table table-striped table-changelog">
-                    <thead>
-                        <tr data-status="head">
-                            <th>Action</th>
-                            <th>Git Link</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr data-status="added">
-                            <td><span class="change change-added"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/issues/22" target="_blank">#22</a></td>
-                            <td>Utility to hash reconciliation.</td>
-                        </tr>
-                        <tr data-status="added">
-                            <td><span class="change change-added"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/issues/340" target="_blank">#340</a></td>
-                            <td>Log rotator.</td>
-                        </tr>
-                        <tr data-status="added">
-                            <td><span class="change change-added"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/pull/396" target="_blank">#396</a></td>
-                            <td>Nancy support added.</td>
-                        </tr>
-                        <tr data-status="added">
-                            <td><span class="change change-added"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/fbf28b4" target="_blank">fbf28b4</a></td>
-                            <td>Cloud Support.</td>
-                        </tr>
-                        <tr data-status="added">
-                            <td><span class="change change-added"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/06270d8" target="_blank">06270d8</a></td>
-                            <td>Add Update Images Button.</td>
-                        </tr>
-                        <tr data-status="added">
-                            <td><span class="change change-added"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/62b87ce" target="_blank">62b87ce</a></td>
-                            <td>Added Trakt scrobble to legacy WCF.</td>
-                        </tr>
-                        <tr data-status="added">
-                            <td><span class="change change-added"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/bdd7073" target="_blank">bdd7073</a></td>
-                            <td>Migrate Shoko Server files to ProgramData.</td>
-                        </tr>
-                        <tr data-status="added">
-                            <td><span class="change change-added"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/6df0ca5" target="_blank">6df0ca5</a></td>
-                            <td>Added destination size check if needed.</td>
-                        </tr>
-                        <tr data-status="added">
-                            <td><span class="change change-added"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/fb83b3f" target="_blank">fb83b3f</a></td>
-                            <td>AniDB dynamic rate limiter.</td>
-                        </tr>
-                        <tr data-status="added">
-                            <td><span class="change change-added"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/cd45365" target="_blank">cd45365</a></td>
-                            <td>Added Media WebCache Support.</td>
-                        </tr>
-                        <tr data-status="added">
-                            <td><span class="change change-added"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/e139ffd" target="_blank">e139ffd</a></td>
-                            <td>Nancy GZip support.</td>
-                        </tr>
-                        <tr data-status="updated">
-                            <td><span class="change change-updated"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/issues/346" target="_blank">#346</a></td>
-                            <td>Timer to regenerate filter caches for changing filters</td>
-                        </tr>
-                        <tr data-status="updated">
-                            <td><span class="change change-updated"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/issues/390" target="_blank">#390</a></td>
-                            <td>Speed up Kodi serving</td>
-                        </tr>
-                        <tr data-status="updated">
-                            <td><span class="change change-updated"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/374efe8" target="_blank">374efe8</a></td>
-                            <td>Unrecognized files speed-up.</td>
-                        </tr>
-                        <tr data-status="updated">
-                            <td><span class="change change-updated"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/835c946" target="_blank">835c946</a></td>
-                            <td>Update Images forces tvdb update in case of new images on server.</td>
-                        </tr>
-                        <tr data-status="updated">
-                            <td><span class="change change-updated"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/9954438" target="_blank">9954438</a></td>
-                            <td>Additional check for user saving, make sure we hash password if needed.</td>
-                        </tr>
-                        <tr data-status="updated">
-                            <td><span class="change change-updated"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/5adf503" target="_blank">5adf503</a></td>
-                            <td>Initial rework of updater supporting multiple channels.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/issues/76" target="_blank">#76</a></td>
-                            <td>Clearing anidb queue causes ridiculous HDD usage</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/issues/351" target="_blank">#351</a></td>
-                            <td>Shows with specials provide broken XML for episode lists for Kodi</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/issues/372" target="_blank">#372</a></td>
-                            <td>Missing Info for Groups (again)</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/issues/391" target="_blank">#391</a></td>
-                            <td>Performance improvements for AniDB_Anime cache initialisation</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/issues/381" target="_blank">#381</a></td>
-                            <td>Images for Kodi are no longer randomized after the first generation</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/issues/399" target="_blank">#399</a></td>
-                            <td>TVDb Link Missing Filter not updating</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/pull/415" target="_blank">#415</a></td>
-                            <td>Drastically reduce the time it takes to regenerate Group Filter Tags</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/issues/417" target="_blank">#417</a></td>
-                            <td>Removing missing files only works after JMMServer restart.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/issues/436" target="_blank">#436</a></td>
-                            <td>Trakt not acting properly.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/issues/440" target="_blank">#440</a></td>
-                            <td>Using Mapped drive or UNC path in import folder fails import.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/issues/442" target="_blank">#442</a></td>
-                            <td>Renaming files produces path not found exception.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/issues/448" target="_blank">#448</a></td>
-                            <td>CreateCharacters error during import.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/issues/452" target="_blank">#452</a></td>
-                            <td>Certain Files Fail During Hashing.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/issues/457" target="_blank">#457</a></td>
-                            <td>Crossref_AniDB_TvDBV2 has an error.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/issues/436" target="_blank">#436</a></td>
-                            <td>Trakt not acting properly.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/issues/463" target="_blank">#463</a></td>
-                            <td>JMMServerKodi/GetSupportImage broken.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/726d26b" target="_blank">726d26b</a></td>
-                            <td>Yet Another Better http permission handler.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/51488c2" target="_blank">51488c2</a></td>
-                            <td>Final nail to the hosting admin bugs.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/80aedf2" target="_blank">80aedf2</a></td>
-                            <td>Fixed Bug Watch/Unwatch in sql.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/42ab57e" target="_blank">42ab57e</a></td>
-                            <td>Fix some cases where movies would get grouped even in exclusions.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/bbcd1f6" target="_blank">bbcd1f6</a></td>
-                            <td>Fixed some Edge Cases Hashing problems.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/125b6d7" target="_blank">125b6d7</a></td>
-                            <td>Fix for case senstive bug related to newever versions of MySQL 5.5+.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/3e8f1f3" target="_blank">3e8f1f3</a></td>
-                            <td>Fix plex user error.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/jmmserver/commit/45932ad" target="_blank">45932ad</a></td>
-                            <td>Fix, md5, sha and crc not calculated on edge cases.</td>
-                        </tr>
-                        <tr data-status="fixed">
-                            <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/681afaa" target="_blank">681afaa</a></td>
-                            <td>Fixed uninstall warning message.</td>
-                        </tr>
-                    </tbody>
-                </table>
             </section>
             <section>
                 <h2 class="header" id="shoko-desktop">Shoko Desktop</h2>
+                <h4 id="d3750">Version 3.7.5.0 (In Development)</h4>
+                <table class="table table-striped table-changelog">
+                    <thead>
+                        <tr data-status="head">
+                            <th>Action</th>
+                            <th>Git Link</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-status="added">
+                            <td><span class="change change-added"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/issues/508" target="_blank">#508</a></td>
+                            <td>AFile Rename - Recently Added.</td>
+                        </tr>
+                        <tr data-status="added">
+                            <td><span class="change change-added"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/27d9b09" target="_blank">27d9b09</a></td>
+                            <td>Add plex sync settings to Shoko Desktop.</td>
+                        </tr>
+                        <tr data-status="added">
+                            <td><span class="change change-added"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/37bdf48" target="_blank">37bdf48</a></td>
+                            <td>Added New Internal Mpv player.</td>
+                        </tr>
+                        <tr data-status="added">
+                            <td><span class="change change-added"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/46302b3" target="_blank">46302b3</a></td>
+                            <td>Add plex UI interaction for the plex syncing added into Shoko Server.</td>
+                        </tr>
+                         <tr data-status="added">
+                            <td><span class="change change-added"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/46302b3" target="_blank">46302b3</a></td>
+                            <td>Add Settings for Multiple Files - Auto Deletion.</td>
+                        </tr>
+                        <tr data-status="added">
+                            <td><span class="change change-added"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/c1afe52" target="_blank">c1afe52</a></td>
+                            <td>Add flags for chaptered files.</td>
+                        </tr>
+                        <tr data-status="updated">
+                            <td><span class="change change-updated"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/3a26bcc" target="_blank">3a26bcc</a></td>
+                            <td>Add natural sorting to some utilities.</td>
+                        </tr>
+                        <tr data-status="updated">
+                            <td><span class="change change-updated"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/0d321e5" target="_blank">0d321e5</a></td>
+                            <td>Support Dual and Multi Audio in Multiple Files Utility.</td>
+                        </tr>
+                        <tr data-status="updated">
+                            <td><span class="change change-updated"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/84cbfb4" target="_blank">84cbfb4</a></td>
+                            <td>Make Manually Linked Files Sorted Naturally.</td>
+                        </tr>
+                        <tr data-status="updated">
+                            <td><span class="change change-updated"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/5c1cf54" target="_blank">5c1cf54</a></td>
+                            <td>Use a FlexibleMessageBox for all MessageBoxes.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/issues/520" target="_blank">#520</a></td>
+                            <td>Multiple Files tab wont load on enter.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/b29ff06" target="_blank">b29ff06</a></td>
+                            <td>Fix up AVDump throwing errors.</td>
+                        </tr>
+                         <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/daeae0a" target="_blank">daeae0a</a></td>
+                            <td>Add proper binding for plex sections also handling null values better.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/314e240" target="_blank">314e240</a></td>
+                            <td>Fixed Null Pointer exception in AddNewSeries.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/71dcef6" target="_blank">71dcef6</a></td>
+                            <td>Fixed desktop freeze infinite loop.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/02ef77d" target="_blank">02ef77d</a></td>
+                            <td>Fixed Resume on internal player.</td>
+                        </tr>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/1289baf" target="_blank">1289baf</a></td>
+                            <td>Fix UpdateAnime throwing an UnsupportedOperationException due to threading.</td>
+                        </tr>
+                        <tr data-status="removed">
+                            <td><span class="change change-removed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/fa6d9b3" target="_blank">fa6d9b3</a></td>
+                            <td>Remove the Auto Link Buttons for Community Links..</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <h4 id="d3704">Version 3.7.0.4 (2017-01-28)</h4>
                 <table class="table table-striped table-changelog">
                     <thead>
@@ -614,13 +658,13 @@
                     <tbody>
                         <tr data-status="fixed">
                             <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/95cab4ea1cc6a8a9349bb230e2ba9effe147b390" target="_blank">95cab4e</a></td>
-                            <td>Add missing queue states</td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/95cab4e" target="_blank">95cab4e</a></td>
+                            <td>Add missing queue states.</td>
                         </tr>
                         <tr data-status="fixed">
                             <td><span class="change change-fixed"></span></td>
-                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/beca60083e20ea94457e8e515a5a69fd480f8ad5" target="_blank">beca600</a></td>
-                            <td>Always check new version</td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/beca600" target="_blank">beca600</a></td>
+                            <td>Always check new version.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -904,7 +948,24 @@
                 </table>
             </section>
             <section>
-                <h2 id="ma3">My Anime 3</h2>
+                <h2 class="header" id="ma3">My Anime 3</h2>
+                <h4 id="m3750">Version 3.7.5.0 (In Development)</h4>
+                <table class="table table-striped table-changelog">
+                    <thead>
+                        <tr data-status="head">
+                            <th>Action</th>
+                            <th>Git Link</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-status="removed">
+                            <td><span class="change change-removed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ma3/commit/4b672f1" target="_blank">4b672f1</a></td>
+                            <td>Removed Download UI.</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <h4 id="m3703">Version 3.7.0.3 (2017-01-07)</h4>
                 <table class="table table-striped table-changelog">
                     <thead>
@@ -1240,7 +1301,24 @@
                 </table>
             </section>
             <section>
-                <h2 id="shoko-on-plex">Shoko On Plex</h2>
+                <h2 class="header" id="shoko-on-plex">Shoko On Plex</h2>
+                <h4 id="p3750">Version 3.7.5.0 (In Development)</h4>
+                <table class="table table-striped table-changelog">
+                    <thead>
+                        <tr data-status="head">
+                            <th>Action</th>
+                            <th>Git Link</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-status="fixed">
+                            <td><span class="change change-fixed"></span></td>
+                            <td><a href="https://github.com/japanesemediamanager/ShokoOnPlex/commit/9703bb9" target="_blank">9703bb9</a></td>
+                            <td>Fix includeBandwidths throwing errors..</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <h4 id="p3704">Version 3.7.0.4 (2017-01-28)</h4>
                 <table class="table table-striped table-changelog">
                     <thead>
@@ -1287,7 +1365,7 @@
                 </table>
             </section>
             <section>
-                <h2 id="anime-buddy">Anime Buddy</h2>
+                <h2 class="header" id="anime-buddy">Anime Buddy</h2>
                 <h4 id="a1003">Version 1.0.0.3</h4>
                 <table class="table table-striped table-changelog">
                     <thead>
@@ -1340,28 +1418,30 @@
             </section>
         </article>
         <!-- END Main content --> 
-        <!-- Footer -->
-        <footer class="site-footer">
-            <div class="container-fluid"><a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
-                <div class="row">
-                    <div class="col-md-6 col-sm-6">
-                        <p>Copyright Shoko &copy; 2017. All right reserved.</p>
-                    </div>
-                    <div class="col-md-6 col-sm-6">
-                        <ul class="footer-menu">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="http://shokoanime.com" target="_blank">Website</a></li>
-                            <li><a href="changelog.html">Changelog</a></li>
-                            <li><a href="https://discord.gg/vpeHDsg" target="_blank">Support</a></li>
-                            <li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- END Footer --> 
     </div>
 </main>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container-fluid"> <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <p>Copyright &copy; 2017. All rights reserved</p>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <ul class="footer-menu">
+                    <li class="active"><a href="http://docs.shokoanime.com">Home</a></li>
+                    <li><a href="http://shokoanime.com">Website</a></li>
+                    <li><a href="http://docs.shokoanime.com/changelog.html">Changelog</a></li>
+                    <li><a href="https://discord.gg/vpeHDsg" target="_blank">Support</a></li>
+                    <li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END Footer --> 
+
 <!-- Scripts --> 
 <script src="assets/js/theDocs.all.min.js"></script> 
 <script src="assets/js/custom.js"></script>
