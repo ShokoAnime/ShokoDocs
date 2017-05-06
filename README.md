@@ -22,7 +22,7 @@ Contributing to Shoko Docs is easy, simply clone the repo and start making your 
 
 To make things eaiser, we've created a template of the page style we use on Shoko Docs which you can access from the link below.
 
-[Shoko Docs Templates ](https://github.com/japanesemediamanager/ShokoDocs/templates/template.html)
+[Shoko Docs Templates ](https://github.com/japanesemediamanager/ShokoDocs/blob/master/templates/template.html)
 
 ## Languages Used
 
