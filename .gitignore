@@ -1,5 +1,6 @@
 .idea/
 idea/
+vendors/
 templates/layout_full_left-sidebar.html
 templates/layout_single-page-1.html
 ShokoDocs.rar
