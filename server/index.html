@@ -1,140 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Online documentation for Shoko, an anime cataloging program.">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Online documentation for Shoko, an anime cataloging program.">
 
-<!-- Facebook -->
-<meta property="og:title" content="Shoko Docs">
-<meta property="og:description" content="Online documentation for Shoko, an anime cataloging program.">
-<meta property="og:image" content="http://shokoanime.com/files/other/favicon.png">
-<meta property="og:url" content="http://docs.shokoanime.com">
-<meta name="twitter:card" content="http://shokoanime.com/files/other/favicon.png">
-<title>Shoko Docs</title>
+	<!-- Facebook -->
+	<meta property="og:title" content="Shoko Docs">
+	<meta property="og:description" content="Online documentation for Shoko, an anime cataloging program.">
+	<meta property="og:image" content="http://shokoanime.com/files/other/favicon.png">
+	<meta property="og:url" content="http://docs.shokoanime.com">
+	<meta name="twitter:card" content="http://shokoanime.com/files/other/favicon.png">
+	<title>Shoko Docs</title>
 
-<!-- Styles -->
-<link href="../assets/css/theDocs.all.min.css" rel="stylesheet">
-<link href="../assets/css/custom.css" rel="stylesheet">
+	<!-- Styles -->
+	<link href="../assets/css/theDocs.all.min.css" rel="stylesheet">
+	<link href="../assets/css/custom.css" rel="stylesheet">
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700" rel="stylesheet">
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700" rel="stylesheet">
 
-<!-- Favicons -->
-<link rel="apple-touch-icon" href="../templates/assets/img/favicon.png">
-<link rel="icon" href="../templates/assets/img/favicon.png">
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" href="../templates/assets/img/favicon.png">
+	<link rel="icon" href="../templates/assets/img/favicon.png">
 </head>
 
 <body>
-<header class="site-header"> 
-    
-    <!-- Top navbar & branding -->
-    <nav class="navbar navbar-default">
-        <div class="container-fluid"> 
-            
-            <!-- Toggle buttons and brand -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar"> <span class="glyphicon glyphicon-option-vertical"></span> </button>
-                <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                <a class="navbar-brand" href="../templates/index.html"><img src="../assets/img/logo.png" alt="logo"></a> </div>
-            <!-- END Toggle buttons and brand --> 
-            
-            <!-- Top navbar -->
-            <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="http://docs.shokoanime.com">Home</a></li>
-                    <li><a href="http://shokoanime.com">Website</a></li>
-                    <li><a href="http://docs.shokoanime.com/changelog.html">Changelog</a></li>
-                    <li><a href="https://discord.gg/vpeHDsg" target="_blank">Support</a></li>
-                    <li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
-                </ul>
-            </div>
-            <!-- END Top navbar --> 
-            
-        </div>
-    </nav>
-    <!-- END Top navbar & branding --> 
-    
+<header class="site-header">
+
+	<!-- Top navbar & branding -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+
+			<!-- Toggle buttons and brand -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true"
+				        aria-controls="navbar"><span class="glyphicon glyphicon-option-vertical"></span></button>
+				<button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas"><span class="icon-bar"></span>
+					<span class="icon-bar"></span> <span class="icon-bar"></span></button>
+				<a class="navbar-brand" href="../templates/index.html"><img src="../assets/img/logo.png" alt="logo"></a></div>
+			<!-- END Toggle buttons and brand -->
+
+			<!-- Top navbar -->
+			<div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="http://docs.shokoanime.com">Home</a></li>
+					<li><a href="http://shokoanime.com">Website</a></li>
+					<li><a href="http://docs.shokoanime.com/changelog.html">Changelog</a></li>
+					<li><a href="https://discord.gg/vpeHDsg" target="_blank">Support</a></li>
+					<li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
+				</ul>
+			</div>
+			<!-- END Top navbar -->
+
+		</div>
+	</nav>
+	<!-- END Top navbar & branding -->
+
 </header>
 <main class="container-fluid">
-    <div class="row"> 
-        
-        <!-- Sidebar -->
-        <aside class="col-lg-2 col-md-3 col-sm-3 sidebar">
-            <ul class="sidenav dropable sticky">
-                <li><a href="index.html">Shoko Docs Root</a></li>
-                <li class="hr-menu">
-                    <hr/>
-                </li>
-                <li><a href="setup.html">Setup Shoko Server</a></li>
-                <li> <a href="#">Configuring Shoko Server</a>
-                    <ul>
-                        <li><a href="#">Actions Tab</a></li>
-                        <li><a href="#">Import Folders Tab</a></li>
-                        <li><a href="#">Cloud Accounts Tab</a></li>
-                        <li><a href="#">Integrity Tab</a></li>
-                        <li><a href="#">Settings Tab</a></li>
-                        <li><a href="#">Setup Tab</a></li>
-                    </ul>
-                </li>
-                <li> <a href="#">Database Setup</a>
-                    <ul>
-                        <li><a href="mysql.html">MySQL</a></li>
-                        <li><a href="sqlserver.html">SQL Server</a></li>
-                    </ul>
-                </li>
-                <li class="hr-menu">
-                    <hr/>
-                </li>
-                <li><a href="../faq.html">Frequently Asked Questions</a></li>
-                <li><a href="../changelog.html">Changelog</a></li>
-            </ul>
-        </aside>
-        <!-- END Sidebar --> 
-        
-        <!-- Main content -->
-        <article class="col-lg-10 col-md-9 col-sm-9 main-content" role="main">
-            <header>
-                <h1>Shoko Server</h1>
-                <p>The landing page for the Shoko Server documentation. </p>
-                <script language="javascript" src="../assets/js/breadnav.js"> </script> 
-            </header>
-            <section>
-                <h2 id="whats-covered">Shoko Server Documentation</h2>
-                <p>The following documentation covers how to install, setup and use Shoko Server. </p>
-                <p>Shoko Server is the core component of the Shoko suite and with it's client-server architecture which allows any program or plugin to access Shoko. You'll have access to your entire collection locally and over the internet with no additional work outside the initial configuration required.</p>
-                <p><a href="http://shokoanime.com/shoko-server/" target="_blank" alt="Learn More About Shoko Server">Learn More About Shoko Server</a></p>
-            </section>
-        </article>
-        <!-- END Main content --> 
-    </div>
+	<div class="row">
+
+		<!-- Sidebar -->
+		<aside class="col-lg-2 col-md-3 col-sm-3 sidebar">
+			<ul class="sidenav dropable sticky">
+				<li><a href="index.html">Shoko Docs Root</a></li>
+				<li class="hr-menu">
+					<hr/>
+				</li>
+				<li><a href="setup.html">Setup Shoko Server</a></li>
+				<li><a href="#">Configuring Shoko Server</a>
+					<ul>
+						<li><a href="#">Actions Tab</a></li>
+						<li><a href="#">Import Folders Tab</a></li>
+						<li><a href="#">Cloud Accounts Tab</a></li>
+						<li><a href="#">Integrity Tab</a></li>
+						<li><a href="#">Settings Tab</a></li>
+						<li><a href="#">Setup Tab</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Database Setup</a>
+					<ul>
+						<li><a href="mysql.html">MySQL</a></li>
+						<li><a href="sqlserver.html">SQL Server</a></li>
+					</ul>
+				</li>
+				<li class="hr-menu">
+					<hr/>
+				</li>
+				<li><a href="../faq.html">Frequently Asked Questions</a></li>
+				<li><a href="../changelog.html">Changelog</a></li>
+			</ul>
+		</aside>
+		<!-- END Sidebar -->
+
+		<!-- Main content -->
+		<article class="col-lg-10 col-md-9 col-sm-9 main-content" role="main">
+			<header>
+				<h1>Shoko Server</h1>
+				<p>The landing page for the Shoko Server documentation. </p>
+				<script language="javascript" src="../assets/js/breadnav.js"></script>
+			</header>
+			<section>
+				<h2 id="whats-covered">Shoko Server Documentation</h2>
+				<p>The following documentation covers how to install, setup and use Shoko Server. </p>
+				<p>Shoko Server is the core component of the Shoko suite and with it's client-server architecture which allows
+					any program or plugin to access Shoko. You'll have access to your entire collection locally and over the
+					internet with no additional work outside the initial configuration required.</p>
+				<p><a href="http://shokoanime.com/shoko-server/" target="_blank" alt="Learn More About Shoko Server">Learn More
+					About Shoko Server</a></p>
+			</section>
+		</article>
+		<!-- END Main content -->
+	</div>
 </main>
 
 <!-- Footer -->
 <footer class="site-footer">
-    <div class="container-fluid"> <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
-        <div class="row">
-            <div class="col-md-6 col-sm-6">
-                <p>Copyright &copy; 2017. All rights reserved</p>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <ul class="footer-menu">
-                    <li class="active"><a href="http://docs.shokoanime.com">Home</a></li>
-                    <li><a href="http://shokoanime.com">Website</a></li>
-                    <li><a href="http://docs.shokoanime.com/changelog.html">Changelog</a></li>
-                    <li><a href="https://discord.gg/vpeHDsg" target="_blank">Support</a></li>
-                    <li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+	<div class="container-fluid"><a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+		<div class="row">
+			<div class="col-md-6 col-sm-6">
+				<p>Copyright &copy; 2017. All rights reserved</p>
+			</div>
+			<div class="col-md-6 col-sm-6">
+				<ul class="footer-menu">
+					<li class="active"><a href="http://docs.shokoanime.com">Home</a></li>
+					<li><a href="http://shokoanime.com">Website</a></li>
+					<li><a href="http://docs.shokoanime.com/changelog.html">Changelog</a></li>
+					<li><a href="https://discord.gg/vpeHDsg" target="_blank">Support</a></li>
+					<li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </footer>
-<!-- END Footer --> 
+<!-- END Footer -->
 
-<!-- Scripts --> 
-<script src="../assets/js/theDocs.all.min.js"></script> 
+<!-- Scripts -->
+<script src="../assets/js/theDocs.all.min.js"></script>
 <script src="../assets/js/custom.js"></script>
 </body>
 </html>
