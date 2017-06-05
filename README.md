@@ -2,7 +2,7 @@
 
 ## Whats Covered On Shoko Docs
 
-Shoko Docs covers all First Party programs and plugins, providing updates and new material as Shoko continues to develop. We encourage the addition and updating of Third Party programs and plugins but will not be actively maintaining them. We request the developers or users familar with the program or plugin update their documentation as needed.
+Shoko Docs covers all First Party programs and plugins, providing updates and new material as Shoko continues to develop. We encourage the addition and updating of Third Party programs and plugins but will not be actively maintaining them. We request the developers or users familiar with the program or plugin update their documentation as needed.
 
 Shoko Docs currently covers the following programs / plugins.
 
@@ -20,7 +20,7 @@ In addition, Shoko Docs also contains the following resources.
 
 Contributing to Shoko Docs is easy, simply clone the repo and start making your changes!
 
-To make things eaiser, we've created a template of the page style we use on Shoko Docs which you can access from the link below.
+To make things easier, we've created a template of the page style we use on Shoko Docs which you can access from the link below.
 
 [Shoko Docs Templates ](https://github.com/japanesemediamanager/ShokoDocs/blob/master/templates/template.html)
 
@@ -36,9 +36,10 @@ Shoko Docs is built using Bootstrap 3.3.7 and is written in the following langua
 
 To create uniformity, we will be enforcing the following standards for any submissions to the documentation.
 
-- Indenting is 4 Spaces.
+- Indenting is 2 Tabs.
 - Unless already used, do not use abbreviations.
 - All explanations of functions must be clear and detailed.
 - Provide examples when and if needed.
 - Code commenting is optional.
-- If you have questions, please contact us on our Discord server using the Support link at the top.
+
+If you have questions, please contact us on our Discord server using the Support link at the top.
