@@ -16,7 +16,7 @@
 	<title>Changelog</title>
 
 	<!-- Styles -->
-	<link href="assets/css/theDocs.all.min.css" rel="stylesheet">
+	<link href="assets/css/shoko.min.css" rel="stylesheet">
 	<link href="assets/css/custom.css" rel="stylesheet">
 
 	<!-- Fonts -->
@@ -153,6 +153,12 @@
 						</td>
 						<td>Add support for chapter detection.</td>
 					</tr>
+					<tr data-status="added">
+						<td><span class="change change-added"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/379a084" target="_blank">379a084</a>
+						</td>
+						<td>Add some quote checking for file moving.</td>
+					</tr>
 					<tr data-status="updated">
 						<td><span class="change change-updated"></span></td>
 						<td><a href="https://github.com/japanesemediamanager/ShokoServer/issue/600" target="_blank">#600</a></td>
@@ -229,6 +235,42 @@
 						</td>
 						<td>Improve Auto Link Logic, add setting to disable auto linking.</td>
 					</tr>
+					<tr data-status="updated">
+						<td><span class="change change-updated"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/47d746a" target="_blank">47d746a</a>
+						</td>
+						<td>Pause the hasher queue when 'syncing hashes' is running.</td>
+					</tr>
+					<tr data-status="updated">
+						<td><span class="change change-updated"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/e4d6ed4" target="_blank">e4d6ed4</a>
+						</td>
+						<td>Refactor out the rest of the server side queue states to commons.</td>
+					</tr>
+					<tr data-status="updated">
+						<td><span class="change change-updated"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/9d8d543" target="_blank">9d8d543</a>
+						</td>
+						<td>Better handling of deletion for duplicate files.</td>
+					</tr>
+					<tr data-status="updated">
+						<td><span class="change change-updated"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/cc3e471" target="_blank">cc3e471</a>
+						</td>
+						<td>Pause the hasher when running an integrity check.</td>
+					</tr>
+					<tr data-status="updated">
+						<td><span class="change change-updated"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/2be6e1b" target="_blank">2be6e1b</a>
+						</td>
+						<td>Proper setting up config via API.</td>
+					</tr>
+					<tr data-status="updated">
+						<td><span class="change change-updated"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/fefac34" target="_blank">fefac34</a>
+						</td>
+						<td>Make filename show in queue state for File Info.</td>
+					</tr>
 					<tr data-status="fixed">
 						<td><span class="change change-fixed"></span></td>
 						<td><a href="https://github.com/japanesemediamanager/ShokoServer/issues/445" target="_blank">#445</a></td>
@@ -251,13 +293,18 @@
 					</tr>
 					<tr data-status="fixed">
 						<td><span class="change change-fixed"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoServer/issues/594" target="_blank">#594</a></td>
+						<td>Faulty or incomplete links being pulled from webcache.</td>
+					</tr>
+					<tr data-status="fixed">
+						<td><span class="change change-fixed"></span></td>
 						<td><a href="https://github.com/japanesemediamanager/ShokoServer/pull/601" target="_blank">#601</a></td>
 						<td>Hasher Long filename fix.</td>
 					</tr>
 					<tr data-status="fixed">
 						<td><span class="change change-fixed"></span></td>
-						<td><a href="https://github.com/japanesemediamanager/ShokoServer/issues/594" target="_blank">#594</a></td>
-						<td>Faulty or incomplete links being pulled from webcache.</td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoServer/issues/618" target="_blank">#618</a></td>
+						<td>Detect empty setting pushed through API.</td>
 					</tr>
 					<tr data-status="fixed">
 						<td><span class="change change-fixed"></span></td>
@@ -355,11 +402,29 @@
 						</td>
 						<td>Fix SQL statements for MySQL and SQLite.</td>
 					</tr>
+					<tr data-status="fixed">
+						<td><span class="change change-fixed"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/12d5099" target="_blank">12d5099</a>
+						</td>
+						<td>Server setting can be null.</td>
+					</tr>
+					<tr data-status="fixed">
+						<td><span class="change change-fixed"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/7420786" target="_blank">7420786</a>
+						</td>
+						<td>Fix a bunch of edge cases with importing duplicate files.</td>
+					</tr>
+					<tr data-status="fixed">
+						<td><span class="change change-fixed"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/952f98e" target="_blank">952f98e</a>
+						</td>
+						<td>Fix MediaInfo. Fix API giving 404 messages. Reduce TvDBApi Log spam</td>
+					</tr>
 					<tr data-status="removed">
 						<td><span class="change change-removed"></span></td>
 						<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/70efdcf" target="_blank">70efdcf</a>
 						</td>
-						<td>Remove 32 bit preference for Shoko.U.</td>
+						<td>Remove 32 bit preference for Shoko.UI.</td>
 					</tr>
 					</tbody>
 				</table>
@@ -625,7 +690,7 @@
 					<tr data-status="added">
 						<td><span class="change change-added"></span></td>
 						<td><a href="https://github.com/japanesemediamanager/ShokoClient/issues/508" target="_blank">#508</a></td>
-						<td>AFile Rename - Recently Added.</td>
+						<td>New File Rename Option, Recently Added.</td>
 					</tr>
 					<tr data-status="added">
 						<td><span class="change change-added"></span></td>
@@ -637,7 +702,7 @@
 						<td><span class="change change-added"></span></td>
 						<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/37bdf48" target="_blank">37bdf48</a>
 						</td>
-						<td>Added New Internal Mpv player.</td>
+						<td>Added New Internal MPV player.</td>
 					</tr>
 					<tr data-status="added">
 						<td><span class="change change-added"></span></td>
@@ -656,6 +721,12 @@
 						<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/c1afe52" target="_blank">c1afe52</a>
 						</td>
 						<td>Add flags for chaptered files.</td>
+					</tr>
+					<tr data-status="added">
+						<td><span class="change change-added"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/231a0fa" target="_blank">231a0fa</a>
+						</td>
+						<td>Make a proper delete file window for Multiple Files.</td>
 					</tr>
 					<tr data-status="updated">
 						<td><span class="change change-updated"></span></td>
@@ -680,6 +751,30 @@
 						<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/5c1cf54" target="_blank">5c1cf54</a>
 						</td>
 						<td>Use a FlexibleMessageBox for all MessageBoxes.</td>
+					</tr>
+					<tr data-status="updated">
+						<td><span class="change change-updated"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/2d68707" target="_blank">2d68707</a>
+						</td>
+						<td>Show local and remote file location in utilities.</td>
+					</tr>
+					<tr data-status="updated">
+						<td><span class="change change-updated"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/5fc5e7a" target="_blank">5fc5e7a</a>
+						</td>
+						<td>Cleanup and Fix Default Sorting of GroupFilters without sorting.</td>
+					</tr>
+					<tr data-status="updated">
+						<td><span class="change change-updated"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/b39a90b" target="_blank">b39a90b</a>
+						</td>
+						<td>Improve File Quality Preferences.</td>
+					</tr>
+					<tr data-status="updated">
+						<td><span class="change change-updated"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/106fe79" target="_blank">106fe79</a>
+						</td>
+						<td>Remove Downloads tab and move contents to utilities.</td>
 					</tr>
 					<tr data-status="fixed">
 						<td><span class="change change-fixed"></span></td>
@@ -722,11 +817,41 @@
 						</td>
 						<td>Fix UpdateAnime throwing an UnsupportedOperationException due to threading.</td>
 					</tr>
+					<tr data-status="fixed">
+						<td><span class="change change-fixed"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/44f2c81" target="_blank">44f2c81</a>
+						</td>
+						<td>Set cursor back to Arrow if Recreate All Groups fails.</td>
+					</tr>
+					<tr data-status="fixed">
+						<td><span class="change change-fixed"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/65ca0f4" target="_blank">65ca0f4</a>
+						</td>
+						<td>Fix Duplicate File Control, amongst other LongPath errors.</td>
+					</tr>
+					<tr data-status="fixed">
+						<td><span class="change change-fixed"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/6d618ca" target="_blank">6d618ca</a>
+						</td>
+						<td>Updated Language Strings, Fixed UI Issues.</td>
+					</tr>
+					<tr data-status="fixed">
+						<td><span class="change change-fixed"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/b612273" target="_blank">b612273</a>
+						</td>
+						<td>Make the Delete Files with Preferences more reliable.</td>
+					</tr>
 					<tr data-status="removed">
 						<td><span class="change change-removed"></span></td>
 						<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/fa6d9b3" target="_blank">fa6d9b3</a>
 						</td>
-						<td>Remove the Auto Link Buttons for Community Links..</td>
+						<td>Remove the Auto Link Buttons for Community Links.</td>
+					</tr>
+					<tr data-status="removed">
+						<td><span class="change change-removed"></span></td>
+						<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/0d50939" target="_blank">0d50939</a>
+						</td>
+						<td>Remove Downloads.</td>
 					</tr>
 					</tbody>
 				</table>
@@ -1581,7 +1706,7 @@
 <!-- END Footer -->
 
 <!-- Scripts -->
-<script src="assets/js/theDocs.all.min.js"></script>
+<script src="assets/js/shoko.min.js"></script>
 <script src="assets/js/custom.js"></script>
 </body>
 </html>
