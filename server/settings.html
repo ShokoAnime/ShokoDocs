@@ -7,13 +7,13 @@
 	<meta name="description" content="Online documentation for Shoko, an anime cataloging program.">
 
 	<!-- Facebook -->
-	<meta property="og:title" content="Shoko Docs">
+	<meta property="og:title" content="Shoko Docs - Shoko Server - Settings Tab">
 	<meta property="og:description" content="Online documentation for Shoko, an anime cataloging program.">
 	<meta property="og:image" content="http://shokoanime.com/files/other/favicon.png">
 	<meta property="og:url" content="http://docs.shokoanime.com">
 	<meta name="twitter:card" content="http://shokoanime.com/files/other/favicon.png">
 
-	<title>Shoko Docs</title>
+	<title>Settings Tab</title>
 
 	<!-- Styles -->
 	<link href="../assets/css/shoko.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 	<link rel="icon" href="../assets/img/favicon.png">
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".sidebar" data-offset="200">
 <header class="site-header">
 
 	<!-- Top navbar & branding -->
@@ -67,109 +67,101 @@
 		<!-- Sidebar -->
 		<aside class="col-lg-2 col-md-3 col-sm-3 sidebar">
 			<ul class="nav sidenav dropable sticky">
-				<li><a class="has-child" href="#whats-covered">Link 1</a>
-					<ul>
-						<li><a href="#whats-covered">Sub-Link 1</a></li>
-						<li><a href="#whats-covered">Sub-Link 2</a></li>
-					</ul>
+				<li><a href="index.html">Shoko Server Root</a></li>
+				<li class="hr-menu">
+					<hr/>
 				</li>
-				<li><a class="has-child" href="#whats-covered">Link 2</a>
-					<ul>
-						<li><a href="#whats-covered">Sub-Link 1</a></li>
-						<li><a href="#whats-covered">Sub-Link 2</a></li>
-					</ul>
+				<li><a href="#available-settings">Available Settings</a></li>
+				<li><a href="#shoko-webui">Shoko Server Web UI</a></li>
+				<li class="hr-menu">
+					<hr/>
 				</li>
+				<li><a href="../faq.html">Frequently Asked Questions</a></li>
+				<li><a href="../changelog.html">Changelog</a></li>
 			</ul>
 		</aside>
 		<!-- END Sidebar -->
 
-		<!-- Index.html sidebar -->
-
-		<!--
-
-				<ul class="sidenav dropable sticky">
-						<li> <a class="has-child" href="#">Main Link 1</a>
-								<ul>
-										<li><a href="#">Sub-Link 1</a></li>
-										<li><a href="#">Sub-Link 2</a></li>
-								</ul>
-						</li>
-						<li> <a class="has-child" href="#">Main Link 2</a>
-								<ul>
-										<li><a href="#">Sub-Link 1</a></li>
-										<li><a href="#">Sub-Link 2</a></li>
-								</ul>
-						</li>
-						<li class="hr-menu"><hr></li>
-						<li><a href="#">Main Link 3</a></li>
-						<li><a href="#">Main Link 4</a></li>
-				</ul>
-
-		-->
-
 		<!-- Main content -->
 		<article class="col-lg-10 col-md-9 col-sm-9 main-content" role="main">
 			<header>
-				<h1>Page Title</h1>
-				<p>Quick page description.</p>
+				<h1>Shoko Server - Settings Tab</h1>
+				<p>The Settings tab allows you to configure certain settings for Shoko Server.</p>
 				<script language="javascript" src="../assets/js/breadnav.js"></script>
 			</header>
 			<section>
-				<h2 id="whats-covered">First Main Talking Point</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-					magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-					pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-					est laborum</p>
-			</section>
-			<section>
-				<h2 id="Grid">Grid Example</h2>
+				<h2 id="available-settings">Available Settings</h2>
+				<p>At this time, only a handful of settings, related to starting Shoko Server are available for configuration in
+					Shoko Server. The rest of the configurable settings are in the Settings Tab in Shoko Desktop.</p>
 				<div class="row">
-
 					<div class="col-sm-8">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-							magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-							pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-							est laborum</p>
 						<table class="table table-striped">
 							<thead>
 							<tr>
-								<th>Table</th>
-								<th>Example</th>
-								<th>Third Column</th>
+								<td width="20%">Option</td>
+								<td>Description</td>
 							</tr>
 							</thead>
 							<tbody>
 							<tr>
-								<td>1</td>
-								<td>2</td>
-								<td>3</td>
+								<td>Server Port</td>
+								<td>The port Shoko Server will use, by default it’s set to <strong>8111</strong>. Shoko Server also uses
+									a second port tats not configurable, <strong>8112</strong>.
+								</td>
 							</tr>
 							<tr>
-								<td>1</td>
-								<td>2</td>
-								<td>3</td>
+								<td>Image Path</td>
+								<td>The location where Shoko Server will download and store all images. Clicking <strong>Set
+									Default</strong> will set the path to <strong>C:\ProgramData\ShokoServer</strong> while clicking
+									<strong>Select Custom Folder</strong> will allow you to choose a custom location. If using a <strong>Custom
+										Location</strong>, it cannot be a location where administrative rights are required.
+								</td>
 							</tr>
 							<tr>
-								<td>1</td>
-								<td>2</td>
-								<td>3</td>
+								<td>Minimize On Startup</td>
+								<td>If enabled, Shoko Server will start minimized.</td>
+							</tr>
+							<tr>
+								<td>Start With Windows</td>
+								<td>If enabled, adds a RegKey that makes Shoko Server start with Windows.</td>
+							</tr>
+							<tr>
+								<td>Update AniDB Info</td>
+								<td>Opens the AniDB account window allowing you to update your AniDB login.</td>
+							</tr>
+							<tr>
+								<td>Launch Web UI</td>
+								<td>When clicked, will open the Shoko Server Web UI. For more information on the Web UI, please read the
+									section below.
+								</td>
 							</tr>
 							</tbody>
 						</table>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-							dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-							ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-							fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-							mollit anim id est laborum.</p>
 					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/Shoko-Server-Select-Database.png" data-lity><img
-							src="../assets/img/server/Shoko-Server-Select-Database.png" class="img-responsive img-thumbnail"
-							alt="Shoko Server - Select Database"/></a>
-						<figcaption>Shoko Server - Select Database</figcaption>
+					<div class="col-sm-4"><a href="../assets/img/server/Shoko-Server-Settings-Tab.png" data-lity><img
+							src="../assets/img/server/Shoko-Server-Settings-Tab.png" class="img-responsive img-thumbnail"
+							alt="Shoko Server - Settings Tab"/></a>
+						<figcaption>Shoko Server - Settings Tab</figcaption>
 					</div>
 				</div>
+			</section>
+			<section>
+				<h2 id="shoko-webui">Shoko Server WebUI</h2>
+				<p>While available for use, the Shoko Server Web UI is still in development so not all functionality present in
+					Shoko Server is available in the Web UI. The goal of the Web UI is to eventually replace the current Shoko
+					Server UI as part of our plan to make Shoko Server cross-platform.</p>
+				<p>We will always include the latest stable release in the latest version of Shoko Server. For those wanting to
+					try the latest features, <a href="https://github.com/japanesemediamanager/ShokoServer-WebUI/releases"
+					                            target="_blank">download the latest DEV version</a> from the release pages
+					on Github.</p>
+			</section>
+			<section class="github-callout">
+				<div class="bs-callout bs-callout-primary">
+					<h4>Help Make This Page Better</h4>
+					<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it
+						and update it, instead make the update yourself so the community can benefit from it.</p>
+					<a href="https://github.com/japanesemediamanager/ShokoDocs/blob/master/server/settings.html" target="_blank">Shoko
+						Server - Settings Tab on GitHub</a></div>
 			</section>
 		</article>
 		<!-- END Main content -->

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Online documentation for Shoko, an anime cataloging program.">
+
+	<!-- Facebook -->
+	<meta property="og:title" content="Shoko Docs - Shoko Server - Import Tab">
+	<meta property="og:description" content="Online documentation for Shoko, an anime cataloging program.">
+	<meta property="og:image" content="http://shokoanime.com/files/other/favicon.png">
+	<meta property="og:url" content="http://docs.shokoanime.com">
+	<meta name="twitter:card" content="http://shokoanime.com/files/other/favicon.png">
+
+	<title>Import Tab</title>
+
+	<!-- Styles -->
+	<link href="../assets/css/shoko.min.css" rel="stylesheet">
+	<link href="../assets/css/custom.css" rel="stylesheet">
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700" rel="stylesheet">
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" href="../assets/img/favicon.png">
+	<link rel="icon" href="../assets/img/favicon.png">
+</head>
+
+<body data-spy="scroll" data-target=".sidebar" data-offset="200">
+<header class="site-header">
+
+	<!-- Top navbar & branding -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+
+			<!-- Toggle buttons and brand -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true"
+				        aria-controls="navbar"><span class="glyphicon glyphicon-option-vertical"></span></button>
+				<button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas"><span class="icon-bar"></span>
+					<span class="icon-bar"></span> <span class="icon-bar"></span></button>
+				<a class="navbar-brand" href="index.html"><img src="../assets/img/logo.png" alt="logo"></a></div>
+			<!-- END Toggle buttons and brand -->
+
+			<!-- Top navbar -->
+			<div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="http://docs.shokoanime.com">Home</a></li>
+					<li><a href="http://shokoanime.com">Website</a></li>
+					<li><a href="http://docs.shokoanime.com/changelog.html">Changelog</a></li>
+					<li><a href="https://discord.gg/vpeHDsg" target="_blank">Support</a></li>
+					<li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
+				</ul>
+			</div>
+			<!-- END Top navbar -->
+
+		</div>
+	</nav>
+	<!-- END Top navbar & branding -->
+
+</header>
+<main class="container-fluid">
+	<div class="row">
+
+		<!-- Sidebar -->
+		<aside class="col-lg-2 col-md-3 col-sm-3 sidebar">
+			<ul class="nav sidenav dropable sticky">
+				<li><a href="index.html">Shoko Server Root</a></li>
+				<li class="hr-menu">
+					<hr/>
+				</li>
+				<li><a href="#how-long-import">How Long Will Importing Take?</a></li>
+				<li><a href="#new-import-folder">Adding A New Import Folder</a></li>
+				<li class="hr-menu">
+					<hr/>
+				</li>
+				<li><a href="../faq.html">Frequently Asked Questions</a></li>
+				<li><a href="../changelog.html">Changelog</a></li>
+			</ul>
+		</aside>
+		<!-- END Sidebar -->
+
+		<!-- Main content -->
+		<article class="col-lg-10 col-md-9 col-sm-9 main-content" role="main">
+			<header>
+				<h1>Shoko Server - Import Tab</h1>
+				<p>Breakdown of the Import tab, it's functions and what they do.</p>
+				<script language="javascript" src="../assets/js/breadnav.js"></script>
+			</header>
+			<section>
+				<h2 id="actions-info">What Is The Import Tab?</h2>
+				<p>The Import Folders tab is where you'll manage all your import folders that Shoko uses. A <strong>Import
+					Folder</strong> is a local, network or cloud location that contains your anime files. Depending on how each
+					folder is setup in Shoko, different options are available and different tasks for that import folder are
+					preformed. There is no max limit to the number of Import Folders you can have but you are required to have
+					<strong>One Import Folder</strong> in order to use Shoko.</p>
+				<h2 id="how-long-import">How Long Will Importing Take?</h2>
+				<div class="row">
+					<div class="col-sm-8">
+						<p>There is no simple answer to this question as "Importing" a file covers multiple steps that the file goes
+							through which we've outlined below.</p>
+						<h5>1. Hashing The File</h5>
+						<p>The file is first hashed, the amount of time this takes depends on a couple different factors such as the
+							filesize, your CPU and the HDD read/write speed that contains the file. </p>
+						<h5>2. Comparing Hash On AniDB</h5>
+						<p>After the file has been hashed, the hash is compared against AniDB, if the hash is found then the file is
+							associated with the episode the hash belongs to and the series the episode belongs to. If this is a new
+							series, then additional commands are added to the <strong>General Worker</strong> to pull the needed data for
+							the series from The TvDB.</p>
+						<h5>3. Downloading Additional Data</h5>
+						<p>If the file belongs to a new series, information related to the series and each episode in the series is downloaded from The TvDB. If additional community sites are enabled, such as MAL or Trakt.TV then additional commands are added to the <strong>General Worker</strong> to update the metadata on your profile on those sites.</p>
+						<h3>Available Options</h3>
+						<table class="table table-striped">
+							<thead>
+							<tr>
+								<th width="20%">Option</th>
+								<th>Description</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>Remove Folder</td>
+								<td>Will remove the <strong>selected</strong> import folder. This will not <strong>physically</strong>
+									delete the files but will remove them from your collection.
+								</td>
+							</tr>
+							<tr>
+								<td>New Folder</td>
+								<td>Allows you to add a new Import Folder for use with Shoko Server. For additional information on
+									adding an Import Folder, please see the section below.
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-sm-4"><a href="../assets/img/server/Shoko-Server-Import-Folders-Tab.png"><img
+							src="../assets/img/server/Shoko-Server-Import-Folders-Tab.png" class="img-responsive img-thumbnail"
+							alt="Shoko Server - Import Tab"/></a>
+						<figcaption>Shoko Server - Import Tab</figcaption>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h2 id="new-import-folder">Adding A New Import Folder</h2>
+				<div class="row">
+					<div class="col-sm-8">
+						<p>Click<strong> New Folder</strong> to add a import folder for your collection.</p>
+						<p>A new window will open allowing you to specify the import folder's settings. To make things easier and
+							reduce the chance of making a mistake, we recommend clicking the <strong>Folder Icon</strong> to select
+							the location of the import folder. If your import folders are external hard drives, network drives or
+							hosted on the cloud, make sure to update their locations if they happen to change. Otherwise you'll start
+							to receive errors and depending on the actions you run, the entries for those files in your database could
+							be deleted.
+						</p>
+						<p>Once done click the <strong>Save</strong> button to add your import folder.</p>
+						<table class="table table-striped">
+							<thead>
+							<tr>
+								<th width="20%">Option</th>
+								<th>Description</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>Provider</td>
+								<td> The Import Folder type, if you've added a <strong>Cloud Account</strong> you'll be able to select
+									it otherwise <strong>Local File System</strong> will be selected by default. Please note, Import
+									Folders are linked to a <strong>Single </strong><strong>Provider</strong> and <strong>cannot be used
+										with</strong> <strong>Import Folders from another Provider</strong>,
+								</td>
+							</tr>
+							<tr>
+								<td>Import Folder Path</td>
+								<td> The location of the Import Folder, if it's a <strong>Local Provider </strong>then you'll select the
+									folder and if it's a <strong>Cloud Provider</strong> then you'll select the folder from a list of
+									available folders.
+								</td>
+							</tr>
+							<tr>
+								<td>Drop Source</td>
+								<td>An Import Folder marked as a Drop Source will have it's files moved to the folder marked as a
+									<strong>Drop Destination</strong>. To have Shoko Server moves files automatically from a Drop Source
+									once detected, make sure to enable <strong>Watch For New Files</strong> for the that Drop Source.
+								</td>
+							</tr>
+							<tr>
+								<td>Drop Destination</td>
+								<td>Used in conjunction with at lease one <strong>Drop Source</strong>. All files will be moved and
+									sorted into the specified <strong>Drop Destination</strong> with files belonging to the same series
+									automatically grouped up and placed in a new folder with the series named based on your <strong>Preferred
+										Language Preference</strong> setting. You<strong> </strong>can only have one <strong>Drop
+										Destination per Provider</strong> and cannont use <strong>Drop Sources</strong> from a different
+									Provider.
+								</td>
+							</tr>
+							<tr>
+								<td>Watch For New Files</td>
+								<td>An Import Folder marked with <strong>Watch For New Files </strong>will have any files detected
+									imported into your collection. Useful if use a custom sorting solution and don't want Shoko Server
+									moving your files for you and don't want to have to manually execute <strong>Run Import</strong> each
+									time you add files to your Import Folder.
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-sm-4"><a href="../assets/img/server/Shoko-Server-Import-Folders-Add.png"><img
+							src="../assets/img/server/Shoko-Server-Import-Folders-Add.png" class="img-responsive img-thumbnail"
+							alt="Shoko Server - Add Import Folder"/></a>
+						<figcaption>Shoko Server - Add Import Folder</figcaption>
+					</div>
+				</div>
+			</section>
+			<section class="github-callout">
+				<div class="bs-callout bs-callout-primary">
+					<h4>Help Make This Page Better</h4>
+					<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it
+						and update it, instead make the update yourself so the community can benefit from it.</p>
+					<a href="https://github.com/japanesemediamanager/ShokoDocs/blob/master/server/import.html" target="_blank">Shoko
+						Server - Import Tab on GitHub</a></div>
+			</section>
+		</article>
+		<!-- END Main content -->  </div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+	<div class="container-fluid"><a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+		<div class="row">
+			<div class="col-md-6 col-sm-6">
+				<p>Copyright &copy; 2017. All rights reserved</p>
+			</div>
+			<div class="col-md-6 col-sm-6">
+				<ul class="footer-menu">
+					<li class="active"><a href="http://docs.shokoanime.com">Home</a></li>
+					<li><a href="http://shokoanime.com">Website</a></li>
+					<li><a href="http://docs.shokoanime.com/changelog.html">Changelog</a></li>
+					<li><a href="https://discord.gg/vpeHDsg" target="_blank">Support</a></li>
+					<li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- END Footer -->
+
+<!-- Scripts -->
+<script src="../assets/js/shoko.min.js"></script>
+<script src="../assets/js/custom.js"></script>
+</body>
+</html>

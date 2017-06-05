@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Online documentation for Shoko, an anime cataloging program.">
+
+	<!-- Facebook -->
+	<meta property="og:title" content="Shoko Docs - Shoko Server - Actions Tab">
+	<meta property="og:description" content="Online documentation for Shoko, an anime cataloging program.">
+	<meta property="og:image" content="http://shokoanime.com/files/other/favicon.png">
+	<meta property="og:url" content="http://docs.shokoanime.com">
+	<meta name="twitter:card" content="http://shokoanime.com/files/other/favicon.png">
+
+	<title>Actions Tab</title>
+
+	<!-- Styles -->
+	<link href="../assets/css/shoko.min.css" rel="stylesheet">
+	<link href="../assets/css/custom.css" rel="stylesheet">
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700" rel="stylesheet">
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" href="../assets/img/favicon.png">
+	<link rel="icon" href="../assets/img/favicon.png">
+</head>
+
+<body data-spy="scroll" data-target=".sidebar" data-offset="200">
+<header class="site-header">
+
+	<!-- Top navbar & branding -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+
+			<!-- Toggle buttons and brand -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true"
+				        aria-controls="navbar"><span class="glyphicon glyphicon-option-vertical"></span></button>
+				<button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas"><span class="icon-bar"></span>
+					<span class="icon-bar"></span> <span class="icon-bar"></span></button>
+				<a class="navbar-brand" href="index.html"><img src="../assets/img/logo.png" alt="logo"></a></div>
+			<!-- END Toggle buttons and brand -->
+
+			<!-- Top navbar -->
+			<div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="http://docs.shokoanime.com">Home</a></li>
+					<li><a href="http://shokoanime.com">Website</a></li>
+					<li><a href="http://docs.shokoanime.com/changelog.html">Changelog</a></li>
+					<li><a href="https://discord.gg/vpeHDsg" target="_blank">Support</a></li>
+					<li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
+				</ul>
+			</div>
+			<!-- END Top navbar -->
+
+		</div>
+	</nav>
+	<!-- END Top navbar & branding -->
+
+</header>
+<main class="container-fluid">
+	<div class="row">
+
+		<!-- Sidebar -->
+		<aside class="col-lg-2 col-md-3 col-sm-3 sidebar">
+			<ul class="nav sidenav dropable sticky">
+				<li><a href="index.html">Shoko Server Root</a></li>
+				<li class="hr-menu">
+					<hr/>
+				</li>
+				<li><a href="#actions-info">What Is The Actions Tab?</a></li>
+				<li><a href="#actions">Available Actions</a></li>
+				<li class="hr-menu">
+					<hr/>
+				</li>
+				<li><a href="../faq.html">Frequently Asked Questions</a></li>
+				<li><a href="../changelog.html">Changelog</a></li>
+			</ul>
+		</aside>
+		<!-- END Sidebar -->
+
+		<!-- Main content -->
+		<article class="col-lg-10 col-md-9 col-sm-9 main-content" role="main">
+			<header>
+				<h1>Shoko Server - Actions Tab</h1>
+				<p>Breakdown of the Action tab, it's functions and what they do.</p>
+				<script language="javascript" src="../assets/js/breadnav.js"></script>
+			</header>
+			<section>
+				<h2 id="actions-info">What Is The Actions Tab?</h2>
+				<p>While the majority of the tasks Shoko runs are automatic, you can run some of the more important tasks
+					manually in the Actions tab instead of waiting for them to run depending on the timer you set. Depending on
+					your settings, some of these settings will only run if manually activated providing a more fine-tune control
+					over data sent to the various community sites you are currently using.</p>
+				<p>There are a couple things to keep in mind when manually running tasks.</p>
+				<ul>
+					<li>The time it takes to complete a task depends on your collection size.</li>
+					<li>Clicking on an task multiple times will stack the task which depending on your collection size could lead
+						to a temporary ban.
+					</li>
+					<li>The Commands Toolbar at the bottom will keep track of your remaining tasks and the current items being
+						processed.
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2 id="actions">Actions</h2>
+				<p>Below are the currently available actions you can manually run, its recommend to not blindly click and stack
+					multiple actions. </p>
+				<div class="row">
+					<div class="col-sm-8">
+						<table class="table table-striped">
+							<thead>
+							<tr>
+								<th width="20%">Available Actions</th>
+								<th>Description</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>Run Import</td>
+								<td>Scans your <strong>Local</strong> and <strong>Cloud</strong> import folders and adds any new files
+									that are discovered to your collection.
+								</td>
+							</tr>
+							<tr>
+								<td>Remove Missing Files</td>
+								<td>Scans your <strong>Currently Available</strong> import folders and will remove all entries in the
+									database that do not have a physical file match. If you have import folders that are shared network
+									drives or external drives, make sure they are available before running this command.
+								</td>
+							</tr>
+							<tr>
+								<td>Sync MyList</td>
+								<td>Syncs your collection metadata with your AniDB MyList.</td>
+							</tr>
+							<tr>
+								<td>Sync Trakt Collection</td>
+								<td>Syncs your collection metadata with your Trakt account.</td>
+							</tr>
+							<tr>
+								<td>Sync Hashes</td>
+								<td>Syncs your files hashes (ED2k, CRC32, MD5, SHA1) to the Web Cache. This is usually done
+									automatically when Shoko hashes the file and is usually used for users who have been using the same
+									database before Cloud support was added.
+								</td>
+							</tr>
+							<tr>
+								<td>Upload Local Votes To AniDB and MAL</td>
+								<td>Syncs your votes with AniDB and will only <strong>upload</strong> your votes to MAL as <strong>Downloading</strong>
+									votes from MAL is currently not supported.
+								</td>
+							</tr>
+							<tr>
+								<td>Sync Plex Watch Status</td>
+								<td>Snycs your local watch states with Plex.
+								</td>
+							</tr>
+							<tr>
+								<td>Update All AniDB Series Info</td>
+								<td>Updates all series AniDB info in your collection.</td>
+							</tr>
+							<tr>
+								<td>Update All TvDB Info</td>
+								<td>Updates all series TvDB info in your collection.</td>
+							</tr>
+							<tr>
+								<td>Update All Trakt Info</td>
+								<td>Updates all series Trakt info in your collection.</td>
+							</tr>
+							<tr>
+								<td>Update All Stats</td>
+								<td>Updates all series stats such as watched state and missing files.</td>
+							</tr>
+							<tr>
+								<td>Update All Media Info</td>
+								<td>Updates all technical details about the files in your collection.</td>
+							</tr>
+							<tr>
+								<td>Update Images</td>
+								<td>Checks current image settings and updates series images to match. Currently this action will only
+									<strong>increase</strong> the amount of available images, not <strong>decrease</strong> them.
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-sm-4"><a href="../assets/img/server/Shoko-Server-Actions-Tab.png" data-lity><img
+							src="../assets/img/server/Shoko-Server-Actions-Tab.png" class="img-responsive img-thumbnail"
+							alt="Shoko Server - Actions Tab"/></a>
+						<figcaption>Shoko Server - Actions Tab</figcaption>
+					</div>
+				</div>
+			</section>
+			<section class="github-callout">
+				<div class="bs-callout bs-callout-primary">
+					<h4>Help Make This Page Better</h4>
+					<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it
+						and update it, instead make the update yourself so the community can benefit from it.</p>
+					<a href="https://github.com/japanesemediamanager/ShokoDocs/blob/master/server/actions.html" target="_blank">Shoko
+						Server - Actions Tab on GitHub</a></div>
+			</section>
+		</article>
+		<!-- END Main content -->
+	</div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+	<div class="container-fluid"><a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+		<div class="row">
+			<div class="col-md-6 col-sm-6">
+				<p>Copyright &copy; 2017. All rights reserved</p>
+			</div>
+			<div class="col-md-6 col-sm-6">
+				<ul class="footer-menu">
+					<li class="active"><a href="http://docs.shokoanime.com">Home</a></li>
+					<li><a href="http://shokoanime.com">Website</a></li>
+					<li><a href="http://docs.shokoanime.com/changelog.html">Changelog</a></li>
+					<li><a href="https://discord.gg/vpeHDsg" target="_blank">Support</a></li>
+					<li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- END Footer -->
+
+<!-- Scripts -->
+<script src="../assets/js/shoko.min.js"></script>
+<script src="../assets/js/custom.js"></script>
+</body>
+</html>
