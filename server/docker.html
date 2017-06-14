@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Online documentation for Shoko, an anime cataloging program.">
+
+	<!-- Facebook -->
+	<meta property="og:title" content="Shoko Docs">
+	<meta property="og:description" content="Online documentation for Shoko, an anime cataloging program.">
+	<meta property="og:image" content="http://shokoanime.com/files/other/favicon.png">
+	<meta property="og:url" content="http://docs.shokoanime.com">
+	<meta name="twitter:card" content="http://shokoanime.com/files/other/favicon.png">
+
+	<title>Shoko Docs</title>
+
+	<!-- Styles -->
+	<link href="../assets/css/shoko.min.css" rel="stylesheet">
+	<link href="../assets/css/custom.css" rel="stylesheet">
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700" rel="stylesheet">
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" href="../assets/img/favicon.png">
+	<link rel="icon" href="../assets/img/favicon.png">
+</head>
+
+<body>
+<header class="site-header">
+
+	<!-- Top navbar & branding -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+
+			<!-- Toggle buttons and brand -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true"
+				        aria-controls="navbar"><span class="glyphicon glyphicon-option-vertical"></span></button>
+				<button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas"><span class="icon-bar"></span>
+					<span class="icon-bar"></span> <span class="icon-bar"></span></button>
+				<a class="navbar-brand" href="index.html"><img src="../assets/img/logo.png" alt="logo"></a></div>
+			<!-- END Toggle buttons and brand -->
+
+			<!-- Top navbar -->
+			<div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="http://docs.shokoanime.com">Home</a></li>
+					<li><a href="http://shokoanime.com">Website</a></li>
+					<li><a href="http://docs.shokoanime.com/changelog.html">Changelog</a></li>
+					<li><a href="https://discord.gg/vpeHDsg" target="_blank">Support</a></li>
+					<li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
+				</ul>
+			</div>
+			<!-- END Top navbar -->
+
+		</div>
+	</nav>
+	<!-- END Top navbar & branding -->
+
+</header>
+<main class="container-fluid">
+	<div class="row">
+
+		<!-- Sidebar -->
+		<aside class="col-lg-2 col-md-3 col-sm-3 sidebar">
+			<ul class="nav sidenav dropable sticky">
+				<li><a class="has-child" href="#whats-covered">Docker</a>
+					<ul>
+						<li><a href="#installing-docker">Installing Docker</a></li>
+					</ul>
+				</li>
+				<li><a class="has-child" href="#running-shoko-docker">Running ShokoServer on Docker</a>
+					<ul>
+                        <li><a href="#get-docker-image">Getting the latest Docker Image</a></li>
+						<li><a href="#running-docker">Docker Run</a></li>
+						<li><a href="#docker-compose">Docker Compose</a></li>
+					</ul>
+				</li>
+<!--                <li><a class="has-child" href="#advanced-options">Advanced ShokoServer Docker</a>
+					<ul>
+                        <li><a href="#advanced-mysql">Link MySQL docker</a></li>
+					</ul>
+				</li>-->
+			</ul>
+		</aside>
+		<!-- END Sidebar -->
+
+		<!-- Index.html sidebar -->
+
+		<!--
+
+				<ul class="sidenav dropable sticky">
+						<li> <a class="has-child" href="#">Main Link 1</a>
+								<ul>
+										<li><a href="#">Sub-Link 1</a></li>
+										<li><a href="#">Sub-Link 2</a></li>
+								</ul>
+						</li>
+						<li> <a class="has-child" href="#">Main Link 2</a>
+								<ul>
+										<li><a href="#">Sub-Link 1</a></li>
+										<li><a href="#">Sub-Link 2</a></li>
+								</ul>
+						</li>
+						<li class="hr-menu"><hr></li>
+						<li><a href="#">Main Link 3</a></li>
+						<li><a href="#">Main Link 4</a></li>
+				</ul>
+
+		-->
+
+		<!-- Main content -->
+		<article class="col-lg-10 col-md-9 col-sm-9 main-content" role="main">
+			<header>
+				<h1>ShokoServer on Docker</h1>
+				<p>Running ShokoServer on Docker</p>
+				<script language="javascript" src="../assets/js/breadnav.js"></script>
+			</header>
+			<section>
+				<h2 id="installing-docker">Installing Docker</h2>
+				<p>
+                        Installing Docker will depend on what distribution you are running. For most users installing docker from their package manager is advised, this way you will keep up with the latest updates and security updates.
+                </p>
+                <p>
+                        On the homepage of <a href="https://www.docker.com/community-edition#/download">Docker</a> you can find the installation procedure for your distribution of the Docker Community Edition. 
+                        
+                </p>
+			</section>
+			<section>
+				<h2 id="running-shoko-docker">Running ShokoServer on Docker</h2>
+				<div class="row">
+                    <h3 id="get-docker-image">Getting the latest ShokoServer Docker image</h3>
+                        The latest Docker image is available <a href="https://hub.docker.com/r/cazzar/shokoserver/">here</a>.
+                        To get the image run the following in the command line. 
+                        <pre class=".pre-scrollable">docker pull cazzar/shokoserver</pre>
+
+                    <h3 id="docker-run">Docker Run</h3>
+					<p>
+                        To run a basic docker container for ShokoServer you can run the following from the command line
+                        <br/>
+                        <pre class=".pre-scrollable">docker run -p 8111:8111 cazzar/shokoserver</pre>
+                        <br/>
+                        This command will run a new empty docker instance with ShokoServer installed. <br/>
+                        At the same time port 8111 will be made available to the host to reach ShokoServer. From here you can use ShokoDesktop to connect and start working.
+                        <br/><br/>
+                        This won't be enough to keep a persitent ShokoServer instance running. <br/> We will add a few things to the docker command to make sure we can survive a reboot after we make some changes.
+                        <br/>
+                        <pre class=".pre-scrollable">docker run -p 8111:8111 <b>-v "/path/to/config:/root/.shoko" -v "/path/to/webui:/usr/src/app/build/webui"</b> cazzar/shokoserver</pre>
+                        <br/>
+                        
+                        <table class="table table-striped">
+							<thead>
+							<tr>
+								<th>Command</th>
+								<th>Purpose</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td><pre class=".pre-scrollable">-v "/path/to/config:/root/.shoko"</pre></td>
+								<td>Link the configuration file to a folder on your disk. This will allow for portability ease of use for updates.</td>
+							</tr>
+							<tr>
+								<td><pre class=".pre-scrollable">-v "/path/to/webui:/usr/src/app/build/webui"</pre></td>
+								<td>Link the WebUI folder to a folder on your disk. This will allow you to update the WebUI from <a href="https://github.com/japanesemediamanager/ShokoServer-WebUI">GitHub</a> without having to restart the whole container</td>
+							</tr>
+							</tbody>
+						</table>
+                        
+                        Lastly, with the configuration set up, we will need to link the folders with your Drop Source and Drop Destination. <br/>
+                        <br/>
+                        To add folders we can add another <b>-v</b> flag, you can keep adding as many as you need (one <b>-v</b> for every folder).
+                        <br/>
+                        <pre class=".pre-scrollable">docker run -p 8111:8111 -v "/path/to/config:/root/.shoko" -v "/path/to/webui:/usr/src/app/build/webui" <b>-v "/path/to/anime:/anime"</b> cazzar/shokoserver</pre>
+                        
+                        With ShokoServer up and running you can connect to it with ShokoDesktop or the WebUI, and start managing your collection.
+                    </p>
+                    
+                    <h3 id="docker-compose">Docker Compose</h3>
+                    <p>
+                        To make management easier, we can combine all the previous items in a docker compose file. <br/>
+                        
+                        In order to make this work, install docker-compose, a guide how to can be found <a href="https://docs.docker.com/compose/install/">here</a> on the Docker website.<br/>
+                        
+                        Once docker-compose is installed create a docker-compose.yml file anywhere on your system. Open the file and put the following inside.
+                        
+                        <pre class=".pre-scrollable">
+version: "3"
+services:
+  shokoserver:
+    container_name: shokoserver
+    image: cazzar/shokoserver:daily
+    ports:
+      - "8111:8111"
+    volumes:
+      - "/path/to/Anime:/anime"
+      - "/path/to/config:/root/.shoko"
+      - "/path/to/webui:/usr/src/app/build/webui"</pre>
+                        This combines all of our previous configuration in an easy to read and edit format, and will allow you to create a powerfull startup script that could (for example) include a MySQL server, a download client, and anything else you can think off that's availble in a docker format. 
+
+                    </p>
+				</div>
+<!--				<h2 id="advanced-options">Advanced ShokoServer Docker</h2>
+                <div class="row">
+                    <h3 id="advanced-mysql">Link MySQL docker</h3>
+                </div>-->
+			</section>
+		</article>
+		<!-- END Main content -->
+	</div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+	<div class="container-fluid"><a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+		<div class="row">
+			<div class="col-md-6 col-sm-6">
+				<p>Copyright &copy; 2017. All rights reserved</p>
+			</div>
+			<div class="col-md-6 col-sm-6">
+				<ul class="footer-menu">
+					<li class="active"><a href="http://docs.shokoanime.com">Home</a></li>
+					<li><a href="http://shokoanime.com">Website</a></li>
+					<li><a href="http://docs.shokoanime.com/changelog.html">Changelog</a></li>
+					<li><a href="https://discord.gg/vpeHDsg" target="_blank">Support</a></li>
+					<li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- END Footer -->
+
+<!-- Scripts -->
+<script src="../assets/js/shoko.min.js"></script>
+<script src="../assets/js/custom.js"></script>
+</body>
+</html>
