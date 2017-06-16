@@ -1966,7 +1966,7 @@ kbd kbd {
 
 pre {
 	padding: 9.5px;
-	margin: 0 0 10px;
+	margin: 10px 0 10px;
 	font-size: 13px;
 	word-break: break-all;
 	word-wrap: break-word;
