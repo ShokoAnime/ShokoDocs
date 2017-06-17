@@ -1,0 +1,21 @@
+title: Shoko Docs
+description: Online documentation for Shoko, an anime cataloging program.
+baseurl: "" 
+url: ""
+
+permalink:   /:categories/:title/
+markdown:    kramdown
+highlighter: pygments
+sass:
+  sass_dir: _sass
+  style: compressed
+gems:
+  - jekyll-sitemap
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+  parse_block_html: true

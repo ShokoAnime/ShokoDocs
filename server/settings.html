@@ -1,194 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Online documentation for Shoko, an anime cataloging program.">
+---
+layout: sub
+title: Shoko Server - Settings Tab
+permalink: server/import.html
+---
 
-	<!-- Facebook -->
-	<meta property="og:title" content="Shoko Docs - Shoko Server - Settings Tab">
-	<meta property="og:description" content="Online documentation for Shoko, an anime cataloging program.">
-	<meta property="og:image" content="http://shokoanime.com/files/other/favicon.png">
-	<meta property="og:url" content="http://docs.shokoanime.com">
-	<meta name="twitter:card" content="http://shokoanime.com/files/other/favicon.png">
+<!-- Sidebar -->
+<aside class="col-lg-2 col-md-3 col-sm-3 sidebar">
+	<ul class="nav sidenav dropable sticky">
+		<li><a href="index.html">Shoko Server Root</a></li>
+		<li class="hr-menu">
+			<hr/>
+		</li>
+		<li><a href="#available-settings">Available Settings</a></li>
+		<li><a href="#shoko-webui">Shoko Server Web UI</a></li>
+		<li class="hr-menu">
+			<hr/>
+		</li>
+		<li><a href="../faq.html">Frequently Asked Questions</a></li>
+		<li><a href="../changelog.html">Changelog</a></li>
+	</ul>
+</aside>
+<!-- END Sidebar -->
 
-	<title>Settings Tab</title>
-
-	<!-- Styles -->
-	<link href="../assets/css/shoko.min.css" rel="stylesheet">
-
-	<!-- Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700" rel="stylesheet">
-
-	<!-- Favicons -->
-	<link rel="apple-touch-icon" href="../assets/img/favicon.png">
-	<link rel="icon" href="../assets/img/favicon.png">
-</head>
-
-<body data-spy="scroll" data-target=".sidebar" data-offset="200">
-<header class="site-header">
-
-	<!-- Top navbar & branding -->
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-
-			<!-- Toggle buttons and brand -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true"
-				        aria-controls="navbar"><span class="glyphicon glyphicon-option-vertical"></span></button>
-				<button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas"><span class="icon-bar"></span>
-					<span class="icon-bar"></span> <span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="index.html"><img src="../assets/img/logo.png" alt="logo"></a></div>
-			<!-- END Toggle buttons and brand -->
-
-			<!-- Top navbar -->
-			<div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="http://docs.shokoanime.com">Home</a></li>
-					<li><a href="http://shokoanime.com">Website</a></li>
-					<li><a href="http://docs.shokoanime.com/changelog.html">Changelog</a></li>
-					<li><a href="https://discord.gg/vpeHDsg" target="_blank">Support</a></li>
-					<li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
-				</ul>
-			</div>
-			<!-- END Top navbar -->
-
-		</div>
-	</nav>
-	<!-- END Top navbar & branding -->
-
-</header>
-<main class="container-fluid">
-	<div class="row">
-
-		<!-- Sidebar -->
-		<aside class="col-lg-2 col-md-3 col-sm-3 sidebar">
-			<ul class="nav sidenav dropable sticky">
-				<li><a href="index.html">Shoko Server Root</a></li>
-				<li class="hr-menu">
-					<hr/>
-				</li>
-				<li><a href="#available-settings">Available Settings</a></li>
-				<li><a href="#shoko-webui">Shoko Server Web UI</a></li>
-				<li class="hr-menu">
-					<hr/>
-				</li>
-				<li><a href="../faq.html">Frequently Asked Questions</a></li>
-				<li><a href="../changelog.html">Changelog</a></li>
-			</ul>
-		</aside>
-		<!-- END Sidebar -->
-
-		<!-- Main content -->
-		<article class="col-lg-10 col-md-9 col-sm-9 main-content" role="main">
-			<header>
-				<h1>Shoko Server - Settings Tab</h1>
-				<p>The Settings tab allows you to configure certain settings for Shoko Server.</p>
-				<script language="javascript" src="../assets/js/breadnav.js"></script>
-			</header>
-			<section>
-				<h2 id="available-settings">Available Settings</h2>
-				<p>At this time, only a handful of settings, related to starting Shoko Server are available for configuration in
-					Shoko Server. The rest of the configurable settings are in the Settings Tab in Shoko Desktop.</p>
-				<div class="row">
-					<div class="col-sm-8">
-						<table class="table table-striped">
-							<thead>
-							<tr>
-								<td width="20%">Option</td>
-								<td>Description</td>
-							</tr>
-							</thead>
-							<tbody>
-							<tr>
-								<td>Server Port</td>
-								<td>The port Shoko Server will use, by default it’s set to <strong>8111</strong>. Shoko Server also uses
-									a second port tats not configurable, <strong>8112</strong>.
-								</td>
-							</tr>
-							<tr>
-								<td>Image Path</td>
-								<td>The location where Shoko Server will download and store all images. Clicking <strong>Set
-									Default</strong> will set the path to <strong>C:\ProgramData\ShokoServer</strong> while clicking
-									<strong>Select Custom Folder</strong> will allow you to choose a custom location. If using a <strong>Custom
-										Location</strong>, it cannot be a location where administrative rights are required.
-								</td>
-							</tr>
-							<tr>
-								<td>Minimize On Startup</td>
-								<td>If enabled, Shoko Server will start minimized.</td>
-							</tr>
-							<tr>
-								<td>Start With Windows</td>
-								<td>If enabled, adds a RegKey that makes Shoko Server start with Windows.</td>
-							</tr>
-							<tr>
-								<td>Update AniDB Info</td>
-								<td>Opens the AniDB account window allowing you to update your AniDB login.</td>
-							</tr>
-							<tr>
-								<td>Launch Web UI</td>
-								<td>When clicked, will open the Shoko Server Web UI. For more information on the Web UI, please read the
-									section below.
-								</td>
-							</tr>
-							</tbody>
-						</table>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/Shoko-Server-Settings-Tab.png" data-lity><img
-							src="../assets/img/server/Shoko-Server-Settings-Tab.png" class="img-responsive img-thumbnail"
-							alt="Shoko Server - Settings Tab"/></a>
-						<figcaption>Shoko Server - Settings Tab</figcaption>
-					</div>
-				</div>
-			</section>
-			<section>
-				<h2 id="shoko-webui">Shoko Server WebUI</h2>
-				<p>While available for use, the Shoko Server Web UI is still in development so not all functionality present in
-					Shoko Server is available in the Web UI. The goal of the Web UI is to eventually replace the current Shoko
-					Server UI as part of our plan to make Shoko Server cross-platform.</p>
-				<p>We will always include the latest stable release in the latest version of Shoko Server. For those wanting to
-					try the latest features, <a href="https://github.com/japanesemediamanager/ShokoServer-WebUI/releases"
-					                            target="_blank">download the latest DEV version</a> from the release pages
-					on Github.</p>
-			</section>
-			<section class="github-callout">
-				<div class="bs-callout bs-callout-primary">
-					<h4>Help Make This Page Better</h4>
-					<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it
-						and update it, instead make the update yourself so the community can benefit from it.</p>
-					<a href="https://github.com/japanesemediamanager/ShokoDocs/blob/master/server/settings.html" target="_blank">Shoko
-						Server - Settings Tab on GitHub</a></div>
-			</section>
-		</article>
-		<!-- END Main content -->
-	</div>
-</main>
-
-<!-- Footer -->
-<footer class="site-footer">
-	<div class="container-fluid"><a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+<!-- Main content -->
+<article class="col-lg-10 col-md-9 col-sm-9 main-content" role="main">
+	<header>
+		<h1>Shoko Server - Settings Tab</h1>
+		<p>The Settings tab allows you to configure certain settings for Shoko Server.</p>
+		<script language="javascript" src="../assets/js/breadnav.js"></script>
+	</header>
+	<section>
+		<h2 id="available-settings">Available Settings</h2>
+		<p>At this time, only a handful of settings, related to starting Shoko Server are available for configuration in
+			Shoko Server. The rest of the configurable settings are in the Settings Tab in Shoko Desktop.</p>
 		<div class="row">
-			<div class="col-md-6 col-sm-6">
-				<p>Copyright &copy; 2017. All rights reserved</p>
+			<div class="col-sm-8">
+				<table class="table table-striped">
+					<thead>
+					<tr>
+						<td width="20%">Option</td>
+						<td>Description</td>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>Server Port</td>
+						<td>The port Shoko Server will use, by default it’s set to <strong>8111</strong>. Shoko Server also uses
+							a second port tats not configurable, <strong>8112</strong>.
+						</td>
+					</tr>
+					<tr>
+						<td>Image Path</td>
+						<td>The location where Shoko Server will download and store all images. Clicking <strong>Set
+							Default</strong> will set the path to <strong>C:\ProgramData\ShokoServer</strong> while clicking
+							<strong>Select Custom Folder</strong> will allow you to choose a custom location. If using a <strong>Custom
+								Location</strong>, it cannot be a location where administrative rights are required.
+						</td>
+					</tr>
+					<tr>
+						<td>Minimize On Startup</td>
+						<td>If enabled, Shoko Server will start minimized.</td>
+					</tr>
+					<tr>
+						<td>Start With Windows</td>
+						<td>If enabled, adds a RegKey that makes Shoko Server start with Windows.</td>
+					</tr>
+					<tr>
+						<td>Update AniDB Info</td>
+						<td>Opens the AniDB account window allowing you to update your AniDB login.</td>
+					</tr>
+					<tr>
+						<td>Launch Web UI</td>
+						<td>When clicked, will open the Shoko Server Web UI. For more information on the Web UI, please read the
+							section below.
+						</td>
+					</tr>
+					</tbody>
+				</table>
 			</div>
-			<div class="col-md-6 col-sm-6">
-				<ul class="footer-menu">
-					<li class="active"><a href="http://docs.shokoanime.com">Home</a></li>
-					<li><a href="http://shokoanime.com">Website</a></li>
-					<li><a href="http://docs.shokoanime.com/changelog.html">Changelog</a></li>
-					<li><a href="https://discord.gg/vpeHDsg" target="_blank">Support</a></li>
-					<li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
-				</ul>
+			<div class="col-sm-4"><a href="../assets/img/server/Shoko-Server-Settings-Tab.png" data-lity><img
+					src="../assets/img/server/Shoko-Server-Settings-Tab.png" class="img-responsive img-thumbnail"
+					alt="Shoko Server - Settings Tab"/></a>
+				<figcaption>Shoko Server - Settings Tab</figcaption>
 			</div>
 		</div>
-	</div>
-</footer>
-<!-- END Footer -->
-
-<!-- Scripts -->
-<script src="../assets/js/shoko.min.js"></script>
-</body>
-</html>
+	</section>
+	<section>
+		<h2 id="shoko-webui">Shoko Server WebUI</h2>
+		<p>While available for use, the Shoko Server Web UI is still in development so not all functionality present in
+			Shoko Server is available in the Web UI. The goal of the Web UI is to eventually replace the current Shoko
+			Server UI as part of our plan to make Shoko Server cross-platform.</p>
+		<p>We will always include the latest stable release in the latest version of Shoko Server. For those wanting to
+			try the latest features, <a href="https://github.com/japanesemediamanager/ShokoServer-WebUI/releases"
+										target="_blank">download the latest DEV version</a> from the release pages
+			on Github.</p>
+	</section>
+	<section class="github-callout">
+		<div class="bs-callout bs-callout-primary">
+			<h4>Help Make This Page Better</h4>
+			<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it
+				and update it, instead make the update yourself so the community can benefit from it.</p>
+			<a href="https://github.com/japanesemediamanager/ShokoDocs/blob/master/server/settings.html" target="_blank">Shoko
+				Server - Settings Tab on GitHub</a></div>
+	</section>
+</article>
