@@ -1,169 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Online documentation for Shoko, an anime cataloging program.">
+---
+layout: sub
+title: Shoko Server - Integrity Tab
+permalink: server/integrity.html
+---
 
-	<!-- Facebook -->
-	<meta property="og:title" content="Shoko Docs - Shoko Server - Integrity Tab">
-	<meta property="og:description" content="Online documentation for Shoko, an anime cataloging program.">
-	<meta property="og:image" content="http://shokoanime.com/files/other/favicon.png">
-	<meta property="og:url" content="http://docs.shokoanime.com">
-	<meta name="twitter:card" content="http://shokoanime.com/files/other/favicon.png">
+<!-- Sidebar -->
+<aside class="col-lg-2 col-md-3 col-sm-3 sidebar">
+	<ul class="nav sidenav dropable sticky">
+		<li><a href="index.html">Shoko Server Root</a></li>
+		<li class="hr-menu">
+			<hr/>
+		</li>
+		<li><a href="#integrity-check">What Is An Integrity Check?</a></li>
+		<li><a href="#add-check">Adding An Integrity Check</a></li>
+		<li class="hr-menu">
+			<hr/>
+		</li>
+		<li><a href="../faq.html">Frequently Asked Questions</a></li>
+		<li><a href="../changelog.html">Changelog</a></li>
+	</ul>
+</aside>
+<!-- END Sidebar -->
 
-	<title>Integrity Tab - Shoko Docs</title>
-
-	<!-- Styles -->
-	<link href="../assets/css/shoko.min.css" rel="stylesheet">
-
-	<!-- Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700" rel="stylesheet">
-
-	<!-- Favicons -->
-	<link rel="apple-touch-icon" href="../assets/img/favicon.png">
-	<link rel="icon" href="../assets/img/favicon.png">
-</head>
-
-<body data-spy="scroll" data-target=".sidebar" data-offset="200">
-<header class="site-header">
-
-	<!-- Top navbar & branding -->
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-
-			<!-- Toggle buttons and brand -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true"
-				        aria-controls="navbar"><span class="glyphicon glyphicon-option-vertical"></span></button>
-				<button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas"><span class="icon-bar"></span>
-					<span class="icon-bar"></span> <span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="index.html"><img src="../assets/img/logo.png" alt="logo"></a></div>
-			<!-- END Toggle buttons and brand -->
-
-			<!-- Top navbar -->
-			<div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="http://docs.shokoanime.com">Home</a></li>
-					<li><a href="http://shokoanime.com">Website</a></li>
-					<li><a href="http://docs.shokoanime.com/changelog.html">Changelog</a></li>
-					<li><a href="https://discord.gg/vpeHDsg" target="_blank">Support</a></li>
-					<li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
-				</ul>
-			</div>
-			<!-- END Top navbar -->
-
-		</div>
-	</nav>
-	<!-- END Top navbar & branding -->
-
-</header>
-<main class="container-fluid">
-	<div class="row">
-
-		<!-- Sidebar -->
-		<aside class="col-lg-2 col-md-3 col-sm-3 sidebar">
-			<ul class="nav sidenav dropable sticky">
-				<li><a href="index.html">Shoko Server Root</a></li>
-				<li class="hr-menu">
-					<hr/>
-				</li>
-				<li><a href="#integrity-check">What Is An Integrity Check?</a></li>
-				<li><a href="#add-check">Adding An Integrity Check</a></li>
-				<li class="hr-menu">
-					<hr/>
-				</li>
-				<li><a href="../faq.html">Frequently Asked Questions</a></li>
-				<li><a href="../changelog.html">Changelog</a></li>
-			</ul>
-		</aside>
-		<!-- END Sidebar -->
-
-		<!-- Main content -->
-		<article class="col-lg-10 col-md-9 col-sm-9 main-content" role="main">
-			<header>
-				<h1>Shoko Server - Integrity Tab</h1>
-				<p>The Integrity Tab checks the hash values of the files in your collection against their original hash value
-					when first imported to detect corrupted files.</p>
-				<script language="javascript" src="../assets/js/breadnav.js"></script>
-			</header>
-			<section>
-				<div class="row">
-					<h2 id="integrity-check">What Is An Integrity Check?</h2>
-					<div class="col-sm-8">
-						<p>A <strong>Integrity Check</strong> allows you to scan your <strong>Import Folders</strong> for possible
-							file corruption. Any Import Folders you add to a <strong>Integrity Check</strong> will have their files
-							rehashed with the new value compared to the original value stored in your database from when the file was
-							first imported. Files that have the <strong>same hash value</strong> pass and are not marked as corrupted,
-							however files that <strong>do not have the same hash value</strong> are marked as corrupted and displayed
-							in the results panel below. With this utility you can replace corrupted files in your collection
-							preventing playback errors from happening in the future.</p>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/Shoko-Server-Integrity-Check.png"><img
-							src="../assets/img/server/Shoko-Server-Integrity-Check.png" class="img-responsive img-thumbnail"
-							alt="Shoko Server - Integrity Tab"/></a>
-						<figcaption>Shoko Server - Integrity Tab</figcaption>
-					</div>
-				</div>
-			</section>
-			<section>
-				<div class="row">
-					<h2 id="add-check">Adding An Integrity Check</h2>
-					<div class="col-sm-8">
-						<p>Click the <strong>Add Integrity Check</strong> button to open the <strong>Select Import Folders</strong>
-							window. Now select the import folders whose files you wish to have checked for possible corruption, once
-							done click the <strong>OK</strong> button. The integrity check will already be loaded, to start it click
-							the <strong>Green Arrow</strong>. Depending on how big the import folder is, the integrity check may take
-							some time. You can see how many files are left below along with the status of the integrity check, if
-							you'd like to pause the integrity clicking the <strong>Blue Pause</strong> button.</p>
-						<h3>Managing Previous Integrity Checks</h3>
-						<p>You can view previous integrity checks by click the <strong>Drop-Down</strong> box and selecting the
-							previous integrity check you'd like to view. You can also delete an integrity check by click the <strong>Red
-								X</strong> button, you'll be prompted to confirm deletion.</p>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/Shoko-Server-Integrity-Check-Add.png"><img
-							src="../assets/img/server/Shoko-Server-Integrity-Check-Add.png" class="img-responsive img-thumbnail"
-							alt="Shoko Server - Add Integrity Check"/></a>
-						<figcaption>Shoko Server - Add Integrity Check</figcaption>
-					</div>
-				</div>
-			</section>
-			<section class="github-callout">
-				<div class="bs-callout bs-callout-primary">
-					<h4>Help Make This Page Better</h4>
-					<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it
-						and update it, instead make the update yourself so the community can benefit from it.</p>
-					<a href="https://github.com/japanesemediamanager/ShokoDocs/blob/master/server/integrity.html" target="_blank">Shoko
-						Server - Integrity Tab on GitHub</a></div>
-			</section>
-		</article>
-		<!-- END Main content -->  </div>
-</main>
-
-<!-- Footer -->
-<footer class="site-footer">
-	<div class="container-fluid"><a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+<!-- Main content -->
+<article class="col-lg-10 col-md-9 col-sm-9 main-content" role="main">
+	<header>
+		<h1>Shoko Server - Integrity Tab</h1>
+		<p>The Integrity Tab checks the hash values of the files in your collection against their original hash value
+			when first imported to detect corrupted files.</p>
+		<script language="javascript" src="../assets/js/breadnav.js"></script>
+	</header>
+	<section>
 		<div class="row">
-			<div class="col-md-6 col-sm-6">
-				<p>Copyright &copy; 2017. All rights reserved</p>
+			<h2 id="integrity-check">What Is An Integrity Check?</h2>
+			<div class="col-sm-8">
+				<p>A <strong>Integrity Check</strong> allows you to scan your <strong>Import Folders</strong> for possible
+					file corruption. Any Import Folders you add to a <strong>Integrity Check</strong> will have their files
+					rehashed with the new value compared to the original value stored in your database from when the file was
+					first imported. Files that have the <strong>same hash value</strong> pass and are not marked as corrupted,
+					however files that <strong>do not have the same hash value</strong> are marked as corrupted and displayed
+					in the results panel below. With this utility you can replace corrupted files in your collection
+					preventing playback errors from happening in the future.</p>
 			</div>
-			<div class="col-md-6 col-sm-6">
-				<ul class="footer-menu">
-					<li class="active"><a href="http://docs.shokoanime.com">Home</a></li>
-					<li><a href="http://shokoanime.com">Website</a></li>
-					<li><a href="http://docs.shokoanime.com/changelog.html">Changelog</a></li>
-					<li><a href="https://discord.gg/vpeHDsg" target="_blank">Support</a></li>
-					<li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
-				</ul>
+			<div class="col-sm-4"><a href="../assets/img/server/Shoko-Server-Integrity-Check.png"><img
+					src="../assets/img/server/Shoko-Server-Integrity-Check.png" class="img-responsive img-thumbnail"
+					alt="Shoko Server - Integrity Tab"/></a>
+				<figcaption>Shoko Server - Integrity Tab</figcaption>
 			</div>
 		</div>
-	</div>
-</footer>
-<!-- END Footer -->
-
-<!-- Scripts -->
-<script src="../assets/js/shoko.min.js"></script>
-</body>
-</html>
+	</section>
+	<section>
+		<div class="row">
+			<h2 id="add-check">Adding An Integrity Check</h2>
+			<div class="col-sm-8">
+				<p>Click the <strong>Add Integrity Check</strong> button to open the <strong>Select Import Folders</strong>
+					window. Now select the import folders whose files you wish to have checked for possible corruption, once
+					done click the <strong>OK</strong> button. The integrity check will already be loaded, to start it click
+					the <strong>Green Arrow</strong>. Depending on how big the import folder is, the integrity check may take
+					some time. You can see how many files are left below along with the status of the integrity check, if
+					you'd like to pause the integrity clicking the <strong>Blue Pause</strong> button.</p>
+				<h3>Managing Previous Integrity Checks</h3>
+				<p>You can view previous integrity checks by click the <strong>Drop-Down</strong> box and selecting the
+					previous integrity check you'd like to view. You can also delete an integrity check by click the <strong>Red
+						X</strong> button, you'll be prompted to confirm deletion.</p>
+			</div>
+			<div class="col-sm-4"><a href="../assets/img/server/Shoko-Server-Integrity-Check-Add.png"><img
+					src="../assets/img/server/Shoko-Server-Integrity-Check-Add.png" class="img-responsive img-thumbnail"
+					alt="Shoko Server - Add Integrity Check"/></a>
+				<figcaption>Shoko Server - Add Integrity Check</figcaption>
+			</div>
+		</div>
+	</section>
+	<section class="github-callout">
+		<div class="bs-callout bs-callout-primary">
+			<h4>Help Make This Page Better</h4>
+			<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it
+				and update it, instead make the update yourself so the community can benefit from it.</p>
+			<a href="https://github.com/japanesemediamanager/ShokoDocs/blob/master/server/integrity.html" target="_blank">Shoko
+				Server - Integrity Tab on GitHub</a></div>
+	</section>
+</article>

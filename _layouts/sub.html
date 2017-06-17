@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include _head.html %}
+</head>
+
+<body data-spy="scroll" data-target=".sidebar" data-offset="200">
+<header class="site-header">
+	<!-- Top navbar & branding -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			{% include _navbar.html %}
+		</div>
+	</nav>
+	<!-- END Top navbar & branding -->
+</header>
+<main class="container-fluid">
+	<div class="row">
+
+	{{ content }}
+
+	</div>
+</main>
+
+<!-- Footer -->
+{% include _footer.html %}
+{% include _script_footer.html %}
+</body>
+</html>

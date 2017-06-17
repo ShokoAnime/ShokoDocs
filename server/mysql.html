@@ -1,415 +1,329 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Online documentation for Shoko, an anime cataloging program.">
+---
+layout: sub
+title: Shoko Server - Using MySQL
+permalink: server/mysql.html
+---
 
-	<!-- Facebook -->
-	<meta property="og:title" content="Shoko Docs">
-	<meta property="og:description" content="Online documentation for Shoko, an anime cataloging program.">
-	<meta property="og:image" content="http://shokoanime.com/files/other/favicon.png">
-	<meta property="og:url" content="http://docs.shokoanime.com">
-	<meta name="twitter:card" content="http://shokoanime.com/files/other/favicon.png">
-	<title>Shoko Docs</title>
 
-	<!-- Styles -->
-	<link href="../assets/css/shoko.min.css" rel="stylesheet">
+<!-- Sidebar -->
+<aside class="col-lg-2 col-md-3 col-sm-3 sidebar">
+	<ul class="nav sidenav dropable sticky">
+		<li><a href="index.html">Shoko Server Root</a></li>
+		<li class="hr-menu">
+			<hr/>
+		</li>
+		<li><a href="#mysql-download">Downloading MySQL</a></li>
+		<li><a href="#mysql-install">Installing MySQL</a></li>
+		<li><a href="#mysql-config">Configuring MySQL</a></li>
+		<li class="hr-menu">
+			<hr/>
+		</li>
+		<li><a href="../faq.html">Frequently Asked Questions</a></li>
+		<li><a href="../changelog.html">Changelog</a></li>
+	</ul>
+</aside>
+<!-- END Sidebar -->
 
-	<!-- Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700" rel="stylesheet">
-
-	<!-- Favicons -->
-	<link rel="apple-touch-icon" href="../assets/img/favicon.png">
-	<link rel="icon" href="../assets/img/favicon.png">
-</head>
-
-<body data-spy="scroll" data-target=".sidebar" data-offset="200">
-<header class="site-header">
-
-	<!-- Top navbar & branding -->
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-
-			<!-- Toggle buttons and brand -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true"
-				        aria-controls="navbar"><span class="glyphicon glyphicon-option-vertical"></span></button>
-				<button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas"><span class="icon-bar"></span>
-					<span class="icon-bar"></span> <span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="../index.html"><img src="../assets/img/logo.png" alt="logo"></a></div>
-			<!-- END Toggle buttons and brand -->
-
-			<!-- Top navbar -->
-			<div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="http://docs.shokoanime.com">Home</a></li>
-					<li><a href="http://shokoanime.com">Website</a></li>
-					<li><a href="http://docs.shokoanime.com/changelog.html">Changelog</a></li>
-					<li><a href="https://discord.gg/vpeHDsg" target="_blank">Support</a></li>
-					<li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
-				</ul>
-			</div>
-			<!-- END Top navbar -->
-
+<!-- Main content -->
+<article class="col-lg-10 col-md-9 col-sm-9 main-content" role="main">
+	<header>
+		<h1>Installing and Setting Up MySQL</h1>
+		<p>Installing and setting up MySQL for use with Shoko Server.</p>
+		<script language="javascript" src="../assets/js/breadnav.js"></script>
+	</header>
+	<section>
+		<h2 id="why-mysql">Why MySQL Over SQLite</h2>
+		<p>MySQL is the mid-tier and recommended database type for Shoko users with a large collection, who intend to
+			build a large collection or simply want a speed and performance boost when using Shoko. It is easy to setup
+			and using our guide you’ll be up and running in a matter of minutes.<br>
+		</p>
+		<p>While SQLite is the easiest of the three database types to setup with it’s one-click setup. If your
+			collection contains 200 or more series, you will start to experience a lot of issues including slow response
+			times and program lockups when Shoko attempts to access your collection via your SQLite database. In regards
+			to how Shoko uses the database, it’s simply not designed for large collections. SQLite also has difficulty
+			with handling multiple operations which increases the wait time between operations which overall increase your
+			wait time when accessing your collection. MySQL however is designed for large databases which makes it the
+			perfect candidate for your collection if you already have over 200 series or plan to go over 200 series. While
+			it does use more memory than SQLite, the additional amount used is trivial and worth the speed and performance
+			boosts MySQL offers. Multiple operations are not only handled with ease, Shoko server benefits from MySQL
+			ability to handle multiple operations decreasing your wait time when accessing your collection.<br>
+		</p>
+	</section>
+	<section>
+		<h2 id="mysql-download">Download</h2>
+		<p>MySQL is available in many different versions, for use with Shoko Server you’ll want to download <a
+				href="https://dev.mysql.com/downloads/windows/installer/5.7.html" target="new">MySQL Community Server</a>
+			which is free to download. There are two available downloads.</p>
+		<table class="table table-striped">
+			<thead>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>mysql-installer-web-community-5.7.11.0.msi</td>
+				<td>Web installer, will download all needed files.</td>
+			</tr>
+			<tr>
+				<td>mysql-installer-community-5.7.11.0.msi</td>
+				<td>Complete installer, includes all files.</td>
+			</tr>
+			</tbody>
+		</table>
+		<h2 id="mysql-install">Installing MySQL Community Server</h2>
+		<div class="bs-callout bs-callout-info">
+			<h4>MySQL Version</h4>
+			<p>This guide is based on MySQL Installer 5.7.11.</p>
 		</div>
-	</nav>
-	<!-- END Top navbar & branding -->
-
-</header>
-<main class="container-fluid">
-	<div class="row">
-
-		<!-- Sidebar -->
-		<aside class="col-lg-2 col-md-3 col-sm-3 sidebar">
-			<ul class="nav sidenav dropable sticky">
-				<li><a href="index.html">Shoko Server Root</a></li>
-				<li class="hr-menu">
-					<hr/>
-				</li>
-				<li><a href="#mysql-download">Downloading MySQL</a></li>
-				<li><a href="#mysql-install">Installing MySQL</a></li>
-				<li><a href="#mysql-config">Configuring MySQL</a></li>
-				<li class="hr-menu">
-					<hr/>
-				</li>
-				<li><a href="../faq.html">Frequently Asked Questions</a></li>
-				<li><a href="../changelog.html">Changelog</a></li>
-			</ul>
-		</aside>
-		<!-- END Sidebar -->
-
-		<!-- Main content -->
-		<article class="col-lg-10 col-md-9 col-sm-9 main-content" role="main">
-			<header>
-				<h1>Installing and Setting Up MySQL</h1>
-				<p>Installing and setting up MySQL for use with Shoko Server.</p>
-				<script language="javascript" src="../assets/js/breadnav.js"></script>
-			</header>
-			<section>
-				<h2 id="why-mysql">Why MySQL Over SQLite</h2>
-				<p>MySQL is the mid-tier and recommended database type for Shoko users with a large collection, who intend to
-					build a large collection or simply want a speed and performance boost when using Shoko. It is easy to setup
-					and using our guide you’ll be up and running in a matter of minutes.<br>
-				</p>
-				<p>While SQLite is the easiest of the three database types to setup with it’s one-click setup. If your
-					collection contains 200 or more series, you will start to experience a lot of issues including slow response
-					times and program lockups when Shoko attempts to access your collection via your SQLite database. In regards
-					to how Shoko uses the database, it’s simply not designed for large collections. SQLite also has difficulty
-					with handling multiple operations which increases the wait time between operations which overall increase your
-					wait time when accessing your collection. MySQL however is designed for large databases which makes it the
-					perfect candidate for your collection if you already have over 200 series or plan to go over 200 series. While
-					it does use more memory than SQLite, the additional amount used is trivial and worth the speed and performance
-					boosts MySQL offers. Multiple operations are not only handled with ease, Shoko server benefits from MySQL
-					ability to handle multiple operations decreasing your wait time when accessing your collection.<br>
-				</p>
-			</section>
-			<section>
-				<h2 id="mysql-download">Download</h2>
-				<p>MySQL is available in many different versions, for use with Shoko Server you’ll want to download <a
-						href="https://dev.mysql.com/downloads/windows/installer/5.7.html" target="new">MySQL Community Server</a>
-					which is free to download. There are two available downloads.</p>
-				<table class="table table-striped">
-					<thead>
-					<tr>
-						<th>Name</th>
-						<th>Description</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-						<td>mysql-installer-web-community-5.7.11.0.msi</td>
-						<td>Web installer, will download all needed files.</td>
-					</tr>
-					<tr>
-						<td>mysql-installer-community-5.7.11.0.msi</td>
-						<td>Complete installer, includes all files.</td>
-					</tr>
-					</tbody>
-				</table>
-				<h2 id="mysql-install">Installing MySQL Community Server</h2>
-				<div class="bs-callout bs-callout-info">
-					<h4>MySQL Version</h4>
-					<p>This guide is based on MySQL Installer 5.7.11.</p>
-				</div>
-				<div class="row">
-					<div class="col-sm-8">
-						<p>Start the installer, once it’s done configuring you’ll be shown the license screen where you can read the
-							license. Once done you’ll need to accept the terms before you’re able to click the <strong>Next</strong>
-							button.<br>
-						</p>
-						<p>From the list of available setup types select <strong>Custom</strong>, this will allow you to select
-							which items are downloaded (web client only) and installed. In the current version, it will automatically
-							install MySQL to your Windows drive.
-						<p>Once down click the <strong>Next</strong> button to be taken to the next screen.</p>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-setup-type.png" data-lity><img
-							src="../assets/img/server/mysql/mysql-install-setup-type.png" class="img-responsive img-thumbnail"
-							alt="Shoko Server - Select Database"/></a>
-						<figcaption>MySQL Install - Select Custom</figcaption>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-8">
-						<p>You're presented with four different products groups from which you can select various items to be
-							installed.</p>
-						<p>The first group, <strong>MySQL Server</strong> is the actual MySQL server itself so expand each section
-							until you can select the the MySQL Server type that corresponds to your computer.</p>
-						<p>If you're running 32-bit than select the <strong>X86 option</strong> and if you're running 64-bit select
-							the <strong>X64 option</strong>, once selected click the <strong>Green Arrow</strong> to transfer it into
-							the <strong>Products/Features To Be Installed </strong>section.</p>
-						<p>Once down click the <strong>Next</strong> button to be taken to the next screen.</p>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-products-mysql-server.png"
-					                         data-lity><img
-							src="../assets/img/server/mysql/mysql-install-products-mysql-server.png"
-							class="img-responsive img-thumbnail" alt="Shoko Server - Select Database"/></a>
-						<figcaption>MySQL Install - MySQL Servers</figcaption>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-8">
-						<p>The second group, <strong>Applications</strong> will allow you to install useful and needed tools to run
-							and maintain MySQL.</p>
-						<p>From this list select and expand <strong>MySQL Workbench 6.3</strong> and select the version that
-							corresponds to your computer. Do the same thing for <strong>MySQL Utilities 1.5</strong> and select the
-							version that corresponds to your computer.</p>
-						<p>Once down click the <strong>Next</strong> button to be taken to the next screen.</p>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-products-applications.png"
-					                         data-lity><img
-							src="../assets/img/server/mysql/mysql-install-products-applications.png"
-							class="img-responsive img-thumbnail" alt="Shoko Server - Select Database"/></a>
-						<figcaption>MySQL Install - Applications</figcaption>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-8">
-						<p>The third group, <strong>MySQL Connections </strong>will allow you to install the different connection
-							types MySQL can use.</p>
-						<p>From this list select and expand <strong>Connector/C++</strong> and select the version that corresponds
-							to your computer. For <strong>Connector/J</strong> and<strong> Connector/NET</strong> only one option is
-							available, the <strong>X86 option</strong> so select that even if you've previously selected the <strong>X64
-								option</strong>.</p>
-						<p>Once down click the <strong>Next</strong> button to be taken to the next screen.</p>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-products-connections.png"
-					                         data-lity><img
-							src="../assets/img/server/mysql/mysql-install-products-connections.png"
-							class="img-responsive img-thumbnail" alt="Shoko Server - Select Database"/></a>
-						<figcaption>MySQL Install - MySQL Connections</figcaption>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-8">
-						<p>The fourth and final group is <strong>Documentation</strong> and will allow you to install <strong>MySQL
-							Documentation </strong>and <strong>Samples and Examples</strong>.</p>
-						<p>These are optional installs but you may find them useful if you plan to look into how JMM uses it's MySQL
-							database or if you want to learn more about MySQL.</p>
-						<p>Before clicking the <strong>Next</strong> button, make sure to review the items you selected in the
-							<strong>Products/Features To Be Installed</strong>. If everything looks good then click the
-							<strong>Next</strong> button to start the install.</p>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-products-documentation.png" data-lity><img
-							src="../assets/img/server/mysql/mysql-install-products-documentation.png"
-							class="img-responsive img-thumbnail" alt="Shoko Server - Select Database"/></a>
-						<figcaption>MySQL Install - Documentation</figcaption>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-8">
-						<p>Click <strong>Execute</strong> to begin the install process. If you selected the web client, the MySQL
-							Installer will download the selected items.</p>
-						<p>If any of the downloaded items fail to download, click <strong>Show Details &gt; </strong>to view why and
-							try re-downloading them. If they continue to fail try disabling any firewall and anti-virus software
-							running.</p>
-						<p>If they still fail to download you can either download the complete package or ask for support in the
-							support channel on our Discord server.</p>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-installation-downloading.png"
-					                         data-lity><img
-							src="../assets/img/server/mysql/mysql-install-installation-downloading.png"
-							class="img-responsive img-thumbnail" alt="Shoko Server - Select Database"/></a>
-						<figcaption>MySQL Install - Downloading</figcaption>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-8">
-						<p>After the installer is finished <strong>Downloading</strong> the selected components, it will begin
-							<strong>Installing</strong> them. </p>
-						<p>If any of the selected items fail to install, click <strong>Show Details &gt;</strong> to view why and
-							try re-installing them. If they continue to fail try disabling any firewall and anti-virus software
-							running. If they still fail to install ask for support in the support channel on our Discord server.</p>
-						<p>One down, every selected item should have it&rsquo;s <strong>Status</strong> shown as
-							<strong>Complete</strong>. If everything looks correct than click <strong>Next</strong> to continue, if
-							not you need to fix any errors before moving on.</p>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-installing-selection.png"
-					                         data-lity><img
-							src="../assets/img/server/mysql/mysql-install-installing-selection.png"
-							class="img-responsive img-thumbnail" alt="Shoko Server - Select Database"/></a>
-						<figcaption>MySQL Install - Installing Selection</figcaption>
-					</div>
-				</div>
-				<h2 id="mysql-config">Configuring MySQL Community Server</h2>
-				<div class="row">
-					<div class="col-sm-8">
-						<p>Now that you've successfully installed MySQL Community Server, it's time to configure it for use.</p>
-						<p>You'll be shown an overview of the products that need to be configured before MySQL can be used. Click
-							<strong>Next</strong> to continue on.</p>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-product-configuration.png"
-					                         data-lity><img
-							src="../assets/img/server/mysql/mysql-install-product-configuration.png"
-							class="img-responsive img-thumbnail" alt="Shoko Server - Select Database"/></a>
-						<figcaption>MySQL Install - Product Config</figcaption>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-8">
-						<p>In the <strong>Types And Networking</strong> section select
-							<strong>Development </strong><strong>Machine</strong> for <strong>Config Type</strong> and make sure
-							<strong>TCIP/IP</strong> is checked with the <strong>Port Number</strong> set to 3306, make sure <strong>Open
-								Firewall port for network access is </strong>selected.</p>
-						<p>Finally make sure to check <strong>Show Advanced Options</strong> before clicking <strong>Next</strong>.
-						</p>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-types-networking.png" data-lity><img
-							src="../assets/img/server/mysql/mysql-install-types-networking.png" class="img-responsive img-thumbnail"
-							alt="Shoko Server - Select Database"/></a>
-						<figcaption>MySQL Install - Type and Networking</figcaption>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-8">
-						<p>n the <strong>Accounts and Roles</strong> section you&rsquo;ll need to set the password for the root
-							account. Regardless if you plan to use the root account for Shoko you still need to set the <strong>MySQL
-								Root Password</strong>, you can make it as easy or hard as you want as the root account is setup by
-							default for local access only.</p>
-						<p>If you want to add an account just for Shoko, click <strong>Add User </strong>otherwise click <strong>Next</strong>
-							to continue.</p>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-account-roles.png" data-lity><img
-							src="../assets/img/server/mysql/mysql-install-account-roles.png" class="img-responsive img-thumbnail"
-							alt="Shoko Server - Select Database"/></a>
-						<figcaption>MySQL Install - Accounts &amp; Roles</figcaption>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-8">
-						<p>If creating a separate account for Shoko, input the <strong>Username</strong> and
-							<strong>Password</strong> you want to use for the account.</p>
-						<p>Shoko needs to be able to access, create and modify the database so make sure <strong>DB Admin</strong>
-							is selected for the <strong>Role</strong>. For <strong>Host</strong> you have two options, OR <strong>localhost</strong>.
-							The first option will will make it so the account can connect to your MySQL databases locally, using a
-							computer on the same network or over the internet. If you select this option make sure you use a strong
-							password. Selecting <strong>localhost</strong> will make it so the account can only connect to your MySQL
-							databases if it&rsquo;s used on the same computer MySQL is installed on.</p>
-						<p>Click <strong>OK</strong> to add the account.</p>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-account-roles-new.png" data-lity><img
-							src="../assets/img/server/mysql/mysql-install-account-roles-new.png" class="img-responsive img-thumbnail"
-							alt="Shoko Server - Select Database"/></a>
-						<figcaption>MySQL Install - Add New Account</figcaption>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-8">
-						<p>The <strong>Windows Service</strong> section allows you to enable MySQL to start with windows. If you don&rsquo;t
-							want MySQL to start with Windows you can skip this step, however you will have to manually start MySQL
-							every time you want to access your collection.</p>
-						<p>Make sure both <strong>Configure MySQL Server as a Window Service </strong>and <strong>Start the MySQL
-							Server at </strong><strong>System Startup</strong> are checked. You can input any name you like or leave
-							it as the default, it does not matter.</p>
-						<p>One done click <strong>Next</strong> to continue.</p>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-windows-service.png" data-lity><img
-							src="../assets/img/server/mysql/mysql-install-windows-service.png" class="img-responsive img-thumbnail"
-							alt="Shoko Server - Select Database"/></a>
-						<figcaption>MySQL Install - Windows Service</figcaption>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-8">
-						<p>The <strong>Advanced Options</strong> section allows you to select what types of logs you want MySQL to
-							keep and where to keep them. This can be useful for tracing errors with your server, the only one required
-							is <strong>Slow Query Log</strong> so make sure it&rsquo;s selected.</p>
-						<p>One done click <strong>Next</strong> to continue.</p>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-advanced-options.png" data-lity><img
-							src="../assets/img/server/mysql/mysql-install-advanced-options.png" class="img-responsive img-thumbnail"
-							alt="Shoko Server - Select Database"/></a>
-						<figcaption>MySQL Install - Advanced Options</figcaption>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-8">
-						<p>The <strong>Apply Server Configuration</strong> is your last change to go back and make any changes, if
-							everything is correct than click <strong>Execute</strong> to apply your server configuration.</p>
-						<p>Each item should be marked with a <strong>Green</strong> <strong>Check Mark</strong> indicating each
-							operation was successful. If there are any errors you&rsquo;ll need to fix them as MySQL will not
-							finishing installing until you do. You can ask for support in the support channel in our Discord server.
-						</p>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-apply-server-config.png"
-					                         data-lity><img src="../assets/img/server/mysql/mysql-install-apply-server-config.png"
-					                                        class="img-responsive img-thumbnail"
-					                                        alt="Shoko Server - Select Database"/></a>
-						<figcaption>MySQL Install - Apply Server Config</figcaption>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-8">
-						<p>Uncheck <strong>Start MySQL Workbench </strong><strong>after Setup</strong> as you don’t need to create a
-							database, Shoko Server will automatically create a database to use. </p>
-						<p> Congratulations! MySQL Server has been successfully installed! If you’ve paused your <a
-								href="http://docs.shokoanime.com/server/setup.html">Shoko Setup</a>, you can now continue with the
-							install.</p>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-complete.png" data-lity><img
-							src="../assets/img/server/mysql/mysql-install-complete.png" class="img-responsive img-thumbnail"
-							alt="Shoko Server - Select Database"/></a>
-						<figcaption>MySQL Install - Install Complete</figcaption>
-					</div>
-				</div>
-			</section>
-			<section class="github-callout">
-				<div class="bs-callout bs-callout-primary">
-					<h4>Help Make This Page Better</h4>
-					<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it
-						and update it, instead make the update yourself so the community can benefit from it.</p>
-					<a href="https://github.com/japanesemediamanager/ShokoDocs/blob/master/server/mysql.html" target="_blank">Installing
-						and Setting Up MySQL on GitHub</a></div>
-			</section>
-		</article>
-		<!-- END Main content -->
-	</div>
-</main>
-
-<!-- Footer -->
-<footer class="site-footer">
-	<div class="container-fluid"><a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
 		<div class="row">
-			<div class="col-md-6 col-sm-6">
-				<p>Copyright &copy; 2017. All rights reserved</p>
+			<div class="col-sm-8">
+				<p>Start the installer, once it’s done configuring you’ll be shown the license screen where you can read the
+					license. Once done you’ll need to accept the terms before you’re able to click the <strong>Next</strong>
+					button.<br>
+				</p>
+				<p>From the list of available setup types select <strong>Custom</strong>, this will allow you to select
+					which items are downloaded (web client only) and installed. In the current version, it will automatically
+					install MySQL to your Windows drive.
+				<p>Once down click the <strong>Next</strong> button to be taken to the next screen.</p>
 			</div>
-			<div class="col-md-6 col-sm-6">
-				<ul class="footer-menu">
-					<li class="active"><a href="http://docs.shokoanime.com">Home</a></li>
-					<li><a href="http://shokoanime.com">Website</a></li>
-					<li><a href="http://docs.shokoanime.com/changelog.html">Changelog</a></li>
-					<li><a href="https://discord.gg/vpeHDsg" target="_blank">Support</a></li>
-					<li><a href="https://github.com/japanesemediamanager/ShokoDocs" target="_blank">Github</a></li>
-				</ul>
+			<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-setup-type.png" data-lity><img
+					src="../assets/img/server/mysql/mysql-install-setup-type.png" class="img-responsive img-thumbnail"
+					alt="Shoko Server - Select Database"/></a>
+				<figcaption>MySQL Install - Select Custom</figcaption>
 			</div>
 		</div>
-	</div>
-</footer>
-<!-- END Footer -->
-
-<!-- Scripts -->
-<script src="../assets/js/shoko.min.js"></script>
-</body>
-</html>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>You're presented with four different products groups from which you can select various items to be
+					installed.</p>
+				<p>The first group, <strong>MySQL Server</strong> is the actual MySQL server itself so expand each section
+					until you can select the the MySQL Server type that corresponds to your computer.</p>
+				<p>If you're running 32-bit than select the <strong>X86 option</strong> and if you're running 64-bit select
+					the <strong>X64 option</strong>, once selected click the <strong>Green Arrow</strong> to transfer it into
+					the <strong>Products/Features To Be Installed </strong>section.</p>
+				<p>Once down click the <strong>Next</strong> button to be taken to the next screen.</p>
+			</div>
+			<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-products-mysql-server.png"
+										data-lity><img
+					src="../assets/img/server/mysql/mysql-install-products-mysql-server.png"
+					class="img-responsive img-thumbnail" alt="Shoko Server - Select Database"/></a>
+				<figcaption>MySQL Install - MySQL Servers</figcaption>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>The second group, <strong>Applications</strong> will allow you to install useful and needed tools to run
+					and maintain MySQL.</p>
+				<p>From this list select and expand <strong>MySQL Workbench 6.3</strong> and select the version that
+					corresponds to your computer. Do the same thing for <strong>MySQL Utilities 1.5</strong> and select the
+					version that corresponds to your computer.</p>
+				<p>Once down click the <strong>Next</strong> button to be taken to the next screen.</p>
+			</div>
+			<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-products-applications.png"
+										data-lity><img
+					src="../assets/img/server/mysql/mysql-install-products-applications.png"
+					class="img-responsive img-thumbnail" alt="Shoko Server - Select Database"/></a>
+				<figcaption>MySQL Install - Applications</figcaption>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>The third group, <strong>MySQL Connections </strong>will allow you to install the different connection
+					types MySQL can use.</p>
+				<p>From this list select and expand <strong>Connector/C++</strong> and select the version that corresponds
+					to your computer. For <strong>Connector/J</strong> and<strong> Connector/NET</strong> only one option is
+					available, the <strong>X86 option</strong> so select that even if you've previously selected the <strong>X64
+						option</strong>.</p>
+				<p>Once down click the <strong>Next</strong> button to be taken to the next screen.</p>
+			</div>
+			<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-products-connections.png"
+										data-lity><img
+					src="../assets/img/server/mysql/mysql-install-products-connections.png"
+					class="img-responsive img-thumbnail" alt="Shoko Server - Select Database"/></a>
+				<figcaption>MySQL Install - MySQL Connections</figcaption>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>The fourth and final group is <strong>Documentation</strong> and will allow you to install <strong>MySQL
+					Documentation </strong>and <strong>Samples and Examples</strong>.</p>
+				<p>These are optional installs but you may find them useful if you plan to look into how JMM uses it's MySQL
+					database or if you want to learn more about MySQL.</p>
+				<p>Before clicking the <strong>Next</strong> button, make sure to review the items you selected in the
+					<strong>Products/Features To Be Installed</strong>. If everything looks good then click the
+					<strong>Next</strong> button to start the install.</p>
+			</div>
+			<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-products-documentation.png" data-lity><img
+					src="../assets/img/server/mysql/mysql-install-products-documentation.png"
+					class="img-responsive img-thumbnail" alt="Shoko Server - Select Database"/></a>
+				<figcaption>MySQL Install - Documentation</figcaption>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>Click <strong>Execute</strong> to begin the install process. If you selected the web client, the MySQL
+					Installer will download the selected items.</p>
+				<p>If any of the downloaded items fail to download, click <strong>Show Details &gt; </strong>to view why and
+					try re-downloading them. If they continue to fail try disabling any firewall and anti-virus software
+					running.</p>
+				<p>If they still fail to download you can either download the complete package or ask for support in the
+					support channel on our Discord server.</p>
+			</div>
+			<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-installation-downloading.png"
+										data-lity><img
+					src="../assets/img/server/mysql/mysql-install-installation-downloading.png"
+					class="img-responsive img-thumbnail" alt="Shoko Server - Select Database"/></a>
+				<figcaption>MySQL Install - Downloading</figcaption>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>After the installer is finished <strong>Downloading</strong> the selected components, it will begin
+					<strong>Installing</strong> them. </p>
+				<p>If any of the selected items fail to install, click <strong>Show Details &gt;</strong> to view why and
+					try re-installing them. If they continue to fail try disabling any firewall and anti-virus software
+					running. If they still fail to install ask for support in the support channel on our Discord server.</p>
+				<p>One down, every selected item should have it&rsquo;s <strong>Status</strong> shown as
+					<strong>Complete</strong>. If everything looks correct than click <strong>Next</strong> to continue, if
+					not you need to fix any errors before moving on.</p>
+			</div>
+			<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-installing-selection.png"
+										data-lity><img
+					src="../assets/img/server/mysql/mysql-install-installing-selection.png"
+					class="img-responsive img-thumbnail" alt="Shoko Server - Select Database"/></a>
+				<figcaption>MySQL Install - Installing Selection</figcaption>
+			</div>
+		</div>
+		<h2 id="mysql-config">Configuring MySQL Community Server</h2>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>Now that you've successfully installed MySQL Community Server, it's time to configure it for use.</p>
+				<p>You'll be shown an overview of the products that need to be configured before MySQL can be used. Click
+					<strong>Next</strong> to continue on.</p>
+			</div>
+			<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-product-configuration.png"
+										data-lity><img
+					src="../assets/img/server/mysql/mysql-install-product-configuration.png"
+					class="img-responsive img-thumbnail" alt="Shoko Server - Select Database"/></a>
+				<figcaption>MySQL Install - Product Config</figcaption>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>In the <strong>Types And Networking</strong> section select
+					<strong>Development </strong><strong>Machine</strong> for <strong>Config Type</strong> and make sure
+					<strong>TCIP/IP</strong> is checked with the <strong>Port Number</strong> set to 3306, make sure <strong>Open
+						Firewall port for network access is </strong>selected.</p>
+				<p>Finally make sure to check <strong>Show Advanced Options</strong> before clicking <strong>Next</strong>.
+				</p>
+			</div>
+			<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-types-networking.png" data-lity><img
+					src="../assets/img/server/mysql/mysql-install-types-networking.png" class="img-responsive img-thumbnail"
+					alt="Shoko Server - Select Database"/></a>
+				<figcaption>MySQL Install - Type and Networking</figcaption>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>n the <strong>Accounts and Roles</strong> section you&rsquo;ll need to set the password for the root
+					account. Regardless if you plan to use the root account for Shoko you still need to set the <strong>MySQL
+						Root Password</strong>, you can make it as easy or hard as you want as the root account is setup by
+					default for local access only.</p>
+				<p>If you want to add an account just for Shoko, click <strong>Add User </strong>otherwise click <strong>Next</strong>
+					to continue.</p>
+			</div>
+			<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-account-roles.png" data-lity><img
+					src="../assets/img/server/mysql/mysql-install-account-roles.png" class="img-responsive img-thumbnail"
+					alt="Shoko Server - Select Database"/></a>
+				<figcaption>MySQL Install - Accounts &amp; Roles</figcaption>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>If creating a separate account for Shoko, input the <strong>Username</strong> and
+					<strong>Password</strong> you want to use for the account.</p>
+				<p>Shoko needs to be able to access, create and modify the database so make sure <strong>DB Admin</strong>
+					is selected for the <strong>Role</strong>. For <strong>Host</strong> you have two options, OR <strong>localhost</strong>.
+					The first option will will make it so the account can connect to your MySQL databases locally, using a
+					computer on the same network or over the internet. If you select this option make sure you use a strong
+					password. Selecting <strong>localhost</strong> will make it so the account can only connect to your MySQL
+					databases if it&rsquo;s used on the same computer MySQL is installed on.</p>
+				<p>Click <strong>OK</strong> to add the account.</p>
+			</div>
+			<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-account-roles-new.png" data-lity><img
+					src="../assets/img/server/mysql/mysql-install-account-roles-new.png" class="img-responsive img-thumbnail"
+					alt="Shoko Server - Select Database"/></a>
+				<figcaption>MySQL Install - Add New Account</figcaption>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>The <strong>Windows Service</strong> section allows you to enable MySQL to start with windows. If you don&rsquo;t
+					want MySQL to start with Windows you can skip this step, however you will have to manually start MySQL
+					every time you want to access your collection.</p>
+				<p>Make sure both <strong>Configure MySQL Server as a Window Service </strong>and <strong>Start the MySQL
+					Server at </strong><strong>System Startup</strong> are checked. You can input any name you like or leave
+					it as the default, it does not matter.</p>
+				<p>One done click <strong>Next</strong> to continue.</p>
+			</div>
+			<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-windows-service.png" data-lity><img
+					src="../assets/img/server/mysql/mysql-install-windows-service.png" class="img-responsive img-thumbnail"
+					alt="Shoko Server - Select Database"/></a>
+				<figcaption>MySQL Install - Windows Service</figcaption>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>The <strong>Advanced Options</strong> section allows you to select what types of logs you want MySQL to
+					keep and where to keep them. This can be useful for tracing errors with your server, the only one required
+					is <strong>Slow Query Log</strong> so make sure it&rsquo;s selected.</p>
+				<p>One done click <strong>Next</strong> to continue.</p>
+			</div>
+			<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-advanced-options.png" data-lity><img
+					src="../assets/img/server/mysql/mysql-install-advanced-options.png" class="img-responsive img-thumbnail"
+					alt="Shoko Server - Select Database"/></a>
+				<figcaption>MySQL Install - Advanced Options</figcaption>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>The <strong>Apply Server Configuration</strong> is your last change to go back and make any changes, if
+					everything is correct than click <strong>Execute</strong> to apply your server configuration.</p>
+				<p>Each item should be marked with a <strong>Green</strong> <strong>Check Mark</strong> indicating each
+					operation was successful. If there are any errors you&rsquo;ll need to fix them as MySQL will not
+					finishing installing until you do. You can ask for support in the support channel in our Discord server.
+				</p>
+			</div>
+			<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-apply-server-config.png"
+										data-lity><img src="../assets/img/server/mysql/mysql-install-apply-server-config.png"
+													class="img-responsive img-thumbnail"
+													alt="Shoko Server - Select Database"/></a>
+				<figcaption>MySQL Install - Apply Server Config</figcaption>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>Uncheck <strong>Start MySQL Workbench </strong><strong>after Setup</strong> as you don’t need to create a
+					database, Shoko Server will automatically create a database to use. </p>
+				<p> Congratulations! MySQL Server has been successfully installed! If you’ve paused your <a
+						href="http://docs.shokoanime.com/server/setup.html">Shoko Setup</a>, you can now continue with the
+					install.</p>
+			</div>
+			<div class="col-sm-4"><a href="../assets/img/server/mysql/mysql-install-complete.png" data-lity><img
+					src="../assets/img/server/mysql/mysql-install-complete.png" class="img-responsive img-thumbnail"
+					alt="Shoko Server - Select Database"/></a>
+				<figcaption>MySQL Install - Install Complete</figcaption>
+			</div>
+		</div>
+	</section>
+	<section class="github-callout">
+		<div class="bs-callout bs-callout-primary">
+			<h4>Help Make This Page Better</h4>
+			<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it
+				and update it, instead make the update yourself so the community can benefit from it.</p>
+			<a href="https://github.com/japanesemediamanager/ShokoDocs/blob/master/server/mysql.html" target="_blank">Installing
+				and Setting Up MySQL on GitHub</a></div>
+	</section>
+</article>
