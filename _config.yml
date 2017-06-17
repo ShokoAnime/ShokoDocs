@@ -12,6 +12,8 @@ sass:
 gems:
   - jekyll-sitemap
 
+exclude: ['README.markdown', 'Gemfile.lock', 'Gemfile', "README.md", "CNAME", "templates"]
+
 kramdown:
   auto_ids: true
   footnote_nr: 1
