@@ -36,20 +36,20 @@ permalink: server/setup.html
 		<h2 id="mandatory">Do I Need To Install Shoko Server?</h2>
 		<p>The short answer, <strong>Yes</strong>.</p>
 		<p> Shoko Server is the back-end of the entire Shoko suite, every single program and plugin provided uses it for
-			accessing and maintaining your anime collection. This also means Shoko Server <strong>must be running</strong>
-			to use any of the programs or plugins that connect to it. With the exception of file importing, Shoko Server
-			is no more resource intensive than other programs you probably have running in the background with </p>
+			accessing and maintaining your anime collection. This also means Shoko Server <strong>must be running</strong> to
+			use any of the programs or plugins that connect to it. With the exception of file importing, Shoko Server is no
+			more resource intensive than other programs you probably have running in the background with </p>
 	</section>
 	<section>
 		<h2 id="database-type">Selecting A Database Type</h2>
 		<div class="row">
 			<div class="col-sm-8">
 				<p>The first thing you'll need to do is <a href="http://shokoanime.com/downloads/#stable-releases"
-															target="_blank">download Shoko Server</a>, extract it and install
-					it. Administrator rights are required to install and for the initial run, however after that you can run
-					as a normal use. </p>
-				<p>Once installed, Shoko Server will prompt you to select a <strong>Database Type</strong> to use for your
-					anime collection, we currently offer three different database options.</p>
+				                                           target="_blank">download Shoko Server</a>, extract it and install it.
+					Administrator rights are required to install and for the initial run, however after that you can run as a
+					normal use. </p>
+				<p>Once installed, Shoko Server will prompt you to select a <strong>Database Type</strong> to use for your anime
+					collection, we currently offer three different database options.</p>
 				<table class="table table-striped">
 					<thead>
 					<tr>
@@ -76,18 +76,18 @@ permalink: server/setup.html
 					</tr>
 					</tbody>
 				</table>
-				<p>Out of the three available database options available, SQLite is the easiest one to install, you simply
-					click <strong>Save and Start Server</strong> and Shoko Server does the rest. The drawback to using SQLite
-					is it's not designed to properly handle large anime collections that contain over 200 series. While
-					improvements have been made to make SQLite more usable with larger collections, we still recommend using
-					either MySQL or SQL Server. </p>
+				<p>Out of the three available database options available, SQLite is the easiest one to install, you simply click
+					<strong>Save and Start Server</strong> and Shoko Server does the rest. The drawback to using SQLite is it's
+					not designed to properly handle large anime collections that contain over 200 series. While improvements have
+					been made to make SQLite more usable with larger collections, we still recommend using either MySQL or SQL
+					Server. </p>
 				<p>The remaining two database options, MySQL and SQL Server are both designed to handle and maintain large
-					databases making them ideal if your anime collection currently exceeds 200 series or if you believe it
-					will sometime in the future. Both MySQL and SQL Server have also benefited from the addition of the
-					database cache providing allowing Shoko to access your data faster reducing loading times. </p>
-				<p>Both MySQL and SQL Server are standalone installs so you'll need to install one of them first if you'd
-					like to use it with Shoko Server. Select <strong>Database Setup</strong> from the menu on the left for
-					more information on how to install either MySQL or SQL Server.</p>
+					databases making them ideal if your anime collection currently exceeds 200 series or if you believe it will
+					sometime in the future. Both MySQL and SQL Server have also benefited from the addition of the database cache
+					providing allowing Shoko to access your data faster reducing loading times. </p>
+				<p>Both MySQL and SQL Server are standalone installs so you'll need to install one of them first if you'd like
+					to use it with Shoko Server. Select <strong>Database Setup</strong> from the menu on the left for more
+					information on how to install either MySQL or SQL Server.</p>
 			</div>
 			<div class="col-sm-4"><a href="../assets/img/server/Shoko-Server-Select-Database.png" data-lity><img
 					src="../assets/img/server/Shoko-Server-Select-Database.png" class="img-responsive img-thumbnail"
@@ -105,8 +105,8 @@ permalink: server/setup.html
 		<ul class="nav nav-tabs" role="tablist">
 			<li role="presentation" class="active"><a href="#mysql" aria-controls="home" role="tab" data-toggle="tab">Using
 				MySQL With Shoko Server</a></li>
-			<li role="presentation"><a href="#sqlserver" aria-controls="profile" role="tab" data-toggle="tab">Using SQL
-				Server With Shoko Server</a></li>
+			<li role="presentation"><a href="#sqlserver" aria-controls="profile" role="tab" data-toggle="tab">Using SQL Server
+				With Shoko Server</a></li>
 		</ul>
 
 		<!-- Tab panes -->
@@ -115,8 +115,8 @@ permalink: server/setup.html
 				<div class="row">
 					<div class="col-sm-8">
 						<p>Once you've installed MySQL, it's time to setup Shoko Server to use it.</p>
-						<p>From the <strong>Database Type</strong> drop-down menu select <strong>MySQL</strong>, you'll be asked
-							to input information related to your MySQL setup.</p>
+						<p>From the <strong>Database Type</strong> drop-down menu select <strong>MySQL</strong>, you'll be asked to
+							input information related to your MySQL setup.</p>
 						<table class="table table-striped">
 							<thead>
 							<tr>
@@ -185,16 +185,16 @@ permalink: server/setup.html
 							</tr>
 							</tbody>
 						</table>
-						<p>If everything was inputted correctly, Shoko Server will connect to SQL Server, create and populate
-							your database.</p>
+						<p>If everything was inputted correctly, Shoko Server will connect to SQL Server, create and populate your
+							database.</p>
 						<div class="bs-callout bs-callout-danger">
 							<h4>Failed to start. Please review database settings</h4>
 							<p>If you're getting this error message you'll need to install two additional files.</p>
 						</div>
 						<p>For compatibility reasons, Shoko Server uses an older version of a <strong>Microsoft.SqlServer.SqlClrProvider.dll</strong>
 							which can be <a href="https://www.microsoft.com/en-us/download/details.aspx?id=27596" target="_blank">downloaded
-								from Microsoft</a>, however we don’t need to install the entire Microsoft SQL Server 2008 Feature
-							Pack, just the following files.</p>
+								from Microsoft</a>, however we don’t need to install the entire Microsoft SQL Server 2008 Feature Pack,
+							just the following files.</p>
 						<table class="table table-striped">
 							<thead>
 							<tr>
@@ -226,14 +226,14 @@ permalink: server/setup.html
 	<section>
 		<h2 id="shoko-server-installed">Shoko Server Installed</h2>
 		<p>Now that you've installed Shoko Server and finished the initial setup, it's time to Configure Shoko Server to
-			start building your anime collection. Using the menu on the left, select <strong>Configuring Shoko
-				Server</strong> and go through each tab. We recommend starting at the <strong>Settings</strong> tab.</p>
+			start building your anime collection. Using the menu on the left, select <strong>Configuring Shoko Server</strong>
+			and go through each tab. We recommend starting at the <strong>Settings</strong> tab.</p>
 	</section>
 	<section class="github-callout">
 		<div class="bs-callout bs-callout-primary">
 			<h4>Help Make This Page Better</h4>
-			<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it
-				and update it, instead make the update yourself so the community can benefit from it.</p>
+			<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it and
+				update it, instead make the update yourself so the community can benefit from it.</p>
 			<a href="https://github.com/japanesemediamanager/ShokoDocs/blob/master/server/setup.html" target="_blank">Setup
 				Shoko Server on GitHub</a></div>
 	</section>

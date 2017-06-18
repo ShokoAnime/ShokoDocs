@@ -11398,7 +11398,8 @@ body[data-spy] {
 
 .navbar-default .navbar-nav > li > a:focus,
 .navbar-default .navbar-nav > li > a:hover {
-	color: #fff
+	color: #63C6AE;
+	transition: .2s ease;
 	}
 
 .navbar-default .navbar-nav > .active > a,
@@ -11738,7 +11739,9 @@ h3 a:before {
 
 .sidenav.dropable.sticky {
 	width: 100%;
-	max-width: 267px
+	max-width: 267px;
+	height: auto !important;
+	top: 50px !important;
 	}
 
 @media screen and (max-width: 768px) {

@@ -32,10 +32,10 @@ permalink: server/import.html
 	<section>
 		<h2 id="actions-info">What Is The Import Tab?</h2>
 		<p>The Import Folders tab is where you'll manage all your import folders that Shoko uses. A <strong>Import
-			Folder</strong> is a local, network or cloud location that contains your anime files. Depending on how each
-			folder is setup in Shoko, different options are available and different tasks for that import folder are
-			preformed. There is no max limit to the number of Import Folders you can have but you are required to have
-			<strong>One Import Folder</strong> in order to use Shoko.</p>
+			Folder</strong> is a local, network or cloud location that contains your anime files. Depending on how each folder
+			is setup in Shoko, different options are available and different tasks for that import folder are preformed. There
+			is no max limit to the number of Import Folders you can have but you are required to have <strong>One Import
+				Folder</strong> in order to use Shoko.</p>
 		<h2 id="how-long-import">How Long Will Importing Take?</h2>
 		<div class="row">
 			<div class="col-sm-8">
@@ -50,7 +50,10 @@ permalink: server/import.html
 					series, then additional commands are added to the <strong>General Worker</strong> to pull the needed data for
 					the series from The TvDB.</p>
 				<h5>3. Downloading Additional Data</h5>
-				<p>If the file belongs to a new series, information related to the series and each episode in the series is downloaded from The TvDB. If additional community sites are enabled, such as MAL or Trakt.TV then additional commands are added to the <strong>General Worker</strong> to update the metadata on your profile on those sites.</p>
+				<p>If the file belongs to a new series, information related to the series and each episode in the series is
+					downloaded from The TvDB. If additional community sites are enabled, such as MAL or Trakt.TV then additional
+					commands are added to the <strong>General Worker</strong> to update the metadata on your profile on those
+					sites.</p>
 				<h3>Available Options</h3>
 				<table class="table table-striped">
 					<thead>
@@ -68,8 +71,8 @@ permalink: server/import.html
 					</tr>
 					<tr>
 						<td>New Folder</td>
-						<td>Allows you to add a new Import Folder for use with Shoko Server. For additional information on
-							adding an Import Folder, please see the section below.
+						<td>Allows you to add a new Import Folder for use with Shoko Server. For additional information on adding an
+							Import Folder, please see the section below.
 						</td>
 					</tr>
 					</tbody>
@@ -87,12 +90,11 @@ permalink: server/import.html
 		<div class="row">
 			<div class="col-sm-8">
 				<p>Click<strong> New Folder</strong> to add a import folder for your collection.</p>
-				<p>A new window will open allowing you to specify the import folder's settings. To make things easier and
-					reduce the chance of making a mistake, we recommend clicking the <strong>Folder Icon</strong> to select
-					the location of the import folder. If your import folders are external hard drives, network drives or
-					hosted on the cloud, make sure to update their locations if they happen to change. Otherwise you'll start
-					to receive errors and depending on the actions you run, the entries for those files in your database could
-					be deleted.
+				<p>A new window will open allowing you to specify the import folder's settings. To make things easier and reduce
+					the chance of making a mistake, we recommend clicking the <strong>Folder Icon</strong> to select the location
+					of the import folder. If your import folders are external hard drives, network drives or hosted on the cloud,
+					make sure to update their locations if they happen to change. Otherwise you'll start to receive errors and
+					depending on the actions you run, the entries for those files in your database could be deleted.
 				</p>
 				<p>Once done click the <strong>Save</strong> button to add your import folder.</p>
 				<table class="table table-striped">
@@ -105,10 +107,10 @@ permalink: server/import.html
 					<tbody>
 					<tr>
 						<td>Provider</td>
-						<td> The Import Folder type, if you've added a <strong>Cloud Account</strong> you'll be able to select
-							it otherwise <strong>Local File System</strong> will be selected by default. Please note, Import
-							Folders are linked to a <strong>Single </strong><strong>Provider</strong> and <strong>cannot be used
-								with</strong> <strong>Import Folders from another Provider</strong>,
+						<td> The Import Folder type, if you've added a <strong>Cloud Account</strong> you'll be able to select it
+							otherwise <strong>Local File System</strong> will be selected by default. Please note, Import Folders are
+							linked to a <strong>Single </strong><strong>Provider</strong> and <strong>cannot be used with</strong>
+							<strong>Import Folders from another Provider</strong>,
 						</td>
 					</tr>
 					<tr>
@@ -120,27 +122,26 @@ permalink: server/import.html
 					</tr>
 					<tr>
 						<td>Drop Source</td>
-						<td>An Import Folder marked as a Drop Source will have it's files moved to the folder marked as a
-							<strong>Drop Destination</strong>. To have Shoko Server moves files automatically from a Drop Source
-							once detected, make sure to enable <strong>Watch For New Files</strong> for the that Drop Source.
+						<td>An Import Folder marked as a Drop Source will have it's files moved to the folder marked as a <strong>Drop
+							Destination</strong>. To have Shoko Server moves files automatically from a Drop Source once detected,
+							make sure to enable <strong>Watch For New Files</strong> for the that Drop Source.
 						</td>
 					</tr>
 					<tr>
 						<td>Drop Destination</td>
-						<td>Used in conjunction with at lease one <strong>Drop Source</strong>. All files will be moved and
-							sorted into the specified <strong>Drop Destination</strong> with files belonging to the same series
-							automatically grouped up and placed in a new folder with the series named based on your <strong>Preferred
-								Language Preference</strong> setting. You<strong> </strong>can only have one <strong>Drop
-								Destination per Provider</strong> and cannont use <strong>Drop Sources</strong> from a different
-							Provider.
+						<td>Used in conjunction with at lease one <strong>Drop Source</strong>. All files will be moved and sorted
+							into the specified <strong>Drop Destination</strong> with files belonging to the same series automatically
+							grouped up and placed in a new folder with the series named based on your <strong>Preferred Language
+								Preference</strong> setting. You<strong> </strong>can only have one <strong>Drop Destination per
+								Provider</strong> and cannont use <strong>Drop Sources</strong> from a different Provider.
 						</td>
 					</tr>
 					<tr>
 						<td>Watch For New Files</td>
-						<td>An Import Folder marked with <strong>Watch For New Files </strong>will have any files detected
-							imported into your collection. Useful if use a custom sorting solution and don't want Shoko Server
-							moving your files for you and don't want to have to manually execute <strong>Run Import</strong> each
-							time you add files to your Import Folder.
+						<td>An Import Folder marked with <strong>Watch For New Files </strong>will have any files detected imported
+							into your collection. Useful if use a custom sorting solution and don't want Shoko Server moving your
+							files for you and don't want to have to manually execute <strong>Run Import</strong> each time you add
+							files to your Import Folder.
 						</td>
 					</tr>
 					</tbody>
@@ -156,8 +157,8 @@ permalink: server/import.html
 	<section class="github-callout">
 		<div class="bs-callout bs-callout-primary">
 			<h4>Help Make This Page Better</h4>
-			<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it
-				and update it, instead make the update yourself so the community can benefit from it.</p>
+			<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it and
+				update it, instead make the update yourself so the community can benefit from it.</p>
 			<a href="https://github.com/japanesemediamanager/ShokoDocs/blob/master/server/import.html" target="_blank">Shoko
 				Server - Import Tab on GitHub</a></div>
 	</section>
