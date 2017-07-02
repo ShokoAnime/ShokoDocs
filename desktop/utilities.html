@@ -27,252 +27,317 @@ permalink: desktop/utilities.html
 		<p>The Utilities allows you to finetune Shoko to manage your collection.</p>
 		<script language="javascript" src="../assets/js/breadnav.js"></script>
 	</header>
+
 	<section>
-		<h2>Unrecognized</h2>
-		<p>
-			In the Unrecognized tab you will find all the files that shoko was not able to recognize automatically.
-			This could be due to multiple reasons:
-			<ul>
-				<li>Unknown release</li>
-				<li>Failed Hash</li>
-				<li>Not a video file</li>
-			</ul>
-			A few functions are available to you to manage all the files in Bulk:
-			<div class="row">
-				<div class="col-sm-8">
-					<table  class="table table-striped">
-						<thead>
-							<tr>
-								<th width="20%">Available Actions</th>
-								<th>Description</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									Refresh
-								</td>
-								<td>
-									The Refresh button will refresh your view, and add any files that might not have been cached to the Desktop Client.
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Rescan All
-								</td>
-								<td>
-									Forces ShokoServer to rescan AniDB for your unrecognized files with the current Hash.
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Rehash All
-								</td>
-								<td>
-									Forces ShokoServer to rehash the files, this will be usefull when a hash runs into issues.
-								</td>
-							</tr>			
-							<tr>
-								<td>
-									Search / Logs
-								</td>
-								<td>
-									Self-explanatory, search the list, or view the log.
-								</td>
-							</tr>			
-						</tbody>
-					</table>
-					<p>
-						When you select an unrecognized file you will receive a few more options besides the Rescan and Rehash as described above (but these will only run for the selected files).<br/>
-						<br/>
-
-					</p>
-				</div>
-				<div class="col-sm-4">
-					<a href="../assets/img/desktop/utilities/unrecognized-batch.png" data-lity>
-						<img src="../assets/img/desktop/utilities/unrecognized-batch.png" class="img-responsive img-thumbnail" alt="Shoko Desktop - Unrecognized"/>
-					</a>
-					<figcaption>
-						Unrecognized - Batch Options
-					</figcaption>
-
-					<a href="../assets/img/desktop/utilities/unrecognized.png" data-lity>
-						<img src="../assets/img/desktop/utilities/unrecognized.png" class="img-responsive img-thumbnail" alt="Shoko Desktop - Unrecognized"/>
-					</a>
-					<figcaption>
-						Unrecognized - File Options
-					</figcaption>
-
-				</div>
-
-			</div>
-			<div class="row">
-				<div class="col-sm-8">
-					Next to rescanning or rehashing the files, you can also manually link a file to an existing (or new) series, this will be usefull when there is no AniDB Hash yet.<br>
-					<br>
-					To manually link a file to an episode or movie, after selecting the file, select the series you want the file to be connected with, choose the episode number (or range of episodes, Shoko will try to match the number of the episodes in bulk this way), and press Confirm at the top.<br/>
-					<br/>
-				</div>
-				<div class="col-sm-4">
-					<a href="../assets/img/desktop/utilities/manual-link.png" data-lity>
-						<img src="../assets/img/desktop/utilities/manual-link.png" class="img-responsive img-thumbnail" alt="Shoko Desktop - Unrecognized"/>
-					</a>
-					<figcaption>
-						Unrecognized - Manual Link
-					</figcaption>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-8">
-					To add a new series press the "New Series" and use the Search window to add the series to your Collection. Then link the file as you would with an existing Series.<br/>
-				</div>
-				<div class="col-sm-4">
-					<a href="../assets/img/desktop/utilities/unrecognized-manual-link-new-series.png" data-lity>
-						<img src="../assets/img/desktop/utilities/unrecognized-manual-link-new-series.png" class="img-responsive img-thumbnail" alt="Shoko Desktop - Unrecognized"/>
-					</a>
-					<figcaption>
-						Unrecognized - New Series
-					</figcaption>
-				</div>
+		<h2 id="unrecognized">Unrecognized</h2>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>
+					When importing your files to build your collection, any file that Shoko Server is unable to find on AniDB (by
+					matching hashes) will be listed in the unrecognized tab. Keep in mind that just because a file is listed as
+					unrecognized, it does not always mean a record for that series, episode, movie or special does not exist on
+					AniDB. It simply means that that the version or file you have in your collection is not known to AniDB.
+				</p>
+				<p>There are a various reasons as to why your file ended up in the unrecognized list, they usually all fit into
+					one of the following groups.</p>
+				<ul>
+					<li>Unknown Release</li>
+					<li>Error When Hashing</li>
+					<li>Corrupted File</li>
+					<li>Not a Video File</li>
+				</ul>
+				<p>It’s important to note that a corrupted file does not mean a broken file, in other words just because a file
+					is corrupt it does not mean the file has playback issues. What usually happens is the copy you downloaded has
+					slight variations from the official source which results in the CRC32 hash value and hash being different
+					which is why the file is unrecognized. If this is the case then <strong>you should not submit your file to
+						AniDB </strong> as it will be rejected, instead it needs to be Manually Linked. If the file has never been
+					submitted before then there will be nothing to check against which is why the file is unrecognized. You can
+					submit the file to AniDB using AVDump2 which will add the file which will benefit all users of Shoko. To
+					check, simply navigate to the episode on AniDB to which the file corresponds too and look for an entry form
+					the release group you have, if it's there then the file you have is corrupted, if it's not then you can add
+					it.</p>
 			</div>
 
-			<br/>
-
-			Alternatively press the Ignore button to ignore the file so that Shoko will not try to match the file in the future.<br/>
-
-		</p>
-
-
-
-
-	</section>
-	<section>
-		<h2>Ignored</h2>
-		<p>
-			This displays the list of Ignored files. You can do a few things with these files.
-			<div class="row">
-				<div class="col-sm-8">
-					<table class="table table-striped">
-						<thead>
-							<tr>
-								<th width="20%">Available Actions</th>
-								<th>Description</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									Play
-								</td>
-								<td>
-									Play the file
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Delete
-								</td>
-								<td>
-									Delete the file from the system
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Restore
-								</td>
-								<td>
-									Restore the file to the Unrecognized tab
-								</td>
-							</tr>			
-							<tr>
-								<td>
-									Open Folder
-								</td>
-								<td>
-									Open the folder where the file is located
-								</td>
-							</tr>			
-						</tbody>
-					</table>
-				</div>
-				<div class="col-sm-4">
-					<a href="../assets/img/desktop/utilities/ignored-main.png" data-lity>
-						<img src="../assets/img/desktop/utilities/ignored-main.png" class="img-responsive img-thumbnail" alt="Shoko Desktop - Unrecognized"/>
-					</a>
-					<figcaption>
-						Ignored files
+			<div class="col-sm-4">
+				<figure class="figure">
+					<a href="../assets/img/desktop/utilities/Shoko-Desktop-Utilities-Unrecognized-Main.png" data-lity> <img
+							src="../assets/img/desktop/utilities/Shoko-Desktop-Utilities-Unrecognized-Main.png"
+							class="img-responsive img-thumbnail"
+							alt="Shoko Desktop - Unrecognized Overview"/> </a>
+					<figcaption class="figure-caption">
+						Shoko Desktop - Unrecognized Overview
 					</figcaption>
-				</div>
-			</p>
+				</figure>
+			</div>
+		</div>
+
+		<h3 id="unrecognized-toolbar">Unrecognized Toolbar</h3>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>At the top of the Unrecognized List is the Unrecognized Toolbar which provides you with some useful file
+					options. </p>
+				<table class="table table-striped">
+					<thead>
+					<tr>
+						<th width="20%">Button</th>
+						<th>Description</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>Refresh</td>
+						<td>The Refresh button will refresh your view, and add any files that have been added since initially
+							selecting the Unrecognized utility.
+						</td>
+					</tr>
+					<tr>
+						<td>Search</td>
+						<td>Useful for users with a lot of unrecognized files, will search through the unrecognized list for the
+							parameter you've specified.
+						</td>
+					</tr>
+					<tr>
+						<td>Rescan All</td>
+						<td>Rescans the file(s) sending the file(s) <strong>current hash</strong> to AniDB to check for a match,
+							useful for newer files or obscure fansub groups.
+						</td>
+					</tr>
+					<tr>
+						<td>Rehash All</td>
+						<td>Rehashes the file(s) sending the file(s) <strong>new hash</strong> to AniDB to check for a match, useful
+							for files that encountered an issue during the initial hashing.
+						</td>
+					</tr>
+					<tr>
+						<td>Logs</td>
+						<td>Opens the location of the log folder for Shoko Desktop.</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="col-sm-4">
+				<figure class="figure">
+					<a href="../assets/img/desktop/utilities/Shoko-Desktop-Utilities-Unrecognized-Toolbar.png"
+							data-lity> <img
+							src="../assets/img/desktop/utilities/Shoko-Desktop-Utilities-Unrecognized-Toolbar.png"
+							class="img-responsive img-thumbnail"
+							alt="Shoko Desktop - Manual Episode Linking"/> </a>
+					<figcaption class="figure-caption">
+						Shoko Desktop - Unrecognized Toolbar
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+
+		<h3 id="linking-options"> Linking Options</h3>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>The first two sections, <strong>Link Confirm</strong> and <strong>Link Setup</strong> deal with manually
+					linking your unrecognized file, for example if the file is corrupted or a custom encode. </p>
+				<p>After selecting the file or files, select the <strong>Series</strong> the files are apart of. If you are
+					linking a single episode then select the <strong>Single Episode</strong> option in the box below the series
+					box and the <strong>Actual Episode</strong> in the second box. If you have selected multiple unrecognized
+					files then select the <strong>Episode Range </strong>option in the first box and input the episode range in
+					the input fields. In the event that an entire series is listed in the unrecognized files list, you may have to
+					first manually add the series. Click the <strong>New Series</strong> button and follow the steps to manually
+					add the series.
+				</p>
+			</div>
+
+			<div class="col-sm-4">
+				<figure class="figure">
+					<a href="../assets/img/desktop/utilities/Shoko-Desktop-Utilities-Unrecognized-Manual-Options.png"
+							data-lity> <img
+							src="../assets/img/desktop/utilities/Shoko-Desktop-Utilities-Unrecognized-Manual-Options.png"
+							class="img-responsive img-thumbnail"
+							alt="Shoko Desktop - Manual Episode Linking"/> </a>
+					<figcaption class="figure-caption">
+						Shoko Desktop - Manual Episode Linking
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+
+		<h3 id="file-options"> File Options</h3>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>When you select a file, a panel will display below <strong>Link Setup</strong> showing a array of file
+					options and file info. </p>
+
+				<table class="table table-striped">
+					<thead>
+					<tr>
+						<th width="20%">Button</th>
+						<th>Description</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>Play</td>
+						<td>Opens the file in your selected video player for playback.</td>
+					</tr>
+					<tr>
+						<td>Delete</td>
+						<td>Deletes the selected file.</td>
+					</tr>
+					<tr>
+						<td>Ignore</td>
+						<td>Marks the file as ignored, files marked as ignored will not show up on the unrecognized files list.</td>
+					</tr>
+					<tr>
+						<td>Rescan</td>
+						<td>Rescans the file(s) sending the file(s) <strong>current hash</strong> to AniDB to check for a match,
+							useful for newer files or obscure fansub groups.</td>
+					</tr>
+					<tr>
+						<td>Rehash</td>
+						<td>Rehashes the file(s) sending the file(s) <strong>new hash</strong> to AniDB to check for a match, useful
+							for files that encountered an issue during the initial hashing.</td>
+					</tr>
+					<tr>
+						<td>AvDump2</td>
+						<td>Sends the file to the AniDB AvDump utility.</td>
+					</tr>
+					<tr>
+						<td>Open Folder</td>
+						<td>Opens the folder where the selected file is. Please note, this option is not available if the file is
+							located on a <strong>Cloud Provider</strong>.</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="col-sm-4">
+				<figure class="figure">
+					<a href="../assets/img/desktop/utilities/Shoko-Desktop-Utilities-Unrecognized-File-Info.png"
+							data-lity> <img
+							src="../assets/img/desktop/utilities/Shoko-Desktop-Utilities-Unrecognized-File-Info.png"
+							class="img-responsive img-thumbnail"
+							alt="Shoko Desktop - File Info"/> </a>
+					<figcaption class="figure-caption">
+						Shoko Desktop - File Info
+					</figcaption>
+				</figure>
+			</div>
 		</div>
 	</section>
 
 	<section>
-		<h2>Manually Linked</h2>
-		<p>
-			The list of all files that were manually linked to their series / episode.
-			<div class="row">
-				
-				<div class="col-sm-8">
-					The "Rescan All" button will force ShokoServer to scan AniDB if a release is available for all of the files in the list.
+		<h2 id="ignored">Ignored</h2>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>The Ignored utility shows all files that you've previously marked as <strong>Ignored</strong> when previously
+					sorting through your <strong>Unrecognized</strong> files. </p>
 
-					When opening the file info by pressing the + you will receive some more options for the specific file. 
-					<table class="table table-striped">
-						<thead>
-							<tr>
-								<th width="20%">Available Actions</th>
-								<th>Description</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									Play
-								</td>
-								<td>
-									Play the file
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Rescan
-								</td>
-								<td>
-									Force a scan of AniDB
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Delete Link
-								</td>
-								<td>
-									Remove the link to the series/episode and place the file back into the Unrecognized List
-								</td>
-							</tr>			
-						</tbody>
-					</table>
-				</div>
-				<div class="col-sm-4">
-					<a href="../assets/img/desktop/utilities/manually-linked-top.png" data-lity>
-						<img src="../assets/img/desktop/utilities/manually-linked-top.png" class="img-responsive img-thumbnail" alt="Shoko Desktop - Unrecognized"/>
-					</a>
-					<a href="../assets/img/desktop/utilities/manually-linked-item.png" data-lity>
-						<img src="../assets/img/desktop/utilities/manually-linked-item.png" class="img-responsive img-thumbnail" alt="Shoko Desktop - Unrecognized"/>
-					</a>
-					<figcaption>
-						Manually Linked
+				<table class="table table-striped">
+					<thead>
+					<tr>
+						<th width="20%">Button</th>
+						<th>Description</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>Play</td>
+						<td>Opens the file in your selected video player for playback.</td>
+					</tr>
+					<tr>
+						<td>Delete</td>
+						<td>Deletes the selected file.</td>
+					</tr>
+					<tr>
+						<td>Restore</td>
+						<td>Removes the ignored flag adding the file back to the Unrecognized list.
+						</td>
+					</tr>
+					<tr>
+						<td>Open Folder</td>
+						<td>Opens the folder where the selected file is. Please note, this option is not available if the file is
+							located on a <strong>Cloud Provider</strong>.
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="col-sm-4">
+				<figure class="figure">
+					<a href="../assets/img/desktop/utilities/Shoko-Desktop-Utilities-Ignored-Main.png" data-lity> <img
+							src="../assets/img/desktop/utilities/Shoko-Desktop-Utilities-Ignored-Main.png"
+							class="img-responsive img-thumbnail"
+							alt="Shoko Desktop - Ignored Overview"/> </a>
+					<figcaption class="figure-caption">
+						Shoko Desktop - Ignored Overview
 					</figcaption>
-				</div>
+				</figure>
+			</div>
+		</div>
+	</section>
 
-			</p>
-		</section>
+	<section>
+		<h2 id="manually-linked">Manually Linked</h2>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>All files that you've manually linked in the <strong>Unrecognized</strong> utility will be listed here to
+					keep track of files in your collection that do not have a corresponding hash on AniDB. The Manually Linked
+					toolbar will not be covered below as it's a reduced version of the <a href="#unrecognized-toolbar">
+						Unrecognized Toolbar</a>.</p>
 
-		<section class="github-callout">
-			<div class="bs-callout bs-callout-primary">
-				<h4>Help Make This Page Better</h4>
-				<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it and
-					update it, instead make the update yourself so the community can benefit from it.</p>
-					<a href="https://github.com/japanesemediamanager/ShokoDocs/blob/master/desktop/utilities.html"
+				<table class="table table-striped">
+					<thead>
+					<tr>
+						<th width="20%">Available Actions</th>
+						<th>Description</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>Play</td>
+						<td>Opens the file in your selected video player for playback.</td>
+					</tr>
+					<tr>
+						<td>Rescan</td>
+						<td>Rescans the file(s) sending the file(s) <strong>current hash</strong> to AniDB to check for a match,
+							useful for newer files or obscure fansub groups.</td>
+					</tr>
+					<tr>
+						<td>Delete</td>
+						<td>Removes the link to the series/episode and places the file back into the Unrecognized List</td>
+					</tr>
+					<tr>
+						<td>AvDump2</td>
+						<td>Sends the file to the AniDB AvDump utility.</td>
+					</tr>
+					<tr>
+						<td>File Info</td>
+						<td>Shows the series and episode the file is linked to.</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="col-sm-4">
+				<figure class="figure">
+					<a href="../assets/img/desktop/utilities/Shoko-Desktop-Utilities-Manual-Link.png" data-lity> <img
+							src="../assets/img/desktop/utilities/Shoko-Desktop-Utilities-Manual-Link.png"
+							class="img-responsive img-thumbnail"
+							alt="Shoko Desktop - Manual Link"/> </a>
+					<figcaption class="figure-caption">
+						Shoko Desktop - Manual Link
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+	</section>
+
+	<section class="github-callout">
+		<div class="bs-callout bs-callout-primary">
+			<h4>Help Make This Page Better</h4>
+			<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it and
+				update it, instead make the update yourself so the community can benefit from it.</p>
+			<a href="https://github.com/japanesemediamanager/ShokoDocs/blob/master/desktop/utilities.html"
 					target="_blank">Shoko Desktop - Utilities Tab on GitHub</a></div>
-				</section>
-			</article>
+	</section>
+
+</article>
