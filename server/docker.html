@@ -59,7 +59,7 @@ permalink: server/docker.html
 		</p>
 		<p>However, this won't be enough to keep a persistent ShokoServer instance running. We will add a few things to the
 			docker command to make sure we can survive a reboot after we make some changes. </p>
-		<pre class=".pre-scrollable">docker run -p 8111:8111 <b>-v "/path/to/config:/root/.shoko" -v "/path/to/webui:/usr/src/app/build/webui"</b> cazzar/shokoserver</pre>
+		<pre class=".pre-scrollable">docker run -p 8111:8111 <b>-v "/path/to/config:/.shoko" -v "/path/to/webui:/usr/src/app/build/webui"</b> cazzar/shokoserver</pre>
 		<h3>Command Breakdown</h3>
 		<table class="table table-striped">
 			<thead>
@@ -71,7 +71,7 @@ permalink: server/docker.html
 			<tbody>
 			<tr>
 				<td>
-					<pre class=".pre-scrollable">-v "/path/to/config:/root/.shoko"</pre>
+					<pre class=".pre-scrollable">-v "/path/to/config:/.shoko"</pre>
 				</td>
 				<td>Link the configuration file to a folder on your disk. This will allow for portability ease of use for
 					updates.
@@ -93,7 +93,7 @@ permalink: server/docker.html
 			Destination. </p>
 		<p>To add folders we can add another <strong>-v</strong> flag, you can keep adding as many as you need (one <strong>-v</strong>
 			for every folder). </p>
-		<pre class=".pre-scrollable">docker run -p 8111:8111 -v "/path/to/config:/root/.shoko" -v "/path/to/webui:/usr/src/app/build/webui" <b>-v "/path/to/anime:/anime"</b> cazzar/shokoserver</pre>
+		<pre class=".pre-scrollable">docker run -p 8111:8111 -v "/path/to/config:/.shoko" -v "/path/to/webui:/usr/src/app/build/webui" <b>-v "/path/to/anime:/anime"</b> cazzar/shokoserver</pre>
 		<p>
 			With ShokoServer up and running you can connect to it with ShokoDesktop or the WebUI, and start managing your
 			collection.</p>
@@ -114,7 +114,7 @@ ports:
 - "8111:8111"
 volumes:
 - "/path/to/Anime:/anime"
-- "/path/to/config:/root/.shoko"
+- "/path/to/config:/.shoko"
 - "/path/to/webui:/usr/src/app/build/webui"</pre>
 		<p>
 			This combines all of our previous configuration in an easy to read and edit format, and will allow you to create a
