@@ -60,6 +60,7 @@ permalink: server/docker.html
 		<p>However, this won't be enough to keep a persistent ShokoServer instance running. We will add a few things to the
 			docker command to make sure we can survive a reboot after we make some changes. </p>
 		<pre class=".pre-scrollable">docker run -p 8111:8111 <b>-v "/path/to/config:/root/.shoko" -v "/path/to/webui:/usr/src/app/build/webui"</b> cazzar/shokoserver</pre>
+    <p>Note, if you run the Docker container as any user other than the default root user, the configuration will be written to <code>/.shoko</code> instead as no user profile folder will exist. In this case, ensure you adjust the volume mount so that the ShokoServer data is preserved.</p>
 		<h3>Command Breakdown</h3>
 		<table class="table table-striped">
 			<thead>
