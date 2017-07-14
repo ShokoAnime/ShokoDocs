@@ -83,6 +83,16 @@ permalink: /changelog.html
 			</tr>
 			<tr data-status="added">
 				<td><span class="change change-added"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoServer/issues/631" target="_blank">#631</a></td>
+				<td>Give out all images in api.</td>
+			</tr>
+			<tr data-status="added">
+				<td><span class="change change-added"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoServer/issues/638" target="_blank">#638</a></td>
+				<td>Right-click to open webui in windows taskbar.</td>
+			</tr>
+			<tr data-status="added">
+				<td><span class="change change-added"></span></td>
 				<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/3762235" target="_blank">3762235</a>
 				</td>
 				<td>Plex webhook completion including V1 implementation.</td>
@@ -99,6 +109,22 @@ permalink: /changelog.html
 				</td>
 				<td>Add some quote checking for file moving.</td>
 			</tr>
+			<tr data-status="added">
+				<td><span class="change change-added"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/184c6dd" target="_blank">184c6dd</a>
+				</td>
+				<td>Move AVDump to Server and Auto-download.</td>
+			</tr>
+			<tr data-status="updated">
+				<td><span class="change change-updated"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoServer/issue/111" target="_blank">#111</a></td>
+				<td>Stop file from being "hashed" when it is moved from the drop folder to the destination folder.</td>
+			</tr>
+			<tr data-status="updated">
+				<td><span class="change change-updated"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoServer/issue/247" target="_blank">#247</a></td>
+				<td>If the hasher is aborted due to file access timeout, don't add it to the database.</td>
+			</tr>
 			<tr data-status="updated">
 				<td><span class="change change-updated"></span></td>
 				<td><a href="https://github.com/japanesemediamanager/ShokoServer/issue/600" target="_blank">#600</a></td>
@@ -108,6 +134,24 @@ permalink: /changelog.html
 				<td><span class="change change-updated"></span></td>
 				<td><a href="https://github.com/japanesemediamanager/ShokoServer/pull/602" target="_blank">#602</a></td>
 				<td>Anidb http do not cache banned response.</td>
+			</tr>
+			<tr data-status="updated">
+				<td><span class="change change-updated"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoServer/pull/635" target="_blank">635</a>
+				</td>
+				<td>Check for blocked DLL files.</td>
+			</tr>
+			<tr data-status="updated">
+				<td><span class="change change-updated"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoServer/pull/639" target="_blank">639</a>
+				</td>
+				<td>Implement fail-safe for when files are added with no series/episode info.</td>
+			</tr>
+			<tr data-status="updated">
+				<td><span class="change change-updated"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/dc69c54" target="_blank">dc69c54</a>
+				</td>
+				<td>CMove All Network Serving to Nancy.</td>
 			</tr>
 			<tr data-status="updated">
 				<td><span class="change change-updated"></span></td>
@@ -241,10 +285,33 @@ permalink: /changelog.html
 				</td>
 				<td>Move TvDB xrefs and images to cache.</td>
 			</tr>
+			<tr data-status="updated">
+				<td><span class="change change-updated"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/877bd8d" target="_blank">877bd8d</a>
+				</td>
+				<td>Never decrease MAL watched episode count if user has set that in settings.</td>
+			</tr>
+			<tr data-status="updated">
+				<td><span class="change change-updated"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/ef901d1" target="_blank">ef901d1</a>
+				</td>
+				<td>Give VideoLocal DbRegen proper progress.</td>
+			</tr>
+			<tr data-status="updated">
+				<td><span class="change change-updated"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/55e1e1a" target="_blank">55e1e1a</a>
+				</td>
+				<td>Improve AVDump auto downloading.</td>
+			</tr>
 			<tr data-status="fixed">
 				<td><span class="change change-fixed"></span></td>
 				<td><a href="https://github.com/japanesemediamanager/ShokoServer/issues/445" target="_blank">#445</a></td>
 				<td>Series selection for renaming adds some files twice #445.</td>
+			</tr>
+			<tr data-status="fixed">
+				<td><span class="change change-fixed"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoServer/issues/558" target="_blank">#558</a></td>
+				<td>SQLite error, if server is killed while creating the database.</td>
 			</tr>
 			<tr data-status="fixed">
 				<td><span class="change change-fixed"></span></td>
@@ -394,7 +461,19 @@ permalink: /changelog.html
 				<td><span class="change change-fixed"></span></td>
 				<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/eaf3a41" target="_blank">eaf3a41</a>
 				</td>
-				<td>FFix a few bugs with TvDB linking and updating.</td>
+				<td>Fix a few bugs with TvDB linking and updating.</td>
+			</tr>
+			<tr data-status="fixed">
+				<td><span class="change change-fixed"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/39dd7db" target="_blank">39dd7db</a>
+				</td>
+				<td>Fix TvDB link messages.</td>
+			</tr>
+			<tr data-status="removed">
+				<td><span class="change change-removed"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoServer/commit/dc69c54" target="_blank">dc69c54</a>
+				</td>
+				<td>Remove WCF.</td>
 			</tr>
 			<tr data-status="removed">
 				<td><span class="change change-removed"></span></td>
@@ -758,6 +837,26 @@ permalink: /changelog.html
 				</td>
 				<td>Improvements to the Recommended To Watch Dashboard.</td>
 			</tr>
+			<tr data-status="updated">
+				<td><span class="change change-updated"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/cccd2ee" target="_blank">cccd2ee</a>
+				</td>
+				<td>Update Link strings.</td>
+			</tr>
+			<tr data-status="updated">
+				<td><span class="change change-updated"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/e3c0be8" target="_blank">e3c0be8</a>
+				</td>
+				<td>Update form now has proper version comparison and will only report update available if version found online
+					is higher.
+				</td>
+			</tr>
+			<tr data-status="updated">
+				<td><span class="change change-updated"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/f21e7a9" target="_blank">f21e7a9</a>
+				</td>
+				<td>Improvements to the Recommended To Watch Dashboard.</td>
+			</tr>
 			<tr data-status="fixed">
 				<td><span class="change change-fixed"></span></td>
 				<td><a href="https://github.com/japanesemediamanager/ShokoDesktop/issues/387" target="_blank">387</a>
@@ -841,6 +940,30 @@ permalink: /changelog.html
 				</td>
 				<td>Speed up, clean up, Fix some bugs, fix group filter saving, editing, and deleting.</td>
 			</tr>
+			<tr data-status="fixed">
+				<td><span class="change change-fixed"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/125b145" target="_blank">125b145</a>
+				</td>
+				<td>Fix unrecognized files' delete dialog text.</td>
+			</tr>
+			<tr data-status="fixed">
+				<td><span class="change change-fixed"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/29ef65c" target="_blank">29ef65c</a>
+				</td>
+				<td>Fix ShokoMetadata Plex Header and add Info section for it.</td>
+			</tr>
+			<tr data-status="fixed">
+				<td><span class="change change-fixed"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/01c8a67" target="_blank">01c8a67</a>
+				</td>
+				<td>Fix switching items when loading utility series matching in the background.</td>
+			</tr>
+			<tr data-status="fixed">
+				<td><span class="change change-fixed"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/24822b3" target="_blank">24822b3</a>
+				</td>
+				<td>Fixed next episode name in series view.</td>
+			</tr>
 			<tr data-status="removed">
 				<td><span class="change change-removed"></span></td>
 				<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/6e0088e" target="_blank">6e0088e</a>
@@ -858,6 +981,12 @@ permalink: /changelog.html
 				<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/0d50939" target="_blank">0d50939</a>
 				</td>
 				<td>Remove Downloads.</td>
+			</tr>
+			<tr data-status="removed">
+				<td><span class="change change-removed"></span></td>
+				<td><a href="https://github.com/japanesemediamanager/ShokoClient/commit/e136936" target="_blank">e136936</a>
+				</td>
+				<td>Move AVDump to Server.</td>
 			</tr>
 			</tbody>
 		</table>
