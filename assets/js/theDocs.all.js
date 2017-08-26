@@ -277,7 +277,8 @@ $(function() {
     }
     
     $(this).closest(".sidenav").find("> li > a").removeClass('open');
-    $(this).closest(".sidenav").find("ul:visible").slideUp(300);
+    $(this).closest(".sidenav").find("ul.dropable > li > a.open").removeClass('open');
+    $(this).closest(".sidenav").find("ul:visible").not(".dropable").slideUp(300);
     $(this).addClass('open').next("ul").slideDown(300, function() {
       update_scrollbar();
     });
