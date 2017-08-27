@@ -1399,9 +1399,11 @@ img {
 }
 
 .img-thumbnail {
-	display: inline-block;
-	max-width: 100%;
+	display: block;
+	width: auto;
+	max-width: 300px;
 	height: auto;
+	max-height: 300px;
 	padding: 4px;
 	line-height: 1.42857143;
 	background-color: #fff;
@@ -1409,7 +1411,8 @@ img {
 	border-radius: 4px;
 	-webkit-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out
+	transition: all .2s ease-in-out;
+	image-rendering: -webkit-optimize-contrast;
 }
 
 .img-circle {
@@ -1503,6 +1506,7 @@ hr {
 }
 
 p {
+	Color: #666;
 	margin: 0 0 10px
 }
 
@@ -11158,7 +11162,7 @@ body[data-spy] {
 		z-index: 99 !important;
 		-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2) !important;
 		box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2) !important;
-		background-color: #5cc7b2 !important;
+		background-color: #006cab !important;
 	}
 }
 
@@ -11308,7 +11312,7 @@ ul.dropable {
 	-webkit-transform: translateX(-14px);
 	-o-transform: translateX(-14px);
 	transform: translateX(-14px);
-	margin-left:20px;
+	margin-left: 20px;
 }
 
 .sidenav ul {
@@ -11327,7 +11331,7 @@ ul.dropable {
 .sidenav a.active, .sidenav a:hover {
 	text-decoration: none;
 	opacity: 1;
-	color: #5cc7b2;
+	color: #006cab;
 }
 
 .sidenav a.active {
@@ -11340,7 +11344,7 @@ ul.dropable {
 }
 
 .sidenav > li > a.active, .sidenav > li > a:hover {
-	color: #5cc7b2;
+	color: #006cab;
 }
 
 .sidenav > li {
@@ -11413,7 +11417,7 @@ ul.dropable {
 }
 
 .sidenav li.active > a {
-	color: #5cc7b2;
+	color: #006cab;
 }
 
 .sidebar-line .sidenav > li > ul:before {
@@ -11847,7 +11851,7 @@ body {
 a,
 a:focus,
 a:hover {
-	color: #5cc7b2;
+	color: #006cab;
 }
 
 a:focus {
@@ -11856,6 +11860,7 @@ a:focus {
 
 p,
 ul {
+	color: #666;
 	font-weight: 400;
 }
 
@@ -11927,6 +11932,7 @@ h6 {
 }
 
 h1, h2, h3, h4, h5, h6 {
+	color: #666;
 	font-family: "Nunito", sans-serif;
 }
 
@@ -11943,7 +11949,7 @@ h5 a:focus,
 h5 a:hover, h6 a,
 h6 a:focus,
 h6 a:hover {
-	color: #000000;
+	color: #666;
 	text-decoration: none;
 }
 
@@ -12897,11 +12903,11 @@ h2[id] {
 
 .tabs-text .nav-tabs > li.active {
 	margin-bottom: -1px;
-	border-bottom: 1px solid #5cc7b2;
+	border-bottom: 1px solid #006cab;
 }
 
 .tabs-text .nav-tabs > li.active a {
-	color: #5cc7b2;
+	color: #006cab;
 }
 
 .tabs-icon .nav-tabs > li a {
@@ -13760,6 +13766,7 @@ figcaption {
 	font-style: italic;
 	text-align: center;
 	color: #999;
+	padding-bottom: 20px;
 }
 
 .img-shadow {
