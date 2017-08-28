@@ -11865,8 +11865,8 @@ ul {
 }
 
 hr {
-	margin-top: 40px;
-	margin-bottom: 40px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 blockquote {
@@ -11880,7 +11880,7 @@ h1 {
 	font-weight: 200;
 	font-size: 52px;
 	line-height: 52px;
-	margin-bottom: 45px;
+	margin-bottom: 25px;
 }
 
 h2 {
@@ -13766,7 +13766,7 @@ figcaption {
 	font-style: italic;
 	text-align: center;
 	color: #999;
-	padding-bottom: 20px;
+	padding: 10px 0 10px 0;
 }
 
 .img-shadow {
@@ -14410,7 +14410,7 @@ figcaption {
 	border-radius: 0;
 	background-color: transparent;
 	border-bottom: 1px solid #e7e7e7;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 }
 
 /*------------------------------------
