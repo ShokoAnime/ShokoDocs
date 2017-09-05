@@ -1,0 +1,94 @@
+---
+layout: sub
+title: Shoko Server - Cloud Accounts Tab
+permalink: server/cloud.html
+---
+
+<!-- Sidebar -->
+<aside class="col-lg-2 col-md-3 col-sm-3 sidebar">
+	<ul class="nav sidenav dropable sticky">
+		<li><a href="index.html">Shoko Server Root</a></li>
+		<li class="hr-menu">
+			<hr/>
+		</li>
+		<li><a href="#supported-hosts">Supported Cloud Hosts</a></li>
+		<li><a href="#add-cloud">Adding A Cloud Host</a></li>
+		<li class="hr-menu">
+			<hr/>
+		</li>
+		<li><a href="../faq.html">Frequently Asked Questions</a></li>
+		<li><a href="../changelog.html">Changelog</a></li>
+	</ul>
+</aside>
+<!-- END Sidebar -->
+
+<!-- Main content -->
+<article class="col-lg-10 col-md-9 col-sm-9 main-content" role="main">
+	<header>
+		<h1>Cloud Accounts</h1>
+		<p>The Cloud Accounts tab allows users to add Cloud Accounts for use with Shoko. Once linked, users can map Import
+			Folders on their cloud and have their collection imported into Shoko Desktop.</p>
+		<script language="javascript" src="../assets/js/breadnav.js"></script>
+	</header>
+	<section>
+		<h2 id="supported-hosts">Supported Cloud Hosts</h2>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>We currently support the following cloud hosts. While we cannot guarantee we'll add your cloud host, if it's
+					not listed below you can always request support for it by creating an issue on GitHub.</p>
+				<ul>
+					<li>Amazon Cloud Drive</li>
+					<li>Google Drive</li>
+					<li>One Drive</li>
+				</ul>
+				<h3>Additional Information</h3>
+				<ul>
+					<li>If you remove a <strong>Cloud Account</strong>, all associated import folders and files will be removed
+						from your database.
+					</li>
+					<li>You cannot mix <strong>Import Folders</strong> from two different cloud accounts.</li>
+					<li>You cannot mix <strong>Local Import Folders</strong> with <strong>Cloud Import Folders</strong>.</li>
+					<li>If the Import Folder option <strong>Watch For New Files</strong> is selected, the import folder will be
+						checked <strong>every 3 minutes</strong> for new files.
+					</li>
+				</ul>
+			</div>
+			<div class="col-sm-4">
+				<a href="../assets/img/server/Shoko-Server-Cloud-Accounts-Tab.png"><img
+						src="../assets/img/server/Shoko-Server-Cloud-Accounts-Tab.png" class="img-responsive img-thumbnail"
+						alt="Shoko Server - Cloud Accounts Tab"/></a>
+				<figcaption>Shoko Server - Cloud Accounts Tab</figcaption>
+			</div>
+		</div>
+	</section>
+	<section>
+		<h2 id="add-cloud">Adding A Cloud Host</h2>
+		<div class="row">
+			<div class="col-sm-8">
+				<p>First click the <strong>Add Account</strong> button to open the <strong>Cloud Accounts</strong> window.
+				</p>
+				<p>Select the <strong>Service</strong> <strong>Provider</strong> you'd like to add then assign a
+					<strong>Name</strong> for the cloud account, you can name it whatever you'd like as it's just used as a
+					reference for you. Once your'e done click the <strong>Connect</strong> button, you'll be taken to your
+					selected <strong>Service Providers</strong> website where you'll be asked to login into your account. This is
+					what allows Shoko access to your cloud account, we don't store your username or password nor do you have to
+					input it each time Shoko access your cloud account. Read and follow all prompts, once done click the <strong>Save</strong>
+					button to add your cloud account. </p>
+			</div>
+			<div class="col-sm-4">
+				<a href="../assets/img/server/Shoko-Server-Cloud-Accounts-Add.png"><img
+						src="../assets/img/server/Shoko-Server-Cloud-Accounts-Add.png" class="img-responsive img-thumbnail"
+						alt="Shoko Server - Add Cloud Account"/></a>
+				<figcaption>Shoko Server - Add Cloud Account</figcaption>
+			</div>
+		</div>
+	</section>
+	<section class="github-callout">
+		<div class="bs-callout bs-callout-primary">
+			<h4>Help Make This Page Better</h4>
+			<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it and
+				update it, instead make the update yourself so the community can benefit from it.</p>
+			<a href="https://github.com/japanesemediamanager/ShokoDocs/blob/master/server/cloud.md" target="_blank">Shoko
+				Server - Cloud Accounts Tab on GitHub</a></div>
+	</section>
+</article>
