@@ -10,25 +10,25 @@ permalink: /changelog.html
 				<li class="menu-title">Changelog</li>
 				<li><a class="has-child" href="#shoko-server">Shoko Server</a>
 						<ul>
-								<li><a href="#s3800">Version 3.8.0.0 (In Development)</a></li>
+								<li><a href="#s3801">Version 3.8.0.1 (In Development)</a></li>
+								<li><a href="#s3800">Version 3.8.0.0 (2017-09-03)</a></li>
 								<li><a href="#s3706">Version 37.0.6 (2017-02-10)</a></li>
 								<li><a href="#s3705">Version 3.7.0.5 (2017-02-07)</a></li>
 								<li><a href="#s3704">Version 3.7.0.4 (2017-01-28)</a></li>
-								<li><a href="#s3703">Version 3.7.0.3 (2017-01-07)</a></li>
 						</ul>
 				</li>
 				<li><a class="has-child" href="#shoko-desktop">Shoko Desktop</a>
 						<ul>
-								<li><a href="#d3800">Version 3.8.0.0 (In Development)</a></li>
+								<li><a href="#s3801">Version 3.8.0.1 (In Development)</a></li>
+								<li><a href="#s3800">Version 3.8.0.0 (2017-09-03)</a></li>
 								<li><a href="#d3704">Version 3.7.0.4 (2017-01-28)</a></li>
 								<li><a href="#d3703">Version 3.7.0.3 (2017-01-07)</a></li>
 								<li><a href="#d3701">Version 3.7.0.1 (2016-12-29)</a></li>
-								<li><a href="#d3700">Version 3.7.0.0 (2016-12-26)</a></li>
 						</ul>
 				</li>
 				<li><a class="has-child" href="#ma3">My Anime 3</a>
 						<ul>
-								<li><a href="#m3750">Version 3.7.5.0 (In Development)</a></li>
+								<li><a href="#m3750">Version 3.7.1.0 (In Development)</a></li>
 								<li><a href="#m3703">Version 3.7.0.3 (2017-01-07)</a></li>
 								<li><a href="#m3701">Version 3.7.0.1 (2016-12-29)</a></li>
 								<li><a href="#m3700">Version 3.7.0.0 (2016-12-26)</a></li>
@@ -37,6 +37,7 @@ permalink: /changelog.html
 				</li>
 				<li><a class="has-child" href="#shoko-on-plex">Shoko On Plex</a>
 						<ul>
+								<li><a href="#p3710">Version 3.7.1.0 (In Development)</a></li>
 								<li><a href="#p3704">Version 3.7.0.4 (2017-05-22)</a></li>
 								<li><a href="#p3703">Version 3.7.0.3 (2017-01-07)</a></li>
 						</ul>
@@ -65,6 +66,53 @@ permalink: /changelog.html
 		</section>
 		<section>
 				<h2 class="header" id="shoko-server">Shoko Server</h2>
+				<h4 id="s3801">Version 3.8.0.1 (In Development)</h4>
+				<table class="table table-striped table-changelog">
+						<thead>
+						<tr data-status="head">
+								<th>Action</th>
+								<th>Git Link</th>
+								<th>Description</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr data-status="updated">
+								<td><span class="change change-updated"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoServer/commit/749942b" target="_blank">749942b</a></td>
+								<td>Improve AniDB-TvDB series matching by auto-linking series if air-date is a match.</td>
+						</tr>
+						<tr data-status="updated">
+								<td><span class="change change-updated"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoServer/commit/7fe4e19" target="_blank">7fe4e19</a></td>
+								<td>Remove and Recreate permission inheritance in installer</td>
+						</tr>
+						<tr data-status="fixed">
+								<td><span class="change change-fixed"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoServer/issue/668" target="_blank">#668</a></td>
+								<td>Fix AniDB login window generating two stacked instances or hiding behind main window. </td>
+						</tr>
+						<tr data-status="fixed">
+								<td><span class="change change-fixed"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoServer/issue/672" target="_blank">#672</a></td>
+								<td>Fix Duplicate entry for key UIX_CrossRef_File_Episode_Hash_Episode. </td>
+						</tr>
+						<tr data-status="fixed">
+								<td><span class="change change-fixed"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoServer/issue/672" target="_blank">#672</a></td>
+								<td>Fix EpisodeName null value error for Shoko.Models.Server.TvDB_Episode. </td>
+						</tr>
+						<tr data-status="fixed">
+								<td><span class="change change-fixed"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoServer/commit/be9031e" target="_blank">be9031e</a></td>
+								<td>Fix command queues crashing when attempting to pause large queues.</td>
+						</tr>
+						<tr data-status="fixed">
+								<td><span class="change change-fixed"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoServer/commit/be9031e" target="_blank">be9031e</a></td>
+								<td>Fix MediaInfoLib  and UNC path  issue.</td>
+						</tr>
+						</tbody>
+				</table>
 				<h4 id="s3800">Version 3.8.0.0 (In Development)</h4>
 				<table class="table table-striped table-changelog">
 						<thead>
@@ -752,7 +800,10 @@ permalink: /changelog.html
 						</tr>
 						</tbody>
 				</table>
-				<h4 id="s3703">Version 3.7.0.3 (2017-01-07)</h4>
+		</section>
+		<section>
+				<h2 class="header" id="shoko-desktop">Shoko Desktop</h2>
+				<h4 id="d3801">Version 3.8.0.1 (In Development)</h4>
 				<table class="table table-striped table-changelog">
 						<thead>
 						<tr data-status="head">
@@ -762,55 +813,33 @@ permalink: /changelog.html
 						</tr>
 						</thead>
 						<tbody>
-						<tr data-status="added">
-								<td><span class="change change-added"></span></td>
-								<td><a href="https://github.com/ShokoAnime/ShokoServer/commit/bf950e1" target="_blank">bf950e1</a>
-								</td>
-								<td>Added ability to revoke apikeys when changing password for account.</td>
-						</tr>
-						<tr data-status="added">
-								<td><span class="change change-added"></span></td>
-								<td><a href="https://github.com/ShokoAnime/ShokoServer/commit/4f06a77" target="_blank">4f06a77</a>
-								</td>
-								<td>Added RestartAsAdmin function for migration and new setups.</td>
-						</tr>
-						<tr data-status="added">
-								<td><span class="change change-added"></span></td>
-								<td><a href="https://github.com/ShokoAnime/ShokoServer/commit/1cd2800" target="_blank">1cd2800</a>
-								</td>
-								<td>Added new permissions check for programdata directory on startup.</td>
+						<tr data-status="updated">
+								<td><span class="change change-fixed"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/issue/560" target="_blank">#560</a></td>
+								<td>Only show a single date if Start and End date are the same.</td>
 						</tr>
 						<tr data-status="updated">
 								<td><span class="change change-updated"></span></td>
-								<td><a href="https://github.com/ShokoAnime/ShokoServer/5a0d06d" target="_blank">5a0d06d</a></td>
-								<td>Don't rename if destination exists!</td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/1c6eb1b" target="_blank">1c6eb1b</a></td>
+								<td>Update installer with permissions setup.</td>
 						</tr>
 						<tr data-status="updated">
 								<td><span class="change change-updated"></span></td>
-								<td><a href="https://github.com/ShokoAnime/ShokoServer/515c193" target="_blank">515c193</a></td>
-								<td>Clean up duplicate records of video local places on remove missing files.</td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/1c6eb1b" target="_blank">1c6eb1b</a></td>
+								<td>Make sure "image loading error" placeholder image is shown throughout Desktop.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/ShokoServer/issues/512" target="_blank">#512</a></td>
-								<td>Trakt broken in Beta 3.7.0.903</td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/2ed34ca" target="_blank">2ed34ca</a></td>
+								<td>Fix issue when resuming playlist playback.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/ShokoServer/issues/544" target="_blank">#544</a></td>
-								<td>Deleting Multiple Files.</td>
-						</tr>
-						<tr data-status="fixed">
-								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/ShokoServer/commit/46d833e" target="_blank">46d833e</a>
-								</td>
-								<td>Additional null reference error handling.</td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/be9031e" target="_blank">47fee9c</a></td>
+								<td>Fix issue with original or older filenames being shown in Desktop if a file has been renamed.</td>
 						</tr>
 						</tbody>
 				</table>
-		</section>
-		<section>
-				<h2 class="header" id="shoko-desktop">Shoko Desktop</h2>
 				<h4 id="d3800">Version 3.8.0.0 (In Development)</h4>
 				<table class="table table-striped table-changelog">
 						<thead>
@@ -1195,25 +1224,25 @@ permalink: /changelog.html
 						<tbody>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/17ab36f" target="_blank">17ab36f</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/17ab36f" target="_blank">17ab36f</a>
 								</td>
 								<td>Fixes for migration of JMM Desktop folders.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/9f70843" target="_blank">9f70843</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/9f70843" target="_blank">9f70843</a>
 								</td>
 								<td>Updated SetProgramDataFolderPermission() to use same batch file method as server.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/532813a" target="_blank">532813a</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/532813a" target="_blank">532813a</a>
 								</td>
 								<td>Removed process output readings as very unlikely to fail here and otherwise still logged.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/b6f46b2" target="_blank">b6f46b2</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/b6f46b2" target="_blank">b6f46b2</a>
 								</td>
 								<td>Fixed uninstall warning message.</td>
 						</tr>
@@ -1231,225 +1260,202 @@ permalink: /changelog.html
 						<tbody>
 						<tr data-status="added">
 								<td><span class="change change-added"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/pull/411" target="_blank">#411</a></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/pull/411" target="_blank">#411</a></td>
 								<td>Have Search Show Missing Episodes In Details Box.</td>
 						</tr>
 						<tr data-status="added">
 								<td><span class="change change-added"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/pull/455" target="_blank">#455</a></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/pull/455" target="_blank">#455</a></td>
 								<td>Cloud Support.</td>
 						</tr>
 						<tr data-status="added">
 								<td><span class="change change-added"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/pull/455" target="_blank">#455</a></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/pull/455" target="_blank">#455</a></td>
 								<td>Internal Video Player MPV Added.</td>
 						</tr>
 						<tr data-status="added">
 								<td><span class="change change-added"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/6eb87bf" target="_blank">6eb87bf</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/6eb87bf" target="_blank">6eb87bf</a>
 								</td>
 								<td>Added Trakt scrobble support for most players</td>
 						</tr>
 						<tr data-status="added">
 								<td><span class="change change-added"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/fb4acd2" target="_blank">fb4acd2</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/fb4acd2" target="_blank">fb4acd2</a>
 								</td>
 								<td>Add Update Images Button to Settings</td>
 						</tr>
 						<tr data-status="added">
 								<td><span class="change change-added"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/0c41cd3" target="_blank">0c41cd3</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/0c41cd3" target="_blank">0c41cd3</a>
 								</td>
 								<td>Initial zoom player video player support.</td>
 						</tr>
 						<tr data-status="added">
 								<td><span class="change change-added"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/15e5570" target="_blank">15e5570</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/15e5570" target="_blank">15e5570</a>
 								</td>
 								<td>Added Relations message, updated Language Strings.</td>
 						</tr>
 						<tr data-status="added">
 								<td><span class="change change-added"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/a0c0ae5" target="_blank">a0c0ae5</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/a0c0ae5" target="_blank">a0c0ae5</a>
 								</td>
 								<td>Add JMMServer Image Path as possible option.</td>
 						</tr>
 						<tr data-status="added">
 								<td><span class="change change-added"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/a0c0ae5" target="_blank">a0c0ae5</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/a0c0ae5" target="_blank">a0c0ae5</a>
 								</td>
 								<td>Migrate Shoko Desktop files to ProgramData.</td>
 						</tr>
 						<tr data-status="updated">
 								<td><span class="change change-updated"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/e92f652" target="_blank">e92f652</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/e92f652" target="_blank">e92f652</a>
 								</td>
 								<td>Update all posible dependencies to nugets.</td>
 						</tr>
 						<tr data-status="updated">
 								<td><span class="change change-updated"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/8a0c055" target="_blank">8a0c055</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/8a0c055" target="_blank">8a0c055</a>
 								</td>
 								<td>Hashes are now selectable.</td>
 						</tr>
 						<tr data-status="updated">
 								<td><span class="change change-updated"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/a0c0ae5" target="_blank">a0c0ae5</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/a0c0ae5" target="_blank">a0c0ae5</a>
 								</td>
 								<td>Remove Admin requirements.</td>
 						</tr>
 						<tr data-status="updated">
 								<td><span class="change change-updated"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/d0c557e" target="_blank">d0c557e</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/d0c557e" target="_blank">d0c557e</a>
 								</td>
 								<td>Initial rework of updater supporting multiple channels.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/issues/41" target="_blank">#41</a></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/issues/41" target="_blank">#41</a></td>
 								<td>Shoko Desktop - Freezes when user is added.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/issues/89" target="_blank">#89</a></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/issues/89" target="_blank">#89</a></td>
 								<td>[issue] retries connection too soon after ban creating a loop.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/issues/309" target="_blank">#309</a></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/issues/309" target="_blank">#309</a></td>
 								<td>Keep tab bar from scrolling off screen.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/issues/351" target="_blank">#351</a></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/issues/351" target="_blank">#351</a></td>
 								<td>Subpar perfomance on the client groupfilters.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/issues/402" target="_blank">#402</a></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/issues/402" target="_blank">#402</a></td>
 								<td>Modifying Users Speed Issue.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/issues/429" target="_blank">#429</a></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/issues/429" target="_blank">#429</a></td>
 								<td>Watched States Are Not Being Updated.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/issues/430" target="_blank">#430</a></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/issues/430" target="_blank">#430</a></td>
 								<td>MPC web ui integration starts spamming requests.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/issues/440" target="_blank">#440</a></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/issues/440" target="_blank">#440</a></td>
 								<td>NullPointer on Click RenameAllGroupse</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/issues/442" target="_blank">#442</a></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/issues/442" target="_blank">#442</a></td>
 								<td>Restoring Original Series Name Empties Group Name.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/issues/451" target="_blank">#451</a></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/issues/451" target="_blank">#451</a></td>
 								<td>Series In Group Extending Horizontal, Not Respecting Window Width.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/issues/461" target="_blank">#461</a></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/issues/461" target="_blank">#461</a></td>
 								<td>Unable To Set User Password.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/issues/464" target="_blank">#464</a></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/issues/464" target="_blank">#464</a></td>
 								<td>Trakt PIN / token not saved.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/issues/471" target="_blank">#471</a></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/issues/471" target="_blank">#471</a></td>
 								<td>Updating local path mapping results in empty valid local path.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/issues/477" target="_blank">#477</a></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/issues/477" target="_blank">#477</a></td>
 								<td>Background Worker Error When Selecting Tab During Startup.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/fe0a7a9" target="_blank">fe0a7a9</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/fe0a7a9" target="_blank">fe0a7a9</a>
 								</td>
 								<td>Misc Filters Fixes.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/49b37fd" target="_blank">49b37fd</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/49b37fd" target="_blank">49b37fd</a>
 								</td>
 								<td>Fixed Saving Error on ImportFolder.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/ff89d4d" target="_blank">ff89d4d</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/ff89d4d" target="_blank">ff89d4d</a>
 								</td>
 								<td>Fix mislabeled Video Players.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/62dbbbd" target="_blank">62dbbbd</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/62dbbbd" target="_blank">62dbbbd</a>
 								</td>
 								<td>Bugfixing local detection of the files.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/9b01d2a" target="_blank">9b01d2a</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/9b01d2a" target="_blank">9b01d2a</a>
 								</td>
 								<td>Fix Empty Directory choser in JMMClient.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/aa84b7a" target="_blank">aa84b7a</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/aa84b7a" target="_blank">aa84b7a</a>
 								</td>
 								<td>Fixes Rename Utility not showing original filename.</td>
 						</tr>
 						<tr>
 								<td><span class="change change-removed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/pull/455" target="_blank">686af0e</a></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/pull/455" target="_blank">686af0e</a></td>
 								<td>Enable/Disable Streaming Option Removed.</td>
 						</tr>
 						<tr>
 								<td><span class="change change-removed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/commit/23ca8a6" target="_blank">23ca8a6</a>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/23ca8a6" target="_blank">23ca8a6</a>
 								</td>
 								<td>Remove CRC32, SHA1 and MD5 hash options, now mandatory.</td>
-						</tr>
-						</tbody>
-				</table>
-				<h4 id="d3610">Version 3.6.1.0 (2016-09-09)</h4>
-				<table class="table table-striped table-changelog">
-						<thead>
-						<tr data-status="head">
-								<th>Action</th>
-								<th>Git Link</th>
-								<th>Description</th>
-						</tr>
-						</thead>
-						<tbody>
-						<tr data-status="added">
-								<td><span class="change change-added"></span></td>
-								<td><a href="https://github.com/ShokoAnime/MyAnime3/commit/e227021" target="_blank">e227021</a>
-								</td>
-								<td>Added detection for MPC-BE x86 and x64.</td>
-						</tr>
-						<tr data-status="fixed">
-								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/jmmclient/issues/451" target="_blank">#451</a></td>
-								<td>Series In Group Extending Horizontal, Not Respecting Window Width.</td>
 						</tr>
 						</tbody>
 				</table>
 		</section>
 		<section>
 				<h2 class="header" id="ma3">My Anime 3</h2>
-				<h4 id="m3750">Version 3.7.5.0 (In Development)</h4>
+				<h4 id="m3750">Version 3.7.1.0 (In Development)</h4>
 				<table class="table table-striped table-changelog">
 						<thead>
 						<tr data-status="head">
@@ -1461,7 +1467,7 @@ permalink: /changelog.html
 						<tbody>
 						<tr data-status="removed">
 								<td><span class="change change-removed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/ma3/commit/4b672f1" target="_blank">4b672f1</a></td>
+								<td><a href="https://github.com/ShokoAnime/MyAnime3/commit/4b672f1" target="_blank">4b672f1</a></td>
 								<td>Removed Download UI.</td>
 						</tr>
 						</tbody>
@@ -1490,23 +1496,23 @@ permalink: /changelog.html
 						</tr>
 						<tr data-status="updated">
 								<td><span class="change change-updated"></span></td>
-								<td><a href="https://github.com/ShokoAnime/ma3/commit/ef85038" target="_blank">ef85038</a></td>
+								<td><a href="https://github.com/ShokoAnime/MyAnime3/commit/ef85038" target="_blank">ef85038</a></td>
 								<td>Added better approach to home navigation with custom parameters for expansion later (based on IR-Server-Suite).
 								</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/ma3/commit/11f8c11" target="_blank">11f8c11</a></td>
+								<td><a href="https://github.com/ShokoAnime/MyAnime3/commit/11f8c11" target="_blank">11f8c11</a></td>
 								<td> Improved error handling for command actions (buttons / keys).</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/ma3/commit/c6aad4f" target="_blank">c6aad4f</a></td>
+								<td><a href="https://github.com/ShokoAnime/MyAnime3/commit/c6aad4f" target="_blank">c6aad4f</a></td>
 								<td>Home button navigation fixed and improved (see new setting in configuration).</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/ma3/commit/e86d7ab" target="_blank">e86d7ab</a></td>
+								<td><a href="https://github.com/ShokoAnime/MyAnime3/commit/e86d7ab" target="_blank">e86d7ab</a></td>
 								<td>Fixed rating of series for all included skins.</td>
 						</tr>
 						</tbody>
@@ -1523,28 +1529,28 @@ permalink: /changelog.html
 						<tbody>
 						<tr data-status="updated">
 								<td><span class="change change-updated"></span></td>
-								<td><a href="https://github.com/ShokoAnime/ma3/commit/ef85038" target="_blank">ef85038</a></td>
+								<td><a href="https://github.com/ShokoAnime/MyAnime3/commit/ef85038" target="_blank">ef85038</a></td>
 								<td>Added better approach to home navigation with custom parameters for expansion later (based on IR-Server-Suite).
 								</td>
 						</tr>
 						<tr data-status="updated">
 								<td><span class="change change-updated"></span></td>
-								<td><a href="https://github.com/ShokoAnime/ma3/commit/09dc987" target="_blank">09dc987</a></td>
+								<td><a href="https://github.com/ShokoAnime/MyAnime3/commit/09dc987" target="_blank">09dc987</a></td>
 								<td>Additional improvements to Home screen navigation.</td>
 						</tr>
 						<tr data-status="updated">
 								<td><span class="change change-updated"></span></td>
-								<td><a href="https://github.com/ShokoAnime/ma3/commit/609d01b" target="_blank">609d01b</a></td>
+								<td><a href="https://github.com/ShokoAnime/MyAnime3/commit/609d01b" target="_blank">609d01b</a></td>
 								<td>Small tweaks for filtering.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/ma3/commit/4aa803c" target="_blank">4aa803c</a></td>
+								<td><a href="https://github.com/ShokoAnime/MyAnime3/commit/4aa803c" target="_blank">4aa803c</a></td>
 								<td>Fixed setting saving for HomeButtonNavigation.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/ma3/commit/8fd5305" target="_blank">8fd5305</a></td>
+								<td><a href="https://github.com/ShokoAnime/MyAnime3/commit/8fd5305" target="_blank">8fd5305</a></td>
 								<td>Fixed settings reading of basic home setting.</td>
 						</tr>
 						</tbody>
@@ -1834,6 +1840,23 @@ permalink: /changelog.html
 		</section>
 		<section>
 				<h2 class="header" id="shoko-on-plex">Shoko On Plex</h2>
+				<h4 id="p3710">Version 3.7.1.0 (In Development)</h4>
+				<table class="table table-striped table-changelog">
+						<thead>
+						<tr data-status="head">
+								<th>Action</th>
+								<th>Git Link</th>
+								<th>Description</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr data-status="updated">
+								<td><span class="change change-updated"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoOnPlex/commit/35e7a78" target="_blank">35e7a78</a></td>
+								<td>Update Shoko On Plex to work with Shoko Server version 3.8.</td>
+						</tr>
+						</tbody>
+				</table>
 				<h4 id="p3704">Version 3.7.0.4 (2017-05-22)</h4>
 				<table class="table table-striped table-changelog">
 						<thead>
