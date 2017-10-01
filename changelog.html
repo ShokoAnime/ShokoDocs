@@ -10,7 +10,7 @@ permalink: /changelog.html
 				<li class="menu-title">Changelog</li>
 				<li><a class="has-child" href="#shoko-server">Shoko Server</a>
 						<ul>
-								<li><a href="#s3801">Version 3.8.0.1 (In Development)</a></li>
+								<li><a href="#s381">Version 3.8.1 (In Development)</a></li>
 								<li><a href="#s3800">Version 3.8.0.0 (2017-09-03)</a></li>
 								<li><a href="#s3706">Version 37.0.6 (2017-02-10)</a></li>
 								<li><a href="#s3705">Version 3.7.0.5 (2017-02-07)</a></li>
@@ -19,7 +19,7 @@ permalink: /changelog.html
 				</li>
 				<li><a class="has-child" href="#shoko-desktop">Shoko Desktop</a>
 						<ul>
-								<li><a href="#d3801">Version 3.8.0.1 (In Development)</a></li>
+								<li><a href="#d3801">Version 3.8.1 (In Development)</a></li>
 								<li><a href="#d3800">Version 3.8.0.0 (2017-09-03)</a></li>
 								<li><a href="#d3704">Version 3.7.0.4 (2017-01-28)</a></li>
 								<li><a href="#d3703">Version 3.7.0.3 (2017-01-07)</a></li>
@@ -66,7 +66,7 @@ permalink: /changelog.html
 		</section>
 		<section>
 				<h2 class="header" id="shoko-server">Shoko Server</h2>
-				<h4 id="s3801">Version 3.8.0.1 (In Development)</h4>
+				<h4 id="s381">Version 3.8.1 (In Development)</h4>
 				<table class="table table-striped table-changelog">
 						<thead>
 						<tr data-status="head">
@@ -76,6 +76,16 @@ permalink: /changelog.html
 						</tr>
 						</thead>
 						<tbody>
+						<tr data-status="added">
+								<td><span class="change change-added"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoServer/issues/675" target="_blank">#675</a></td>
+								<td>Add RescanUnlinkedFiles to API.</td>
+						</tr>
+						<tr data-status="added">
+								<td><span class="change change-added"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoServer/issues/687" target="_blank">#687</a></td>
+								<td>Limit AniDB  image download rate.</td>
+						</tr>
 						<tr data-status="updated">
 								<td><span class="change change-updated"></span></td>
 								<td><a href="https://github.com/ShokoAnime/ShokoServer/commit/749942b" target="_blank">749942b</a></td>
@@ -84,7 +94,37 @@ permalink: /changelog.html
 						<tr data-status="updated">
 								<td><span class="change change-updated"></span></td>
 								<td><a href="https://github.com/ShokoAnime/ShokoServer/commit/7fe4e19" target="_blank">7fe4e19</a></td>
-								<td>Remove and Recreate permission inheritance in installer</td>
+								<td>Remove and Recreate permission inheritance in installer.</td>
+						</tr>
+						<tr data-status="updated">
+								<td><span class="change change-updated"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoServer/commit/d5e2dee" target="_blank">d5e2dee</a></td>
+								<td>Show user an error when AVDump fails.</td>
+						</tr>
+						<tr data-status="updated">
+								<td><span class="change change-updated"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoServer/commit/aa62a7f" target="_blank">aa62a7f</a></td>
+								<td>Log instances where Shoko was unable to create AniDB_Anime.</td>
+						</tr>
+						<tr data-status="updated">
+								<td><span class="change change-updated"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoServer/commit/147e6a6" target="_blank">147e6a6</a></td>
+								<td>Better logging when importing fails.</td>
+						</tr>
+						<tr data-status="updated">
+								<td><span class="change change-updated"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoServer/commit/6d3ef65" target="_blank">6d3ef65</a></td>
+								<td>Better logging when AniDB does not return a valid date on watched items.</td>
+						</tr>
+						<tr data-status="updated">
+								<td><span class="change change-updated"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoServer/commit/f263fb4" target="_blank">f263fb4</a></td>
+								<td>Better handling of Duplicate Files.</td>
+						</tr>
+						<tr data-status="fixed">
+								<td><span class="change change-fixed"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoServer/issues/558" target="_blank">#558</a></td>
+								<td>Error when rescanning all unknown items .</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
@@ -94,12 +134,22 @@ permalink: /changelog.html
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
 								<td><a href="https://github.com/ShokoAnime/ShokoServer/issues/671" target="_blank">#671</a></td>
-								<td>Fix Duplicate entry for key UIX_CrossRef_File_Episode_Hash_Episode. </td>
+								<td>Fix Duplicate entry for key UIX_CrossRef_File_Episode_Hash_Episode.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
 								<td><a href="https://github.com/ShokoAnime/ShokoServer/issues/672" target="_blank">#672</a></td>
-								<td>Fix EpisodeName null value error for Shoko.Models.Server.TvDB_Episode. </td>
+								<td>Fix EpisodeName null value error for Shoko.Models.Server.TvDB_Episode.</td>
+						</tr>
+						<tr data-status="fixed">
+								<td><span class="change change-fixed"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoServer/issues/677" target="_blank">#677</a></td>
+								<td>Fix System.NullReferenceException in TVDBHelper.GetEpisodes.</td>
+						</tr>
+						<tr data-status="fixed">
+								<td><span class="change change-fixed"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoServer/issues/679" target="_blank">#679</a></td>
+								<td>Invalid Duplicate records when renaming.</td>
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
@@ -125,6 +175,16 @@ permalink: /changelog.html
 								<td><span class="change change-fixed"></span></td>
 								<td><a href="https://github.com/ShokoAnime/ShokoServer/commit/e2bc8a2" target="_blank">e2bc8a2</a></td>
 								<td>Fix an issue with loading series via Shoko on Plex.</td>
+						</tr>
+						<tr data-status="fixed">
+								<td><span class="change change-fixed"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoServer/commit/5900880" target="_blank">5900880</a></td>
+								<td>Improve startup and fix Group Filters' creation on fresh DB.</td>
+						</tr>
+						<tr data-status="fixed">
+								<td><span class="change change-fixed"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoServer/commit/32f10a5" target="_blank">32f10a5</a></td>
+								<td>Fixed AniDB storage state updating.</td>
 						</tr>
 						</tbody>
 				</table>
@@ -818,7 +878,7 @@ permalink: /changelog.html
 		</section>
 		<section>
 				<h2 class="header" id="shoko-desktop">Shoko Desktop</h2>
-				<h4 id="d3801">Version 3.8.0.1 (In Development)</h4>
+				<h4 id="d3801">Version 3.8.1 (In Development)</h4>
 				<table class="table table-striped table-changelog">
 						<thead>
 						<tr data-status="head">
@@ -828,6 +888,11 @@ permalink: /changelog.html
 						</tr>
 						</thead>
 						<tbody>
+						<tr data-status="added">
+								<td><span class="change changed-added"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/500fe9e" target="_blank">500fe9e</a></td>
+								<td>Add proper logging throughout Desktop.</td>
+						</tr>
 						<tr data-status="updated">
 								<td><span class="change change-fixed"></span></td>
 								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/issues/560" target="_blank">#560</a></td>
@@ -850,8 +915,18 @@ permalink: /changelog.html
 						</tr>
 						<tr data-status="fixed">
 								<td><span class="change change-fixed"></span></td>
-								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/be9031e" target="_blank">47fee9c</a></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/47fee9c" target="_blank">47fee9c</a></td>
 								<td>Fix issue with original or older filenames being shown in Desktop if a file has been renamed.</td>
+						</tr>
+						<tr data-status="fixed">
+								<td><span class="change change-fixed"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/7042172" target="_blank">7042172</a></td>
+								<td>Fix issue with deleting group filter conditions.</td>
+						</tr>
+						<tr data-status="fixed">
+								<td><span class="change change-fixed"></span></td>
+								<td><a href="https://github.com/ShokoAnime/ShokoDesktop/commit/849049b" target="_blank">849049b</a></td>
+								<td>Fix various memory leaks in desktop.</td>
 						</tr>
 						</tbody>
 				</table>
