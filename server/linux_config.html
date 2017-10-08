@@ -1,0 +1,115 @@
+---
+layout: sub
+title: Shoko Server - Running On Linux with Docker
+permalink: server/linux_config.html
+---
+
+<!-- Sidebar -->
+<aside class="col-lg-2 col-md-3 col-sm-3 sidebar">
+	<ul class="nav sidenav dropable sticky">
+		<li><a href="index.html">Shoko Server Root</a></li>
+		<li class="hr-menu">
+			<hr/>
+		</li>
+		<li><a href="#create-config">Create settings.json</a></li>
+		<li><a href="#modify-config">Modify settings.json</a></li>
+		<li class="hr-menu">
+			<hr/>
+		</li>
+		<li><a href="../faq.html">Frequently Asked Questions</a></li>
+		<li><a href="../changelog.html">Changelog</a></li>
+	</ul>
+</aside>
+<!-- END Sidebar -->
+
+<!-- Main content -->
+<article class="col-lg-10 col-md-9 col-sm-9 main-content" role="main">
+	<header>
+		<h1>Shoko Server for Linux - Understanding configuration differences.</h1>
+		<p>Since Shoko Server for Linux runs without a graphical interface. Configurations must be made to the configuration files directly.</p>
+		<p>Please note that the configurations shown below are the minimium required configurations needed to start the server.  Not all configurable options are defined below.</p>
+		<script language="javascript" src="../assets/js/breadnav.js"></script>
+	</header>
+	<section>
+		<h2 id="create-config">Creating settings.json</h2>
+		<p>The default settings.json is stored within the image.  When Shoko Server for Linux is started for the first time, it checks for the presense of settings.json and if it does not exist, then it copies the one from the image.</p>
+		<p>If at any time you need to reset the configuration back to the default settings, shut down Shoko Server for Linux and delete the settings.json file.</p>
+		<p>To create the settings.json file, start Shoko Server for Linux.</p>
+		<table class="table table-striped">
+			<tr>
+				<th>Default Setting</th>
+				<th>Options</th>
+				<th>Notes</th>
+			</tr>
+			<tr>
+				<td>/root/.shoko/Shoko.CLI/settings.json</td>
+				<td>Volume can be mounted to relocate files.</td>
+				<td>Default Location for settings.json<br>Please note that this is the location as seen within the container.<br>Depending on your installation, the actual location for settings.json may be in an alternate location.</td>
+		</table>
+	</section>
+	<section>
+		<h2 id="modify-config">Modify settings.json</h2>
+		<table>
+			<tr>
+				<th>Default Setting</th>
+				<th>Options</th>
+				<th>Notes</th>
+			</tr>
+			<tr>
+				<td>"DatabaseType": "SQLite",</td>
+				<td>"SQLite", "SQLServer", "MySQL"</td>
+				<td>Please see <a href="index.html">Preinstallation - Database Setup</a></td>
+			</tr>
+			<tr>
+				<td>"SQLServer_DatabaseServer": "localhost",</td>
+				<td>"localhost", "xxx.xxx.xxx.xxx"</td>
+				<td><a href="databases_sqlserver.html">SQLServer ONLY</a>: This is the IP Address of the SQL Server</td>
+			</tr>
+			<tr>
+				<td>"SQLServer_DatabaseName": "",</td>
+				<td>"ShokoServer", "my_existing_database_name"</td>
+				<td><a href="databases_sqlserver.html">SQLServer ONLY</a>: This is the name of the SQL Server Database. If the database does not exist then it will be created.</td>
+			</tr>
+			<tr>
+				<td>"SQLServer_Username": "",</td>
+				<td>"sa","my_existing_username"</td>
+				<td><a href="databases_sqlserver.html">SQLServer ONLY</a>: This is username for the SQL Server Database.</td>
+			</tr>
+			<tr>
+				<td>"SQLServer_Password": "",</td>
+				<td>"my_sql_password"</td>
+				<td><a href="databases_sqlserver.html">SQLServer ONLY</a>: This is the password for the user account above, to be used for the SQL Server Database.</td>
+			</tr>
+			<tr>
+				<td>"MySQL_Hostname": "localhost",</td>
+				<td>"localhost", "xxx.xxx.xxx.xxx"</td>
+				<td><a href="databases_mysql.html">MySQL ONLY</a>: This is the IP Address of the MySQL Server</td>
+			</tr>
+			<tr>
+				<td>"MySQL_SchemaName": "",</td>
+				<td>"ShokoServer", "my_existing_database_name"</td>
+				<td><a href="databases_mysql.html">MySQL ONLY</a>: This is the name of the MySQL Server Schema.  If the schema does not exist then it will be created.</td>
+			</tr>
+			<tr>
+				<td>"MySQL_Username": "",</td>
+				<td>"root","my_existing_username"</td>
+				<td><a href="databases_mysql.html">MySQL ONLY</a>: This is the username for the MySQL Server Database.</td>
+			</tr>
+			<tr>
+				<td>"MySQL_Password": "",</td>
+				<td>"my_mysql_password"</td>
+				<td><a href="databases_mysql.html">MySQL ONLY</a>: This is the password for the user accout above, to be used for the MySQL Server Database.</td>
+			</tr>
+			<tr>
+				<td>"AniDB_Username": "",</td>
+				<td>"","my_AniDB_Username"</td>
+				<td>OPTIONAL: This is your AniDB username. It is recommended to add your username if you are using an existing database.</td>
+			</tr>
+			<tr>
+				<td>"AniDB_Password": "",</td>
+				<td>"","my_AniDB_Password"</td>
+				<td>OPTIONAL: This is your AniDB password.  It is recommended to add your username if you are using an existing database.</td>
+			</tr>
+		</table>
+	</section>
+</article>
