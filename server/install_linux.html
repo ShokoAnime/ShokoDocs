@@ -91,7 +91,7 @@ permalink: server/install_linux.html
 					<p>However, this won't be enough to keep a persistent ShokoServer instance running. We will add a few things to the
 						docker command to make sure we can survive a reboot after we make some changes.
 					</p>
-					<pre class=".pre-scrollable">docker run -d --name cazzar-shokoserver1 --restart always -p 8111:8111/tcp -v "/path/to/shoko/settings:/root/.shoko" -v "/path/to/webui:/usr/src/app/build/webui" -v "/path/to/anime:/anime" -v "/path/to/import:/import" cazzar/shokoserver</pre>
+					<pre class=".pre-scrollable">docker run -d --name shokoserver --restart always -p 8111:8111/tcp -v "/path/to/shoko/settings:/root/.shoko" -v "/path/to/webui:/usr/src/app/build/webui" -v "/path/to/anime:/anime" -v "/path/to/import:/import" cazzar/shokoserver</pre>
 					<h3>Command Breakdown</h3>
 					<table class="table table-striped">
 						<thead>
@@ -108,7 +108,7 @@ permalink: server/install_linux.html
 								</td>
 							</tr>
 							<tr>
-								<td><pre class=".pre-scrollable">--name cazzar-shokoserver1</pre></td>
+								<td><pre class=".pre-scrollable">--name shokoserver</pre></td>
 								<td><p><a href="https://docs.docker.com/engine/reference/run/#container-identification">Names your container.</a></p>
 									<p>This is useful if you have a utility that manages docker by container names.  Without this, your container will have a randomly generated name.<p>
 								</td>
@@ -401,17 +401,17 @@ permalink: server/install_linux.html
 					</p>
 					<pre class=".pre-scrollable">version: "3"
 services:
-shokoserver:
-container_name: cazzar-shokoserver1
-image: cazzar/shokoserver:daily
-restart: always
-ports:
-- "8111:8111/tcp"
-volumes:
-- "/path/to/config:/root/.shoko"
-- "/path/to/webui:/usr/src/app/build/webui"
-- "/path/to/anime:/anime"
-- "/path/to/import:/import"</pre>
+    shokoserver:
+        container_name: shokoserver
+        image: cazzar/shokoserver:daily
+        restart: always
+        ports:
+            - "8111:8111/tcp"
+        volumes
+            - "/path/to/config:/root/.shoko"
+            - "/path/to/webui:/usr/src/app/build/webui"
+            - "/path/to/anime:/anime"
+            - "/path/to/import:/import"</pre>
 					<p>This combines all of our previous configuration in an easy to read and edit format, and will allow you to create a powerful startup script that could
 						(for example) include a MySQL server, a download client, and anything else you can think off that's available in a docker format.
 					</p>
