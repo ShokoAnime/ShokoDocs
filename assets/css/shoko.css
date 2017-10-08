@@ -1886,7 +1886,7 @@ pre code {
 }
 
 .col-xs-9 {
-	width: 75%
+	width: 80%
 }
 
 .col-xs-8 {
@@ -1910,7 +1910,7 @@ pre code {
 }
 
 .col-xs-3 {
-	width: 25%
+	width: 20%
 }
 
 .col-xs-2 {
@@ -2095,7 +2095,7 @@ pre code {
 	}
 
 	.col-sm-9 {
-		width: 75%
+		width: 80%
 	}
 
 	.col-sm-8 {
@@ -2119,7 +2119,7 @@ pre code {
 	}
 
 	.col-sm-3 {
-		width: 25%
+		width: 20%
 	}
 
 	.col-sm-2 {
@@ -2305,7 +2305,7 @@ pre code {
 	}
 
 	.col-md-9 {
-		width: 75%
+		width: 80%
 	}
 
 	.col-md-8 {
@@ -2329,7 +2329,7 @@ pre code {
 	}
 
 	.col-md-3 {
-		width: 25%
+		width: 20%
 	}
 
 	.col-md-2 {
@@ -2515,7 +2515,7 @@ pre code {
 	}
 
 	.col-lg-9 {
-		width: 75%
+		width: 80%
 	}
 
 	.col-lg-8 {
@@ -2539,7 +2539,7 @@ pre code {
 	}
 
 	.col-lg-3 {
-		width: 25%
+		width: 20%
 	}
 
 	.col-lg-2 {
@@ -5079,7 +5079,7 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 	padding: 8px 0;
 	margin-bottom: 20px;
 	list-style: none;
-	background-color: #f5f5f5;
+	background-color: #aaa;
 	border-radius: 4px
 }
 
@@ -10769,7 +10769,7 @@ body[data-spy] {
 
 .main-content > header {
 	margin-bottom: 20px;
-	border-bottom: 1px solid #f1f1f1;
+	border-bottom: 1px solid #e7e7e7;
 }
 
 .main-content > header > p:last-child {
@@ -10782,7 +10782,7 @@ body[data-spy] {
 }
 
 .main-content > section {
-	padding-bottom: 10px;
+	padding-bottom: 0;
 }
 
 .main-content > section:last-child {
@@ -11902,7 +11902,7 @@ h2 a:after {
 	position: absolute;
 	left: 0;
 	right: 0;
-	bottom: -15px;
+	bottom: -20px;
 	height: 1px;
 	background-color: #aaa;
 }
@@ -11932,7 +11932,7 @@ h6 {
 
 h1, h2, h3, h4, h5, h6 {
 	color: #666;
-	font-family: "Nunito", sans-serif;
+	font-family: "Raleway", sans-serif;
 }
 
 h1 a,
