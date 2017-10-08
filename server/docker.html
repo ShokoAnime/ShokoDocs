@@ -83,15 +83,15 @@ permalink: server/docker.html
 				<pre class=".pre-scrollable">
 version: "3"
 services:
-shokoserver:
-container_name: shokoserver
-image: cazzar/shokoserver:daily
-ports:
-- "8111:8111"
-volumes:
-- "/path/to/Anime:/anime"
-- "/path/to/config:/root/.shoko"
-- "/path/to/webui:/usr/src/app/build/webui"</pre>
+						shokoserver:
+        container_name: shokoserver
+        image: cazzar/shokoserver:daily
+        ports:
+            - "8111:8111"
+        volumes:
+            - "/path/to/Anime:/anime"
+            - "/path/to/config:/root/.shoko"
+            - "/path/to/webui:/usr/src/app/build/webui"</pre>
 				<p>
 						This combines all of our previous configuration in an easy to read and edit format, and will allow you to create a powerful startup script that could (for example)
 						include a MySQL server, a download client, and anything else you can think off that's available in a docker format.
