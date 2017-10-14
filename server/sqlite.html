@@ -1,0 +1,67 @@
+---
+layout: sub
+title: Shoko Server - Using SQLite
+permalink: server/sqlite.html
+---
+
+
+<!-- Sidebar -->
+<aside class="col-lg-2 col-md-3 col-sm-3 sidebar">
+	<ul class="nav sidenav dropable sticky">
+		<li><a href="index.html">Shoko Server Root</a></li>
+		<li class="hr-menu">
+			<hr/>
+		</li>
+		<li><a href="#why-sqlite">Why SQLite</a></li>
+		<li><a href="#sqlite-install">SQLite Installation</a></li>
+		<li class="hr-menu">
+			<hr/>
+		</li>
+		<li><a href="../faq.html">Frequently Asked Questions</a></li>
+		<li><a href="../changelog.html">Changelog</a></li>
+	</ul>
+</aside>
+<!-- END Sidebar -->
+
+<!-- Main content -->
+<article class="col-lg-10 col-md-9 col-sm-9 main-content" role="main">
+	<header>
+		<h1>Installing and Setting Up SQLite</h1>
+		<p>Installing and setting up MySQL for use with Shoko Server.</p>
+		<script language="javascript" src="../assets/js/breadnav.js"></script>
+	</header>
+	<section>
+		<h2 id="why-sqlite">Why SQLite</h2>
+		<p>SQLite is a lightweight database engine that is portable and free.  It requires no database configuration and
+			Shoko handles the need to run a seperate database server.
+		</p>
+
+		<p>While SQLite is the easiest of the three database types to setup with it’s one-click setup. If your collection
+			contains 200 or more series, you will start to experience a lot of issues including slow response times and
+			program lockups when Shoko attempts to access your collection via your SQLite database. In regards to how Shoko
+			uses the database, it’s simply not designed for large collections. SQLite also has difficulty with handling
+			multiple operations which increases the wait time between operations which overall increase your wait time when
+			accessing your collection. It is therefore recommended that you consider using another database option when dealing
+			with a collection that contains 200 or more series.
+		</p>
+	</section>
+	<section>
+		<h2 id="sqlite-install">SQLite Installation</h2>
+		<p>No requirements are needed to perform a SQLite Installation. If you believe your collection will contain less than 200 series,
+			you may continue with the installation of Shoko Server.
+		</p>
+		<p>If you have encountered an issue and wish to reset your SQLite database, then it is as simple as deleting the JMMServer.db3 file.</p>
+		<table class="table table-striped">
+			<tr>
+				<th>Default Setting</th>
+				<th>Options</th>
+				<th>Notes</th>
+			</tr>
+			<tr>
+				<td>"C:\ProgramData\ShokoServer\SQLite\JMMServer.db3"</td>
+				<td>N/A</td>
+				<td>Default location for SQLite Database.</td>
+			</tr>
+		</table>
+	</section>
+</article>
