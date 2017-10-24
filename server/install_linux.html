@@ -407,7 +407,7 @@ services:
         restart: always
         ports:
             - "8111:8111/tcp"
-        volumes
+        volumes:
             - "/path/to/config:/root/.shoko"
             - "/path/to/webui:/usr/src/app/build/webui"
             - "/path/to/anime:/anime"
@@ -489,9 +489,9 @@ services:
 		</section>
 		<section>
 			<h2 id="modify-settings">Modify settings.json</h2>
-			<p>Since Shoko Server for Linux runs without a graphical interface. Configurations must be made to the configuration files directly.
+			<p>Since Shoko Server for Linux runs without a graphical interface configurations must be made to the configuration file directly.
 				Please note that the configurations shown below are the minimium required configurations needed to start the server.  Not all configurable options are defined below.
-				The default settings.json is stored within the image.  When Shoko Server for Linux is started for the first time, it checks for the presense of settings.json and if it does not exist, then it copies the one from the image.
+				The default settings.json is stored within the image.  When Shoko Server for Linux is started for the first time, it checks for the presense of settings.json. If it does not exist, it will copy the default one from the image.
 				If at any time you need to reset the configuration back to the default settings, shut down Shoko Server for Linux and delete the settings.json file.
 				To create the settings.json file, start Shoko Server for Linux.
 			</p>
@@ -565,7 +565,7 @@ services:
 			<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it and
 				update it, instead make the update yourself so the community can benefit from it.
 			</p>
-			<a href="https://github.com/japanesemediamanager/ShokoDocs/blob/master/server/docker.html" target="_blank">Running Shoko Server On Linux</a>
+			<a href="https://github.com/ShokoAnime/ShokoDocs/blob/master/server/install_linux.html" target="_blank">Running Shoko Server On Linux</a>
 		</div>
 	</section>
 </article>
