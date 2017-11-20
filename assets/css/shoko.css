@@ -13034,6 +13034,8 @@ h3:hover a:before {
 	background-color: #00bfa5
 	}
 
+/*
+
 .change-added:after {
 	content: "Added"
 	}
@@ -13057,6 +13059,8 @@ h3:hover a:before {
 .change-merged:after {
 	content: "Merged"
 	}
+
+	*/
 
 .changelog {
 	padding-left: 0;
