@@ -13062,6 +13062,10 @@ h3:hover a:before {
 
 	*/
 
+.git-link {
+	display: none;
+}
+
 .changelog {
 	padding-left: 0;
 	margin-left: 24px;
