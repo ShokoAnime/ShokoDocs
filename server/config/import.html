@@ -149,9 +149,124 @@ permalink: server/config/import.html
 	</section>
 </article>
 
+		<section>
+				<h2 id="actions-info">What Is The Import Tab?</h2>
+				<p>The Import Folders tab is where you'll manage all your import folders that Shoko uses. A <strong>Import Folder</strong> is a local, network or cloud location that
+						contains your anime files. Depending on how each folder is setup in Shoko, different options are available and different tasks for that import folder are preformed.
+						There is no max limit to the number of Import Folders you can have but you are required to have <strong>One Import Folder</strong> in order to use Shoko.</p>
+				<h2 id="how-long-import">How Long Will Importing Take?</h2>
+				<div class="row">
+						<div class="col-sm-8">
+								<p>There is no simple answer to this question as "Importing" a file covers multiple steps that the file goes through which we've outlined below.</p>
+								<h5>1. Hashing The File</h5>
+								<p>The file is first hashed, the amount of time this takes depends on a couple different factors such as the filesize, your CPU and the HDD read/write speed that
+										contains the file. </p>
+								<h5>2. Comparing Hash On AniDB</h5>
+								<p>After the file has been hashed, the hash is compared against AniDB, if the hash is found then the file is associated with the episode the hash belongs to and the
+										series the episode belongs to. If this is a new series, then additional commands are added to the <strong>General Worker</strong> to pull the needed data for
+										the series from The TvDB.</p>
+								<h5>3. Downloading Additional Data</h5>
+								<p>If the file belongs to a new series, information related to the series and each episode in the series is downloaded from The TvDB. If additional community sites
+										are enabled, such as MAL or Trakt.TV then additional commands are added to the <strong>General Worker</strong> to update the metadata on your profile on those
+										sites.</p>
+								<h3>Available Options</h3>
+								<table class="table table-striped">
+										<thead>
+										<tr>
+												<th width="20%">Option</th>
+												<th>Description</th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+												<td>Remove Folder</td>
+												<td>Will remove the <strong>selected</strong> import folder. This will not <strong>physically</strong> delete the files but will remove them from your
+														collection.
+												</td>
+										</tr>
+										<tr>
+												<td>New Folder</td>
+												<td>Allows you to add a new Import Folder for use with Shoko Server. For additional information on adding an Import Folder, please see the section below.
+												</td>
+										</tr>
+										</tbody>
+								</table>
+						</div>
+						<div class="col-sm-4">
+								<figure><a href="/assets/img/server/Shoko-Server-Import-Folders-Tab.png"><img
+										src="/assets/img/server/Shoko-Server-Import-Folders-Tab.png" class="img-responsive img-thumbnail"
+										alt="Shoko Server - Import Tab"/></a>
+										<figcaption>Shoko Server - Import Tab</figcaption>
+								</figure>
+						</div>
+				</div>
+		</section>
 
-
-
+		<section>
+				<h2 id="new-import-folder">Adding A New Import Folder</h2>
+				<div class="row">
+						<div class="col-sm-8">
+								<p>Click<strong> New Folder</strong> to add a import folder for your collection.</p>
+								<p>A new window will open allowing you to specify the import folder's settings. To make things easier and reduce the chance of making a mistake, we recommend
+										clicking the <strong>Folder Icon</strong> to select the location of the import folder. If your import folders are external hard drives, network drives or hosted
+										on the cloud, make sure to update their locations if they happen to change. Otherwise you'll start to receive errors and depending on the actions you run, the
+										entries for those files in your database could be deleted.
+								</p>
+								<p>Once done click the <strong>Save</strong> button to add your import folder.</p>
+								<table class="table table-striped">
+										<thead>
+										<tr>
+												<th width="20%">Option</th>
+												<th>Description</th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+												<td>Provider</td>
+												<td> The Import Folder type, if you've added a <strong>Cloud Account</strong> you'll be able to select it otherwise <strong>Local File System</strong> will
+														be selected by default. Please note, Import Folders are linked to a <strong>Single </strong><strong>Provider</strong> and <strong>cannot be used
+																with</strong> <strong>Import Folders from another Provider</strong>,
+												</td>
+										</tr>
+										<tr>
+												<td>Import Folder Path</td>
+												<td> The location of the Import Folder, if it's a <strong>Local Provider </strong>then you'll select the folder and if it's a <strong>Cloud
+														Provider</strong> then you'll select the folder from a list of available folders.
+												</td>
+										</tr>
+										<tr>
+												<td>Drop Source</td>
+												<td>An Import Folder marked as a Drop Source will have it's files moved to the folder marked as a <strong>Drop Destination</strong>. To have Shoko Server
+														moves files automatically from a Drop Source once detected, make sure to enable <strong>Watch For New Files</strong> for the that Drop Source.
+												</td>
+										</tr>
+										<tr>
+												<td>Drop Destination</td>
+												<td>Used in conjunction with at lease one <strong>Drop Source</strong>. All files will be moved and sorted into the specified <strong>Drop
+														Destination</strong> with files belonging to the same series automatically grouped up and placed in a new folder with the series named based on your
+														<strong>Preferred Language Preference</strong> setting. You<strong> </strong>can only have one <strong>Drop Destination per Provider</strong> and
+														cannont use <strong>Drop Sources</strong> from a different Provider.
+												</td>
+										</tr>
+										<tr>
+												<td>Watch For New Files</td>
+												<td>An Import Folder marked with <strong>Watch For New Files </strong>will have any files detected imported into your collection. Useful if use a custom
+														sorting solution and don't want Shoko Server moving your files for you and don't want to have to manually execute <strong>Run Import</strong> each time
+														you add files to your Import Folder.
+												</td>
+										</tr>
+										</tbody>
+								</table>
+						</div>
+						<div class="col-sm-4">
+								<figure><a href="/assets/img/server/Shoko-Server-Import-Folders-Add.png"><img
+										src="/assets/img/server/Shoko-Server-Import-Folders-Add.png" class="img-responsive img-thumbnail"
+										alt="Shoko Server - Add Import Folder"/></a>
+										<figcaption>Shoko Server - Add Import Folder</figcaption>
+								</figure>
+						</div>
+				</div>
+		</section>
 
 <!-- Sidebar -->
 <aside class="col-md-3 col-sm-3 sidebar">
