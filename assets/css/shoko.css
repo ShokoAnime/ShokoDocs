@@ -12600,6 +12600,8 @@ h2[id] {
 	background-color: #00BFA5;
 }
 
+/*
+
 .change-added:after {
 	content: "Added";
 }
@@ -12622,6 +12624,12 @@ h2[id] {
 
 .change-merged:after {
 	content: "Merged";
+}
+
+*/
+
+.git-link {
+	display: none;
 }
 
 .changelog {
