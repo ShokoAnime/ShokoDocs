@@ -7907,9 +7907,9 @@ $(function() {
         $("body").hasClass("open-sidebar") ? e() : d()
     }), $(document).on("click", ".offcanvas-backdrop", function() {
         e()
-    }),$(".nav.sidenav a").on("click", function() {
+    }), $(".nav.sidenav a").on("click", function() {
         e()
-    }),  $(".sidenav.dropable > li > a").on("click", function(a) {
+    }), $(".sidenav.dropable > li > a").on("click", function(a) {
         if (0 < $(this).next("ul").length && a.preventDefault(), 0 != $(this).next("ul").length) {
             if ($(this).hasClass("open")) return void $(this).removeClass("open").next("ul").slideUp(300);
             $(this).closest(".sidenav").find("> li > a").removeClass("open"), $(this).closest(".sidenav").find("ul:visible").slideUp(300), $(this).addClass("open").next("ul").slideDown(300, function() {

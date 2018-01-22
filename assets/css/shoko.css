@@ -1459,7 +1459,7 @@ hr {
 .h1 .small, .h1 small, .h2 .small, .h2 small, .h3 .small, .h3 small, .h4 .small, .h4 small, .h5 .small, .h5 small, .h6 .small, .h6 small, h1 .small, h1 small, h2 .small, h2 small, h3 .small, h3 small, h4 .small, h4 small, h5 .small, h5 small, h6 .small, h6 small {
 	font-weight: 400;
 	line-height: 1;
-	color: #777
+	color: #333
 }
 
 .h1, .h2, .h3, h1, h2, h3 {
@@ -1505,7 +1505,7 @@ hr {
 }
 
 p {
-	Color: #666;
+	Color: #333;
 	margin: 0 0 10px
 }
 
@@ -1564,7 +1564,7 @@ p {
 }
 
 .text-muted {
-	color: #777
+	color: #333
 }
 
 .text-primary {
@@ -1715,7 +1715,7 @@ dd {
 
 abbr[data-original-title], abbr[title] {
 	cursor: help;
-	border-bottom: 1px dotted #777
+	border-bottom: 1px dotted #333
 }
 
 .initialism {
@@ -1738,7 +1738,7 @@ blockquote .small, blockquote footer, blockquote small {
 	display: block;
 	font-size: 80%;
 	line-height: 1.42857143;
-	color: #777
+	color: #333
 }
 
 blockquote .small:before, blockquote footer:before, blockquote small:before {
@@ -2714,7 +2714,7 @@ table {
 caption {
 	padding-top: 8px;
 	padding-bottom: 8px;
-	color: #777;
+	color: #333;
 	text-align: left
 }
 
@@ -3719,7 +3719,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
 }
 
 .btn-link[disabled]:focus, .btn-link[disabled]:hover, fieldset[disabled] .btn-link:focus, fieldset[disabled] .btn-link:hover {
-	color: #777;
+	color: #333;
 	text-decoration: none
 }
 
@@ -3878,7 +3878,7 @@ tbody.collapse.in {
 }
 
 .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:focus, .dropdown-menu > .disabled > a:hover {
-	color: #777
+	color: #333
 }
 
 .dropdown-menu > .disabled > a:focus, .dropdown-menu > .disabled > a:hover {
@@ -3912,7 +3912,7 @@ tbody.collapse.in {
 	padding: 3px 20px;
 	font-size: 12px;
 	line-height: 1.42857143;
-	color: #777;
+	color: #333;
 	white-space: nowrap
 }
 
@@ -4302,11 +4302,11 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 }
 
 .nav > li.disabled > a {
-	color: #777
+	color: #333
 }
 
 .nav > li.disabled > a:focus, .nav > li.disabled > a:hover {
-	color: #777;
+	color: #333;
 	text-decoration: none;
 	cursor: not-allowed;
 	background-color: transparent
@@ -4483,6 +4483,10 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 	.nav-tabs-justified > .active > a, .nav-tabs-justified > .active > a:focus, .nav-tabs-justified > .active > a:hover {
 		border-bottom-color: #fff
 	}
+}
+
+.tab-content {
+	padding: 15px 25px 0 25px;
 }
 
 .tab-content > .tab-pane {
@@ -4875,7 +4879,7 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 }
 
 .navbar-default .navbar-brand {
-	color: #777
+	color: #333
 }
 
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
@@ -4884,11 +4888,11 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 }
 
 .navbar-default .navbar-text {
-	color: #777
+	color: #333
 }
 
 .navbar-default .navbar-nav > li > a {
-	color: #777
+	color: #333
 }
 
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
@@ -4929,7 +4933,7 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 
 @media (max-width: 767px) {
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a {
-		color: #777
+		color: #333
 	}
 
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
@@ -4949,7 +4953,7 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 }
 
 .navbar-default .navbar-link {
-	color: #777
+	color: #333
 }
 
 .navbar-default .navbar-link:hover {
@@ -4957,7 +4961,7 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 }
 
 .navbar-default .btn-link {
-	color: #777
+	color: #333
 }
 
 .navbar-default .btn-link:focus, .navbar-default .btn-link:hover {
@@ -5094,7 +5098,7 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 }
 
 .breadcrumb > .active {
-	color: #777
+	color: #333
 }
 
 .pagination {
@@ -5147,7 +5151,7 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 }
 
 .pagination > .disabled > a, .pagination > .disabled > a:focus, .pagination > .disabled > a:hover, .pagination > .disabled > span, .pagination > .disabled > span:focus, .pagination > .disabled > span:hover {
-	color: #777;
+	color: #333;
 	cursor: not-allowed;
 	background-color: #fff;
 	border-color: #ddd
@@ -5218,7 +5222,7 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 }
 
 .pager .disabled > a, .pager .disabled > a:focus, .pager .disabled > a:hover, .pager .disabled > span {
-	color: #777;
+	color: #333;
 	cursor: not-allowed;
 	background-color: #fff
 }
@@ -5252,7 +5256,7 @@ a.label:focus, a.label:hover {
 }
 
 .label-default {
-	background-color: #777
+	background-color: #333
 }
 
 .label-default[href]:focus, .label-default[href]:hover {
@@ -5310,7 +5314,7 @@ a.label:focus, a.label:hover {
 	text-align: center;
 	white-space: nowrap;
 	vertical-align: middle;
-	background-color: #777;
+	background-color: #333;
 	border-radius: 10px
 }
 
@@ -5725,7 +5729,7 @@ button.list-group-item {
 }
 
 .list-group-item.disabled, .list-group-item.disabled:focus, .list-group-item.disabled:hover {
-	color: #777;
+	color: #333;
 	cursor: not-allowed;
 	background-color: #eee
 }
@@ -5735,7 +5739,7 @@ button.list-group-item {
 }
 
 .list-group-item.disabled .list-group-item-text, .list-group-item.disabled:focus .list-group-item-text, .list-group-item.disabled:hover .list-group-item-text {
-	color: #777
+	color: #333
 }
 
 .list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
@@ -10970,7 +10974,7 @@ body[data-spy] {
 }
 
 .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
-	color: #777;
+	color: #333;
 	background-color: #ffffff;
 }
 
@@ -11050,7 +11054,7 @@ body[data-spy] {
 }
 
 .navbar-default.navbar-light li > a {
-	color: #777;
+	color: #333;
 }
 
 .navbar-default.navbar-light li > a:focus, .navbar-default.navbar-light li > a:hover {
@@ -11171,7 +11175,7 @@ body[data-spy] {
 .site-footer {
 	position: relative;
 	background-color: #f5f5f5;
-	color: #777;
+	color: #333;
 	padding: 30px 15px;
 }
 
@@ -11269,7 +11273,7 @@ body[data-spy] {
 }
 
 .sidenav a:focus {
-	color: #777;
+	color: #333;
 }
 
 .sidenav ul {
@@ -11321,7 +11325,7 @@ ul.dropable {
 .sidenav a {
 	display: block;
 	line-height: 30px;
-	color: #777;
+	color: #333;
 	-webkit-transition: .3s ease;
 	-o-transition: .3s ease;
 	transition: .3s ease;
@@ -11350,7 +11354,7 @@ ul.dropable {
 	position: relative;
 	font-size: 16px;
 	line-height: 36px;
-	color: #777;
+	color: #333;
 }
 
 .sidenav > li > ul {
@@ -11535,7 +11539,7 @@ ul.dropable {
 .sidebar-boxed .sidenav > li > a {
 	padding-top: 6px !important;
 	padding-bottom: 6px !important;
-	color: #777;
+	color: #333;
 }
 
 .sidebar-boxed .sidenav > li > a:hover {
@@ -11859,7 +11863,7 @@ a:focus {
 
 p,
 ul {
-	color: #666;
+	color: #333;
 	font-weight: 400;
 }
 
@@ -11872,7 +11876,7 @@ blockquote {
 	font-family: georgia, sans-serif;
 	font-style: italic;
 	font-size: 20px;
-	color: #777;
+	color: #333;
 }
 
 h1 {
@@ -11931,7 +11935,7 @@ h6 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	color: #666;
+	color: #333;
 	font-family: "Raleway", sans-serif;
 }
 
@@ -11948,7 +11952,7 @@ h5 a:focus,
 h5 a:hover, h6 a,
 h6 a:focus,
 h6 a:hover {
-	color: #666;
+	color: #333;
 	text-decoration: none;
 }
 
@@ -12276,7 +12280,7 @@ h2[id] {
 
 .btn-default {
 	background-color: #f5f5f5;
-	color: #777777;
+	color: #333777;
 }
 
 .btn-purple,
@@ -12368,7 +12372,7 @@ h2[id] {
 }
 
 .btn-white {
-	color: #777;
+	color: #333;
 }
 
 .btn-white.active, .btn-white.focus, .btn-white:active, .btn-white:focus, .btn-white:hover {
@@ -12394,12 +12398,12 @@ h2[id] {
 }
 
 .btn-outline.btn-default {
-	color: #777777;
-	border-color: #777777;
+	color: #333777;
+	border-color: #333777;
 }
 
 .btn-outline.btn-default.active, .btn-outline.btn-default.focus, .btn-outline.btn-default:active, .btn-outline.btn-default:focus, .btn-outline.btn-default:hover {
-	background-color: #777777;
+	background-color: #333777;
 }
 
 .btn-outline.btn-primary {
@@ -12474,8 +12478,8 @@ h2[id] {
 }
 
 .btn-round.btn-default {
-	color: #777777;
-	border-color: #777777;
+	color: #333777;
+	border-color: #333777;
 }
 
 .btn-round.btn-primary {
@@ -12524,7 +12528,7 @@ h2[id] {
 }
 
 .btn-round.btn-default.active, .btn-round.btn-default.focus, .btn-round.btn-default:active, .btn-round.btn-default:focus, .btn-round.btn-default:hover {
-	background-color: #777777;
+	background-color: #333777;
 }
 
 /*------------------------------------
@@ -12715,7 +12719,7 @@ h2[id] {
 }
 
 .form-control:focus {
-	color: #777;
+	color: #333;
 	border-color: #ccc;
 	outline: none;
 	-webkit-box-shadow: none;
@@ -12873,7 +12877,7 @@ h2[id] {
 }
 
 .faq-search:focus {
-	color: #777;
+	color: #333;
 	border-color: #ccc;
 	outline: none;
 }
@@ -13326,7 +13330,7 @@ div.prism-show-language > div.prism-show-language-label {
 }
 
 .list-view p {
-	color: #777;
+	color: #333;
 }
 
 .list-view .meta-data {
@@ -13392,7 +13396,7 @@ div.prism-show-language > div.prism-show-language-label {
 }
 
 .grid-view p {
-	color: #777;
+	color: #333;
 }
 
 .grid-view .meta-data {
@@ -13708,7 +13712,7 @@ div.prism-show-language > div.prism-show-language-label {
 }
 
 .file-tree li > i {
-	color: #777;
+	color: #333;
 	font-size: 13px;
 	padding-left: 12px;
 	cursor: default;
@@ -14051,15 +14055,15 @@ figcaption {
 }
 
 .carousel.color-alt .carousel-control .fa {
-	color: #777;
+	color: #333;
 }
 
 .carousel.color-alt .carousel-indicators li {
-	border-color: #777;
+	border-color: #333;
 }
 
 .carousel.color-alt .carousel-indicators .active {
-	background-color: #777;
+	background-color: #333;
 }
 
 .carousel.indicators-out {
@@ -14427,7 +14431,7 @@ figcaption {
 .pagination li > span {
 	border: none;
 	margin: 0 4px;
-	color: #777;
+	color: #333;
 	-webkit-transition: .3s ease-out;
 	-o-transition: .3s ease-out;
 	transition: .3s ease-out;
@@ -14464,7 +14468,7 @@ figcaption {
 	font-size: 14px;
 	font-weight: 600;
 	border-radius: 0;
-	color: #777;
+	color: #333;
 	-webkit-transition: .3s ease-out;
 	-o-transition: .3s ease-out;
 	transition: .3s ease-out;
@@ -14607,7 +14611,7 @@ figcaption {
 	margin-right: 8px;
 	margin-bottom: 8px;
 	border: 1px solid #f5f5f5;
-	color: #777;
+	color: #333;
 	text-transform: uppercase;
 	font-size: 12px;
 	-webkit-transition: .3s linear;
@@ -14656,7 +14660,7 @@ figcaption {
 .widget_categories .cat-item a {
 	font-size: 16px;
 	line-height: 44px;
-	color: #777;
+	color: #333;
 	-webkit-transition: color .2s linear;
 	-o-transition: color .2s linear;
 	transition: color .2s linear;
@@ -14673,7 +14677,7 @@ figcaption {
 	margin-right: 8px;
 	margin-bottom: 8px;
 	border: 1px solid #f5f5f5;
-	color: #777;
+	color: #333;
 	text-transform: uppercase;
 	font-size: 12px;
 	-webkit-transition: .3s linear;
