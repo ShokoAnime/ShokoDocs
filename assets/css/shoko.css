@@ -11969,7 +11969,7 @@ h1 a:before, h2 a:before, h3 a:before {
 	margin-right: 8px;
 	font-family: 'Glyphicons Halflings';
 	font-size: 22px;
-	color: #5cc7b2;
+	color: #217ebd;
 	opacity: .3;
 	content: "\e144";
 	-webkit-transition: .3s ease;
@@ -12220,12 +12220,12 @@ h2[id] {
 }
 
 .callout-info {
-	border-left-color: #48b0f7;
+	border-left-color: #217ebd;
 }
 
 .callout-info h4,
 .callout-info a {
-	color: #48b0f7;
+	color: #217ebd;
 }
 
 .callout-warning {
@@ -12581,7 +12581,7 @@ h2[id] {
 }
 
 .change-added {
-	background-color: #4CAF50;
+	background-color: #36ad6f;
 }
 
 .change-fixed {
@@ -12589,11 +12589,11 @@ h2[id] {
 }
 
 .change-removed {
-	background-color: #F44336;
+	background-color: #e7505a;
 }
 
 .change-updated {
-	background-color: #29B6F6;
+	background-color: #217ebd;
 }
 
 .change-moved {
