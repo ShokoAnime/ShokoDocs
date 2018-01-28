@@ -67,17 +67,17 @@ permalink: server/install_linux.html
 										<p>The latest Docker image is available <a href = "https://hub.docker.com/r/cazzar/shokoserver/">here</a>.
 												To get the image run the following in the command line.
 										</p>
-										<pre><code class="language-bash">docker pull cazzar/shokoserver</code></pre>
+										<pre><code class = "language-bash">docker pull cazzar/shokoserver</code></pre>
 										<h3>Docker Run</h3>
 										<p>To run a basic docker container for ShokoServer you can run the following from the command line.</p>
-										<pre><code class="language-bash">docker run -p 8111:8111 cazzar/shokoserver</code></pre>
+										<pre><code class = "language-bash">docker run -p 8111:8111 cazzar/shokoserver</code></pre>
 										<p>This command will run a new empty docker instance with ShokoServer installed and at the same time port 8111 will
 												be made available to the host to reach ShokoServer. At this point you'll be able to use Shoko Desktop.
 										</p>
 										<p>However, this won't be enough to keep a persistent ShokoServer instance running. We will add a few things to the
 												docker command to make sure we can survive a reboot after we make some changes.
 										</p>
-										<pre><code class="language-bash">docker run -d --name shokoserver --restart always -p 8111:8111/tcp -v "/path/to/shoko/settings:/root/.shoko" -v "/path/to/webui:/usr/src/app/build/webui" -v "/path/to/anime:/anime" -v "/path/to/import:/import" cazzar/shokoserver</code></pre>
+										<pre><code class = "language-bash">docker run -d --name shokoserver --restart always -p 8111:8111/tcp -v "/path/to/shoko/settings:/root/.shoko" -v "/path/to/webui:/usr/src/app/build/webui" -v "/path/to/anime:/anime" -v "/path/to/import:/import" cazzar/shokoserver</code></pre>
 										<h3>Command Breakdown</h3>
 										<table class = "table table-striped">
 												<thead>
@@ -89,7 +89,7 @@ permalink: server/install_linux.html
 												<tbody>
 												<tr>
 														<td>
-																<pre><code class="language-bash">-d</code></pre>
+																<pre><code class = "language-bash">-d</code></pre>
 														</td>
 														<td><p><a href = "https://docs.docker.com/engine/reference/run/#detached--d">Runs in detached mode.</a></p>
 																<p>This prevents docker from running Shoko Server within your session. If your client does not have a return to
@@ -98,7 +98,7 @@ permalink: server/install_linux.html
 												</tr>
 												<tr>
 														<td>
-																<pre><code class="language-bash">--name shokoserver</code></pre>
+																<pre><code class = "language-bash">--name shokoserver</code></pre>
 														</td>
 														<td><p><a href = "https://docs.docker.com/engine/reference/run/#container-identification">Names your container.</a></p>
 																<p>This is useful if you have a utility that manages docker by container names. Without this, your container will
@@ -108,13 +108,13 @@ permalink: server/install_linux.html
 												</tr>
 												<tr>
 														<td>
-																<pre><code class="language-bash">--restart always</code></pre>
+																<pre><code class = "language-bash">--restart always</code></pre>
 														</td>
 														<td><a href = "https://docs.docker.com/engine/reference/run/#restart-policies-restart">Defines a restart policy.</a></td>
 												</tr>
 												<tr>
 														<td>
-																<pre><code class="language-bash">-p 8111:8111/tcp</code></pre>
+																<pre><code class = "language-bash">-p 8111:8111/tcp</code></pre>
 														</td>
 														<td><p><a href = "https://docs.docker.com/engine/reference/run/#expose-incoming-ports">Publishes the containers Ports.</a>
 														</p>
@@ -125,7 +125,7 @@ permalink: server/install_linux.html
 												</tr>
 												<tr>
 														<td>
-																<pre><code class="language-bash">-v "/path/to/shoko/settings:/root/.shoko"</code></pre>
+																<pre><code class = "language-bash">-v "/path/to/shoko/settings:/root/.shoko"</code></pre>
 														</td>
 														<td><p><a href = "https://docs.docker.com/engine/reference/run/#volume-shared-filesystems">Mounts volumes.</a></p>
 																<p>To preserve settings between updates, the settings folder must be remapped to a location outside the
@@ -139,7 +139,7 @@ permalink: server/install_linux.html
 												</tr>
 												<tr>
 														<td>
-																<pre><code class="language-bash">-v "/path/to/webui:/usr/src/app/build/webui"</code></pre>
+																<pre><code class = "language-bash">-v "/path/to/webui:/usr/src/app/build/webui"</code></pre>
 														</td>
 														<td><p><a href = "https://docs.docker.com/engine/reference/run/#volume-shared-filesystems">Mounts volumes.</a></p>
 																<p>To preserve webui between updates, the webui folder must be remapped to a location outside the container.</p>
@@ -150,7 +150,7 @@ permalink: server/install_linux.html
 												</tr>
 												<tr>
 														<td>
-																<pre><code class="language-bash">-v "/path/to/anime:/anime"</code></pre>
+																<pre><code class = "language-bash">-v "/path/to/anime:/anime"</code></pre>
 														</td>
 														<td><p><a href = "https://docs.docker.com/engine/reference/run/#volume-shared-filesystems">Mounts volumes.</a></p>
 																<p>In order for Shoko Server to manage your collection, you must map at least one volume to the container.
@@ -160,7 +160,7 @@ permalink: server/install_linux.html
 														</td>
 												</tr>
 												<td>
-														<pre><code class="language-bash">-v "/path/to/import:/import"</code></pre>
+														<pre><code class = "language-bash">-v "/path/to/import:/import"</code></pre>
 												</td>
 												<td><p><a href = "https://docs.docker.com/engine/reference/run/#volume-shared-filesystems">Mounts volumes.</a>
 														<p>
@@ -171,7 +171,7 @@ permalink: server/install_linux.html
 												</td>
 												<tr>
 														<td>
-																<pre><code class="language-bash">cazzar/shokoserver</code></pre>
+																<pre><code class = "language-bash">cazzar/shokoserver</code></pre>
 														</td>
 														<td><p><a href = "https://docs.docker.com/engine/reference/run/">Specifies the Image to derive the container from.</a></p>
 														</td>
@@ -181,246 +181,246 @@ permalink: server/install_linux.html
 								</div>
 						</div>
 						<div role = "tabpanel" class = "tab-pane fade" id = "running-synology">
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>Open Docker from the Main Menu.</p>
-												</div>
-												<div class = "col-sm-4">
-														<figure><a href = "../assets/img/server/Synology-Running-Docker-Start-Docker.png"><img
-																src = "../assets/img/server/Synology-Running-Docker-Start-Docker.png" class = "img-responsive img-thumbnail"
-																alt = "Synology Running Docker - Start Docker"/>
-														</a>
-																<figcaption>Synology Running Docker - Start Docker</figcaption>
-														</figure>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>Open Docker from the Main Menu.</p>
+										</div>
+										<div class = "col-sm-4">
+												<figure><a href = "../assets/img/server/Synology-Running-Docker-Start-Docker.png"><img
+														src = "../assets/img/server/Synology-Running-Docker-Start-Docker.png" class = "img-responsive img-thumbnail"
+														alt = "Synology Running Docker - Start Docker"/>
+												</a>
+														<figcaption>Synology Running Docker - Start Docker</figcaption>
+												</figure>
+										</div>
+								</div>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>Open the Docker Registry</p>
+										</div>
+										<div class = "col-sm-4">
+												<a href = "../assets/img/server/Synology-Running-Docker-Open-Docker-Registry.png"><img
+														src = "../assets/img/server/Synology-Running-Docker-Open-Docker-Registry.png"
+														class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Open Docker Registry"/>
+												</a>
+												<figcaption>Synology Running Docker - Open Docker Registry</figcaption>
+										</div>
+								</div>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>Open Docker Registry Settings.</p>
+										</div>
+										<div class = "col-sm-4">
+												<a href = "../assets/img/server/Synology-Running-Docker-Open-Docker-Registry-Settings.png"><img
+														src = "../assets/img/server/Synology-Running-Docker-Open-Docker-Registry-Settings.png"
+														class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Open Docker Registry Settings"/>
+												</a>
+												<figcaption>Synology Running Docker - Open Docker Registry Settings</figcaption>
+										</div>
+								</div>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>By default, Synology's Docker is only configured to allow images downloaded from it's own private registry. Shoko Server
+														is published to the Docker Hub, and that registry needs to be added to Synology Docker.</p>
+												<p>Add a new registry.</p>
+										</div>
+										<div class = "col-sm-4">
+												<a href = "../assets/img/server/Synology-Running-Docker-Add-A-New-Registry.png"><img
+														src = "../assets/img/server/Synology-Running-Docker-Add-A-New-Registry.png"
+														class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Add A New Registry"/>
+												</a>
+												<figcaption>Synology Running Docker - Add A New Registry</figcaption>
+										</div>
+								</div>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>Enter Docker Hub's registry details</p>
+												<table class = "table table-striped">
+														<tr>
+																<th>Name</th>
+																<th>Value</th>
+														</tr>
+														<tr>
+																<td>Registry Name</td>
+																<td>Docker Hub</td>
+														</tr>
+														<tr>
+																<td>Registry URL</td>
+																<td>https://registry.hub.docker.com</td>
+														</tr>
+														<tr>
+																<td>Trust SSL Self-Signed Certificate</td>
+																<td>&#x2714;</td>
+														</tr>
+												</table>
+										</div>
+										<div class = "col-sm-4">
+												<a href = "../assets/img/server/Synology-Running-Docker-Enter-Registry-Details.png"><img
+														src = "../assets/img/server/Synology-Running-Docker-Enter-Registry-Details.png"
+														class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Enter Registry Details"/>
+												</a>
+												<figcaption>Synology Running Docker - Enter Registry Details</figcaption>
+										</div>
+								</div>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>Click OK to close Synology Docker Registry Settings.</p>
+										</div>
+										<div class = "col-sm-4">
+												<a href = "../assets/img/server/Synology-Running-Docker-Close-Synology-Docker-Registry-Settings.png"><img
+														src = "../assets/img/server/Synology-Running-Docker-Close-Synology-Docker-Registry-Settings.png"
+														class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Close Synology Docker Registry Settings"/>
+												</a>
+												<figcaption>Synology Running Docker - Close Synology Docker Registry Settings</figcaption>
+										</div>
+								</div>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>You can now search repositories from the Docker Hub Registry. Enter "cazzar/shokoserver" into the search box above and
+														click the search button.</p>
+												<p>Check to make sure your results are accurate and click on the "cazzar/shokoserver" to chose a release to download.</p>
+										</div>
+										<div class = "col-sm-4">
+												<a href = "../assets/img/server/Synology-Running-Docker-Search-for-Shoko-Server.png"><img
+														src = "../assets/img/server/Synology-Running-Docker-Search-for-Shoko-Server.png"
+														class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Search for Shoko Server"/>
+												</a>
+												<figcaption>Synology Running Docker - Search for Shoko Server</figcaption>
+										</div>
+								</div>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>Chose the latest release to download.</p>
+												<div class = "bs-callout bs-callout-info">
+														<h4>Note</h4>
+														<p>At this time there are only two releases available - 'Latest' and 'Daily'. There is no difference between the two
+																builds.
+																However they are updated frequently. A seperate stable release will become available soon.
+														</p>
 												</div>
 										</div>
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>Open the Docker Registry</p>
-												</div>
-												<div class = "col-sm-4">
-														<a href = "../assets/img/server/Synology-Running-Docker-Open-Docker-Registry.png"><img
-																src = "../assets/img/server/Synology-Running-Docker-Open-Docker-Registry.png"
-																class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Open Docker Registry"/>
-														</a>
-														<figcaption>Synology Running Docker - Open Docker Registry</figcaption>
-												</div>
+										<div class = "col-sm-4">
+												<a href = "../assets/img/server/Synology-Running-Docker-Select-Release.png"><img
+														src = "../assets/img/server/Synology-Running-Docker-Select-Release.png"
+														class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Select Release"/>
+												</a>
+												<figcaption>Synology Running Docker - Select Release</figcaption>
 										</div>
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>Open Docker Registry Settings.</p>
-												</div>
-												<div class = "col-sm-4">
-														<a href = "../assets/img/server/Synology-Running-Docker-Open-Docker-Registry-Settings.png"><img
-																src = "../assets/img/server/Synology-Running-Docker-Open-Docker-Registry-Settings.png"
-																class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Open Docker Registry Settings"/>
-														</a>
-														<figcaption>Synology Running Docker - Open Docker Registry Settings</figcaption>
-												</div>
+								</div>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>After selecting the release, a notification under images will appear and Shoko Server download will begin.</p>
 										</div>
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>By default, Synology's Docker is only configured to allow images downloaded from it's own private registry. Shoko Server
-																is published to the Docker Hub, and that registry needs to be added to Synology Docker.</p>
-														<p>Add a new registry.</p>
-												</div>
-												<div class = "col-sm-4">
-														<a href = "../assets/img/server/Synology-Running-Docker-Add-A-New-Registry.png"><img
-																src = "../assets/img/server/Synology-Running-Docker-Add-A-New-Registry.png"
-																class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Add A New Registry"/>
-														</a>
-														<figcaption>Synology Running Docker - Add A New Registry</figcaption>
-												</div>
+										<div class = "col-sm-4">
+												<a href = "../assets/img/server/Synology-Running-Docker-Download-Started.png"><img
+														src = "../assets/img/server/Synology-Running-Docker-Download-Started.png"
+														class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Download Started"/>
+												</a>
+												<figcaption>Synology Running Docker - Download Started</figcaption>
 										</div>
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>Enter Docker Hub's registry details</p>
-														<table class = "table table-striped">
-																<tr>
-																		<th>Name</th>
-																		<th>Value</th>
-																</tr>
-																<tr>
-																		<td>Registry Name</td>
-																		<td>Docker Hub</td>
-																</tr>
-																<tr>
-																		<td>Registry URL</td>
-																		<td>https://registry.hub.docker.com</td>
-																</tr>
-																<tr>
-																		<td>Trust SSL Self-Signed Certificate</td>
-																		<td>&#x2714;</td>
-																</tr>
-														</table>
-												</div>
-												<div class = "col-sm-4">
-														<a href = "../assets/img/server/Synology-Running-Docker-Enter-Registry-Details.png"><img
-																src = "../assets/img/server/Synology-Running-Docker-Enter-Registry-Details.png"
-																class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Enter Registry Details"/>
-														</a>
-														<figcaption>Synology Running Docker - Enter Registry Details</figcaption>
-												</div>
+								</div>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>Wait for the download to complete, then click Launch to create a container for Shoko Server (download size may
+														differ).</p>
 										</div>
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>Click OK to close Synology Docker Registry Settings.</p>
-												</div>
-												<div class = "col-sm-4">
-														<a href = "../assets/img/server/Synology-Running-Docker-Close-Synology-Docker-Registry-Settings.png"><img
-																src = "../assets/img/server/Synology-Running-Docker-Close-Synology-Docker-Registry-Settings.png"
-																class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Close Synology Docker Registry Settings"/>
-														</a>
-														<figcaption>Synology Running Docker - Close Synology Docker Registry Settings</figcaption>
-												</div>
+										<div class = "col-sm-4">
+												<a href = "../assets/img/server/Synology-Running-Docker-Launch-Image.png"><img
+														src = "../assets/img/server/Synology-Running-Docker-Launch-Image.png"
+														class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Launch Image"/>
+												</a>
+												<figcaption>Synology Running Docker - Launch Image</figcaption>
 										</div>
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>You can now search repositories from the Docker Hub Registry. Enter "cazzar/shokoserver" into the search box above and
-																click the search button.</p>
-														<p>Check to make sure your results are accurate and click on the "cazzar/shokoserver" to chose a release to download.</p>
-												</div>
-												<div class = "col-sm-4">
-														<a href = "../assets/img/server/Synology-Running-Docker-Search-for-Shoko-Server.png"><img
-																src = "../assets/img/server/Synology-Running-Docker-Search-for-Shoko-Server.png"
-																class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Search for Shoko Server"/>
-														</a>
-														<figcaption>Synology Running Docker - Search for Shoko Server</figcaption>
-												</div>
+								</div>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>Click on Advanced Settings.</p>
 										</div>
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>Chose the latest release to download.</p>
-														<div class = "bs-callout bs-callout-info">
-																<h4>Note</h4>
-																<p>At this time there are only two releases available - 'Latest' and 'Daily'. There is no difference between the two
-																		builds.
-																		However they are updated frequently. A seperate stable release will become available soon.
-																</p>
-														</div>
-												</div>
-												<div class = "col-sm-4">
-														<a href = "../assets/img/server/Synology-Running-Docker-Select-Release.png"><img
-																src = "../assets/img/server/Synology-Running-Docker-Select-Release.png"
-																class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Select Release"/>
-														</a>
-														<figcaption>Synology Running Docker - Select Release</figcaption>
-												</div>
+										<div class = "col-sm-4">
+												<a href = "../assets/img/server/Synology-Running-Docker-Advanced-Settings.png"><img
+														src = "../assets/img/server/Synology-Running-Docker-Advanced-Settings.png"
+														class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Advanced Settings"/>
+												</a>
+												<figcaption>Synology Running Docker - Advanced Settings</figcaption>
 										</div>
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>After selecting the release, a notification under images will appear and Shoko Server download will begin.</p>
-												</div>
-												<div class = "col-sm-4">
-														<a href = "../assets/img/server/Synology-Running-Docker-Download-Started.png"><img
-																src = "../assets/img/server/Synology-Running-Docker-Download-Started.png"
-																class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Download Started"/>
-														</a>
-														<figcaption>Synology Running Docker - Download Started</figcaption>
-												</div>
+								</div>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>OPTIONAL: <a href = "https://docs.docker.com/engine/admin/start-containers-automatically/">Enable Auto Restart.</a></p>
+												<p>Click on 'Volume' to continue.</p>
 										</div>
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>Wait for the download to complete, then click Launch to create a container for Shoko Server (download size may
-																differ).</p>
-												</div>
-												<div class = "col-sm-4">
-														<a href = "../assets/img/server/Synology-Running-Docker-Launch-Image.png"><img
-																src = "../assets/img/server/Synology-Running-Docker-Launch-Image.png"
-																class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Launch Image"/>
-														</a>
-														<figcaption>Synology Running Docker - Launch Image</figcaption>
-												</div>
+										<div class = "col-sm-4">
+												<a href = "../assets/img/server/Synology-Running-Docker-Enable-Auto-Restart.png"><img
+														src = "../assets/img/server/Synology-Running-Docker-Enable-Auto-Restart.png"
+														class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Enable Auto Restart"/>
+												</a>
+												<figcaption>Synology Running Docker - Enable Auto Restart</figcaption>
 										</div>
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>Click on Advanced Settings.</p>
-												</div>
-												<div class = "col-sm-4">
-														<a href = "../assets/img/server/Synology-Running-Docker-Advanced-Settings.png"><img
-																src = "../assets/img/server/Synology-Running-Docker-Advanced-Settings.png"
-																class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Advanced Settings"/>
-														</a>
-														<figcaption>Synology Running Docker - Advanced Settings</figcaption>
-												</div>
+								</div>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>Here you will mount volumes to folders on the host. This is done to preserve your settings between updates and to grant
+														the container access to your shared folders.</p>
+												<p>Click on 'Port Settings' to continue.</p>
 										</div>
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>OPTIONAL: <a href = "https://docs.docker.com/engine/admin/start-containers-automatically/">Enable Auto Restart.</a></p>
-														<p>Click on 'Volume' to continue.</p>
-												</div>
-												<div class = "col-sm-4">
-														<a href = "../assets/img/server/Synology-Running-Docker-Enable-Auto-Restart.png"><img
-																src = "../assets/img/server/Synology-Running-Docker-Enable-Auto-Restart.png"
-																class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Enable Auto Restart"/>
-														</a>
-														<figcaption>Synology Running Docker - Enable Auto Restart</figcaption>
-												</div>
+										<div class = "col-sm-4">
+												<a href = "../assets/img/server/Synology-Running-Docker-Add-Volumes.png"><img
+														src = "../assets/img/server/Synology-Running-Docker-Add-Volumes.png"
+														class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Add Volumes"/>
+												</a>
+												<figcaption>Synology Running Docker - Add Volumes</figcaption>
 										</div>
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>Here you will mount volumes to folders on the host. This is done to preserve your settings between updates and to grant
-																the container access to your shared folders.</p>
-														<p>Click on 'Port Settings' to continue.</p>
-												</div>
-												<div class = "col-sm-4">
-														<a href = "../assets/img/server/Synology-Running-Docker-Add-Volumes.png"><img
-																src = "../assets/img/server/Synology-Running-Docker-Add-Volumes.png"
-																class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Add Volumes"/>
-														</a>
-														<figcaption>Synology Running Docker - Add Volumes</figcaption>
-												</div>
+								</div>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>Bind Local TCP Port 8111 to Container TCP Port 8111.</p>
 										</div>
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>Bind Local TCP Port 8111 to Container TCP Port 8111.</p>
-												</div>
-												<div class = "col-sm-4">
-														<a href = "../assets/img/server/Synology-Running-Docker-Bind-Ports.png"><img
-																src = "../assets/img/server/Synology-Running-Docker-Bind-Ports.png"
-																class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Bind Ports"/>
-														</a>
-														<figcaption>Synology Running Docker - Bind Ports</figcaption>
-												</div>
+										<div class = "col-sm-4">
+												<a href = "../assets/img/server/Synology-Running-Docker-Bind-Ports.png"><img
+														src = "../assets/img/server/Synology-Running-Docker-Bind-Ports.png"
+														class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Bind Ports"/>
+												</a>
+												<figcaption>Synology Running Docker - Bind Ports</figcaption>
 										</div>
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>Click Next to review your settings.</p>
-												</div>
-												<div class = "col-sm-4">
-														<a href = "../assets/img/server/Synology-Running-Docker-Review-Container-Settings.png"><img
-																src = "../assets/img/server/Synology-Running-Docker-Review-Container-Settings.png"
-																class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Review Container Settings"/>
-														</a>
-														<figcaption>Synology Running Docker - Review Container Settings</figcaption>
-												</div>
+								</div>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>Click Next to review your settings.</p>
 										</div>
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>Review your settings and, if everything is correct, click Apply.</p>
-												</div>
-												<div class = "col-sm-4">
-														<a href = "../assets/img/server/Synology-Running-Docker-Create-Container.png"><img
-																src = "../assets/img/server/Synology-Running-Docker-Create-Container.png"
-																class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Create Container"/>
-														</a>
-														<figcaption>Synology Running Docker - Create Container</figcaption>
-												</div>
+										<div class = "col-sm-4">
+												<a href = "../assets/img/server/Synology-Running-Docker-Review-Container-Settings.png"><img
+														src = "../assets/img/server/Synology-Running-Docker-Review-Container-Settings.png"
+														class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Review Container Settings"/>
+												</a>
+												<figcaption>Synology Running Docker - Review Container Settings</figcaption>
 										</div>
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>Click on container to view your newly created Shoko Server.</p>
-												</div>
-												<div class = "col-sm-4">
-														<a href = "../assets/img/server/Synology-Running-Docker-View-Containers.png"><img
-																src = "../assets/img/server/Synology-Running-Docker-View-Containers.png"
-																class = "img-responsive img-thumbnail" alt = "Synology Running Docker - View Containers"/>
-														</a>
-														<figcaption>Synology Running Docker - View Containers</figcaption>
-												</div>
+								</div>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>Review your settings and, if everything is correct, click Apply.</p>
+										</div>
+										<div class = "col-sm-4">
+												<a href = "../assets/img/server/Synology-Running-Docker-Create-Container.png"><img
+														src = "../assets/img/server/Synology-Running-Docker-Create-Container.png"
+														class = "img-responsive img-thumbnail" alt = "Synology Running Docker - Create Container"/>
+												</a>
+												<figcaption>Synology Running Docker - Create Container</figcaption>
+										</div>
+								</div>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>Click on container to view your newly created Shoko Server.</p>
+										</div>
+										<div class = "col-sm-4">
+												<a href = "../assets/img/server/Synology-Running-Docker-View-Containers.png"><img
+														src = "../assets/img/server/Synology-Running-Docker-View-Containers.png"
+														class = "img-responsive img-thumbnail" alt = "Synology Running Docker - View Containers"/>
+												</a>
+												<figcaption>Synology Running Docker - View Containers</figcaption>
 										</div>
 								</div>
 						</div>
+				</div>
 		</section>
 		<section>
 				<h2 id = "manage-shoko-docker">Manage Shoko on Docker</h2>
@@ -440,7 +440,7 @@ permalink: server/install_linux.html
 												on the Docker website. Once docker-compose is installed create a docker-compose.yml file anywhere on your system. Open the file and
 												put the following inside.
 										</p>
-										<pre><code class="language-bash">version: "3"
+										<pre><code class = "language-bash">version: "3"
 services:
     shokoserver:
         container_name: shokoserver
@@ -460,62 +460,62 @@ services:
 								</div>
 						</div>
 						<div role = "tabpanel" class = "tab-pane fade" id = "manage-synology">
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>While viewing the Docker panel in the Synology web interface, click on container to view the running containers.</p>
-														<p>If everything was set up correctly, Shoko Server should be automatically running and the details button will become
-																avaialble. Select the container and then Push the details button.</p>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>While viewing the Docker panel in the Synology web interface, click on container to view the running containers.</p>
+												<p>If everything was set up correctly, Shoko Server should be automatically running and the details button will become
+														avaialble. Select the container and then Push the details button.</p>
+										</div>
+										<div class = "col-sm-4">
+												<a href = "../assets/img/server/Synology-Manage-Docker-View-Details.png"><img
+														src = "../assets/img/server/Synology-Manage-Docker-View-Details.png"
+														class = "img-responsive img-thumbnail" alt = "Synology Manage Docker - View Details"/></a>
+												<figcaption>Synology Manage Docker - View Details</figcaption>
+										</div>
+								</div>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>Here you can view and verify the Port settings and volume settings, as well as other information.</p>
+												<div class = "bs-callout bs-callout-info">
+														<h4>Note</h4>
+														<p>Please take a moment to check out the 'MONO_VERSION' enviroment variable.
+																When requesting support, please mention the 'MONO_VERSION' you are using.
+														</p>
 												</div>
-												<div class = "col-sm-4">
-														<a href = "../assets/img/server/Synology-Manage-Docker-View-Details.png"><img
-																src = "../assets/img/server/Synology-Manage-Docker-View-Details.png"
-																class = "img-responsive img-thumbnail" alt = "Synology Manage Docker - View Details"/></a>
-														<figcaption>Synology Manage Docker - View Details</figcaption>
+												<p>Press the Terminal tab to continue.</p>
+										</div>
+										<div class = "col-sm-4">
+												<a href = "../assets/img/server/Synology-Manage-Docker-Details-Overview.png"><img
+														src = "../assets/img/server/Synology-Manage-Docker-Details-Overview.png"
+														class = "img-responsive img-thumbnail" alt = "Synology Manage Docker - Details Overview"/></a>
+												<figcaption>Synology Manage Docker - Details Overview</figcaption>
+										</div>
+								</div>
+								<div class = "row">
+										<div class = "col-sm-8">
+												<p>The terminal view gives you the output of the Shoko Server session. It is a useful aid in quickly determining if there is
+														an issue.</p>
+												<div class = "bs-callout bs-callout-info">
+														<h4>Note</h4>
+														<p>The terminal view displays work being performed by the Shoko Server in real time. However, the web interface may
+																not be able to handle
+																the amount of information being displayed at once. In addition, there is no way to pause the display and the
+																terminal window does not scroll.
+																It is a useful tool to check the status of your server without webui - but for detailed logging information,
+																please see the logs located in
+																Shoko's log folder.
+														</p>
 												</div>
 										</div>
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>Here you can view and verify the Port settings and volume settings, as well as other information.</p>
-														<div class = "bs-callout bs-callout-info">
-																<h4>Note</h4>
-																<p>Please take a moment to check out the 'MONO_VERSION' enviroment variable.
-																		When requesting support, please mention the 'MONO_VERSION' you are using.
-																</p>
-														</div>
-														<p>Press the Terminal tab to continue.</p>
-												</div>
-												<div class = "col-sm-4">
-														<a href = "../assets/img/server/Synology-Manage-Docker-Details-Overview.png"><img
-																src = "../assets/img/server/Synology-Manage-Docker-Details-Overview.png"
-																class = "img-responsive img-thumbnail" alt = "Synology Manage Docker - Details Overview"/></a>
-														<figcaption>Synology Manage Docker - Details Overview</figcaption>
-												</div>
-										</div>
-										<div class = "row">
-												<div class = "col-sm-8">
-														<p>The terminal view gives you the output of the Shoko Server session. It is a useful aid in quickly determining if there is
-																an issue.</p>
-														<div class = "bs-callout bs-callout-info">
-																<h4>Note</h4>
-																<p>The terminal view displays work being performed by the Shoko Server in real time. However, the web interface may
-																		not be able to handle
-																		the amount of information being displayed at once. In addition, there is no way to pause the display and the
-																		terminal window does not scroll.
-																		It is a useful tool to check the status of your server without webui - but for detailed logging information,
-																		please see the logs located in
-																		Shoko's log folder.
-																</p>
-														</div>
-												</div>
-												<div class = "col-sm-4">
-														<a href = "../assets/img/server/Synology-Manage-Docker-Termainal.png"><img
-																src = "../assets/img/server/Synology-Manage-Docker-Termainal.png"
-																class = "img-responsive img-thumbnail" alt = "Synology Manage Docker - Termainal"/></a>
-														<figcaption>Synology Manage Docker - Terminal</figcaption>
-												</div>
+										<div class = "col-sm-4">
+												<a href = "../assets/img/server/Synology-Manage-Docker-Termainal.png"><img
+														src = "../assets/img/server/Synology-Manage-Docker-Termainal.png"
+														class = "img-responsive img-thumbnail" alt = "Synology Manage Docker - Termainal"/></a>
+												<figcaption>Synology Manage Docker - Terminal</figcaption>
 										</div>
 								</div>
 						</div>
+				</div>
 		</section>
 		<section>
 				<section>
@@ -557,52 +557,55 @@ services:
 								<tr>
 										<td>"DatabaseType": "SQLite",</td>
 										<td>"SQLite", "SQLServer", "MySQL"</td>
-										<td>Please see <a href = "index.html">Preinstallation - Database Setup</a></td>
+										<td>Please see <a href = "db/sqlite.html">Installing and Setting Up SQLite.</a></td>
 								</tr>
 								<tr>
 										<td>"SQLServer_DatabaseServer": "localhost",</td>
 										<td>"localhost", "xxx.xxx.xxx.xxx"</td>
-										<td><a href = "sqlserver.html">SQLServer ONLY</a>: This is the IP Address of the SQL Server</td>
+										<td><a href = "db/sqlserver.html">SQLServer ONLY</a>: This is the IP Address of the SQL Server</td>
 								</tr>
 								<tr>
 										<td>"SQLServer_DatabaseName": "",</td>
 										<td>"ShokoServer", "my_existing_name"</td>
-										<td><a href = "sqlserver.html">SQLServer ONLY</a>: This is the name of the SQL Server Database. If the database does not exist then it will
+										<td><a href = "db/sqlserver.html">SQLServer ONLY</a>: This is the name of the SQL Server Database. If the database does not exist then it
+												will
 												be created.
 										</td>
 								</tr>
 								<tr>
 										<td>"SQLServer_Username": "",</td>
 										<td>"sa","my_existing_username"</td>
-										<td><a href = "sqlserver.html">SQLServer ONLY</a>: This is username for the SQL Server Database.</td>
+										<td><a href = "db/sqlserver.html">SQLServer ONLY</a>: This is username for the SQL Server Database.</td>
 								</tr>
 								<tr>
 										<td>"SQLServer_Password": "",</td>
+										bna
 										<td>"my_sql_password"</td>
-										<td><a href = "sqlserver.html">SQLServer ONLY</a>: This is the password for the user account above, to be used for the SQL Server Database.
+										<td><a href = "db/sqlserver.html">SQLServer ONLY</a>: This is the password for the user account above, to be used for the SQL Server
+												Database.
 										</td>
 								</tr>
 								<tr>
 										<td>"MySQL_Hostname": "localhost",</td>
 										<td>"localhost", "xxx.xxx.xxx.xxx"</td>
-										<td><a href = "mysql.html">MySQL ONLY</a>: This is the IP Address of the MySQL Server</td>
+										<td><a href = "db/mysql.html">MySQL ONLY</a>: This is the IP Address of the MySQL Server</td>
 								</tr>
 								<tr>
 										<td>"MySQL_SchemaName": "",</td>
 										<td>"ShokoServer", "my_existing_name"</td>
-										<td><a href = "mysql.html">MySQL ONLY</a>: This is the name of the MySQL Server Schema. If the schema does not exist then it will be
+										<td><a href = "db/mysql.html">MySQL ONLY</a>: This is the name of the MySQL Server Schema. If the schema does not exist then it will be
 												created.
 										</td>
 								</tr>
 								<tr>
 										<td>"MySQL_Username": "",</td>
 										<td>"root","my_existing_username"</td>
-										<td><a href = "mysql.html">MySQL ONLY</a>: This is the username for the MySQL Server Database.</td>
+										<td><a href = "db/mysql.html">MySQL ONLY</a>: This is the username for the MySQL Server Database.</td>
 								</tr>
 								<tr>
 										<td>"MySQL_Password": "",</td>
 										<td>"my_mysql_password"</td>
-										<td><a href = "mysql.html">MySQL ONLY</a>: This is the password for the user accout above, to be used for the MySQL Server Database.</td>
+										<td><a href = "db/mysql.html">MySQL ONLY</a>: This is the password for the user accout above, to be used for the MySQL Server Database.</td>
 								</tr>
 								<tr>
 										<td>"AniDB_Username": "",</td>
@@ -621,10 +624,9 @@ services:
 		<section class = "github-callout">
 				<div class = "callout callout-info" role = "alert">
 						<h4>Help Make This Page Better</h4>
-						<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it and
-								update it, instead make the update yourself so the community can benefit from it.
-						</p>
-						<a href = "https://github.com/ShokoAnime/ShokoDocs/blob/master/server/install_linux.html" target = "_blank">{{ page.title }}</a>
+						<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it and update it, instead make the update yourself
+								so the community can benefit from it.</p>
+						<a href = "https://github.com/ShokoAnime/ShokoDocs/blob/master/server/install_linux.html" target = "_blank">{{ page.title }} on Github</a>
 				</div>
 		</section>
 </article>
