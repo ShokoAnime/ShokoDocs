@@ -1,48 +1,44 @@
 ---
-layout: sub
+layout: main
 title: Shoko Desktop - Settings Tab
+excerpt: Explanation of the functionality of the Settings Tab.
 permalink: desktop/settings.html
 ---
 
-<!-- Sidebar -->
-<aside class="col-lg-2 col-md-3 col-sm-3 sidebar">
-	<ul class="sidenav dropable sticky">
-		<li><a href="index.html">Shoko Desktop Root</a></li>
-		<li class="hr-menu">
-			<hr/>
-		</li>
-		<li class="hr-menu">
-			<hr/>
-		</li>
-		<li><a href="../faq.html">Frequently Asked Questions</a></li>
-		<li><a href="../changelog.html">Changelog</a></li>
-	</ul>
-</aside>
-<!-- END Sidebar -->
-
 <!-- Main content -->
-<article class="col-lg-10 col-md-9 col-sm-9 main-content" role="main">
-	<header>
-		<h1>Shoko Desktop - Settings Tab</h1>
-		<p>The Settings tab allows you to configure Shoko Desktop to your liking as well as set specific settings related to
-			the various supported community sites.</p>
-		<script language="javascript" src="../assets/js/breadnav.js"></script>
-	</header>
-	<section>
-		<h2>Sorry! Page Under Construction</h2>
-		<p>We haven't had a chance to write this part of the documentation up yet, sorry about that!
-		</p>
-		<p>In the meantime, we're more than happy to answer any questions you might have. All you need to do is join us on
-			<strong>Discord</strong> which you can do by clicking the <strong>Support</strong> link the menu above.
-			Additionally, if you'd like to contribute to this section, lets us know in the <strong>Website
-				Development</strong> channel on our Discord Server.</p>
-	</section>
-	<section class="github-callout">
-		<div class="bs-callout bs-callout-primary">
-			<h4>Help Make This Page Better</h4>
-			<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it and
-				update it, instead make the update yourself so the community can benefit from it.</p>
-			<a href="https://github.com/japanesemediamanager/ShokoDocs/blob/master/desktop/settings.html" target="_blank">Shoko
-				Desktop - Settings Tab on GitHub</a></div>
-	</section>
+<article class = "col-md-9 col-sm-9 main-content" role = "main">
+		<header>
+				<ol class = "breadcrumb">
+						<li><a href = "{{ site.url }}">Home</a></li>
+						<li class = "active">{{ page.title }}</li>
+				</ol>
+				<h1>{{ page.title }}</h1>
+				<p>The Settings tab allows you to configure Shoko Desktop to your liking as well as set specific settings related to the various supported community sites.</p>
+		</header>
+
+		<section>
+				<h2>Sorry! Page Under Construction</h2>
+				<p>We haven't had a chance to write this part of the documentation up yet, sorry about that!</p>
+				<p>In the meantime, we're more than happy to answer any questions you might have. All you need to do is join us on<strong>Discord</strong> which you can do by
+						clicking the <strong>Support</strong> link the menu above. Additionally, if you'd like to contribute to this section, lets us know in the <strong>Website
+								Development</strong> channel on our Discord Server.</p>
+		</section>
+
+		<section class = "github-callout">
+				<div class = "callout callout-info" role = "alert">
+						<h4>Help Make This Page Better</h4>
+						<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it and update it, instead make the update yourself
+								so the community can benefit from it.</p>
+						<a href = "https://github.com/shokoanime/ShokoDocs/blob/master/desktop/settings.html" target = "_blank">{{ page.title }} on GitHub</a></div>
+		</section>
 </article>
+
+<!-- Sidebar -->
+<aside class = "col-md-3 col-sm-3 sidebar">
+
+		<ul class = "sidenav dropable sticky">
+				<li class = "hr-menu">
+						<hr/>
+				</li>
+
+				{% include _sidebar.html %} {% include _sidebar_end.html %}

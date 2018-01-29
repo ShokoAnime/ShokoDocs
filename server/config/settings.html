@@ -1,0 +1,106 @@
+---
+layout: main
+title: Shoko Server - Settings Tab
+excerpt: Explanation of the settings on the Settings Tab.
+permalink: server/config/settings.html
+---
+
+<!-- Main content -->
+<article class="col-md-9 col-sm-9 main-content" role="main">
+		<header>
+				<ol class = "breadcrumb">
+						<li><a href = "{{ site.url }}">Home</a></li>
+						<li class = "active">{{ page.title }}</li>
+				</ol>
+				<h1>Shoko Server - Settings Tab</h1>
+				<p>The Settings tab allows you to configure certain settings for Shoko Server.</p>
+		</header>
+
+		<section>
+				<h2 id="available-settings">Available Settings</h2>
+				<p>At this time, only a handful of settings, related to starting Shoko Server are available for configuration in Shoko Server. The rest of the configurable settings are in
+						the Settings Tab in Shoko Desktop.</p>
+				<div class="row">
+						<div class="col-sm-8">
+								<table class="table table-striped">
+										<thead>
+										<tr>
+												<td width="20%">Option</td>
+												<td>Description</td>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+												<td>Server Port</td>
+												<td>The port Shoko Server will use, by default it’s set to <strong>8111</strong>. Shoko Server also uses a second port tats not configurable,
+														<strong>8112</strong>.
+												</td>
+										</tr>
+										<tr>
+												<td>Image Path</td>
+												<td>The location where Shoko Server will download and store all images. Clicking <strong>Set Default</strong> will set the path to <strong>C:\ProgramData\ShokoServer</strong>
+														while clicking <strong>Select Custom Folder</strong> will allow you to choose a custom location. If using a <strong>Custom Location</strong>, it cannot
+														be a location where administrative rights are required.
+												</td>
+										</tr>
+										<tr>
+												<td>Minimize On Startup</td>
+												<td>If enabled, Shoko Server will start minimized.</td>
+										</tr>
+										<tr>
+												<td>Start With Windows</td>
+												<td>If enabled, adds a RegKey that makes Shoko Server start with Windows.</td>
+										</tr>
+										<tr>
+												<td>Update AniDB Info</td>
+												<td>Opens the AniDB account window allowing you to update your AniDB login.</td>
+										</tr>
+										<tr>
+												<td>Launch Web UI</td>
+												<td>When clicked, will open the Shoko Server Web UI. For more information on the Web UI, please read the section below.
+												</td>
+										</tr>
+										</tbody>
+								</table>
+						</div>
+						<div class="col-sm-4">
+								<figure><a href="/assets/img/server/Shoko-Server-Settings-Tab.png" data-lity><img
+										src="/assets/img/server/Shoko-Server-Settings-Tab.png" class="img-responsive img-thumbnail"
+										alt="Shoko Server - Settings Tab"/></a>
+										<figcaption>Shoko Server - Settings Tab</figcaption>
+								</figure>
+						</div>
+				</div>
+		</section>
+
+		<section>
+				<h2 id="shoko-webui">Shoko Server WebUI</h2>
+				<p>While available for use, the Shoko Server Web UI is still in development so not all functionality present in Shoko Server is available in the Web UI. The goal of the Web
+						UI is to eventually replace the current Shoko Server UI as part of our plan to make Shoko Server cross-platform.</p>
+				<p>We will always include the latest stable release in the latest version of Shoko Server. For those wanting to try the latest features, <a
+						href="https://github.com/shokoanime/ShokoServer-WebUI/releases"
+						target="_blank">download the latest DEV version</a> from the release pages on Github.</p>
+		</section>
+
+		<section class="github-callout">
+				<div class="callout callout-info" role="alert">
+						<h4>Help Make This Page Better</h4>
+						<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it and update it, instead make the update yourself so the
+								community can benefit from it.</p>
+						<a href="https://github.com/shokoanime/ShokoDocs/blob/master/server/config/settings.html" target="_blank">{{ page.title }} on GitHub</a></div>
+		</section>
+</article>
+
+<!-- Sidebar -->
+<aside class="col-md-3 col-sm-3 sidebar">
+
+		<ul class="sidenav dropable sticky">
+				<li><a href="#available-settings">Available Settings</a></li>
+				<li><a href="#shoko-webui">Shoko Server Web UI</a></li>
+				<li class="hr-menu">
+						<hr/>
+				</li>
+
+				{% include _sidebar.html %} {% include _sidebar_end.html %}
+
+

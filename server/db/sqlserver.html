@@ -1,0 +1,248 @@
+---
+layout: main
+title: Shoko Server - Configuring SQL Server
+excerpt: Setting up  SQL Server for use with Shoko Server.
+permalink: /server/db/sqlserver.html
+---
+
+<!-- Main content -->
+<article class = "col-md-9 col-sm-9 main-content" role = "main">
+		<header>
+				<ol class = "breadcrumb">
+						<li><a href = "{{ site.url }}">Home</a></li>
+						<li class = "active">{{ page.title }}</li>
+				</ol>
+				<h1>Configuring SQL Server</h1>
+				<p>Installing and setting up SQL Server for use with Shoko Server.</p>
+		</header>
+
+		<section>
+				<h2 id = "why-sqlserver">Why SQL Server Over SQLite</h2>
+				<p>SQL Server is an advanced database option that allows users to further fine-tune their database to achieve quicker response times. Most users will not benefit
+						from installing SQL Server so we recommend using SQLite or MySQL.<br>
+				</p>
+		</section>
+
+		<section>
+				<h2 id = "SQL-Server-download">Download</h2>
+				<p>SQL Server is available in many different versions and while you can use any version you'd like, for Shoko Server
+						we recommend downloading <strong>SQL Server 2016 Express</strong> which is <a
+								href = "https://www.microsoft.com/en-us/download/details.aspx?id=54284" target = "_blank">free to download</a>.
+				</p>
+				<p>If you decide to use an older version, there may be additional steps required that are not covered on this page.
+						If this is the case and you need help, click the <strong>Support</strong> link in the top-right. </p>
+				<h2 id = "SQL-Server-install">Installing SQL Server Community Server</h2>
+
+				<div class = "callout callout-info" role = "alert">
+						<h4>SQL Server Version</h4>
+						<p>This guide is based on SQL Server 2016 Express.</p>
+				</div>
+
+				<div class = "row">
+						<div class = "col-sm-8">
+								<p>Start the installer, since Microsoft only provides the web-installer you'll have to download SQL Server
+										Express 2016 before you can install it. </p>
+								<p>Once the web installer is loaded, select <strong>Custom</strong> for the <strong>Install Type</strong>.
+								</p>
+						</div>
+						<div class = "col-sm-4">
+								<figure><a href = "/assets/img/server/sqlserver/SQL-Server-Install-Type.png" data-lity><img
+										src = "/assets/img/server/sqlserver/SQL-Server-Install-Type.png" class = "img-responsive img-thumbnail"
+										alt = "SQL Server - Select Install Type"/></a>
+										<figcaption>SQL Server Install - Select Custom</figcaption>
+								</figure>
+						</div>
+				</div>
+				<div class = "row">
+						<div class = "col-sm-8">
+								<p>You'll be then asked to select the <strong>Download Location</strong>, this is not the same as the <strong>Install
+										Location</strong> you can change later on. </p>
+								<p>We recommend selecting a temporary location as you can delete these files after you've installed SQL
+										Server. </p>
+						</div>
+						<div class = "col-sm-4">
+								<figure><a href = "/assets/img/server/sqlserver/SQL-Server-Download-Location.png" data-lity><img
+										src = "/assets/img/server/sqlserver/SQL-Server-Download-Location.png" class = "img-responsive img-thumbnail"
+										alt = "SQL Server - Select Download Location"/></a>
+										<figcaption>SQL Server - Select Download Location</figcaption>
+								</figure>
+						</div>
+				</div>
+				<div class = "row">
+						<div class = "col-sm-8">
+								<p>The download can take awhile depending on the speed of your internet connection, you don't need to watch it
+										download as the install will automatically start once the download has finished. </p>
+						</div>
+						<div class = "col-sm-4">
+								<figure><a href = "/assets/img/server/sqlserver/SQL-Server-Downloading.png" data-lity><img
+										src = "/assets/img/server/sqlserver/SQL-Server-Downloading.png" class = "img-responsive img-thumbnail"
+										alt = "SQL Server - Downloading"/></a>
+										<figcaption>SQL Server - Downloading</figcaption>
+								</figure>
+						</div>
+				</div>
+				<div class = "row">
+						<div class = "col-sm-8">
+								<p>From the list of options select <strong>New SQL server standalone installation</strong>, if you already have
+										SQL Server installed you can upgrade it instead. The installer will then check for any setup dependencies. If
+										you receive any errors you&rsquo;ll need to fix them before you&rsquo;re able to continue on, otherwise click
+										<strong>OK</strong> to proceed with the install.</p>
+								<p>Proceed past the <strong>License Terms</strong> section which contains your standard information about the
+										license for using SQL Server 2016.</p>
+						</div>
+						<div class = "col-sm-4">
+								<figure><a href = "/assets/img/server/sqlserver/SQL-Server-Install-Start.png" data-lity><img
+										src = "/assets/img/server/sqlserver/SQL-Server-Install-Start.png" class = "img-responsive img-thumbnail"
+										alt = "SQL Server - Install Start"/></a>
+										<figcaption>SQL Server - Install Start</figcaption>
+								</figure>
+						</div>
+				</div>
+				<div class = "row">
+						<div class = "col-sm-8">
+								<p>We recommend allowing Microsoft to update SQL Server so you always have the latest version. Unless something
+										major is changed, updates to SQL Server 2016 should not cause issues with Shoko Server. </p>
+								<p>Proceed with the install, depending on what needs to be installed and your environment this might take
+										awhile.</p>
+						</div>
+						<div class = "col-sm-4">
+								<figure><a href = "/assets/img/server/sqlserver/SQL-Server-Install-Auto-Update.png"
+										data-lity><img
+										src = "/assets/img/server/sqlserver/SQL-Server-Install-Auto-Update.png"
+										class = "img-responsive img-thumbnail" alt = "SQL Server - Allow Automatic Updates"/></a>
+										<figcaption>SQL Server - Allow Automatic Updates</figcaption>
+								</figure>
+						</div>
+				</div>
+				<div class = "row">
+						<div class = "col-sm-8">
+								<p>After it's done installing, you'll be shown a list of the <strong>Install Rules</strong> and their statuses.
+								</p>
+								<p>Install rules that have<strong> failed</strong> will need to be corrected before you can move on, install
+										rules that are<strong> warnings </strong>should be looked into as they might cause an issue down the line.
+								</p>
+								<p>After you're done it's time to configure SQL Server.</p>
+						</div>
+						<div class = "col-sm-4">
+								<figure><a href = "/assets/img/server/sqlserver/SQL-Server-Install-Rules.png" data-lity><img
+										src = "/assets/img/server/sqlserver/SQL-Server-Install-Rules.png" class = "img-responsive img-thumbnail"
+										alt = "SQL Server - Install Rules"/></a>
+										<figcaption>SQL Server - Install Rules</figcaption>
+								</figure>
+						</div>
+				</div>
+				<h2 id = "SQL-Server-config">Configuring SQL Server 2016</h2>
+				<div class = "row">
+						<div class = "col-sm-8">
+								<p>In the <strong>Feature Section</strong> you&rsquo;ll be presented with a list of options to select, for Shoko
+										you only need to check the following.</p>
+								<ul>
+										<li>Database Engine Service</li>
+										<li>SQL Server Replication</li>
+										<li>Full Text and Semantic Extractions For Search</li>
+										<li>Client Tools for Connectivity</li>
+										<li>Documentation Components</li>
+								</ul>
+								<p>Click <strong>Next</strong> to continue and keep going until you come to the <strong>Instance
+										Configuration</strong> section</p>
+						</div>
+						<div class = "col-sm-4">
+								<figure><a href = "/assets/img/server/sqlserver/SQL-Server-Install-Features.png" data-lity><img
+										src = "/assets/img/server/sqlserver/SQL-Server-Install-Features.png" class = "img-responsive img-thumbnail"
+										alt = "SQL Server - Feature Selection"/></a>
+										<figcaption>SQL Server - Feature Selection</figcaption>
+								</figure>
+						</div>
+				</div>
+				<div class = "row">
+						<div class = "col-sm-8">
+								<p>We recommend selecting <strong>Default Instance</strong> instead of <strong>Named Instance</strong> to avoid
+										an potential issues down the road. Advanced users who want to run multiple instances of SQL Server can select
+										<strong>Named Instance</strong> but should know what they are doing. </p>
+								<p>Once down click <strong>Next</strong> to be taken to the <strong>Server Configuration</strong> window.
+								</p>
+						</div>
+						<div class = "col-sm-4">
+								<figure><a href = "/assets/img/server/sqlserver/SQL-Server-Install-Instance.png" data-lity><img
+										src = "/assets/img/server/sqlserver/SQL-Server-Install-Instance.png" class = "img-responsive img-thumbnail"
+										alt = "SQL Server - Instance Configuration"/></a>
+										<figcaption>SQL Server - Instance Configuration</figcaption>
+								</figure>
+						</div>
+				</div>
+				<div class = "row">
+						<div class = "col-sm-8">
+								<p>n the <strong>Server Configuration</strong> section make sure each service has it&rsquo;s <strong>Startup
+										Type</strong> set to <strong>Automatic. </strong></p>
+								<p>You need SQL Server to start with Windows so Shoko can access your collection, otherwise you'll need to
+										manually start SQL Server every time you want to run Shoko Server.</p>
+								<p>Once down click <strong>Next</strong> to be taken to the <strong>Database Engine Configuration</strong>
+										window.</p>
+						</div>
+						<div class = "col-sm-4">
+								<figure><a href = "/assets/img/server/sqlserver/SQL-Server-Install-Server-Config.png" data-lity><img
+										src = "/assets/img/server/sqlserver/SQL-Server-Install-Server-Config.png"
+										class = "img-responsive img-thumbnail" alt = "SQL Server - Server Configuration"/></a>
+										<figcaption>SQL Server - Server Configuration</figcaption>
+								</figure>
+						</div>
+				</div>
+				<div class = "row">
+						<div class = "col-sm-8">
+								<p>The <strong>Database Engine Configuration</strong> section is where you&rsquo;ll be setting up the <strong>Administrator</strong>
+										account for SQL Server 2016.</p>
+								<p>First make sure <strong>Mixed Mode</strong> is selected and enter a password you want to use. The username
+										for this account is simply <strong>sa</strong> and it&rsquo;s what we&rsquo;ll be using in Shoko Server.</p>
+								<p>Before continuing on click on <strong>Add Current User</strong> to add your account to the list of accounts
+										which can access SQL Server 2016.</p>
+								<p>Once down click <strong>Next</strong> to be taken to the <strong>Complete </strong>window.</p>
+						</div>
+						<div class = "col-sm-4">
+								<figure><a href = "/assets/img/server/sqlserver/SQL-Server-Install-Database-Engine.png"
+										data-lity><img
+										src = "/assets/img/server/sqlserver/SQL-Server-Install-Database-Engine.png"
+										class = "img-responsive img-thumbnail" alt = "SQL Server - Database Engine Configuration"/></a>
+										<figcaption>SQL Server - Database Engine Configuration</figcaption>
+								</figure>
+						</div>
+				</div>
+				<div class = "row">
+						<div class = "col-sm-8">
+								<p>You&rsquo;ll now see the summary of your SQL Server 2016 install.Review the list of <strong>Features</strong>
+										and make sure each item is listed as <strong>Succeeded</strong>, if any are not you&rsquo;ll need to fix them.
+								</p>
+								<p>With that SQL Server 2016 has been successfully installed! If you&rsquo;ve paused your <a
+										href = "/server/install_windows.html">Shoko Setup</a>, you can now continue with the install.</p>
+						</div>
+						<div class = "col-sm-4">
+								<figure><a href = "/assets/img/server/sqlserver/SQL-Server-Install-Complete.png" data-lity><img
+										src = "/assets/img/server/sqlserver/SQL-Server-Install-Complete.png" class = "img-responsive img-thumbnail"
+										alt = "SQL Server - Install Complete"/></a>
+										<figcaption>SQL Server - Install Complete</figcaption>
+								</figure>
+						</div>
+				</div>
+		</section>
+
+		<section class = "github-callout">
+				<div class = "callout callout-info" role = "alert">
+						<h4>Help Make This Page Better</h4>
+						<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it and
+								update it, instead make the update yourself so the community can benefit from it.</p>
+						<a href = "https://github.com/shokoanime/ShokoDocs/blob/master/server/db/sqlserver.html" target = "_blank">Installing
+								and Setting Up SQL Server on GitHub</a></div>
+		</section>
+</article>
+
+<!-- Sidebar -->
+<aside class = "col-md-3 col-sm-3 sidebar">
+
+		<ul class = "sidenav dropable sticky">
+				<li><a href = "#SQL-Server-download">Downloading SQL Server</a></li>
+				<li><a href = "#SQL-Server-install">Installing SQL Server</a></li>
+				<li><a href = "#SQL-Server-config">Configuring SQL Server</a></li>
+				<li class = "hr-menu">
+						<hr/>
+				</li>
+
+				{% include _sidebar.html %} {% include _sidebar_end.html %}

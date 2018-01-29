@@ -1,240 +1,253 @@
 ---
-layout: sub
-title: Shoko Server - Setup
+layout: main
+title: Shoko Server - Windows Setup
+excerpt: How to install Shoko Server on Windows.
 permalink: server/install_windows.html
 ---
 
+<!-- Main content -->
+<article class = "col-md-9 col-sm-9 main-content" role = "main">
+		<header>
+				<ol class = "breadcrumb">
+						<li><a href = "{{ site.url }}">Home</a></li>
+						<li class = "active">{{ page.title }}</li>
+				</ol>
+				<h1>{{ page.title }}</h1>
+				<p>This guide will help you install and perform the initial setup for Shoko Server.</p>
+		</header>
+
+		<section>
+				<h2 id = "mandatory">Do I Need To Install Shoko Server?</h2>
+				<p>The short answer is <strong>Yes</strong>.</p>
+				<p> Shoko Server is the back-end of the entire Shoko suite, which means every single program and plugin provided uses it for accessing and maintaining your anime
+						collection. This also means Shoko Server <strong>must be running</strong> to use any of the programs or plugins that connect to it. With the exception of
+						file importing, Shoko Server is no more resource intensive than other programs you probably have running in the background so you don't need to worry about
+						Shoko Server eating up resources.
+				</p>
+		</section>
+
+		<section>
+				<h2 id = "database-type">Selecting A Database Type</h2>
+				<div class = "row">
+						<div class = "col-sm-8">
+								<p>The first thing you'll need to do is <a href = "http://shokoanime.com/downloads/#stable-releases" target = "_blank">download Shoko Server</a>,
+										extract it and install it. Administrator rights are required to install and for the initial run, however after that you can run as a normal
+										use.
+								</p>
+								<p>Once installed, Shoko Server will prompt you to select a <strong>Database Type</strong> to use for your anime collection, we currently offer
+										three different database options.
+								</p>
+								<table class = "table table-striped">
+										<thead>
+										<tr>
+												<th>Database</th>
+												<th>Setup Type</th>
+												<th>Install / Setup Link</th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+												<td>SQLite</td>
+												<td>One-Click</td>
+												<td>Included by default.</td>
+										</tr>
+										<tr>
+												<td>MySQL</td>
+												<td>Separate Install</td>
+												<td><a href = "db/mysql.html" target = "_blank">Installing MySQL</a>
+												</td>
+										</tr>
+										<tr>
+												<td>SQL Server</td>
+												<td>Separate Install</td>
+												<td><a href = "db/sqlserver.html" target = "_blank">Installing SQL Server</a>
+												</td>
+										</tr>
+										</tbody>
+								</table>
+						</div>
+						<div class = "col-sm-4">
+								<figure><a
+										href = "/assets/img/server/Shoko-Server-Select-Database.png" data-lity><img class = "img-responsive img-thumbnail"
+										src = "/assets/img/server/Shoko-Server-Select-Database.png" alt = "Shoko Server - Select Database"/></a>
+										<figcaption>Shoko Server - Select Database</figcaption>
+								</figure>
+						</div>
+				</div>
+				<p>Out of the three available database options available, SQLite is the easiest one to install, you simply click <strong>Save and Start Server</strong> and Shoko
+						Server does the rest. The drawback to using SQLite is it's not designed to properly handle large anime collections that contain over 200 series. While
+						improvements have been made to make SQLite more usable with larger collections, we still recommend using either MySQL or SQL Server.
+				</p>
+				<p>The remaining two database options, MySQL and SQL Server are both designed to handle and maintain large databases making them ideal if your anime collection
+						currently exceeds 200 series or if you believe it will sometime in the future. Both MySQL and SQL Server have also benefited from the addition of the
+						database cache providing allowing Shoko to access your data faster reducing loading times. </p>
+				<p>Both MySQL and SQL Server are standalone installs so you'll need to install one of them first if you'd like to use it with Shoko Server. Select <strong>Database
+						Setup</strong> from the menu on the left for more information on how to install either MySQL or SQL Server.
+				</p>
+				<div class = "callout callout-warning" role = "alert">
+						<h4>Choose Your Database Type Carefully</h4>
+						<p>Please note, at this time we do not provide a method to transfer your database from one database type to another.</p>
+				</div>
+
+				<div class = "tabs tabs-text">
+
+						<!-- Nav tabs -->
+						<ul class = "nav nav-tabs" role = "tablist">
+								<li role = "presentation" class = "active">
+										<a href = "#mysql" aria-controls = "home" role = "tab" data-toggle = "tab">MySQL</a>
+								</li>
+								<li role = "presentation">
+										<a href = "#sqlserver" aria-controls = "profile" role = "tab" data-toggle = "tab">SQL Server</a>
+								</li>
+						</ul>
+
+						<!-- Tab panes -->
+						<div class = "tab-content">
+								<div role = "tabpanel" class = "tab-pane active fade in" id = "mysql">
+										<div class = "row">
+												<div class = "col-sm-8">
+														<p>Once you've installed MySQL, it's time to setup Shoko Server to use it.</p>
+														<p>From the <strong>Database Type</strong> drop-down menu select <strong>MySQL</strong>, you'll be asked to input
+																information related to your MySQL
+																setup.
+														</p>
+														<table class = "table table-striped">
+																<thead>
+																<tr>
+																		<th>Option</th>
+																		<th>Description</th>
+																</tr>
+																</thead>
+																<tbody>
+																<tr>
+																		<td>Server Address</td>
+																		<td>Only change if MySQL is on a different computer. Default: <strong>Localhost</strong></td>
+																</tr>
+																<tr>
+																		<td>Database Name</td>
+																		<td>Only change if you created a custom database for Shoko. Default: <strong>ShokoServer</strong></td>
+																</tr>
+																<tr>
+																		<td>Username</td>
+																		<td>If you created an account just for Shoko, use that username. Default: <strong>root</strong></td>
+																</tr>
+																<tr>
+																		<td>Password</td>
+																		<td>If you <strong>did not</strong> create an account just for Soko, its the root password.</td>
+																</tr>
+																</tbody>
+														</table>
+												</div>
+												<div class = "col-sm-4">
+														<figure><a href = "/assets/img/server/Shoko-Server-MySQL.png" data-lity><img class = "img-responsive img-thumbnail"
+																src = "/assets/img/server/Shoko-Server-MySQL.png" alt = "Shoko Server - MySQL Database"/></a>
+																<figcaption>Shoko Server - MySQL Database</figcaption>
+														</figure>
+												</div>
+
+										</div>
+								</div>
+								<div role = "tabpanel" class = "tab-pane fade" id = "sqlserver">
+										<div class = "row">
+												<div class = "col-sm-8">
+														<p>Once you've installed SQL Server, it's time to setup Shoko Server to use it.</p>
+														<p>From the <strong>Database Type</strong> drop-down menu select <strong>SQL Server</strong>, you'll be asked to input
+																information related to your SQL
+																Server setup.
+														</p>
+														<table class = "table table-striped">
+																<thead>
+																<tr>
+																		<th>Option</th>
+																		<th>Description</th>
+																</tr>
+																</thead>
+																<tbody>
+																<tr>
+																		<td>Server Address</td>
+																		<td>Click the arrow to select an entry from the list.<br></td>
+																</tr>
+																<tr>
+																		<td>Database Name</td>
+																		<td>Only change if you created a custom database for Shoko. Default: <strong>ShokoServer</strong></td>
+																</tr>
+																<tr>
+																		<td>Username</td>
+																		<td>If you created a account just for Shoko, use that username. Default: <strong>sa</strong></td>
+																</tr>
+																<tr>
+																		<td>Password</td>
+																		<td>If you <strong>did not</strong> create an account just for Shoko, its the root password.</td>
+																</tr>
+																</tbody>
+														</table>
+												</div>
+												<div class = "col-sm-4">
+														<figure><a href = "/assets/img/server/Shoko-Server-SQL-Server.png" data-lity> <img
+																src = "/assets/img/server/Shoko-Server-SQL-Server.png"
+																class = "img-responsive img-thumbnail" alt = "Shoko-Server-SQL-Server"/></a>
+																<figcaption>Shoko-Server-SQL-Server</figcaption>
+														</figure>
+												</div>
+										</div>
+										<p>If everything was inputted correctly, Shoko Server will connect to SQL Server, create and populate your database.</p>
+										<div class = "callout callout-danger" role = "alert">
+												<h4>Failed to start. Please review database settings</h4>
+												<p>If you're getting this error message you'll need to install two additional files.</p>
+										</div>
+										<p>For compatibility reasons, Shoko Server uses an older version of a <strong>Microsoft.SqlServer.SqlClrProvider.dll</strong> which can be<a
+												href = "https://www.microsoft.com/en-us/download/details.aspx?id=27596" target = "_blank">downloaded from Microsoft</a>, however we
+												don’t need to install the entire Microsoft SQL Server 2008 Feature Pack, just the following files.
+										</p>
+										<table class = "table table-striped">
+												<thead>
+												<tr>
+														<th>Filename</th>
+												</tr>
+												</thead>
+												<tbody>
+												<tr>
+														<td>x64\SQLSysClrTypes.msi</td>
+												</tr>
+												<tr>
+														<td>x64\SharedManagementObjects.msi</td>
+												</tr>
+												</tbody>
+										</table>
+										<p>You may need to try another browser if you are unable to select which files to download. Once you’be downloaded both files
+												install<strong>SQLSysClrTypes.msi</strong> followed by <strong>SharedManagementObjects.msi</strong> and then restart Windows.</p>
+								</div>
+						</div>
+				</div>
+		</section>
+
+		<section>
+				<h2 id = "shoko-server-installed">Shoko Server Installed</h2>
+				<p>Now that you've installed Shoko Server and finished the initial setup, it's time to Configure Shoko Server to start building your anime collection. Using the
+						menu on the left, select <strong>Configuring Shoko Server</strong> and go through each tab. We recommend starting at the <strong>Settings</strong> tab.</p>
+		</section>
+
+		<section class = "github-callout">
+				<div class = "callout callout-info" role = "alert">
+						<h4>Help Make This Page Better</h4>
+						<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it and update it, instead make the update yourself
+								so the community can benefit from it.</p>
+						<a href = "https://github.com/shokoanime/ShokoDocs/blob/master/server/setup.html" target = "_blank">{{ page.title }} on GitHub</a>
+				</div>
+		</section>
+
+</article>
+<!-- END Main content -->
 
 <!-- Sidebar -->
-<aside class="col-lg-2 col-md-3 col-sm-3 sidebar">
-	<ul class="nav sidenav dropable sticky">
-		<!-- <li class="menu-title">Shoko Server</li> -->
-		<li><a href="index.html">Shoko Server Root</a></li>
-		<li class="hr-menu">
-			<hr/>
-		</li>
-		<li><a href="#mandatory">Is Shoko Server Mandatory?</a></li>
-		<li><a href="#database-type">Selecting Database Type</a></li>
-		<li><a href="#shoko-server-installed">Next Step</a></li>
-		<li class="hr-menu">
-			<hr/>
-		</li>
-		<li><a href="../faq.html">Frequently Asked Questions</a></li>
-		<li><a href="../changelog.html">Changelog</a></li>
-	</ul>
-</aside>
-<!-- END Sidebar -->
+<aside class = "col-md-3 col-sm-3 sidebar">
 
-<!-- Main content -->
-<article class="col-lg-10 col-md-9 col-sm-9 main-content" role="main">
-	<header>
-		<h1>Setup Shoko Server</h1>
-		<p>This guide will help you install and perform the initial setup for Shoko Server.</p>
-		<script language="javascript" src="../assets/js/breadnav.js"></script>
-	</header>
-	<section>
-		<h2 id="mandatory">Do I Need To Install Shoko Server?</h2>
-		<p>The short answer, <strong>Yes</strong>.</p>
-		<p> Shoko Server is the back-end of the entire Shoko suite, every single program and plugin provided uses it for
-			accessing and maintaining your anime collection. This also means Shoko Server <strong>must be running</strong> to
-			use any of the programs or plugins that connect to it. With the exception of file importing, Shoko Server is no
-			more resource intensive than other programs you probably have running in the background with </p>
-	</section>
-	<section>
-		<h2 id="database-type">Selecting A Database Type</h2>
-		<div class="row">
-			<div class="col-sm-8">
-				<p>The first thing you'll need to do is <a href="http://shokoanime.com/downloads/#stable-releases"
-				                                           target="_blank">download Shoko Server</a>, extract it and install it.
-					Administrator rights are required to install and for the initial run, however after that you can run as a
-					normal use. </p>
-				<p>Once installed, Shoko Server will prompt you to select a <strong>Database Type</strong> to use for your anime
-					collection, we currently offer three different database options.</p>
-				<table class="table table-striped">
-					<thead>
-					<tr>
-						<th>Database</th>
-						<th>Setup Type</th>
-						<th>Install / Setup Link</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-						<td>SQLite</td>
-						<td>One-Click</td>
-						<td>Included by default.</td>
-					</tr>
-					<tr>
-						<td>MySQL</td>
-						<td>Separate Install</td>
-						<td><a href="mysql.html" target="_blank">Installing MySQL</a></td>
-					</tr>
-					<tr>
-						<td>SQL Server</td>
-						<td>Separate Install</td>
-						<td><a href="sqlserver.html" target="_blank">Installing SQL Server</a></td>
-					</tr>
-					</tbody>
-				</table>
-				<p>Out of the three available database options available, SQLite is the easiest one to install, you simply click
-					<strong>Save and Start Server</strong> and Shoko Server does the rest. The drawback to using SQLite is it's
-					not designed to properly handle large anime collections that contain over 200 series. While improvements have
-					been made to make SQLite more usable with larger collections, we still recommend using either MySQL or SQL
-					Server. </p>
-				<p>The remaining two database options, MySQL and SQL Server are both designed to handle and maintain large
-					databases making them ideal if your anime collection currently exceeds 200 series or if you believe it will
-					sometime in the future. Both MySQL and SQL Server have also benefited from the addition of the database cache
-					providing allowing Shoko to access your data faster reducing loading times. </p>
-				<p>Both MySQL and SQL Server are standalone installs so you'll need to install one of them first if you'd like
-					to use it with Shoko Server. Select <strong>Database Setup</strong> from the menu on the left for more
-					information on how to install either MySQL or SQL Server.</p>
-			</div>
-			<div class="col-sm-4"><a href="../assets/img/server/Shoko-Server-Select-Database.png" data-lity><img
-					src="../assets/img/server/Shoko-Server-Select-Database.png" class="img-responsive img-thumbnail"
-					alt="Shoko Server - Select Database"/></a>
-				<figcaption>Shoko Server - Select Database</figcaption>
-			</div>
-		</div>
-		<div class="bs-callout bs-callout-warning">
-			<h4>Choose Your Database Type Carefully</h4>
-			<p>Please note, at this time we do not provide a method to transfer your database from one database type to
-				another.</p>
-		</div>
+		<ul class = "sidenav dropable sticky">
+				<li><a href = "#mandatory">Is Shoko Server Mandatory?</a></li>
+				<li><a href = "#database-type">Selecting Database Type</a></li>
+				<li><a href = "#shoko-server-installed">Next Step</a></li>
+				<li class = "hr-menu">
+						<hr/>
+				</li>
 
-		<!-- Nav tabs -->
-		<ul class="nav nav-tabs" role="tablist">
-			<li role="presentation" class="active"><a href="#mysql" aria-controls="home" role="tab" data-toggle="tab">Using
-				MySQL With Shoko Server</a></li>
-			<li role="presentation"><a href="#sqlserver" aria-controls="profile" role="tab" data-toggle="tab">Using SQL Server
-				With Shoko Server</a></li>
-		</ul>
-
-		<!-- Tab panes -->
-		<div class="tab-content">
-			<div role="tabpanel" class="tab-pane active fade in" id="mysql">
-				<div class="row">
-					<div class="col-sm-8">
-						<p>Once you've installed MySQL, it's time to setup Shoko Server to use it.</p>
-						<p>From the <strong>Database Type</strong> drop-down menu select <strong>MySQL</strong>, you'll be asked to
-							input information related to your MySQL setup.</p>
-						<table class="table table-striped">
-							<thead>
-							<tr>
-								<th>Option</th>
-								<th>Description</th>
-							</tr>
-							</thead>
-							<tbody>
-							<tr>
-								<td>Server Address</td>
-								<td>Only change if MySQL is on a different computer. Default: <strong>Localhost</strong></td>
-							</tr>
-							<tr>
-								<td>Database Name</td>
-								<td>Only change if you created a custom database for Shoko. Default: <strong>ShokoServer</strong>
-								</td>
-							</tr>
-							<tr>
-								<td>Username</td>
-								<td>If you created an account just for Shoko, use that username. Default: <strong>root</strong></td>
-							</tr>
-							<tr>
-								<td>Password</td>
-								<td>If you <strong>did not</strong> create an account just for Soko, its the root password.</td>
-							</tr>
-							</tbody>
-						</table>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/Shoko-Server-MySQL.png" data-lity><img
-							src="../assets/img/server/Shoko-Server-MySQL.png" class="img-responsive img-thumbnail"
-							alt="Shoko Server - MySQL Database"/></a>
-						<figcaption>Shoko Server - MySQL Database</figcaption>
-					</div>
-				</div>
-			</div>
-			<div role="tabpanel" class="tab-pane fade" id="sqlserver">
-				<div class="row">
-					<div class="col-sm-8">
-						<p>Once you've installed SQL Server, it's time to setup Shoko Server to use it.</p>
-						<p>From the <strong>Database Type</strong> drop-down menu select <strong>SQL Server</strong>, you'll be
-							asked to input information related to your SQL Server setup.</p>
-						<table class="table table-striped">
-							<thead>
-							<tr>
-								<th>Option</th>
-								<th>Description</th>
-							</tr>
-							</thead>
-							<tbody>
-							<tr>
-								<td>Server Address</td>
-								<td>Click the arrow to select an entry from the list.<br></td>
-							</tr>
-							<tr>
-								<td>Database Name</td>
-								<td>Only change if you created a custom database for Shoko. Default: <strong>ShokoServer</strong>
-								</td>
-							</tr>
-							<tr>
-								<td>Username</td>
-								<td>If you created a account just for Shoko, use that username. Default: <strong>sa</strong></td>
-							</tr>
-							<tr>
-								<td>Password</td>
-								<td>If you <strong>did not</strong> create an account just for Soko, its the root password.</td>
-							</tr>
-							</tbody>
-						</table>
-						<p>If everything was inputted correctly, Shoko Server will connect to SQL Server, create and populate your
-							database.</p>
-						<div class="bs-callout bs-callout-danger">
-							<h4>Failed to start. Please review database settings</h4>
-							<p>If you're getting this error message you'll need to install two additional files.</p>
-						</div>
-						<p>For compatibility reasons, Shoko Server uses an older version of a <strong>Microsoft.SqlServer.SqlClrProvider.dll</strong>
-							which can be <a href="https://www.microsoft.com/en-us/download/details.aspx?id=27596" target="_blank">downloaded
-								from Microsoft</a>, however we don’t need to install the entire Microsoft SQL Server 2008 Feature Pack,
-							just the following files.</p>
-						<table class="table table-striped">
-							<thead>
-							<tr>
-								<th>Filename</th>
-							</tr>
-							</thead>
-							<tbody>
-							<tr>
-								<td>x64\SQLSysClrTypes.msi</td>
-							</tr>
-							<tr>
-								<td>x64\SharedManagementObjects.msi</td>
-							</tr>
-							</tbody>
-						</table>
-						<p>You may need to try another browser if you are unable to select which files to download. Once you’be
-							downloaded both files install <strong>SQLSysClrTypes.ms</strong>i followed by <strong>SharedManagementObjects.msi</strong>
-							and then restart Windows.</p>
-					</div>
-					<div class="col-sm-4"><a href="../assets/img/server/Shoko-Server-SQL-Server.png" data-lity><img
-							src="../assets/img/server/Shoko-Server-SQL-Server.png" class="img-responsive img-thumbnail"
-							alt="Shoko-Server-SQL-Server"/></a>
-						<figcaption>Shoko-Server-SQL-Server</figcaption>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section>
-		<h2 id="shoko-server-installed">Shoko Server Installed</h2>
-		<p>Now that you've installed Shoko Server and finished the initial setup, it's time to Configure Shoko Server to
-			start building your anime collection. Using the menu on the left, select <strong>Configuring Shoko Server</strong>
-			and go through each tab. We recommend starting at the <strong>Settings</strong> tab.</p>
-	</section>
-	<section class="github-callout">
-		<div class="bs-callout bs-callout-primary">
-			<h4>Help Make This Page Better</h4>
-			<p>Have an idea to improve this page? Is the material incorrect or outdated? Don't wait for us to notice it and
-				update it, instead make the update yourself so the community can benefit from it.</p>
-			<a href="https://github.com/japanesemediamanager/ShokoDocs/blob/master/server/setup.html" target="_blank">Setup
-				Shoko Server on GitHub</a></div>
-	</section>
-</article>
+				{% include _sidebar.html %} {% include _sidebar_end.html %}

@@ -2,56 +2,68 @@
 layout: main
 excerpt: Online documentation for Shoko, an anime cataloging program.
 ---
-<header>
-	<h1>Shoko Docs</h1>
-	<p>Welcome to Shoko Docs, the online documentation for the Shoko suite of programs and plugins. </p>
-	<p>Shoko Docs is hosted on <strong>GitHub</strong> which means anyone can edit it, so if you see something wrong, want
-		to expand an existing page or even create a new page. Go for it!</p>
-</header>
-<section>
-	<h2 id="whats-covered">Whats Covered On Shoko Docs</h2>
-	<p>Shoko Docs covers all <strong>First Party</strong> programs and plugins, providing updates and new material as
-		Shoko continues to develop. We encourage the addition and updating of <strong>Third Party</strong> programs and
-		plugins but will not be actively maintaining them. We request the developers or users familiar with the program or
-		plugin update their documentation as needed. </p>
-	<p>Shoko Docs currently covers the following programs / plugins. </p>
-	<ul>
-		<li>Shoko Server</li>
-		<li>Shoko Desktop</li>
-		<li>Shoko On Plex</li>
-		<li>My Anime 3</li>
-		<li>Anime Buddy</li>
-	</ul>
-	<p>In addition, Shoko Docs also contains the following resources.</p>
-	<ul>
-		<li>Frequently Asked Questions</li>
-		<li>Shoko Changelog</li>
-	</ul>
-</section>
-<section>
-	<h2 id="contributing">Contributing To Shoko Docs</h2>
-	<p>Contributing to Shoko Docs is easy, simply clone the repo and start making your changes!</p>
-	<p>To make things easier, we've created a template of the page style we use on Shoko Docs which you can access from
-		the link below.</p>
-	<p><a href="templates/template.html">Shoko Docs Templates</a>&nbsp;</p>
-	<h3>Languages Used</h3>
-	<p>Shoko Docs is built using&nbsp;<a href="http://getbootstrap.com" target="new">Bootstrap 3.3.7</a> and is written in
-		the following languages. While you are not required to know them, please be familiar with them when making any
-		changes.</p>
-	<ul>
-		<li>HTML5</li>
-		<li>CSS3</li>
-		<li>JavaScript</li>
-	</ul>
-	<h3>Standards</h3>
-	<p>To create uniformity, we will be enforcing the following standards for any submissions to the documentation.</p>
-	<ul>
-		<li>Indenting is <strong>2 Tabs</strong>.</li>
-		<li>Unless already used, do not use abbreviations.</li>
-		<li>All explanations of functions must be clear and detailed.</li>
-		<li>Provide examples when and if needed.</li>
-		<li>Code commenting is optional.</li>
-	</ul>
-	<p>If you have questions, please contact us on our Discord server using the <strong>Support</strong> link at the top.
-	</p>
-</section>
+
+<!-- Main content -->
+<article class = "col-md-9 col-sm-9 main-content" role = "main">
+
+		<header>
+				<h1>Shoko Docs</h1>
+				<p>Welcome to Shoko Docs, the online documentation for the Shoko suite of programs and plugins. </p>
+				<p>Shoko Docs is hosted on <strong>GitHub</strong> which means anyone can edit it, so if you see something wrong, want to expand an existing page or even create a
+				   new page. Go for it!</p>
+		</header>
+
+		<section>
+				<h2 id = "whats-covered">Whats Covered On Shoko Docs</h2>
+				<p>Shoko Docs covers all <strong>First Party</strong> programs and plugins, providing updates and new material as Shoko continues to develop. We
+				   encourage the addition and updating of <strong>Third Party</strong> programs and plugins but will not be actively maintaining them. We
+				   request the developers or users familiar with the program or plugin update their documentation as needed. </p>
+				<p>Shoko Docs currently covers the following programs / plugins. </p>
+				<ul>
+						<li>Shoko Server</li>
+						<li>Shoko Desktop</li>
+						<li>Shoko On Plex</li>
+						<li>My Anime 3</li>
+						<li>Anime Buddy</li>
+				</ul>
+				<p>In addition, Shoko Docs also contains the following resources.</p>
+				<ul>
+						<li>Frequently Asked Questions</li>
+						<li>Shoko Changelog</li>
+				</ul>
+		</section>
+
+		<section>
+				<h2 id = "contributing">Contributing To Shoko Docs</h2>
+				<p>Contributing to Shoko Docs is easy, simply clone the repo and start making your changes!</p>
+				<h3>Languages Used</h3>
+				<p>Shoko Docs is built using<a href = "https://getbootstrap.com" target = "new">Bootstrap 3.3.7</a> and is written in the following languages. While you are not
+				   required to know them, please be familiar with them when making any changes.</p>
+				<ul>
+						<li>HTML5</li>
+						<li>CSS3</li>
+						<li>JavaScript</li>
+				</ul>
+				<h3>Standards</h3>
+				<p>To create uniformity, we will be enforcing the following standards for any submissions to the documentation.</p>
+				<ul>
+						<li>Indenting is <strong>2 Tabs / 8 Spaces</strong>.</li>
+						<li>Unless already used, do not use abbreviations.</li>
+						<li>All explanations of functions must be clear and detailed.</li>
+						<li>Provide examples when and if needed.</li>
+						<li>Code commenting is optional.</li>
+				</ul>
+				<p>If you have questions, please contact us on our Discord server using the <strong>Support</strong> link at the top.
+				</p>
+		</section>
+
+</article>
+<!-- END Main content -->
+
+<!-- Sidebar -->
+<aside class = "col-md-3 col-sm-3 sidebar">
+
+		<ul class = "sidenav dropable sticky">
+
+				{% include _sidebar.html %}
+				{% include _sidebar_end.html %}
