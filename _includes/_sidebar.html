@@ -36,20 +36,20 @@
 <li {% if page.url contains "/desktop/" %} class="active" {% endif %}>
 		<a href="#">Shoko Desktop</a>
 		<ul>
-				<li {% if page.url contains "/desktop/index.html" %} class="active" {% endif %}><a href="/desktop/index.html">Setup Shoko Desktop</a></li>
+				<!-- <li {% if page.url contains "/desktop/index.html" %} class="active" {% endif %}><a href="/desktop/index.html">Setup Shoko Desktop</a></li> -->
 				<ul class="dropable">
-						<li {% if page.url contains "/desktop/using/" %} class="active" {% endif %}>
+						<li {% if page.url contains "/desktop/" %} class="active" {% endif %}>
 								<a class="has-child" href="#">Using Shoko Desktop</a>
 								<ul>
-										<li {% if page.url == "/desktop/using/dashboard.html" %} class="active" {% endif %}><a href="/desktop/using/dashboard.html">Dashboard Tab</a></li>
-										<li {% if page.url == "/desktop/using/collection.html" %} class="active" {% endif %}><a href="/desktop/using/collection.html">Collection Folders Tab</a></li>
-										<li {% if page.url == "/desktop/using/playlists.html" %} class="active" {% endif %}><a href="/desktop/using/playlists.html">Playlist Tab</a></li>
-										<li {% if page.url == "/desktop/using/bookmarks.html" %} class="active" {% endif %}><a href="/desktop/using/bookmarks.html">Bookmarks Tab</a></li>
-										<li {% if page.url == "/desktop/using/server.html" %} class="active" {% endif %}><a href="/desktop/using/server.html">Server Tab</a></li>
-										<li {% if page.url contains "/desktop/using/utilities.html" %} class="active" {% endif %}><a href="/desktop/using/utilities.html">Utilities Tab</a></li>
-										<li {% if page.url == "/desktop/using/settings.html" %} class="active" {% endif %}><a href="/desktop/using/settings.html">Settings Tab</a></li>
-										<li {% if page.url == "/desktop/using/pinned.html" %} class="active" {% endif %}><a href="/desktop/using/pinned.html">Pinned Tab</a></li>
-										<li {% if page.url == "/desktop/using/search.html" %} class="active" {% endif %}><a href="/desktop/using/search.html">Search Tab</a></li>
+										<li {% if page.url == "/desktop/dashboard.html" %} class="active" {% endif %}><a href="/desktop/dashboard.html">Dashboard Tab</a></li>
+										<li {% if page.url == "/desktop/collection.html" %} class="active" {% endif %}><a href="/desktop/collection.html">Collection Tab</a></li>
+										<li {% if page.url == "/desktop/playlists.html" %} class="active" {% endif %}><a href="/desktop/playlists.html">Playlist Tab</a></li>
+										<li {% if page.url == "/desktop/bookmarks.html" %} class="active" {% endif %}><a href="/desktop/bookmarks.html">Bookmarks Tab</a></li>
+										<li {% if page.url == "/desktop/server.html" %} class="active" {% endif %}><a href="/desktop/server.html">Server Tab</a></li>
+										<li {% if page.url contains "/desktop/utilities.html" %} class="active" {% endif %}><a href="/desktop/utilities.html">Utilities Tab</a></li>
+										<li {% if page.url == "/desktop/settings.html" %} class="active" {% endif %}><a href="/desktop/settings.html">Settings Tab</a></li>
+										<li {% if page.url == "/desktop/pinned.html" %} class="active" {% endif %}><a href="/desktop/pinned.html">Pinned Tab</a></li>
+										<li {% if page.url == "/desktop/search.html" %} class="active" {% endif %}><a href="/desktop/search.html">Search Tab</a></li>
 								</ul>
 						</li>
 				</ul>
