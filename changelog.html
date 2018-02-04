@@ -18,7 +18,7 @@ permalink: /changelog.html
 
 		<section>
 				<h2 class = "header" id = "shoko-server">Shoko Server</h2>
-				<h4 id = "s383">Version 3.8.3 (In Development)</h4>
+				<h4 id = "s383">Version 3.8.3 (2018-02-04)</h4>
 				<table class = "table table-striped table-changelog">
 						<thead>
 						<tr data-status = "head">
@@ -52,6 +52,21 @@ permalink: /changelog.html
 								<td><span class = "change change-fixed ">Fixed</span></td>
 								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoServer/commit/8bbc1d3" target = "_blank">8bbc1d3</a><span class = "git-link"> - </span></td>
 								<td>Fix default AniDB MyList option for new databases that caused MyList entries to be removed if a physical file was not hashed.</td>
+						</tr>
+						<tr data-status = "fixed">
+								<td><span class = "change change-fixed ">Fixed</span></td>
+								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoServer/commit/d7cd9c6" target = "_blank">d7cd9c6</a><span class = "git-link"> - </span></td>
+								<td>Fix Legacy Renamer issue where leading zero was left off on episodes 1-9 when including episode number in filename.</td>
+						</tr>
+						<tr data-status = "fixed">
+								<td><span class = "change change-fixed ">Fixed</span></td>
+								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoServer/commit/006f406" target = "_blank">006f406</a><span class = "git-link"> - </span></td>
+								<td>Instead of crashing, return 404 when an invalid series is queried by the API.</td>
+						</tr>
+						<tr data-status = "fixed">
+								<td><span class = "change change-fixed ">Fixed</span></td>
+								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoServer/commit/6e0ae64" target = "_blank">6e0ae64</a><span class = "git-link"> - </span></td>
+								<td>Fix API issue where anime movies would not return TvDB info.</td>
 						</tr>
 						</tbody>
 				</table>
@@ -1067,7 +1082,7 @@ permalink: /changelog.html
 
 		<section>
 				<h2 class = "header" id = "shoko-desktop">Shoko Desktop</h2>
-				<h4 id = "d383">Version 3.8.3 (In Development)</h4>
+				<h4 id = "d383">Version 3.8.3 (2018-02-04)</h4>
 				<table class = "table table-striped table-changelog">
 						<thead>
 						<tr data-status = "head">
@@ -1087,10 +1102,20 @@ permalink: /changelog.html
 								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoDesktop/pull/94bbbba" target = "_blank">574</a><span class = "git-link"> - </span></td>
 								<td>Update folder selection method.</td>
 						</tr>
+						<tr data-status = "updated">
+								<td><span class = "change change-updated">Updated</span></td>
+								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoDesktop/pull/94bbbba" target = "_blank">574</a><span class = "git-link"> - </span></td>
+								<td>Update folder selection method.</td>
+						</tr>
 						<tr data-status = "fixed">
 								<td><span class = "change change-fixed">Fixed</span></td>
 								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoDesktop/commit/c430faf" target = "_blank">c430faf</a><span class = "git-link"> - </span></td>
-								<td>Fix for error when creating subgroups. </td>
+								<td>Fix for error when creating subgroups.</td>
+						</tr>
+						<tr data-status = "fixed">
+								<td><span class = "change change-fixed">Fixed</span></td>
+								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoDesktop/commit/398a105" target = "_blank">398a105</a><span class = "git-link"> - </span></td>
+								<td>Fixed an issue that caused an error when Shoko attempted to remove MAL links.</td>
 						</tr>
 						</tbody>
 				</table>
@@ -2240,7 +2265,7 @@ permalink: /changelog.html
 		<ul class = "sidenav dropable sticky">
 				<li><a class = "has-child" href = "#shoko-server">Shoko Server</a>
 						<ul>
-								<li><a href = "#s383">Version 3.8.3 (In Development)</a></li>
+								<li><a href = "#s383">Version 3.8.3 (2018-02-04)</a></li>
 								<li><a href = "#s382">Version 3.8.2 (2017-12-24)</a></li>
 								<li><a href = "#s381">Version 3.8.1 (2017-10-01)</a></li>
 								<li><a href = "#s3800">Version 3.8.0.0 (2017-09-03)</a></li>
@@ -2249,7 +2274,7 @@ permalink: /changelog.html
 				</li>
 				<li><a class = "has-child" href = "#shoko-desktop">Shoko Desktop</a>
 						<ul>
-								<li><a href = "#d383">Version 3.8.3 (In Development)</a></li>
+								<li><a href = "#d383">Version 3.8.3 (2018-02-04)</a></li>
 								<li><a href = "#d382">Version 3.8.2 (2017-12-24)</a></li>
 								<li><a href = "#d381">Version 3.8.1 (2017-10-01)</a></li>
 								<li><a href = "#d3800">Version 3.8.0.0 (2017-09-03)</a></li>
