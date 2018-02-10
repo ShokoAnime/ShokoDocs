@@ -15,7 +15,7 @@ body {
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-	display: block
+	display: block;
 }
 
 audio, canvas, progress, video {
@@ -1463,8 +1463,8 @@ hr {
 }
 
 .h1, .h2, .h3, h1, h2, h3 {
-	margin-top: 20px !important;
-	margin-bottom: 10px !important;;
+	margin-top: 25px !important;
+	margin-bottom: 25px !important;;
 }
 
 .h1 .small, .h1 small, .h2 .small, .h2 small, .h3 .small, .h3 small, h1 .small, h1 small, h2 .small, h2 small, h3 .small, h3 small {
@@ -6979,7 +6979,7 @@ button.close {
 }
 
 @-ms-viewport {
-	width: device-width
+	width: device-width;
 }
 
 .visible-lg, .visible-md, .visible-sm, .visible-xs {

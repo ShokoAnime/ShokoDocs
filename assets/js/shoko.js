@@ -8017,3 +8017,21 @@ $(function() {
         })
     }
 });
+
+$(document).ready(function () {
+    if (location.hash != null && location.hash != "") {
+        $('.collapse').removeClass('in');
+        $(location.hash + '.collapse').collapse('show');
+    }
+});
+
+$('.panel-collapse').on('show.bs.collapse', function (e) {
+    $(e.target).closest('.panel').siblings().find('.panel-collapse').collapse('hide');
+});
+
+$('.panel-collapse').on('shown.bs.collapse', function (e) {
+    var $panel = $(this).closest('.panel');
+    $('html,body').animate({
+        scrollTop: $panel.offset().top
+    }, 500);
+});
