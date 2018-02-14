@@ -1,11 +1,11 @@
 <li>
 		<a href = "#">Frame</a>
 		<ul>
-				<li><a href = "frame.html">Frame</a></li>
-				<li><a href = "#">Queue Processor</a></li>
-				<li><a href = "#">Action Items</a></li>
-				<li><a href = "#">Pinned</a></li>
-				<li><a href = "#">Search</a></li>
+				<li {% if page.url == "/desktop2/frame.html" %} class="active" {% endif %}><a href="/desktop2/frame.html">Frame</a></li>
+				<li {% if page.url == "/desktop2/queue.html" %} class="active" {% endif %}><a href="/desktop2/queue.html">Queue Processor</a></li>
+				<li {% if page.url == "/desktop2/action.html" %} class="active" {% endif %}><a href="/desktop2/action.html">Action Items</a></li>
+				<li {% if page.url == "/desktop2/pinned.html" %} class="active" {% endif %}><a href="/desktop2/pinned.html">Pinned</a></li>
+				<li {% if page.url == "/desktop2/search.html" %} class="active" {% endif %}><a href="/desktop2/search.html">Search</a></li>
 		</ul>
 </li>
 <li><a href = "#">Collection</a></li>
