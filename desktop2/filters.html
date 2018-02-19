@@ -1,0 +1,99 @@
+---
+layout: main
+title: Shoko Desktop 2 - Filters
+excerpt: Information on Filters Shoko Desktop 2.
+permalink: desktop2/filters.html
+---
+<!-- Main content -->
+<article class = "col-md-9 col-sm-9 main-content" role = "main">
+		<header>
+				<ol class = "breadcrumb">
+						<li><a href = "{{ site.url }}">Home</a></li>
+						<li class = "active">{{ page.title }}</li>
+				</ol>
+				<h1>{{ page.title }}</h1>
+				<p>Information on Filters Shoko Desktop 2.</p>
+				<p>Last Updated: <strong>{{ site.time | date:"%Y-%m-%d" }}</strong></p>
+		</header>
+
+		<section>
+				<h2 id = "filter-list">Filter List Overview</h2>
+				<div class = "row">
+						<div class = "col-sm-8">
+								<p>Filters function in the same manner as they did in Shoko Desktop, the big difference is their design. In Shoko Desktop 2, each filter is shown in
+										a scalable <strong>Poster Grid</strong> format that utilizes LazyLoad to reduce additional wait time being added when switching filters. The
+										<strong>Series Name</strong> is shown at the bottom in an overlay on the poster, for series with exceptionally long titles, ellipses are
+										used once the max length has been reached. While not pictured, there will be visual indicators for <strong>Unwatched Count</strong> and
+										<strong>Groups</strong> shown on the series poster.
+								</p>
+								<p>The
+										<strong>Filter Menu</strong> is not shown by default, instead the last viewed filter is loaded by default when clicking the <strong>Collections</strong>button..
+										Switching filters is done by <strong>clicking</strong> the Collections icon when its the active icon, to access the Filter Menu while not in
+										the Collection section, the Collections icon needs to be <strong>Double-Clicked</strong>. Adding a new filter is done by clicking the Blue
+										button at the top of the Filter Menu, this will display a new window. Editing an existing filter is done by clicking on the Settings icon in
+										the Filter Panel Header.</p>
+						</div>
+						<div class = "col-sm-4">
+								<figure><a
+										href = "/assets/img/desktop2/Collection-Filter.png" data-lity><img class = "img-responsive img-thumbnail"
+										src = "/assets/img/desktop2/Collection-Filter.png" alt = "Shoko Desktop 2 - Collection - Filter"/></a>
+										<figcaption>Shoko Desktop 2 - Collection - Filter</figcaption>
+								</figure>
+								<figure><a
+										href = "/assets/img/desktop2/Collection-Filter-Menu.png" data-lity><img class = "img-responsive img-thumbnail"
+										src = "/assets/img/desktop2/Collection-Filter-Menu.png" alt = "Shoko Desktop 2 - Collection - Filter Menu"/></a>
+										<figcaption>Shoko Desktop 2 - Collection - Filter Menu</figcaption>
+								</figure>
+						</div>
+				</div>
+		</section>
+
+		<section>
+				<h2 id = "series-preview">Filter - Series Preview</h2>
+				<div class = "row">
+						<div class = "col-sm-8">
+								<p>After hovering over a series for <strong>two seconds</strong>, the Series Preview overlay is displayed providing Series and Collection
+										information related to that series. Like the Series Poster itself, the Series Fanart will randomly change when the Series Preview is
+										accessed. Below the Series Description are the User buttons that allow the user to either <strong>Pin The Series</strong> or add it to a
+										<strong>Shoko List</strong>. At the bottom are the series tags, custom tags are shown first followed by series tags. </p>
+						</div>
+						<div class = "col-sm-4">
+								<figure><a
+										href = "/assets/img/desktop2/Collection-Filter-Series-Preview.png" data-lity><img class = "img-responsive img-thumbnail"
+										src = "/assets/img/desktop2/Collection-Filter-Series-Preview.png" alt = "Shoko Desktop 2 - Collection - Filter Series Preview"/></a>
+										<figcaption>Shoko Desktop 2 - Collection - Filter Series Preview</figcaption>
+								</figure>
+						</div>
+				</div>
+		</section>
+
+		<section>
+				<h2 id = "add-edit-filter">Adding & Editing Filters</h2>
+				<div class = "row">
+						<div class = "col-sm-8">
+								<p>The Adding & Editing Filters panel is broken into three parts; <strong>Filter Settings, Conditions and Filter Results</strong>. Each section is
+										designed to be simple and self-explanatory as managing filters should not be considered difficult. Existing <strong>Filter
+												Conditions</strong> can be edited or removed by clicking the corresponding icon at the right of the Condition. Adding a new
+										Condition is done by clicking the Add button at the bottom, while users select the first part, the Condition itself, the second part is
+										pre-populated based on the user's choice wih the last part being a user input based on the second part. This should reduce confusion on how
+										to properly set up filters as Shoko will set them up, users just need to input their preference. </p>
+						</div>
+						<div class = "col-sm-4">
+								<figure><a
+										href = "/assets/img/desktop2/Collection-Add-Edit-Filter.png" data-lity><img class = "img-responsive img-thumbnail"
+										src = "/assets/img/desktop2/Collection-Add-Edit-Filter.png" alt = "Shoko Desktop 2 - Collection - Add/Edit Filter"/></a>
+										<figcaption>Shoko Desktop 2 - Collection - Add/Edit Filter</figcaption>
+								</figure>
+						</div>
+				</div>
+		</section>
+
+</article>
+<!-- END Main content -->
+
+<!-- Sidebar -->
+<aside class = "col-md-3 col-sm-3 sidebar">
+
+		<ul class = "sidenav dropable sticky">
+
+				{% include _sidebar_d2.html %} {% include _sidebar_end.html %}
