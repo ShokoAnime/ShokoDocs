@@ -1,0 +1,34 @@
+releases:
+  - version: 3.8.4
+    date: In Development
+    changes:
+      - status: fixed
+        issue: 708
+        text: Fixed an issue where Cloud Accounts could not be added or managed.
+  - version: 3.8.3
+    date: 2018-02-04
+    changes:
+      - status: added
+        issue: 695
+        text: Add option to manually input Image Folder location.
+      - status: added
+        commit: ef1cda5
+        text: Add AniDB resource links.
+      - status: updated
+        commit: d01f084
+        text: Move AniDB Image Downloading to General Queue and add rate limiter.
+      - status: updated
+        commit: 81d9a03
+        text: Update Plex linking allowing users to link to their accounts and select the library.
+      - status: fixed
+        commit: 8bbc1d3
+        text: Fix default AniDB MyList option for new databases that caused MyList entries to be removed if a physical file was not hashed.
+      - status: fixed
+        commit: d7cd9c6
+        text: Fix Legacy Renamer issue where leading zero was left off on episodes 1-9 when including episode number in filename.
+      - status: fixed
+        commit: 006f406
+        text: Instead of crashing, return 404 when an invalid series is queried by the API.
+      - status: fixed
+        commit: 6e0ae64
+        text: Fix API issue where anime movies would not return TvDB info.

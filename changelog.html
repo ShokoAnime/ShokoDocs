@@ -18,75 +18,30 @@ permalink: /changelog.html
 
 		<section>
 				<h2 class = "header" id = "shoko-server">Shoko Server</h2>
-				<h4 id = "s384">Version 3.8.4 (In Development)</h4>
-				<table class = "table table-striped table-changelog">
+				{% for release in site.data.changelog.server.releases %}
+					<h4 id="s{{ forloop.index }}">Version {{ release.version }} ({{ release.date }})</h4>
+					<table class = "table table-striped table-changelog">
 						<thead>
 						<tr data-status = "head">
-								<th>Action</th>
-								<th>Git Link</th>
-								<th>Description</th>
+							<th>Action</th>
+							<th>Git Link</th>
+							<th>Description</th>
 						</tr>
 						</thead>
 						<tbody>
-						<tr data-status = "fixed">
-								<td><span class = "change change-fixed">Fixed</span></td>
-								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoServer/issues/708" target = "_blank">#708</a><span class = "git-link"> - </span></td>
+						{% for item in release.changes %}
+							<tr data-status="{{ item.status }}">
+								<td><span class = "change change-{{ item.status }}">{{ item.status | capitalize }}</span></td>
+								<td><span class = "git-link"> - </span>
+									{% if item.issue %}<a href = "https://github.com/ShokoAnime/ShokoServer/issues/{{ item.issue }}" target = "_blank">#{{ item.issue }}</a>{% endif %}
+									{% if item.commit %}<a href = "https://github.com/ShokoAnime/ShokoServer/commit/{{ item.commit }}" target = "_blank">#{{ item.commit }}</a>{% endif %}
+									<span class = "git-link"> - </span></td>
 								<td>Fixed an issue where Cloud Accounts could not be added or managed.</td>
-						</tr>
+							</tr>
+						{% endfor %}
 						</tbody>
-				</table>
-				<h4 id = "s383">Version 3.8.3 (2018-02-04)</h4>
-				<table class = "table table-striped table-changelog">
-						<thead>
-						<tr data-status = "head">
-								<th>Action</th>
-								<th>Git Link</th>
-								<th>Description</th>
-						</tr>
-						</thead>
-						<tbody>
-						<tr data-status = "added">
-								<td><span class = "change change-added">Added</span></td>
-								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoServer/issue/695" target = "_blank">#695</a><span class = "git-link"> - </span></td>
-								<td>Add option to manually input Image Folder location.</td>
-						</tr>
-						<tr data-status = "added">
-								<td><span class = "change change-added">Added</span></td>
-								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoServer/commit/ef1cda5" target = "_blank">ef1cda5</a><span class = "git-link"> - </span></td>
-								<td>Add AniDB resource links.</td>
-						</tr>
-						<tr data-status = "updated">
-								<td><span class = "change change-updated">Updated</span></td>
-								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoServer/commit/d01f084" target = "_blank">d01f084</a><span class = "git-link"> - </span></td>
-								<td>Move AniDB Image Downloading to General Queue and add rate limiter.</td>
-						</tr>
-						<tr data-status = "updated">
-								<td><span class = "change change-updated ">Updated</span></td>
-								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoServer/commit/81d9a03" target = "_blank">81d9a03</a><span class = "git-link"> - </span></td>
-								<td>Update Plex linking allowing users to link to their accounts and select the library.</td>
-						</tr>
-						<tr data-status = "fixed">
-								<td><span class = "change change-fixed ">Fixed</span></td>
-								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoServer/commit/8bbc1d3" target = "_blank">8bbc1d3</a><span class = "git-link"> - </span></td>
-								<td>Fix default AniDB MyList option for new databases that caused MyList entries to be removed if a physical file was not hashed.</td>
-						</tr>
-						<tr data-status = "fixed">
-								<td><span class = "change change-fixed ">Fixed</span></td>
-								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoServer/commit/d7cd9c6" target = "_blank">d7cd9c6</a><span class = "git-link"> - </span></td>
-								<td>Fix Legacy Renamer issue where leading zero was left off on episodes 1-9 when including episode number in filename.</td>
-						</tr>
-						<tr data-status = "fixed">
-								<td><span class = "change change-fixed ">Fixed</span></td>
-								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoServer/commit/006f406" target = "_blank">006f406</a><span class = "git-link"> - </span></td>
-								<td>Instead of crashing, return 404 when an invalid series is queried by the API.</td>
-						</tr>
-						<tr data-status = "fixed">
-								<td><span class = "change change-fixed ">Fixed</span></td>
-								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoServer/commit/6e0ae64" target = "_blank">6e0ae64</a><span class = "git-link"> - </span></td>
-								<td>Fix API issue where anime movies would not return TvDB info.</td>
-						</tr>
-						</tbody>
-				</table>
+					</table>
+				{% endfor %}
 				<h4 id = "s382">Version 3.8.2 (2017-12-24)</h4>
 				<table class = "table table-striped table-changelog">
 						<thead>
@@ -2288,8 +2243,9 @@ permalink: /changelog.html
 		<ul class = "sidenav dropable sticky">
 				<li><a class = "has-child" href = "#shoko-server">Shoko Server</a>
 						<ul>
-								<li><a href = "#s384">Version 3.8.4 (In Development)</a></li>
-								<li><a href = "#s383">Version 3.8.3 (2018-02-04)</a></li>
+							{% for release in site.data.changelog.server.releases %}
+								<li><a href = "#s{{ forloop.index }}">Version {{ release.version }}({{ release.date }})</a></li>
+							{% endfor %}
 								<li><a href = "#s382">Version 3.8.2 (2017-12-24)</a></li>
 								<li><a href = "#s381">Version 3.8.1 (2017-10-01)</a></li>
 								<li><a href = "#s3800">Version 3.8.0.0 (2017-09-03)</a></li>
