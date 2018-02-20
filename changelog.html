@@ -36,7 +36,7 @@ permalink: /changelog.html
 									{% if item.issue %}<a href = "https://github.com/ShokoAnime/ShokoServer/issues/{{ item.issue }}" target = "_blank">#{{ item.issue }}</a>{% endif %}
 									{% if item.commit %}<a href = "https://github.com/ShokoAnime/ShokoServer/commit/{{ item.commit }}" target = "_blank">#{{ item.commit }}</a>{% endif %}
 									<span class = "git-link"> - </span></td>
-								<td>Fixed an issue where Cloud Accounts could not be added or managed.</td>
+								<td>{{ item.text }}</td>
 							</tr>
 						{% endfor %}
 						</tbody>
