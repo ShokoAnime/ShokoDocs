@@ -8379,7 +8379,7 @@ $(document).ready(function () {
     $(document).on("scroll", onScroll);
 
     //smoothscroll
-    $('a[href^="#"]').not('[data-toggle="collapse"]').on('click', function (e) {
+    $('a[href^="#"]').not('[data-toggle="collapse"]') .not('[data-toggle="tab"]').on('click', function (e) {
         e.preventDefault();
         $(document).off("scroll");
 
