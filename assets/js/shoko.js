@@ -8414,3 +8414,18 @@ function onScroll(event){
         }
     });
 }
+
+var themes = {
+    "default": "127.0.0.1:4000/assets/css/shoko.css",
+    "dark": "127.0.0.1:4000/assets/css/shokodark.css",
+}
+
+//switches
+$(function() {
+    var themesheet = $('<link href="' + themes['default'] + '" rel="stylesheet" />');
+    themesheet.appendTo('head');
+    $('.theme-link').click(function() {
+        var themeurl = themes[$(this).attr('data-theme')];
+        themesheet.attr('href', themeurl);
+    });
+});

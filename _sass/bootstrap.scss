@@ -4352,11 +4352,12 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
-  color: #555;
+  color: #fff;
   cursor: default;
-  background-color: #fff;
+  background-color: #006cab;
   border: 1px solid #ddd;
-  border-bottom-color: transparent
+  border-bottom-color: transparent;
+  font-weight: 500;
 }
 
 .nav-tabs.nav-justified {
