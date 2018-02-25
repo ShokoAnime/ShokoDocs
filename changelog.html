@@ -34,7 +34,7 @@ permalink: /changelog.html
 								<td><span class = "change change-{{ item.status }}">{{ item.status | capitalize }}</span></td>
 								<td><span class = "git-link"> - </span>
 									{% if item.issue %}<a href = "https://github.com/ShokoAnime/ShokoServer/issues/{{ item.issue }}" target = "_blank">#{{ item.issue }}</a>{% endif %}
-									{% if item.commit %}<a href = "https://github.com/ShokoAnime/ShokoServer/commit/{{ item.commit }}" target = "_blank">#{{ item.commit }}</a>{% endif %}
+									{% if item.commit %}<a href = "https://github.com/ShokoAnime/ShokoServer/commit/{{ item.commit }}" target = "_blank">{{ item.commit }}</a>{% endif %}
 									<span class = "git-link"> - </span></td>
 								<td>{{ item.text }}</td>
 							</tr>

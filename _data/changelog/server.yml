@@ -2,6 +2,12 @@ releases:
   - version: 3.8.4
     date: In Development
     changes:
+      - status: updated
+        commit: 11f2595
+        text: Seperate AniDB ban types to be both HTTP and UDP instead of a signular ban.
+      - status: updated
+        commit: 1eb0489
+        text: Additional improvements to AniDB Image rate limting.
       - status: fixed
         issue: 708
         text: Fixed an issue where Cloud Accounts could not be added or managed.
