@@ -1,0 +1,31 @@
+releases:
+  - version: 3.8.4
+    date: In Development
+    changes:
+      - status: updated
+        commit: 4573763
+        text: Add additional logging for unrecognized files.
+      - status: updated
+        commit: 4573763
+        text: Add additional logging for recognized files.
+      - status: fixed
+        commit: 62ec780
+        text: Fix validation logic when updating TvDB links.
+      - status: fixed
+        commit: 33ed62a
+        text: Fix an issue with the AVDump utility when selecting multiple files.
+  - version: 3.8.3
+    date: 2018-02-04
+    changes:
+      - status: updated
+        commit: 94bbbba
+        text: Update Plex linking allowing users to link to their accounts and select the library.
+      - status: updated
+        issue: 574
+        text: Update folder selection method.
+      - status: fixed
+        commit: c430faf
+        text: Fix for error when creating subgroups.
+      - status: fixed
+        commit: 398a105
+        text: Fixed an issue that caused an error when Shoko attempted to remove MAL links.

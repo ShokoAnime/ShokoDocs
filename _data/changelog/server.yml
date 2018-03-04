@@ -2,6 +2,9 @@ releases:
   - version: 3.8.4
     date: In Development
     changes:
+      - status: added
+        issue: 312
+        text: Add Storage state "remote storage" to AniDB storage state list.
       - status: updated
         commit: 11f2595
         text: Seperate AniDB ban types to be both HTTP and UDP instead of a signular ban.

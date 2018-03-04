@@ -1035,7 +1035,8 @@ permalink: /changelog.html
 
 		<section>
 				<h2 class = "header" id = "shoko-desktop">Shoko Desktop</h2>
-				<h4 id = "d384">Version 3.8.4 (In Development)</h4>
+				{% for release in site.data.changelog.desktop.releases %}
+				<h4 id="d{{ forloop.index }}">Version {{ release.version }} ({{ release.date }})</h4>
 				<table class = "table table-striped table-changelog">
 						<thead>
 						<tr data-status = "head">
@@ -1045,65 +1046,19 @@ permalink: /changelog.html
 						</tr>
 						</thead>
 						<tbody>
-						<tr data-status = "updated">
-								<td><span class = "change change-updated">Updated</span></td>
-								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoDesktop/commit/4573763" target = "_blank">4573763</a><span class = "git-link"> - </span></td>
-								<td>Add additional logging for unrecognized files.</td>
+						{% for item in release.changes %}
+						<tr data-status="{{ item.status }}">
+								<td><span class = "change change-{{ item.status }}">{{ item.status | capitalize }}</span></td>
+								<td><span class = "git-link"> - </span>
+										{% if item.issue %}<a href = "https://github.com/ShokoAnime/ShokoDesktop/issues/{{ item.issue }}" target = "_blank">#{{ item.issue }}</a>{% endif %}
+										{% if item.commit %}<a href = "https://github.com/ShokoAnime/ShokoDesktop/commit/{{ item.commit }}" target = "_blank">{{ item.commit }}</a>{% endif %}
+										<span class = "git-link"> - </span></td>
+								<td>{{ item.text }}</td>
 						</tr>
-						<tr data-status = "updated">
-								<td><span class = "change change-updated">Updated</span></td>
-								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoDesktop/commit/4573763" target = "_blank">4573763</a><span class = "git-link"> - </span></td>
-								<td>Add additional logging for recognized files.</td>
-						</tr>
-						<tr data-status = "fixed">
-								<td><span class = "change change-fixed">Fixed</span></td>
-								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoDesktop/commit/62ec780" target = "_blank">62ec780</a><span class = "git-link"> - </span></td>
-								<td>Fix validation logic when updating TvDB links.</td>
-						</tr>
-						<tr data-status = "fixed">
-								<td><span class = "change change-fixed">Fixed</span></td>
-								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoDesktop/commit/33ed62a" target = "_blank">33ed62a</a><span class = "git-link"> - </span></td>
-								<td>Fix an issue with the AVDump utility when selecting multiple files.</td>
-						</tr>
+						{% endfor %}
 						</tbody>
 				</table>
-				<h4 id = "d383">Version 3.8.3 (2018-02-04)</h4>
-				<table class = "table table-striped table-changelog">
-						<thead>
-						<tr data-status = "head">
-								<th>Action</th>
-								<th>Git Link</th>
-								<th>Description</th>
-						</tr>
-						</thead>
-						<tbody>
-						<tr data-status = "updated">
-								<td><span class = "change change-updated">Updated</span></td>
-								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoDesktop/commit/94bbbba" target = "_blank">94bbbba</a><span class = "git-link"> - </span></td>
-								<td>Update Plex linking allowing users to link to their accounts and select the library.</td>
-						</tr>
-						<tr data-status = "updated">
-								<td><span class = "change change-updated">Updated</span></td>
-								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoDesktop/pull/94bbbba" target = "_blank">574</a><span class = "git-link"> - </span></td>
-								<td>Update folder selection method.</td>
-						</tr>
-						<tr data-status = "updated">
-								<td><span class = "change change-updated">Updated</span></td>
-								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoDesktop/pull/94bbbba" target = "_blank">574</a><span class = "git-link"> - </span></td>
-								<td>Update folder selection method.</td>
-						</tr>
-						<tr data-status = "fixed">
-								<td><span class = "change change-fixed">Fixed</span></td>
-								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoDesktop/commit/c430faf" target = "_blank">c430faf</a><span class = "git-link"> - </span></td>
-								<td>Fix for error when creating subgroups.</td>
-						</tr>
-						<tr data-status = "fixed">
-								<td><span class = "change change-fixed">Fixed</span></td>
-								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/ShokoDesktop/commit/398a105" target = "_blank">398a105</a><span class = "git-link"> - </span></td>
-								<td>Fixed an issue that caused an error when Shoko attempted to remove MAL links.</td>
-						</tr>
-						</tbody>
-				</table>
+				{% endfor %}
 				<h4 id = "d382">Version 3.8.2 (2017-12-24)</h4>
 				<table class = "table table-striped table-changelog">
 						<thead>
