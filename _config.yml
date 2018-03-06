@@ -1,6 +1,6 @@
 title: Shoko Docs
 description: Online documentation for Shoko, an anime cataloging program.
-baseurl: "" 
+baseurl: ""
 url: ""
 
 permalink:   /:categories/:title/
