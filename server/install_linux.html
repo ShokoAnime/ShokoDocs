@@ -607,6 +607,37 @@ services:
 								</tr>
 						</table>
 				</section>
+				<section>
+						<h2 id = "advanced-settings">Advanced Settings</h2>
+						<p>Running shoko via docker has some additional features / options that might be usefull some users.
+						</p>
+						<h3>WebUI</h3>
+						<p>
+							To be able to add a different version from the WebUI into docker we need to expose the webui dir inside docker to the outside world. This can be done by adding the following to your docker run command
+							<table class = "table table-striped">
+									<thead>
+											<tr>
+													<th>Command</th>
+													<th>Purpose</th>
+											</tr>
+									</thead>
+									<tbody>
+											<tr>
+														<td>
+																<pre><code class = "language-bash">-v "/path/to/webui:/usr/src/app/build/webui"</code></pre>
+														</td>
+														<td>
+																<p><a href = "https://docs.docker.com/engine/reference/run/#volume-shared-filesystems">Mounts volumes.</a></p>
+																<p>To preserve webui between updates, the webui folder must be remapped to a location outside the container.</p>
+																<p>WebUI is a web based interface that can be used to manage the Shoko Server. You can download it from
+																<a href = "https://github.com/shokoanime/ShokoServer-WebUI">GitHub</a>.</p> 
+														</td>
+											</tr>
+									</tbody>
+							</table>
+						</p>
+
+
 		</section>
 
 		<section class = "github-callout">
@@ -628,6 +659,7 @@ services:
 				<li><a href = "#running-shoko-docker">Shoko Server on Docker</a></li>
 				<li><a href = "#manage-shoko-docker">Manage Shoko on Docker</a></li>
 				<li><a href = "#modify-settings">Modify settings.json</a></li>
+				<li><a href = "#advanced-settings">Advanced Settings</a></li>
 				<li class = "hr-menu">
 						<hr/>
 				</li>
