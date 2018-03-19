@@ -31,7 +31,7 @@ permalink: server/install_linux.html
 								<div class = "row">
 										<p>Installing Docker will depend on what distribution you are running.</p>
 										<P>For most users installing docker from their package manager is advised, this way you will keep up with the latest updates and security
-												updates. On the homepage of<a href = "https://www.docker.com/community-edition#/download">Docker</a> you can find the installation
+												updates. On the homepage of <a href = "https://www.docker.com/community-edition#/download">Docker</a> you can find the installation
 												procedure for your distribution of the Docker Community Edition.
 										</p>
 								</div>
@@ -78,6 +78,7 @@ permalink: server/install_linux.html
 												docker command to make sure we can survive a reboot after we make some changes.
 										</p>
 										<pre><code class = "language-bash">docker run -d --name shokoserver --restart always -p 8111:8111/tcp -v "/path/to/shoko/settings:/root/.shoko" -v "/path/to/webui:/usr/src/app/build/webui" -v "/path/to/anime:/anime" -v "/path/to/import:/import" cazzar/shokoserver</code></pre>
+											<p>Note: If you run the Docker container as any uid/gid other than the default shoko user see the <a href = "#advanced-settings">Advanced Settings</a>. </p>
 										<h3>Command Breakdown</h3>
 										<table class = "table table-striped">
 												<thead>
@@ -125,15 +126,11 @@ permalink: server/install_linux.html
 												</tr>
 												<tr>
 														<td>
-																<pre><code class = "language-bash">-v "/path/to/shoko/settings:/root/.shoko"</code></pre>
+																<pre><code class = "language-bash">-v "/path/to/shoko/settings:/home/shoko/.shoko"</code></pre>
 														</td>
 														<td><p><a href = "https://docs.docker.com/engine/reference/run/#volume-shared-filesystems">Mounts volumes.</a></p>
 																<p>To preserve settings between updates, the settings folder must be remapped to a location outside the
 																		container.</p>
-																<p>Note: If you run the Docker container as any user other than the default root user, the configuration will be
-																		written to <code>/.shoko</code>
-																		instead as no user profile folder will exist. In this case, ensure you adjust the volume mount so that the
-																		ShokoServer data is preserved.
 																</p>
 														</td>
 												</tr>
@@ -438,7 +435,7 @@ services:
         ports:
             - "8111:8111/tcp"
         volumes:
-            - "/path/to/config:/root/.shoko"
+            - "/path/to/config:/home/shoko/.shoko"
             - "/path/to/anime:/anime"
             - "/path/to/import:/import"</code></pre>
 										<p>This combines all of our previous configuration in an easy to read and edit format, and will allow you to create a powerful startup
@@ -519,7 +516,7 @@ services:
 										<th>Notes</th>
 								</tr>
 								<tr>
-										<td>/root/.shoko/Shoko.CLI/settings.json</td>
+										<td>/home/shoko/.shoko/Shoko.CLI/settings.json</td>
 										<td>Volume can be mounted to relocate files.</td>
 										<td>Default Location for settings.json<br>Please note that this is the location as seen within the container.<br>Depending on your
 												installation, the actual location for settings.json may be in an alternate location.
@@ -636,7 +633,31 @@ services:
 									</tbody>
 							</table>
 						</p>
-
+						<h3>UID / GUID</h3>
+						<p>
+							<p>In order to run the docker as a specific UID / GID you can specify it in the environment variables. </p> 
+							<p>By default shoko runs with UserID 1000 and GroupID 100.</p>
+							<table class = "table table-striped">
+									<thead>
+											<tr>
+													<th>Command</th>
+													<th>Purpose</th>
+											</tr>
+									</thead>
+									<tbody>
+											<tr>
+														<td>
+																<pre><code class = "language-bash">-e PUID=xxx -e GUID=xxx</code></pre>
+														</td>
+														<td>
+																<p><a href = "https://docs.docker.com/compose/environment-variables/">Set Environment Variables.</a></p>
+																<p>To make docker run as a certain user/group you can define this through the ENV variables.</p>
+																<p>This makes working with permissions a lot easier since you can match your docker with the local accounts on your machine without doing much work</p>
+														</td>
+											</tr>
+									</tbody>
+							</table>
+						</p>
 
 		</section>
 
