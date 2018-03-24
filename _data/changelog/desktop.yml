@@ -8,6 +8,9 @@ releases:
       - status: updated
         commit: 4573763
         text: Add additional logging for recognized files.
+      - status: updated
+        commit: 4d58eb7
+        text: Removed unnecessary rereshing from unrecognized series.
       - status: fixed
         commit: 62ec780
         text: Fix validation logic when updating TvDB links.

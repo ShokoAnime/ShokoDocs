@@ -11,9 +11,33 @@ releases:
       - status: updated
         commit: 1eb0489
         text: Additional improvements to AniDB Image rate limting.
+      - status: updated
+        commit: bde8518
+        text: General improvements made to the AniDB MyList updating process.
+      - status: updated
+        commit: 985a1f4
+        text: Shoko will now ignore the Recycle Bin when scanning import folders.
+      - status: updated
+        commit: f73c368
+        text: Improve Year filter logic.
+      - status: fixed
+        issue: 700
+        text: Fixed an issue with pre-populated usernames causing issues when switching languages in Shoko and creating a new database.
       - status: fixed
         issue: 708
         text: Fixed an issue where Cloud Accounts could not be added or managed.
+      - status: fixed
+        issue: 719
+        text: Fixed an issues when attempting to update AniDB MyList.
+      - status: fixed
+        issue: 722
+        text: Fixed an issues with Renamer failing to move all files.
+      - status: fixed
+        commit: 21d5e72
+        text: Fixed an issue where user added series community links were removed when adding additonal ones.
+      - status: fixed
+        commit: b6a5303
+        text: Fixed an issue where episode data was not being updated for currently airing series.
   - version: 3.8.3
     date: 2018-02-04
     changes:
