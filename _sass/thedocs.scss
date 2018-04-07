@@ -486,7 +486,7 @@ body[data-spy] {
 }
 
 .site-footer #scroll-up:hover {
-  color: #999;
+  color: #333;
 }
 
 .site-footer #scroll-up > .fa {
@@ -1116,7 +1116,7 @@ ul.dropable {
   font-family: Lato, "Roboto", sans-serif;
   font-weight: 100;
   font-size: 45px;
-  color: #999;
+  color: #333;
   opacity: .5;
   position: absolute;
   bottom: 0;
@@ -2123,7 +2123,7 @@ only screen and (max-width: 760px),
   width: 20px;
   vertical-align: text-top;
   font-family: FontAwesome;
-  color: #999;
+  color: #333;
   content: "\f128";
 }
 
@@ -2133,7 +2133,7 @@ only screen and (max-width: 760px),
 
 .faq li > div {
   font-size: 16px;
-  color: #999;
+  color: #333;
   display: none;
 }
 
@@ -2169,7 +2169,7 @@ only screen and (max-width: 760px),
 .tabs .nav-tabs > li a {
   border: 0 !important;
   border-radius: 0;
-  color: #999;
+  color: #333;
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 1px;
@@ -2193,6 +2193,7 @@ only screen and (max-width: 760px),
 }
 
 .tabs-text .nav-tabs > li.active a {
+  background-color: transparent;
   color: #006cab;
 }
 
@@ -2384,7 +2385,7 @@ div.prism-show-language > div.prism-show-language-label {
 .code-window .window-bar .circles .window-title {
   margin-left: 16px;
   font-size: 13px;
-  color: #999;
+  color: #333;
 }
 
 .code-window .window-bar .languages {
@@ -2601,7 +2602,7 @@ div.prism-show-language > div.prism-show-language-label {
 .list-view .meta-data {
   font-size: 12px;
   font-style: italic;
-  color: #999;
+  color: #333;
 }
 
 .grid-view {
@@ -2667,7 +2668,7 @@ div.prism-show-language > div.prism-show-language-label {
 .grid-view .meta-data {
   font-size: 12px;
   font-style: italic;
-  color: #999;
+  color: #333;
 }
 
 .categorized-view {
@@ -2862,7 +2863,7 @@ div.prism-show-language > div.prism-show-language-label {
 
 .promo > p {
   line-height: 24px;
-  color: #999;
+  color: #333;
 }
 
 .promo > .btn {
@@ -3041,7 +3042,7 @@ figure img {
 figcaption {
   font-style: italic;
   text-align: center;
-  color: #999;
+  color: #333;
   padding: 10px 0 10px 0;
 }
 
@@ -4013,7 +4014,7 @@ figcaption {
 .comment .comment-date {
   display: inline-block;
   float: left;
-  color: #999;
+  color: #333;
   font-size: 12px;
 }
 
