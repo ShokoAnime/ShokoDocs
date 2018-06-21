@@ -1,6 +1,6 @@
 releases:
-  - version: 3.8.4
-    date: In Development
+  - version: 3.9.0
+    date: 2018-06-21
     changes:
       - status: updated
         commit: 4573763
@@ -11,12 +11,33 @@ releases:
       - status: updated
         commit: 4d58eb7
         text: Removed unnecessary rereshing from unrecognized series.
+      - status: updated
+        commit: 4d58eb7
+        text: Update Plex settings and add a refresh button as an async call.
+      - status: updated
+        commit: 095b275
+        text: Update Shoko Server "unable to connect" message a little more verbose.
+      - status: updated
+        commit: a960eaf
+        text: Updated Trakt auth UI.
+      - status: updated
+        commit: 69e9fa0
+        text: Updated TvDB linking system and UI.
       - status: fixed
         commit: 62ec780
         text: Fix validation logic when updating TvDB links.
       - status: fixed
         commit: 33ed62a
         text: Fix an issue with the AVDump utility when selecting multiple files.
+      - status: fixed
+        commit: a2a0b0b
+        text: Fix Horizontal Scrolling on Dashboard.
+      - status: fixed
+        commit: 0543df8
+        text: General fixes to import folder system.
+      - status: removed
+        commit: be497ff
+        text: Removed MAL access and syncing.
   - version: 3.8.3
     date: 2018-02-04
     changes:

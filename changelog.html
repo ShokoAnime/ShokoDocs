@@ -2203,8 +2203,7 @@ permalink: /changelog.html
 				<li><a class = "has-child" href = "#shoko-server">Shoko Server</a>
 						<ul>
 							{% for release in site.data.changelog.server.releases %}
-								<li><a href = "#s{{ forloop.index }}">Version {{ release.version }}({{ release.date }})</a></li>
-							{% endfor %}
+								<li><a href = "#s{{ forloop.index }}">Version {{ release.version }}({{ release.date }})</a></li>{% endfor %}
 								<li><a href = "#s382">Version 3.8.2 (2017-12-24)</a></li>
 								<li><a href = "#s381">Version 3.8.1 (2017-10-01)</a></li>
 								<li><a href = "#s3800">Version 3.8.0.0 (2017-09-03)</a></li>
@@ -2212,7 +2211,7 @@ permalink: /changelog.html
 				</li>
 				<li><a class = "has-child" href = "#shoko-desktop">Shoko Desktop</a>
 						<ul>
-								<li><a href = "#d384">Version 3.8.4 (In Development)</a></li>
+								<li><a href = "#s{{ forloop.index }}">Version {{ release.version }}({{ release.date }})</a></li>{% endfor %}
 								<li><a href = "#d383">Version 3.8.3 (2018-02-04)</a></li>
 								<li><a href = "#d382">Version 3.8.2 (2017-12-24)</a></li>
 								<li><a href = "#d381">Version 3.8.1 (2017-10-01)</a></li>

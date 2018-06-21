@@ -1,10 +1,13 @@
 releases:
-  - version: 3.8.4
-    date: In Development
+  - version: 3.9.0
+    date: 2018-06-21
     changes:
       - status: added
         issue: 312
-        text: Add Storage state "remote storage" to AniDB storage state list.
+        text: Add Storage state "remote storage" to AniDB storage state list.  Added Environment variable configuration on first run.
+      - status: added
+        commit: 97bde94
+        text: Added Environment variable configuration on first run.
       - status: updated
         commit: 11f2595
         text: Seperate AniDB ban types to be both HTTP and UDP instead of a signular ban.
@@ -20,6 +23,27 @@ releases:
       - status: updated
         commit: f73c368
         text: Improve Year filter logic.
+      - status: updated
+        commit: 7447f56
+        text: Use environment for program data location allowing for non-standard setups to work better.
+      - status: updated
+        commit: cf38bac
+        text: Updated logging during startup.
+      - status: updated
+        commit: 3c94a2f
+        text:  Move Docker install to be able to launch as non-root user.
+      - status: updated
+        commit: 7c883e2
+        text: Completely rework the plex workflow so that authentication and updating is a lot nicer.
+      - status: updated
+        commit: aa94979
+        text: Redid TvDB Linking system and made major improvements to TVDB system.
+      - status: updated
+        commit: 64fbaf9
+        text: Use Mono 5.12 on docker.
+      - status: fixed
+        issue: 312
+        text: Allow "Unknown" storage state in AniDB.
       - status: fixed
         issue: 700
         text: Fixed an issue with pre-populated usernames causing issues when switching languages in Shoko and creating a new database.
@@ -33,11 +57,32 @@ releases:
         issue: 722
         text: Fixed an issues with Renamer failing to move all files.
       - status: fixed
+        issue: 730
+        text: Fix updating watch status on AniDB MyList.
+      - status: fixed
         commit: 21d5e72
         text: Fixed an issue where user added series community links were removed when adding additonal ones.
       - status: fixed
         commit: b6a5303
         text: Fixed an issue where episode data was not being updated for currently airing series.
+      - status: fixed
+        commit: 31e204
+        text: Prevent clearing command queues freezing the UI.
+      - status: fixed
+        commit: 985a1f4
+        text: Ignore Recycle Bin during import scanning.
+      - status: fixed
+        commit: 97a8470
+        text: Fix various issues when using OneDrive as a provider.
+      - status: fixed
+        commit: 9e47308
+        text: Support new trakt authentication.
+      - status: fixed
+        commit: 6debd77
+        text: Fix an issue when qutoes are used or present during file renaming.
+      - status: removed
+        commit: 14a38d0
+        text: Removed MAL access and syncing.
   - version: 3.8.3
     date: 2018-02-04
     changes:
