@@ -8,7 +8,7 @@ permalink: /changelog.html
 <!-- Main content -->
 <article class = "col-md-9 col-sm-9 main-content" role = "main">
 		<header>
-					<ol class = "breadcrumb">
+				<ol class = "breadcrumb">
 						<li><a href = "{{ site.url }}">Home</a></li>
 						<li class = "active">{{ page.title }}</li>
 				</ol>
@@ -23,28 +23,30 @@ permalink: /changelog.html
 		<section>
 				<h2 class = "header" id = "shoko-server">Shoko Server</h2>
 				{% for release in site.data.changelog.server.releases %}
-					<h4 id="s{{ forloop.index }}">Version {{ release.version }} ({{ release.date }})</h4>
-					<table class = "table table-striped table-changelog">
+				<h4 id = "s{{ forloop.index }}">Version {{ release.version }} ({{ release.date }})</h4>
+				<table class = "table table-striped table-changelog">
 						<thead>
 						<tr data-status = "head">
-							<th>Action</th>
-							<th>Git Link</th>
-							<th>Description</th>
+								<th>Action</th>
+								<th>Git Link</th>
+								<th>Description</th>
 						</tr>
 						</thead>
 						<tbody>
 						{% for item in release.changes %}
-							<tr data-status="{{ item.status }}">
+						<tr data-status = "{{ item.status }}">
 								<td><span class = "change change-{{ item.status }}">{{ item.status | capitalize }}</span></td>
 								<td><span class = "git-link"> - </span>
-									{% if item.issue %}<a href = "https://github.com/ShokoAnime/ShokoServer/issues/{{ item.issue }}" target = "_blank">#{{ item.issue }}</a>{% endif %}
-									{% if item.commit %}<a href = "https://github.com/ShokoAnime/ShokoServer/commit/{{ item.commit }}" target = "_blank">{{ item.commit }}</a>{% endif %}
-									<span class = "git-link"> - </span></td>
+										{% if item.issue %}<a href = "https://github.com/ShokoAnime/ShokoServer/issues/{{ item.issue }}" target = "_blank">#{{ item.issue }}</a>{%
+										endif %}
+										{% if item.commit %}<a href = "https://github.com/ShokoAnime/ShokoServer/commit/{{ item.commit }}" target = "_blank">{{ item.commit }}</a>{%
+										endif %}
+										<span class = "git-link"> - </span></td>
 								<td>{{ item.text }}</td>
-							</tr>
+						</tr>
 						{% endfor %}
 						</tbody>
-					</table>
+				</table>
 				{% endfor %}
 				<h4 id = "s382">Version 3.8.2 (2017-12-24)</h4>
 				<table class = "table table-striped table-changelog">
@@ -1040,7 +1042,7 @@ permalink: /changelog.html
 		<section>
 				<h2 class = "header" id = "shoko-desktop">Shoko Desktop</h2>
 				{% for release in site.data.changelog.desktop.releases %}
-				<h4 id="d{{ forloop.index }}">Version {{ release.version }} ({{ release.date }})</h4>
+				<h4 id = "d{{ forloop.index }}">Version {{ release.version }} ({{ release.date }})</h4>
 				<table class = "table table-striped table-changelog">
 						<thead>
 						<tr data-status = "head">
@@ -1051,11 +1053,13 @@ permalink: /changelog.html
 						</thead>
 						<tbody>
 						{% for item in release.changes %}
-						<tr data-status="{{ item.status }}">
+						<tr data-status = "{{ item.status }}">
 								<td><span class = "change change-{{ item.status }}">{{ item.status | capitalize }}</span></td>
 								<td><span class = "git-link"> - </span>
-										{% if item.issue %}<a href = "https://github.com/ShokoAnime/ShokoDesktop/issues/{{ item.issue }}" target = "_blank">#{{ item.issue }}</a>{% endif %}
-										{% if item.commit %}<a href = "https://github.com/ShokoAnime/ShokoDesktop/commit/{{ item.commit }}" target = "_blank">{{ item.commit }}</a>{% endif %}
+										{% if item.issue %}<a href = "https://github.com/ShokoAnime/ShokoDesktop/issues/{{ item.issue }}" target = "_blank">#{{ item.issue }}</a>{%
+										endif %}
+										{% if item.commit %}<a href = "https://github.com/ShokoAnime/ShokoDesktop/commit/{{ item.commit }}" target = "_blank">{{ item.commit }}</a>{%
+										endif %}
 										<span class = "git-link"> - </span></td>
 								<td>{{ item.text }}</td>
 						</tr>
@@ -1345,7 +1349,7 @@ permalink: /changelog.html
 										target = "_blank">e3c0be8</a><span class = "git-link"> - </span>
 								</td>
 								<td>Update form now has proper version comparison and will only report update available if version found
-								    online is higher.
+										online is higher.
 								</td>
 						</tr>
 						<tr data-status = "updated">
@@ -1633,7 +1637,7 @@ permalink: /changelog.html
 										target = "_blank">ef85038</a><span class = "git-link"> - </span>
 								</td>
 								<td>Added better approach to home navigation with custom parameters for expansion later (based on
-								    IR-Server-Suite).
+										IR-Server-Suite).
 								</td>
 						</tr>
 						<tr data-status = "fixed">
@@ -1675,7 +1679,7 @@ permalink: /changelog.html
 										target = "_blank">ef85038</a><span class = "git-link"> - </span>
 								</td>
 								<td>Added better approach to home navigation with custom parameters for expansion later (based on
-								    IR-Server-Suite).
+										IR-Server-Suite).
 								</td>
 						</tr>
 						<tr data-status = "updated">
@@ -1729,7 +1733,7 @@ permalink: /changelog.html
 								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/MyAnime3/pull/55"
 										target = "_blank">#55</a><span class = "git-link"> - </span></td>
 								<td>Added new "Filters" option to left or right side menu depending on skin and moved Watched / local
-								    file display toggle from "Options" menu to it.
+										file display toggle from "Options" menu to it.
 								</td>
 						</tr>
 						<tr data-status = "added">
@@ -1744,7 +1748,7 @@ permalink: /changelog.html
 										target = "_blank">de7e545</a><span class = "git-link"> - </span>
 								</td>
 								<td>Added Mode and Start text keys for searching / filtering configurable via MA3 configuration
-								    window.
+										window.
 								</td>
 						</tr>
 						<tr data-status = "added">
@@ -1792,7 +1796,7 @@ permalink: /changelog.html
 								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/MyAnime3/pull/55"
 										target = "_blank">#55</a><span class = "git-link"> - </span></td>
 								<td>Series / group context menu items reduced and moved others to "Advanced options" in separate sub
-								    menu.
+										menu.
 								</td>
 						</tr>
 						<tr data-status = "updated">
@@ -1814,7 +1818,7 @@ permalink: /changelog.html
 										target = "_blank">19901a5</a><span class = "git-link"> - </span>
 								</td>
 								<td>Series / group context menu items reduced and moved others to "Advanced options" in separate sub
-								    menu.
+										menu.
 								</td>
 						</tr>
 						<tr data-status = "updated">
@@ -1842,7 +1846,7 @@ permalink: /changelog.html
 								<td><span class = "git-link"> - </span><a href = "https://github.com/ShokoAnime/MyAnime3/pull/53"
 										target = "_blank">#53</a><span class = "git-link"> - </span></td>
 								<td>Updated project post script so that it no longer overwrites local plugin files / skin files making
-								    it easier to test MPEI installer.
+										it easier to test MPEI installer.
 								</td>
 						</tr>
 						<tr data-status = "fixed">
@@ -1915,7 +1919,7 @@ permalink: /changelog.html
 										target = "_blank">4e96fde</a><span class = "git-link"> - </span>
 								</td>
 								<td>Fixed inconsistency in group name list display and sorting for groups with single series
-								    (non-grouped ones).
+										(non-grouped ones).
 								</td>
 						</tr>
 						<tr data-status = "fixed">
@@ -2202,8 +2206,9 @@ permalink: /changelog.html
 		<ul class = "sidenav dropable sticky">
 				<li><a class = "has-child" href = "#shoko-server">Shoko Server</a>
 						<ul>
-							{% for release in site.data.changelog.server.releases %}
-								<li><a href = "#s{{ forloop.index }}">Version {{ release.version }}({{ release.date }})</a></li>{% endfor %}
+								{% for release in site.data.changelog.server.releases %}
+								<li><a href = "#s{{ forloop.index }}">Version {{ release.version }}({{ release.date }})</a></li>
+								{% endfor %}
 								<li><a href = "#s382">Version 3.8.2 (2017-12-24)</a></li>
 								<li><a href = "#s381">Version 3.8.1 (2017-10-01)</a></li>
 								<li><a href = "#s3800">Version 3.8.0.0 (2017-09-03)</a></li>
@@ -2211,7 +2216,9 @@ permalink: /changelog.html
 				</li>
 				<li><a class = "has-child" href = "#shoko-desktop">Shoko Desktop</a>
 						<ul>
-								<li><a href = "#s{{ forloop.index }}">Version {{ release.version }}({{ release.date }})</a></li>{% endfor %}
+								{% for release in site.data.changelog.server.releases %}
+								<li><a href = "#s{{ forloop.index }}">Version {{ release.version }}({{ release.date }})</a></li>
+								{% endfor %}
 								<li><a href = "#d383">Version 3.8.3 (2018-02-04)</a></li>
 								<li><a href = "#d382">Version 3.8.2 (2017-12-24)</a></li>
 								<li><a href = "#d381">Version 3.8.1 (2017-10-01)</a></li>
