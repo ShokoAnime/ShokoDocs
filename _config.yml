@@ -1,7 +1,6 @@
 title: Shoko Docs
 description: Online documentation for Shoko, an anime cataloging program.
-baseurl: ""
-url: ""
+url: https://docs.shokoanime.com/
 
 permalink:   /:categories/:title/
 markdown:    kramdown
@@ -9,10 +8,10 @@ highlighter: rouge
 sass:
   sass_dir: _sass
   style: compressed
-gems:
+plugins:
   - jekyll-sitemap
 
-exclude: ['README.markdown', 'Gemfile.lock', 'Gemfile', "README.md", "CNAME", "templates"]
+exclude: ['README.markdown', 'Gemfile.lock', 'Gemfile', "README.md", "CNAME", "templates", "package.json", "package-lock.json", "node_modules", "gulpfile.js"]
 
 kramdown:
   auto_ids: true

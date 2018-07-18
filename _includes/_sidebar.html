@@ -1,40 +1,46 @@
-{% if site.data.sidebar.menu[0] %}
-	{% for item in site.data.sidebar.menu %}
-	{% capture path %}{{ item.link }}{% endcapture %}
-	{% if path != empty and page.url contains path %}{% assign active = true %}{% else %}{% assign active = false %}{% endif %}
-	{% if item.page %}
-	<li {% if active %} class="active" {% endif %}>
-		<a href="{{ path }}">{{ item.page }}</a>
+<ul class = "nav nav-sidebar nav-sidebar-pill" data-accordion = "true">
+	<li class = "nav-item">
+		<a class = "nav-link" href = "#">Shoko Server <i class = "nav-angle"></i></a>
+		<div class = "nav">
+			<a class = "sidenav-title">Installing Shoko Server</a>
+			<a class = "nav-link" href = "/server/install_windows.html">Shoko Server On Windows</a>
+			<a class = "nav-link" href = "/server/install_linux.html">Shoko Server On Linux</a>
+			<a class = "sidenav-title">Using Shoko Server</a>
+			<a class = "nav-link" href = "/server/config.html">Configure Settings</a>
+			<a class = "nav-link" href = "/server/webui.html">Configure Web UI</a>
+		</div>
 	</li>
-	{% endif %}
-	<li {% if active %} class="active" {% endif %}><a {% if active %} class="open active" {% endif %} href="#">{{ item.title }}</a>
-		{% if item.items %}
-		<ul>
-			<ul class="dropable">
-				{% for item2 in item.items %}
-				{% capture path %}{{ item.link }}{{ item2.link }}{% endcapture %}
-				{% if path != empty and page.url contains path %}{% assign active = true %}{% else %}{% assign active = false %}{% endif %}
-				{% if item2.page %}
-				<li {% if active %} class="active" {% endif %}>
-					<a href="{{ path }}">{{ item2.page }}</a>
-				</li>
-				{% endif %}
-				<li {% if path != empty and page.url contains path %} class="active" {% endif %}>
-				<a {% if active %} class="open active" {% endif %} href="#">{{ item2.title }}</a>
-					{% if item2.items %}
-					<ul>
-						{% for item3 in item2.items %}
-						{% capture path %}{{ item.link }}{{ item2.link }}{{ item3.link }}{% endcapture %}
-							<li {% if page.url == path %} class="active" {% endif %}><a href="{{ path }}">{{ item3.page }}</a></li>
-						{% endfor %}
-					</ul>
-					{% endif %}
-				{% endfor %}
-			</ul>
-		</ul>
-		{% endif %}
-	</li>
-	{% endfor %}
-{% endif %}
 
-</aside>
+	<li class = "nav-item">
+		<a class = "nav-link" href = "#">Shoko Desktop <i class = "nav-angle"></i></a>
+		<div class = "nav">
+			<a class = "nav-link" href = "#">Installing Shoko Desktop</a>
+			<a class = "nav-link" href = "#">Configuring Shoo Desktop</a>
+		</div>
+	</li>
+
+	<li class = "nav-item">
+		<a class = "nav-link" href = "#">My Anime 3 <i class = "nav-angle"></i></a>
+		<div class = "nav">
+			<a class = "nav-link" href = "#">Installing My Anime 3</a>
+			<a class = "nav-link" href = "#">Configuring My Anime 3</a>
+		</div>
+	</li>
+
+	<li class = "nav-item">
+		<a class = "nav-link" href = "#">Shoko On Plex <i class = "nav-angle"></i></a>
+		<div class = "nav">
+			<a class = "nav-link" href = "#">Installing Shoko On Plex</a>
+			<a class = "nav-link" href = "#">Configuring Shoko On Plex</a>
+		</div>
+	</li>
+
+	{% if page.url == "/faq.html" %} {% else %}
+	<li class = "nav-item"><a href = "faq.html">Frequently Asked Questions</a></li>
+	{% endif %}
+
+	{% if page.url == "/changelog.html" %} {% else %}
+	<li class = "nav-item"><a  href = "changelog.html">Changelog</a></li>
+	{% endif %}
+
+</ul>

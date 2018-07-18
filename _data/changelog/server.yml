@@ -1,6 +1,8 @@
 releases:
   - version: 3.9.0
-    date: 2018-06-21
+    versionurl: 390
+    date: June 21, 2018
+    bloglink: https://shokoanime.com/shoko-version-3-9-0-released/
     changes:
       - status: added
         issue: 312
@@ -66,7 +68,7 @@ releases:
         commit: b6a5303
         text: Fixed an issue where episode data was not being updated for currently airing series.
       - status: fixed
-        commit: 31e204
+        commit: 31e2046
         text: Prevent clearing command queues freezing the UI.
       - status: fixed
         commit: 985a1f4
@@ -84,7 +86,9 @@ releases:
         commit: 14a38d0
         text: Removed MAL access and syncing.
   - version: 3.8.3
-    date: 2018-02-04
+    versionurl: 383
+    date: February 04, 2018
+    bloglink: https://shokoanime.com/shoko-version-3-8-3-released/
     changes:
       - status: added
         issue: 695

@@ -1,6 +1,8 @@
 releases:
   - version: 3.9.0
-    date: 2018-06-21
+    versionurl: 390
+    date: June 21, 2018
+    bloglink: https://shokoanime.com/shoko-version-3-9-0-released/
     changes:
       - status: updated
         commit: 4573763
@@ -39,7 +41,9 @@ releases:
         commit: be497ff
         text: Removed MAL access and syncing.
   - version: 3.8.3
-    date: 2018-02-04
+    versionurl: 383
+    date: February 04, 2018
+    bloglink: https://shokoanime.com/shoko-version-3-8-3-released/
     changes:
       - status: updated
         commit: 94bbbba

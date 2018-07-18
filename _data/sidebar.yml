@@ -22,7 +22,7 @@ menu:
       link: config/
       items:
        - page: Actions Tab
-         link: actions.html
+         link: config.html
        - page: Import Folders Tab
          link: import.html
        - page: Cloud Accounts Tab

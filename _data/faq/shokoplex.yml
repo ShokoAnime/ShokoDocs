@@ -1,0 +1,10 @@
+faq:
+  - question: >
+      I Keep Getting An "401: Unauthorized" Error Message
+    link: access-error
+    answer:
+      - There are a number of reason you might be receiving this error message, we've outlined some of the most common reasons below.
+      - <strong>Shoko Server Is Unreachable</strong>
+      - If your accessing Shoko Server over your network or the internet you need to make sure you've opened the port Shoko Server uses which is 8111.
+      - <strong>Your Plex Username Has A Space In It</strong>
+      - If your Plex username has a pace in it, you'll not be able to load the channel, instead remove any spaces, reload Plex and try again.

@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang = "en">
 <head>
-		{% include _head.html %}
+	{% include _head.html %}
 </head>
 
-<body data-spy="scroll" data-target=".sidebar" data-offset="200">
+<body>
 
-<header class="site-header">
-		{% include _navbar.html %}
-</header>
+{% include _navbar.html %}
 
-<main class="container">
-		<div class="row">
+<main class = "main-content">
+	<div class = "container">
+		<div class = "row">
 
-				<!-- Main content -->
-				{{ content }}
-				<!-- END Main content -->
+			<!-- Main content -->
+			{{ content }}
+			<!-- End Main content -->
+
+		</div>
+	</div>
+</main>
+
+{% include _footer.html %}
+{% include _scripts_include.html %}
+
+</body>
+</html>

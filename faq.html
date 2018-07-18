@@ -1,600 +1,167 @@
 ---
 layout: main
-title: Shoko Frequently Asked Questions
+title: Frequently Asked Questions
 permalink: /faq.html
+excerpt: A list of the most FAQ when using Shoko.
 ---
 
-<article class = "col-md-9 col-sm-9 main-content" role = "main">
-		<header>
-				<ol class = "breadcrumb">
-						<li><a href = "{{ site.url }}">Home</a></li>
-						<li class = "active">{{ page.title }}</li>
-				</ol>
-				<h1>{{ page.title }}</h1>
-				<p>This is an ongoing list of frequently asked questions that has been complied in one location to better help everyone. as these are just frequently asked
-						questions you may not see the answer to your question. we suggest checking the related page in the documentation for your answer, if you still can’t find
-						your answer feel free to ask us directly on our discord server using the <strong>support</strong> link at the top.</p>
-		</header>
+<main class = "main-content">
+	<div class = "container">
+		<div class = "row">
 
-		<div class = "panel-group" id = "accordion">
-				<section>
-						<h2 id = "general">General Questions</h2>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion"
-														href = "#anidb-ban">I've Been Banned From AniDB?</a>
-										</h4>
-								</div>
-								<div id = "anidb-ban" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>We want to make something very clear, using Shoko <strong>will not</strong> get you <strong>permanently banned</strong> from
-														AniDB. Shoko uses the official AniDB api and complies with all rules and guidelines for using it.</p>
-												<p>The “banned” message you’re seeing is simply telling you that you’ve been <strong>temporarily</strong> banned for excessive
-														connection attempts. AniDB will sometimes temporarily ban a user if it thinks you are attempting to leech data. by making
-														excessive connection attempts that’s usually in the range of a couple hundred attempts in a very short period of time, the
-														algorithm used by AniDB will come to the conclusion that you are leeching data and temporarily ban you. in reality you’ve
-														done nothing wrong and just need to wait out the ban which can last anywhere from 10 minutes to 24 hours depending on the
-														severity. also keep in mind that browsing AniDB while Shoko is scraping and downloading data can also increase the chance of
-														getting a temporary ban as your creating more connection attempts.</p>
-												<p>If you find yourself with a temporary ban, you should not attempt to perform any scraping or updating of AniDB data for at least
-														15 minutes just to be sure you don’t get temporarily banned again for what looks like a repeated attempt at data leeching.
-														after 15 minutes you can try again and if you are still temporarily banned then you'll need to wait a couple hours. also
-														it's import to understand that changing your ip address to circumvent a temporary ban can lead to a permanent ban for
-														forceful manipulation.</p>
-										</div>
-								</div>
-						</div>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion" href = "#update-issue">I've Updated Shoko Server /
-														Desktop But Nothings Changed!</a>
-										</h4>
-								</div>
-								<div id = "update-issue" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>Shoko does not auto-update, make sure you are installing the new version and not just downloading it. earlier versions of Shoko
-														included an auto-update program that was failing for a considerable amount of users causing the update to not apply
-														correctly. it was decided that instead of auto-updating Shoko, a prompt would be displayed alerting the user that a new
-														version of Shoko is available.</p>
-												<p>Simply <a href = "http://Shokoanime.com/downloads/" target = "_blank">download the latest version</a> and install it over the
-														current version, your settings, files and collection will not be touched.</p>
-										</div>
-								</div>
-						</div>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion" href = "#site-stream">Does Shoko Allow Me To
-														Stream Anime From Different Sites?</a>
-										</h4>
-								</div>
-								<div id = "site-stream" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>this is something that’s being looked into but at this time Shoko does not support streaming anime from websites like crunchy
-														roll.</p>
-										</div>
-								</div>
-						</div>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion" href = "#collection-stream">Does Shoko Allow Me To
-														Stream My Collection?</a></h4>
-								</div>
-								<div id = "collection-stream" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>Yes it does!</p>
-												<p>As of <strong>version 3.6</strong>, users can now stream their anime collection to any Shoko supported program. while the
-														majority of the work is done for you,there are a few things you'll need to do in order to start streaming. first make sure
-														you are using one of the fully support video players which you can check in <strong>settings > video players</strong> and
-														make sure ports <strong>8111</strong> and<strong>8112</strong> are forwarded.</p>
-										</div>
-								</div>
-						</div>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion" href = "#download-anime">Can Shoko Download
-														Anime?</a>
-										</h4>
-								</div>
-								<div id = "download-anime" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>No, Shoko <strong>does not</strong> provide a way for the user to download anime anymore.</p>
-												<p>While originally supported, this feature was removed to distance the Shoko team from any sort of legal actions for providing a
-														method to download anime.</p>
-										</div>
-								</div>
-						</div>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion" href = "#backup-collection">How Do I Backup My
-														Collection?</a>
-										</h4>
-								</div>
-								<div id = "backup-collection" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>While we currently do not offer a solution to backup your database whenever you'd like, we do automatically backup your database
-														before updating Shoko to the latest version and depending on your database type, you'll find your backup in one of two
-														locations. the exact location for sql server will change depending on what version of sql server you are running.</p>
-												<table class = "table table-striped">
-														<thead>
-														<tr>
-																<th>Database Type</th>
-																<th>Backup Location</th>
-														</tr>
-														</thead>
-														<tbody>
-														<tr>
-																<td>SQLITE</td>
-																<td>Shoko Server Install Directory\databasebackup</td>
-														</tr>
-														<tr>
-																<td>MYSQL</td>
-																<td>Shoko Server Install Directory\databasebackup</td>
-														</tr>
-														<tr>
-																<td>Sql Server</td>
-																<td>C:\program Files\microsoft Sql Server\mssql10.mssqlserver\mssql\backup</td>
-														</tr>
-														</tbody>
-												</table>
-										</div>
-								</div>
-						</div>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion" href = "#build-version">How Can I Tell If I'm
-														Using A Stable / Beta / Daily Build?</a>
-										</h4>
-								</div>
-								<div id = "build-version" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>If you are unsure what version of Shoko you are running, in Shoko server / Shoko desktop click the about button to open the about
-														Shoko window and take a look at the version number. using the table below, compare your version number to the examples
-														provided, if you are still unsure then join us on discord and we'll help you figure it out.</p>
-												<table class = "table table-striped">
-														<thead>
-														<tr>
-																<th>Version Example</th>
-																<th>Description</th>
-														</tr>
-														</thead>
-														<tbody>
-														<tr>
-																<td>3.7.0.0</td>
-																<td>If the fourth digit is <strong>below 100</strong>, then you are running a stable build.
-																</td>
-														</tr>
-														<tr>
-																<td>3.7.0.1001</td>
-																<td>If the fourth digit is <strong>above 1000</strong>, then you are running a daily build.
-																</td>
-														</tr>
-														<tr>
-																<td>3.7.0.901</td>
-																<td>If the fourth digit is <strong>above 900</strong>, then you are running a beta build.
-																</td>
-														</tr>
-														</tbody>
-												</table>
-										</div>
-								</div>
-						</div>
-				</section>
+			<!--
+			|‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+			| Sidebar
+			|‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+			!-->
 
-				<section>
-						<h2 id = "server">Shoko Server</h2>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion"
-														href = "#server-start">After Fresh Install, Shoko Server Will Not Start!!</a>
-										</h4>
-								</div>
-								<div id = "server-start" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>Some users have reported being unable to start Shoko Server after a fresh install, usually the issue is related to user
-														permissions in <strong>ProgramData/ShokoServer</strong>and issues with the <strong>urlacl</strong> not being added properly.
-														We've created a .BAT file that should resolve these issues, all you need to do is download the file linked below and run it
-														once. For those who are hesitant to run the file, simply open it up in notepad to view the contents.</p>
-												<p>If you are still having issues after running the .BAT file, please join our Discord server so we can provided additional
-														assistance. </p>
-										</div>
-								</div>
-						</div>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion"
-														href = "#import-error">My Files Are Not Being Imported!</a>
-										</h4>
-								</div>
-								<div id = "import-error" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>There are a number of reasons why you're files are not being imported. first, double-check your import folder settings and make
-														sure you’ve selected the correct options that reflects your setup. if everything looks correct and running <strong>run
-																import</strong> still fails to properly import your files then what's likely happening is one of two things. the
-														files have been imported but the crc32 value does not match any files on AniDB or there were errors during the hashing
-														process and Shoko server was unable to get the hash and compare it.</p>
-												<p>Using <strong>Shoko desktop</strong>, navigate to <strong>utilities > unrecognized files</strong> and if your files are showing
-														up there, you can manually link them to the correct episode. if Shoko server was unable to get the hash, make sure no other
-														program is accessing the files in question and try again by clicking <strong>run import</strong>.</p>
-										</div>
-								</div>
-						</div>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion" href = "#cloud">What Cloud Hosting Providers Are
-														Supported?</a>
-										</h4>
-								</div>
-								<div id = "cloud" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>We currently support the following cloud hosts and while we cannot guarantee we'll add your cloud host, if it's not listed below
-														you can always request support for it by creating an issue on github.</p>
-												<ul>
-														<li>Amazon Cloud Drive</li>
-														<li>Google Drive</li>
-														<li>One Drive</li>
-												</ul>
-										</div>
-								</div>
-						</div>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion"
-														href = "#mix-providers">Can I Mix & Match Providers?</a>
-										</h4>
-								</div>
-								<div id = "mix-providers" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>At this time, you are <strong>unable to mix and match different providers</strong>.</p>
-												<p>Each provider is treated as it's own set which means its not possible to use a drop source from your local provider with a drop
-														destination from a cloud provider.</p>
-										</div>
-								</div>
-						</div>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion" href = "#updated-drop-location">I've Updated My
-														Drop Destination But My Files Are Still Being Moved To The Old Location?</a>
-										</h4>
-								</div>
-								<div id = "updated-drop-location" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>While this might seem odd, this is the <strong>intended behavior and is not a bug</strong>.</p>
-												<p>If you change your drop destination, only <strong>newly imported series</strong> will use it, any series that already exists in
-														your collection will use the old drop destination. this is done to prevent your series files from being scattered in
-														multiple places.</p>
-												<p>If you want an <strong>existing series</strong> to use the new drop destination, you'll need to delete the series from your
-														collection and then re-import the series.</p>
-										</div>
-								</div>
-						</div>
-				</section>
 
-				<section>
-						<h2 id = "desktop">Shoko Desktop</h2>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion" href = "#groups">What Are Groups?</a>
-										</h4>
-								</div>
-								<div id = "groups" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>Groups allow you to organize and visually stack multiple series, movies, and ova's into one single viewable entry in your
-														collection regardless of where and how the files in that group are organized.</p>
-												<p>A majority of anime have at least one type of related item such as an ova, movie or sequel. using a group allows the main item
-														and it's related items to be grouped together into one listing reducing multiple entries for the same series. if enabled,
-														Shoko can do all this automatically for you by pulling all related series information from AniDB and creating groups for any
-														anime series and it's related items. you're also able to specify which types of relations you'd like excluded from
-														auto-grouping allowing you to further fine-tune your collection.</p>
-										</div>
-								</div>
-						</div>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion" href = "#community-links">How Does Community
-														Linking Work?</a>
-										</h4>
-								</div>
-								<div id = "community-links" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<table class = "accordion-table">
-														<tr>
-																<td>
-																		<p>When adding a series and depending on the user's settings, Shoko first checks the web cache for any
-																				approved links, if there are approved links they are added. however, if the series does not have any
-																				approved links then Shoko will attempt to link by series name, most of the time Shoko can do this
-																				but when it’s unable to find an exact match it leaves the link empty. if a user then adds the link
-																				themselves and depending on their settings, the link is sent for review and if correct will be
-																				approved allowing other users to benefit from this link.</p>
-																		<p>a link does not initially link individual episodes but instead tells Shoko where to start the linking on
-																				AniDB and the site it’s being linked with. from there it links each episode and special that
-																				follows. you’ll see a screen similar to this depending on which community site you’re creating the
-																				link for. the series name will auto-populate for you so just click the search button. most of the
-																				time you’ll see a box called community recommendation, this means the series already has an approved
-																				link, click the use this button to use that link.</p>
-																		<p>If there is not a community recommendation that means no one has submitted a link for that series which
-																				as explained before and depending on user settings, Shoko will automatically submit that link and if
-																				approved, will automatically be used. something to keep in mind, only link a series using an english
-																				link. most of these sites are only in english anyways so this shouldn't’t be a problem but you’ll
-																				notice in the above example there are links for the series in different languages. while they all go
-																				to the same page, click the one with the british flag to use as the link even if english is not your
-																				first language. learn more information on community recommendations.</p>
-																		<h4>TvDB And Trakt Linking Issues</h4>
-																		<p>Even if a series auto-links or the user has added the link, there could still be discrepancies with the
-																				link itself due to how AniDB, Trakt and TvDB list their episodes and specials. as they are different
-																				sites they might assign episodes and/or specials different numbers which would throw off our
-																				auto-linking system. here’s an example of a series with multiple submitted links. Shoko desktop -
-																				series info - multiple series links to overcome this, users can add an existing link to a series,
-																				however you will need the TvDB id or Trakt slug to add the link. you can get the TvDB id or Trakt
-																				slug by clicking the series name and opening the page in your browser. once added you’ll be asked to
-																				select the AniDB episode and the TvDB/Trakt episode it corresponds to. because we are adding an
-																				existing link, it will only link the episode we select.</p>
-																</td>
-																<td>
-																		<figure class = "figure">
-																				<a href = "assets/img/desktop/Shoko-Desktop-Series-Info-Linking-Series.png" data-lity> <img
-																						src = "assets/img/desktop/Shoko-Desktop-Series-Info-Linking-Series.png"
-																						class = "img-responsive img-thumbnail"
-																						alt = "Shoko Desktop - Series Info - Linking Series"/></a>
-																				<figcaption class = "figure-caption">Shoko Desktop - Series Info - Linking Series</figcaption>
-																		</figure>
+			<div class = "col-md-4 col-xl-3 order-last order-md-first">
+				<hr class = "d-md-none">
+				<aside class = "sidebar sidebar-sticky sidebar-stick-shadow pr-md-5 br-1">
+					<ul class = "nav nav-sidebar nav-sidebar-pill" data-accordion = "true">
+						<li class = "nav-item"><a class = "nav-link" href = "#general">General</a></li>
+						<li class = "nav-item"><a class = "nav-link" href = "#server">Shoko Server</a></li>
+						<li class = "nav-item"><a class = "nav-link" href = "#desktop">Shoko Desktop</a></li>
+						<li class = "nav-item"><a class = "nav-link" href = "#plex">Shoko On Plex</a></li>
+						<li class = "nav-item"><a class = "nav-link" href = "#anime-buddy">Anime Buddy</a></li>
+					</ul>
+				</aside>
+			</div>
 
-																		<figure class = "figure">
-																				<a href = "assets/img/desktop/Shoko-Desktop-Series-Info-Multiple-Series-Links.png" data-lity><img
-																						src = "assets/img/desktop/Shoko-Desktop-Series-Info-Multiple-Series-Links.png"
-																						class = "img-responsive img-thumbnail"
-																						alt = "Shoko Desktop - Series Info - Multiple Series Link"/></a>
-																				<figcaption class = "figure-caption">Shoko Desktop - Series Info - Multiple Series Link</figcaption>
-																		</figure>
+			<!--
+			  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+			  | Content
+			  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+			  !-->
 
-																		<figure class = "figure">
-																				<a href = "assets/img/desktop/Shoko-Desktop-Series-Info-Adding-Existing-Link.png" data-lity><img
-																						src = "assets/img/desktop/Shoko-Desktop-Series-Info-Adding-Existing-Link.png"
-																						class = "img-responsive img-thumbnail"
-																						alt = "Shoko Desktop - Series Info - Adding Existing Link"/></a>
-																				<figcaption class = "figure-caption">Shoko Desktop - Series Info - Adding Existing Link</figcaption>
-																		</figure>
-																</td>
-														</tr>
-												</table>
-										</div>
-								</div>
-						</div>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion" href = "#community-recommendations">What Are
-														Community Recommendations?</a>
-										</h4>
-								</div>
-								<div id = "community-recommendations" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>As previously mentioned, Shoko scrapes your files and uses AniDB to compare and download your collection’s data. however while
-														AniDB is one of the best information repositories when it comes to anime, it’s doesn’t deal with images or episode
-														summaries. to get the missing data, the episode summaries, images, fanart, posters and banners for the series in your
-														collection, other sites such as TvDB, TMDb are used. Shoko is capable of automatically linking the series in your collection
-														with what it thinks is it’s counterpart on the various community sites. however this is not perfect as Shoko does a simple
-														search comparing only the series name leading to wrong incorrect or different versions getting linked together. so if a
-														series has a community recommendation link then that means a user like yourself submitted a link, it was approved by an
-														admin for others to use and is the correct link for the series in question. some series such as one piece for example will
-														have a long list of community recommendations, this does not mean you get to select one but rather there have been multiple
-														links submitted and approved for the series to fix discrepancies between AniDB and TvDB allowing your collection to be
-														accurate and complete.</p>
-												<p>Something to keep in mind while maintaining your collection is that community recommendations do not automatically update on the
-														end user. this means that if a link is made after you’ve selected the community recommendation, future links added
-														regardless of the link itself will not show up in your collection. to make it consistently checking and automatically
-														updating your data would make this a resource intense task and slow any program or plugin using Shoko server. instead if you
-														go to the community data section under the utilities tab in Shoko desktop you’ll be able to search your collection and
-														display any incorrect links allowing you to manually fix them. for more information on the community data section check out
-														the utilities page.</p>
-												<p>In addition, those with a linked <a href = "http://myanimelist.net" target = "_blank">My Anime List</a> or <a
-														href = "http://Trakt.tv" target = "_blank">Trakt TV</a> account will see links for those series as well and can also submit
-														links if there is no default one. However those who do not have a linked account will not see be able to see these links nor
-														will they be able to add and submit them.</p>
-										</div>
-								</div>
-						</div>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion" href = "#incorrect-links">My TvDB / Trakt / My
-														Anime List Links Are Missing / Incorrect!</a>
-										</h4>
-								</div>
-								<div id = "incorrect-links" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>As previously mentioned in the <strong>Community Recommendations</strong> question above, every TvDB, Trakt and MyAnimeList link
-														is manually added by fellow users, there is no automatic process like there is for AniDB. If the link is missing than we’ve
-														never had it submitted before and it will remain missing until someone submits it and it gets approved. If you come across a
-														missing link you can update it yourself fixing the problem and will help us and any user that adds that series later on.
-														Sometimes an incorrect link gets submitted and approved. If this is the case you can override the provided link with the
-														correct link. Doing so will mark the new link as needing approval and if correct, it will replace the previous incorrect
-														link fixing the problem for users who add the series later on.</p>
-										</div>
-								</div>
-						</div>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion" href = "#file-stream">My Files Are Being Streamed
-														Instead Of Played Back Locally!</a>
-										</h4>
-								</div>
-								<div id = "file-stream" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<table class = "accordion-table">
-														<tr>
-																<td><p>Shoko will automatically stream your files during playback if the local path for the import folder is
-																		incorrect.</p>
-																		<p>Navigate to the <strong>Server Tab</strong>, double-click on one of your import folders and add the local
-																				path to the folder. The local path is the <strong>path to that folder from the computer desktop is
-																						on</strong>. For best results do not used mapped network drives but the actual network path.
-																		</p>
-																</td>
-																<td>
-																		<figure class = "figure">
-																				<a href = "assets/img/desktop/Shoko-Desktop-Add-Import-Folder.png" data-lity><img
-																						src = "assets/img/desktop/Shoko-Desktop-Add-Import-Folder.png"
-																						class = "img-responsive img-thumbnail" alt = "Shoko Desktop - Add Import Folder"/></a>
-																				<figcaption class = "figure-caption">Shoko Desktop - Add Import Folder</figcaption>
-																		</figure>
-																</td>
-														</tr>
-												</table>
-										</div>
-								</div>
-						</div>
-				</section>
+			<div class = "col-md-7 col-xl-8 ml-md-auto py-8">
+				<article>
 
-				<section>
-						<h2 id = "plex">Shoko on Plex</h2>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion" href = "#access-error">I Keep Getting An "401:
-														Unauthorized" Error Message</a>
-										</h4>
-								</div>
-								<div id = "access-error" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>There are a number of reason you might be receiving this error message, we've outlined some of the most common reasons below.</p>
-												<p><strong>Shoko Server Is Unreachable</strong></p>
-												<p>If your accessing Shoko Server over your network or the internet you need to make sure you've opened the ports Shoko Server uses
-														which are 8111 and 8112.</p>
-												<p><strong>Your Plex Username Has A Space In It</strong></p>
-												<p>If your Plex username has a pace in it, you'll not be able to load the channel, instead remove any spaces, reload Plex and try
-														again.</p>
-										</div>
-								</div>
-						</div>
-				</section>
+					<h1>{{ page.title }}</h1>
+					<p class = "lead">This is an ongoing list of frequently asked questions that has been complied in one location to better help everyone. as
+						these are just frequently asked questions you may not see the answer to your question. We suggest checking the related page in the
+						documentation for your answer, if you still can’t find your answer feel free to ask us directly on our discord server using the<strong>support</strong>link
+						at the top.</p>
 
-				<section>
-						<h2 id = "anime-buddy">Anime Buddy</h2>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion" href = "#internet-connect">Can Anime Buddy Connect
-														To Shoko Server Over The Internet?</a>
-										</h4>
-								</div>
-								<div id = "internet-connect" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>You bet it can!</p>
-												<p>However there are a few things you’ll need to keep in mind when remotely connecting to Shoko Server. First, all metadata and
-														images will temporarily download for any series being displayed in Anime Buddy. Download speeds will depend entirely on your
-														connections download speed and the upload speed of the connection Shoko Server is using. You can still view your entire
-														collection even if it’s associated metadata and images have not been downloaded yet, you’ll just see a placeholder for it
-														until it’s been downloaded.</p>
-												<p>Our Anime Buddy Setup page covers everything you need to know.</p>
-										</div>
-								</div>
-						</div>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion" href = "#shoko-error">I'm Getting "Shoko Server
-														Not Responding" Related Errors</a>
-										</h4>
-								</div>
-								<div id = "shoko-error" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>When attempting to connect to Shoko Server, you may receive an error message that’s similar to the following:</p>
-												<p><strong>Shoko Server is not responding..</strong></p>
-												<p>This is a generic error message that is called when Anime Buddy times out when attempting to connect to Shoko Server.</p>
-												<p><strong>Here’s are the most likely reasons:</strong></p>
-												<ul>
-														<li>Check to make sure Shoko Server is running.</li>
-														<li> Check to make sure Shoko Server has been configured correctly and the settings in Anime Buddy match.
-														</li>
-														<li>If every thing’s configured correctly and you’re trying to access Shoko Server on the same machine it’s most likely a
-																loopback issue.
-														</li>
-												</ul>
-												<p>In regards to #3, this is a common issue where Windows Store Apps are forbidden from sending network traffic to the local
-														machine. You can over-ride this (and get a full explanation) from the following page:</p>
-												<p>
-														<a href = "http://blogs.msdn.com/b/fiddler/archive/2011/12/10/fiddler-windows-8-apps-enable-loopback-network-isolation-exemption.aspx"
-																target = "_blank">Windows 8 Apps - Enable Loopback Network Isolation</a></p>
-												<p>Simply install the loopback utility and add Anime Buddy as an exemption and retry connecting to Shoko Server.</p>
-										</div>
-								</div>
-						</div>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion" href = "#ab-playback">How Does Playback Work?</a>
-										</h4>
-								</div>
-								<div id = "ab-playback" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>Anime Buddy does not stream your files, instead it downloads a copy of the file and then plays it back. Depending on your
-														connection and the filesize, this could take some time. </p>
-										</div>
-								</div>
-						</div>
-						<div class = "panel panel-default">
-								<div class = "panel-heading">
-										<h4 class = "panel-title">
-												<a class = "accordion-toggle" data-toggle = "collapse" data-parent = "#accordion" href = "#ab-playback-issues">Why Won't The Episode
-														Play? </a>
-										</h4>
-								</div>
-								<div id = "ab-playback-issues" class = "panel-collapse collapse">
-										<div class = "panel-body">
-												<p>Anime Buddy will load the file using the default Windows video player so make sure it can support the file you are trying to
-														playback. If you are running Windows RT, you can only play videos which are supported by Windows Store Apps. At the time of
-														writing the Video App only supports playback of AVI and XVID files.</p>
-										</div>
-								</div>
-						</div>
-				</section>
+					<hr class = "my-6">
 
-				<section class = "github-callout">
-						<div class = "callout callout-info" role = "alert">
-								<h4>Help Make This Page Better</h4>
-								<p>Have an idea to improve this page? is the material incorrect or outdated? don't wait for us to notice it and update it, instead make the update
-										yourself so the community can benefit from it.</p>
-								<a href = "https://github.com/shokoanime/Shokodocs/blob/master/faq.html" target = "_blank">Frequently Asked Questions On Github</a>
+					<h2 id = "general">General</h2>
+
+					<div class = "accordion-spacing">
+
+						{% for question in site.data.faq.general.faq %}
+
+						<div class = "accordion" id = "accordion-1">
+							<div class = "card">
+								<h6 class = "card-title">
+									<a data-toggle = "collapse" href = "#{{ question.link }}">{{ question.question }}</a>
+								</h6>
+
+								<div id = "{{ question.link }}" class = "collapse" data-parent = "#accordion-1">
+									<div class = "card-body"> {% for line in question.answer %}<p>{{ line }}</p>{% endfor %}</div>
+								</div>
+							</div>
 						</div>
-				</section>
+
+						{% endfor %}
+
+					</div>
+
+					<h2 id = "server">Shoko Server </h2>
+
+					<div class = "accordion-spacing">
+
+						{% for question in site.data.faq.server.faq %}
+
+						<div class = "accordion" id = "accordion-2">
+							<div class = "card">
+								<h6 class = "card-title">
+									<a data-toggle = "collapse" href = "#{{ question.link }}">{{ question.question }}</a>
+								</h6>
+
+								<div id = "{{ question.link }}" class = "collapse" data-parent = "#accordion-2">
+									<div class = "card-body"> {% for line in question.answer %}<p>{{ line }}</p>{% endfor %}</div>
+								</div>
+							</div>
+						</div>
+
+						{% endfor %}
+
+					</div>
+
+
+					<h2 id = "desktop">Shoko Desktop</h2>
+
+					<div class = "accordion-spacing">
+
+						{% for question in site.data.faq.desktop.faq %}
+
+						<div class = "accordion" id = "accordion-3">
+							<div class = "card">
+								<h6 class = "card-title">
+									<a data-toggle = "collapse" href = "#{{ question.link }}">{{ question.question }}</a>
+								</h6>
+
+								<div id = "{{ question.link }}" class = "collapse" data-parent = "#accordion-3">
+									<div class = "card-body"> {% for line in question.answer %}<p>{{ line }}</p>{% endfor %}</div>
+								</div>
+							</div>
+						</div>
+
+						{% endfor %}
+
+					</div>
+
+					<h2 id = "plex">Shoko On Plex</h2>
+
+					<div class = "accordion-spacing">
+
+						{% for question in site.data.faq.shokoplex.faq %}
+
+						<div class = "accordion" id = "accordion-4">
+							<div class = "card">
+								<h6 class = "card-title">
+									<a data-toggle = "collapse" href = "#{{ question.link }}">{{ question.question }}</a>
+								</h6>
+
+								<div id = "{{ question.link }}" class = "collapse" data-parent = "#accordion-4">
+									<div class = "card-body"> {% for line in question.answer %}<p>{{ line }}</p>{% endfor %}</div>
+								</div>
+							</div>
+						</div>
+
+						{% endfor %}
+
+					</div>
+
+					<h2 id = "anime-buddy">Anime Buddy</h2>
+
+					<div class = "accordion-spacing">
+
+						{% for question in site.data.faq.animebuddy.faq %}
+
+						<div class = "accordion" id = "accordion-5">
+							<div class = "card">
+								<h6 class = "card-title">
+									<a data-toggle = "collapse" href = "#{{ question.link }}">{{ question.question }}</a>
+								</h6>
+
+								<div id = "{{ question.link }}" class = "collapse" data-parent = "#accordion-5">
+									<div class = "card-body"> {% for line in question.answer %}<p>{{ line }}</p>{% endfor %}</div>
+								</div>
+							</div>
+						</div>
+
+						{% endfor %}
+
+					</div>
+
+				</article>
+			</div>
+
 		</div>
-</article>
+	</div>
+</main>
 
-<!-- Sidebar -->
-<aside class = "col-md-3 col-sm-3 sidebar">
 
-		<ul class = "sidenav dropable sticky">
-				<li>
-						<a class = "has-child" href = "#">General Questions</a>
-						<!-- S<ul>
-								<li><a href = "#anidb-ban">I've Been Banned From AniDB?</a></li>
-								<li><a href = "#update-issue">I've Updated Shoko But Nothings Changed!</a></li>
-								<li><a href = "#site-stream">Does Shoko Allow Me To Stream Anime From Different Sites?</a></li>
-								<li><a href = "#collection-stream">Does Shoko Allow Me To Stream My Collection?</a></li>
-								<li><a href = "#download-anime">Can Shoko Download Anime?</a></li>
-								<li><a href = "#backup-collection">How Do I Backup My Collection?</a></li>
-						</ul>-->
-				</li>
-				<li><a href = "#server">Shoko Server</a></li>
-				<li><a href = "#desktop">Shoko Desktop</a></li>
-				<li><a href = "#plex">Shoko On Plex</a></li>
-				<li><a href = "#anime-buddy">Anime Buddy</a></li>
-				<li class = "hr-menu">
-						<hr/>
-				</li>
-
-				{% include _sidebar.html %} {% include _sidebar_end.html %}
