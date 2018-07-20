@@ -1,4 +1,45 @@
 releases:
+  - version: 3.9.1
+    versionurl: 391
+    date: In Development
+    bloglink: NA
+    changes:
+      - status: updated
+        commit: 4e9122c
+        text: Revert mono to 5.4 to resolve problems with web-api connections/commands.
+      - status: updated
+        commit: 74c571c
+        text: Additional work on the new TVDB linking system.
+      - status: updated
+        commit: e6a8395
+        text: Hide Setup tab and make the Settings tab the default tab.
+      - status: updated
+        issue: 742
+        text: CommandRequest query optimisations.
+      - status: updated
+        issue: 747
+        text: Fixed ban timer, ban time now extends on subsequent bans..
+      - status: fixed
+        commit: ca96722
+        text: When MyList ID is missing add file first then update the state.
+      - status: fixed
+        commit: 3511693
+        text: Automatically create and initialize SQLite DB on first run.
+      - status: fixed
+        commit: 8e15ab4
+        text: Fix an issue when attempting to link your Plex account.
+      - status: fixed
+        commit: 6118075
+        text: Null Check some things in File Quality Filter.
+      - status: fixed
+        commit: 691f6b5
+        text: Add a flag to AddFileToMyList, so we can skip reading.
+      - status: fixed
+        commit: 8e15ab4
+        text: Parse MyList ID from adding files.
+      - status: fixed
+        commit: 9753cf1
+        text: When adding files to MyList, send the watched state if we have one.
   - version: 3.9.0
     versionurl: 390
     date: June 21, 2018

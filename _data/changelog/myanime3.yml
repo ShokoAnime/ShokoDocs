@@ -1,4 +1,15 @@
 releases:
+  - version: 3.7.2
+    versionurl: 372
+    date: In Development
+    bloglink: NA
+    changes:
+      - status: fixed
+        issue: 68
+        text: Fix multiple issues when displaying star ratings.
+      - status: removed
+        commit: a7a91c8
+        text: Remove MAL.
   - version: 3.7.1.0
     versionurl: 3710
     date: December 24, 2017

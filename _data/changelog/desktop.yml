@@ -1,4 +1,15 @@
 releases:
+  - version: 3.9.1
+    versionurl: 391
+    date: In Development
+    bloglink: NA
+    changes:
+      - status: updated
+        commit: 042d832
+        text: Increase default image sizes on Dashboard & fix Missing Eps Padding.
+      - status: updated
+        commit: fab24ac
+        text: Make plex section display something more, useful when unlinked.
   - version: 3.9.0
     versionurl: 390
     date: June 21, 2018

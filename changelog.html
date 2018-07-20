@@ -86,7 +86,11 @@ permalink: /changelog.html
 						<h4 class = "mb-0"><a href = "s{{ release.versionurl  }}">Version {{ release.version }} </a></h4>
 						<div class = "flexbox-changelog">
 							<time class = "small">{{ release.date }}</time>
+							{% if release.bloglink == "NA" %}
+							<time class = "small">Release Notes Not Available</time>
+							{% else %}
 							<time class = "small"><a href = "{{ release.bloglink }}" target = "_blank" rel = "noopener">View Release Notes</a></time>
+							{% endif %}
 						</div>
 					</div>
 
@@ -137,7 +141,11 @@ permalink: /changelog.html
 						<h4 class = "mb-0"><a href = "d{{ release.versionurl  }}">Version {{ release.version }} </a></h4>
 						<div class = "flexbox-changelog">
 							<time class = "small">{{ release.date }}</time>
+							{% if release.bloglink == "NA" %}
+							<time class = "small">Release Notes Not Available</time>
+							{% else %}
 							<time class = "small"><a href = "{{ release.bloglink }}" target = "_blank" rel = "noopener">View Release Notes</a></time>
+							{% endif %}
 						</div>
 					</div>
 
