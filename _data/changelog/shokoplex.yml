@@ -4,7 +4,7 @@ releases:
     date: February 04, 2018
     bloglink: https://shokoanime.com/shoko-version-3-8-3-released/
     changes:
-      - status: updated
+      - status: changed
         commit: f27d46f
         text: Update Shoko on Plex to once again work with Shoko version 3.8.
   - version: 3.7.1.0
@@ -12,7 +12,7 @@ releases:
     date: December 24, 2017
     bloglink: https://shokoanime.com/shoko-version-3-7-0-1-released/
     changes:
-      - status: updated
+      - status: changed
         commit: 35e7a78
         text: Update Shoko On Plex to work with Shoko Server version 3.8.
   - version: 3.7.0.4

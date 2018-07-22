@@ -4,19 +4,19 @@ releases:
     date: In Development
     bloglink: NA
     changes:
-      - status: updated
+      - status: changed
         commit: 4e9122c
         text: Revert mono to 5.4 to resolve problems with web-api connections/commands.
-      - status: updated
+      - status: changed
         commit: 74c571c
         text: Additional work on the new TVDB linking system.
-      - status: updated
+      - status: changed
         commit: e6a8395
         text: Hide Setup tab and make the Settings tab the default tab.
-      - status: updated
+      - status: changed
         issue: 742
         text: CommandRequest query optimisations.
-      - status: updated
+      - status: changed
         issue: 747
         text: Fixed ban timer, ban time now extends on subsequent bans..
       - status: fixed
@@ -51,37 +51,37 @@ releases:
       - status: added
         commit: 97bde94
         text: Added Environment variable configuration on first run.
-      - status: updated
+      - status: changed
         commit: 11f2595
         text: Seperate AniDB ban types to be both HTTP and UDP instead of a signular ban.
-      - status: updated
+      - status: changed
         commit: 1eb0489
         text: Additional improvements to AniDB Image rate limting.
-      - status: updated
+      - status: changed
         commit: bde8518
         text: General improvements made to the AniDB MyList updating process.
-      - status: updated
+      - status: changed
         commit: 985a1f4
         text: Shoko will now ignore the Recycle Bin when scanning import folders.
-      - status: updated
+      - status: changed
         commit: f73c368
         text: Improve Year filter logic.
-      - status: updated
+      - status: changed
         commit: 7447f56
         text: Use environment for program data location allowing for non-standard setups to work better.
-      - status: updated
+      - status: changed
         commit: cf38bac
-        text: Updated logging during startup.
-      - status: updated
+        text: changed logging during startup.
+      - status: changed
         commit: 3c94a2f
         text:  Move Docker install to be able to launch as non-root user.
-      - status: updated
+      - status: changed
         commit: 7c883e2
         text: Completely rework the plex workflow so that authentication and updating is a lot nicer.
-      - status: updated
+      - status: changed
         commit: aa94979
         text: Redid TvDB Linking system and made major improvements to TVDB system.
-      - status: updated
+      - status: changed
         commit: 64fbaf9
         text: Use Mono 5.12 on docker.
       - status: fixed
@@ -107,7 +107,7 @@ releases:
         text: Fixed an issue where user added series community links were removed when adding additonal ones.
       - status: fixed
         commit: b6a5303
-        text: Fixed an issue where episode data was not being updated for currently airing series.
+        text: Fixed an issue where episode data was not being changed for currently airing series.
       - status: fixed
         commit: 31e2046
         text: Prevent clearing command queues freezing the UI.
@@ -137,10 +137,10 @@ releases:
       - status: added
         commit: ef1cda5
         text: Add AniDB resource links.
-      - status: updated
+      - status: changed
         commit: d01f084
         text: Move AniDB Image Downloading to General Queue and add rate limiter.
-      - status: updated
+      - status: changed
         commit: 81d9a03
         text: Update Plex linking allowing users to link to their accounts and select the library.
       - status: fixed

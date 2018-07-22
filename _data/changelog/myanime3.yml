@@ -41,27 +41,27 @@ releases:
       - status: added
         commit: 9437ab5
         text: Added log out option under switch user menu.
-      - status: updated
+      - status: changed
         commit: ef85038
         text: Added better approach to home navigation with custom parameters for expansion later (based on IR-Server-Suite).
       - status: fixed
         commit: 11f8c11
         text: fixed error handling for command actions (buttons / keys).
-      - status: removed
-        commit: c6aad4f
-        text: Home button navigation fixed and improved (see new setting in configuration).
       - status: fixed
         commit: e86d7ab
         text: Fixed rating of series for all included skins.
+      - status: removed
+        commit: c6aad4f
+        text: Home button navigation fixed and improved (see new setting in configuration).
   - version: 3.7.0.1
     versionurl: 3701
     date: December 29, 2016
     bloglink: https://shokoanime.com/shoko-version-3-7-0-1-released/
     changes:
-      - status: updated
+      - status: changed
         commit: 09dc987
         text: Additional improvements to Home screen navigation.
-      - status: updated
+      - status: changed
         commit: 609d01b
         text: Small tweaks for filtering.
       - status: fixed

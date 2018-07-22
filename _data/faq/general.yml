@@ -2,7 +2,8 @@ faq:
   - question: Does Shoko Run On Linux?
     link: linux-support
     answer:
-      - Using <a href = "https://www.docker.com/" target = "_blank">Docker</a>, you can run <strong>Shoko Server</strong> natively on Linux. Users looking to install on Linux should follow our <a href = "https://docs.shokoanime.com/server/install_linux.html" target = "_blank">Linux Install Guide</a> for best results, additional support can be found by visiting our <strong>Discord Server</strong>.
+      - Yes it Does!
+      - Using <a href = "https://www.docker.com/" target = "_blank" rel = "noopener">Docker</a>, you can run <strong>Shoko Server</strong> natively on Linux. We've created a <a href = "https://docs.shokoanime.com/server/install_linux.html" target = "_blank" rel = "noopener">Linux Install Guide</a>  that we highly reccommend all Linux users follow to properly install Shoko Server. If needed, additional support can be found by visiting our <strong>Discord Server</strong>.
       - Please keep in mind that Shoko Server on Linux is still in <strong>beta</strong> so issues are to be expected.
   - question: I've Been Banned From AniDB?
     link: anidb-ban

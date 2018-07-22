@@ -4977,12 +4977,13 @@ input[type="button"].btn-block {
     display: inline-block;
     padding: 0.25em 0.5em;
     font-size: 80%;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1;
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: 0.125rem;
+    width: 70px;
 }
 
 .badge:empty {
@@ -25478,7 +25479,7 @@ a.text-lightest:hover, a.text-lightest:focus {
     background-color: #3cd458;
 }
 
-.badge-updated {
+.badge-changed {
     color: #fff;
     background-color: #50a1ff;
 }
