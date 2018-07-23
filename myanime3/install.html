@@ -1,0 +1,186 @@
+---
+layout: main
+title: Installing My Anime 3
+excerpt: How to install My Anime 3.
+permalink: myanime3/install.html
+---
+
+<main class = "main-content">
+	<div class = "container">
+		<div class = "row">
+
+			<!--
+			|‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+			| Sidebar
+			|‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+			!-->
+
+			<div class = "col-md-2 col-xl-2 order-last order-md-first">
+				<hr class = "d-md-none">
+				<aside class = "sidebar sidebar-sticky sidebar-stick-shadow pr-md-5 br-1">
+					{% include _sidebar.html %}
+				</aside>
+			</div>
+
+			<!--
+			  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+			  | Content
+			  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+			  !-->
+
+			<div class = "col-md col-xl m2-md-auto py-8">
+				<article>
+
+					<h1>{{ page.title }}</h1>
+					<p class = "lead">This guide is designed to get My Anime 3 installed properly so you can start watching your collection in Media Portal.</p>
+
+					<hr class = "my-6">
+
+					<section>
+
+						<h2 id = "mandatory">Do I Need To Install Shoko Server?</h2>
+						<p>The short answer is <strong>Yes</strong>.</p>
+
+						<p> Shoko Server is the back-end of the entire Shoko suite, which means every single program and plugin provided uses it for accessing
+							and maintaining your anime collection. This makes Shoko Server <strong>mandatory</strong> and also means Shoko Server <strong>must
+								be running</strong> to use any of the programs or plugins that connect to it. With the exception of file importing, Shoko Server
+							is no more resource intensive than other programs you probably have running in the background so you don't need to worry about Shoko
+							Server eating up resources.</p>
+
+					</section>
+
+					<section>
+
+						<h2 id = "install">Installing My Anime 3</h2>
+
+						<p>If you haven't already done so, you'll need to download <a href = "http://shokoanime.com/downloads/#stable-releases"
+								target = "_blank" rel = "noopener"> My Anime 3</a>, and then run the MPEI installer. The MPEI is designed by the Media Portal
+							team and makes installing plugins simple and is pretty straight forward. Select the skins you want to install support for, if unsure
+							you can leave them all checked.</p>
+
+						<p>My Anime 3 <strong>only</strong> supports the following skins. There are no plans to add additional skin support. </p>
+
+						<ul>
+							<li>Avallanche</li>
+							<li>Avalon</li>
+							<li>Default Wide HD</li>
+							<li>Streamed MP</li>
+							<li>Titan</li>
+						</ul>
+
+					</section>
+
+					<section>
+
+						<h2 id = "initial-setup">Initial Setup</h2>
+
+						<div class = "row">
+							<div class = "col-sm-8">
+
+								<p>Once My Anime 3 has been installed, open the <strong>MediaPortal Configuration</strong> window and from the list of <strong>plugins</strong>,
+									select My Anime 3. Please note, Shoko Server will need to be running in order to make any changes.</p>
+
+								<p>We recommend going through each of the settings tab as there are a lot of unique options just for My Anime 3 and how it
+									functions in MediaPortal.</p>
+
+							</div>
+
+							<div class = "col-sm-4">
+								<a href = "/assets/img/myanime3/MediaPortal-Config.png" data-lightbox = "image-1"><img
+										src = "/assets/img/myanime3/MediaPortal-Config.png" class = "img-fluid" alt = "MediaPortal - Configuration"></a>
+							</div>
+						</div>
+
+					</section>
+
+					<section>
+
+						<h2 id = "main-settings">Main Settings</h2>
+
+						<div class = "row">
+							<div class = "col-sm-8">
+
+								<p>As the name suggests, the settings in the Main section are vital for My Anime 3 to work properly. </p>
+
+								<p>Unless you're running MediaPortal on another computer or changed the port Shoko Server uses, the default settings do not need
+									to be changed. We also recommend using Shoko Server to <strong>modify your import folders</strong> to avoid potential
+									problems. Keep in mind, if running MediaPortal on another machine, you'll need to properly map the <strong>local
+										path</strong>. Depending on if you have the option checked or not, you'll either be asked to steam the file instead of
+									playing
+									it locally or it will automatically be streamed.</p>
+
+							</div>
+
+							<div class = "col-sm-4">
+								<a href = "/assets/img/myanime3/My-Anime-3-Main.png" data-lightbox = "image-1"><img
+										src = "/assets/img/myanime3/My-Anime-3-Main.png" class = "img-fluid" alt = "My Anime 3- Main Settings"></a>
+							</div>
+						</div>
+
+					</section>
+
+					<section>
+
+						<h2 id = "display-settings">Display Settings</h2>
+
+						<div class = "row">
+							<div class = "col-sm-8">
+
+								<p> Settings in the Display section will dictate how information and images are displayed within My Anime 3.</p>
+
+								<p>These are all <strong>personal preference</strong> settings that affect what you see and don't see in My Anime 3 so there is
+									no right or wrong way to configure them. You can also set the default audio language and subtitle language to avoid having
+									to change if the series you are watching doesn't have the correct ones as default. </p>
+
+							</div>
+
+							<div class = "col-sm-4">
+								<a href = "/assets/img/myanime3/My-Anime-3-Display.png" data-lightbox = "image-1"><img
+										src = "/assets/img/myanime3/My-Anime-3-Display.png" class = "img-fluid" alt = "My Anime 3- Display Settings"></a>
+							</div>
+						</div>
+
+					</section>
+
+					<section>
+
+						<h2 id = "other-settings">Other Settings</h2>
+
+						<div class = "row">
+							<div class = "col-sm-8">
+
+								<p>The Other section just contains a couple settings related to FFDShow processing. There really isn't a need to change the
+									defaults unless you want to increase or decrease the wait times for the listed setting.</p>
+
+							</div>
+
+							<div class = "col-sm-4">
+								<a href = "/assets/img/myanime3/My-Anime-3-Other.png" data-lightbox = "image-1"><img
+										src = "/assets/img/myanime3/My-Anime-3-Other.png" class = "img-fluid" alt = "My Anime 3- Other Settings"></a>
+							</div>
+						</div>
+
+					</section>
+
+					{% include _github_callout.html %}
+
+				</article>
+			</div>
+
+			<div class = "col-md-2 col-xl-2 right-sidebar">
+				<hr class = "d-md-none">
+				<aside class = "sidebar sidebar-sticky">
+					<nav class = "nav nav-toc-2 mt-3" data-accordion = "true">
+						<a class="nav-link" href = "#mandatory">Is Shoko Server Mandatory?</a>
+						<a class="nav-link" href = "#install">Installing My Anime 3</a>
+						<a class="nav-link" href = "#initial-setup">Initial Setup</a>
+						<a class="nav-link" href = "#main-settings">Main Settings</a>
+						<a class="nav-link" href = "#display-settings">Display Settings</a>
+						<a class="nav-link" href = "#other-settings">Other Settings</a>
+					</nav>
+				</aside>
+			</div>
+
+		</div>
+	</div>
+</main>

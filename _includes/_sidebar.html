@@ -22,8 +22,8 @@
 	<li class = "nav-item">
 		<a class = "nav-link" href = "#">My Anime 3 <i class = "nav-angle"></i></a>
 		<div class = "nav">
-			<a class = "nav-link" href = "#">Installing My Anime 3</a>
-			<a class = "nav-link" href = "#">Configuring My Anime 3</a>
+			<a class = "nav-link" href = "/myanime3/install.html">Installing My Anime 3</a>
+			<a class = "nav-link" href = "/myanime3/config.html">Configuring My Anime 3</a>
 		</div>
 	</li>
 
@@ -36,11 +36,11 @@
 	</li>
 
 	{% if page.url == "/faq.html" %} {% else %}
-	<li class = "nav-item"><a href = "faq.html">Frequently Asked Questions</a></li>
+	<li class = "nav-item"><a href = {{ "faq.html" |  relative_url  }}>Frequently Asked Questions</a></li>
 	{% endif %}
 
 	{% if page.url == "/changelog.html" %} {% else %}
-	<li class = "nav-item"><a  href = "changelog.html">Changelog</a></li>
+	<li class = "nav-item"><a  href = {{ "changelog.html" |  relative_url  }}>Changelog</a></li>
 	{% endif %}
 
 </ul>
