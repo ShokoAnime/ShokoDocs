@@ -15,16 +15,10 @@ permalink: server/install_windows.html
 			|‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
 			!-->
 
-			<div class = "col-md-4 col-xl-3 order-last order-md-first">
+			<div class = "col-md-2 col-xl-2 order-last order-md-first">
 				<hr class = "d-md-none">
 				<aside class = "sidebar sidebar-sticky sidebar-stick-shadow pr-md-5 br-1">
-					<ul class = "nav nav-sidebar nav-sidebar-pill" data-accordion = "true">
-						<li class = "nav-item"><a href = "#mandatory">Is Shoko Server Mandatory?</a></li>
-						<li class = "nav-item"><a href = "#install-first-run">Install & First Run</a></li>
-						<li class = "nav-item"><a href = "#anidb-account">Inputting AniDB Account</a></li>
-						<li class = "nav-item"><a href = "#import-folders">Setting Up Import Folders</a></li>
-						<li class = "nav-item"><a href = "#additional-config">Additional Configuration</a></li>
-					</ul>
+					{% include _sidebar.html %}
 				</aside>
 			</div>
 
@@ -34,7 +28,7 @@ permalink: server/install_windows.html
 			  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
 			  !-->
 
-			<div class = "col-md-7 col-xl-8 ml-md-auto py-8">
+			<div class = "col-md col-xl m2-md-auto py-8">
 				<article>
 
 					<h1>{{ page.title }}</h1>
@@ -141,7 +135,7 @@ permalink: server/install_windows.html
 									Folder and then click the <strong>Save</strong> button to add the Import Folder. If you need to add additional folders then
 									make sure to do that as well before moving on.</p>
 
-								<p>For in-depth information on Import Folders and how they work, check the <a href = "../server/import-folders.html"
+								<p>For in-depth information on Import Folders and how they work, check the <a href = "config.html#import-folders"
 										target = "_blank" rel = "noopener">Import Folders</a> documentation.</p>
 
 							</div>
@@ -177,7 +171,7 @@ permalink: server/install_windows.html
 						<p>Shoko Server comes with the latest version of our Web UI by default. While it's still in beta, its provides a lot of functionality
 							previously only accessible in Shoko Desktop. </p>
 
-						<a href = "../server/webui.html#community-sites" target = "_blank" rel = "noopener">Community Site Settings</a>
+						<a href = "#" target = "_blank" rel = "noopener">Community Site Settings</a>
 						<p>Every Community Site supported by Shoko can be configured to your needs if the default settings are not to your liking. Additional
 							configuration such as account linking and syncing is also available for Community Sites that support it.</p>
 
@@ -188,6 +182,19 @@ permalink: server/install_windows.html
 				</article>
 			</div>
 
+			<div class = "col-md-2 col-xl-2 right-sidebar">
+				<hr class = "d-md-none">
+				<aside class = "sidebar sidebar-sticky">
+					<nav class = "nav nav-toc-2 mt-3" data-accordion = "true">
+						<a class="nav-link" href = "#mandatory">Is Shoko Server Mandatory?</a>
+						<a class="nav-link" href = "#install-first-run">Install & First Run</a>
+						<a class="nav-link" href = "#anidb-account">Inputting AniDB Account</a>
+						<a class="nav-link" href = "#import-folders">Setting Up Import Folders</a>
+						<a class="nav-link" href = "#additional-config">Additional Configuration</a>
+					</nav>
+				</aside>
+			</div>
+			
 		</div>
 	</div>
 </main>

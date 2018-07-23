@@ -15,17 +15,10 @@ permalink: server/install_linux.html
 			|‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
 			!-->
 
-
-			<div class = "col-md-4 col-xl-3 order-last order-md-first">
+			<div class = "col-md-2 col-xl-2 order-last order-md-first">
 				<hr class = "d-md-none">
 				<aside class = "sidebar sidebar-sticky sidebar-stick-shadow pr-md-5 br-1">
-					<ul class = "nav nav-sidebar nav-sidebar-pill" data-accordion = "true">
-						<li class = "nav-item"><a href = "#installing-docker">Installing Docker on Linux</a></li>
-						<li class = "nav-item"><a href = "#running-shoko-docker">Shoko Server on Docker</a></li>
-						<li class = "nav-item"><a href = "#manage-shoko-docker">Manage Shoko on Docker</a></li>
-						<li class = "nav-item"><a href = "#modify-settings">Modify settings.json</a></li>
-						<li class = "nav-item"><a href = "#advanced-settings">Advanced Settings</a></li>
-					</ul>
+					{% include _sidebar.html %}
 				</aside>
 			</div>
 
@@ -35,10 +28,11 @@ permalink: server/install_linux.html
 			  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
 			  !-->
 
-			<div class = "col-md-7 col-xl-8 ml-md-auto py-8">
+			<div class = "col-md-7 col-xl-7 m2-md-auto py-8">
 				<article>
 
 					<h1>{{ page.title }}</h1>
+
 					<p class = "lead">This guide is designed to get Shoko Server installed and properly setup so you can start importing and organizing your
 						anime collection.</p>
 
@@ -744,9 +738,10 @@ services:
 									<pre><code class = "language-bash">-e PUID=xxx -e GUID=xxx</code></pre>
 								</td>
 								<td>
-									<p><a href = "https://docs.docker.com/compose/environment-variables/" target="_blank" rel="noopener">Set Environment Variables.</a></p>
+									<p><a href = "https://docs.docker.com/compose/environment-variables/" target = "_blank" rel = "noopener">Set Environment Variables.</a></p>
 									<p>To make docker run as a certain user/group you can define this through the ENV variables.</p>
-									<p>This makes working with permissions a lot easier since you can match your docker with the local accounts on your machine without doing much work</p>
+									<p>This makes working with permissions a lot easier since you can match your docker with the local accounts on your machine
+										without doing much work</p>
 								</td>
 							</tr>
 							</tbody>
@@ -757,6 +752,19 @@ services:
 					{% include _github_callout.html %}
 
 				</article>
+			</div>
+
+			<div class = "col-md-2 col-xl-2 right-sidebar">
+				<hr class = "d-md-none">
+				<aside class = "sidebar sidebar-sticky">
+					<nav class = "nav nav-toc-2 mt-3" data-accordion = "true">
+						<a class = "nav-link" href = "#installing-docker">Installing on Linux</a>
+						<a class = "nav-link" href = "#running-shoko-docker">Shoko on Docker</a>
+						<a class = "nav-link" href = "#manage-shoko-docker"> Shoko on Docker</a>
+						<a class = "nav-link" href = "#modify-settings">Modify.json</a>
+						<a class = "nav-link" href = "#advanced-settings">Advanced Settings</a>
+					</nav>
+				</aside>
 			</div>
 
 		</div>

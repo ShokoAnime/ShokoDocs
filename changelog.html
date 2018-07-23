@@ -15,49 +15,10 @@ permalink: /changelog.html
 			|‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
 			!-->
 
-
-			<div class = "col-md-4 col-xl-3 order-last order-md-first">
+			<div class = "col-md-2 col-xl-2 order-last order-md-first">
 				<hr class = "d-md-none">
 				<aside class = "sidebar sidebar-sticky sidebar-stick-shadow pr-md-5 br-1">
-					<ul class = "nav nav-sidebar nav-sidebar-pill" data-accordion = "true">
-
-						<li class = "nav-item">
-							<a class = "nav-link" href = "#">Shoko Server <i class = "nav-angle"></i></a>
-							<div class = "nav">
-								{% for release in site.data.changelog.server.releases %}
-								<a class = "nav-link" href = "#s{{ release.versionurl }}">Version {{ release.version }}</a>
-								{% endfor %}
-							</div>
-						</li>
-
-						<li class = "nav-item">
-							<a class = "nav-link" href = "#">Shoko Desktop <i class = "nav-angle"></i></a>
-							<div class = "nav">
-								{% for release in site.data.changelog.desktop.releases %}
-								<a class = "nav-link" href = "#d{{ release.versionurl }}">Version {{ release.version }}</a>
-								{% endfor %}
-							</div>
-						</li>
-
-						<li class = "nav-item">
-							<a class = "nav-link" href = "#">My Anime 3 <i class = "nav-angle"></i></a>
-							<div class = "nav">
-								{% for release in site.data.changelog.myanime3.releases %}
-								<a class = "nav-link" href = "#m{{ release.versionurl }}">Version {{ release.version }}</a>
-								{% endfor %}
-							</div>
-						</li>
-
-						<li class = "nav-item">
-							<a class = "nav-link" href = "#">Shoko On Plex<i class = "nav-angle"></i></a>
-							<div class = "nav">
-								{% for release in site.data.changelog.shokoplex.releases %}
-								<a class = "nav-link" href = "#p{{ release.versionurl }}">Version {{ release.version }}</a>
-								{% endfor %}
-							</div>
-						</li>
-
-					</ul>
+					{% include _sidebar.html %}
 				</aside>
 			</div>
 
@@ -67,7 +28,7 @@ permalink: /changelog.html
 			  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
 			  !-->
 
-			<div class = "col-md-7 col-xl-8 ml-md-auto py-8">
+			<div class = "col-md col-xl m2-md-auto py-8">
 
 				<h1>{{ page.title }}</h1>
 				<p class = "lead">The changelog is broken down by program, use the menu on the left to select the program followed by the version number.</p>
@@ -297,6 +258,30 @@ permalink: /changelog.html
 
 				{% endfor %}
 
+			</div>
+
+			<div class = "col-md-2 col-xl-2 right-sidebar">
+				<hr class = "d-md-none">
+				<aside class = "sidebar sidebar-sticky">
+					<nav class = "nav nav-toc-2 mt-3" data-accordion = "true">
+						<a class="nav-link sidenav-title">Shoko Server</a>
+						{% for release in site.data.changelog.server.releases %}
+						<a class = "nav-link" href = "#s{{ release.versionurl }}">Version {{ release.version }} - {{ release.date }}</a>
+						{% endfor %}
+						<a class="nav-link sidenav-title">Shoko Desktop</a>
+						{% for release in site.data.changelog.desktop.releases %}
+						<a class = "nav-link" href = "#d{{ release.versionurl }}">Version {{ release.version }} - {{ release.date }}</a>
+						{% endfor %}
+						<a class="nav-link sidenav-title">My Anime 3</a>
+						{% for release in site.data.changelog.myanime3.releases %}
+						<a class = "nav-link" href = "#m{{ release.versionurl }}">Version {{ release.version }} - {{ release.date }}</a>
+						{% endfor %}
+						<a class="nav-link sidenav-title">Shoko On Plex</a>
+						{% for release in site.data.changelog.shokoplex.releases %}
+						<a class = "nav-link" href = "#p{{ release.versionurl }}">Version {{ release.version }} - {{ release.date }}</a>
+						{% endfor %}
+					</nav>
+				</aside>
 			</div>
 
 		</div>

@@ -15,28 +15,10 @@ permalink: server/config.html
 			|‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
 			!-->
 
-
-			<div class = "col-md-4 col-xl-3 order-last order-md-first">
+			<div class = "col-md-2 col-xl-2 order-last order-md-first">
 				<hr class = "d-md-none">
 				<aside class = "sidebar sidebar-sticky sidebar-stick-shadow pr-md-5 br-1">
-					<ul class = "nav nav-sidebar nav-sidebar-pill" data-accordion = "true">
-						<li class = "sidenav-title">Actions Tab</li>
-						<li class = "nav-sub-item"><a href = "#actions-info">What Are Actions?</a></li>
-						<li class = "nav-sub-item"><a href = "#actions">Available Actions</a></li>
-						<li class = "sidenav-title">Import Folders Tab</li>
-						<li class = "nav-sub-item"><a href = "#import-folders">What Are Import Folders?</a></li>
-						<li class = "nav-sub-item"><a href = "#import-time">How Long Will Importing Take?</a></li>
-						<li class = "nav-sub-item"><a href = "#new-import-folder">Adding A New Import Folder</a></li>
-						<li class = "sidenav-title">Cloud Tab</li>
-						<li class = "nav-sub-item"><a href = "#supported-hosts">Supported Cloud Hosts</a></li>
-						<li class = "nav-sub-item"><a href = "#add-cloud">Adding A Cloud Host</a></li>
-						<li class = "sidenav-title">Integrity Tab</li>
-						<li class = "nav-sub-item"><a href = "#integrity-check">What Are Integrity Checks?</a></li>
-						<li class = "nav-sub-item"><a href = "#add-check">Adding An Integrity Check</a></li>
-						<li class = "sidenav-title">Settings Tab</li>
-						<li class = "nav-sub-item"><a href = "#available-settings">Available Settings</a></li>
-						<li class = "nav-sub-item"><a href = "#shoko-webui">Shoko Server Web UI</a></li>
-					</ul>
+					{% include _sidebar.html %}
 				</aside>
 			</div>
 
@@ -46,7 +28,7 @@ permalink: server/config.html
 			  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
 			  !-->
 
-			<div class = "col-md-7 col-xl-8 ml-md-auto py-8">
+			<div class = "col-md col-xl m2-md-auto py-8">
 				<article>
 
 					<h1>{{ page.title }}</h1>
@@ -534,6 +516,30 @@ permalink: server/config.html
 					{% include _github_callout.html %}
 
 				</article>
+			</div>
+
+			<div class = "col-md-2 col-xl-2 right-sidebar">
+				<hr class = "d-md-none">
+				<aside class = "sidebar sidebar-sticky">
+					<nav class = "nav nav-toc-2 mt-3" data-accordion = "true">
+						<a class = "nav-link sidenav-title">Actions Tab</a>
+						<a class = "nav-link" href = "#actions-info">What Are Actions?</a>
+						<a class = "nav-link" href = "#actions">Available Actions</a>
+						<a class = "nav-link sidenav-title">Import Folders Tab</a>
+						<a class = "nav-link" href = "#import-folders">What Are Import Folders?</a>
+						<a class = "nav-link" href = "#import-time">How Long Will Importing Take?</a>
+						<a class = "nav-link" href = "#new-import-folder">Adding A New Import Folder</a>
+						<a class = "nav-link sidenav-title">`Cloud Tab</a>
+						<a class = "nav-link" href = "#supported-hosts">Supported Cloud Hosts</a>
+						<a class = "nav-link" href = "#add-cloud">Adding A Cloud Host</a>
+						<a class = "nav-link sidenav-title">Integrity Tab</a>
+						<a class = "nav-link" href = "#integrity-check">What Are Integrity Checks?</a>
+						<a class = "nav-link" href = "#add-check">Adding An Integrity Check</a>
+						<a class = "nav-link sidenav-title">Settings Tab</a>
+						<a class = "nav-link" href = "#available-settings">Available Settings</a>
+						<a class = "nav-link" href = "#shoko-webui">Shoko Server Web UI</a>
+					</nav>
+				</aside>
 			</div>
 
 		</div>

@@ -15,26 +15,10 @@ permalink: server/webui.html
 			|‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
 			!-->
 
-
-			<div class = "col-md-4 col-xl-3 order-last order-md-first">
+			<div class = "col-md-2 col-xl-2 order-last order-md-first">
 				<hr class = "d-md-none">
 				<aside class = "sidebar sidebar-sticky sidebar-stick-shadow pr-md-5 br-1">
-					<ul class = "nav nav-sidebar nav-sidebar-pill" data-accordion = "true">
-						<li class = "sidenav-title">Access & Login</li>
-						<li class = "nav-sub-item"><a href = "#webui-access">Accessing The Web UI</a></li>
-						<li class = "nav-sub-item"><a href = "#webui-login">How To Login</a></li>
-						<li class = "sidenav-title">Dashboard</li>
-						<li class = "nav-sub-item"><a href = "#dashboard-overview">Dashboard Overview</a></li>
-						<li class = "nav-sub-item"><a href = "#dashboard-widgets">Available Widgets</a></li>
-						<li class = "sidenav-title">Import Folders</li>
-						<li class = "nav-sub-item"><a href = "#import-folders-overview">Import Folders Overview</a></li>
-						<li class = "sidenav-title">Actions</li>
-						<li class = "nav-sub-item"><a href = "#actions-overview">Actions Overview</a></li>
-						<li class = "sidenav-title">Settings</li>
-						<li class = "nav-sub-item"><a href = "#settings-overview">Settings Overview</a></li>
-						<li class = "sidenav-title">Interactive Log</li>
-						<li class = "nav-sub-item"><a href = "#interactive-log-overview">Interactive Log Overview</a></li>
-					</ul>
+					{% include _sidebar.html %}
 				</aside>
 			</div>
 
@@ -44,7 +28,7 @@ permalink: server/webui.html
 			  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
 			  !-->
 
-			<div class = "col-md-7 col-xl-8 ml-md-auto py-8">
+			<div class = "col-md col-xl m2-md-auto py-8">
 				<article>
 
 					<h1>{{ page.title }}</h1>
@@ -318,6 +302,28 @@ permalink: server/webui.html
 					{% include _github_callout.html %}
 
 				</article>
+			</div>
+
+			<div class = "col-md-2 col-xl-2 right-sidebar">
+				<hr class = "d-md-none">
+				<aside class = "sidebar sidebar-sticky">
+					<nav class = "nav nav-toc-2 mt-3" data-accordion = "true">
+						<a class="nav-link sidenav-title">Access & Login</a>
+						<a class="nav-link" href = "#webui-access">Accessing The Web UI</a>
+						<a class="nav-link" href = "#webui-login">How To Login</a>
+						<a class="nav-link sidenav-title">Dashboard</a>
+						<a class="nav-link" href = "#dashboard-overview">Dashboard Overview</a>
+						<a class="nav-link" href = "#dashboard-widgets">Available Widgets</a>
+						<a class="nav-link sidenav-title">Import Folders</a>
+						<a class="nav-link" href = "#import-folders-overview">Import Folders Overview</a>
+						<a class="nav-link sidenav-title">Actions</a>
+						<a class="nav-link" href = "#actions-overview">Actions Overview</a>
+						<a class="nav-link sidenav-title">Settings</a>
+						<a class="nav-link" href = "#settings-overview">Settings Overview</a>
+						<a class="nav-link sidenav-title">Interactive Log</a>
+						<a class="nav-link" href = "#interactive-log-overview">Interactive Log Overview</a>
+					</nav>
+				</aside>
 			</div>
 
 		</div>
