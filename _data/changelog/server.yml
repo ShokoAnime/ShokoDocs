@@ -1,8 +1,8 @@
 releases:
   - version: 3.9.1
     versionurl: 391
-    date: In Development
-    bloglink: NA
+    date: July 30, 2018
+    bloglink: https://shokoanime.com/shoko-version-3-9-1-released/
     changes:
       - status: changed
         commit: 4e9122c
@@ -18,7 +18,10 @@ releases:
         text: CommandRequest query optimisations.
       - status: changed
         issue: 747
-        text: Fixed ban timer, ban time now extends on subsequent bans..
+        text: Fixed ban timer, ban time now extends on subsequent bans.
+      - status: changed
+        commit: 3eae469
+        text: Delete and Recreate All Tag Filters on Recreate All Groups.
       - status: fixed
         commit: ca96722
         text: When MyList ID is missing add file first then update the state.
@@ -40,6 +43,12 @@ releases:
       - status: fixed
         commit: 9753cf1
         text: When adding files to MyList, send the watched state if we have one.
+      - status: fixed
+        commit: 9d73fd8
+        text: Fix an erorr when attempting to manually link a series.
+      - status: fixed
+        commit: b93bde2
+        text: Fix an issue when attempting to access a file that's already in use.
   - version: 3.9.0
     versionurl: 390
     date: June 21, 2018

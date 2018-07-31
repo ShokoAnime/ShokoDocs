@@ -1,8 +1,8 @@
 releases:
   - version: 3.9.1
     versionurl: 391
-    date: In Development
-    bloglink: NA
+    date: July 30, 2018
+    bloglink: https://shokoanime.com/shoko-version-3-9-1-released/
     changes:
       - status: changed
         commit: 042d832
@@ -10,6 +10,9 @@ releases:
       - status: changed
         commit: fab24ac
         text: Make plex section display something more, useful when unlinked.
+      - status: fixed
+        issue: 586
+        text: Invalid URI when deleting files on Windows Share.
   - version: 3.9.0
     versionurl: 390
     date: June 21, 2018
