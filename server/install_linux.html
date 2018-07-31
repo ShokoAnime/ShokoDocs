@@ -742,6 +742,9 @@ services:
 									<p>To make docker run as a certain user/group you can define this through the ENV variables.</p>
 									<p>This makes working with permissions a lot easier since you can match your docker with the local accounts on your machine
 										without doing much work</p>
+									<p>If you getting errors with Denied folder access then the wrong PUID and GUID could be the cause.</p>
+									<p>GUID 101 should be your admin group.</p>
+									<p>To find the PUID on any user, login with said user with SSH or Telnet with <a href = "https://www.putty.org/" target = "_blank" rel = "noopener">Putty</a> or something similar with the <code class = "language-bash">ID</code> command.</p>
 								</td>
 							</tr>
 							</tbody>
