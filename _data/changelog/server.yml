@@ -5,8 +5,8 @@ releases:
     bloglink: https://shokoanime.com/shoko-version-3-9-1-released/
     changes:
       - status: changed
-         issue: 742
-         text: CommandRequest query optimisations.
+        issue: 742
+        text: CommandRequest query optimisations.
       - status: changed
         issue: 747
         text: Fixed ban timer, ban time now extends on subsequent bans.
