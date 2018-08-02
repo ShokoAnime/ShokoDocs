@@ -1,4 +1,12 @@
 releases:
+ - version: 3.9.2
+    versionurl: 392
+    date: August 2,, 2018
+    bloglink: https://shokoanime.com/shoko-version-3-9-2-released/
+    changes:
+      - status: fixed
+        commit: d3eec15
+        text:  Fix an issue when searching using more than three letters. 
   - version: 3.9.1
     versionurl: 391
     date: July 30, 2018
