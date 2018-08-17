@@ -1515,8 +1515,8 @@ pre code {
 
     .col-xl-8 {
         -webkit-box-flex: 0;
-        flex: 0 0 75%;
-        max-width: 75%;
+        flex: 0 0 66%;
+        max-width: 66%;
     }
 
     .col-xl-9 {
