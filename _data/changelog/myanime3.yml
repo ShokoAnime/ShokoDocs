@@ -1,15 +1,33 @@
 releases:
   - version: 3.7.2
     versionurl: 372
-    date: In Development
+    date: August 18, 2018
     bloglink: NA
     changes:
+      - status: added
+        commit: 3e53ace
+        text:  Added Last Air Date to Series & Groups.
+      - status: added
+        commit: 642599b
+        text:  Added support for Ares skin.
+      - status: changed
+        commit: ebb05fe
+        text: Optimize the number of parallel task.
+      - status: fixed
+        commit: 3e53ace
+        text:  Fixed Unrecognized Files Order.
+      - status: fixed
+        commit: 3e53ace
+        text:  Fixed Worker Exception erorr when Banner & Filmstrip viewing mode.
       - status: fixed
         issue: 68
         text: Fix multiple issues when displaying star ratings.
+      - status: fixed
+        issue: 69
+        text:  After watching an episode, the episode overview remains empty.
       - status: removed
         commit: a7a91c8
-        text: Remove MAL.
+        text: Removed MAL.
   - version: 3.7.1.0
     versionurl: 3710
     date: December 24, 2017

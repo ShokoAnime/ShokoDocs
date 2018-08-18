@@ -1,7 +1,30 @@
 releases:
+  - version: 3.9.3
+    versionurl: 393
+    date: NA
+    bloglink: NA
+    changes:
+    - status: changed
+      issue: 749
+      text:  Error with creating ssl/tls secure channel.
+    - status: changed
+      commit: 7712cfc
+      text:  Sort File for episodes by File Quality Preferences in Desktop.
+    - status: fixed
+      commit: e5ff342
+      text:  Fix Adding Files to MyList with Manually Linked Files.
+    - status: fixed
+      commit: 99f2301
+      text:  Hopefully fix rare error with Downloading Release Group Status.
+    - status: fixed
+      commit: 1e65dc9
+      text:  Delete Episode and Override Links when Deleting TvDB Links.
+    - status: fixed
+      commit: 1dd08ed
+      text:  Fix some logic errors and state when adding Manually Linked files.
   - version: 3.9.2
     versionurl: 392
-    date: August 2,, 2018
+    date: August 2, 2018
     bloglink: https://shokoanime.com/shoko-version-3-9-2-released/
     changes:
       - status: changed

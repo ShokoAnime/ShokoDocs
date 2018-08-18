@@ -1,7 +1,15 @@
 releases:
+  - version: 3.9.3
+    versionurl: 393
+    date: NA
+    bloglink: NA
+    changes:
+    - status: changed
+      commit: dcedd1f
+      text:  Default to Full Series View, not Metro.
   - version: 3.9.2
     versionurl: 392
-    date: August 2,, 2018
+    date: August 2, 2018
     bloglink: https://shokoanime.com/shoko-version-3-9-2-released/
     changes:
       - status: fixed
