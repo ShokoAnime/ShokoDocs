@@ -14,17 +14,20 @@ releases:
         commit: ebb05fe
         text: Optimize the number of parallel task.
       - status: fixed
-        commit: 3e53ace
-        text:  Fixed Unrecognized Files Order.
-      - status: fixed
-        commit: 3e53ace
-        text:  Fixed Worker Exception erorr when Banner & Filmstrip viewing mode.
-      - status: fixed
         issue: 68
         text: Fix multiple issues when displaying star ratings.
       - status: fixed
         issue: 69
         text:  After watching an episode, the episode overview remains empty.
+      - status: fixed
+        issue: 70
+        text:  Unable to set all episodes to "Unwatched" while in Episode list.
+      - status: fixed
+        commit: 3e53ace
+        text:  Fixed Unrecognized Files Order.
+      - status: fixed
+        commit: 3e53ace
+        text:  Fixed Worker Exception erorr when Banner & Filmstrip viewing mode.
       - status: removed
         commit: a7a91c8
         text: Removed MAL.
