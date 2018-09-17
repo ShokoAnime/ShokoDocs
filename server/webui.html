@@ -1,331 +1,296 @@
 ---
-layout: main
+layout: entry
 title: Configuring Shoko Server Web UI
 excerpt: Explanation of all the available settings in Shoko Server Web UI.
 permalink: server/webui.html
+lead: The Shoko Server Web UI is the eventual replacement to the Shoko Server GUI. As the Web UI is still in development, certain functionality currently available in the Shoko Server GUI and/or listed below may not be available in the version you are using.
+sidebar:
+- name: Access & Login
+  items:
+  - name: Accessing The Web UI
+    tag: webui-access
+  - name: How To Login
+    tag: webui-login
+- name: Dashboard
+  items: 
+  - name: Dashboard Overview
+    tag: dashboard-overview
+  - name: Available Widgets
+    tag: dashboard-widgets
+- name: Import Folders
+  items: 
+  - name: Import Folders Overview
+    tag: import-folders-overview
+- name: Actions
+  items: 
+  - name: Actions Overview
+    tag: actions-overview
+- name: Settings
+  items: 
+  - name: Settings Overview
+    tag: settings-overview
+- name: Interactive Log
+  items: 
+  - name: Interactive Log Overview
+    tag: interactive-log-overview
 ---
+<section>
 
-<main class = "main-content">
-	<div class = "container">
-		<div class = "row">
+	<h2 id = "webui-access">Accessing The Web UI</h2>
 
-			<!--
-			|‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
-			| Sidebar
-			|‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
-			!-->
+	<p>Depending on the OS you're using, accessing the Web UI can be done using one of the following methods. </p>
 
-			<div class = "col-md-2 col-xl-2 order-last order-md-first">
-				<hr class = "d-md-none">
-				<aside class = "sidebar sidebar-sticky sidebar-stick-shadow pr-md-5 br-1">
-					{% include _sidebar.html %}
-				</aside>
-			</div>
+	<p>Please note, the examples provided are based on the <strong>default settings</strong>.</p>
 
-			<!--
-			  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
-			  | Content
-			  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
-			  !-->
+	<table class = "table table-bordered">
 
-			<div class = "col-md col-xl m2-md-auto py-8">
-				<article>
+		<thead>
+		<tr>
+			<th width = "50%">Method</th>
+			<th>OS</th>
+		</tr>
+		</thead>
 
-					<h1>{{ page.title }}</h1>
-					<p class = "lead">The Shoko Server Web UI is the eventual replacement to the Shoko Server GUI. As the Web UI is still in development,
-						certain functionality currently available in the Shoko Server GUI and/or listed below may not be
-						available in the version you are using.</p>
+		<tr>
+			<td>Right-Click Shoko Server in System Tray.</td>
+			<td>Windows Only</td>
+		</tr>
 
-					<hr class = "my-6">
+		<tr>
+			<td>In the Settings tab in Shoko Server.</td>
+			<td>Windows Only</td>
+		</tr>
 
-					<section>
+		<tr>
+			<td>http://127.0.0.1:8111/</td>
+			<td>Windows & Linux</td>
+		</tr>
 
-						<h2 id = "webui-access">Accessing The Web UI</h2>
+		<tr>
+			<td>PC IP:SHOKO PORT</td>
+			<td>Windows & Linux</td>
+		</tr>
 
-						<p>Depending on the OS you're using, accessing the Web UI can be done using one of the following methods. </p>
+		<tbody>
 
-						<p>Please note, the examples provided are based on the <strong>default settings</strong>.</p>
+	</table>
 
-						<table class = "table table-bordered">
+	<h2 id = "webui-login">How To Login?</h2>
 
-							<thead>
-							<tr>
-								<th width = "50%">Method</th>
-								<th>OS</th>
-							</tr>
-							</thead>
+</section>
 
-							<tr>
-								<td>Right-Click Shoko Server in System Tray.</td>
-								<td>Windows Only</td>
-							</tr>
+<section>
 
-							<tr>
-								<td>In the Settings tab in Shoko Server.</td>
-								<td>Windows Only</td>
-							</tr>
+	<div class = "row">
+		<div class = "col-xl-8 col-sm-12">
 
-							<tr>
-								<td>http://127.0.0.1:8111/</td>
-								<td>Windows & Linux</td>
-							</tr>
+			<p>Once the Web UI loads, you'll be presented with the login window containing <strong>version information</strong> and login
+				info on the left and the actual user inputs on the right. Unless changed, you'll be using the <strong>default Shoko user
+					account </strong> to login, the username is <strong>default</strong> and <strong>there is no password</strong> so leave
+				the password input blank. </p>
 
-							<tr>
-								<td>PC IP:SHOKO PORT</td>
-								<td>Windows & Linux</td>
-							</tr>
+			<p>Please note, at this time you can only create and modify Shoko accounts using Shoko Desktop.</p>
 
-							<tbody>
+		</div>
 
-						</table>
+		<div class = "col-xl-4 col-sm-12">
 
-						<h2 id = "webui-login">How To Login?</h2>
-
-					</section>
-
-					<section>
-
-						<div class = "row">
-							<div class = "col-xl-8 col-sm-12">
-
-								<p>Once the Web UI loads, you'll be presented with the login window containing <strong>version information</strong> and login
-									info on the left and the actual user inputs on the right. Unless changed, you'll be using the <strong>default Shoko user
-										account </strong> to login, the username is <strong>default</strong> and <strong>there is no password</strong> so leave
-									the password input blank. </p>
-
-								<p>Please note, at this time you can only create and modify Shoko accounts using Shoko Desktop.</p>
-
-							</div>
-
-							<div class = "col-xl-4 col-sm-12">
-
-								<a href = "/assets/img/server/Shoko-Server-WebUI-Login.png" data-lightbox = "image-1"><img
-										src = "/assets/img/server/Shoko-Server-WebUI-Login.png" class = "img-fluid" alt = "Shoko Server Web UI - Login"></a>
-
-							</div>
-						</div>
-
-					</section>
-
-					<section>
-
-						<h2 id = "dashboard-overview"> Dashboard Overview</h2>
-
-						<div class = "row">
-
-							<div class = "col-xl-8 col-sm-12">
-
-								<p>The Dashboard is the main hub designed to allow you to quickly make changes or run actions without having to change tabs.</p>
-
-								<p>While present on all tabs, the <strong>Navbar</strong> at the top contains a notification count for each Command Queue as
-									well as buttons to configure the currently logged in user's profile and a silence all notifications button. Additionally,
-									you can hide the sidebar by clicking the hamburger button to the right of programs name.</p>
-
-							</div>
-
-							<div class = "col-xl-4 col-sm-12">
-
-								<a href = "/assets/img/server/Shoko-Server-WebUI-Dashboard.png" data-lightbox = "image-1"><img
-										src = "/assets/img/server/Shoko-Server-WebUI-Dashboard.png" class = "img-fluid" alt = "Shoko Server Web UI - Dashboard"></a>
-
-							</div>
-
-						</div>
-
-						<h2 id = "dashboard-widgets">Widgets</h2>
-
-						<p>There are currently <strong>5 widgets</strong> on the Dashboard that display information and provide functionality. These widgets are
-							<strong>Commands</strong>,<strong>Recent Files</strong>, <strong>Shoko News</strong>, <strong>Quick Actions</strong> and <strong>Import
-								Folders Overview</strong>. While there are plans for additional widgets and eventually allow user-created ones, there is no ETA
-							for this.
-						</p>
-
-						<table class = "table table-bordered">
-
-							<thead>
-							<tr>
-								<th width = "20%">Widget</th>
-								<th>Description</th>
-							</tr>
-							</thead>
-
-							<tbody>
-
-							<tr>
-								<td>Commands</td>
-								<td>The Commands widget provides an overview of the three Command Workers used by Shoko Server. Information on the task
-									currently running is shown as well as the remaining number of queued tasks for that worker. Please note, at this time there
-									is <strong>no way</strong> to cancel or pause a task within the Web UI.
-								</td>
-							</tr>
-
-							<tr>
-								<td>Recent Files</td>
-								<td>The Recent Files widget provides a listing of the 10 previous imported files and their status. A file that was successfully
-									imported, which means a matching hash was found on AniDB is labeled as <strong>Imported</strong> and
-									marked <strong>green</strong>. A file that was not successfully imported, which means a matching hash was not found on AniDB
-									is labeled as <strong>Imported</strong> and marked <strong>yellow</strong>.
-								</td>
-							</tr>
-
-							<tr>
-								<td>Shoko News</td>
-								<td>The Shoko News widget display the last 5 news posts from the Shoko site so you'll always current on the latest Shoko news.
-									You're welcome.
-								</td>
-							</tr>
-
-							<tr>
-								<td>Quick Actions</td>
-								<td>The Quick Actions widget are a set of the most commonly used actions in Shoko Server. As the Actions tab has not been
-									implemented yet, you can't customize them.
-								</td>
-							</tr>
-
-							<tr>
-								<td>Import Folders Overview</td>
-								<td>The Import Folders Overview widget allows you to quickly add a new Import Folder or edit existing ones. Please note, at this
-									time <strong>Cloud Import Folders</strong> are not supported in the Web UI.
-								</td>
-							</tr>
-
-							</tbody>
-
-						</table>
-
-					</section>
-
-					<section>
-
-						<h2 id = "import-folders-overview">Import Folders Overview</h2>
-
-						<div class = "row">
-
-							<div class = "col-xl-8 col-sm-12">
-
-								<p>The Import Folders tab is broken into two different sections, <strong>Import Folders Overview</strong> and <strong>Series In
-									Import Folder</strong>.</p>
-
-								<p>The Import Folders Overview contains a listing of your Import Folders, its type, location and current status. Clicking the
-									<strong>Manage</strong> button will allow you to add a new import folder or edit / delete an existing import folder. Please
-									note that at this time, <strong>Cloud Import Folders</strong> are not supported in the Web UI.</p>
-
-								<p>The Series In Import Folder provides a listing of all the seres in the selected import folder. The series name, its location,
-									how many files and the total size is shown.</p>
-
-							</div>
-
-							<div class = "col-xl-4 col-sm-12">
-
-								<a href = "/assets/img/server/Shoko-Server-WebUI-Import-Folders.png" data-lightbox = "image-1"><img
-										src = "/assets/img/server/Shoko-Server-WebUI-Import-Folders.png" class = "img-fluid"
-										alt = "Shoko Server Web UI - Settings"></a>
-
-							</div>
-
-						</div>
-
-					</section>
-
-					<section>
-
-						<h2 id = "actions-overview">Actions Overview</h2>
-
-						<p>The Actions tab has not been implemented yet. </p>
-
-						<p>However, the <strong>five</strong> most common actions can be ran on the<strong>Dashboard</strong>. However for the remaining tasks
-							you'll need to use the Shoko Server GUI.</p>
-
-					</section>
-
-					<section>
-
-						<h2 id = "settings-overview">Settings Overview</h2>
-
-						<div class = "row">
-
-							<div class = "col-xl-8 col-sm-12">
-
-								<p>The Settings tab allows you to further customize Shoko and fine-tune such as what Community Sites to enable support for, what
-									tasks to run and how often to run these tasks. </p>
-
-								<p>Please note, settings <strong>are not automatically saved</strong> when you make a change. Instead you must confirm the
-									change by clicking the the sections corresponding <strong>save</strong> button located in the panel header. This must be
-									done for each panel you make a change in if you want your settings to update.</p>
-
-								<p>Settings that are not self-explanatory will have a <strong>help icon</strong> next to them to provide further details.</p>
-
-							</div>
-
-							<div class = "col-xl-4 col-sm-12">
-
-								<a href = "/assets/img/server/Shoko-Server-WebUI-Settings.png" data-lightbox = "image-1"><img
-										src = "/assets/img/server/Shoko-Server-WebUI-Settings.png" class = "img-fluid"
-										alt = "Shoko Server Web UI - Settings"></a>
-
-							</div>
-
-						</div>
-
-					</section>
-
-					<section>
-
-						<h2 id = "interactive-log-overview">Interactive Log Overview</h2>
-
-						<div class = "row">
-
-							<div class = "col-xl-8 col-sm-12">
-
-								<p>The Interactive Log provides an easy way to view certain entries in your log.</p>
-
-								<p>Users can filter by specific keywords and include or exclude log types. Please note, as this is loading directly from your
-									log file, there may be an increase in wait time depending on the size of your log file.</p>
-
-								<p>If it looks like the log is not loading correctly, make sure <strong>Auto Refresh</strong> is enabled. You can enable it by
-									clicking the check-mark in the upper-right. </p>
-
-							</div>
-
-							<div class = "col-xl-4 col-sm-12">
-
-								<a href = "/assets/img/server/Shoko-Server-WebUI-Interactive-Log.png" data-lightbox = "image-1"><img
-										src = "/assets/img/server/Shoko-Server-WebUI-Interactive-Log.png" class = "img-fluid"
-										alt = "Shoko Server Web UI - Settings"></a>
-
-							</div>
-
-						</div>
-
-					</section>
-
-					{% include _github_callout.html %}
-
-				</article>
-			</div>
-
-			<div class = "col-md-2 col-xl-2 right-sidebar">
-				<hr class = "d-md-none">
-				<aside class = "sidebar sidebar-sticky">
-					<nav class = "nav nav-toc-2 mt-3" data-accordion = "true">
-						<a class="nav-link sidenav-title">Access & Login</a>
-						<a class="nav-link" href = "#webui-access">Accessing The Web UI</a>
-						<a class="nav-link" href = "#webui-login">How To Login</a>
-						<a class="nav-link sidenav-title">Dashboard</a>
-						<a class="nav-link" href = "#dashboard-overview">Dashboard Overview</a>
-						<a class="nav-link" href = "#dashboard-widgets">Available Widgets</a>
-						<a class="nav-link sidenav-title">Import Folders</a>
-						<a class="nav-link" href = "#import-folders-overview">Import Folders Overview</a>
-						<a class="nav-link sidenav-title">Actions</a>
-						<a class="nav-link" href = "#actions-overview">Actions Overview</a>
-						<a class="nav-link sidenav-title">Settings</a>
-						<a class="nav-link" href = "#settings-overview">Settings Overview</a>
-						<a class="nav-link sidenav-title">Interactive Log</a>
-						<a class="nav-link" href = "#interactive-log-overview">Interactive Log Overview</a>
-					</nav>
-				</aside>
-			</div>
+			<a href = "/assets/img/server/Shoko-Server-WebUI-Login.png" data-lightbox = "image-1"><img
+					src = "/assets/img/server/Shoko-Server-WebUI-Login.png" class = "img-fluid" alt = "Shoko Server Web UI - Login"></a>
 
 		</div>
 	</div>
-</main>
+
+</section>
+
+<section>
+
+	<h2 id = "dashboard-overview"> Dashboard Overview</h2>
+
+	<div class = "row">
+
+		<div class = "col-xl-8 col-sm-12">
+
+			<p>The Dashboard is the main hub designed to allow you to quickly make changes or run actions without having to change tabs.</p>
+
+			<p>While present on all tabs, the <strong>Navbar</strong> at the top contains a notification count for each Command Queue as
+				well as buttons to configure the currently logged in user's profile and a silence all notifications button. Additionally,
+				you can hide the sidebar by clicking the hamburger button to the right of programs name.</p>
+
+		</div>
+
+		<div class = "col-xl-4 col-sm-12">
+
+			<a href = "/assets/img/server/Shoko-Server-WebUI-Dashboard.png" data-lightbox = "image-1"><img
+					src = "/assets/img/server/Shoko-Server-WebUI-Dashboard.png" class = "img-fluid" alt = "Shoko Server Web UI - Dashboard"></a>
+
+		</div>
+
+	</div>
+
+	<h2 id = "dashboard-widgets">Widgets</h2>
+
+	<p>There are currently <strong>5 widgets</strong> on the Dashboard that display information and provide functionality. These widgets are
+		<strong>Commands</strong>,<strong>Recent Files</strong>, <strong>Shoko News</strong>, <strong>Quick Actions</strong> and <strong>Import
+			Folders Overview</strong>. While there are plans for additional widgets and eventually allow user-created ones, there is no ETA
+		for this.
+	</p>
+
+	<table class = "table table-bordered">
+
+		<thead>
+		<tr>
+			<th width = "20%">Widget</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+
+		<tbody>
+
+		<tr>
+			<td>Commands</td>
+			<td>The Commands widget provides an overview of the three Command Workers used by Shoko Server. Information on the task
+				currently running is shown as well as the remaining number of queued tasks for that worker. Please note, at this time there
+				is <strong>no way</strong> to cancel or pause a task within the Web UI.
+			</td>
+		</tr>
+
+		<tr>
+			<td>Recent Files</td>
+			<td>The Recent Files widget provides a listing of the 10 previous imported files and their status. A file that was successfully
+				imported, which means a matching hash was found on AniDB is labeled as <strong>Imported</strong> and
+				marked <strong>green</strong>. A file that was not successfully imported, which means a matching hash was not found on AniDB
+				is labeled as <strong>Imported</strong> and marked <strong>yellow</strong>.
+			</td>
+		</tr>
+
+		<tr>
+			<td>Shoko News</td>
+			<td>The Shoko News widget display the last 5 news posts from the Shoko site so you'll always current on the latest Shoko news.
+				You're welcome.
+			</td>
+		</tr>
+
+		<tr>
+			<td>Quick Actions</td>
+			<td>The Quick Actions widget are a set of the most commonly used actions in Shoko Server. As the Actions tab has not been
+				implemented yet, you can't customize them.
+			</td>
+		</tr>
+
+		<tr>
+			<td>Import Folders Overview</td>
+			<td>The Import Folders Overview widget allows you to quickly add a new Import Folder or edit existing ones. Please note, at this
+				time <strong>Cloud Import Folders</strong> are not supported in the Web UI.
+			</td>
+		</tr>
+
+		</tbody>
+
+	</table>
+
+</section>
+
+<section>
+
+	<h2 id = "import-folders-overview">Import Folders Overview</h2>
+
+	<div class = "row">
+
+		<div class = "col-xl-8 col-sm-12">
+
+			<p>The Import Folders tab is broken into two different sections, <strong>Import Folders Overview</strong> and <strong>Series In
+				Import Folder</strong>.</p>
+
+			<p>The Import Folders Overview contains a listing of your Import Folders, its type, location and current status. Clicking the
+				<strong>Manage</strong> button will allow you to add a new import folder or edit / delete an existing import folder. Please
+				note that at this time, <strong>Cloud Import Folders</strong> are not supported in the Web UI.</p>
+
+			<p>The Series In Import Folder provides a listing of all the seres in the selected import folder. The series name, its location,
+				how many files and the total size is shown.</p>
+
+		</div>
+
+		<div class = "col-xl-4 col-sm-12">
+
+			<a href = "/assets/img/server/Shoko-Server-WebUI-Import-Folders.png" data-lightbox = "image-1"><img
+					src = "/assets/img/server/Shoko-Server-WebUI-Import-Folders.png" class = "img-fluid"
+					alt = "Shoko Server Web UI - Settings"></a>
+
+		</div>
+
+	</div>
+
+</section>
+
+<section>
+
+	<h2 id = "actions-overview">Actions Overview</h2>
+
+	<p>The Actions tab has not been implemented yet. </p>
+
+	<p>However, the <strong>five</strong> most common actions can be ran on the<strong>Dashboard</strong>. However for the remaining tasks
+		you'll need to use the Shoko Server GUI.</p>
+
+</section>
+
+<section>
+
+	<h2 id = "settings-overview">Settings Overview</h2>
+
+	<div class = "row">
+
+		<div class = "col-xl-8 col-sm-12">
+
+			<p>The Settings tab allows you to further customize Shoko and fine-tune such as what Community Sites to enable support for, what
+				tasks to run and how often to run these tasks. </p>
+
+			<p>Please note, settings <strong>are not automatically saved</strong> when you make a change. Instead you must confirm the
+				change by clicking the the sections corresponding <strong>save</strong> button located in the panel header. This must be
+				done for each panel you make a change in if you want your settings to update.</p>
+
+			<p>Settings that are not self-explanatory will have a <strong>help icon</strong> next to them to provide further details.</p>
+
+		</div>
+
+		<div class = "col-xl-4 col-sm-12">
+
+			<a href = "/assets/img/server/Shoko-Server-WebUI-Settings.png" data-lightbox = "image-1"><img
+					src = "/assets/img/server/Shoko-Server-WebUI-Settings.png" class = "img-fluid"
+					alt = "Shoko Server Web UI - Settings"></a>
+
+		</div>
+
+	</div>
+
+</section>
+
+<section>
+
+	<h2 id = "interactive-log-overview">Interactive Log Overview</h2>
+
+	<div class = "row">
+
+		<div class = "col-xl-8 col-sm-12">
+
+			<p>The Interactive Log provides an easy way to view certain entries in your log.</p>
+
+			<p>Users can filter by specific keywords and include or exclude log types. Please note, as this is loading directly from your
+				log file, there may be an increase in wait time depending on the size of your log file.</p>
+
+			<p>If it looks like the log is not loading correctly, make sure <strong>Auto Refresh</strong> is enabled. You can enable it by
+				clicking the check-mark in the upper-right. </p>
+
+		</div>
+
+		<div class = "col-xl-4 col-sm-12">
+
+			<a href = "/assets/img/server/Shoko-Server-WebUI-Interactive-Log.png" data-lightbox = "image-1"><img
+					src = "/assets/img/server/Shoko-Server-WebUI-Interactive-Log.png" class = "img-fluid"
+					alt = "Shoko Server Web UI - Settings"></a>
+
+		</div>
+
+	</div>
+
+</section>
