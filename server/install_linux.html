@@ -53,7 +53,7 @@ permalink: server/install_linux.html
 
 								<p>Installing <strong>Docker</strong> will depend on what distribution you are running.</p>
 								<P>For most users installing docker from their package manager is advised, this way you will keep up with the latest updates and
-									security updates. On the homepage of <a href = "https://www.docker.com/community-edition#/download" target = "_blank"
+									security updates. On the homepage of <a href = "https://docs.docker.com/install/" target = "_blank"
 											rel = "noopener">Docker</a> you can find the installation procedure for your distribution of the <strong>Docker
 										Community Edition</strong>.</p>
 
@@ -92,28 +92,22 @@ permalink: server/install_linux.html
 
 								<h4>Getting the latest Shoko Server Docker Image</h4>
 
-								<p>The latest Docker image is available <a href = "https://hub.docker.com/r/cazzar/Shoko Server/" target = "_blank"
-										rel = "noopener">here</a>. To get the image run the following in the command line.</p>
+								<p>The latest Docker image is available on<a href = "https://hub.docker.com/r/cazzar/shokoserver/" target = "_blank"
+										rel = "noopener">Docker Hub</a>. To get the image run the following in the command line.</p>
 
-								<pre><code class = "language-bash">docker pull cazzar/Shoko Server</code></pre>
+								<pre><code class = "language-bash">docker pull cazzar/shokoserver</code></pre>
 
 								<h4>Docker Run</h4>
 
 								<p>To run a basic docker container for Shoko Server, you can run the following from the command line.</p>
 
-								<pre><code class = "language-bash">docker run -p 8111:8111 cazzar/Shoko Server</code></pre>
+								<pre><code class = "language-bash">docker run -p 8111 cazzar/shokoserver</code></pre>
 
-								<p>This command will run a new empty docker instance with Shoko Server installed and at the same time <strong>port 8111</strong>will
-									be made available to the host to reach Shoko Server. At this point you'll be able to use Shoko Desktop.</p>
-								<p>However, this won't be enough to keep a persistent Shoko Server instance running. We will add a few things to the docker
-									command to make sure we can survive a reboot after we make some changes.</p>
-
-								<pre><code class = "language-bash">docker run -d --name Shoko Server --restart always -p 8111:8111/tcp -v "/path/to/shoko/settings:/root/.shoko" -v "/path/to/webui:/usr/src/app/build/webui" -v "/path/to/anime:/anime" -v "/path/to/import:/import" cazzar/Shoko Server</code></pre>
-
-								<p>Note: If you run the Docker container as any other <strong>uid/gid other than the default Shoko user </strong> see the <a
-										href = "#advanced-settings">Advanced Settings</a> section. </p>
-
-								<h4>Command Breakdown</h4>
+								<p>This command will run a new empty docker instance with Shoko Server installed. 
+								At the same time port <strong>8111</strong> will be made available on the host to reach Shoko Server remotely. 
+								At this point you'll be able to use Shoko Desktop to connect to the server.</p>
+							
+								<h4>Advised Docker Options</h4>
 
 								<table class = "table table-bordered">
 
@@ -125,34 +119,6 @@ permalink: server/install_linux.html
 									</thead>
 
 									<tbody>
-									<tr>
-										<td>
-											<pre><code class = "language-bash">-d</code></pre>
-										</td>
-										<td><p><a href = "https://docs.docker.com/engine/reference/run/#detached--d" target = "_blank" rel = "noopener">Runs in
-											detached mode.</a>
-										</p>
-											<p>This prevents docker from running Shoko Server within your session. If your client does not have a return to
-												shell feature, this will prevent Docker from running within your shell's instance.</p></td>
-									</tr>
-									<tr>
-										<td>
-											<pre><code class = "language-bash">--name Shoko Server</code></pre>
-										</td>
-										<td><p><a href = "https://docs.docker.com/engine/reference/run/#container-identification" target = "_blank"
-												rel = "noopener">Names your container.</a></p>
-											<p>This is useful if you have a utility that manages docker by container names. Without this, your container will
-												have a randomly generated name.</p>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<pre><code class = "language-bash">--restart always</code></pre>
-										</td>
-										<td><a href = "https://docs.docker.com/engine/reference/run/#restart-policies-restart" target = "_blank"
-												rel = "noopener">Defines a restart policy.</a>
-										</td>
-									</tr>
 									<tr>
 										<td>
 											<pre><code class = "language-bash">-p 8111:8111/tcp</code></pre>
@@ -200,7 +166,7 @@ permalink: server/install_linux.html
 									</tr>
 									<tr>
 										<td>
-											<pre><code class = "language-bash">cazzar/Shoko Server</code></pre>
+											<pre><code class = "language-bash">cazzar/shokoserver</code></pre>
 										</td>
 										<td><p><a href = "https://docs.docker.com/engine/reference/run/" target = "_blank" rel = "noopener">Specifies the Image
 											to derive the container from.</a></p>
@@ -209,6 +175,15 @@ permalink: server/install_linux.html
 
 									</tbody>
 								</table>
+
+									<p>Putting everything together will get us the following configuration</p>
+
+								<pre><code class = "language-bash">docker run -d --name shokoserver --restart always -p 8111:8111/tcp -v "/path/to/shoko/settings:/home/shoko/.shoko" -v "/path/to/anime:/anime" -v "/path/to/import:/import" cazzar/shokoserver</code></pre>
+								<p>This will provide you a Docker Shoko Server instance that runs in the background with persistent configuration, as well as expose it on your server to connect with Shoko Desktop / WebUI.</p>
+
+								<p>Note: If you run the Docker container as any other <strong>uid/gid other than the default Shoko user </strong> see the <a
+										href = "#advanced-settings">Advanced Settings</a> section. </p>
+
 							</div>
 
 							<div class = "tab-pane fade" id = "running-synology" role = "tabpanel" aria-labelledby = "running-synology">
@@ -317,9 +292,9 @@ permalink: server/install_linux.html
 
 								<div class = "row">
 									<div class = "col-xl-8 col-sm-12">
-										<p>You can now search repositories from the Docker Hub Registry. Enter "cazzar/Shoko Server" into the search box
+										<p>You can now search repositories from the Docker Hub Registry. Enter "cazzar/shokoserver" into the search box
 											above and click the search button.</p>
-										<p>Check to make sure your results are accurate and click on the "cazzar/Shoko Server" to chose a release to
+										<p>Check to make sure your results are accurate and click on the "cazzar/shokoserver" to chose a release to
 											download.</p>
 									</div>
 									<div class = "col-xl-4 col-sm-12">
@@ -478,8 +453,8 @@ permalink: server/install_linux.html
 								<pre><code class = "language-bash">version: "3"
 services:
     Shoko Server:
-        container_name: Shoko Server
-        image: cazzar/Shoko Server:daily
+        container_name: shokoserver
+        image: cazzar/shokoserver
         restart: always
         ports:
             - "8111:8111/tcp"
@@ -554,8 +529,47 @@ services:
 						</div>
 					</section>
 
+
 					<section>
-						<h2 id = "create-config">Creating settings.json</h2>
+						<h2 id = "advanced-settings">Advanced Settings</h2>
+						<p>Running shoko via docker has some additional features / options that might be useful some users.</p>
+
+						<h4 id= "uid-guid">UID / GUID</h4>
+
+						<p>In order to run the docker as a specific UID / GID you can specify it in the environment variables. </p>
+						<p>By default shoko runs with UserID 1000 and GroupID 100.</p>
+
+						<table class = "table table-bordered">
+							<thead>
+							<tr>
+								<th>Command</th>
+								<th>Purpose</th>
+							</tr>
+							</thead>
+
+							<tbody>
+							<tr>
+								<td>
+									<pre><code class = "language-bash">-e PUID=xxx -e GUID=xxx</code></pre>
+								</td>
+								<td>
+									<p><a href = "https://docs.docker.com/compose/environment-variables/" target = "_blank" rel = "noopener">Set Environment Variables.</a></p>
+									<p>To make docker run as a certain user/group you can define this through the ENV variables.</p>
+									<p>This makes working with permissions a lot easier since you can match your docker with the local accounts on your machine
+										without doing much work</p>
+									<p>If you getting errors with Denied folder access then the wrong PUID and GUID could be the cause.</p>
+									<p>GUID 101 should be your admin group.</p>
+									<p>To find the PUID on any user, login with said user with SSH or Telnet with <a href = "https://www.putty.org/" target = "_blank" rel = "noopener">Putty</a> or something similar with the <code class = "language-bash">ID</code> command.</p>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+
+					</section>
+
+
+					<section>
+						<h4 id = "create-config">Creating settings.json</h2>
 						<p>The default settings.json is stored within the image. When Shoko Server for Linux is started for the first time, it checks for
 							the presence of settings.json and if it does not exist, then it copies the one from the image.</p>
 						<p>If at any time you need to reset the configuration back to the default settings, shut down Shoko Server for Linux and delete the
@@ -583,7 +597,7 @@ services:
 
 					</section>
 					<section>
-						<h2 id = "modify-settings">Modify settings.json</h2>
+						<h4 id = "modify-settings">Modify settings.json</h2>
 						<p>Since Shoko Server for Linux runs without a graphical interface configurations must be made to the configuration file directly.
 							Please note that the configurations shown below are the minimum required configurations needed to start the server. Not all
 							configurable options are defined below. The default settings.json is stored within the image. When Shoko Server for Linux is started
@@ -599,7 +613,7 @@ services:
 								Server as a database option has been deprecated.</p>
 
 							<p>Users who are currently using either MySQL or SQL Server can still edit their database information by directly editing <strong>settings.json</strong>
-								located in <strong>%ProgramData%\ShokoServer</strong>.</p>
+								located in the configuration folder defined in the docker run command.</p>
 						</div>
 
 						<table class = "table table-bordered">
@@ -686,72 +700,6 @@ services:
 						</table>
 					</section>
 
-					<section>
-						<h2 id = "advanced-settings">Advanced Settings</h2>
-						<p>Running shoko via docker has some additional features / options that might be useful some users.</p>
-
-						<h4>WebUI</h4>
-
-						<p>To be able to add a different version from the WebUI into docker we need to expose the Web UI dir inside docker to the outside world.
-							This can be done by adding the following to your docker run command.</p>
-
-						<table class = "table table-bordered">
-							<thead>
-							<tr>
-								<th>Command</th>
-								<th>Purpose</th>
-							</tr>
-							</thead>
-
-							<tbody>
-							<tr>
-								<td>
-									<pre><code class = "language-bash">-v "/path/to/webui:/usr/src/app/build/webui"</code></pre>
-								</td>
-								<td>
-									<p><a href = "https://docs.docker.com/engine/reference/run/#volume-shared-filesystems" target = "_blank" rel = "noopener">Mounts
-										volumes.</a></p>
-									<p>To preserve Web UI between updates, the Web UI folder must be remapped to a location outside the container.</p>
-									<p>WebUI is a web based interface that can be used to manage the Shoko Server. You can download it from
-										<a href = "https://github.com/shokoanime/Shoko Server-WebUI" target = "_blank" rel = "noopener">GitHub</a>.</p>
-								</td>
-							</tr>
-							</tbody>
-						</table>
-
-						<h4>UID / GUID</h4>
-
-						<p>In order to run the docker as a specific UID / GID you can specify it in the environment variables. </p>
-						<p>By default shoko runs with UserID 1000 and GroupID 100.</p>
-
-						<table class = "table table-bordered">
-							<thead>
-							<tr>
-								<th>Command</th>
-								<th>Purpose</th>
-							</tr>
-							</thead>
-
-							<tbody>
-							<tr>
-								<td>
-									<pre><code class = "language-bash">-e PUID=xxx -e GUID=xxx</code></pre>
-								</td>
-								<td>
-									<p><a href = "https://docs.docker.com/compose/environment-variables/" target = "_blank" rel = "noopener">Set Environment Variables.</a></p>
-									<p>To make docker run as a certain user/group you can define this through the ENV variables.</p>
-									<p>This makes working with permissions a lot easier since you can match your docker with the local accounts on your machine
-										without doing much work</p>
-									<p>If you getting errors with Denied folder access then the wrong PUID and GUID could be the cause.</p>
-									<p>GUID 101 should be your admin group.</p>
-									<p>To find the PUID on any user, login with said user with SSH or Telnet with <a href = "https://www.putty.org/" target = "_blank" rel = "noopener">Putty</a> or something similar with the <code class = "language-bash">ID</code> command.</p>
-								</td>
-							</tr>
-							</tbody>
-						</table>
-
-					</section>
-
 					{% include _github_callout.html %}
 
 				</article>
@@ -762,10 +710,12 @@ services:
 				<aside class = "sidebar sidebar-sticky">
 					<nav class = "nav nav-toc-2 mt-3" data-accordion = "true">
 						<a class = "nav-link" href = "#installing-docker">Installing on Linux</a>
-						<a class = "nav-link" href = "#running-shoko-docker">Shoko on Docker</a>
-						<a class = "nav-link" href = "#manage-shoko-docker"> Shoko on Docker</a>
-						<a class = "nav-link" href = "#modify-settings">Modify.json</a>
-						<a class = "nav-link" href = "#advanced-settings">Advanced Settings</a>
+						<a class = "nav-link" href = "#running-shoko-docker">Running Shoko</a>
+						<a class = "nav-link" href = "#manage-shoko-docker"> Managing Shoko Docker</a>
+						<a class = "nav-link sidenav-title" href = "#advanced-settings">Advanced Settings</a>
+						<a class = "nav-link" href = "#uid-guid">Creating settings.json</a>
+						<a class = "nav-link" href = "#create-config">Creating settings.json</a>
+						<a class = "nav-link" href = "#modify-settings">Modify settings.json</a>
 					</nav>
 				</aside>
 			</div>
