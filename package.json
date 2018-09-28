@@ -17,10 +17,10 @@
   },
   "homepage": "https://docs.shokoanime.com/",
   "dependencies": {
-    "npm": "^6.1.0"
+    "npm": "^6.4.1"
   },
   "devDependencies": {
-    "browser-sync": "^2.24.5",
+    "browser-sync": "^2.24.7",
     "gulp": "^3.9.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-util": "^3.0.8",

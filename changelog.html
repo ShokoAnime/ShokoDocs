@@ -34,7 +34,7 @@ permalink: /changelog.html
 				<p class = "lead">The changelog is broken down by program, use the menu on the left to select the program followed by the version number.</p>
 
 				<p class = "lead">A complete history can be found in the <a href = "https://ShokoAnime.com/files/other/Shoko-Archived-Changelog.txt"
-																			target = "_blank" rel = "noopener">Archived Changelog</a>.</p>
+						target = "_blank" rel = "noopener">Archived Changelog</a>.</p>
 
 				<hr class = "my-6">
 
@@ -60,8 +60,8 @@ permalink: /changelog.html
 						<table class = "table table-bordered">
 							<thead>
 							<tr>
-								<th class="changelog-type">Type</th>
-								<th class="changelog-git">Git Link</th>
+								<th class = "changelog-type">Type</th>
+								<th class = "changelog-git">Git Link</th>
 								<th>Description</th>
 							</tr>
 							</thead>
@@ -115,8 +115,8 @@ permalink: /changelog.html
 						<table class = "table table-bordered">
 							<thead>
 							<tr>
-								<th class="changelog-type">Type</th>
-								<th class="changelog-git">Git Link</th>
+								<th class = "changelog-type">Type</th>
+								<th class = "changelog-git">Git Link</th>
 								<th>Description</th>
 							</tr>
 							</thead>
@@ -170,8 +170,8 @@ permalink: /changelog.html
 						<table class = "table table-bordered">
 							<thead>
 							<tr>
-								<th class="changelog-type">Type</th>
-								<th class="changelog-git">Git Link</th>
+								<th class = "changelog-type">Type</th>
+								<th class = "changelog-git">Git Link</th>
 								<th>Description</th>
 							</tr>
 							</thead>
@@ -225,8 +225,8 @@ permalink: /changelog.html
 						<table class = "table table-bordered">
 							<thead>
 							<tr>
-								<th class="changelog-type">Type</th>
-								<th class="changelog-git">Git Link</th>
+								<th class = "changelog-type">Type</th>
+								<th class = "changelog-git">Git Link</th>
 								<th>Description</th>
 							</tr>
 							</thead>
@@ -264,19 +264,19 @@ permalink: /changelog.html
 				<hr class = "d-md-none">
 				<aside class = "sidebar sidebar-sticky">
 					<nav class = "nav nav-toc-2 mt-3" data-accordion = "true">
-						<a class="nav-link sidenav-title">Shoko Server</a>
+						<a class = "nav-link sidenav-title">Shoko Server</a>
 						{% for release in site.data.changelog.server.releases %}
 						<a class = "nav-link" href = "#s{{ release.versionurl }}">Version {{ release.version }} - {{ release.date }}</a>
 						{% endfor %}
-						<a class="nav-link sidenav-title">Shoko Desktop</a>
+						<a class = "nav-link sidenav-title">Shoko Desktop</a>
 						{% for release in site.data.changelog.desktop.releases %}
 						<a class = "nav-link" href = "#d{{ release.versionurl }}">Version {{ release.version }} - {{ release.date }}</a>
 						{% endfor %}
-						<a class="nav-link sidenav-title">My Anime 3</a>
+						<a class = "nav-link sidenav-title">My Anime 3</a>
 						{% for release in site.data.changelog.myanime3.releases %}
 						<a class = "nav-link" href = "#m{{ release.versionurl }}">Version {{ release.version }} - {{ release.date }}</a>
 						{% endfor %}
-						<a class="nav-link sidenav-title">Shoko On Plex</a>
+						<a class = "nav-link sidenav-title">Shoko On Plex</a>
 						{% for release in site.data.changelog.shokoplex.releases %}
 						<a class = "nav-link" href = "#p{{ release.versionurl }}">Version {{ release.version }} - {{ release.date }}</a>
 						{% endfor %}

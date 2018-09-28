@@ -57,7 +57,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
     margin: 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 0.9375rem;
     font-weight: 400;
     line-height: 1.9;
@@ -16811,7 +16811,7 @@ h6.bold::before, .h6.bold::before {
 }
 
 hr {
-    border-top-color: rgba(117, 117, 117, 0.09);
+    border-top-color: rgba(117, 117, 117, 0.19);
     margin: 2rem auto;
 }
 
@@ -18779,6 +18779,7 @@ button:focus {
     padding-right: 5px;
     overflow: hidden;
     flex-shrink: 0;
+    font-weight: 400;
 }
 
 .nav-sidebar .nav-sub-item {
@@ -18788,7 +18789,7 @@ button:focus {
 }
 
 .nav-sidebar .nav-item > .nav-link {
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .nav-sidebar .nav-link {
@@ -18848,6 +18849,8 @@ button:focus {
 
 .nav-sidebar .nav .nav-link {
     flex-shrink: 0;
+    font-size: 0.9rem;
+    font-weight: 400;
 }
 
 .nav-sidebar .show > .nav-link .nav-angle {
@@ -18861,6 +18864,7 @@ button:focus {
 
 .nav-sidebar .nav-link.active {
     color: #50a1ff;
+    font-weight: 500;
 }
 
 .nav-sidebar .nav-link.active > .nav-angle {
@@ -18873,9 +18877,10 @@ button:focus {
 }
 
 .nav-sidebar .nav-item > .nav-link.active {
-    color: #333;
+    color: #50a1ff;
     -webkit-transition: none;
     transition: none;
+    font-weight: 500;
 }
 
 .nav-sidebar a {
@@ -18894,7 +18899,7 @@ button:focus {
 }
 
 .nav-sidebar-hero > .nav-item {
-    border-bottom: 1px dashed #eaeff4;
+
     padding-top: 2px;
     padding-bottom: 6px;
 }
@@ -18910,6 +18915,7 @@ button:focus {
 }
 
 .nav-sidebar-hero .nav-item > .nav-link {
+    font-size: 0.9375rem;
     font-weight: 400;
 }
 
@@ -18936,13 +18942,13 @@ button:focus {
 
 .nav-sidebar-pill .nav .nav-link {
     display: table;
-    border-radius: 10rem;
+    /*border-radius: 10rem;*/
     padding: 6px 16px;
 }
 
-.nav-sidebar-pill .nav .nav-link.active {
-    background-color: rgba(80, 161, 255, 0.1);
-}
+/*.nav-sidebar-pill .nav .nav-link.active {*/
+    /*background-color: rgba(80, 161, 255, 0.1);*/
+/*}*/
 
 .nav-toc {
     -webkit-box-orient: vertical;
@@ -25532,4 +25538,9 @@ a.text-lightest:hover, a.text-lightest:focus {
 
 .right-sidebar {
     font-size: 0.8125rem;
+}
+
+.active > a {
+    color: #50a1ff !important;
+    font-weight: 500;
 }

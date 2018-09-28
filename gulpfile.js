@@ -1,83 +1,56 @@
-const child = require('child_process');
-const browserSync = require('browser-sync').create();
-const gulp = require('gulp');
-const gutil = require('gulp-util');
-const imagemin = require('gulp-imagemin');
-const Pngquant = require('imagemin-pngquant');
-const siteRoot = '_site';
+let gulp = require('gulp');
+let browserSync = require('browser-sync');
+let cp = require('child_process');
+let jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
+let messages = {
+    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
+};
 
-/*
-|--------------------------------------------------------------------------
-| Build Jekyll
-|--------------------------------------------------------------------------
-|
-*/
+//From https://github.com/soulroll/jekyll-bootstrap-4
 
+/**
+ * Build the Jekyll website
+ */
 
-gulp.task('jekyll', () => {
-    const jekyll = child.exec('jekyll build --watch --incremental');
-    const jekyllLogger = (buffer) => {
-        buffer.toString()
-            .split(/\n/)
-            .forEach((message) => gutil.log('Jekyll: ' + message));
-    };
-    jekyll.stdout.on('data', jekyllLogger);
-    jekyll.stderr.on('data', jekyllLogger);
+gulp.task('jekyll-build', function (done) {
+    browserSync.notify(messages.jekyllBuild);
+    return cp.spawn(jekyll, ['build', '--incremental'], {stdio: 'inherit'})
+        .on('close', done);
 });
 
+/**
+ * Rebuild Jekyll and reload the page
+ */
 
-/*
-|--------------------------------------------------------------------------
-| Serve Website
-|--------------------------------------------------------------------------
-|
-*/
+gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+    browserSync.reload();
+});
 
+/**
+ * Wait for the jekyll-build task, then start the server
+ */
 
-gulp.task('serve', () => {
-    browserSync.init({
-        files: [siteRoot + '/**'],
-        port: 4000,
+gulp.task('browser-sync', ['jekyll-build'], function () {
+    browserSync({
         server: {
-            baseDir: siteRoot
+            baseDir: '_site'
         }
     });
 });
 
+/**
+ * Watch scss files for changes & recompile
+ * Watch html/md files, run jekyll & reload BrowserSync
+ */
 
-/*
-|--------------------------------------------------------------------------
-| Minify Images
-|--------------------------------------------------------------------------
-|
-*/
-
-
-gulp.task('img', function () {
-    return gulp.src('assets/img/**/*.{jpg,jpeg,png,gif}')
-        .pipe(imagemin([
-            imagemin.gifsicle({interlaced: true}),
-            imagemin.jpegtran({progressive: true}),
-            /*imagemin.optipng({optimizationLevel: 5}),*/
-            Pngquant({speed: 3, quality: 0-100}),
-            imagemin.svgo({
-                plugins: [
-                    {removeViewBox: true},
-                    {cleanupIDs: false}
-                ]
-            })
-        ]))
-        .pipe(gulp.dest('assets/img/'));
+gulp.task('watch', function () {
+    gulp.watch(['assets/css/*', 'assets/js/*', '*.html', '_layouts/*.html', '_data/*', '_includes/*', 'desktop/*', 'myanime3/*', 'server/*'], ['jekyll-rebuild']);
 });
 
+/**
+ * Default task, running just `gulp` compile
+ * the jekyll site, launch BrowserSync & watch files.
+ */
 
-/*
-|--------------------------------------------------------------------------
-| Group Tasks
-|--------------------------------------------------------------------------
-|
-*/
-
-
-gulp.task('build', ['jekyll', 'serve']);
+gulp.task('default', ['browser-sync', 'watch']);
