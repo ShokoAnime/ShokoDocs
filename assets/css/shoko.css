@@ -57,7 +57,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
     margin: 0;
-    font-family: "Roboto", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 0.9375rem;
     font-weight: 400;
     line-height: 1.9;
@@ -16539,6 +16539,7 @@ a {
     color: #50a1ff;
     -webkit-transition: .2s linear;
     transition: .2s linear;
+    font-weight: 600;
 }
 
 a:hover, a:focus {
@@ -16549,6 +16550,7 @@ a:hover, a:focus {
 
 a.anchor::before {
     content: '#';
+    font-weight: 500;
     vertical-align: text-bottom;
 }
 
@@ -25542,5 +25544,9 @@ a.text-lightest:hover, a.text-lightest:focus {
 
 .active > a {
     color: #50a1ff !important;
+    font-weight: 500;
+}
+
+.nav-item > a {
     font-weight: 500;
 }
