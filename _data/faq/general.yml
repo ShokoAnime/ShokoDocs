@@ -3,14 +3,29 @@ faq:
     link: linux-support
     answer:
       - Yes it Does!
-      - Using <a href = "https://www.docker.com/" target = "_blank" rel = "noopener">Docker</a>, you can run <strong>Shoko Server</strong> natively on Linux. We've created a <a href = "https://docs.shokoanime.com/server/install_linux.html" target = "_blank" rel = "noopener">Linux Install Guide</a>  that we highly reccommend all Linux users follow to properly install Shoko Server. If needed, additional support can be found by visiting our <strong>Discord Server</strong>.
+      - Using <a href = "https://www.docker.com/" target = "_blank" rel = "noopener">Docker</a>, you can run
+        <strong>Shoko Server</strong> natively on Linux. We've created a <a href = "https://docs.shokoanime.com/server/install_linux.html"
+        target = "_blank" rel = "noopener">Linux Install Guide</a>  that we highly reccommend all Linux users follow to
+        properly install Shoko Server. If needed, additional support can be found by visiting our
+        <strong>Discord Server</strong>.
       - Please keep in mind that Shoko Server on Linux is still in <strong>beta</strong> so issues are to be expected.
   - question: I've Been Banned From AniDB?
     link: anidb-ban
     answer:
-      - The "banned” message you’re seeing is simply telling you that you’ve been <strong>temporarily banned</strong> for excessive connection attempts. AniDB will sometimes temporarily ban a user if their system thinks you are attempting to leech data by making excessive connection attempts within seconds. In reality you’ve done nothing wrong and just need to wait out the ban which can last anywhere from 15 minutes to 24 hours depending on the severity. Also keep in mind that browsing AniDB while Shoko is scraping and downloading data can also increase the chance of getting a temporary ban as your creating more connection attempts.
-      - There are two different ban types, <strong>HTTP or UDP</strong> that a user can get that's based on AniDB's API. If a user is temporarily banned from one, Shoko will automatically stop sending data associated with that API but will continue to use the other API when possible. This does not mean all your commands will go through as each API sends and receives different data so you may notice your queue idling even though there are commands waiting to be processed.
-      - We're always making improvements to our rate limiter to avoid users getting a temporary ban. If you find yourself getting banned, join our <strong>Discord Server</strong> so we can help diagnose the problem and make the experience smoother for you.
+      - The "banned” message you’re seeing is simply telling you that you’ve been <strong>temporarily banned</strong>
+        for excessive connection attempts. AniDB will sometimes temporarily ban a user if their system thinks you are
+        attempting to leech data by making excessive connection attempts within seconds. In reality you’ve done nothing
+        wrong and just need to wait out the ban which can last anywhere from 15 minutes to 24 hours depending on the
+        severity. Also keep in mind that browsing AniDB while Shoko is scraping and downloading data can also increase
+        the chance of getting a temporary ban as your creating more connection attempts.
+      - There are two different ban types, <strong>HTTP or UDP</strong> that a user can get that's based on AniDB's API.
+        If a user is temporarily banned from one, Shoko will automatically stop sending data associated with that API
+        but will continue to use the other API when possible. This does not mean all your commands will go through as
+        each API sends and receives different data so you may notice your queue idling even though there are commands
+        waiting to be processed.
+      - We're always making improvements to our rate limiter to avoid users getting a temporary ban. If you find yourself
+        getting banned, join our <strong>Discord Server</strong> so we can help diagnose the problem and make the
+        experience smoother for you.
   - question: Does Shoko Support Streaming From Different Websites?
     link: site-stream
     answer: No, Shoko does not support streaming directly from websites such as Crunchy Roll.
@@ -18,14 +33,23 @@ faq:
     link: collection-stream
     answer:
       - Yes it does!
-      - Users can stream their anime collection to any Shoko supported program. While the majority of the work is done for you, there are a few things you'll need to do in order to start streaming. First make sure ports <strong>8111</strong> and <strong>8112</strong> are forwarded to allow outside access to Shoko. If using Shoko Desktop on another computer, make sure you're using one of the supported video players listed in <strong>Settings &gt; Video Players</strong>.
+      - Users can stream their anime collection to any Shoko supported program. While the majority of the work is done
+        for you, there are a few things you'll need to do in order to start streaming. First make sure ports
+        <strong>8111</strong> and <strong>8112</strong> are forwarded to allow outside access to Shoko. If using Shoko
+        Desktop on another computer, make sure you're using one of the supported video players listed in
+        <strong>Settings And Video Players</strong>.
   - question: Can Shoko Download Anime?
     link: download-anime
     answer:
       - No, Shoko does not provide a way for the user to download anime anymore.
-      - While originally supported, this feature was removed to distance the Shoko team from any sort of legal actions for providing a method to download anime.
+      - While originally supported, this feature was removed to distance the Shoko team from any sort of legal actions
+        for providing a method to download anime.
   - question: How Do I Backup My Collection?
     link: backup-collection
     answer:
-      - While we currently do not offer a solution to backup your database whenever you'd like, we do automatically backup your database before updating Shoko to the latest version. If you need to restore an older version you'll find your backups in the following locations.
-      - <table class = "table table-bordered"><thead><tr><th>OS</th><th>Backup Location</th></tr></thead><tbody><tr><td>Windows</td><td>%ProgramData%\ShokoServer\DatabaseBackup</td></tr><tr><td>Linux</td><td>~/.shoko/&lt;instance&gt;/DatabaseBackup</td></tr></tbody></table>
+      - While we currently do not offer a solution to backup your database whenever you'd like, we do automatically
+        backup your database before updating Shoko to the latest version. If you need to restore an older version
+        you'll find your backups in the following locations.
+      - <table class = "table table-bordered"><thead><tr><th>OS</th><th>Backup Location</th></tr></thead><tbody><tr>
+        <td>Windows</td><td>%ProgramData%\ShokoServer\DatabaseBackup</td></tr><tr><td>Linux</td>
+        <td>~/.shoko/&lt;instance&gt;/DatabaseBackup</td></tr></tbody></table>
