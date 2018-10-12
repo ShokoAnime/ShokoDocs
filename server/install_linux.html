@@ -534,7 +534,7 @@ services:
 						<h2 id = "advanced-settings">Advanced Settings</h2>
 						<p>Running shoko via docker has some additional features / options that might be useful some users.</p>
 
-						<h4 id= "uid-guid">UID / GUID</h4>
+						<h4 id= "uid-gid">UID / PGID</h4>
 
 						<p>In order to run the docker as a specific UID / GID you can specify it in the environment variables. </p>
 						<p>By default shoko runs with UserID 1000 and GroupID 100.</p>
@@ -550,15 +550,15 @@ services:
 							<tbody>
 							<tr>
 								<td>
-									<pre><code class = "language-bash">-e PUID=xxx -e GUID=xxx</code></pre>
+									<pre><code class = "language-bash">-e PUID=xxx -e PGID=xxx</code></pre>
 								</td>
 								<td>
 									<p><a href = "https://docs.docker.com/compose/environment-variables/" target = "_blank" rel = "noopener">Set Environment Variables.</a></p>
 									<p>To make docker run as a certain user/group you can define this through the ENV variables.</p>
 									<p>This makes working with permissions a lot easier since you can match your docker with the local accounts on your machine
 										without doing much work</p>
-									<p>If you getting errors with Denied folder access then the wrong PUID and GUID could be the cause.</p>
-									<p>GUID 101 should be your admin group.</p>
+									<p>If you getting errors with Denied folder access then the wrong PUID and PGID could be the cause.</p>
+									<p>PGID 101 should be your admin group.</p>
 									<p>To find the PUID on any user, login with said user with SSH or Telnet with <a href = "https://www.putty.org/" target = "_blank" rel = "noopener">Putty</a> or something similar with the <code class = "language-bash">ID</code> command.</p>
 								</td>
 							</tr>
@@ -713,7 +713,7 @@ services:
 						<a class = "nav-link" href = "#running-shoko-docker">Running Shoko Server</a>
 						<a class = "nav-link" href = "#manage-shoko-docker">Managing Shoko Docker</a>
 						<a class = "nav-link sidenav-title" href = "#advanced-settings">Advanced Settings</a>
-						<a class = "nav-link" href = "#uid-guid">UID / GUID</a>
+						<a class = "nav-link" href = "#uid-gid">UID / PGID</a>
 						<a class = "nav-link" href = "#create-config">Creating settings.json</a>
 						<a class = "nav-link" href = "#modify-settings">Modify settings.json</a>
 					</nav>
