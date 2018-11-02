@@ -17522,6 +17522,7 @@ pre[class*="language-"] {
     display: block;
     padding: 16px 33px;
     color: #323d47;
+    font-weight: 500;
 }
 
 .accordion .card-title a::before {

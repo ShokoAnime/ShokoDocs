@@ -1,197 +1,197 @@
 releases:
-  - version: 3.9.3
-    versionurl: 393
-    date: August 20, 2018
-    bloglink: https://shokoanime.com/shoko-version-3-9-3-released/
-    changes:
-    - status: changed
-      issue: 749
-      text:  Error with creating ssl/tls secure channel.
-    - status: changed
-      commit: 7712cfc
-      text:  Sort File for episodes by File Quality Preferences in Desktop.
-    - status: fixed
-      commit: e5ff342
-      text:  Fix Adding Files to MyList with Manually Linked Files.
-    - status: fixed
-      commit: 99f2301
-      text:  Hopefully fix rare error with Downloading Release Group Status.
-    - status: fixed
-      commit: 1e65dc9
-      text:  Delete Episode and Override Links when Deleting TvDB Links.
-    - status: fixed
-      commit: 1dd08ed
-      text:  Fix some logic errors and state when adding Manually Linked files.
-  - version: 3.9.2
-    versionurl: 392
-    date: August 2, 2018
-    bloglink: https://shokoanime.com/shoko-version-3-9-2-released/
-    changes:
-      - status: changed
-        commit: f0a1f55
-        text:  Redo Search in API to Return More Useful Results
-  - version: 3.9.1
-    versionurl: 391
-    date: July 30, 2018
-    bloglink: https://shokoanime.com/shoko-version-3-9-1-released/
-    changes:
-      - status: changed
-        issue: 742
-        text: CommandRequest query optimisations.
-      - status: changed
-        issue: 747
-        text: Fixed ban timer, ban time now extends on subsequent bans.
-      - status: changed
-        commit: 4e9122c
-        text: Revert mono to 5.4 to resolve problems with web-api connections/commands.
-      - status: changed
-        commit: 74c571c
-        text: Additional work on the new TVDB linking system.
-      - status: changed
-        commit: e6a8395
-        text: Hide Setup tab and make the Settings tab the default tab.
-      - status: changed
-        commit: 3eae469
-        text: Delete and Recreate All Tag Filters on Recreate All Groups.
-      - status: fixed
-        commit: ca96722
-        text: When MyList ID is missing add file first then update the state.
-      - status: fixed
-        commit: 3511693
-        text: Automatically create and initialize SQLite DB on first run.
-      - status: fixed
-        commit: 8e15ab4
-        text: Fix an issue when attempting to link your Plex account.
-      - status: fixed
-        commit: 6118075
-        text: Null Check some things in File Quality Filter.
-      - status: fixed
-        commit: 691f6b5
-        text: Add a flag to AddFileToMyList, so we can skip reading.
-      - status: fixed
-        commit: 8e15ab4
-        text: Parse MyList ID from adding files.
-      - status: fixed
-        commit: 9753cf1
-        text: When adding files to MyList, send the watched state if we have one.
-      - status: fixed
-        commit: 9d73fd8
-        text: Fix an erorr when attempting to manually link a series.
-      - status: fixed
-        commit: b93bde2
-        text: Fix an issue when attempting to access a file that's already in use.
-  - version: 3.9.0
-    versionurl: 390
-    date: June 21, 2018
-    bloglink: https://shokoanime.com/shoko-version-3-9-0-released/
-    changes:
-      - status: added
-        issue: 312
-        text: Add Storage state "remote storage" to AniDB storage state list.  Added Environment variable configuration on first run.
-      - status: added
-        commit: 97bde94
-        text: Added Environment variable configuration on first run.
-      - status: changed
-        commit: 11f2595
-        text: Seperate AniDB ban types to be both HTTP and UDP instead of a signular ban.
-      - status: changed
-        commit: 1eb0489
-        text: Additional improvements to AniDB Image rate limting.
-      - status: changed
-        commit: bde8518
-        text: General improvements made to the AniDB MyList updating process.
-      - status: changed
-        commit: 985a1f4
-        text: Shoko will now ignore the Recycle Bin when scanning import folders.
-      - status: changed
-        commit: f73c368
-        text: Improve Year filter logic.
-      - status: changed
-        commit: 7447f56
-        text: Use environment for program data location allowing for non-standard setups to work better.
-      - status: changed
-        commit: cf38bac
-        text: changed logging during startup.
-      - status: changed
-        commit: 3c94a2f
-        text:  Move Docker install to be able to launch as non-root user.
-      - status: changed
-        commit: 7c883e2
-        text: Completely rework the plex workflow so that authentication and updating is a lot nicer.
-      - status: changed
-        commit: aa94979
-        text: Redid TvDB Linking system and made major improvements to TVDB system.
-      - status: changed
-        commit: 64fbaf9
-        text: Use Mono 5.12 on docker.
-      - status: fixed
-        issue: 312
-        text: Allow "Unknown" storage state in AniDB.
-      - status: fixed
-        issue: 700
-        text: Fixed an issue with pre-populated usernames causing issues when switching languages in Shoko and creating a new database.
-      - status: fixed
-        issue: 708
-        text: Fixed an issue where Cloud Accounts could not be added or managed.
-      - status: fixed
-        issue: 719
-        text: Fixed an issues when attempting to update AniDB MyList.
-      - status: fixed
-        issue: 722
-        text: Fixed an issues with Renamer failing to move all files.
-      - status: fixed
-        issue: 730
-        text: Fix updating watch status on AniDB MyList.
-      - status: fixed
-        commit: 21d5e72
-        text: Fixed an issue where user added series community links were removed when adding additonal ones.
-      - status: fixed
-        commit: b6a5303
-        text: Fixed an issue where episode data was not being changed for currently airing series.
-      - status: fixed
-        commit: 31e2046
-        text: Prevent clearing command queues freezing the UI.
-      - status: fixed
-        commit: 985a1f4
-        text: Ignore Recycle Bin during import scanning.
-      - status: fixed
-        commit: 97a8470
-        text: Fix various issues when using OneDrive as a provider.
-      - status: fixed
-        commit: 9e47308
-        text: Support new trakt authentication.
-      - status: fixed
-        commit: 6debd77
-        text: Fix an issue when qutoes are used or present during file renaming.
-      - status: removed
-        commit: 14a38d0
-        text: Removed MAL access and syncing.
-  - version: 3.8.3
-    versionurl: 383
-    date: February 04, 2018
-    bloglink: https://shokoanime.com/shoko-version-3-8-3-released/
-    changes:
-      - status: added
-        issue: 695
-        text: Add option to manually input Image Folder location.
-      - status: added
-        commit: ef1cda5
-        text: Add AniDB resource links.
-      - status: changed
-        commit: d01f084
-        text: Move AniDB Image Downloading to General Queue and add rate limiter.
-      - status: changed
-        commit: 81d9a03
-        text: Update Plex linking allowing users to link to their accounts and select the library.
-      - status: fixed
-        commit: 8bbc1d3
-        text: Fix default AniDB MyList option for new databases that caused MyList entries to be removed if a physical file was not hashed.
-      - status: fixed
-        commit: d7cd9c6
-        text: Fix Legacy Renamer issue where leading zero was left off on episodes 1-9 when including episode number in filename.
-      - status: fixed
-        commit: 006f406
-        text: Instead of crashing, return 404 when an invalid series is queried by the API.
-      - status: fixed
-        commit: 6e0ae64
-        text: Fix API issue where anime movies would not return TvDB info.
+- version: 3.9.3
+  versionurl: 393
+  date: August 20, 2018
+  bloglink: https://shokoanime.com/shoko-version-3-9-3-released/
+  changes:
+  - status: changed
+    issue: 749
+    text:  Error with creating ssl/tls secure channel.
+  - status: changed
+    commit: 7712cfc
+    text:  Sort File for episodes by File Quality Preferences in Desktop.
+  - status: fixed
+    commit: e5ff342
+    text:  Fix Adding Files to MyList with Manually Linked Files.
+  - status: fixed
+    commit: 99f2301
+    text:  Hopefully fix rare error with Downloading Release Group Status.
+  - status: fixed
+    commit: 1e65dc9
+    text:  Delete Episode and Override Links when Deleting TvDB Links.
+  - status: fixed
+    commit: 1dd08ed
+    text:  Fix some logic errors and state when adding Manually Linked files.
+- version: 3.9.2
+  versionurl: 392
+  date: August 2, 2018
+  bloglink: https://shokoanime.com/shoko-version-3-9-2-released/
+  changes:
+  - status: changed
+    commit: f0a1f55
+    text:  Redo Search in API to Return More Useful Results
+- version: 3.9.1
+  versionurl: 391
+  date: July 30, 2018
+  bloglink: https://shokoanime.com/shoko-version-3-9-1-released/
+  changes:
+  - status: changed
+    issue: 742
+    text: CommandRequest query optimisations.
+  - status: changed
+    issue: 747
+    text: Fixed ban timer, ban time now extends on subsequent bans.
+  - status: changed
+    commit: 4e9122c
+    text: Revert mono to 5.4 to resolve problems with web-api connections/commands.
+  - status: changed
+    commit: 74c571c
+    text: Additional work on the new TVDB linking system.
+  - status: changed
+    commit: e6a8395
+    text: Hide Setup tab and make the Settings tab the default tab.
+  - status: changed
+    commit: 3eae469
+    text: Delete and Recreate All Tag Filters on Recreate All Groups.
+  - status: fixed
+    commit: ca96722
+    text: When MyList ID is missing add file first then update the state.
+  - status: fixed
+    commit: 3511693
+    text: Automatically create and initialize SQLite DB on first run.
+  - status: fixed
+    commit: 8e15ab4
+    text: Fix an issue when attempting to link your Plex account.
+  - status: fixed
+    commit: 6118075
+    text: Null Check some things in File Quality Filter.
+  - status: fixed
+    commit: 691f6b5
+    text: Add a flag to AddFileToMyList, so we can skip reading.
+  - status: fixed
+    commit: 8e15ab4
+    text: Parse MyList ID from adding files.
+  - status: fixed
+    commit: 9753cf1
+    text: When adding files to MyList, send the watched state if we have one.
+  - status: fixed
+    commit: 9d73fd8
+    text: Fix an erorr when attempting to manually link a series.
+  - status: fixed
+    commit: b93bde2
+    text: Fix an issue when attempting to access a file that's already in use.
+- version: 3.9.0
+  versionurl: 390
+  date: June 21, 2018
+  bloglink: https://shokoanime.com/shoko-version-3-9-0-released/
+  changes:
+  - status: added
+    issue: 312
+    text: Add Storage state "remote storage" to AniDB storage state list.  Added Environment variable configuration on first run.
+  - status: added
+    commit: 97bde94
+    text: Added Environment variable configuration on first run.
+  - status: changed
+    commit: 11f2595
+    text: Seperate AniDB ban types to be both HTTP and UDP instead of a signular ban.
+  - status: changed
+    commit: 1eb0489
+    text: Additional improvements to AniDB Image rate limting.
+  - status: changed
+    commit: bde8518
+    text: General improvements made to the AniDB MyList updating process.
+  - status: changed
+    commit: 985a1f4
+    text: Shoko will now ignore the Recycle Bin when scanning import folders.
+  - status: changed
+    commit: f73c368
+    text: Improve Year filter logic.
+  - status: changed
+    commit: 7447f56
+    text: Use environment for program data location allowing for non-standard setups to work better.
+  - status: changed
+    commit: cf38bac
+    text: changed logging during startup.
+  - status: changed
+    commit: 3c94a2f
+    text:  Move Docker install to be able to launch as non-root user.
+  - status: changed
+    commit: 7c883e2
+    text: Completely rework the plex workflow so that authentication and updating is a lot nicer.
+  - status: changed
+    commit: aa94979
+    text: Redid TvDB Linking system and made major improvements to TVDB system.
+  - status: changed
+    commit: 64fbaf9
+    text: Use Mono 5.12 on docker.
+  - status: fixed
+    issue: 312
+    text: Allow "Unknown" storage state in AniDB.
+  - status: fixed
+    issue: 700
+    text: Fixed an issue with pre-populated usernames causing issues when switching languages in Shoko and creating a new database.
+  - status: fixed
+    issue: 708
+    text: Fixed an issue where Cloud Accounts could not be added or managed.
+  - status: fixed
+    issue: 719
+    text: Fixed an issues when attempting to update AniDB MyList.
+  - status: fixed
+    issue: 722
+    text: Fixed an issues with Renamer failing to move all files.
+  - status: fixed
+    issue: 730
+    text: Fix updating watch status on AniDB MyList.
+  - status: fixed
+    commit: 21d5e72
+    text: Fixed an issue where user added series community links were removed when adding additonal ones.
+  - status: fixed
+    commit: b6a5303
+    text: Fixed an issue where episode data was not being changed for currently airing series.
+  - status: fixed
+    commit: 31e2046
+    text: Prevent clearing command queues freezing the UI.
+  - status: fixed
+    commit: 985a1f4
+    text: Ignore Recycle Bin during import scanning.
+  - status: fixed
+    commit: 97a8470
+    text: Fix various issues when using OneDrive as a provider.
+  - status: fixed
+    commit: 9e47308
+    text: Support new trakt authentication.
+  - status: fixed
+    commit: 6debd77
+    text: Fix an issue when qutoes are used or present during file renaming.
+  - status: removed
+    commit: 14a38d0
+    text: Removed MAL access and syncing.
+- version: 3.8.3
+  versionurl: 383
+  date: February 04, 2018
+  bloglink: https://shokoanime.com/shoko-version-3-8-3-released/
+  changes:
+  - status: added
+    issue: 695
+    text: Add option to manually input Image Folder location.
+  - status: added
+    commit: ef1cda5
+    text: Add AniDB resource links.
+  - status: changed
+    commit: d01f084
+    text: Move AniDB Image Downloading to General Queue and add rate limiter.
+  - status: changed
+    commit: 81d9a03
+    text: Update Plex linking allowing users to link to their accounts and select the library.
+  - status: fixed
+    commit: 8bbc1d3
+    text: Fix default AniDB MyList option for new databases that caused MyList entries to be removed if a physical file was not hashed.
+  - status: fixed
+    commit: d7cd9c6
+    text: Fix Legacy Renamer issue where leading zero was left off on episodes 1-9 when including episode number in filename.
+  - status: fixed
+    commit: 006f406
+    text: Instead of crashing, return 404 when an invalid series is queried by the API.
+  - status: fixed
+    commit: 6e0ae64
+    text: Fix API issue where anime movies would not return TvDB info.
