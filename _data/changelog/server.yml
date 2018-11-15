@@ -1,8 +1,40 @@
 releases:
+- version: 3.9.4
+  versionurl: 394
+  date: November 15, 2018
+  bloglink: NA
+  changes:
+  - status: added
+    commit: 0a05d26
+    text: Add basic Analytics API.
+  - status: changed
+    commit: 97e8f30
+    text: Handle File in Use better for systems without locking (due to filesystems or scripts).
+  - status: changed
+    commit: 462be92
+    text: Improve Permission Checking for drop folders
+  - status: changed
+    commit: b794153
+    text: Improvements to first time setup process
+  - status: changed
+    commit: 6508772
+    text: Properly get ALL updated anime when too many have updated
+  - status: fixed
+    commit: c5c9140
+    text: Fix MovieDB image getting
+  - status: fixed
+    commit: 5d5d89d
+    text: Fix Plex Linking
+  - status: fixed
+    commit: a9d2201
+    text: Fix an error with Year calculation in some cases
+  - status: fixed
+    commit: 23e0a08
+    text: Fix rare issues preventing startup
 - version: 3.9.3
   versionurl: 393
   date: August 20, 2018
-  bloglink: https://shokoanime.com/shoko-version-3-9-3-released/
+  bloglink: https://shokoanime.com/blog/shoko-version-3-9-3-released/
   changes:
   - status: changed
     issue: 749
@@ -25,7 +57,7 @@ releases:
 - version: 3.9.2
   versionurl: 392
   date: August 2, 2018
-  bloglink: https://shokoanime.com/shoko-version-3-9-2-released/
+  bloglink: https://shokoanime.com/blog/shoko-version-3-9-2-released/
   changes:
   - status: changed
     commit: f0a1f55
@@ -33,7 +65,7 @@ releases:
 - version: 3.9.1
   versionurl: 391
   date: July 30, 2018
-  bloglink: https://shokoanime.com/shoko-version-3-9-1-released/
+  bloglink: https://shokoanime.com/blog/shoko-version-3-9-1-released/
   changes:
   - status: changed
     issue: 742
@@ -83,7 +115,7 @@ releases:
 - version: 3.9.0
   versionurl: 390
   date: June 21, 2018
-  bloglink: https://shokoanime.com/shoko-version-3-9-0-released/
+  bloglink: https://shokoanime.com/blog/shoko-version-3-9-0-released/
   changes:
   - status: added
     issue: 312
@@ -166,32 +198,3 @@ releases:
   - status: removed
     commit: 14a38d0
     text: Removed MAL access and syncing.
-- version: 3.8.3
-  versionurl: 383
-  date: February 04, 2018
-  bloglink: https://shokoanime.com/shoko-version-3-8-3-released/
-  changes:
-  - status: added
-    issue: 695
-    text: Add option to manually input Image Folder location.
-  - status: added
-    commit: ef1cda5
-    text: Add AniDB resource links.
-  - status: changed
-    commit: d01f084
-    text: Move AniDB Image Downloading to General Queue and add rate limiter.
-  - status: changed
-    commit: 81d9a03
-    text: Update Plex linking allowing users to link to their accounts and select the library.
-  - status: fixed
-    commit: 8bbc1d3
-    text: Fix default AniDB MyList option for new databases that caused MyList entries to be removed if a physical file was not hashed.
-  - status: fixed
-    commit: d7cd9c6
-    text: Fix Legacy Renamer issue where leading zero was left off on episodes 1-9 when including episode number in filename.
-  - status: fixed
-    commit: 006f406
-    text: Instead of crashing, return 404 when an invalid series is queried by the API.
-  - status: fixed
-    commit: 6e0ae64
-    text: Fix API issue where anime movies would not return TvDB info.

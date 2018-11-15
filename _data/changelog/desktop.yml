@@ -1,4 +1,15 @@
 releases:
+- version: 3.9.4
+  versionurl: 394
+  date: November 15, 2018
+  bloglink: NA
+  changes:
+  - status: changed
+    commit: 939e044
+    text: Unrecognized Utility - Show AniDB's AnimeID next to each Series listed in the ListBox
+  - status: changed
+    commit: 939e044
+    text: Unrecognized Utility - Search for AniDB's AnimeID.
 - version: 3.9.3
   versionurl: 393
   date: August 20, 2018
@@ -70,20 +81,3 @@ releases:
   - status: removed
     commit: be497ff
     text: Removed MAL access and syncing.
-- version: 3.8.3
-  versionurl: 383
-  date: February 04, 2018
-  bloglink: https://shokoanime.com/shoko-version-3-8-3-released/
-  changes:
-  - status: changed
-    commit: 94bbbba
-    text: Update Plex linking allowing users to link to their accounts and select the library.
-  - status: changed
-    issue: 574
-    text: Update folder selection method.
-  - status: fixed
-    commit: c430faf
-    text: Fix for error when creating subgroups.
-  - status: fixed
-    commit: 398a105
-    text: Fixed an issue that caused an error when Shoko attempted to remove MAL links.
