@@ -1,7 +1,7 @@
 releases:
 - version: 3.9.4
   versionurl: 394
-  date: November 15, 2018
+  date: November 23, 2018
   bloglink: NA
   changes:
   - status: added

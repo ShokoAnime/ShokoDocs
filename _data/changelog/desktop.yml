@@ -1,7 +1,7 @@
 releases:
 - version: 3.9.4
   versionurl: 394
-  date: November 15, 2018
+  date: November 23, 2018
   bloglink: NA
   changes:
   - status: changed
@@ -10,6 +10,15 @@ releases:
   - status: changed
     commit: 939e044
     text: Unrecognized Utility - Search for AniDB's AnimeID.
+  - status: changed
+    commit: 9362ddf
+    text: Make AVDump not require mapped folders.
+  - status: changed
+    commit: 71c33d1
+    text: Allow the user to select preferred MPC client.
+  - status: fixed
+    commit: 498fbab
+    text: Fix Searching in Desktop.
 - version: 3.9.3
   versionurl: 393
   date: August 20, 2018
