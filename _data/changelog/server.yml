@@ -1,8 +1,8 @@
 releases:
 - version: 3.9.4
   versionurl: 394
-  date: November 23, 2018
-  bloglink: NA
+  date: December 31, 2018
+  bloglink: https://shokoanime.com/shoko-version-3-9-4-released/
   changes:
   - status: added
     commit: 0a05d26
