@@ -1,0 +1,15 @@
+{{ $fileDir := replace $.Page.File.Dir "\\" "/" }}
+{{ $fileName := $.Page.BaseFileName}}
+{{ $fileLocation := print $fileDir $fileName ".md"}}
+
+<div class="header-wrapper">
+	<h1>{{ .Title }}</h1>
+	{{ if ne .Params.hideGithubLink "Yes" }}
+	<div class="header-github">
+		<a href="https://github.com/shokoanime/Shokodocs/blob/master/{{ $fileLocation }}">
+			<i class="fab fa-github fa-2x"></i><p>Edit on GitHub</p></a>
+	</div>
+	{{ end }}
+</div>
+
+<hr class="header-margin">

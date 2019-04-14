@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{ partial "head.html" . }}
+
+<body>
+
+<div class="container">
+	<div class="row">
+
+		<div class="col-xl-2 nav-wrapper">
+
+			{{ partial "nav.html" . }}
+
+		</div>
+
+		<div class="col-xl-7 ml-md-auto">
+			<div class="content-box-right-nav">
+
+				{{ partial "header.html" . }}
+
+				{{ range $.Site.Data.changelog.desktop.releases }}
+
+				<div id="d{{ .versionURL  }}" class="card border changelog-wrapper">
+					<div class="card-body bb-1 bg-light changelog-header-wrapper">
+						<h4 class="mb-0">Version {{ .version }} </h4>
+						<div class="changelog-info">
+							<p class="changelog-date">{{ .date }}</p>
+							{{ if eq .blogLink "NA" }}
+							<p class="changelog-date">Release Notes Not Available</p>
+							{{ else }}
+							<p class="changelog-date"><a href="{{ .blogLink }}" target="_blank" rel="noopener">View Release Notes</a>
+							</p>
+							{{ end }}
+						</div>
+					</div>
+
+					<div class="changelog-body">
+
+						<table class="table table-bordered">
+							<thead>
+							<tr>
+								<th class="changelog-type">Type</th>
+								<th class="changelog-git">Git Link</th>
+								<th>Description</th>
+							</tr>
+							</thead>
+
+							<tbody>
+
+							{{ range .changes }}
+
+							<tr data-status="{{ .status }}">
+								<td><span class="badge badge-{{ .status }}">{{ .status | humanize }}</span></td>
+								<td>
+									{{ if .issue }}
+									<a href="https://github.com/ShokoAnime/ShokoServer/issues/{{ .issue }}" target="_blank">#{{ .issue }}</a>
+									{{ end }}
+									{{ if .commit }}
+									<a href="https://github.com/ShokoAnime/ShokoServer/commit/{{ .commit }}" target="_blank">{{ .commit }}</a>
+									{{ end }}
+								</td>
+								<td>{{ .text }}</td>
+							</tr>
+
+							{{ end }}
+
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+
+				{{ end }}
+
+			</div>
+
+			{{ partial "footer.html" . }}
+
+		</div>
+
+		<div class="col-xl-2 right-nav">
+			<div class="nav-links right-nav-link-wrapper">
+				<ul class="nav flex-column flex-nowrap">
+					{{ range $.Site.Data.changelog.desktop.releases }}
+					<li class="nav-item"><a class="nav-link right-nav-link" href="#d{{ .versionURL }}">Version {{ .version }} - {{ .date }}</a></li>
+					{{ end }}
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+	{{ partial "scripts.html" . }}
+
+</body>
+</html>

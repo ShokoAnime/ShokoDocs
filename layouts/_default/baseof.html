@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{ partial "head.html" . }}
+
+<body>
+
+<div class="container-fluid">
+	<div class="row">
+
+		<div class="col-xl-2 nav-wrapper">
+
+			{{ partial "nav.html" . }}
+
+		</div>
+
+		<div class="col-xl-9 ml-md-auto">
+			<div class="content-box">
+
+				{{ partial "header.html" . }}
+
+				{{ block "content" .}}
+				{{end}}
+
+			</div>
+
+			{{ partial "footer.html" . }}
+
+		</div>
+
+	</div>
+</div>
+
+{{ partial "scripts.html" . }}
+
+</body>
+</html>
