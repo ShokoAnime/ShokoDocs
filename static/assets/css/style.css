@@ -73,6 +73,7 @@ h4 {
 	height: 100%;
 	top: 0;
 	bottom: 0;
+	max-width: 300px;
 }
 
 /* Nav Header */
@@ -189,14 +190,12 @@ h4 {
 ---------------------------------------------
 */
 
-.right-nav-wrapper {
-	max-width: 260px;
-}
-
 .right-nav-link-wrapper {
-	position: sticky;
+	position: fixed;
 	top: 0;
-	padding: 10rem 0 5rem 1.5rem
+	margin-top: 4rem;
+	padding-left: 1.5rem;
+	padding-top: 0;
 }
 
 .right-nav-link {
@@ -389,10 +388,3 @@ h4 {
 ---------------------------------------------
 */
 
-@media screen and (min-width: 2560px) {
-
-	.content-box-right-nav {
-		margin-left: 0;
-	}
-	
-}
