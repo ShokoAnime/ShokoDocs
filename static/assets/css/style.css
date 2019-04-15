@@ -73,7 +73,8 @@ h4 {
 	height: 100%;
 	top: 0;
 	bottom: 0;
-	max-width: 300px;
+	width: auto;
+	max-width: 266px;
 }
 
 /* Nav Header */
@@ -160,7 +161,6 @@ h4 {
 	display: inline-block;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
 	transition: transform 0.5s, -webkit-transform 0.5s;
 	color: #fff;
 	margin-top: 2px;
@@ -190,7 +190,7 @@ h4 {
 }
 
 .nav-bottom-spacer {
-	padding: 0 1em;
+	padding: 0 0.99em;
 }
 
 /*
@@ -227,6 +227,11 @@ h4 {
 ---------------------------------------------
 */
 
+.right-nav-wrapper {
+	width: auto;
+	max-width: 256px;
+}
+
 .right-nav-link-wrapper {
 	position: fixed;
 	top: 0;
@@ -236,7 +241,7 @@ h4 {
 }
 
 .right-nav-link {
-	font-size: 0.85rem;
+	font-size: 0.8125rem;
 	color: #007bff;
 	padding: 0.21em 0;
 }
@@ -258,15 +263,15 @@ h4 {
 */
 
 .content-box {
-	padding: 3rem;
-	margin-left: -5rem;
-	max-width: 1500px;
+	padding: 3rem 1.5rem;
+	margin-left: -6rem;
+	max-width: 1101px;
 }
 
 .content-box-right-nav {
-	padding: 3rem;
-	margin-left: -5rem;
-	max-width: 1500px;
+	padding: 3rem 1.5rem;
+	margin-left: -8rem;
+	max-width: 1101px;
 }
 
 .anchor:before {
@@ -274,7 +279,7 @@ h4 {
 	content: '#';
 	font-weight: 500;
 	opacity: 0.5;
-	padding-right: 1.5rem;
+	padding-right: 4rem;
 	position: absolute;
 	right: 101%;
 	vertical-align: text-bottom;
@@ -399,10 +404,17 @@ h4 {
 */
 
 .footer-wrapper {
-	padding: 1rem 3rem;
+	padding: 1rem 1.5rem;
 	font-size: 0.75em;
-	margin-left: -5rem;
-	max-width: 1500px;
+	margin-left: -6rem;
+	max-width: 1101px;
+}
+
+.footer-wrapper-right-nav {
+	padding: 1rem 1.5rem;
+	font-size: 0.75em;
+	margin-left: -8rem;
+	max-width: 1101px;
 }
 
 .footer-info {

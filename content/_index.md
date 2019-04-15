@@ -43,15 +43,3 @@ To create uniformity, we will be enforcing the following standards for any submi
 * Code commenting is optional.
 
 If you have questions, please contact us on Discord server using the **Support** link at the top.
-
-#### Standards1
-
-To create uniformity, we will be enforcing the following standards for any submissions to the documentation.
-
-* Indenting is **1 Tab / 2 Spaces**.
-* Unless already used, do not use abbreviations.
-* All explanations of functions must be clear and detailed.
-* Provide examples when and if needed.
-* Code commenting is optional.
-
-If you have questions, please contact us on Discord server using the **Support** link at the top.
