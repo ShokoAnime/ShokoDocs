@@ -4,3 +4,4 @@ title = "Shoko Docs"
 
 [outputs]
   home = ["HTML", "JSON"]
+

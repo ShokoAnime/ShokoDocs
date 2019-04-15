@@ -1,6 +1,6 @@
 +++
 title = "Windows Install"
-slug = "install-windows"
+lastMod = 2019-04-12
 markup = "mmark"
 +++
 

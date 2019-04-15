@@ -16,49 +16,53 @@ var fuseOptions = {
 	]
 };
 
-
-
 var searchQuery = param("s");
 if(searchQuery){
 	$("#search-query").val(searchQuery);
 	executeSearch(searchQuery);
 }else {
-	$('#search-results').append("<p>Please use the seaatch box on the left.</p>");
+	$('#search-results').append("<p>Please use the search box on the left.</p>");
 }
 
-
-
-function executeSearch(searchQuery){
-	$.getJSON( "/index.json", function( data ) {
+function executeSearch(searchQuery) {
+	$.getJSON("/index.json", function (data) {
 		var pages = data;
 		var fuse = new Fuse(pages, fuseOptions);
 		var result = fuse.search(searchQuery);
-		console.log({"matches":result});
-		if(result.length > 0){
+		console.log({
+			"matches": result
+		});
+		$('#search-results').html("")
+		if (result.length > 0) {
 			populateResults(result);
-		}else{
+			renderMathInElement(document.getElementById('search-results'));
+		} else {
 			$('#search-results').append(`<p>Sorry, your search for <strong>${searchQuery}</strong> returned no matches.</p>`);
 		}
 	});
 }
 
-function populateResults(result){
-	$.each(result,function(key,value){
-		var contents= value.item.contents;
+function populateResults(result) {
+	$.each(result, function (key, value) {
+		var contents = value.item.contents;
 		var snippet = "";
-		var snippetHighlights=[];
-		var tags =[];
-		if( fuseOptions.tokenize ){
+		var snippetHighlights = [];
+		var tags = [];
+		if (fuseOptions.tokenize) {
 			snippetHighlights.push(searchQuery);
-		}else{
-			$.each(value.matches,function(matchKey,mvalue){
-				if(mvalue.key == "tags" || mvalue.key == "categories" ){
+			$.each(value.matches, function (matchKey, mvalue) {
+				if (mvalue.key == "tags" || mvalue.key == "categories") {
 					snippetHighlights.push(mvalue.value);
-				}else if(mvalue.key == "contents"){
-					start = mvalue.indices[0][0]-summaryInclude>0?mvalue.indices[0][0]-summaryInclude:0;
-					end = mvalue.indices[0][1]+summaryInclude<contents.length?mvalue.indices[0][1]+summaryInclude:contents.length;
-					snippet += contents.substring(start,end);
-					snippetHighlights.push(mvalue.value.substring(mvalue.indices[0][0],mvalue.indices[0][1]-mvalue.indices[0][0]+1));
+				} else if (mvalue.key == "contents") {
+					let ind = contents.indexOf(searchQuery)
+					let start = ind - summaryInclude > 0 ? ind - summaryInclude : 0
+					let end = ind + searchQuery.length + summaryInclude < contents.length ? ind + searchQuery.length + summaryInclude : contents.length
+					snippet += contents.substring(start, end);
+					if (ind > -1) {
+						snippetHighlights.push(contents.substring(ind, ind + searchQuery.length))
+					} else {
+						snippetHighlights.push(mvalue.value.substring(mvalue.indices[0][0], mvalue.indices[0][1] - mvalue.indices[0][0] + 1));
+					}
 				}
 			});
 		}

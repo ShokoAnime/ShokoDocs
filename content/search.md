@@ -1,9 +1,9 @@
 +++
 title = "Search Results"
-publishDate = 2019-04-11
 lastMod = 2019-04-12
-hideGithubLink = "Yes"
 layout = "search"
+markup = "mmark"
+hideGithubLink = "Yes"
 [sitemap]
 priority = 0.1
 +++

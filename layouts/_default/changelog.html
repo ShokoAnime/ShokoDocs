@@ -19,7 +19,13 @@
 
 				{{ partial "header.html" . }}
 
-				{{ range $.Site.Data.changelog.desktop.releases }}
+				{{ if eq .URL "/changelog/" }}
+				{{ .Content }}
+				{{ end }}
+
+				{{ $type := string .Params.changelogType }}
+
+				{{ range (index .Site.Data.changelog $type).releases }}
 
 				<div id="d{{ .versionURL  }}" class="card border changelog-wrapper">
 					<div class="card-body bb-1 bg-light changelog-header-wrapper">
@@ -82,9 +88,13 @@
 		<div class="col-xl-2">
 			<div class="nav-links right-nav-link-wrapper">
 				<ul class="nav flex-column flex-nowrap">
-					{{ range $.Site.Data.changelog.desktop.releases }}
+
+					{{ range (index .Site.Data.changelog $type).releases }}
+
 					<li class="nav-item"><a class="nav-link right-nav-link" href="#d{{ .versionURL }}">Version {{ .version }} - {{ .date }}</a></li>
+
 					{{ end }}
+
 				</ul>
 			</div>
 		</div>
@@ -92,6 +102,8 @@
 	</div>
 
 	{{ partial "scripts.html" . }}
+
+</div>
 
 </body>
 </html>

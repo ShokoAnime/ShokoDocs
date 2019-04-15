@@ -1,6 +1,5 @@
 +++
 title = "Shoko Docs"
-publishDate = 2019-04-11
 lastMod = 2019-04-12
 markup = "mmark"
 +++
