@@ -104,33 +104,70 @@ h4 {
 }
 
 .nav {
-	font-family: "Barlow", sans-serif;
-	font-size: 1.3rem;
-	font-weight: 500;
+	display: -webkit-box;
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
 }
 
-.nav-link {
-	color: #FFFFFF;
-	font-weight: 500;
-	padding: .5rem 0;
+.nav-sidebar {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	flex-direction: column;
+	font-weight: 400;
 }
 
-.nav-link.active {
-	color: #50a1ff;
+.nav-sidebar .nav {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	flex-direction: column;
+	font-size: 0.875rem;
+	margin-left: 1rem;
+	margin-top: 0.5rem;
+	flex-wrap: nowrap;
+	display: none;
 }
 
-.nav-link:hover {
-	color: #50a1ff;
+.nav-sidebar .nav-link {
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	padding: 3px 0;
+	line-height: 1.5;
+	color: #fff;
 }
 
-.nav-link[data-toggle].collapsed:after {
-	content: "▾";
-	padding-left: 1em
+.nav-sidebar .nav-item {
+	margin: 4px 0;
+	padding-right: 5px;
+	overflow: hidden;
+	flex-shrink: 0;
+	font-weight: 400;
+	font-size: 1.2rem;
 }
 
-.nav-link[data-toggle]:not(.collapsed):after {
-	content: "▴";
-	padding-left: 1em
+.nav-sidebar .nav-angle.rotate {
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.nav-sidebar .nav-angle {
+	font-style: normal;
+	font-size: 1rem;
+	display: inline-block;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	transition: transform 0.5s, -webkit-transform 0.5s;
+	color: #fff;
+	margin-top: 2px;
+}
+
+.nav-sidebar .nav-angle::before {
+	content: ">";
 }
 
 /* Bottom Nav Links */
@@ -381,10 +418,3 @@ h4 {
 	margin-left: auto;
 	margin-top: 1rem
 }
-
-/*
----------------------------------------------
-    Media Queries 
----------------------------------------------
-*/
-

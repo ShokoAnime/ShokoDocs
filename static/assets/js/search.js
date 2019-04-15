@@ -1,26 +1,26 @@
-summaryInclude=60;
+summaryInclude = 60;
 var fuseOptions = {
 	shouldSort: true,
 	includeMatches: true,
 	threshold: 0.0,
-	tokenize:true,
+	tokenize: true,
 	location: 0,
 	distance: 100,
 	maxPatternLength: 32,
 	minMatchCharLength: 1,
 	keys: [
-		{name:"title",weight:0.8},
-		{name:"contents",weight:0.5},
-		{name:"tags",weight:0.3},
-		{name:"categories",weight:0.3}
+		{name: "title", weight: 0.8},
+		{name: "contents", weight: 0.5},
+		{name: "tags", weight: 0.3},
+		{name: "categories", weight: 0.3}
 	]
 };
 
 var searchQuery = param("s");
-if(searchQuery){
+if (searchQuery) {
 	$("#search-query").val(searchQuery);
 	executeSearch(searchQuery);
-}else {
+} else {
 	$('#search-results').append("<p>Please use the search box on the left.</p>");
 }
 
@@ -29,55 +29,54 @@ function executeSearch(searchQuery) {
 		var pages = data;
 		var fuse = new Fuse(pages, fuseOptions);
 		var result = fuse.search(searchQuery);
-		console.log({
-			"matches": result
-		});
-		$('#search-results').html("")
+		console.log({"matches": result});
 		if (result.length > 0) {
 			populateResults(result);
-			renderMathInElement(document.getElementById('search-results'));
 		} else {
 			$('#search-results').append(`<p>Sorry, your search for <strong>${searchQuery}</strong> returned no matches.</p>`);
 		}
 	});
 }
 
-function populateResults(result) {
-	$.each(result, function (key, value) {
-		var contents = value.item.contents;
+function populateResults(result){
+	$.each(result,function(key,value){
+		var contents= value.item.contents;
 		var snippet = "";
-		var snippetHighlights = [];
-		var tags = [];
-		if (fuseOptions.tokenize) {
+		var snippetHighlights=[];
+		var tags =[];
+		if( fuseOptions.tokenize ){
 			snippetHighlights.push(searchQuery);
-			$.each(value.matches, function (matchKey, mvalue) {
-				if (mvalue.key == "tags" || mvalue.key == "categories") {
+		}else{
+			$.each(value.matches,function(matchKey,mvalue){
+				if(mvalue.key == "tags" || mvalue.key == "categories" ){
 					snippetHighlights.push(mvalue.value);
-				} else if (mvalue.key == "contents") {
-					let ind = contents.indexOf(searchQuery)
-					let start = ind - summaryInclude > 0 ? ind - summaryInclude : 0
-					let end = ind + searchQuery.length + summaryInclude < contents.length ? ind + searchQuery.length + summaryInclude : contents.length
-					snippet += contents.substring(start, end);
-					if (ind > -1) {
-						snippetHighlights.push(contents.substring(ind, ind + searchQuery.length))
-					} else {
-						snippetHighlights.push(mvalue.value.substring(mvalue.indices[0][0], mvalue.indices[0][1] - mvalue.indices[0][0] + 1));
-					}
+				}else if(mvalue.key == "contents"){
+					start = mvalue.indices[0][0]-summaryInclude>0?mvalue.indices[0][0]-summaryInclude:0;
+					end = mvalue.indices[0][1]+summaryInclude<contents.length?mvalue.indices[0][1]+summaryInclude:contents.length;
+					snippet += contents.substring(start,end);
+					snippetHighlights.push(mvalue.value.substring(mvalue.indices[0][0],mvalue.indices[0][1]-mvalue.indices[0][0]+1));
 				}
 			});
 		}
 
-		if(snippet.length<1){
-			snippet += contents.substring(0,summaryInclude*2);
+		if (snippet.length < 1) {
+			snippet += contents.substring(0, summaryInclude * 2);
 		}
 		//pull template from hugo templarte definition
 		var templateDefinition = $('#search-result-template').html();
 		//replace values
-		var output = render(templateDefinition,{key:key,title:value.item.title,link:value.item.permalink,tags:value.item.tags,categories:value.item.categories,snippet:snippet});
+		var output = render(templateDefinition, {
+			key: key,
+			title: value.item.title,
+			link: value.item.permalink,
+			tags: value.item.tags,
+			categories: value.item.categories,
+			snippet: snippet
+		});
 		$('#search-results').append(output);
 
-		$.each(snippetHighlights,function(snipkey,snipvalue){
-			$("#summary-"+key).mark(snipvalue);
+		$.each(snippetHighlights, function (snipkey, snipvalue) {
+			$("#summary-" + key).mark(snipvalue);
 		});
 
 	});
@@ -88,17 +87,17 @@ function param(name) {
 }
 
 function render(templateString, data) {
-	var conditionalMatches,conditionalPattern,copy;
+	var conditionalMatches, conditionalPattern, copy;
 	conditionalPattern = /\$\{\s*isset ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
 	//since loop below depends on re.lastInxdex, we use a copy to capture any manipulations whilst inside the loop
 	copy = templateString;
 	while ((conditionalMatches = conditionalPattern.exec(templateString)) !== null) {
-		if(data[conditionalMatches[1]]){
+		if (data[conditionalMatches[1]]) {
 			//valid key, remove conditionals, leave contents.
-			copy = copy.replace(conditionalMatches[0],conditionalMatches[2]);
-		}else{
+			copy = copy.replace(conditionalMatches[0], conditionalMatches[2]);
+		} else {
 			//not valid, remove entire section
-			copy = copy.replace(conditionalMatches[0],'');
+			copy = copy.replace(conditionalMatches[0], '');
 		}
 	}
 	templateString = copy;

@@ -26,7 +26,7 @@ Shoko Docs, like Shoko itself is open-source and hosted on **GitHub**. We encour
 
 #### Languages Used
 
-Shoko Docs is built using {{< external-link "Bootstrap 4.3" "https://getbootstrap.com/" >}}and is written in the following languages. While you are not required to know them, please be familiar with them when making any changes.
+Shoko Docs is built using {{< external-link "Bootstrap 4.3" "https://getbootstrap.com/" >}} and is written in the following languages. While you are not required to know them, please be familiar with them when making any changes.
 
 * HTML5
 * CSS3
