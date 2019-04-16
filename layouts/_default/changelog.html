@@ -24,11 +24,12 @@
 				{{ end }}
 
 				{{ $type := string .Params.changelogType }}
+				{{ $gitLink :=(index .Site.Data.changelog $type).githubLink }}
 
 				{{ range (index .Site.Data.changelog $type).releases }}
 
-				<div id="d{{ .versionURL  }}" class="card border changelog-wrapper">
-					<div class="card-body bb-1 bg-light changelog-header-wrapper">
+				<div id="v{{ .versionURL  }}" class="card border changelog-wrapper">
+					<div class="card-body changelog-header-wrapper">
 						<h4 class="mb-0">Version {{ .version }} </h4>
 						<div class="changelog-info">
 							<p class="changelog-date">{{ .date }}</p>
@@ -60,10 +61,10 @@
 								<td><span class="badge badge-{{ .status }}">{{ .status | humanize }}</span></td>
 								<td>
 									{{ if .issue }}
-									<a href="https://github.com/ShokoAnime/ShokoServer/issues/{{ .issue }}" target="_blank">#{{ .issue }}</a>
+									<a href="{{$gitLink}}issues/{{ .issue }}" target="_blank">#{{ .issue }}</a>
 									{{ end }}
 									{{ if .commit }}
-									<a href="https://github.com/ShokoAnime/ShokoServer/commit/{{ .commit }}" target="_blank">{{ .commit }}</a>
+									<a href="{{$gitLink}}commit/{{ .commit }}" target="_blank">{{ .commit }}</a>
 									{{ end }}
 								</td>
 								<td>{{ .text }}</td>
@@ -86,12 +87,12 @@
 		</div>
 
 		<div class="col-xl-2 right-nav-wrapper">
-			<div class="nav-links right-nav-link-wrapper">
+			<div class="nav-links-wrapper right-nav-link-wrapper">
 				<ul class="nav flex-column flex-nowrap">
 
 					{{ range (index .Site.Data.changelog $type).releases }}
 
-					<li class="nav-item"><a class="nav-link right-nav-link" href="#d{{ .versionURL }}">Version {{ .version }} - {{ .date }}</a></li>
+					<li class="nav-item"><a class="nav-link right-nav-link" href="#v{{ .versionURL }}">Version {{ .version }} - {{ .date }}</a></li>
 
 					{{ end }}
 

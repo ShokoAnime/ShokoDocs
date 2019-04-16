@@ -1,8 +1,9 @@
 {
+  "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
   {
     "version": "3.9.4",
-    "versionURL": 394,
+    "versionURL": "394",
     "date": "December 31, 2018",
     "blogLink": "https://shokoanime.com/shoko-version-3-9-4-released/",
     "changes": [
@@ -28,7 +29,7 @@
     },
     {
       "status": "changed",
-      "commit": 6508772,
+      "commit": "6508772",
       "text": "Properly get ALL updated anime when too many have updated"
     },
     {
@@ -55,13 +56,13 @@
   },
   {
     "version": "3.9.3",
-    "versionURL": 393,
+    "versionURL": "393",
     "date": "August 20, 2018",
     "blogLink": "https://shokoanime.com/blog/shoko-version-3-9-3-released/",
     "changes": [
     {
       "status": "changed",
-      "issue": 749,
+      "issue": "749",
       "text": "Error with creating ssl/tls secure channel."
     },
     {
@@ -93,7 +94,7 @@
   },
   {
     "version": "3.9.2",
-    "versionURL": 392,
+    "versionURL": "392",
     "date": "August 2, 2018",
     "blogLink": "https://shokoanime.com/blog/shoko-version-3-9-2-released/",
     "changes": [
@@ -106,18 +107,18 @@
   },
   {
     "version": "3.9.1",
-    "versionURL": 391,
+    "versionURL": "391",
     "date": "July 30, 2018",
     "blogLink": "https://shokoanime.com/blog/shoko-version-3-9-1-released/",
     "changes": [
     {
       "status": "changed",
-      "issue": 742,
+      "issue": "742",
       "text": "CommandRequest query optimisations."
     },
     {
       "status": "changed",
-      "issue": 747,
+      "issue": "747",
       "text": "Fixed ban timer, ban time now extends on subsequent bans."
     },
     {
@@ -147,7 +148,7 @@
     },
     {
       "status": "fixed",
-      "commit": 3511693,
+      "commit": "3511693",
       "text": "Automatically create and initialize SQLite DB on first run."
     },
     {
@@ -157,7 +158,7 @@
     },
     {
       "status": "fixed",
-      "commit": 6118075,
+      "commit": "6118075",
       "text": "Null Check some things in File Quality Filter."
     },
     {
@@ -189,13 +190,13 @@
   },
   {
     "version": "3.9.0",
-    "versionURL": 390,
+    "versionURL": "390",
     "date": "June 21, 2018",
     "blogLink": "https://shokoanime.com/blog/shoko-version-3-9-0-released/",
     "changes": [
     {
       "status": "added",
-      "issue": 312,
+      "issue": "312",
       "text": "Add Storage state \"remote storage\" to AniDB storage state list.  Added Environment variable configuration on first run."
     },
     {
@@ -260,32 +261,32 @@
     },
     {
       "status": "fixed",
-      "issue": 312,
+      "issue": "312",
       "text": "Allow \"Unknown\" storage state in AniDB."
     },
     {
       "status": "fixed",
-      "issue": 700,
+      "issue": "700",
       "text": "Fixed an issue with pre-populated usernames causing issues when switching languages in Shoko and creating a new database."
     },
     {
       "status": "fixed",
-      "issue": 708,
+      "issue": "708",
       "text": "Fixed an issue where Cloud Accounts could not be added or managed."
     },
     {
       "status": "fixed",
-      "issue": 719,
+      "issue": "719",
       "text": "Fixed an issues when attempting to update AniDB MyList."
     },
     {
       "status": "fixed",
-      "issue": 722,
+      "issue": "722",
       "text": "Fixed an issues with Renamer failing to move all files."
     },
     {
       "status": "fixed",
-      "issue": 730,
+      "issue": "730",
       "text": "Fix updating watch status on AniDB MyList."
     },
     {
@@ -300,7 +301,7 @@
     },
     {
       "status": "fixed",
-      "commit": null,
+      "commit": "31e2046",
       "text": "Prevent clearing command queues freezing the UI."
     },
     {
@@ -315,7 +316,7 @@
     },
     {
       "status": "fixed",
-      "commit": null,
+      "commit": "9e47308",
       "text": "Support new trakt authentication."
     },
     {

@@ -4,6 +4,11 @@
 ---------------------------------------------
 */
 
+:root {
+	--gradient: linear-gradient(-20deg, #2b5876 0%, #4f5b7f 100%);;
+	--left-nav-link-color: #50a1ff
+}
+
 a {
 	font-weight: 600;
 }
@@ -21,7 +26,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+h1, h2, h3, h4, h5, h6 {
 	color: #323d47;
 	font-family: "Barlow", sans-serif;
 	font-weight: 400;
@@ -62,7 +67,7 @@ h4 {
 
 
 .nav-wrapper {
-	background-image: linear-gradient(-20deg, #2b5876 0%, #4f5b7f 100%);
+	background-image: var(--gradient);
 	border-right: 1px solid #ececec;
 	display: flex;
 	-webkit-box-orient: vertical;
@@ -74,7 +79,7 @@ h4 {
 	top: 0;
 	bottom: 0;
 	width: auto;
-	max-width: 266px;
+	max-width: 305px;
 }
 
 /* Nav Header */
@@ -94,23 +99,14 @@ h4 {
 }
 
 .nav-title > a > h3:hover {
-	color: #50a1ff;
+	color: var(--left-nav-link-color);
 }
 
 /* Nav Links */
 
-.nav-links {
+.nav-links-wrapper {
 	flex-grow: 1;
 	padding-top: 2em;
-}
-
-.nav {
-	display: -webkit-box;
-	display: flex;
-	flex-wrap: wrap;
-	padding-left: 0;
-	margin-bottom: 0;
-	list-style: none;
 }
 
 .nav-sidebar {
@@ -121,9 +117,6 @@ h4 {
 }
 
 .nav-sidebar .nav {
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	flex-direction: column;
 	font-size: 0.875rem;
 	margin-left: 1rem;
 	margin-top: 0.5rem;
@@ -132,13 +125,20 @@ h4 {
 }
 
 .nav-sidebar .nav-link {
+	-webkit-box-pack: justify;
 	display: -webkit-box;
 	display: flex;
-	-webkit-box-pack: justify;
 	justify-content: space-between;
 	padding: 3px 0;
-	line-height: 1.5;
 	color: #fff;
+}
+
+.nav-link:hover {
+	color: var(--left-nav-link-color);
+}
+
+.nav-link.active {
+	color: var(--left-nav-link-color);
 }
 
 .nav-sidebar .nav-item {
@@ -146,7 +146,6 @@ h4 {
 	padding-right: 5px;
 	overflow: hidden;
 	flex-shrink: 0;
-	font-weight: 400;
 	font-size: 1.2rem;
 }
 
@@ -186,7 +185,7 @@ h4 {
 }
 
 .nav-bottom-wrapper > a:hover {
-	color: #50a1ff;
+	color: var(--left-nav-link-color);
 }
 
 .nav-bottom-spacer {
@@ -246,6 +245,14 @@ h4 {
 	padding: 0.21em 0;
 }
 
+.right-nav-link:hover {
+	color: #0056b3;
+}
+
+.right-nav-link.active {
+	color: #0056b3;
+}
+
 .right-nav-link:before {
 	content: '';
 	position: absolute;
@@ -275,7 +282,7 @@ h4 {
 }
 
 .anchor:before {
-	color: #50a1ff;
+	color: var(--left-nav-link-color);
 	content: '#';
 	font-weight: 500;
 	opacity: 0.5;
@@ -312,7 +319,7 @@ h4 {
 	align-items: center;
 	-webkit-box-pack: justify;
 	justify-content: space-between;
-	background-image: linear-gradient(-20deg, #2b5876 0%, #4f5b7f 100%);
+	background-image: var(--gradient);
 	color: #fff;
 	padding: 1rem;
 }
@@ -334,7 +341,7 @@ h4 {
 }
 
 .changelog-date > a:hover {
-	color: #50a1ff;
+	color: var(--left-nav-link-color);
 }
 
 .changelog-info {

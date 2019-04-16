@@ -1,8 +1,9 @@
 {
+  "githubLink": "https://github.com/ShokoAnime/MyAnime3/",
   "releases": [
   {
     "version": "3.7.2",
-    "versionURL": 372,
+    "versionURL": "372",
     "date": "August 18, 2018",
     "blogLink": "https://shokoanime.com/my-anime-3-version-3-7-2-released/",
     "changes": [
@@ -23,17 +24,17 @@
     },
     {
       "status": "fixed",
-      "issue": 68,
+      "issue": "68",
       "text": "Fix multiple issues when displaying star ratings."
     },
     {
       "status": "fixed",
-      "issue": 69,
+      "issue": "69",
       "text": "After watching an episode, the episode overview remains empty."
     },
     {
       "status": "fixed",
-      "issue": 70,
+      "issue": "70",
       "text": "Unable to set all episodes to \"Unwatched\" while in Episode list."
     },
     {
@@ -55,7 +56,7 @@
   },
   {
     "version": "3.7.1.0",
-    "versionURL": 3710,
+    "versionURL": "3710",
     "date": "December 24, 2017",
     "blogLink": "NA",
     "changes": [
@@ -88,7 +89,7 @@
   },
   {
     "version": "3.7.0.3",
-    "versionURL": 3703,
+    "versionURL": "3703",
     "date": "January 01, 2017",
     "blogLink": "NA",
     "changes": [
@@ -126,7 +127,7 @@
   },
   {
     "version": "3.7.0.1",
-    "versionURL": 3701,
+    "versionURL": "3701",
     "date": "December 29, 2016",
     "blogLink": "https://shokoanime.com/shoko-version-3-7-0-1-released/",
     "changes": [
