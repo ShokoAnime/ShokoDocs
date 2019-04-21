@@ -1,8 +1,8 @@
 +++
 title = "Shoko Server Changelog"
+subtitle = "Subtitle"
 lastMod = 2018-12-31
 layout  = "changelog"
-markup = "mmark"
 changelogType = "server"
 +++
 

@@ -1,23 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 {{ partial "head.html" . }}
 
 <body>
 
-<div class="container">
+{{ partial "header.html" . }}
+
+<div class="container container-wrapper">
 	<div class="row">
 
-		<div class="col-xl-2 nav-wrapper">
+		<div class="col-xl-2 nav-column">
+			<div class="nav-wrapper">
 
-			{{ partial "nav.html" . }}
+				{{ partial "nav.html" . }}
 
+			</div>
 		</div>
 
-		<div class="col-xl-7 ml-md-auto">
-			<div class="content-box-right-nav">
-
-				{{ partial "header.html" . }}
+		<div class="col-xl-8">
+			<div class="content-wrapper">
 
 				{{ if eq .URL "/changelog/" }}
 				{{ .Content }}
@@ -81,18 +83,17 @@
 				{{ end }}
 
 			</div>
-
-			{{ partial "footer-right-nav.html" . }}
-
 		</div>
 
-		<div class="col-xl-2 right-nav-wrapper">
-			<div class="nav-links-wrapper right-nav-link-wrapper">
+		<div class="col-xl-2 page-nav-wrapper">
+			<div class="nav-links-wrapper page-nav-link-wrapper">
 				<ul class="nav flex-column flex-nowrap">
+
+					<a class="nav-link page-nav-title">Lastest Releases</a>
 
 					{{ range (index .Site.Data.changelog $type).releases }}
 
-					<li class="nav-item"><a class="nav-link right-nav-link" href="#v{{ .versionURL }}">Version {{ .version }} - {{ .date }}</a></li>
+					<li class="nav-item"><a class="nav-link page-nav-link" href="#v{{ .versionURL }}">Version {{ .version }} - {{ .date }}</a></li>
 
 					{{ end }}
 
@@ -101,10 +102,10 @@
 		</div>
 
 	</div>
-
-	{{ partial "scripts.html" . }}
-
 </div>
+
+{{ partial "footer.html" . }}
+{{ partial "scripts.html" . }}
 
 </body>
 </html>

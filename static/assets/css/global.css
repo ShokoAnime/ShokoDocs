@@ -1,0 +1,431 @@
+/*
+---------------------------------------------
+    CSS Variables
+---------------------------------------------
+*/
+
+:root {
+	--border-color: #e0e5e6;
+	--hyperlink-color: #005CBF;
+	--text-color: #333;
+}
+
+/*
+---------------------------------------------
+    General
+---------------------------------------------
+*/
+
+a {
+	color: var(--hyperlink-color);
+	font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+}
+
+h2, h3, h4, h5, h6 {
+	margin-bottom: 1rem;
+}
+
+body {
+	-webkit-box-direction: normal;
+	-webkit-box-orient: vertical;
+	color: var(--text-color);
+	display: flex;
+	flex-direction: column;
+	font-family: 'Nunito', sans-serif;
+	min-height: 100vh;
+}
+
+.container-wrapper {
+	-webkit-box-flex: 1;
+	flex-grow: 1;
+	margin-bottom: 5rem;
+	margin-top: 5rem;
+	max-width: 1720px;
+}
+
+
+/*
+---------------------------------------------
+    Header
+---------------------------------------------
+*/
+
+/* Site Header */
+
+.header-wrapper {
+	background-image: linear-gradient(-20deg, #2b5876 0%, #4f5b7f 100%);
+	height: 100px;
+}
+
+.header-info {
+	display: flex;
+	padding: 1.5rem 2rem;
+	width: 100%;
+}
+
+.header-title {
+	color: #ffffff;
+	padding-top: 0.5rem;
+}
+
+.header-title:hover {
+	color: #5DADE2;
+	text-decoration: none;
+}
+
+.header-search {
+	margin-left: auto;
+	max-width: 400px;
+	padding-top: 0.5rem;
+}
+
+/* Page Header */
+
+.page-wrapper {
+	background-color: #f9f9fb;
+	border-bottom: var(--border-color) 1px solid;
+	height: 160px;
+}
+
+.page-info {
+	display: block;
+	padding: 2rem 0;
+	text-align: center;
+}
+
+.page-subtitle {
+	font-size: 1.125rem;
+	padding-top: 0.5rem;
+}
+
+.page-subtitle-wrapper {
+	display: flex;
+	justify-content: center;
+	padding-top: 0.5rem;
+}
+
+.page-update-info {
+	padding-right: 1rem;
+	padding-top: 0.3rem;
+}
+
+.page-github-info {
+	color: var(--hyperlink-color);
+	display: flex;
+}
+
+.page-github-link {
+	padding-left: 0.5rem;
+	padding-top: 0.3rem;
+}
+
+/*
+---------------------------------------------
+    Left Navigation
+---------------------------------------------
+*/
+
+.nav-column {
+	border-right: var(--border-color) 1px solid;
+	max-width: 270px;
+	padding-left: 0;
+	padding-right: 20px;
+}
+
+.nav-wrapper {
+	align-self: flex-start;
+	position: sticky;
+	top: 50px;
+}
+
+/* Nav Menu */
+
+.nav-sidebar {
+	-webkit-box-direction: normal;
+	-webkit-box-orient: vertical;
+	flex-direction: column;
+	font-weight: 400;
+}
+
+.nav-sidebar .nav {
+	display: none;
+	flex-wrap: nowrap;
+	font-size: 0.875rem;
+	margin-left: 0.75rem;
+}
+
+.nav-sidebar .nav-link {
+	-webkit-box-pack: justify;
+	color: var(--text-color);
+	display: flex;
+	justify-content: space-between;
+	padding: 3px 0;
+}
+
+.nav-title-wrapper .nav-link {
+	margin-left: 0.75rem;
+}
+
+.nav-link:hover {
+	color: var(--hyperlink-color);
+}
+
+.nav-link.active {
+	color: var(--hyperlink-color);
+}
+
+.nav-sidebar .nav-item {
+	flex-shrink: 0;
+	margin: 4px 0;
+	overflow: hidden;
+	padding-right: 5px;
+}
+
+.nav-item > a {
+	color: var(--text-color);
+}
+
+.nav-item > a:hover {
+	color: var(--hyperlink-color);
+}
+
+.nav-sidebar .nav-angle.rotate {
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.nav-sidebar .nav-angle {
+	display: inline-block;
+	font-size: 1rem;
+	font-style: normal;
+	margin-top: 2px;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s, -webkit-transform 0.5s;
+	transition: -webkit-transform 0.5s;
+}
+
+.nav-sidebar .nav-angle::before {
+	content: ">";
+}
+
+a.nav-title {
+	color: var(--hyperlink-color) !important;
+	font-weight: 700;
+}
+
+/*
+---------------------------------------------
+    Content Area
+---------------------------------------------
+*/
+
+.content-wrapper {
+	max-width: 1117px;
+	padding: 0 3rem;
+}
+
+/*
+---------------------------------------------
+    Changelog
+---------------------------------------------
+*/
+
+.changelog-wrapper {
+	margin-bottom: 3em;
+}
+
+.changelog-header-wrapper {
+	align-items: center;
+	background-color: #f9f9fb;
+	border-bottom: none !important;
+	border-top: none !important;
+	-webkit-box-align: center;
+	-webkit-box-pack: justify;
+	color: var(--text-color);
+	display: -webkit-box;
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+}
+
+.changelog-info {
+	align-items: flex-end;
+	-webkit-box-align: center;
+	-webkit-box-pack: justify;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.changelog-date {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.changelog-body {
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+}
+
+.changelog-body > .table {
+	margin-bottom: 0;
+}
+
+.changelog-type {
+	width: 0.5em;
+}
+
+.changelog-git {
+	width: 0.5em;
+}
+
+/* Changelog Badges */
+
+.badge {
+	padding: 0.5em;
+	width: 70px;
+}
+
+.badge-added {
+	background-color: #3cd458;
+	color: #fff;
+}
+
+.badge-changed {
+	background-color: #50a1ff;
+	color: #fff;
+}
+
+.badge-fixed {
+	background-color: #ffba00;
+	color: #fff;
+}
+
+.badge-removed {
+	background-color: #ff4954;
+	color: #fff;
+}
+
+/* Changelog Table */
+
+.table-bordered tbody tr:nth-of-type(odd) {
+	background-color: #E9F0F8;
+}
+
+/*
+---------------------------------------------
+    Footer
+---------------------------------------------
+*/
+
+.footer-wrapper {
+	background-color: #f9f9fb;
+	border-top: var(--border-color) 1px solid;
+	height: 80px;
+	position: relative;
+	width: 100%;
+}
+
+/*
+---------------------------------------------
+    Page Navigation
+---------------------------------------------
+*/
+
+.page-nav-wrapper {
+	max-width: 265px;
+	padding-left: 0;
+}
+
+.page-nav-link-wrapper {
+	padding-left: 1.5rem;
+	padding-top: 0;
+	position: sticky;
+	top: 50px;
+}
+
+.page-nav-title {
+	color: var(--hyperlink-color) !important;
+	font-size: 0.8125rem;
+	padding: 0.21em 0;
+}
+
+.page-nav-link {
+	color: var(--hyperlink-color);
+	font-size: 0.8125rem;
+	padding: 0.21em 0;
+}
+
+.page-nav-link:hover {
+	color: var(--hyperlink-color);
+}
+
+.page-nav-link.active {
+	color: var(--hyperlink-color);
+}
+
+.page-nav-link:before {
+	background-color: #eaeff4;
+	bottom: 0;
+	content: '';
+	left: 4px;
+	position: absolute;
+	top: 0;
+	width: 2px;
+}
+
+/*
+---------------------------------------------
+    FAQ
+---------------------------------------------
+*/
+
+
+.faq-type-wrapper {
+	margin: 1rem 0;
+}
+
+.accordion .card {
+	background-color: #fff;
+	border: 1px solid #f1f2f3 !important;
+}
+
+.accordion .card-title {
+	background-color: #f9f9fb;
+	margin-bottom: 0;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.accordion .card-title a {
+	color: #323d47;
+	display: block;
+	font-weight: 500;
+	padding: 16px 33px;
+}
+
+.accordion .card-title a::before {
+	border-left: 1px solid #757575;
+	border-top: 1px solid #757575;
+	content: '';
+	display: inline-block;
+	height: 6px;
+	margin-bottom: 3px;
+	margin-left: -33px;
+	margin-right: 20px;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-webkit-transition: .2s linear;
+	transition: .2s linear;
+	width: 6px;
+}
+
+.accordion .card-title a.collapsed::before {
+	-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg)
+}
