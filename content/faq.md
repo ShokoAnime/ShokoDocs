@@ -5,10 +5,13 @@ layout = "faq"
 markup = "mmark"
 +++
 
-The following are frequent questions we've compiled in one place to better help our users. For more in-depth information on a particular subject, we suggest checking the related page (if available) in the documentation. Additional support can be found by joining our Discord server using the **Support** link located at the bottom of the left navigation menu.
+The following are frequent questions we've compiled in one place to better help our users. For more in-depth information on a particular subject, we suggest checking the related page (if available) in the documentation. Additional support can be found by joining our Discord server using the **Support** link located in the footer.
+
+---
 
 <!--- General --->
 
+{.faq-header}
 ## General
 
 {{% faq type="general" id="linux-support" question="Does Shoko Run On Linux?" %}}
@@ -68,7 +71,7 @@ While we currently do not offer a solution to backup your database whenever you'
 
 <!--- Shoko Server --->
 
-{.faq-type-wrapper}
+{.faq-header}
 ## Shoko Server
 
 {{% faq type="server" id="server-start" question="After Fresh Install, Shoko Server Will Not Start!" %}}
@@ -147,7 +150,7 @@ Navigate to **C:\ProgramData\ShokoServer** and open the file labeled **settings.
 
 <!--- Shoko Desktop --->
 
-{.faq-type-wrapper}
+{.faq-header}
 ## Shoko Desktop
 
 {{% faq type="desktop" id="groups" question="What Are Groups?" %}}
@@ -174,7 +177,7 @@ Shoko will automatically stream your files during playback if the local path for
 
 <!--- Shoko on Plex --->
 
-{.faq-type-wrapper}
+{.faq-header}
 ## Shoko on Plex
 
 {{% faq type="shokoPlex" id="access-error" question="I Keep Getting An 401: Unauthorized Error Message" %}}
@@ -193,7 +196,7 @@ If your Plex username has a pace in it, you'll not be able to load the channel, 
 
 <!--- Anime Buddy --->
 
-{.faq-type-wrapper}
+{.faq-header}
 ## Anime Buddy
 
 {{% faq type="animeBuddy" id="anime-buddy-discontinued" question="What Happened to Anime Buddy?" %}}

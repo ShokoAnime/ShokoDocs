@@ -192,6 +192,7 @@ body {
 
 .nav-item > a:hover {
 	color: var(--hyperlink-color);
+	text-decoration: none;
 }
 
 .nav-sidebar .nav-angle.rotate {
@@ -228,6 +229,7 @@ a.nav-title {
 	max-width: 1117px;
 	padding: 0 3rem;
 }
+
 
 /*
 ---------------------------------------------
@@ -331,6 +333,27 @@ a.nav-title {
 	width: 100%;
 }
 
+.footer-info {
+	display: flex;
+	height: 100%;
+}
+
+.footer-links {
+	padding-top: 1.75rem;
+	padding-left: 1.5rem;
+}
+
+.footer-links-spacer {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.footer-copyright {
+	padding-top: 1.75rem;
+	padding-right: 1.5rem;
+	margin-left: auto;
+}
+
 /*
 ---------------------------------------------
     Page Navigation
@@ -385,9 +408,8 @@ a.nav-title {
 ---------------------------------------------
 */
 
-
-.faq-type-wrapper {
-	margin: 1rem 0;
+.faq-header {
+	margin: 2rem 0;
 }
 
 .accordion .card {
