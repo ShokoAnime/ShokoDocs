@@ -1,9 +1,11 @@
 +++
 title = "Frequently Asked Questions"
-lastMod = 2019-04-12
+lastMod = 2019-04-22
 layout = "faq"
 markup = "mmark"
 +++
+
+## Quick Overview
 
 The following are frequent questions we've compiled in one place to better help our users. For more in-depth information on a particular subject, we suggest checking the related page (if available) in the documentation. Additional support can be found by joining our Discord server using the **Support** link located in the footer.
 

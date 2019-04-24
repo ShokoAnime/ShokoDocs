@@ -1,6 +1,5 @@
 +++
 title = "Shoko Changelog"
-subtitle ="Subtitle"
 lastMod = 2019-04-12
 layout = "index"
 +++
