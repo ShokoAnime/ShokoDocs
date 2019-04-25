@@ -451,3 +451,12 @@ a.nav-title {
 	-webkit-transform: rotate(-135deg);
 	transform: rotate(-135deg)
 }
+
+
+.tab-pane {
+	display: none;
+}
+
+.active {
+	display: block;
+}

@@ -27,7 +27,7 @@ Users who are currently using either MySQL or SQL Server can still edit their da
 
 ## Inputting Your AniDB Account
 
-{{% page-column image-url="https://docs.shokoanime.com/assets/img/server/Shoko-Server-Settings.png" alt="Shoko Server - Settings Tab" %}}
+{{% page-column image-url="/assets/images/server/Shoko-Server-Settings.jpg" image-alt="Shoko Server - Settings Tab" %}}
 
 With Shoko Server installed and your database created and configured, its time to configure the essential settings. If you're looking for a more in-depth explanation of each function, use the menu on the left and under **Configuring Shoko Server** select the tab you're looking for more information on.
 
@@ -45,7 +45,7 @@ AniDB is one of the biggest information databases for anime and stores every fil
 
 ## Setting Up Import Folders
 
-{{% page-column image-url="https://docs.shokoanime.com/assets/img/server/Shoko-Server-Settings.png" alt="Shoko Server - Import Folders Tab" %}}
+{{% page-column image-url="/assets/images/server/Shoko-Server-Import-Folders.jpg" image-alt="Shoko Server - Import Folders Tab" %}}
 
 Import Folders are the physical locations of where your files are. This means two things, they **must be accessible by Shoko Server** and they are **always online**. If using **removable media**, make sure its connected before running any **import functions** or **file checking functions** to avoid Shoko removing the entries from your collection database.
 

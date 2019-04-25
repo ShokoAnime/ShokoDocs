@@ -1,0 +1,8 @@
+<nav class="nav nav-tabs" id="tab1" role="tablist">
+	<a class="nav-item nav-link active" id="nav-{{ .Get "tab-name1" }}" data-toggle="tab" href="#{{ .Get "tab-name1-id" }}"
+	role="tab" aria-controls="nav-{{ .Get "tab-name1" }}" aria-selected="true">{{ .Get "tab-name1" }}</a>
+	<a class="nav-item nav-link" id="nav-{{ .Get "tab-name2" }}" data-toggle="tab" href="#{{ .Get "tab-name2-id" }}" role="tab"
+	aria-controls="nav-{{ .Get "tab-name2" }}" aria-selected="false">{{ .Get "tab-name2" }}</a>
+</nav>
+
+{{ .Inner }}

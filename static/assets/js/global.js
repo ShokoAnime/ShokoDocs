@@ -1,3 +1,9 @@
+// Lightbox
+$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+	event.preventDefault();
+	$(this).ekkoLightbox();
+});
+
 // Prevent link hashes from showing in address bar and add smooth scrolling when clicked.
 $("a.anchor").click(smoothScroll);
 $("a.nav-link.page-nav-link").click(smoothScroll);
