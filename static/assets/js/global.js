@@ -16,7 +16,7 @@ function smoothScroll(event) {
 }
 
 // Add/Remove 'Active' class for Left Navigation and Page Navigation.
-$('a.nav-link').click(function () {
+$('a.nav-menu').click(function () {
 
 	let leftNavActive = $('.nav.nav-sidebar.nav-sidebar-pill').find('.nav-link.active');
 	let rightNavActive = $('.nav-links-wrapper.page-nav-link-wrapper').find('.nav-link.active');

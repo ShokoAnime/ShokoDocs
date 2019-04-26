@@ -1,8 +1,26 @@
-<nav class="nav nav-tabs" id="tab1" role="tablist">
-	<a class="nav-item nav-link active" id="nav-{{ .Get "tab-name1" }}" data-toggle="tab" href="#{{ .Get "tab-name1-id" }}"
-	role="tab" aria-controls="nav-{{ .Get "tab-name1" }}" aria-selected="true">{{ .Get "tab-name1" }}</a>
-	<a class="nav-item nav-link" id="nav-{{ .Get "tab-name2" }}" data-toggle="tab" href="#{{ .Get "tab-name2-id" }}" role="tab"
-	aria-controls="nav-{{ .Get "tab-name2" }}" aria-selected="false">{{ .Get "tab-name2" }}</a>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+		{{ $tabsTotal := .Get "tabsTotal" }}
+		{{ range $i, $sequence := (seq $tabsTotal) }}
+
+		{{ $tabID := (print "tabID" $sequence) }}
+		{{ $tabName := (print "tabName" $sequence) }}
+
+		{{ if eq $sequence 1 }}
+
+		<a class="nav-item nav-link active" id="{{ $tabName }}" data-toggle="tab" href="#{{ $tabID }}" role="tab"
+		   aria-controls="nav-home" aria-selected="true">{{ $.Get "tabName" }}</a>
+
+		{{ else }}
+
+		<a class="nav-item nav-link" id="{{ $tabName }}" data-toggle="tab" href="#{{ $tabID }}" role="tab"
+		   aria-controls="nav-home" aria-selected="false">{{ $.Get $tabName }}</a>
+
+		{{ end }}
+		{{ end }}
+
+	</div>
 </nav>
 
 {{ .Inner }}

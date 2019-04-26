@@ -1,10 +1,22 @@
-{{ $tabName := (.Get "tab-id") }}
-{{ .Page.Scratch.Add "tabList" (slice $tabName) }}
+{{ $tab := .Get "tabNum" }}
+{{ $tabID := (print "tabID" $tab) }}
+{{ $tabName := (print "tabName" $tab) }}
 
-<div class="tab-pane fade active show" id="{{ .Get "tab-id" }}" role="tabpanel" aria-labelledby="{{ .Get "tab-name" }}">
+{{ if eq $tab "1" }}
 
-	{{ .Inner | markdownify }}
+<div class="tab-pane fade show active" id="{{$tabID}}" role="tabpanel" aria-labelledby="nav-{{$tabName}}">
+
+	{{ $.Inner | markdownify }}
 
 </div>
 
+{{ else }}
+
+<div class="tab-pane fade" id="{{$tabID}}" role="tabpanel" aria-labelledby="nav-{{$tabName}}">
+
+	{{ $.Inner | markdownify }}
+
+</div>
+
+{{ end }}
 

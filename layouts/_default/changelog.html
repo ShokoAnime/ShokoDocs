@@ -90,11 +90,11 @@
 			<div class="nav-links-wrapper page-nav-link-wrapper">
 				<ul class="nav flex-column flex-nowrap">
 
-					<a class="nav-link page-nav-title">Lastest Releases</a>
+					<a class="nav-link nav-menu page-nav-title">Lastest Releases</a>
 
 					{{ range (index .Site.Data.changelog $type).releases }}
 
-					<li class="nav-item"><a class="nav-link page-nav-link" href="#v{{ .versionURL }}">
+					<li class="nav-item"><a class="nav-link nav-menu page-nav-link" href="#v{{ .versionURL }}">
 						Version {{ .version }} - {{ .date }}</a></li>
 
 					{{ end }}
