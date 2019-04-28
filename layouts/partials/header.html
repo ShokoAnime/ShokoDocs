@@ -1,5 +1,5 @@
 {{ $fileDir := replace $.Page.File.Dir "\\" "/" }}
-{{ $fileName := $.Page.BaseFileName}}
+{{ $fileName := $.Page.File.BaseFileName}}
 {{ $fileLocation := print $fileDir $fileName ".md"}}
 
 <div class="header-wrapper">

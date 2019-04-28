@@ -30,6 +30,10 @@ h2, h3, h4, h5, h6 {
 	margin-bottom: 1rem;
 }
 
+h4 {
+	margin-top: 1rem;
+}
+
 body {
 	-webkit-box-direction: normal;
 	-webkit-box-orient: vertical;
@@ -40,12 +44,25 @@ body {
 	min-height: 100vh;
 }
 
+pre {
+	background-color: #f9f9fb;
+	border: var(--border-color) 1px solid;
+	border-left: 5px solid #005CBF;
+	padding: 1em;
+	margin: 1rem 0;
+	overflow: auto;
+}
+
 .container-wrapper {
 	-webkit-box-flex: 1;
 	flex-grow: 1;
 	margin-bottom: 5rem;
 	margin-top: 5rem;
 	max-width: 1720px;
+}
+
+.row-spacer {
+	margin: 1rem 0 2rem 0;
 }
 
 
@@ -134,7 +151,7 @@ body {
 	border-right: var(--border-color) 1px solid;
 	max-width: 270px;
 	padding-left: 0;
-	padding-right: 20px;
+	padding-right: 10px;
 }
 
 .nav-wrapper {
@@ -157,6 +174,10 @@ body {
 	flex-wrap: nowrap;
 	font-size: 0.875rem;
 	margin-left: 0.75rem;
+}
+
+.nav-menus-wrapper {
+	padding: .5rem .5rem;
 }
 
 .nav-sidebar .nav-link {
@@ -202,7 +223,7 @@ body {
 
 .nav-sidebar .nav-angle {
 	display: inline-block;
-	font-size: 1rem;
+	font-size: 0.85rem;
 	font-style: normal;
 	margin-top: 2px;
 	-webkit-transition: -webkit-transform 0.5s;
@@ -466,4 +487,12 @@ a.nav-title {
 
 .active {
 	display: block;
+}
+
+.nav-tabs {
+	border-bottom: 1px solid #dee2e6;
+}
+
+.tab-content {
+	padding: 1rem;
 }
