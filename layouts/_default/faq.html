@@ -5,42 +5,46 @@
 
 <body>
 
-{{ partial "header.html" . }}
+<div class="bodyWrapper">
 
-<div class="container container-wrapper">
-	<div class="row">
+	{{ partial "header.html" . }}
 
-		<div class="col-xl-2 nav-sidebar-wrapper">
+	<div class="container container-wrapper">
+		<div class="row">
+
+			<div class="col-xl-2 nav-sidebar-wrapper">
 
 				{{ partial "nav.html" . }}
 
-		</div>
+			</div>
 
-		<div class="col-xl-8 page-wrapper">
+			<div class="col-xl-8 page-wrapper">
 
 				{{ .Content }}
 
-		</div>
-
-		<div class="col-xl-2 page-nav-link-wrapper">
-			<div class="nav-links-wrapper page-nav-link-wrapper">
-				<ul class="nav flex-column flex-nowrap" id="page-nav">
-
-					<li class="nav-item"><a class="nav-link page-nav-link" href="#general">General</a></li>
-					<li class="nav-item"><a class="nav-link page-nav-link" href="#shoko-server">Shoko Server</a></li>
-					<li class="nav-item"><a class="nav-link page-nav-link" href="#shoko-desktop">Shoko Desktop</a></li>
-					<li class="nav-item"><a class="nav-link page-nav-link" href="#shoko-on-plex">Shoko on Plex</a></li>
-					<li class="nav-item"><a class="nav-link page-nav-link" href="#anime-buddy">Anime Buddy</a></li>
-
-				</ul>
 			</div>
+
+			<div class="col-xl-2 page-nav-link-wrapper">
+				<div class="nav-links-wrapper page-nav-link-wrapper">
+					<ul class="nav flex-column flex-nowrap" id="page-nav">
+
+						<li class="nav-item"><a class="nav-link page-nav-link" href="#general">General</a></li>
+						<li class="nav-item"><a class="nav-link page-nav-link" href="#shoko-server">Shoko Server</a></li>
+						<li class="nav-item"><a class="nav-link page-nav-link" href="#shoko-desktop">Shoko Desktop</a></li>
+						<li class="nav-item"><a class="nav-link page-nav-link" href="#shoko-on-plex">Shoko on Plex</a></li>
+						<li class="nav-item"><a class="nav-link page-nav-link" href="#anime-buddy">Anime Buddy</a></li>
+
+					</ul>
+				</div>
+			</div>
+
 		</div>
-
 	</div>
-</div>
 
-{{ partial "footer.html" . }}
-{{ partial "scripts.html" . }}
+	{{ partial "footer.html" . }}
+	{{ partial "scripts.html" . }}
+
+</div>
 
 </body>
 </html>

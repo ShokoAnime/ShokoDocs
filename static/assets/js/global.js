@@ -57,9 +57,15 @@ $('a.nav-menu').click(function () {
 
 });
 
+// ----------------------------------------------------------------------------------------------------------------
+
+// Smooth Scroll with position tracking.
+
 $(document).ready(function () {
 
 	$(document).on("scroll", onScroll);
+
+	if ($(this).hasClass('page-nav-link') === false) { return; }
 
 	$('a[href^="#"]').on('click', function (e) {
 		e.preventDefault();
@@ -72,7 +78,6 @@ $(document).ready(function () {
 		$(this).addClass('active');
 
 		let target = this.hash;
-		if ($(this).hasClass('nav-link') === false) { return; }
 		$target = $(target);
 		if (!$target.length) { return }
 

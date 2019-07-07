@@ -5,18 +5,20 @@
 
 <body>
 
-{{ partial "header.html" . }}
+<div class="bodyWrapper">
 
-<div class="container container-wrapper">
-	<div class="row">
+	{{ partial "header.html" . }}
 
-		<div class="col-xl-2 nav-sidebar-wrapper">
+	<div class="container container-wrapper">
+		<div class="row">
 
-			{{ partial "nav.html" . }}
+			<div class="col-xl-2 nav-sidebar-wrapper">
 
-		</div>
+				{{ partial "nav.html" . }}
 
-		<div class="col-xl-8 changelog-wrapper">
+			</div>
+
+			<div class="col-xl-8 changelog-wrapper">
 
 				{{ if eq .RelPermalink "/changelog/" }}
 				{{ .Content }}
@@ -79,30 +81,32 @@
 
 				{{ end }}
 
-		</div>
-
-		<div class="col-xl-2 page-nav-link-wrapper">
-			<div class="nav-links-wrapper page-nav-link-wrapper">
-				<ul class="nav flex-column flex-nowrap" id="page-nav">
-
-					<a class="nav-link nav-menu page-nav-title">Lastest Releases</a>
-
-					{{ range (index .Site.Data.changelog $type).releases }}
-
-					<li class="nav-item"><a class="nav-link nav-menu page-nav-link" href="#v{{ .versionURL }}">
-						Version {{ .version }} - {{ .date }}</a></li>
-
-					{{ end }}
-
-				</ul>
 			</div>
+
+			<div class="col-xl-2 page-nav-link-wrapper">
+				<div class="nav-links-wrapper page-nav-link-wrapper">
+					<ul class="nav flex-column flex-nowrap" id="page-nav">
+
+						<a class="nav-link nav-menu page-nav-title">Lastest Releases</a>
+
+						{{ range (index .Site.Data.changelog $type).releases }}
+
+						<li class="nav-item"><a class="nav-link nav-menu page-nav-link" href="#v{{ .versionURL }}">
+							Version {{ .version }} - {{ .date }}</a></li>
+
+						{{ end }}
+
+					</ul>
+				</div>
+			</div>
+
 		</div>
-
 	</div>
-</div>
 
-{{ partial "footer.html" . }}
-{{ partial "scripts.html" . }}
+	{{ partial "footer.html" . }}
+	{{ partial "scripts.html" . }}
+
+</div>
 
 </body>
 </html>

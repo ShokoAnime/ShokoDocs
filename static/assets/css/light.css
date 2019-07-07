@@ -25,6 +25,11 @@
 	--navLinkNormal: #efefef;
 	--navLinkHover: #ffffff;
 
+	/* Footer */
+	--footerText: #ffffff;
+	--footerLinkNormal: #efefef;
+	--footerLinkHover: #ffffff;
+
 	/* Page Navigation */
 	--pageIndicator: #eaeff4;
 	--pageIndicatorActive: #006cab;

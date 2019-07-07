@@ -7,6 +7,7 @@
     7. Tables
     8. FAQ
     9. Tabs
+    10. Footer
 */
 
 
@@ -22,6 +23,7 @@
 
 a {
 	color: var(--linkNormal);
+	font-weight: 600;
 }
 
 a:active, a:hover {
@@ -68,6 +70,12 @@ pre {
 
 .card {
 	background-color: var(--cardBackground);
+}
+
+.bodyWrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 .row-spacer {
@@ -262,9 +270,11 @@ pre {
 	content: '';
 	left: -20px;
 	position: relative;
-	top: 0;
+	top: 4px;
 	width: 2px;
 	z-index: 1;
+	display: inline-block;
+	height: 1.1rem;
 }
 
 .page-nav-link:before {
@@ -314,6 +324,7 @@ pre {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	font-weight: 600;
 }
 
 .changelog-date {
@@ -367,13 +378,15 @@ pre {
 
 /*
 ---------------------------------------------
-    7. Changelog
+    7. Tables
 ---------------------------------------------
 */
 
 .table {
+	font-size: 0.9375rem;
 	color: var(--fontColor);
 }
+
 .table-bordered {
 	border: 1px solid var(--tableBorder);
 }
@@ -453,4 +466,50 @@ pre {
 
 .tab-content {
 	padding: 1rem;
+}
+
+/*
+---------------------------------------------
+    10. Footer
+---------------------------------------------
+*/
+
+.footer-wrapper {
+	background-color: #3a597a;
+	border-top: var(--linkActive) 6px solid;
+	height: 66px;
+	width: 100%;
+	margin-top: auto;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.footer-info {
+	display: flex;
+	height: 100%;
+}
+
+.footer-links {
+	padding-top: 1.2rem;
+	padding-left: 1.5rem;
+}
+
+.footer-links > a {
+	color: var(--footerLinkNormal);
+}
+
+.footer-links > a:hover {
+	color: var(--footerLinkHover);
+}
+
+.footer-links-spacer {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.footer-copyright {
+	padding-top: 1.2rem;
+	padding-right: 1.5rem;
+	margin-left: auto;
+	color: var(--footerText);
 }

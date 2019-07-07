@@ -5,30 +5,34 @@
 
 <body>
 
-{{ partial "header.html" . }}
+<div class="bodyWrapper">
 
-<div class="container container-wrapper">
-	<div class="row">
+	{{ partial "header.html" . }}
 
-		<div class="col-xl-2 nav-sidebar-wrapper">
+	<div class="container container-wrapper">
+		<div class="row">
+
+			<div class="col-xl-2 nav-sidebar-wrapper">
 
 				{{ partial "nav.html" . }}
 
-		</div>
+			</div>
 
-		<div class="col-xl-9 content-wrapper">
+			<div class="col-xl-9 content-wrapper">
 
 				{{ block "content" .}}
 
 				{{ end }}
 
+			</div>
+
 		</div>
-
 	</div>
-</div>
 
-{{ partial "footer.html" . }}
-{{ partial "scripts.html" . }}
+	{{ partial "footer.html" . }}
+	{{ partial "scripts.html" . }}
+
+</div>
 
 </body>
 </html>
