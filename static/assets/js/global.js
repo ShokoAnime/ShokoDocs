@@ -72,7 +72,9 @@ $(document).ready(function () {
 		$(this).addClass('active');
 
 		let target = this.hash;
+		if ($(this).hasClass('nav-link') === false) { return; }
 		$target = $(target);
+		if (!$target.length) { return }
 
 		$('html, body').stop().animate({'scrollTop': $target.offset().top - 80}, 500, 'swing', function () {
 			$(document).on("scroll", onScroll);
