@@ -10,25 +10,21 @@
 <div class="container container-wrapper">
 	<div class="row">
 
-		<div class="col-xl-2 nav-column">
-			<div class="nav-wrapper">
+		<div class="col-xl-2 nav-sidebar-wrapper">
 
 				{{ partial "nav.html" . }}
 
-			</div>
 		</div>
 
-		<div class="col-xl-8">
-			<div class="content-wrapper">
+		<div class="col-xl-8 page-wrapper">
 
 				{{ .Content }}
 
-			</div>
 		</div>
 
-		<div class="col-xl-2 page-nav-wrapper">
+		<div class="col-xl-2 page-nav-link-wrapper">
 			<div class="nav-links-wrapper page-nav-link-wrapper">
-				<ul class="nav flex-column flex-nowrap">
+				<ul class="nav flex-column flex-nowrap" id="page-nav">
 
 					<li class="nav-item"><a class="nav-link page-nav-link" href="#general">General</a></li>
 					<li class="nav-item"><a class="nav-link page-nav-link" href="#shoko-server">Shoko Server</a></li>

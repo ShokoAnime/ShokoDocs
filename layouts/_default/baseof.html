@@ -10,22 +10,18 @@
 <div class="container container-wrapper">
 	<div class="row">
 
-		<div class="col-xl-2 nav-column">
-			<div class="nav-wrapper">
+		<div class="col-xl-2 nav-sidebar-wrapper">
 
 				{{ partial "nav.html" . }}
 
-			</div>
 		</div>
 
-		<div class="col-xl-8">
-			<div class="content-wrapper">
+		<div class="col-xl-9 content-wrapper">
 
 				{{ block "content" .}}
 
 				{{ end }}
 
-			</div>
 		</div>
 
 	</div>

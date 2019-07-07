@@ -1,0 +1,44 @@
+/*
+    1. Colors
+*/
+
+/*
+---------------------------------------------
+    1. Colors
+---------------------------------------------
+*/
+
+:root {
+
+	/* General */
+	--backgroundColor: #fff;
+	--borderColor: #dae1e7;
+	--cardBackground: #ffffff;
+	--fontColor: #333;
+
+	/* Links */
+	--linkNormal: #006cab;
+	--linkActive: #279ceb;
+
+	/* Navbar */
+	--siteTitle: #ffffff;
+	--navLinkNormal: #efefef;
+	--navLinkHover: #ffffff;
+
+	/* Page Navigation */
+	--pageIndicator: #eaeff4;
+	--pageIndicatorActive: #006cab;
+
+	/* Tables */
+	--headerBackground: #f9f9fb;
+	--rowBackground: #E9F0F8;
+	--tableBorder: #dee2e6;
+
+	/* Changelog Badges */
+	--badgetext: #ffffff;
+	--added: #3cd458;
+	--changed: #50a1ff;
+	--fixed: #ffba00;
+	--removed: #ff4954;
+
+}

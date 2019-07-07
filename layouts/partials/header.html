@@ -2,48 +2,19 @@
 {{ $fileName := $.Page.File.BaseFileName}}
 {{ $fileLocation := print $fileDir $fileName ".md"}}
 
-<div class="header-wrapper">
-	<div class="header-info">
+<div class="navbar-wrapper">
 
-		<a class="header-title" href="/"><h2>{{ .Site.Title }}</h2></a>
+	<div class="navbar-title">
+		<a href="/"><h4>Shoko Docs</h4></a>
+	</div>
 
-		<form class="header-search" action="{{ "search" | absURL }}">
-		<div class="input-group">
-			<div class="input-group-prepend">
-				<span class="input-group-text"><i class="fas fa-search"></i></span>
-			</div>
-			<input type="text" class="form-control" id="search-query" name="s" placeholder="Search The Docs...">
-		</div>
-		</form>
+	<div class="navbar-links">
+		<ul class="nav">
+			<li class="nav-item navbar-item"><a class="nav-link active" href="#" id="themeSwitcher">Active</a></li>
+			<li class="nav-item navbar-item"><a class="nav-link" href="#">Link</a></li>
+			<li class="nav-item navbar-item"><a class="nav-link" href="#">Link</a></li>
+		</ul>
 
 	</div>
-</div>
 
-<div class="page-wrapper">
-	<div class="page-info">
-
-		<h1>{{ .Title }}</h1>
-
-		{{ if ne .Params.hidePageInfo "Yes" }}
-
-		<div class="page-subtitle-wrapper">
-
-			<div class="page-update-info">
-				<p>Updated: {{ .Lastmod.Format "January 2, 2006"  }} </p>
-			</div>
-
-			<div class="page-github-info">
-				<i class="fab fa-github fa-2x"></i>
-					<a class="page-github-link" href="https://github.com/shokoanime/Shokodocs/blob/master/{{ $fileLocation }}">Edit on GitHub</a>
-			</div>
-
-		</div>
-
-		{{ else }}
-
-		<p class="page-subtitle">{{ .Params.subtitle }}</p>
-
-		{{ end }}
-
-	</div>
 </div>

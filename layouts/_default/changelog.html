@@ -10,28 +10,24 @@
 <div class="container container-wrapper">
 	<div class="row">
 
-		<div class="col-xl-2 nav-column">
-			<div class="nav-wrapper">
+		<div class="col-xl-2 nav-sidebar-wrapper">
 
-				{{ partial "nav.html" . }}
+			{{ partial "nav.html" . }}
 
-			</div>
 		</div>
 
-		<div class="col-xl-8">
-			<div class="content-wrapper">
+		<div class="col-xl-8 changelog-wrapper">
 
 				{{ if eq .RelPermalink "/changelog/" }}
 				{{ .Content }}
 				{{ end }}
-
 
 				{{ $type := string .Params.changelogType }}
 				{{ $gitLink :=(index .Site.Data.changelog $type).githubLink }}
 
 				{{ range (index .Site.Data.changelog $type).releases }}
 
-				<div id="v{{ .versionURL  }}" class="card border changelog-wrapper">
+				<div id="v{{ .versionURL  }}" class="card border changelog-border">
 					<div class="card-body changelog-header-wrapper">
 						<h4>Version {{ .version }} </h4>
 						<div class="changelog-info">
@@ -83,12 +79,11 @@
 
 				{{ end }}
 
-			</div>
 		</div>
 
-		<div class="col-xl-2 page-nav-wrapper">
+		<div class="col-xl-2 page-nav-link-wrapper">
 			<div class="nav-links-wrapper page-nav-link-wrapper">
-				<ul class="nav flex-column flex-nowrap">
+				<ul class="nav flex-column flex-nowrap" id="page-nav">
 
 					<a class="nav-link nav-menu page-nav-title">Lastest Releases</a>
 

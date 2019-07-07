@@ -13,5 +13,4 @@ Each changelog is generated automatically, any changes that need to be made can 
 - [My Anime 3](myanime3)
 - [Shoko on Plex](shokoplex)
 
-
-A complete changelog history can be found in the {{< external-link "Archived Changelog" "https://shokoanime.com/files/other/Shoko-Archived-Changelog.txt" >}}.
+A complete changelog history can be found in the {{< external-link link="https://shokoanime.com/files/other/Shoko-Archived-Changelog.txt" text="Archived Changelog" >}}.
