@@ -46,4 +46,16 @@
 	--fixed: #ffba00;
 	--removed: #ff4954;
 
+	/* FaQ */
+	--accordionBackground: #f9f9fb;
+	--accordionCard: #ffffff;
+	--accordionCardBorder: #f1f2f3;
+	--accordionArrow: #757575;
+
+  /* Tabs */
+	--tabsActive: #495057;
+	--tabsActiveBackground: #fffff;
+	--tabsActiveBorder: #dee2e6;
+	--tabsActiveBorderBottom: #ffffff;
+
 }

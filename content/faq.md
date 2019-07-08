@@ -5,9 +5,9 @@ layout = "faq"
 markup = "mmark"
 +++
 
-## Quick Overview
+## Frequently Asked Questions
 
-The following are frequent questions we've compiled in one place to better help our users. For more in-depth information on a particular subject, we suggest checking the related page (if available) in the documentation. Additional support can be found by joining our Discord server using the **Support** link located in the footer.
+The following are frequent questions we've compiled in one place to better help our users. For more in-depth information on a particular subject, we suggest checking the related page (if available in the documentation. Additional support can be found by joining our Discord server using the **Support** link located in the footer.
 
 ---
 

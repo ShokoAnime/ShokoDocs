@@ -8,7 +8,7 @@ function getRootUrl() {
 	return window.location.origin ? window.location.origin + '/' : window.location.protocol + '/' + window.location.host + '/';
 }
 
-$(window).on("load", function() {
+$(window).on("load", function () {
 
 	let rootURL = getRootUrl();
 
@@ -65,8 +65,6 @@ $(document).ready(function () {
 
 	$(document).on("scroll", onScroll);
 
-	if ($(this).hasClass('page-nav-link') === false) { return; }
-
 	$('a[href^="#"]').on('click', function (e) {
 		e.preventDefault();
 		$(document).off("scroll");
@@ -76,10 +74,15 @@ $(document).ready(function () {
 		});
 
 		$(this).addClass('active');
-
 		let target = this.hash;
+		if ($(this).hasClass('page-nav-link') === false) {
+			return;
+		}
+
 		$target = $(target);
-		if (!$target.length) { return }
+		if (!$target.length) {
+			return
+		}
 
 		$('html, body').stop().animate({'scrollTop': $target.offset().top - 80}, 500, 'swing', function () {
 			$(document).on("scroll", onScroll);

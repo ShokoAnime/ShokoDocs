@@ -44,12 +44,12 @@ body {
 	display: none;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
 	font-family: "Exo 2", sans-serif;
 	letter-spacing: 0.5px;
 }
 
-h2,h3,h4,h5,h6 {
+h2, h3, h4, h5, h6 {
 	margin: 1rem 0;
 }
 
@@ -108,7 +108,7 @@ pre {
 	color: var(--navLinkHover);
 }
 
-.navbar-title  {
+.navbar-title {
 	padding-left: 2rem;
 }
 
@@ -299,7 +299,7 @@ pre {
 	max-width: 1050px;
 }
 
-.changelog-border{
+.changelog-border {
 	margin-bottom: 3rem;
 }
 
@@ -314,7 +314,7 @@ pre {
 	display: -webkit-box;
 	display: flex;
 	justify-content: space-between;
-	padding: 0.5rem 1rem;
+	padding: 0.5rem 1rem !important;
 }
 
 .changelog-info {
@@ -394,6 +394,7 @@ pre {
 .table-bordered td, .table-bordered th {
 	border: 1px solid var(--tableBorder);
 }
+
 .table-bordered tbody tr:nth-of-type(odd) {
 	background-color: var(--rowBackground);
 }
@@ -409,27 +410,27 @@ pre {
 }
 
 .accordion .card {
-	background-color: #fff;
-	border: 1px solid #f1f2f3 !important;
+	background-color: var(--accordionCard);
+	border: 1px solid var(--accordionCardBorder) !important;
 }
 
 .accordion .card-title {
-	background-color: #f9f9fb;
-	margin-bottom: 0;
+	background-color: var(--accordionBackground);
+	margin: 0;
 	padding-left: 20px;
 	padding-right: 20px;
 }
 
 .accordion .card-title a {
-	color: #323d47;
+	color: var(--fontColor);
 	display: block;
 	font-weight: 500;
 	padding: 16px 33px;
 }
 
 .accordion .card-title a::before {
-	border-left: 1px solid #757575;
-	border-top: 1px solid #757575;
+	border-left: 1px solid var(--accordionArrow);
+	border-top: 1px solid var(--accordionArrow);
 	content: '';
 	display: inline-block;
 	height: 6px;
@@ -448,6 +449,10 @@ pre {
 	transform: rotate(-135deg)
 }
 
+.card-body {
+	padding: 1.25rem 3rem;
+}
+
 
 /*
 ---------------------------------------------
@@ -462,6 +467,12 @@ pre {
 
 .nav-tabs {
 	border-bottom: 1px solid #dee2e6;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+	color: var(--tabsActive);
+	background-color: var(--tabsActiveBackground);
+	border-color: var(--tabsActiveBorder) var(--tabsActiveBorder) var(--tabsActiveBorderBottom);
 }
 
 .tab-content {

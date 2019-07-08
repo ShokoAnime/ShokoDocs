@@ -2,6 +2,20 @@
 title = "Shoko Server - Windows Setup"
 lastMod = 2019-04-24
 layout = "single"
+
+[[pageNav]]
+name = "Install & First Run"
+id = "install-first-run"
+[[pageNav]]
+name = "Inputting Your AniDB Account"
+id = "inputting-your-anidb-account"
+[[pageNav]]
+name = "Setting Up Import Folders"
+id = "setting-up-import-folders"
+[[pageNav]]
+name = "Additional Configuration"
+id = "additional-configuration"
+
 markup = "mmark"
 +++
 
