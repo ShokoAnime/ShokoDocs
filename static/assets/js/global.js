@@ -62,22 +62,15 @@ $('a.nav-menu').click(function () {
 // Smooth Scroll with position tracking.
 
 $(document).ready(function () {
-
-	$(document).on("scroll", onScroll);
-
-	$('a[href^="#"]').on('click', function (e) {
+	$('a[href^="#"]').on('click', '.page-nav-link', function (e) {
 		e.preventDefault();
-		$(document).off("scroll");
 
 		$('a').each(function () {
 			$(this).removeClass('active');
 		});
 
-		$(this).addClass('active');
+		var activeLink = $(this);
 		let target = this.hash;
-		if ($(this).hasClass('page-nav-link') === false) {
-			return;
-		}
 
 		$target = $(target);
 		if (!$target.length) {
@@ -85,30 +78,11 @@ $(document).ready(function () {
 		}
 
 		$('html, body').stop().animate({'scrollTop': $target.offset().top - 80}, 500, 'swing', function () {
-			$(document).on("scroll", onScroll);
+			activeLink.addClass('active');
 		});
 
 	});
 });
-
-function onScroll(event) {
-
-	let scrollPos = $(document).scrollTop();
-
-	$('#page-nav li a').each(function () {
-
-		let currLink = $(this);
-		let refElement = $(currLink.attr("href"));
-
-		if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-			$('#page-nav ul li a').removeClass("active");
-			currLink.addClass("active");
-		} else {
-			currLink.removeClass("active");
-		}
-
-	});
-}
 
 // ----------------------------------------------------------------------------------------------------------------
 
