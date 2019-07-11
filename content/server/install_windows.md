@@ -1,9 +1,10 @@
 +++
 title = "Shoko Server - Windows Setup"
 lastMod = 2019-04-24
-layout = "single"
+
 
 [[pageNav]]
+navTitle = "Getting Started"
 name = "Install & First Run"
 id = "install-first-run"
 [[pageNav]]

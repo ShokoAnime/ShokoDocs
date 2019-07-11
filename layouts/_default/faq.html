@@ -5,46 +5,46 @@
 
 <body>
 
-<div class="bodyWrapper">
+{{ partial "header.html" . }}
 
-	{{ partial "header.html" . }}
+<div class="container container-wrapper">
+	<div class="row">
 
-	<div class="container container-wrapper">
-		<div class="row">
-
-			<div class="col-xl-2 nav-sidebar-wrapper">
+		<div class="col-xl-2 nav-column">
+			<div class="nav-wrapper">
 
 				{{ partial "nav.html" . }}
 
 			</div>
+		</div>
 
-			<div class="col-xl-8 page-wrapper" data-spy="scroll" data-target="#page-nav" data-offset="0">
+		<div class="col-xl-8">
+			<div class="content-wrapper">
 
 				{{ .Content }}
 
 			</div>
-
-			<div class="col-xl-2 page-nav-link-wrapper">
-				<div class="nav-links-wrapper page-nav-link-wrapper">
-					<ul class="nav flex-column flex-nowrap" id="page-nav">
-
-						<li class="nav-item"><a class="nav-link page-nav-link" href="#general">General</a></li>
-						<li class="nav-item"><a class="nav-link page-nav-link" href="#shoko-server">Shoko Server</a></li>
-						<li class="nav-item"><a class="nav-link page-nav-link" href="#shoko-desktop">Shoko Desktop</a></li>
-						<li class="nav-item"><a class="nav-link page-nav-link" href="#shoko-on-plex">Shoko on Plex</a></li>
-						<li class="nav-item"><a class="nav-link page-nav-link" href="#anime-buddy">Anime Buddy</a></li>
-
-					</ul>
-				</div>
-			</div>
-
 		</div>
+
+		<div class="col-xl-2 page-nav-wrapper">
+			<div class="nav-links-wrapper page-nav-link-wrapper">
+				<ul class="nav flex-column flex-nowrap">
+
+					<li class="nav-item"><a class="nav-link page-nav-link" href="#general">General</a></li>
+					<li class="nav-item"><a class="nav-link page-nav-link" href="#shoko-server">Shoko Server</a></li>
+					<li class="nav-item"><a class="nav-link page-nav-link" href="#shoko-desktop">Shoko Desktop</a></li>
+					<li class="nav-item"><a class="nav-link page-nav-link" href="#shoko-on-plex">Shoko on Plex</a></li>
+					<li class="nav-item"><a class="nav-link page-nav-link" href="#anime-buddy">Anime Buddy</a></li>
+
+				</ul>
+			</div>
+		</div>
+
 	</div>
-
-	{{ partial "footer.html" . }}
-	{{ partial "scripts.html" . }}
-
 </div>
+
+{{ partial "footer.html" . }}
+{{ partial "scripts.html" . }}
 
 </body>
 </html>

@@ -5,34 +5,43 @@
 
 <body>
 
-<div class="bodyWrapper">
+{{ partial "header.html" . }}
 
-	{{ partial "header.html" . }}
+<div class="container container-wrapper">
+	<div class="row row-wrapper">
 
-	<div class="container container-wrapper">
-		<div class="row">
+		<div class="col-xl-2 sidenav-wrapper">
 
-			<div class="col-xl-2 nav-sidebar-wrapper">
-
-				{{ partial "nav.html" . }}
-
-			</div>
-
-			<div class="col-xl-9 content-wrapper">
-
-				{{ block "content" .}}
-
-				{{ end }}
-
-			</div>
+			{{ partial "nav.html" . }}
 
 		</div>
+
+		<div class="col-xl-8 page-wrapper">
+
+			{{ .Content }}
+
+		</div>
+
+		<div class="col-xl-2 page-nav-link-wrapper">
+			<div class="nav-links-wrapper page-nav-link-wrapper">
+				<ul class="nav flex-column flex-nowrap" id="page-nav">
+
+					{{ range .Params.pageNav }}
+
+					<li class="page-nav-title">{{ .navTitle }}</li>
+					<li class="nav-item"><a class="nav-link nav-menu page-nav-link" href="#{{ .id }}">{{ .name }}</a></li>
+
+					{{ end }}
+
+				</ul>
+			</div>
+		</div>
+
 	</div>
-
-	{{ partial "footer.html" . }}
-	{{ partial "scripts.html" . }}
-
 </div>
+
+{{ partial "footer.html" . }}
+{{ partial "scripts.html" . }}
 
 </body>
 </html>

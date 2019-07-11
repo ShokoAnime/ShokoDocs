@@ -15,7 +15,7 @@ The following are frequent questions we've compiled in one place to better help 
 
 {.faq-header}
 ## General
-{{% faq-section type="general" %}}
+
 {{% faq type="general" id="linux-support" question="Does Shoko Run On Linux?" %}}
 
 Yes it Does!
@@ -70,12 +70,12 @@ While we currently do not offer a solution to backup your database whenever you'
 
 
 {{% /faq %}}
-{{% /faq-section %}}
+
 <!--- Shoko Server --->
 
 {.faq-header}
 ## Shoko Server
-{{% faq-section type="server" %}}
+
 {{% faq type="server" id="server-start" question="After Fresh Install, Shoko Server Will Not Start!" %}}
 
 Some users have reported being unable to start Shoko Server after a fresh install, usually the issue is related to user permissions in **/ProgramData/ShokoServer** and issues with the **urlacl** not being added properly. We've created a .BAT file called **FixPermissions.bat** that is located in your Shoko Server install directory, close Shoko and run that file.
@@ -149,12 +149,12 @@ Navigate to **C:\ProgramData\ShokoServer** and open the file labeled **settings.
 | SQLServer_Password   | The password you selected. |
 
 {{% /faq %}}
-{{% /faq-section %}}
+
 <!--- Shoko Desktop --->
 
 {.faq-header}
 ## Shoko Desktop
-{{% faq-section type="desktop" %}}
+
 {{% faq type="desktop" id="groups" question="What Are Groups?" %}}
 
 Groups allow you to organize and visually stack multiple series, movies, and ova's into one single viewable entry in your collection regardless of where and how the files in that group are organized.
@@ -176,12 +176,12 @@ For more in-depth information, please read the Community Sites section in Shoko 
 Shoko will automatically stream your files during playback if the local path for the import folder is incorrect. Navigate to the **Server Tab**, double-click on one of your Import Folders and add the local path to the folder. Keep in mind, the local path is the **path to that folder from the computer Shoko Desktop is on**. For best results and to avoid unforeseen issues, do not used mapped network drives, use the actual network path.
 
 {{% /faq %}}
-{{% /faq-section %}}
+
 <!--- Shoko on Plex --->
 
 {.faq-header}
 ## Shoko on Plex
-{{% faq-section type="shokoPlex" %}}
+
 {{% faq type="shokoPlex" id="access-error" question="I Keep Getting An 401: Unauthorized Error Message" %}}
 
 There are a number of reason you might be receiving this error message, we've outlined some of the most common reasons below.
@@ -195,12 +195,12 @@ If your accessing Shoko Server over your network or the internet you need to mak
 If your Plex username has a pace in it, you'll not be able to load the channel, instead remove any spaces, reload Plex and try again.
 
 {{% /faq %}}
-{{% /faq-section %}}
+
 <!--- Anime Buddy --->
 
 {.faq-header}
 ## Anime Buddy
-{{% faq-section type="animeBuddy" %}}
+
 {{% faq type="animeBuddy" id="anime-buddy-discontinued" question="What Happened to Anime Buddy?" %}}
 
 Anime Buddy was discontinued due to lack of interest from the development team and our inability to update it on the Windows Store due. Additionally, even a simple update to get Anime Buddy working with Shoko would require a lot of work that we decided would be better spent working and improving Shoko itself.
@@ -208,4 +208,3 @@ Anime Buddy was discontinued due to lack of interest from the development team a
 You can read the {{< external-link link="https://shokoanime.com/blog/anime-buddy-discontinued/" text="Blog post" >}} for more information.
 
 {{% /faq %}}
-{{% /faq-section %}}

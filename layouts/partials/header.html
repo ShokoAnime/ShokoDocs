@@ -3,18 +3,46 @@
 {{ $fileLocation := print $fileDir $fileName ".md"}}
 
 <div class="navbar-wrapper">
+	<div class="navbar-info">
 
-	<div class="navbar-title">
-		<a href="/"><h4>Shoko Docs</h4></a>
+		<a class="navbar-title" href="/"><h2>{{ .Site.Title }}</h2></a>
+		<span class="navbar-divider"></span>
+		<nav class="nav navbar-links">
+			<a class="navbar-link nav-link" href="https://docs.shokoanime.com">Home</a>
+			<a class="navbar-link nav-link" href="https://shokoanime.com">Website</a>
+			<a class="navbar-link nav-link" href="https://docs.shokoanime.com/changelog.html">Changelog</a>
+			<a class="navbar-link nav-link" href="https://discord.gg/vpeHDsg" target="_blank" rel="noopener">Support</a>
+			<a class="navbar-link nav-link" href="https://github.com/ShokoAnime/ShokoDocs" target="_blank" rel="noopener">Github</a>
+		</nav>
+
 	</div>
+</div>
 
-	<div class="navbar-links">
-		<ul class="nav">
-			<li class="nav-item navbar-item"><a class="nav-link active" href="#" id="themeSwitcher">Active</a></li>
-			<li class="nav-item navbar-item"><a class="nav-link" href="#">Link</a></li>
-			<li class="nav-item navbar-item"><a class="nav-link" href="#">Link</a></li>
-		</ul>
+<div class="page-header-wrapper">
+	<div class="page-header-info">
+
+		<h1>{{ .Title }}</h1>
+
+		{{ if ne .Params.hidePageInfo "Yes" }}
+
+		<div class="page-header-subtitle-wrapper">
+
+			<div class="page-header-update-info">
+				<p>Updated: {{ .Lastmod.Format "January 2, 2006"  }} </p>
+			</div>
+
+			<div class="page-header-github-info">
+				<i class="fab fa-github fa-2x"></i>
+				<a class="page-header-github-link" href="https://github.com/shokoanime/Shokodocs/blob/master/{{ $fileLocation }}">Edit on GitHub</a>
+			</div>
+
+		</div>
+
+		{{ else }}
+
+		<p class="page-header-subtitle">{{ .Params.subtitle }}</p>
+
+		{{ end }}
 
 	</div>
-
 </div>

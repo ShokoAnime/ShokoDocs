@@ -5,31 +5,33 @@
 
 <body>
 
-<div class="bodyWrapper">
+{{ partial "header.html" . }}
 
-	{{ partial "header.html" . }}
+<div class="container container-wrapper">
+	<div class="row">
 
-	<div class="container container-wrapper">
-		<div class="row">
-
-			<div class="col-xl-2 nav-sidebar-wrapper">
+		<div class="col-xl-2 nav-column">
+			<div class="nav-wrapper">
 
 				{{ partial "nav.html" . }}
 
 			</div>
+		</div>
 
-			<div class="col-xl-8 changelog-wrapper">
+		<div class="col-xl-8">
+			<div class="content-wrapper">
 
 				{{ if eq .RelPermalink "/changelog/" }}
 				{{ .Content }}
 				{{ end }}
+
 
 				{{ $type := string .Params.changelogType }}
 				{{ $gitLink :=(index .Site.Data.changelog $type).githubLink }}
 
 				{{ range (index .Site.Data.changelog $type).releases }}
 
-				<div id="v{{ .versionURL  }}" class="card border changelog-border">
+				<div id="v{{ .versionURL  }}" class="card border changelog-wrapper">
 					<div class="card-body changelog-header-wrapper">
 						<h4>Version {{ .version }} </h4>
 						<div class="changelog-info">
@@ -82,31 +84,30 @@
 				{{ end }}
 
 			</div>
-
-			<div class="col-xl-2 page-nav-link-wrapper">
-				<div class="nav-links-wrapper page-nav-link-wrapper">
-					<ul class="nav flex-column flex-nowrap" id="page-nav">
-
-						<a class="nav-link nav-menu page-nav-title">Lastest Releases</a>
-
-						{{ range (index .Site.Data.changelog $type).releases }}
-
-						<li class="nav-item"><a class="nav-link nav-menu page-nav-link" href="#v{{ .versionURL }}">
-							Version {{ .version }} - {{ .date }}</a></li>
-
-						{{ end }}
-
-					</ul>
-				</div>
-			</div>
-
 		</div>
+
+		<div class="col-xl-2 page-nav-wrapper">
+			<div class="nav-links-wrapper page-nav-link-wrapper">
+				<ul class="nav flex-column flex-nowrap">
+
+					<a class="nav-link nav-menu page-nav-title">Lastest Releases</a>
+
+					{{ range (index .Site.Data.changelog $type).releases }}
+
+					<li class="nav-item"><a class="nav-link nav-menu page-nav-link" href="#v{{ .versionURL }}">
+						Version {{ .version }} - {{ .date }}</a></li>
+
+					{{ end }}
+
+				</ul>
+			</div>
+		</div>
+
 	</div>
-
-	{{ partial "footer.html" . }}
-	{{ partial "scripts.html" . }}
-
 </div>
+
+{{ partial "footer.html" . }}
+{{ partial "scripts.html" . }}
 
 </body>
 </html>

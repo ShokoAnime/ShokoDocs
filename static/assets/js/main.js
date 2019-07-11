@@ -62,7 +62,10 @@ $('a.nav-menu').click(function () {
 // Smooth Scroll with position tracking.
 
 $(document).ready(function () {
+	$(document).on("scroll", onScroll);
+
 	$('a[href^="#"]').on('click', '.page-nav-link', function (e) {
+		console.log("Test");
 		e.preventDefault();
 
 		$('a').each(function () {
@@ -83,6 +86,26 @@ $(document).ready(function () {
 
 	});
 });
+
+function onScroll(event) {
+
+	let scrollPos = $(document).scrollTop();
+
+	$('#page-nav li a').each(function () {
+
+		let currLink = $(this);
+		let refElement = $(currLink.attr("href"));
+
+		if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+			$('#page-nav ul li a').removeClass("active");
+			currLink.addClass("active");
+		} else {
+			currLink.removeClass("active");
+		}
+
+	});
+}
+
 
 // ----------------------------------------------------------------------------------------------------------------
 

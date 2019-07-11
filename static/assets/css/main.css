@@ -1,16 +1,15 @@
 /*
     1. General
-    2. Navbar
-    3. Sidenav
-    4. Content Area
-    6. Changelog
-    7. Tables
-    8. FAQ
-    9. Tabs
-    10. Footer
+    2. Header
+    3. Page Header
+    4. Page Content
+    5. Sidenav Navigation
+    6. Footer
+    7. Changelog
+    8. Tables
+    9. FAQ
+    10. Tabs
 */
-
-
 /*
 ---------------------------------------------
     1. General
@@ -21,27 +20,12 @@
 	box-sizing: inherit;
 }
 
-a {
-	color: var(--linkNormal);
-	font-weight: 600;
-}
-
-a:active, a:hover {
-	color: var(--linkActive)
-}
-
-html {
-	box-sizing: border-box;
-}
 
 body {
-	background-color: var(--backgroundColor);
-	color: var(--fontColor);
 	font-family: "Muli", sans-serif;
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.9;
-	display: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -55,178 +39,122 @@ h2, h3, h4, h5, h6 {
 
 pre {
 	background-color: #f9f9fb;
-	border: var(--border-color) 1px solid;
+	border: #e0e5e6 1px solid;
 	border-left: 5px solid #005CBF;
 	padding: 1em;
 	margin: 1rem 0;
 	overflow: auto;
 }
 
-.container {
-	padding: 0;
-	margin: 0;
+.container-wrapper {
+	flex-grow: 1;
 	max-width: 1720px;
-}
-
-.card {
-	background-color: var(--cardBackground);
-}
-
-.bodyWrapper {
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
+	margin: 0 2rem;
 }
 
-.row-spacer {
-	margin: 1rem 0 2rem 0;
+.row-wrapper {
+	min-height: calc(100vh - 342px);
+	height: 100%;
 }
+
 
 /*
 ---------------------------------------------
-    2. Navbar
+    2. Header
 ---------------------------------------------
 */
 
 .navbar-wrapper {
-	background-color: #3a597a;
-	border-bottom: var(--borderColor) 1px solid;
-	border-top: var(--linkActive) 6px solid;
-	height: 66px;
-	position: fixed;
-	width: 100%;
-	z-index: 1;
+	background-color: #4b5b7d;
+	height: 100px;
+	overflow: hidden;
+}
+
+.navbar-info {
 	display: flex;
-}
-
-.navbar-item > a {
-	color: var(--navLinkNormal);
-	font-weight: 600;
-}
-
-.navbar-item > a:hover {
-	color: var(--navLinkHover);
+	padding: 0.80rem 3rem;
+	width: 100%;
 }
 
 .navbar-title {
-	padding-left: 2rem;
+	color: #ffffff;
 }
 
-.navbar-title > a {
-	color: var(--siteTitle);
-}
-
-.navbar-title > a:hover {
-	color: var(--linkActive);
+.navbar-title:hover {
+	color: #5DADE2;
 	text-decoration: none;
 }
 
+.navbar-divider {
+	display: inline-block;
+	height: 20px;
+	width: 1px;
+	background-color: #fff;
+	opacity: 0.15;
+	margin-top: 1.8rem;
+	margin-left: 2.5rem;
+}
 
 .navbar-links {
-	margin-left: auto;
-	padding: 0.50rem 1rem;
+	margin-left: 2rem;
+	margin-top: 1rem;
 }
 
 /*
 ---------------------------------------------
-    3. Sidenav
+    3. Page Header
 ---------------------------------------------
 */
 
-.nav-sidebar-wrapper {
-	background-color: #f4f5f7;
-	border-right: var(--borderColor) 1px solid;
-	height: 100vh;
-	max-width: 20rem;
-	position: fixed;
-	margin-top: 4.1rem;
-	font-family: "Muli", sans-serif;
-	padding-right: 0;
+.page-header-wrapper {
+	background-color: #f9f9fb;
+	border-bottom: #e0e5e6 1px solid;
+	height: 160px;
 }
 
-.nav-sidebar {
-	-webkit-box-direction: normal;
-	-webkit-box-orient: vertical;
-	flex-direction: column;
-	font-weight: 600;
-}
-
-.nav-sidebar .nav {
-	display: none;
-	flex-wrap: nowrap;
-}
-
-.nav-menus-wrapper {
-	padding: 3rem 0;
-}
-
-.nav-menu {
-	padding: .5rem 2rem;
-}
-
-.nav-sub-item {
-	padding-left: 3rem;
+.page-header-info {
 	display: block;
+	padding: 2rem 0;
+	text-align: center;
 }
 
-.nav-link {
+.page-header-subtitle {
+	font-size: 1.125rem;
+	padding-top: 0.5rem;
+}
+
+.page-header-subtitle-wrapper {
+	display: flex;
+	justify-content: center;
+	padding-top: 0.5rem;
+}
+
+.page-header-update-info {
+	padding-right: 1rem;
+	padding-top: 0.3rem;
+}
+
+.page-header-github-info {
+	color: #50a1ff;
 	display: flex;
 }
 
-.nav-item-single {
-	padding: .25rem 2rem;
-}
-
-.nav-group-wrapper .nav-link {
-	font-size: 0.90rem;
-}
-
-.nav-title {
-	padding: 0 3rem;
-	font-size: 0.95rem;
-	font-weight: 700;
-}
-
-.nav-sidebar .nav-angle.rotate {
-	-webkit-transform: rotate(90deg);
-	transform: rotate(90deg);
-}
-
-.nav-sidebar .nav-angle {
-	margin-left: auto;
-	font-size: 1rem;
-	font-style: normal;
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s, -webkit-transform 0.5s;
-	transition: -webkit-transform 0.5s;
-}
-
-.nav-sidebar .nav-angle::before {
-	content: ">";
+.page-header-github-link {
+	padding-left: 0.5rem;
+	padding-top: 0.3rem;
 }
 
 /*
 ---------------------------------------------
-    4. Content
----------------------------------------------
-*/
-
-.content-wrapper {
-	margin-left: 24rem;
-	margin-top: 7rem;
-	margin-bottom: 3rem;
-}
-
-/*
----------------------------------------------
-	5. Page Navigation
+    4. Page Content
 ---------------------------------------------
 */
 
 .page-wrapper {
-	margin-left: 24rem;
-	margin-top: 7rem;
-	max-width: 1050px;
+	padding: 5rem 4rem;
+	max-width: 995px !important;
 }
 
 .page-nav-wrapper {
@@ -235,11 +163,11 @@ pre {
 }
 
 .page-nav-link-wrapper {
-	padding-left: 1.5rem;
+	padding-left: 1rem;
 	padding-top: 0;
-	margin-top: 4rem;
+	margin-top: 3rem;
 	position: sticky;
-	top: 8rem;
+	top: 70px;
 }
 
 .page-nav-title {
@@ -281,7 +209,7 @@ pre {
 	background-color: var(--pageIndicator);
 	bottom: 0;
 	content: '';
-	left: 4px;
+	left: -4px;
 	position: absolute;
 	top: 0;
 	width: 2px;
@@ -289,7 +217,129 @@ pre {
 
 /*
 ---------------------------------------------
-    6. Changelog
+    5. Sidenav Navigation
+---------------------------------------------
+*/
+
+.sidenav-wrapper {
+	border-right: #e0e5e6 1px solid;
+	max-width: 270px;
+	padding: 5rem 1rem;
+}
+
+.nav-menus-wrapper {
+	padding: .5rem .5rem;
+	position: sticky;
+	top: 50px;
+}
+
+.nav-sidebar {
+	-webkit-box-direction: normal;
+	-webkit-box-orient: vertical;
+	flex-direction: column;
+	font-weight: 400;
+}
+
+.nav-sidebar .nav {
+	display: none;
+	flex-wrap: nowrap;
+	font-size: 0.875rem;
+	margin-left: 0.75rem;
+}
+
+.nav-sidebar .nav-link {
+	-webkit-box-pack: justify;
+	color: #333;
+	display: flex;
+	justify-content: space-between;
+	padding: 3px 0;
+}
+
+.nav-title-wrapper .nav-link {
+	margin-left: 0.75rem;
+}
+
+.nav-link.active {
+	color: #50a1ff;
+}
+
+.nav-sidebar .nav-item {
+	flex-shrink: 0;
+	margin: 4px 0;
+	overflow: hidden;
+	padding-right: 5px;
+}
+
+.nav-item > a {
+	color: #333;
+}
+
+.nav-item > a:hover {
+	color: #50a1ff;
+	text-decoration: none;
+}
+
+.nav-sidebar .nav-angle.rotate {
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.nav-sidebar .nav-angle {
+	display: inline-block;
+	font-size: 0.85rem;
+	font-style: normal;
+	margin-top: 2px;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s, -webkit-transform 0.5s;
+	transition: -webkit-transform 0.5s;
+}
+
+.nav-sidebar .nav-angle::before {
+	content: ">";
+}
+
+a.nav-title {
+	color: #50a1ff !important;
+	font-weight: 700;
+}
+
+/*
+---------------------------------------------
+    6. Footer
+---------------------------------------------
+*/
+
+.footer-wrapper {
+	background-color: #f9f9fb;
+	border-top: #e0e5e6 1px solid;
+	height: 80px;
+	overflow: hidden;
+	width: 100%;
+}
+
+.footer-info {
+	display: flex;
+	height: 100%;
+	padding: 0 3rem;
+}
+
+.footer-links {
+	padding-top: 1.75rem;
+}
+
+.footer-links-spacer {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.footer-copyright {
+	padding-top: 1.75rem;
+	margin-left: auto;
+}
+
+/*
+---------------------------------------------
+    7. Changelog
 ---------------------------------------------
 */
 
@@ -378,7 +428,7 @@ pre {
 
 /*
 ---------------------------------------------
-    7. Tables
+    8. Tables
 ---------------------------------------------
 */
 
@@ -401,7 +451,7 @@ pre {
 
 /*
 ---------------------------------------------
-    8. FAQ
+    9. FAQ
 ---------------------------------------------
 */
 
@@ -456,7 +506,7 @@ pre {
 
 /*
 ---------------------------------------------
-    9. Tabs
+    10. Tabs
 ---------------------------------------------
 */
 
@@ -477,50 +527,4 @@ pre {
 
 .tab-content {
 	padding: 1rem;
-}
-
-/*
----------------------------------------------
-    10. Footer
----------------------------------------------
-*/
-
-.footer-wrapper {
-	background-color: #3a597a;
-	border-top: var(--linkActive) 6px solid;
-	height: 66px;
-	width: 100%;
-	margin-top: auto;
-	z-index: 1;
-	overflow: hidden;
-}
-
-.footer-info {
-	display: flex;
-	height: 100%;
-}
-
-.footer-links {
-	padding-top: 1.2rem;
-	padding-left: 1.5rem;
-}
-
-.footer-links > a {
-	color: var(--footerLinkNormal);
-}
-
-.footer-links > a:hover {
-	color: var(--footerLinkHover);
-}
-
-.footer-links-spacer {
-	padding-left: 1rem;
-	padding-right: 1rem;
-}
-
-.footer-copyright {
-	padding-top: 1.2rem;
-	padding-right: 1.5rem;
-	margin-left: auto;
-	color: var(--footerText);
 }
