@@ -51,7 +51,10 @@ pre {
 	max-width: 1720px;
 	display: flex;
 	flex-direction: column;
-	margin: 0 2rem;
+}
+
+.img-fluid {
+	padding: 1rem 0;
 }
 
 .row-wrapper {
@@ -153,8 +156,12 @@ pre {
 */
 
 .page-wrapper {
-	padding: 5rem 4rem;
-	max-width: 995px !important;
+	padding: 5rem 2rem 5rem 3rem;
+	max-width: 1055px !important;
+}
+
+.page-left-column {
+	max-width: 300px;
 }
 
 .page-nav-wrapper {
@@ -164,7 +171,7 @@ pre {
 
 .page-nav-link-wrapper {
 	padding-left: 1rem;
-	padding-top: 0;
+	padding-right: 0;
 	margin-top: 3rem;
 	position: sticky;
 	top: 70px;
@@ -526,5 +533,5 @@ a.nav-title {
 }
 
 .tab-content {
-	padding: 1rem;
+	padding: 1rem 0;
 }

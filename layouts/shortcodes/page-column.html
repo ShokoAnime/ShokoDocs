@@ -1,5 +1,5 @@
 <div class="row row-spacer">
-	<div class="col-xl-8 col-sm-12 pl-0">
+	<div class="col-xl-8 col-sm-12">
 
 		{{ $markdown := .Inner | markdownify }}
 
@@ -11,7 +11,7 @@
 
 		</div>
 
-	<div class="col-xl-4 col-sm-12 pr-0">
+	<div class="col-xl-4 col-sm-12 page-left-column">
 		<a href="{{ .Get "image-url" }}" data-toggle="lightbox" data-title="{{ .Get "image-alt" }}">
 		<img src="{{ .Get "image-url" }}" class="img-fluid" alt="{{ .Get "image-alt" }}"></a>
 	</div>

@@ -64,8 +64,7 @@ $('a.nav-menu').click(function () {
 $(document).ready(function () {
 	$(document).on("scroll", onScroll);
 
-	$('a[href^="#"]').on('click', '.page-nav-link', function (e) {
-		console.log("Test");
+	$('body').on('click', 'a[href^="#"].page-nav-link', function (e) {
 		e.preventDefault();
 
 		$('a').each(function () {
@@ -80,7 +79,7 @@ $(document).ready(function () {
 			return
 		}
 
-		$('html, body').stop().animate({'scrollTop': $target.offset().top - 80}, 500, 'swing', function () {
+		$('html, body').stop().animate({'scrollTop': $target.offset().top - 10}, 500, 'swing', function () {
 			activeLink.addClass('active');
 		});
 
