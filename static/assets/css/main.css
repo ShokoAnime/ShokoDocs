@@ -9,6 +9,7 @@
     8. Tables
     9. FAQ
     10. Tabs
+    11. Search
 */
 
 /*
@@ -22,7 +23,7 @@
 }
 
 a {
-	color: var(--linkNormal)
+	color: var(--linkNormal);
 	font-weight: 600;
 }
 
@@ -45,6 +46,13 @@ h1, h2, h3, h4, h5, h6 {
 
 h2, h3, h4, h5, h6 {
 	margin: 1rem 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+	-webkit-box-shadow: 0 0 0 30px var(--backgroundColor) inset !important;
 }
 
 pre {
@@ -122,11 +130,11 @@ pre {
 	margin-top: auto;
 }
 
-.navbar-links >  a {
+.navbar-links > a {
 	color: var(--navLinkNormal);
 }
 
-.navbar-links >  a:hover {
+.navbar-links > a:hover {
 	color: var(--navLinkHover);
 }
 
@@ -543,13 +551,11 @@ a.nav-title {
 	padding: 1.25rem 3rem;
 }
 
-
 /*
 ---------------------------------------------
     10. Tabs
 ---------------------------------------------
 */
-
 
 .tab-pane {
 	display: none;
@@ -572,3 +578,21 @@ a.nav-title {
 .tab-content {
 	padding: 1rem 0;
 }
+
+/*
+---------------------------------------------
+    11. Search
+---------------------------------------------
+*/
+
+.search-wrapper {
+	margin-top: 2rem;
+}
+
+.search-input {
+	border-top: 0;
+	border-right: 0;
+	border-left: 0;
+	outline: 0;
+}
+

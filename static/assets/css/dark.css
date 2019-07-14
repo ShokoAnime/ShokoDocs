@@ -11,10 +11,10 @@
 :root {
 
 	/* General */
-	--backgroundColor: #fff;
+	--backgroundColor: #333;
 	--borderColor: #dae1e7;
 	--cardBackground: #ffffff;
-	--fontColor: #333;
+	--fontColor: #fff;
 
 	/* Links */
 	--linkNormal: #E91E63;

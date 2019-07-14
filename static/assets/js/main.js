@@ -97,3 +97,9 @@ $(document).on('click', '.nav-sidebar > .nav-item > .nav-link', function (event)
 });
 
 // ----------------------------------------------------------------------------------------------------------------
+
+// Lightbox
+$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+	event.preventDefault();
+	$(this).ekkoLightbox();
+});

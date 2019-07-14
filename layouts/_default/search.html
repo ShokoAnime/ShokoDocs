@@ -1,15 +1,58 @@
-{{ define "content" }}
+<!doctype html>
+<html lang="en">
 
-<div id="search-results">
+{{ partial "head.html" . }}
+
+<body data-spy="scroll" data-target="#page-nav" data-offset="50">
+
+{{ partial "header.html" . }}
+
+<div class="container container-wrapper">
+	<div class="row row-wrapper">
+
+		<div class="col-xl-2 sidenav-wrapper">
+
+			{{ partial "nav.html" . }}
+
+		</div>
+
+		<div class="col-xl-8 page-wrapper">
+
+			<div id="search-results">
+
+			</div>
+
+			<script id="search-result-template" type="text/x-js-template">
+				<div id="summary-${key}">
+					<h4><a href="${link}">${title}</a></h4>
+					<p>${snippet}</p>
+					${ isset tags }<p>Tags: ${tags}</p>${ end }
+					${ isset categories }<p>Categories: ${categories}</p>${ end }
+				</div>
+			</script>
+
+		</div>
+
+		<div class="col-xl-2 page-nav-link-wrapper">
+			<div class="nav-links-wrapper page-nav-link-wrapper">
+				<ul class="nav flex-column flex-nowrap" id="page-nav">
+
+					{{ range .Params.pageNav }}
+
+					<li class="page-nav-title">{{ .navTitle }}</li>
+					<li class="nav-item"><a class="nav-link nav-menu page-nav-link" href="#{{ .id }}">{{ .name }}</a></li>
+
+					{{ end }}
+
+				</ul>
+			</div>
+		</div>
+
+	</div>
 </div>
 
-<script id="search-result-template" type="text/x-js-template">
-	<div id="summary-${key}">
-		<h4><a href="${link}">${title}</a></h4>
-		<p>${snippet}</p>
-		${ isset tags }<p>Tags: ${tags}</p>${ end }
-		${ isset categories }<p>Categories: ${categories}</p>${ end }
-	</div>
-</script>
+{{ partial "footer.html" . }}
+{{ partial "scripts.html" . }}
 
-{{ end }}
+</body>
+</html>
