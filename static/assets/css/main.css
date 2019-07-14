@@ -10,6 +10,7 @@
     9. FAQ
     10. Tabs
 */
+
 /*
 ---------------------------------------------
     1. General
@@ -20,6 +21,15 @@
 	box-sizing: inherit;
 }
 
+a {
+	color: var(--linkNormal)
+	font-weight: 600;
+}
+
+a:hover {
+	color: var(--linkActive);
+	text-decoration: underline;
+}
 
 body {
 	font-family: "Muli", sans-serif;
@@ -38,19 +48,19 @@ h2, h3, h4, h5, h6 {
 }
 
 pre {
-	background-color: #f9f9fb;
-	border: #e0e5e6 1px solid;
-	border-left: 5px solid #005CBF;
-	padding: 1em;
+	background-color: var(--backgroundColor);
+	border: var(--borderColor) 1px solid;
+	border-left: 5px solid var(--codeLeftBorder);
 	margin: 1rem 0;
 	overflow: auto;
+	padding: 1em;
 }
 
 .container-wrapper {
-	flex-grow: 1;
-	max-width: 1720px;
 	display: flex;
 	flex-direction: column;
+	flex-grow: 1;
+	max-width: 1720px;
 }
 
 .img-fluid {
@@ -58,8 +68,8 @@ pre {
 }
 
 .row-wrapper {
-	min-height: calc(100vh - 342px);
 	height: 100%;
+	min-height: calc(100vh - 342px);
 }
 
 
@@ -77,32 +87,47 @@ pre {
 
 .navbar-info {
 	display: flex;
+	margin-top: 0.9rem;
 	padding: 0.80rem 3rem;
 	width: 100%;
 }
 
 .navbar-title {
-	color: #ffffff;
+	color: var(--siteTitle);
+}
+
+.navbar-title > h2 {
+	margin: 0;
 }
 
 .navbar-title:hover {
-	color: #5DADE2;
+	color: var(--linkActive);
 	text-decoration: none;
 }
 
 .navbar-divider {
+	background-color: #fff;
 	display: inline-block;
 	height: 20px;
-	width: 1px;
-	background-color: #fff;
-	opacity: 0.15;
-	margin-top: 1.8rem;
+	margin-bottom: auto;
 	margin-left: 2.5rem;
+	margin-top: auto;
+	opacity: 0.15;
+	width: 1px;
 }
 
 .navbar-links {
+	margin-bottom: auto;
 	margin-left: 2rem;
-	margin-top: 1rem;
+	margin-top: auto;
+}
+
+.navbar-links >  a {
+	color: var(--navLinkNormal);
+}
+
+.navbar-links >  a:hover {
+	color: var(--navLinkHover);
 }
 
 /*
@@ -112,8 +137,8 @@ pre {
 */
 
 .page-header-wrapper {
-	background-color: #f9f9fb;
-	border-bottom: #e0e5e6 1px solid;
+	background-color: var(--pageHeaderBackground);
+	border-bottom: var(--borderColor) 1px solid;
 	height: 160px;
 }
 
@@ -140,7 +165,7 @@ pre {
 }
 
 .page-header-github-info {
-	color: #50a1ff;
+	color: var(--pageHeaderGithub);
 	display: flex;
 }
 
@@ -156,8 +181,8 @@ pre {
 */
 
 .page-wrapper {
-	padding: 5rem 2rem 5rem 3rem;
 	max-width: 1055px !important;
+	padding: 5rem 2rem 5rem 3rem;
 }
 
 .page-left-column {
@@ -170,25 +195,25 @@ pre {
 }
 
 .page-nav-link-wrapper {
+	margin-top: 3rem;
 	padding-left: 1rem;
 	padding-right: 0;
-	margin-top: 3rem;
 	position: sticky;
 	top: 70px;
 }
 
 .page-nav-title {
-	font-size: 0.8125rem;
-	padding: 0.21em 0;
 	color: var(--fontColor);
+	font-size: 0.8125rem;
 	font-weight: 700;
+	padding: 0.21em 0;
 }
 
 .page-nav-link {
 	color: var(--linkNormal);
 	font-size: 0.8125rem;
-	padding: 0.21em 0;
 	font-weight: 600;
+	padding: 0.21em 0;
 }
 
 .page-nav-link:hover {
@@ -203,13 +228,13 @@ pre {
 	background-color: var(--pageIndicatorActive);
 	bottom: 0;
 	content: '';
+	display: inline-block;
+	height: 1.1rem;
 	left: -20px;
 	position: relative;
 	top: 4px;
 	width: 2px;
 	z-index: 1;
-	display: inline-block;
-	height: 1.1rem;
 }
 
 .page-nav-link:before {
@@ -229,7 +254,7 @@ pre {
 */
 
 .sidenav-wrapper {
-	border-right: #e0e5e6 1px solid;
+	border-right: var(--borderColor) 1px solid;
 	max-width: 270px;
 	padding: 5rem 1rem;
 }
@@ -256,7 +281,7 @@ pre {
 
 .nav-sidebar .nav-link {
 	-webkit-box-pack: justify;
-	color: #333;
+	color: var(--fontColor);
 	display: flex;
 	justify-content: space-between;
 	padding: 3px 0;
@@ -267,7 +292,7 @@ pre {
 }
 
 .nav-link.active {
-	color: #50a1ff;
+	color: var(--linkActive);
 }
 
 .nav-sidebar .nav-item {
@@ -282,7 +307,7 @@ pre {
 }
 
 .nav-item > a:hover {
-	color: #50a1ff;
+	color: var(--linkActive);
 	text-decoration: none;
 }
 
@@ -306,7 +331,7 @@ pre {
 }
 
 a.nav-title {
-	color: #50a1ff !important;
+	color: var(--sideNavTitle) !important;
 	font-weight: 700;
 }
 
@@ -317,8 +342,8 @@ a.nav-title {
 */
 
 .footer-wrapper {
-	background-color: #f9f9fb;
-	border-top: #e0e5e6 1px solid;
+	background-color: var(--footerBackground);
+	border-top: var(--borderColor) 1px solid;
 	height: 80px;
 	overflow: hidden;
 	width: 100%;
@@ -334,14 +359,23 @@ a.nav-title {
 	padding-top: 1.75rem;
 }
 
+.footer-links > a {
+	color: var(--fontColor);
+}
+
+.footer-links > a:hover {
+	color: var(--linkActive);
+	text-decoration: none;
+}
+
 .footer-links-spacer {
 	padding-left: 1rem;
 	padding-right: 1rem;
 }
 
 .footer-copyright {
-	padding-top: 1.75rem;
 	margin-left: auto;
+	padding-top: 1.75rem;
 }
 
 /*
@@ -351,16 +385,15 @@ a.nav-title {
 */
 
 .changelog-wrapper {
-	margin-left: 24rem;
-	margin-top: 8rem;
-	max-width: 1050px;
+	max-width: 1055px !important;
+	padding: 6rem 2rem 5rem 3rem;
 }
 
-.changelog-border {
+.single-changelog-wrapper {
 	margin-bottom: 3rem;
 }
 
-.changelog-header-wrapper {
+.changelog-header {
 	align-items: center;
 	background-color: var(--headerBackground);
 	border-bottom: none !important;
@@ -380,8 +413,8 @@ a.nav-title {
 	-webkit-box-pack: justify;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	font-weight: 600;
+	justify-content: space-between;
 }
 
 .changelog-date {
@@ -440,16 +473,16 @@ a.nav-title {
 */
 
 .table {
-	font-size: 0.9375rem;
 	color: var(--fontColor);
+	font-size: 0.9375rem;
 }
 
 .table-bordered {
-	border: 1px solid var(--tableBorder);
+	border: 1px solid var(--borderColor);
 }
 
 .table-bordered td, .table-bordered th {
-	border: 1px solid var(--tableBorder);
+	border: 1px solid var(--borderColor);
 }
 
 .table-bordered tbody tr:nth-of-type(odd) {
@@ -468,7 +501,7 @@ a.nav-title {
 
 .accordion .card {
 	background-color: var(--accordionCard);
-	border: 1px solid var(--accordionCardBorder) !important;
+	border: 1px solid var(--borderColor) !important;
 }
 
 .accordion .card-title {
@@ -523,13 +556,17 @@ a.nav-title {
 }
 
 .nav-tabs {
-	border-bottom: 1px solid #dee2e6;
+	border-bottom: 1px solid var(--borderColor);
+}
+
+.nav-tabs .nav-link {
+	color: var(--fontColor);
 }
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-	color: var(--tabsActive);
 	background-color: var(--tabsActiveBackground);
 	border-color: var(--tabsActiveBorder) var(--tabsActiveBorder) var(--tabsActiveBorderBottom);
+	color: var(--tabsActive);
 }
 
 .tab-content {

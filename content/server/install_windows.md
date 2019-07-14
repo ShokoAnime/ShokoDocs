@@ -2,7 +2,6 @@
 title = "Shoko Server - Windows Setup"
 lastMod = 2019-04-24
 
-
 [[pageNav]]
 navTitle = "Getting Started"
 name = "Install & First Run"

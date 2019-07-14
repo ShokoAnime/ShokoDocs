@@ -3,41 +3,23 @@
 
 {{ partial "head.html" . }}
 
-<body>
+<body data-spy="scroll" data-target="#page-nav" data-offset="50">
 
 {{ partial "header.html" . }}
 
 <div class="container container-wrapper">
-	<div class="row">
+	<div class="row row-wrapper">
 
-		<div class="col-xl-2 nav-column">
-			<div class="nav-wrapper">
+		<div class="col-xl-2 sidenav-wrapper">
 
-				{{ partial "nav.html" . }}
+			{{ partial "nav.html" . }}
 
-			</div>
 		</div>
 
-		<div class="col-xl-8">
-			<div class="content-wrapper">
+		<div class="col-xl-8 page-wrapper">
 
-				{{ .Content }}
+			{{ .Content }}
 
-			</div>
-		</div>
-
-		<div class="col-xl-2 page-nav-wrapper">
-			<div class="nav-links-wrapper page-nav-link-wrapper">
-				<ul class="nav flex-column flex-nowrap">
-
-					<li class="nav-item"><a class="nav-link page-nav-link" href="#general">General</a></li>
-					<li class="nav-item"><a class="nav-link page-nav-link" href="#shoko-server">Shoko Server</a></li>
-					<li class="nav-item"><a class="nav-link page-nav-link" href="#shoko-desktop">Shoko Desktop</a></li>
-					<li class="nav-item"><a class="nav-link page-nav-link" href="#shoko-on-plex">Shoko on Plex</a></li>
-					<li class="nav-item"><a class="nav-link page-nav-link" href="#anime-buddy">Anime Buddy</a></li>
-
-				</ul>
-			</div>
 		</div>
 
 	</div>

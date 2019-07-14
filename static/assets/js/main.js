@@ -4,13 +4,7 @@
 
 let themeID = 0;
 
-function getRootUrl() {
-	return window.location.origin ? window.location.origin + '/' : window.location.protocol + '/' + window.location.host + '/';
-}
-
 $(window).on("load", function () {
-
-	let rootURL = getRootUrl();
 
 	if (localStorage.getItem('theme') === 'light' || localStorage.getItem('theme') === null) {
 		$('link[id="dark"]').prop('disabled', true);
@@ -24,8 +18,6 @@ $(window).on("load", function () {
 });
 
 $('#themeSwitcher').click(function () {
-
-	let rootURL = getRootUrl();
 
 	if (themeID === 1) {
 		localStorage.setItem('theme', 'light');
@@ -43,67 +35,34 @@ $('#themeSwitcher').click(function () {
 
 // ----------------------------------------------------------------------------------------------------------------
 
-// Add/Remove 'Active' class for Left Navigation and Page Navigation.
+// Add/Remove 'Active' class for Side Navigation.
 
-$('a.nav-menu').click(function () {
+$('a.sidenav-menu').click(function () {
 
-	let leftNavActive = $('.nav.nav-sidebar.nav-sidebar-pill').find('.nav-link.active');
-	let rightNavActive = $('.nav-links-wrapper.page-nav-link-wrapper').find('.nav-link.active');
+	let leftNavActive = $('.nav.nav-sidebar.nav-sidebar-pill').find('.nav-link.nav-menu.sidenav-menu.active');
 
 	$(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
 
 	leftNavActive.length > 0 ? leftNavActive.removeClass('active') : '';
-	rightNavActive.length > 0 ? rightNavActive.removeClass('active') : '';
 
 });
 
 // ----------------------------------------------------------------------------------------------------------------
 
-// Smooth Scroll with position tracking.
+// Smooth Scroll for Page Navigation.
 
-$(document).ready(function () {
-	$(document).on("scroll", onScroll);
+$('a[href^="#"].page-nav-link').on('click', function (e) {
 
-	$('body').on('click', 'a[href^="#"].page-nav-link', function (e) {
-		e.preventDefault();
+	e.preventDefault();
+	let hash = this.hash;
 
-		$('a').each(function () {
-			$(this).removeClass('active');
-		});
+	$('html, body').animate({scrollTop: $(hash).offset().top - 50}, 1000, function () {
 
-		var activeLink = $(this);
-		let target = this.hash;
-
-		$target = $(target);
-		if (!$target.length) {
-			return
-		}
-
-		$('html, body').stop().animate({'scrollTop': $target.offset().top - 10}, 500, 'swing', function () {
-			activeLink.addClass('active');
-		});
+		// Add Active class to selected anchor.
+		$(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
 
 	});
 });
-
-function onScroll(event) {
-
-	let scrollPos = $(document).scrollTop();
-
-	$('#page-nav li a').each(function () {
-
-		let currLink = $(this);
-		let refElement = $(currLink.attr("href"));
-
-		if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-			$('#page-nav ul li a').removeClass("active");
-			currLink.addClass("active");
-		} else {
-			currLink.removeClass("active");
-		}
-
-	});
-}
 
 
 // ----------------------------------------------------------------------------------------------------------------

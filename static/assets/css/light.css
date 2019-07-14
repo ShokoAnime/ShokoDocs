@@ -17,27 +17,31 @@
 	--fontColor: #333;
 
 	/* Links */
-	--linkNormal: #006cab;
-	--linkActive: #279ceb;
+	--linkNormal: #E91E63;
+	--linkActive: #2196F3;
 
 	/* Navbar */
 	--siteTitle: #ffffff;
 	--navLinkNormal: #efefef;
-	--navLinkHover: #ffffff;
+	--navLinkHover: #5DADE2;
 
-	/* Footer */
-	--footerText: #ffffff;
-	--footerLinkNormal: #efefef;
-	--footerLinkHover: #ffffff;
+	/* SideNav */
+	--sideNavTitle: #006cab;
+
+	/* Page Header */
+	--pageHeaderBackground: #f9f9fb;
+	--pageHeaderGithub: #006cab;
 
 	/* Page Navigation */
 	--pageIndicator: #eaeff4;
 	--pageIndicatorActive: #006cab;
 
+	/* Footer */
+	--footerBackground: #f9f9fb;
+
 	/* Tables */
 	--headerBackground: #f9f9fb;
 	--rowBackground: #E9F0F8;
-	--tableBorder: #dee2e6;
 
 	/* Changelog Badges */
 	--badgetext: #ffffff;
@@ -46,16 +50,18 @@
 	--fixed: #ffba00;
 	--removed: #ff4954;
 
-	/* FaQ */
+	/* FAQ */
 	--accordionBackground: #f9f9fb;
 	--accordionCard: #ffffff;
-	--accordionCardBorder: #f1f2f3;
 	--accordionArrow: #757575;
 
-  /* Tabs */
-	--tabsActive: #495057;
+	/* Tabs */
+	--tabsActive: #2196F3;
 	--tabsActiveBackground: #fffff;
 	--tabsActiveBorder: #dee2e6;
 	--tabsActiveBorderBottom: #ffffff;
+
+	/* Pre */
+	--codeLeftBorder: #006cab;
 
 }
