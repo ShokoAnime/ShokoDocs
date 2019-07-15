@@ -28,7 +28,7 @@ a {
 }
 
 a:hover {
-	color: var(--linkActive);
+	color: var(--linkActive) !important;
 	text-decoration: underline;
 }
 
