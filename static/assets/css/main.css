@@ -33,13 +33,18 @@ a:hover {
 }
 
 body {
+	background-color: var(--backgroundColor);
+	color: var(--fontColor);
+	display: none;
 	font-family: "Muli", sans-serif;
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.9;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
+	color: var(--fontColor);
 	font-family: "Exo 2", sans-serif;
 	letter-spacing: 0.5px;
 }
@@ -100,7 +105,7 @@ pre {
 	width: 100%;
 }
 
-.navbar-title {
+.navbar-title > h2 {
 	color: var(--siteTitle);
 }
 
@@ -135,6 +140,19 @@ pre {
 }
 
 .navbar-links > a:hover {
+	color: var(--navLinkHover);
+}
+
+.navbar-options {
+	margin-left: auto;
+	padding-right: 5rem;
+}
+
+.navbar-options > a {
+	color: var(--navLinkNormal);
+}
+
+.navbar-options > a:hover {
 	color: var(--navLinkHover);
 }
 
@@ -311,7 +329,7 @@ pre {
 }
 
 .nav-item > a {
-	color: #333;
+	color: var(--fontColor)
 }
 
 .nav-item > a:hover {
@@ -595,4 +613,3 @@ a.nav-title {
 	border-left: 0;
 	outline: 0;
 }
-

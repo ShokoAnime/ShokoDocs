@@ -12,6 +12,7 @@ $(window).on("load", function () {
 	} else {
 		$('link[id="light"]').prop('disabled', true);
 		$("body").css("display", "initial");
+		$('#themeSwitcher').text('Light Theme');
 		themeID++;
 	}
 
@@ -23,11 +24,13 @@ $('#themeSwitcher').click(function () {
 		localStorage.setItem('theme', 'light');
 		$('link[id="dark"]').prop('disabled', true);
 		$('link[id="light"]').prop('disabled', false);
+		$('#themeSwitcher').text('Dark Theme');
 		themeID--;
 	} else {
 		localStorage.setItem('theme', 'dark');
 		$('link[id="light"]').prop('disabled', true);
 		$('link[id="dark"]').prop('disabled', false);
+		$('#themeSwitcher').text('Light Theme');
 		themeID++;
 	}
 
@@ -99,7 +102,11 @@ $(document).on('click', '.nav-sidebar > .nav-item > .nav-link', function (event)
 // ----------------------------------------------------------------------------------------------------------------
 
 // Lightbox
+
 $(document).on('click', '[data-toggle="lightbox"]', function(event) {
 	event.preventDefault();
 	$(this).ekkoLightbox();
 });
+
+// ----------------------------------------------------------------------------------------------------------------
+
