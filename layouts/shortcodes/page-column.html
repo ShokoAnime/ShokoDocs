@@ -12,7 +12,7 @@
 		</div>
 
 	<div class="col-xl-4 col-sm-12 page-left-column">
-		<a href="{{ .Get "image-url" }}" data-toggle="lightbox" data-title="{{ .Get "image-alt" }}">
+		<a href="{{ .Get "image-url" }}" data-toggle="lightbox" data-lightbox="{{ .Get "image-alt" }}" data-title="{{ .Get "image-alt" }}">
 		<img src="{{ .Get "image-url" }}" class="img-fluid" alt="{{ .Get "image-alt" }}"></a>
 	</div>
 </div>
