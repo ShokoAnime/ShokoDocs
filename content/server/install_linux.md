@@ -4,17 +4,24 @@ lastMod = 2019-04-24
 
 [[pageNav]]
 navTitle = "Getting Started"
-name = "Install & First Run"
-id = "install-first-run"
+name = "Installing Docker"
+id = "installing-docker"
 [[pageNav]]
-name = "Inputting Your AniDB Account"
-id = "inputting-your-anidb-account"
+name = "Running Shoko Server"
+id = "running-shoko-server"
 [[pageNav]]
-name = "Setting Up Import Folders"
-id = "setting-up-import-folders"
+name = "Managing Shoko Docker"
+id = "managing-shoko-docker"
 [[pageNav]]
-name = "Additional Configuration"
-id = "additional-configuration"
+navTitle = "Advanced Settings"
+name = "UID / GID"
+id = "uid-gid"
+[[pageNav]]
+name = "Creating settings.json"
+id = "creating-settings-json"
+[[pageNav]]
+name = "Modify settings.json"
+id = "modify-settings-json"
 
 markup = "mmark"
 +++
