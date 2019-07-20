@@ -3,7 +3,7 @@
 
 {{ partial "head.html" . }}
 
-<body data-spy="scroll" data-target="#page-nav" data-offset="50">
+<body data-spy="scroll" data-target="#page-nav" data-offset="80">
 
 {{ partial "header.html" . }}
 
@@ -28,7 +28,10 @@
 
 					{{ range .Params.pageNav }}
 
+					{{if  .navTitle }}
 					<li class="page-nav-title">{{ .navTitle }}</li>
+					{{ end }}
+
 					<li class="nav-item"><a class="nav-link nav-menu page-nav-link" href="#{{ .id }}">{{ .name }}</a></li>
 
 					{{ end }}
