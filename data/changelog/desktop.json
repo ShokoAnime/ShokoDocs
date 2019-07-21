@@ -2,6 +2,69 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoDesktop/",
   "releases": [
     {
+      "version": "3.9.5",
+      "versionURL": "395",
+      "date": "July 21, 2019",
+      "blogLink": "https://shokoanime.com/blog/shoko-version-3-9-5-released/",
+      "changes": [
+        {
+          "status": "added",
+          "commit": "20a762a",
+          "text": "Use different settings.json files depending on environment."
+        },
+        {
+          "status": "added",
+          "commit": "f270852",
+          "text": "Add searching functionality to Multiple Files Utility."
+        },
+        {
+          "status": "changed",
+          "commit": "a152d44",
+          "text": "Change LongToFileSizeConverter output, enforcing 2 digits after the dot."
+        },
+        {
+          "status": "changed",
+          "commit": "db94183",
+          "text": "Improve the episode combobox in unrecognized files utility."
+        },
+        {
+          "status": "changed",
+          "commit": "717f1df",
+          "text": "Speed up file deletion in batches."
+        },
+        {
+          "status": "fixed",
+          "commit": "cef9f9d",
+          "text": "Properly continue when deleting many files at once."
+        },
+        {
+          "status": "fixed",
+          "commit": "33bd387",
+          "text": "Fix sorting by size."
+        },
+        {
+          "status": "fixed",
+          "commit": "312bba4",
+          "text": "Fix Unrecognized Files Search."
+        },
+        {
+          "status": "fixed",
+          "commit": "12413a5",
+          "text": "Fix sorting in Duplicate Files."
+        },
+        {
+          "status": "fixed",
+          "commit": "56ff3a8",
+          "text": "Fix ordering of files."
+        },
+        {
+          "status": "fixed",
+          "commit": "1901b9f",
+          "text": "Logs button tries to open wrong folder."
+        }
+      ]
+    },
+    {
       "version": "3.9.4",
       "versionURL": "394",
       "date": "December 31, 2018",
@@ -80,74 +143,6 @@
           "status": "fixed",
           "issue": "586",
           "text": "Invalid URI when deleting files on Windows Share."
-        }
-      ]
-    },
-    {
-      "version": "3.9.0",
-      "versionURL": "390",
-      "date": "June 21, 2018",
-      "blogLink": "https://shokoanime.com/blog/shoko-version-3-9-0-released/",
-      "changes": [
-        {
-          "status": "changed",
-          "commit": "4573763",
-          "text": "Add additional logging for unrecognized files."
-        },
-        {
-          "status": "changed",
-          "commit": "4573763",
-          "text": "Add additional logging for recognized files."
-        },
-        {
-          "status": "changed",
-          "commit": "4d58eb7",
-          "text": "Removed unnecessary rereshing from unrecognized series."
-        },
-        {
-          "status": "changed",
-          "commit": "4d58eb7",
-          "text": "Update Plex settings and add a refresh button as an async call."
-        },
-        {
-          "status": "changed",
-          "commit": "095b275",
-          "text": "Update Shoko Server \"unable to connect\" message a little more verbose."
-        },
-        {
-          "status": "changed",
-          "commit": "a960eaf",
-          "text": "changed Trakt auth UI."
-        },
-        {
-          "status": "changed",
-          "commit": "69e9fa0",
-          "text": "changed TvDB linking system and UI."
-        },
-        {
-          "status": "fixed",
-          "commit": "62ec780",
-          "text": "Fix validation logic when updating TvDB links."
-        },
-        {
-          "status": "fixed",
-          "commit": "33ed62a",
-          "text": "Fix an issue with the AVDump utility when selecting multiple files."
-        },
-        {
-          "status": "fixed",
-          "commit": "a2a0b0b",
-          "text": "Fix Horizontal Scrolling on Dashboard."
-        },
-        {
-          "status": "fixed",
-          "commit": "0543df8",
-          "text": "General fixes to import folder system."
-        },
-        {
-          "status": "removed",
-          "commit": "be497ff",
-          "text": "Removed MAL access and syncing."
         }
       ]
     }
