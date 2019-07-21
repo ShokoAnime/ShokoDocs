@@ -94,27 +94,26 @@ pre {
 
 .navbar-wrapper {
 	background-color: #4b5b7d;
-	height: 100px;
-	overflow: hidden;
 }
 
 .navbar-info {
-	display: flex;
-	margin-top: 0.9rem;
 	padding: 0.80rem 3rem;
-	width: 100%;
+}
+
+.nav-links {
+	padding-top: 0.50rem;
 }
 
 .navbar-title > h2 {
 	color: var(--siteTitle);
-}
-
-.navbar-title > h2 {
 	margin: 0;
 }
 
-.navbar-title:hover {
+.navbar-title > h2:hover {
 	color: var(--linkActive);
+}
+
+.navbar-title:hover {
 	text-decoration: none;
 }
 
@@ -122,30 +121,22 @@ pre {
 	background-color: #fff;
 	display: inline-block;
 	height: 20px;
-	margin-bottom: auto;
+	margin-bottom: 1rem;
 	margin-left: 2.5rem;
 	margin-top: auto;
 	opacity: 0.15;
 	width: 1px;
 }
 
-.navbar-links {
-	margin-bottom: auto;
-	margin-left: 2rem;
-	margin-top: auto;
-}
-
-.navbar-links > a {
-	color: var(--navLinkNormal);
-}
-
-.navbar-links > a:hover {
-	color: var(--navLinkHover);
+.navbar-nav-link {
+	color: #ffffff;
+	font-weight: 600;
+	padding-right: 2rem;
 }
 
 .navbar-options {
 	margin-left: auto;
-	padding-right: 5rem;
+	padding-top: 0.50rem;
 }
 
 .navbar-options > a {
