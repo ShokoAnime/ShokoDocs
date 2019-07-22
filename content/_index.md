@@ -8,7 +8,7 @@ hidePageInfo = "Yes"
 
 ## Navigating Shoko Docs
 
-Shoko Docs was designed to be easy to navigate and find the content you are looking for. Our navigation menu on the left lists **all currently available pages**. If the section or program / plugin you are looking for is not covered, you can either add it yourself (see below) or make a request in our Discord server for someone on staff to write it. You can also use the **search function** in the top-right to quickly find your desired content, each result is only listed once regardless of how many matches on a page were found. 
+Shoko Docs was designed to be easy to navigate and find the content you are looking for. Our navigation menu on the left lists **all currently available pages**. If the section or program / plugin you are looking for is not covered, you can either add it yourself (see below) or make a request in our Discord server for someone on staff to write it. You can also use the **search function** in the side-nav on the left to quickly find your desired content, each result is only listed once regardless of how many matches on a page were found. 
 
 ## Help Make Shoko Docs Even Better!
 
