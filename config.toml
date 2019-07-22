@@ -1,0 +1,6 @@
+baseURL = "https://docs.shokoanime.com/"
+languageCode = "en-us"
+title = "Shoko Docs"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

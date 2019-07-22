@@ -1,0 +1,150 @@
+{
+  "githubLink": "https://github.com/ShokoAnime/ShokoDesktop/",
+  "releases": [
+    {
+      "version": "3.9.5",
+      "versionURL": "395",
+      "date": "July 21, 2019",
+      "blogLink": "https://shokoanime.com/blog/shoko-version-3-9-5-released/",
+      "changes": [
+        {
+          "status": "added",
+          "commit": "20a762a",
+          "text": "Use different settings.json files depending on environment."
+        },
+        {
+          "status": "added",
+          "commit": "f270852",
+          "text": "Add searching functionality to Multiple Files Utility."
+        },
+        {
+          "status": "changed",
+          "commit": "a152d44",
+          "text": "Change LongToFileSizeConverter output, enforcing 2 digits after the dot."
+        },
+        {
+          "status": "changed",
+          "commit": "db94183",
+          "text": "Improve the episode combobox in unrecognized files utility."
+        },
+        {
+          "status": "changed",
+          "commit": "717f1df",
+          "text": "Speed up file deletion in batches."
+        },
+        {
+          "status": "fixed",
+          "commit": "cef9f9d",
+          "text": "Properly continue when deleting many files at once."
+        },
+        {
+          "status": "fixed",
+          "commit": "33bd387",
+          "text": "Fix sorting by size."
+        },
+        {
+          "status": "fixed",
+          "commit": "312bba4",
+          "text": "Fix Unrecognized Files Search."
+        },
+        {
+          "status": "fixed",
+          "commit": "12413a5",
+          "text": "Fix sorting in Duplicate Files."
+        },
+        {
+          "status": "fixed",
+          "commit": "56ff3a8",
+          "text": "Fix ordering of files."
+        },
+        {
+          "status": "fixed",
+          "commit": "1901b9f",
+          "text": "Logs button tries to open wrong folder."
+        }
+      ]
+    },
+    {
+      "version": "3.9.4",
+      "versionURL": "394",
+      "date": "December 31, 2018",
+      "blogLink": "https://shokoanime.com/blog/shoko-version-3-9-4-released/",
+      "changes": [
+        {
+          "status": "changed",
+          "commit": "939e044",
+          "text": "Unrecognized Utility - Show AniDB's AnimeID next to each Series listed in the ListBox"
+        },
+        {
+          "status": "changed",
+          "commit": "939e044",
+          "text": "Unrecognized Utility - Search for AniDB's AnimeID."
+        },
+        {
+          "status": "changed",
+          "commit": "9362ddf",
+          "text": "Make AVDump not require mapped folders."
+        },
+        {
+          "status": "changed",
+          "commit": "71c33d1",
+          "text": "Allow the user to select preferred MPC client."
+        },
+        {
+          "status": "fixed",
+          "commit": "498fbab",
+          "text": "Fix Searching in Desktop."
+        }
+      ]
+    },
+    {
+      "version": "3.9.3",
+      "versionURL": "393",
+      "date": "August 20, 2018",
+      "blogLink": "https://shokoanime.com/blog/shoko-version-3-9-3-released/",
+      "changes": [
+        {
+          "status": "changed",
+          "commit": "dcedd1f",
+          "text": "Default to Full Series View, not Metro."
+        }
+      ]
+    },
+    {
+      "version": "3.9.2",
+      "versionURL": "392",
+      "date": "August 2, 2018",
+      "blogLink": "https://shokoanime.com/blog/shoko-version-3-9-2-released/",
+      "changes": [
+        {
+          "status": "fixed",
+          "commit": "d3eec15",
+          "text": "Fix an issue when searching using more than three letters."
+        }
+      ]
+    },
+    {
+      "version": "3.9.1",
+      "versionURL": "391",
+      "date": "July 30, 2018",
+      "blogLink": "https://shokoanime.com/blog/shoko-version-3-9-1-released/",
+      "changes": [
+        {
+          "status": "changed",
+          "commit": "042d832",
+          "text": "Increase default image sizes on Dashboard & fix Missing Eps Padding."
+        },
+        {
+          "status": "changed",
+          "commit": "fab24ac",
+          "text": "Make plex section display something more, useful when unlinked."
+        },
+        {
+          "status": "fixed",
+          "issue": "586",
+          "text": "Invalid URI when deleting files on Windows Share."
+        }
+      ]
+    }
+  ]
+}

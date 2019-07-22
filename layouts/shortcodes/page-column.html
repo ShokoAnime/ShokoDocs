@@ -1,0 +1,18 @@
+<div class="row row-spacer">
+	<div class="col-xl-8 col-sm-12">
+
+		{{ $markdown := .Inner | markdownify }}
+
+		{{ if not ( strings.Contains $markdown "<p>" ) }}
+		<p>{{ $markdown }}</p>
+		{{ else }}
+		{{ $markdown }}
+		{{ end }}
+
+		</div>
+
+	<div class="col-xl-4 col-sm-12 page-left-column">
+		<a href="{{ .Get "image-url" }}" data-toggle="lightbox" data-lightbox="{{ .Get "image-alt" }}" data-title="{{ .Get "image-alt" }}">
+		<img src="{{ .Get "image-url" }}" class="img-fluid" alt="{{ .Get "image-alt" }}"></a>
+	</div>
+</div>

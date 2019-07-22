@@ -1,0 +1,4 @@
+<div class="alert alert-{{ .Get "type" }}" role="alert">
+	<h4 class="alert-heading">{{ .Get "heading" }}</h4>
+	{{ .Inner | markdownify }}
+</div>

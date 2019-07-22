@@ -1,0 +1,67 @@
+/*
+    1. Colors
+*/
+
+/*
+---------------------------------------------
+    1. Colors
+---------------------------------------------
+*/
+
+:root {
+
+	/* General */
+	--backgroundColor: #fff;
+	--borderColor: #dae1e7;
+	--cardBackground: #ffffff;
+	--fontColor: #333;
+
+	/* Links */
+	--linkNormal: #E91E63;
+	--linkActive: #2196F3;
+
+	/* Navbar */
+	--siteTitle: #ffffff;
+	--navLinkNormal: #efefef;
+	--navLinkHover: #5DADE2;
+
+	/* SideNav */
+	--sideNavTitle: #006cab;
+
+	/* Page Header */
+	--pageHeaderBackground: #f9f9fb;
+	--pageHeaderGithub: #006cab;
+
+	/* Page Navigation */
+	--pageIndicator: #eaeff4;
+	--pageIndicatorActive: #006cab;
+
+	/* Footer */
+	--footerBackground: #f9f9fb;
+
+	/* Tables */
+	--headerBackground: #f9f9fb;
+	--rowBackground: #E9F0F8;
+
+	/* Changelog Badges */
+	--badgetext: #ffffff;
+	--added: #3cd458;
+	--changed: #50a1ff;
+	--fixed: #ffba00;
+	--removed: #ff4954;
+
+	/* FAQ */
+	--accordionBackground: #f9f9fb;
+	--accordionCard: #ffffff;
+	--accordionArrow: #757575;
+
+	/* Tabs */
+	--tabsActive: #2196F3;
+	--tabsActiveBackground: #fffff;
+	--tabsActiveBorder: #dee2e6;
+	--tabsActiveBorderBottom: #ffffff;
+
+	/* Pre */
+	--codeLeftBorder: #006cab;
+
+}

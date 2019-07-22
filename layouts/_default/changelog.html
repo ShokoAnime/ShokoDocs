@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+{{ partial "head.html" . }}
+
+<body data-spy="scroll" data-target="#page-nav" data-offset="50">
+
+{{ partial "header.html" . }}
+
+<div class="container container-wrapper">
+	<div class="row row-wrapper">
+
+		<div class="col-xl-2 sidenav-wrapper">
+
+				{{ partial "nav.html" . }}
+
+			</div>
+
+		<div class="col-xl-8 changelog-wrapper">
+
+				{{ if eq .RelPermalink "/changelog/" }}
+				{{ .Content }}
+				{{ end }}
+
+
+				{{ $type := string .Params.changelogType }}
+				{{ $gitLink :=(index .Site.Data.changelog $type).githubLink }}
+
+				{{ range (index .Site.Data.changelog $type).releases }}
+
+				<div id="v{{ .versionURL  }}" class="card border single-changelog-wrapper">
+					<div class="card-body changelog-header">
+						<h4>Version {{ .version }} </h4>
+						<div class="changelog-info">
+							<p class="changelog-date">{{ .date }}</p>
+							{{ if eq .blogLink "NA" }}
+							<p class="changelog-date">Release Notes Not Available</p>
+							{{ else }}
+							<p class="changelog-date"><a href="{{ .blogLink }}" target="_blank" rel="noopener">View Release Notes</a>
+							</p>
+							{{ end }}
+						</div>
+					</div>
+
+					<div class="changelog-body">
+
+						<table class="table table-bordered">
+							<thead>
+							<tr>
+								<th class="changelog-type">Type</th>
+								<th class="changelog-git">Git Link</th>
+								<th>Description</th>
+							</tr>
+							</thead>
+
+							<tbody>
+
+							{{ range .changes }}
+
+							<tr data-status="{{ .status }}">
+								<td><span class="badge badge-{{ .status }}">{{ .status | humanize }}</span></td>
+								<td>
+									{{ if .issue }}
+									<a href="{{$gitLink}}issues/{{ .issue }}" target="_blank">#{{ .issue }}</a>
+									{{ end }}
+									{{ if .commit }}
+									<a href="{{$gitLink}}commit/{{ .commit }}" target="_blank">{{ .commit }}</a>
+									{{ end }}
+								</td>
+								<td>{{ .text }}</td>
+							</tr>
+
+							{{ end }}
+
+							</tbody>
+						</table>
+
+					</div>
+				</div>
+
+				{{ end }}
+
+		</div>
+
+		<div class="col-xl-2 page-nav-link-wrapper">
+			<div class="nav-links-wrapper page-nav-link-wrapper">
+				<ul class="nav flex-column flex-nowrap" id="page-nav">
+
+					<a class="nav-link nav-menu page-nav-title">Latest Releases</a>
+
+					{{ range (index .Site.Data.changelog $type).releases }}
+
+					<li class="nav-item"><a class="nav-link nav-menu page-nav-link" href="#v{{ .versionURL }}">
+						Version {{ .version }} - {{ .date }}</a></li>
+
+					{{ end }}
+
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+{{ partial "footer.html" . }}
+{{ partial "scripts.html" . }}
+
+</body>
+</html>

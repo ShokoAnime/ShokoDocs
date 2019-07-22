@@ -1,0 +1,9 @@
+<div class="card">
+	<h6 class="card-title">
+		<a class="collapsed" data-toggle="collapse" href="#{{ .Get "id" }}">{{ .Get "question" }}</a>
+	</h6>
+
+	<div id="{{ .Get "id" }}" class="collapse" data-parent="#accordion-{{ .Get "type" }}">
+		<div class="card-body"> {{ .Inner | markdownify }}</div>
+	</div>
+</div>
