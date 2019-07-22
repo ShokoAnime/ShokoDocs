@@ -12,11 +12,10 @@ Shoko Docs was designed to be easy to navigate and find the content you are look
 
 ## Help Make Shoko Docs Even Better!
 
-Like Shoko itself, Shoko Docs is open-source, hosted on Github and mostly written in {{< external-link link="https://www.markdownguide.org/" text="Markdown" >}} making it incredibly easy to contribute. We've also created an [examples](link) page to document some of the custom additions we've made to help new users create content for Shoko Docs. 
+Like Shoko itself, Shoko Docs is open-source, hosted on Github and mostly written in {{< external-link link="https://www.markdownguide.org/" text="Markdown" >}} making it incredibly easy to contribute. 
 
 To keep uniformity, we will ask that the following standards for any submission be applied when possible. 
 
-- Indenting is 1 Tab / 2 Spaces.
 - Unless already used, do not use abbreviations.
 - All explanations of functions must be clear and detailed.
 - Provide examples when and if needed.
