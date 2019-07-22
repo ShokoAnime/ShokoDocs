@@ -1,0 +1,24 @@
+git:
+  depth: false
+
+env:
+  global:
+    - HUGO_VERSION="0.55.6"
+
+install:
+  - wget -q https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+  - tar xf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+  - mv hugo ~/bin/
+
+script:
+  - hugo --gc --minify
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  local-dir: public
+  verbose: true
+  on:
+    branch: master
