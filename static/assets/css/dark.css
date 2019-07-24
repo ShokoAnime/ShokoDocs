@@ -11,37 +11,34 @@
 :root {
 
 	/* General */
-	--backgroundColor: #333;
-	--borderColor: #dae1e7;
+	--backgroundColor: #181a1b;
+	--borderColor: #4a6174;
 	--cardBackground: #ffffff;
 	--fontColor: #fff;
 
-	/* Links */
-	--linkNormal: #E91E63;
-	--linkActive: #2196F3;
-
 	/* Navbar */
+	--navBackground: #4b5b7d;
 	--siteTitle: #ffffff;
 	--navLinkNormal: #efefef;
 	--navLinkHover: #5DADE2;
 
+	/* Page Header */
+	--pageHeaderBackground: #181a1b;
+	--pageHeaderGithub: #006cab;
+
 	/* SideNav */
 	--sideNavTitle: #006cab;
-
-	/* Page Header */
-	--pageHeaderBackground: #f9f9fb;
-	--pageHeaderGithub: #006cab;
 
 	/* Page Navigation */
 	--pageIndicator: #eaeff4;
 	--pageIndicatorActive: #006cab;
 
 	/* Footer */
-	--footerBackground: #f9f9fb;
+	--footerBackground: #1a1c1d;
 
 	/* Tables */
 	--headerBackground: #f9f9fb;
-	--rowBackground: #E9F0F8;
+	--rowBackground: #1e2022;
 
 	/* Changelog Badges */
 	--badgetext: #ffffff;
@@ -58,10 +55,13 @@
 	/* Tabs */
 	--tabsActive: #2196F3;
 	--tabsActiveBackground: #fffff;
-	--tabsActiveBorder: #dee2e6;
-	--tabsActiveBorderBottom: #ffffff;
+	--tabsActiveBorder: #2196F3;
+	--tabsActiveBorderBottom: #2196F3;
 
-	/* Pre */
+	/* Code */
 	--codeLeftBorder: #006cab;
 
+	/* Links */
+	--linkNormal: #E91E63;
+	--linkActive: #2196F3;
 }
