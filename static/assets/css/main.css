@@ -1,6 +1,6 @@
 /*
     1. General
-    2. Header
+    2. NavBar
     3. Page Header
     4. Page Content
     5. Sidenav Navigation
@@ -88,12 +88,12 @@ pre {
 
 /*
 ---------------------------------------------
-    2. Header
+    2. NavBar
 ---------------------------------------------
 */
 
 .navbar-wrapper {
-	background-color: #4b5b7d;
+	background-color: var(--navBackground);
 }
 
 .navbar-info {
