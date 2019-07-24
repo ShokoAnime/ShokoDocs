@@ -450,9 +450,11 @@ a.nav-title {
 }
 
 .changelog-body {
+	background-color: var(--bodyBackground);
 	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
 }
+
 
 .changelog-body > .table {
 	margin-bottom: 0;
