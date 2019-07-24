@@ -16,10 +16,6 @@
 	--cardBackground: #ffffff;
 	--fontColor: #333;
 
-	/* Links */
-	--linkNormal: #E91E63;
-	--linkActive: #2196F3;
-
 	/* Navbar */
 	--navBackground: #4b5b7d;
 	--siteTitle: #ffffff;
@@ -44,6 +40,7 @@
 
 	/* Tables */
 	--headerBackground: #f9f9fb;
+	--bodyBackground: #ffffff;
 	--rowBackground: #E9F0F8;
 
 	/* Changelog Badges */
@@ -67,4 +64,7 @@
 	/* Code */
 	--codeLeftBorder: #006cab;
 
+	/* Links */
+	--linkNormal: #E91E63;
+	--linkActive: #2196F3;
 }
