@@ -9,7 +9,7 @@
 */
 
 :root {
-
+	
 	/* General */
 	--backgroundColor: #1a1e27;
 	--borderColor: #4a6174;
@@ -24,7 +24,7 @@
 
 	/* Page Header */
 	--pageHeaderBackground: #272b35;
-	--pageHeaderGithub: #006cab;
+	--pageHeaderGithub: #2196F3;
 
 	/* SideNav */
 	--sideNavTitle: #40a0e8;
@@ -32,8 +32,8 @@
 	--searchfontColor: #dadada;
 
 	/* Page Navigation */
-	--pageIndicator: #eaeff4;
-	--pageIndicatorActive: #006cab;
+	--pageIndicator: #dadada;
+	--pageIndicatorActive: #40a0e8;
 
 	/* Footer */
 	--footerBackground: #1a1c1d;
@@ -44,11 +44,11 @@
 	--rowBackground: #212229d9;
 
 	/* Changelog Badges */
-	--badgetext: #fff;
+	--badgetext: #000000;
 	--added: #3cd458;
-	--changed: #50a1ff;
-	--fixed: #ffba00;
-	--removed: #ff4954;
+	--changed: #1f7ae2;
+	--fixed: #e0e000;
+	--removed: #d43841;
 
 	/* FAQ */
 	--accordionBackground: #212229d9;
