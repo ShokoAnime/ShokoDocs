@@ -1,6 +1,6 @@
 /*
     1. General
-    2. Header
+    2. NavBar
     3. Page Header
     4. Page Content
     5. Sidenav Navigation
@@ -20,6 +20,10 @@
 
 *, *:before, *:after {
 	box-sizing: inherit;
+}
+
+::placeholder {
+	color: var(--fontColor)
 }
 
 a {
@@ -64,6 +68,7 @@ pre {
 	background-color: var(--backgroundColor);
 	border: var(--borderColor) 1px solid;
 	border-left: 5px solid var(--codeLeftBorder);
+	color: var(--fontColor);
 	margin: 1rem 0;
 	overflow: auto;
 	padding: 1em;
@@ -88,12 +93,12 @@ pre {
 
 /*
 ---------------------------------------------
-    2. Header
+    2. NavBar
 ---------------------------------------------
 */
 
 .navbar-wrapper {
-	background-color: #4b5b7d;
+	background-color: var(--navBackground);
 }
 
 .navbar-info {
@@ -102,6 +107,10 @@ pre {
 
 .nav-links {
 	padding-top: 0.50rem;
+}
+
+.nav-links > a:hover {
+	text-decoration: none;
 }
 
 .navbar-title > h2 {
@@ -129,7 +138,7 @@ pre {
 }
 
 .navbar-nav-link {
-	color: #ffffff;
+	color: var(--navLinkNormal);;
 	font-weight: 600;
 	padding-right: 2rem;
 }
@@ -145,6 +154,7 @@ pre {
 
 .navbar-options > a:hover {
 	color: var(--navLinkHover);
+	text-decoration: none;
 }
 
 /*
@@ -506,6 +516,11 @@ a.nav-title {
 	background-color: var(--rowBackground);
 }
 
+.table thead th {
+	vertical-align: bottom;
+	border-bottom: 2px solid var(--borderColor);
+}
+
 /*
 ---------------------------------------------
     9. FAQ
@@ -560,6 +575,10 @@ a.nav-title {
 	padding: 1.25rem 3rem;
 }
 
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+	border-color: var(--backgroundColor) var(--backgroundColor) var(--borderColor);
+}
+
 /*
 ---------------------------------------------
     10. Tabs
@@ -599,6 +618,8 @@ a.nav-title {
 }
 
 .search-input {
+	color: var(--searchfontColor);
+	background-color: var(--searchBackground);
 	border-top: 0;
 	border-right: 0;
 	border-left: 0;

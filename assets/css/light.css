@@ -21,16 +21,19 @@
 	--linkActive: #2196F3;
 
 	/* Navbar */
+	--navBackground: #4b5b7d;
 	--siteTitle: #ffffff;
 	--navLinkNormal: #efefef;
 	--navLinkHover: #5DADE2;
 
-	/* SideNav */
-	--sideNavTitle: #006cab;
-
 	/* Page Header */
 	--pageHeaderBackground: #f9f9fb;
 	--pageHeaderGithub: #006cab;
+
+	/* SideNav */
+	--sideNavTitle: #006cab;
+	--searchBackground: #ffffff;
+	--searchfontColor: #333;
 
 	/* Page Navigation */
 	--pageIndicator: #eaeff4;
@@ -61,7 +64,7 @@
 	--tabsActiveBorder: #dee2e6;
 	--tabsActiveBorderBottom: #ffffff;
 
-	/* Pre */
+	/* Code */
 	--codeLeftBorder: #006cab;
 
 }
