@@ -11,25 +11,25 @@
 :root {
 
 	/* General */
-	--backgroundColor: #181a1b;
+	--backgroundColor: #1a1e27;
 	--borderColor: #4a6174;
-	--cardBackground: #ffffff;
-	--fontColor: #fff;
+	--cardBackground: #272b35;
+	--fontColor: #dadada;
 
 	/* Navbar */
-	--navBackground: #4b5b7d;
-	--siteTitle: #ffffff;
+	--navBackground: #1a1e27;
+	--siteTitle: #5DADE2;
 	--navLinkNormal: #efefef;
 	--navLinkHover: #5DADE2;
 
 	/* Page Header */
-	--pageHeaderBackground: #181a1b;
+	--pageHeaderBackground: #272b35;
 	--pageHeaderGithub: #006cab;
 
 	/* SideNav */
-	--sideNavTitle: #006cab;
-	--searchBackground: #181a1b;
-	--searchfontColor: #fff;
+	--sideNavTitle: #40a0e8;
+	--searchBackground: #1a1e27;
+	--searchfontColor: #dadada;
 
 	/* Page Navigation */
 	--pageIndicator: #eaeff4;
@@ -39,23 +39,24 @@
 	--footerBackground: #1a1c1d;
 
 	/* Tables */
-	--headerBackground: #f9f9fb;
-	--rowBackground: #1e2022;
+	--headerBackground: #212229d9;
+	--bodyBackground: #272b35;
+	--rowBackground: #212229d9;
 
 	/* Changelog Badges */
-	--badgetext: #ffffff;
+	--badgetext: #fff;
 	--added: #3cd458;
 	--changed: #50a1ff;
 	--fixed: #ffba00;
 	--removed: #ff4954;
 
 	/* FAQ */
-	--accordionBackground: #f9f9fb;
-	--accordionCard: #ffffff;
-	--accordionArrow: #757575;
+	--accordionBackground: #212229d9;
+	--accordionCard: #2b353e;
+	--accordionArrow: #dadada;
 
 	/* Tabs */
-	--tabsActive: #2196F3;
+	--tabsActive: #8dc0e8;
 	--tabsActiveBackground: #fffff;
 	--tabsActiveBorder: #2196F3;
 	--tabsActiveBorderBottom: #2196F3;
@@ -64,6 +65,6 @@
 	--codeLeftBorder: #006cab;
 
 	/* Links */
-	--linkNormal: #E91E63;
+	--linkNormal: #ce4574;
 	--linkActive: #2196F3;
 }
