@@ -22,6 +22,10 @@
 	box-sizing: inherit;
 }
 
+::placeholder {
+	color: var(--fontColor)
+}
+
 a {
 	color: var(--linkNormal);
 	font-weight: 600;
@@ -64,6 +68,7 @@ pre {
 	background-color: var(--backgroundColor);
 	border: var(--borderColor) 1px solid;
 	border-left: 5px solid var(--codeLeftBorder);
+	color: var(--fontColor);
 	margin: 1rem 0;
 	overflow: auto;
 	padding: 1em;
@@ -104,6 +109,10 @@ pre {
 	padding-top: 0.50rem;
 }
 
+.nav-links > a:hover {
+	text-decoration: none;
+}
+
 .navbar-title > h2 {
 	color: var(--siteTitle);
 	margin: 0;
@@ -129,7 +138,7 @@ pre {
 }
 
 .navbar-nav-link {
-	color: #ffffff;
+	color: var(--navLinkNormal);;
 	font-weight: 600;
 	padding-right: 2rem;
 }
@@ -145,6 +154,7 @@ pre {
 
 .navbar-options > a:hover {
 	color: var(--navLinkHover);
+	text-decoration: none;
 }
 
 /*
@@ -506,6 +516,11 @@ a.nav-title {
 	background-color: var(--rowBackground);
 }
 
+.table thead th {
+	vertical-align: bottom;
+	border-bottom: 2px solid var(--borderColor);
+}
+
 /*
 ---------------------------------------------
     9. FAQ
@@ -558,6 +573,10 @@ a.nav-title {
 
 .card-body {
 	padding: 1.25rem 3rem;
+}
+
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+	border-color: var(--backgroundColor) var(--backgroundColor) var(--borderColor);
 }
 
 /*
