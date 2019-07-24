@@ -104,7 +104,7 @@ markup = "mmark"
         <div class = "col-sm-8">
                 <p>At the top of the Unrecognized List is the Unrecognized Toolbar which provides you with some useful file
                         options. </p>
-                <table class = "table table-striped">
+                <table class = "table table-bordered">
                         <thead>
                         <tr>
                                 <th width = "20%">Button</th>
@@ -189,7 +189,7 @@ markup = "mmark"
         <div class = "col-sm-8">
                 <p>When you select a file, a panel will display below <strong>Link Setup</strong> showing a array of file options and file info. </p>
 
-                <table class = "table table-striped">
+                <table class = "table table-bordered">
                         <thead>
                         <tr>
                                 <th width = "20%">Button</th>
@@ -257,7 +257,7 @@ markup = "mmark"
                 <p>The Ignored utility shows all files that you've previously marked as <strong>Ignored</strong> when previously sorting through your <strong>Unrecognized</strong>
                         files. </p>
 
-                <table class = "table table-striped">
+                <table class = "table table-bordered">
                         <thead>
                         <tr>
                                 <th width = "20%">Button</th>
@@ -311,7 +311,7 @@ markup = "mmark"
                         toolbar will not be covered below as it's a reduced version of the <a href = "#unrecognized-toolbar">
                                 Unrecognized Toolbar</a>.</p>
 
-                <table class = "table table-striped">
+                <table class = "table table-bordered">
                         <thead>
                         <tr>
                                 <th width = "20%">Available Actions</th>
@@ -365,7 +365,7 @@ markup = "mmark"
 <p>The list of all files that have two or more versions of the same episode / movie</p>
 <div class = "row">
         <div class = "col-sm-8">
-                <table class = "table table-striped">
+                <table class = "table table-bordered">
                         <thead>
                         <tr>
                                 <th width = "20%">Available Actions</th>
@@ -411,7 +411,7 @@ markup = "mmark"
         <div class = "col-sm-8">
                 <p>The Multiple Files tab allows you to clean any duplicate versions you have of the same episode.</p>
                 <p>The Auto Deletion Settings allows you to automate the deletion of extra versions, based on paterns. </p>
-                <table class = "table table-striped">
+                <table class = "table table-bordered">
                         <thead>
                         <tr>
                                 <th width = "20%">Available Actions</th>
@@ -448,7 +448,7 @@ markup = "mmark"
         <div class = "col-sm-8">
                 <p>The missing MyList compares your current AniDB collection with your Shoko Managed Collection </p>
                 <p>If you have files on AniDB that are not in your current collection, you can allow Shoko to remove all of the missing files from AniDB</p>
-                <table class = "table table-striped">
+                <table class = "table table-bordered">
                         <thead>
                         <tr>
                                 <th width = "20%">Available Actions</th>
@@ -491,7 +491,7 @@ markup = "mmark"
 <div class = "row">
         <div class = "col-sm-8">
                 <p>After refershing the view you can delete the shows that have no episodes from the list by pressing the red X button.</p>
-                <table class = "table table-striped">
+                <table class = "table table-bordered">
                         <thead>
                         <tr>
                                 <th width = "20%">Available Actions</th>
@@ -526,7 +526,7 @@ markup = "mmark"
 <div class = "row">
         <div class = "col-sm-8">
                 Refresh the list (with any addional filters checked / selected) to receive a list of missing episodes.
-                <table class = "table table-striped">
+                <table class = "table table-bordered">
                         <thead>
                         <tr>
                                 <th width = "20%">Available Actions</th>
@@ -607,7 +607,7 @@ markup = "mmark"
 <p>Get AniDB Recommendations based upon your own ratings and AniDB users.</p>
 <div class = "row">
         <div class = "col-sm-8">
-                <table class = "table table-striped">
+                <table class = "table table-bordered">
                         <thead>
                         <tr>
                                 <th width = "20%">Available Actions</th>
@@ -690,7 +690,7 @@ markup = "mmark"
 <p>Update AniDB information for files that were imported into Shoko.</p>
 <div class = "row">
         <div class = "col-sm-8">
-                <table class = "table table-striped">
+                <table class = "table table-bordered">
                         <thead>
                         <tr>
                                 <th width = "20%">Available Actions</th>
@@ -732,7 +732,7 @@ markup = "mmark"
 <p>Allows you to do some cleaning of any community sites that you have linked.</p>
 <div class = "row">
         <div class = "col-sm-8">
-                <table class = "table table-striped">
+                <table class = "table table-bordered">
                         <thead>
                         <tr>
                                 <th width = "20%">Available Actions</th>
@@ -766,7 +766,7 @@ markup = "mmark"
 <p>List your collection and show your current AniDB vote, as well as allow you to vote for your current collection.</p>
 <div class = "row">
         <div class = "col-sm-8">
-                <table class = "table table-striped">
+                <table class = "table table-bordered">
                         <thead>
                         <tr>
                                 <th width = "20%">Available Actions</th>
