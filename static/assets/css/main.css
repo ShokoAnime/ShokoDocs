@@ -599,6 +599,8 @@ a.nav-title {
 }
 
 .search-input {
+	color: var(--searchfontColor);
+	background-color: var(--searchBackground);
 	border-top: 0;
 	border-right: 0;
 	border-left: 0;
