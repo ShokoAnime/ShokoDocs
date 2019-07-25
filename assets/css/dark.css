@@ -9,59 +9,63 @@
 */
 
 :root {
-
+	
 	/* General */
-	--backgroundColor: #333;
-	--borderColor: #dae1e7;
-	--cardBackground: #ffffff;
-	--fontColor: #fff;
-
-	/* Links */
-	--linkNormal: #E91E63;
-	--linkActive: #2196F3;
+	--backgroundColor: #1a1e27;
+	--borderColor: #4a6174;
+	--cardBackground: #272b35;
+	--fontColor: #dadada;
 
 	/* Navbar */
-	--siteTitle: #ffffff;
+	--navBackground: #1a1e27;
+	--siteTitle: #fff;
 	--navLinkNormal: #efefef;
 	--navLinkHover: #5DADE2;
 
-	/* SideNav */
-	--sideNavTitle: #006cab;
-
 	/* Page Header */
-	--pageHeaderBackground: #f9f9fb;
-	--pageHeaderGithub: #006cab;
+	--pageHeaderBackground: #272b35;
+	--pageHeaderGithub: #2196F3;
+
+	/* SideNav */
+	--sideNavTitle: #40a0e8;
+	--searchBackground: #1a1e27;
+	--searchfontColor: #dadada;
 
 	/* Page Navigation */
-	--pageIndicator: #eaeff4;
-	--pageIndicatorActive: #006cab;
+	--pageIndicator: #dadada;
+	--pageIndicatorActive: #40a0e8;
 
 	/* Footer */
-	--footerBackground: #f9f9fb;
+	--footerBackground: #1a1c1d;
 
 	/* Tables */
-	--headerBackground: #f9f9fb;
-	--rowBackground: #E9F0F8;
+	--headerNormalBackground: #101015;
+	--headerChangelogBackground: #212229;
+	--rowBackgroundEven: #323740;
+	--rowBackgroundOdd: #212229;
 
 	/* Changelog Badges */
-	--badgetext: #ffffff;
-	--added: #3cd458;
-	--changed: #50a1ff;
-	--fixed: #ffba00;
-	--removed: #ff4954;
+	--badgetext: #000000;
+	--added: #29b943;
+	--changed: #1f7ae2;
+	--fixed: #e0e000;
+	--removed: #d43841;
 
 	/* FAQ */
-	--accordionBackground: #f9f9fb;
-	--accordionCard: #ffffff;
-	--accordionArrow: #757575;
+	--accordionBackground: #212229;
+	--accordionCard: #2b353e;
+	--accordionArrow: #dadada;
 
 	/* Tabs */
-	--tabsActive: #2196F3;
+	--tabsActive: #8dc0e8;
 	--tabsActiveBackground: #fffff;
-	--tabsActiveBorder: #dee2e6;
-	--tabsActiveBorderBottom: #ffffff;
+	--tabsActiveBorder: #2196F3;
+	--tabsActiveBorderBottom: #2196F3;
 
-	/* Pre */
+	/* Code */
 	--codeLeftBorder: #006cab;
 
+	/* Links */
+	--linkNormal: #ce4574;
+	--linkActive: #2196F3;
 }
