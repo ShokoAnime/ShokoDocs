@@ -76,7 +76,7 @@ pre {
 }
 
 thead {
-	background-color: var(--headerBackground);
+	background-color: var(--headerNormalBackground);
 }
 
 .border {
@@ -430,7 +430,7 @@ a.nav-title {
 
 .changelog-header {
 	align-items: center;
-	background-color: var(--headerBackground);
+	background-color: var(--headerChangelogBackground);
 	border-bottom: none !important;
 	border-top: none !important;
 	-webkit-box-align: center;

@@ -38,10 +38,11 @@
 	/* Footer */
 	--footerBackground: #1a1c1d;
 
-	/* Tables 2d394a*/
-	--headerBackground: #101015d9;
+	/* Tables */
+	--headerNormalBackground: #101015;
+	--headerChangelogBackground: #212229;
 	--rowBackgroundEven: #323740;
-	--rowBackgroundOdd: #212229d9;
+	--rowBackgroundOdd: #212229;
 
 	/* Changelog Badges */
 	--badgetext: #000000;
@@ -51,7 +52,7 @@
 	--removed: #d43841;
 
 	/* FAQ */
-	--accordionBackground: #212229d9;
+	--accordionBackground: #212229;
 	--accordionCard: #2b353e;
 	--accordionArrow: #dadada;
 

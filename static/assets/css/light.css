@@ -39,7 +39,8 @@
 	--footerBackground: #f9f9fb;
 
 	/* Tables */
-	--headerBackground: #f9f9fb;
+	--headerNormalBackground: #f9f9fb;
+	--headerChangelogBackground: #f9f9fb;
 	--rowBackgroundEven: #FFFFFF;
 	--rowBackgroundOdd: #E9F0F8;
 
