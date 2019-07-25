@@ -877,12 +877,12 @@ html.lb-disable-scrolling {
 		border-bottom: var(--borderColor) 1px solid;
 		border-right: none;
 		max-width: 100%;
-		padding: 1rem
+		padding: 1rem;
 	}
 
 	.page-wrapper {
 		max-width: 100%;
-		padding: 1rem;
+		padding: 1rem 0 1rem 1rem;
 		width: -webkit-fill-available;
 		width: -moz-available;
 	}
@@ -891,6 +891,10 @@ html.lb-disable-scrolling {
 		max-width: 100%;
 		width: -webkit-fill-available;
 		width: -moz-available;
+	}
+
+	.page-nav-link-wrapper {
+		display: none;
 	}
 
 	pre code {
