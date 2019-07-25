@@ -860,8 +860,21 @@ html.lb-disable-scrolling {
 
 @media only screen and (max-width: 1015px) {
 
+	.navbar-info {
+		padding: 1rem;
+	}
+
 	.navbar-divider {
 		display: none;
+	}
+
+	.navbar-collapse {
+		padding: 1rem 0;
+		text-align: center;
+	}
+
+	.navbar-options {;
+		padding-top: 0
 	}
 
 	.page-header-wrapper {
@@ -893,6 +906,10 @@ html.lb-disable-scrolling {
 	}
 
 	.page-nav-link-wrapper {
+		display: none;
+	}
+	
+	.footer-links {
 		display: none;
 	}
 
