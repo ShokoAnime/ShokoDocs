@@ -74,6 +74,10 @@ pre {
 	padding: 1em;
 }
 
+.border {
+	border: 1px solid var(--borderColor) !important;
+}
+
 .container-wrapper {
 	display: flex;
 	flex-direction: column;
@@ -512,8 +516,12 @@ a.nav-title {
 	border: 1px solid var(--borderColor);
 }
 
+.table-bordered tbody tr:nth-of-type(even) {
+	background-color: var(--rowBackgroundEven);
+}
+
 .table-bordered tbody tr:nth-of-type(odd) {
-	background-color: var(--rowBackground);
+	background-color: var(--rowBackgroundOdd);
 }
 
 .table thead th {
