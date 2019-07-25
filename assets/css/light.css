@@ -44,7 +44,8 @@
 
 	/* Tables */
 	--headerBackground: #f9f9fb;
-	--rowBackground: #E9F0F8;
+	--rowBackgroundEven: #FFFFFF;
+	--rowBackgroundOdd: #E9F0F8;
 
 	/* Changelog Badges */
 	--badgetext: #ffffff;
