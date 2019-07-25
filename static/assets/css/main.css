@@ -10,6 +10,8 @@
     9. FAQ
     10. Tabs
     11. Search
+    12. Lightbox
+    13. Media Queries
 */
 
 /*
@@ -44,7 +46,6 @@ body {
 	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.9;
-
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -60,7 +61,7 @@ h2, h3, h4, h5, h6 {
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
-input:-webkit-autofill:active  {
+input:-webkit-autofill:active {
 	-webkit-box-shadow: 0 0 0 30px var(--backgroundColor) inset !important;
 }
 
@@ -72,6 +73,10 @@ pre {
 	margin: 1rem 0;
 	overflow: auto;
 	padding: 1em;
+}
+
+thead {
+	background-color: var(--rowBackgroundEven);
 }
 
 .border {
@@ -92,8 +97,8 @@ pre {
 .row-wrapper {
 	height: 100%;
 	min-height: calc(100vh - 342px);
+	width: 100%;
 }
-
 
 /*
 ---------------------------------------------
@@ -846,4 +851,80 @@ html.lb-disable-scrolling {
 	cursor: pointer;
 	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
 	opacity: 1;
+}
+
+/*
+---------------------------------------------
+    13. Media Queries
+---------------------------------------------
+*/
+
+@media only screen and (max-width: 1015px) {
+
+	.navbar-divider {
+		display: none;
+	}
+
+	.page-header-wrapper {
+		height: 100%;
+	}
+
+	.page-header-subtitle-wrapper {
+		display: inline-block;
+	}
+
+	.sidenav-wrapper {
+		border-bottom: var(--borderColor) 1px solid;
+		border-right: none;
+		max-width: 100%;
+		padding: 1rem
+	}
+
+	.page-wrapper {
+		max-width: 100%;
+		padding: 1rem;
+		width: -webkit-fill-available;
+		width: -moz-available;
+	}
+
+	.container-wrapper {
+		max-width: 100%;
+		width: -webkit-fill-available;
+		width: -moz-available;
+	}
+
+	pre code {
+		word-break: break-all;
+		white-space: normal;
+	}
+
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	tr {
+		border: 1px solid #ccc;
+	}
+
+	td {
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+	}
+
+	td:before {
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
 }
