@@ -76,7 +76,7 @@ pre {
 }
 
 thead {
-	background-color: var(--headerBackground);
+	background-color: var(--headerNormalBackground);
 }
 
 .border {
@@ -239,7 +239,7 @@ thead {
 
 .page-nav-title {
 	color: var(--fontColor);
-	font-size: 0.8125rem;
+	font-size: 0.9125rem;
 	font-weight: 700;
 	padding: 0.21em 0;
 }
@@ -430,7 +430,7 @@ a.nav-title {
 
 .changelog-header {
 	align-items: center;
-	background-color: var(--headerBackground);
+	background-color: var(--headerChangelogBackground);
 	border-bottom: none !important;
 	border-top: none !important;
 	-webkit-box-align: center;
@@ -458,6 +458,7 @@ a.nav-title {
 }
 
 .changelog-body {
+	background-color: var(--bodyBackground);
 	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
 }
@@ -873,8 +874,8 @@ html.lb-disable-scrolling {
 		text-align: center;
 	}
 
-	.navbar-options {;
-		padding-top: 0
+	.navbar-options {
+		padding-top: 0;
 	}
 
 	.page-header-wrapper {

@@ -16,10 +16,6 @@
 	--cardBackground: #ffffff;
 	--fontColor: #333;
 
-	/* Links */
-	--linkNormal: #E91E63;
-	--linkActive: #2196F3;
-
 	/* Navbar */
 	--navBackground: #162850;
 	--siteTitle: #ffffff;
@@ -43,7 +39,8 @@
 	--footerBackground: #f9f9fb;
 
 	/* Tables */
-	--headerBackground: #f9f9fb;
+	--headerNormalBackground: #f9f9fb;
+	--headerChangelogBackground: #f9f9fb;
 	--rowBackgroundEven: #FFFFFF;
 	--rowBackgroundOdd: #E9F0F8;
 
@@ -68,4 +65,7 @@
 	/* Code */
 	--codeLeftBorder: #006cab;
 
+	/* Links */
+	--linkNormal: #E91E63;
+	--linkActive: #2196F3;
 }
