@@ -38,10 +38,10 @@
 	/* Footer */
 	--footerBackground: #1a1c1d;
 
-	/* Tables */
-	--headerBackground: #212229d9;
-	--bodyBackground: #272b35;
-	--rowBackground: #212229d9;
+	/* Tables 2d394a*/
+	--headerBackground: #101015d9;
+	--rowBackgroundEven: #323740;
+	--rowBackgroundOdd: #212229d9;
 
 	/* Changelog Badges */
 	--badgetext: #000000;
