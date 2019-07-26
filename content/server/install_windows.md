@@ -67,7 +67,7 @@ There are **two different Import Folder Systems** you can use. The first is **Si
 
 Click **New Folder** to open the **Import Folder Window**, select the provider for the import folder and then select the location. Decide on the **Import Folder System** you'll be using for this Import Folder and then click the **Save** button to add the Import Folder. If you need to add additional folders then make sure to do that as well before moving on.
 
-For in-depth information on Import Folders and how they work, check the [Import Folders](config.html#import-folders) documentation.
+For in-depth information on Import Folders and how they work, check the [Import Folders](../config) documentation.
 
 {{< /page-column >}}
 
@@ -75,20 +75,5 @@ For in-depth information on Import Folders and how they work, check the [Import 
 
 This install and setup guide is only meant to cover the minimal requirements required to get Shoko Server up and running. However, Shoko does provide fine-grained options for those who are not satisfied with the default settings. We **highly recommend** going through all the available options in Shoko Server, Shoko Server Web UI and Shoko Desktop to fully fine-tune Shoko and your collection.
 
-Below are a few areas to check out.
+[Shoko Server - Configure Settings](../config)
 
-[Import Folders](../server/config.html#import-folders)
-
-The information regarding Import Folders in this guide is just the basics needed to get Shoko Server running. Advanced users should fully understand how Import Folders work and their supported options to get the most out of Shoko.
-
-[Server Actions](../server/config.html#actions-info)
-
-Shoko Server provides a list of available actions that can be run to maintain, update and clean up your collection.
-
-[Shoko Server Web UI](../server/webui.html)
-
-Shoko Server comes with the latest version of our Web UI by default. While it's still in beta, its provides a lot of functionality previously only accessible in Shoko Desktop.
-
-[Community Site Settings](#)
-
-Every Community Site supported by Shoko can be configured to your needs if the default settings are not to your liking. Additional configuration such as account linking and syncing is also available for Community Sites that support it.

@@ -96,7 +96,7 @@ thead {
 
 .row-wrapper {
 	height: 100%;
-	min-height: calc(100vh - 342px);
+	min-height: calc(100vh - 331px);
 }
 
 /*
@@ -140,7 +140,7 @@ thead {
 	height: 20px;
 	margin-bottom: 1rem;
 	margin-left: 2.5rem;
-	margin-top: auto;
+	margin-top: 1.5rem;
 	opacity: 0.15;
 	width: 1px;
 }
@@ -238,7 +238,7 @@ thead {
 }
 
 .page-nav-title {
-	color: var(--fontColor);
+	color: var(--linkNormal);
 	font-size: 0.9125rem;
 	font-weight: 700;
 	padding: 0.21em 0;
@@ -458,7 +458,6 @@ a.nav-title {
 }
 
 .changelog-body {
-	background-color: var(--bodyBackground);
 	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
 }
