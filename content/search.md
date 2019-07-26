@@ -127,7 +127,7 @@ markup = "mmark"
   padding: 5px;
   margin: 5px;
   border: 1px solid #323740;
-  background-color:;
+  background-color: #1a1e27;
 }
 
 </style>
