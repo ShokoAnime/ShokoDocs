@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+{{ partial "head.html" . }}
+
+<body>
+
+<div class="navbar-wrapper">
+
+	<nav class="navbar navbar-expand-lg navbar-dark navbar-info">
+		<a class="navbar-title" href="/"><h2>{{ .Site.Title }}</h2></a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMobile"
+		        aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<span class="navbar-divider"></span>
+
+		<div class="collapse navbar-collapse navbar-info" id="navbarMobile">
+			<div class="navbar-nav nav-links">
+				<a class="navbar-link navbar-nav-link" href="https://docs.shokoanime.com">Home</a>
+				<a class="navbar-link navbar-nav-link" href="https://shokoanime.com">Website</a>
+				<a class="navbar-link navbar-nav-link" href="https://docs.shokoanime.com/changelog">Changelog</a>
+				<a class="navbar-link navbar-nav-link" href="https://discord.gg/vpeHDsg" target="_blank"
+				   rel="noopener">Support</a>
+				<a class="navbar-link navbar-nav-link" href="https://github.com/ShokoAnime/ShokoDocs" target="_blank"
+				   rel="noopener">Github</a>
+			</div>
+
+			<div class="navbar-options">
+				<a class="navbar-link navbar-nav-link" id="themeSwitcher" href="#">Dark Theme</a>
+			</div>
+
+		</div>
+	</nav>
+
+</div>
+
+
+<div class="page-header-wrapper">
+	<div class="page-header-info">
+
+		<h1>404 - Page Not Found</h1>
+		<p class="page-header-subtitle">Well isn't this awkward.</p>
+
+	</div>
+</div>
+
+
+<div class="container container-wrapper">
+	<div class="row row-wrapper">
+
+		<div class="col-xl-2 sidenav-wrapper">
+
+			{{ partial "nav.html" . }}
+
+		</div>
+
+		<div class="col-xl-8 page-wrapper">
+
+			<h2>Sorry About That!</h2>
+
+			<p>Hmm, looks like the page you were looking for has either been moved or the URL is incorrect.</p>
+
+			<p>Here are a couple solutions to help get you on the correct path.</p>
+
+			<ul>
+				<li>Check the menu on the left for the page you were originally trying to access.</li>
+				<li>Try using the search function on the left.</li>
+				<li>Hop on Discord and blame Elemental Crisis.</li>
+			</ul>
+
+			<p>If you accessed this link in Shoko, please let us know so we can fix it to prevent this from happening in
+				future versions.</p>
+
+			<link rel="canonical" href="{{ .Permalink | absURL }}">
+
+		</div>
+
+	</div>
+</div>
+
+{{ partial "footer.html" . }}
+{{ partial "scripts.html" . }}
+
+</body>
+</html>
