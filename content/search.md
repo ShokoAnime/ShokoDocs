@@ -124,10 +124,8 @@ markup = "mmark"
 
 .gs-no-results-result .gs-snippet,
 .gs-error-result .gs-snippet {
-  padding: 5px;
-  margin: 5px;
-  border: 1px solid #323740;
-  background-color: #1a1e27;
+  border: 1px solid var(--borderColor);
+  background-color: var(--backgroundColor);
 }
 
 </style>
