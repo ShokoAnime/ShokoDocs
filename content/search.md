@@ -125,6 +125,12 @@ markup = "mmark"
 	color: var(--linkNormal);
 }
 
+.gs-no-results-result .gs-snippet,
+.gs-error-result .gs-snippet {
+  border: 1px solid var(--borderColor);
+  background-color: var(--backgroundColor);
+}
+
 </style>
 
 <div class="gcse-search"></div>
