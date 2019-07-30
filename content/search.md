@@ -6,6 +6,9 @@ hidePageInfo = "Yes"
 markup = "mmark"
 +++
 
+<!-- Google Custom Search Engine -->
+<script async src="https://cse.google.com/cse.js?cx=000649133662658939805:7nv0dx66q_4"></script>
+
 <style type="text/css">
 
 .gsc-control-cse {
