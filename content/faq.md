@@ -190,12 +190,12 @@ This can happen when a problem occurs while scanning files and downloading the r
 To fix this, please follow these steps:
 
 1. Unmatch the Series/Movie in question (you can find that in the Contextmenu for the entry, usually accessible by clicking the 3 Dots)
-2. create a file called ".plexignore" in the folder of the Series/Movie, which only contains "*" (without the quotation marks)
-3. Rescan your library, the Series/Movie should get removed
-4. Run package clean up (found under Settings -> Trouble Shooting of the Plex Media Server) as well as database optimization
-5. remove the .plexignore file
-6. rescan your library
-7. all media files and information should now be available and properly displayed.
+1. create a file called ".plexignore" in the folder of the Series/Movie, which only contains "*" (without the quotation marks)
+1. Rescan your library, the Series/Movie should get removed
+1. Run package clean up (found under Settings -> Trouble Shooting of the Plex Media Server) as well as database optimization
+1. remove the .plexignore file
+1. rescan your library
+1. all media files and information should now be available and properly displayed.
 
 If you still have problems after following those steps, feel free to hop on our discord!
 
