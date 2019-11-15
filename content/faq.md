@@ -1,6 +1,6 @@
 +++
 title = "Frequently Asked Questions"
-lastMod = 2019-04-22
+lastMod = 2019-11-15
 layout = "faq"
 markup = "mmark"
 +++
@@ -177,6 +177,31 @@ Shoko will automatically stream your files during playback if the local path for
 
 {{% /faq %}}
 {{% /faq-section %}}
+
+<!--- ShokoMetadata --->
+
+{.faq-header}
+## ShokoMetadata
+{{% faq-section type="shokoMetadata" %}}
+{{% faq type="shokoMetadata" id="plex-missing-poster-or-info" question="How to fix missing Posters/Information in Plex when using ShokoMetadata?" %}}
+
+This can happen when a problem occurs while scanning files and downloading the respective metadata.
+
+To fix this, please follow these steps:
+
+1. Unmatch the Series/Movie in question (you can find that in the Contextmenu for the entry, usually accessible by clicking the 3 Dots)
+1. create a file called ".plexignore" in the folder of the Series/Movie, which only contains "*" (without the quotation marks)
+1. Rescan your library, the Series/Movie should get removed
+1. Run package clean up (found under Settings -> Trouble Shooting of the Plex Media Server) as well as database optimization
+1. remove the .plexignore file
+1. rescan your library
+1. all media files and information should now be available and properly displayed.
+
+If you still have problems after following those steps, feel free to hop on our discord!
+
+{{% /faq %}}
+{{% /faq-section %}}
+
 <!--- Shoko on Plex --->
 
 {.faq-header}
