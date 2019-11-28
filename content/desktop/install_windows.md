@@ -4,26 +4,11 @@ lastMod = 2019-04-22
 
 [[pageNav]]
 navTitle = "Getting Started"
-name = "Accessing My Anime 3"
-id = "accessing-my-anime-3"
+name = "Installing Shoko Desktop"
+id = "installing-shoko-desktop"
 [[pageNav]]
-name = "Options Menu"
-id = "options-menu"
-[[pageNav]]
-name = "Continue Watching"
-id = "continue-watching"
-[[pageNav]]
-name = "Utilities"
-id = "utilities"
-[[pageNav]]
-name = "Calendar"
-id = "calendar"
-[[pageNav]]
-name = "Something Random"
-id = "something-random"
-[[pageNav]]
-name = "Recommendations"
-id = "recommendations"
+name = "First Run"
+id = "first-run"
 
 markup = "mmark"
 +++

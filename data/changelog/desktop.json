@@ -150,29 +150,6 @@
           "text": "Fix an issue when searching using more than three letters."
         }
       ]
-    },
-    {
-      "version": "3.9.1",
-      "versionURL": "391",
-      "date": "July 30, 2018",
-      "blogLink": "https://shokoanime.com/blog/shoko-version-3-9-1-released/",
-      "changes": [
-        {
-          "status": "changed",
-          "commit": "042d832",
-          "text": "Increase default image sizes on Dashboard & fix Missing Eps Padding."
-        },
-        {
-          "status": "changed",
-          "commit": "fab24ac",
-          "text": "Make plex section display something more, useful when unlinked."
-        },
-        {
-          "status": "fixed",
-          "issue": "586",
-          "text": "Invalid URI when deleting files on Windows Share."
-        }
-      ]
     }
   ]
 }
