@@ -2,6 +2,34 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoDesktop/",
   "releases": [
     {
+      "version": "3.9.6",
+      "versionURL": "396",
+      "date": "November 27, 2019",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "status": "fixed",
+          "issue": "560",
+          "text": "Bookmarks missing info."
+        },
+        {
+          "status": "fixed",
+          "issue": "576",
+          "text": "Editing A Group AND Not Saving Blanks Group."
+        },
+        {
+          "status": "fixed",
+          "commit": "1e38174",
+          "text": "Make the Search More Fail Safe."
+        },
+        {
+          "status": "fixed",
+          "commit": "431756b",
+          "text": "Improve Speed and Responsiveness of Unrecognized Utility."
+        }
+      ]
+    },
+    {
       "version": "3.9.5",
       "versionURL": "395",
       "date": "July 21, 2019",

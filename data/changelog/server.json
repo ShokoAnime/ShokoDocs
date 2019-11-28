@@ -2,6 +2,134 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "3.9.6",
+      "versionURL": "396",
+      "date": "November 27, 2019",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "status": "added",
+          "commit": "5408db1",
+          "text": "Add docker multi-stage."
+        },
+        {
+          "status": "added",
+          "commit": "d3dd599",
+          "text": " Add logging for HTTP Ban and a warning for when a ban or no data occurred during anime data update."
+        },
+        {
+          "status": "changed",
+          "commit": "ee9ee1f",
+          "text": "Move community sites to HTTPS."
+        },
+        {
+          "status": "changed",
+          "commit": "c866d99",
+          "text": "Only Regenerate Titles for Series We Have."
+        },
+        {
+          "status": "changed",
+          "commit": "6afed6d",
+          "text": "Don't regen titles on startup."
+        },
+        {
+          "status": "changed",
+          "commit": "14eded1",
+          "text": "Improve Search Functions."
+        },
+        {
+          "status": "changed",
+          "commit": "3d0fc87",
+          "text": "Ignore Locale decimal symbol."
+        },
+        {
+          "status": "changed",
+          "commit": "afaaeee",
+          "text": "Disable calls to WebCache while."
+        },
+        {
+          "status": "fixed",
+          "issue": "793",
+          "text": "Crashing while hashing since 3.9.5."
+        },
+        {
+          "status": "fixed",
+          "issue": "799",
+          "text": "SignalR crash fix."
+        },
+        {
+          "status": "fixed",
+          "issue": "805",
+          "text": "Shoko Server 3.9.5 crashing on start."
+        },
+        {
+          "status": "fixed",
+          "issue": "808",
+          "text": "TvDB Image Issues."
+        },
+        {
+          "status": "fixed",
+          "commit": "39be200",
+          "text": "Fix Episodes with No Titles at Startup (using cache only)."
+        },
+        {
+          "status": "fixed",
+          "commit": "1ab3d7d",
+          "text": "Fix the hard crash when files are touched while scanning."
+        },
+        {
+          "status": "fixed",
+          "commit": "fa9bd6d",
+          "text": "Fix Filesystem Opening error."
+        },
+        {
+          "status": "fixed",
+          "commit": "43a4f3e",
+          "text": "Fix Linux MediaInfo."
+        },
+        {
+          "status": "fixed",
+          "commit": "e2a7209",
+          "text": "Fix a TvDB Linking error."
+        },
+        {
+          "status": "fixed",
+          "commit": "1188a17",
+          "text": "Fix matching error when AniDB has a series marked as a movie and TvDB has it marked as a series."
+        },
+        {
+          "status": "fixed",
+          "commit": "9e21387",
+          "text": "Fix Copy Pasta error related to MediaInfo parsing."
+        },
+        {
+          "status": "fixed",
+          "commit": "bbf690d",
+          "text": "URL decode the search string."
+        },
+        {
+          "status": "fixed",
+          "commit": "f4c74ec",
+          "text": "URL Decode a search parameter before passing it on."
+        },
+        {
+          "status": "fixed",
+          "commit": "63cc5bf",
+          "text": "Fix an i18n issue."
+        },
+        {
+          "status": "fixed",
+          "commit": "dd46b45",
+          "text": "Fix Mini Calendar."
+        },
+        {
+          "status": "fixed",
+          "commit": "895c9bd",
+          "text": "Fix Trakt & token persistence."
+        }
+      ]
+    },
+    {
       "version": "3.9.5",
       "versionURL": "395",
       "date": "July 21, 2019",
@@ -12,6 +140,7 @@
           "commit": "9a814ef",
           "text": "API - Added support for marking episode as watched based on file."
         },
+
         {
           "status": "changed",
           "commit": "939b132",
