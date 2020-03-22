@@ -32,7 +32,20 @@ The banned message you’re seeing is simply telling you that you’ve been **te
 
 There are two different ban types, **HTTP or UDP** that a user can get that's based on AniDB's API. If a user is temporarily banned from one, Shoko will automatically stop sending data associated with that API but will continue to use the other API when possible. This does not mean all your commands will go through as each API sends and receives different data so you may notice your queue idling even though there are commands waiting to be processed.
 
-We're always making improvements to our rate limiter to avoid users getting a temporary ban. If you find yourself getting banned, join our **Discord Server** so we can help diagnose the problem and make the experience smoother for you.
+#### Tips for getting banned less
+Unfortunately, there is no way to guarantee that you won't get any bans. This is not our fault. It is AniDB's ancient system and lack of dev time for them to improve it. There are ways that you can get banned less often, though.
+- Only use Shoko to download data. Shoko can manage everything you could need. HAMA, AniDB plugins for media players, etc all will conflict with Shoko and cause a temporary ban.
+- Pull less data. The AniDB section in the Settings tab in Shoko Desktop has settings to download only certain info. You can limit it to only download data you care about. If you only grab things that are finished airing, then you can also increase the time between updates to once per week, for example.
+- During initial import or when importing many series at once, it helps if you don't need to download everything. You can get a cache of XML files that hold series info from {{< external-link link="https://da3dsoul.shokoanime.com/nextcloud/s/ShokoXMLCache" text="here" >}}. These go in the XML cache directory, and Shoko will use them to keep moving forward in case of ban, and if they are recent enough, then it won't even bother calling AniDB for updated info (unless you tell it to).
+
+##### The XML Cache is located at:
+
+| OS | Location |
+|---------|----------|
+| Windows | C:\ProgramData\ShokoServer\Anime_HTTP |
+| Linux | ~/.shoko/Shoko.CLI/Anime_HTTP |
+
+We're always making improvements to our rate limiter to avoid users getting a temporary ban. If you find yourself getting banned for more than a day, join our **Discord Server** so we can help diagnose the problem and make the experience smoother for you.
 
 {{% /faq %}}
 
