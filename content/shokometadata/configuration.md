@@ -3,15 +3,13 @@ title = "Configure Plex/Shoko for ShokoMetadata"
 lastMod = 2019-04-24
 
 [[pageNav]]
-navTitle = "Linking Plex with Shoko"
+navTitle = "Configure Plex/Shoko for ShokoMetadata"
 name = "Linking Plex with Shoko"
 id = "linking-plex-with-shoko"
 [[pageNav]]
-navTitle = "Creating Libraries"
 name = "Creating Libraries"
 id = "creating-libraries"
 [[pageNav]]
-navTitle = "Finish linking Plex with Shoko to update watch status on Plex (optional)"
 name = "Finish linking Plex with Shoko"
 id = "finish-linking-plex-with-shoko"
 
