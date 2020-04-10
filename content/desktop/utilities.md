@@ -49,8 +49,8 @@ id = "file-search"
 name = "File Renaming"
 id = "file-renaming"
 [[pageNav]]
-name = "Update AniDB Info"
-id = "update-anidb-info"
+name = "Update AniDB Data"
+id = "update-anidb-data"
 [[pageNav]]
 name = "Community Data"
 id = "community-data"
