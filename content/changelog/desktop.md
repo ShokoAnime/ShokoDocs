@@ -1,6 +1,6 @@
 +++
 title = "Shoko Desktop Changelog"
-lastMod = 2018-12-31
+lastMod = 2019-11-27
 layout  = "changelog"
 markup = "mmark"
 changelogType = "desktop"

@@ -1,7 +1,7 @@
 +++
 title = "Shoko Server Changelog"
 subtitle = "Subtitle"
-lastMod = 2018-12-31
+lastMod = 2019-11-27
 layout  = "changelog"
 changelogType = "server"
 exclude_search =  true

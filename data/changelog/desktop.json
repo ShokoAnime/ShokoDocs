@@ -2,6 +2,49 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoDesktop/",
   "releases": [
     {
+      "version": "3.9.7",
+      "versionURL": "397",
+      "date": "April 30th, 2020",
+      "blogLink": "https://shokoanime.com/blog/shoko-version-3-9-7-released/",
+      "changes": [
+        {
+          "status": "added",
+          "commit": "35b7d4c",
+          "text": "Add method to bypass initial show filter for unrecognized files."
+        },
+        {
+          "status": "changed",
+          "commit": "ed30799",
+          "text": "Force unrecognized files to use the AniDB ID for searching after adding a new show."
+        },
+        {
+          "status": "fixed",
+          "commit": "964e317",
+          "text": "Fixed sorting in New Series window."
+        },
+        {
+          "status": "fixed",
+          "commit": "717659e",
+          "text": "Fixed episode name encoding issue."
+        },
+        {
+          "status": "changed",
+          "commit": "05cba8e",
+          "text": "Allow Special Episode Type ranges in Manual Sorting."
+        },
+        {
+          "status": "changed",
+          "commit": "8aae2d0",
+          "text": "Logic improvements for episode validation for episode ranges."
+        },
+        {
+          "status": "removed",
+          "commit": "c8eb6f6",
+          "text": "Remove TvDB Thumbnails as they are no longer needed."
+        }
+      ]
+    },
+    {
       "version": "3.9.6",
       "versionURL": "396",
       "date": "November 27, 2019",
@@ -135,19 +178,6 @@
           "status": "changed",
           "commit": "dcedd1f",
           "text": "Default to Full Series View, not Metro."
-        }
-      ]
-    },
-    {
-      "version": "3.9.2",
-      "versionURL": "392",
-      "date": "August 2, 2018",
-      "blogLink": "https://shokoanime.com/blog/shoko-version-3-9-2-released/",
-      "changes": [
-        {
-          "status": "fixed",
-          "commit": "d3eec15",
-          "text": "Fix an issue when searching using more than three letters."
         }
       ]
     }

@@ -2,6 +2,109 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "3.9.7",
+      "versionURL": "397",
+      "date": "April 30th, 2020",
+      "blogLink": "https://shokoanime.com/blog/shoko-version-3-9-7-released/",
+      "changes": [
+        {
+          "status": "added",
+          "commit": "73d5345",
+          "text": "Add \"Has Trakt Link\" Group Filter Condition."
+        },
+        {
+          "status": "changed",
+          "commit": "a0ba044",
+          "text": "Update TVDB API URL to current working one."
+        },
+        {
+          "status": "changed",
+          "commit": "7f96de3",
+          "text": "Update TvDBSharper."
+        },
+        {
+          "status": "changed",
+          "commit": "9d8f965",
+          "text": "Save settings on update."
+        },
+        {
+          "status": "changed",
+          "commit": "13865f3",
+          "text": "Clean titles when searching TvDB for auto-linking."
+        },
+        {
+          "status": "changed",
+          "commit": "dc0579e",
+          "text": "Better Sorting for New Series Window Search."
+        },
+        {
+          "status": "changed",
+          "commit": "880398a",
+          "text": "Change default AniDB MyList type to HDD."
+        },
+        {
+          "status": "changed",
+          "commit": "8f6c587",
+          "text": "Migration to AniDB.net."
+        },
+        {
+          "status": "changed",
+          "commit": "8e2f08f",
+          "text": "Add a setting for max episode name length in legacy renamer."
+        },
+        {
+          "status": "changed",
+          "commit": "9698f7d",
+          "text": "Don't do TvDB things if disabled."
+        },
+        {
+          "status": "changed",
+          "commit": "c9e0af1",
+          "text": "Improve Episode Creation Logic."
+        },
+        {
+          "status": "fixed",
+          "issue": "814",
+          "text": "Fix slow episode imports in large series"
+        },
+        {
+          "status": "fixed",
+          "commit": "81028f1",
+          "text": "Fixed an issue with LatestEpisodeAirDate formatting causing issues with SQL Server."
+        },
+        {
+          "status": "fixed",
+          "commit": "67ad80d",
+          "text": "Fixes an issue where users were unable to add additional renaming scripts if previous script ID was 0."
+        },
+        {
+          "status": "fixed",
+          "commit": "3f4f6b7",
+          "text": "Delete backup file to trigger rebuild."
+        },
+        {
+          "status": "fixed",
+          "commit": "7ab6ee0",
+          "text": "Fix null pointer when searching."
+        },
+        {
+          "status": "fixed",
+          "commit": "e34cccf",
+          "text": "Fix downloading AniDB Title Cache."
+        },
+        {
+          "status": "fixed",
+          "commit": "2e13fa3",
+          "text": "Fix sentry logging."
+        },
+        {
+          "status": "removed",
+          "commit": "85854bd",
+          "text": "Remove Thumbnails for TvDB FanArt"
+        }
+      ]
+    },
+    {
       "version": "3.9.6",
       "versionURL": "396",
       "date": "November 27, 2019",
@@ -371,19 +474,6 @@
           "status": "fixed",
           "commit": "1dd08ed",
           "text": "Fix some logic errors and state when adding Manually Linked files."
-        }
-      ]
-    },
-    {
-      "version": "3.9.2",
-      "versionURL": "392",
-      "date": "August 2, 2018",
-      "blogLink": "https://shokoanime.com/blog/shoko-version-3-9-2-released/",
-      "changes": [
-        {
-          "status": "changed",
-          "commit": "f0a1f55",
-          "text": "Redo Search in API to Return More Useful Results"
         }
       ]
     }

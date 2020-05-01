@@ -57,8 +57,6 @@ id = "community-data"
 [[pageNav]]
 name = "My Votes"
 id = "my-votes"
-
-markup = "mmark"
 +++
 
 <section>
@@ -85,7 +83,6 @@ markup = "mmark"
                         add the file which will benefit all users of Shoko. To check, simply navigate to the episode on AniDB to which the file corresponds too and
                         look for an entry form the release group you have, if it's there then the file you have is corrupted, if it's not then you can add it.</p>
         </div>
-
         <div class = "col-sm-3">
                 <figure class = "figure">
                         <a href = "/assets/images/desktop/utilities/Shoko-Desktop-Utilities-Unrecognized-Main.jpg" data-toggle="lightbox" data-lightbox="image-1"> <img
@@ -143,7 +140,6 @@ markup = "mmark"
                         </tbody>
                 </table>
         </div>
-
         <div class = "col-sm-3">
                 <figure class = "figure">
                         <a href = "/assets/images/desktop/utilities/Shoko-Desktop-Utilities-Unrecognized-Toolbar.jpg"
@@ -169,7 +165,6 @@ markup = "mmark"
                         in the input fields. In the event that an entire series is listed in the unrecognized files list, you may have to first manually add the
                         series. Click the <strong>New Series</strong> button and follow the steps to manually add the series.</p>
         </div>
-
         <div class = "col-sm-3">
                 <figure class = "figure">
                         <a href = "/assets/images/desktop/utilities/Shoko-Desktop-Utilities-Unrecognized-Manual-Options.jpg"
@@ -188,7 +183,6 @@ markup = "mmark"
 <div class = "row">
         <div class = "col-sm-8">
                 <p>When you select a file, a panel will display below <strong>Link Setup</strong> showing a array of file options and file info. </p>
-
                 <table class = "table table-bordered">
                         <thead>
                         <tr>
@@ -234,7 +228,6 @@ markup = "mmark"
                         </tbody>
                 </table>
         </div>
-
         <div class = "col-sm-3">
                 <figure class = "figure">
                         <a href = "/assets/images/desktop/utilities/Shoko-Desktop-Utilities-Unrecognized-File-Info.jpg"
@@ -256,7 +249,6 @@ markup = "mmark"
         <div class = "col-sm-8">
                 <p>The Ignored utility shows all files that you've previously marked as <strong>Ignored</strong> when previously sorting through your <strong>Unrecognized</strong>
                         files. </p>
-
                 <table class = "table table-bordered">
                         <thead>
                         <tr>
@@ -287,7 +279,6 @@ markup = "mmark"
                         </tbody>
                 </table>
         </div>
-
         <div class = "col-sm-3">
                 <figure class = "figure">
                         <a href = "/assets/images/desktop/utilities/Shoko-Desktop-Utilities-Ignored-Main.jpg" data-toggle="lightbox" data-lightbox="image-1"> <img
@@ -310,7 +301,6 @@ markup = "mmark"
                         keep track of files in your collection that do not have a corresponding hash on AniDB. The Manually Linked
                         toolbar will not be covered below as it's a reduced version of the <a href = "#unrecognized-toolbar">
                                 Unrecognized Toolbar</a>.</p>
-
                 <table class = "table table-bordered">
                         <thead>
                         <tr>
@@ -344,7 +334,6 @@ markup = "mmark"
                         </tbody>
                 </table>
         </div>
-
         <div class = "col-sm-3">
                 <figure class = "figure">
                         <a href = "/assets/images/desktop/utilities/Shoko-Desktop-Utilities-Manual-Link.jpg" data-toggle="lightbox" data-lightbox="image-1"> <img
@@ -542,7 +531,6 @@ markup = "mmark"
                                         Refresh the list to get a list of all the Series.
                                 </td>
                         </tr>
-
                         <tr>
                                 <td>
                                         Export
@@ -583,7 +571,6 @@ markup = "mmark"
                                         Show All / Still Airing / Finished Airing only.
                                 </td>
                         </tr>
-
                         </tbody>
                 </table>
         </div>

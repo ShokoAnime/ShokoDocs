@@ -1,6 +1,6 @@
 +++
 title = "My Anime 3 Changelog"
-lastMod = 2018-08-18
+lastMod = 2019-11-17
 layout  = "changelog"
 markup = "mmark"
 changelogType = "myanime3"
