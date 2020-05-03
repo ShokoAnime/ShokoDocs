@@ -10,6 +10,7 @@ Each changelog is generated automatically, any changes that need to be made can 
 
 - [Shoko Server](server)
 - [Shoko Desktop](desktop)
+- [Shoko WebUI](webui)
 - [My Anime 3](myanime3)
 - [Shoko on Plex](shokoplex)
 
