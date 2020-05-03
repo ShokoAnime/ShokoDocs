@@ -1,0 +1,104 @@
+{
+  "githubLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/",
+  "releases": [
+    {
+      "version": "0.3.7",
+      "versionURL": "037",
+      "date": "April 30th, 2020",
+      "blogLink": "#",
+      "changes": [
+        {
+          "status": "added",
+          "commit": "511f58c",
+          "text": "Add \"Change Password\" option"
+        },
+        {
+          "status": "added",
+          "commit": "1c4d64d",
+          "text": "Add controls for command queue"
+        },
+        {
+          "status": "fixed",
+          "issue": "85",
+          "text": "Make footer stay at the bottom of the page"
+        },
+        {
+          "status": "fixed",
+          "issue": "185",
+          "text": "Fix some actions not working properly"
+        },
+        {
+          "status": "fixed",
+          "issue": "187",
+          "text": "Fix \"TvDB Update Frequency\" setting causing errors."
+        }
+      ]
+    },
+    {
+      "version": "0.3.6",
+      "versionURL": "036",
+      "date": "March 26th, 2020",
+      "blogLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/releases/tag/0.3.6",
+      "changes": [
+        {
+          "status": "added",
+          "commit": "d49d9fc",
+          "text": "Add \"Sentry\""
+        },
+        {
+          "status": "fixed",
+          "commit": "d49d9fc",
+          "text": "Fix run button not working on action pages"
+        }
+      ]
+    },
+    {
+      "version": "0.3.5",
+      "versionURL": "035",
+      "date": "November 28th, 2019",
+      "blogLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/releases/tag/0.3.5",
+      "changes": [
+        {
+          "status": "added",
+          "commit": "be967e8",
+          "text": "Add dark theme (WIP)"
+        },
+        {
+          "status": "added",
+          "commit": "768e553",
+          "text": "Add customizable actions"
+        },
+        {
+          "status": "changed",
+          "commit": "95d3bea",
+          "text": "Removed \"MyAnimeList\""
+        },
+        {
+          "status": "changed",
+          "commit": "768e553",
+          "text": "New UI - Migrate to Bulma.io css framework and Blueprintjs"
+        },
+        {
+          "status": "changed",
+          "commit": "be967e8",
+          "text": "Enabled news again"
+        },
+        {
+          "status": "fixed",
+          "issue": "149",
+          "text": "Fix command status icons on top"
+        },
+        {
+          "status": "fixed",
+          "commit": "68a90b0",
+          "text": "Fix password field in login page"
+        },
+        {
+          "status": "fixed",
+          "commit": "e88e23f",
+          "text": "Fix AniDB settings issue on first run"
+        }
+      ]
+    }
+  ]
+}
