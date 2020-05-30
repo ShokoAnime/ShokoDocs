@@ -915,7 +915,7 @@ html.lb-disable-scrolling {
 
 	pre code {
 		word-break: break-all;
-		white-space: normal;
+		white-space: none;
 	}
 
 	table, thead, tbody, th, td, tr {
