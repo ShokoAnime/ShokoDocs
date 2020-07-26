@@ -2,6 +2,74 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/",
   "releases": [
     {
+      "version": "1.0.0",
+      "versionURL": "100",
+      "date": "July 23rd, 2020",
+      "blogLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/releases/tag/1.0.0-dev20",
+      "changes": [
+        {
+          "status": "added",
+          "commit": "30a92df",
+          "text": "Allow users to scan individual folders"
+        },
+        {
+          "status": "added",
+          "commit": "30a92df",
+          "text": "Allow users to AVDump unrecognized files"
+        },
+        {
+          "status": "added",
+          "commit": "30a92df",
+          "text": "Allow users to customize the dashboard layout (Just re-ordering for now)"
+        },
+        {
+          "status": "added",
+          "commit": "30a92df",
+          "text": "Allow users to change username"
+        },
+        {
+          "status": "added",
+          "commit": "30a92df",
+          "text": "Added \"User Profile\" popup"
+        },
+        {
+          "status": "added",
+          "commit": "30a92df",
+          "text": "Added all previously available Server and Desktop actions"
+        },
+        {
+          "status": "added",
+          "commit": "30a92df",
+          "text": "Added infograph showing collection breakdown by type"
+        },
+        {
+          "status": "added",
+          "commit": "30a92df",
+          "text": "Added \"Remember Me\" option"
+        },
+        {
+          "status": "changed",
+          "commit": "30a92df",
+          "text": "Brand new UI built from scratch"
+        },
+        {
+          "status": "changed",
+          "commit": "30a92df",
+          "text": "Changed CSS framework from Bulma.io and Blueprint.js to Tailwind CSS"
+        },
+        {
+          "status": "changed",
+          "commit": "30a92df",
+          "text": "Redid First Run wizard"
+        },
+        {
+          "status": "removed",
+          "commit": "30a92df",
+          "text": "Removed news from dashboard"
+        }
+      ]
+    },
+    {
       "version": "0.3.7",
       "versionURL": "037",
       "date": "April 30th, 2020",
