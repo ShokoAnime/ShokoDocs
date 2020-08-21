@@ -9,62 +9,62 @@
       "changes": [
         {
           "status": "added",
-          "commit": "30a92df",
+          "commit": "9da9af2",
           "text": "Allow users to scan individual folders"
         },
         {
           "status": "added",
-          "commit": "30a92df",
+          "commit": "9da9af2",
           "text": "Allow users to AVDump unrecognized files"
         },
         {
           "status": "added",
-          "commit": "30a92df",
+          "commit": "9da9af2",
           "text": "Allow users to customize the dashboard layout (Just re-ordering for now)"
         },
         {
           "status": "added",
-          "commit": "30a92df",
+          "commit": "9da9af2",
           "text": "Allow users to change username"
         },
         {
           "status": "added",
-          "commit": "30a92df",
+          "commit": "9da9af2",
           "text": "Added \"User Profile\" popup"
         },
         {
           "status": "added",
-          "commit": "30a92df",
+          "commit": "9da9af2",
           "text": "Added all previously available Server and Desktop actions"
         },
         {
           "status": "added",
-          "commit": "30a92df",
+          "commit": "9da9af2",
           "text": "Added infograph showing collection breakdown by type"
         },
         {
           "status": "added",
-          "commit": "30a92df",
+          "commit": "9da9af2",
           "text": "Added \"Remember Me\" option"
         },
         {
           "status": "changed",
-          "commit": "30a92df",
+          "commit": "9da9af2",
           "text": "Brand new UI built from scratch"
         },
         {
           "status": "changed",
-          "commit": "30a92df",
+          "commit": "9da9af2",
           "text": "Changed CSS framework from Bulma.io and Blueprint.js to Tailwind CSS"
         },
         {
           "status": "changed",
-          "commit": "30a92df",
+          "commit": "9da9af2",
           "text": "Redid First Run wizard"
         },
         {
           "status": "removed",
-          "commit": "30a92df",
+          "commit": "9da9af2",
           "text": "Removed news from dashboard"
         }
       ]
