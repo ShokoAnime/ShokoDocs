@@ -2,6 +2,49 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoDesktop/",
   "releases": [
     {
+      "version": "3.9.10",
+      "versionURL": "3910",
+      "date": "August 21st, 2020",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "status": "changed",
+          "commit": "b2fd361",
+          "text": "Update MPV Libraries + Wrapper"
+        },
+        {
+          "status": "fixed",
+          "commit": "0cabef2",
+          "text": "Fixed a crash when using built-in MPV player."
+        },
+        {
+          "status": "fixed",
+          "commit": "bfce281",
+          "text": "Fix Settings load on first run."
+        },
+        {
+          "status": "fixed",
+          "commit": "4778664",
+          "text": "Fix Streaming."
+        },
+        {
+          "status": "fixed",
+          "commit": "668e80a",
+          "text": "Fix a small positioning problem in ImportFolder Form."
+        },
+        {
+          "status": "fixed",
+          "commit": "ad666ba",
+          "text": "Fix an issue where settings would not load properly."
+        },
+        {
+          "status": "fixed",
+          "commit": "ae5570c",
+          "text": "Fix Playback in Desktop."
+        }
+      ]
+    },
+    {
       "version": "3.9.7",
       "versionURL": "397",
       "date": "April 30th, 2020",
@@ -18,16 +61,6 @@
           "text": "Force unrecognized files to use the AniDB ID for searching after adding a new show."
         },
         {
-          "status": "fixed",
-          "commit": "964e317",
-          "text": "Fixed sorting in New Series window."
-        },
-        {
-          "status": "fixed",
-          "commit": "717659e",
-          "text": "Fixed episode name encoding issue."
-        },
-        {
           "status": "changed",
           "commit": "05cba8e",
           "text": "Allow Special Episode Type ranges in Manual Sorting."
@@ -41,6 +74,16 @@
           "status": "removed",
           "commit": "c8eb6f6",
           "text": "Remove TvDB Thumbnails as they are no longer needed."
+        },
+        {
+          "status": "fixed",
+          "commit": "964e317",
+          "text": "Fixed sorting in New Series window."
+        },
+        {
+          "status": "fixed",
+          "commit": "717659e",
+          "text": "Fixed episode name encoding issue."
         }
       ]
     },
