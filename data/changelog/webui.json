@@ -5,8 +5,13 @@
       "version": "1.0.0",
       "versionURL": "100",
       "date": "July 23rd, 2020",
-      "blogLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/releases/tag/1.0.0-dev20",
+      "blogLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/releases/tag/1.0.0",
       "changes": [
+        {
+          "status": "added",
+          "commit": "36e9420",
+          "text": "Added logs page"
+        },
         {
           "status": "added",
           "commit": "9da9af2",
@@ -61,6 +66,16 @@
           "status": "changed",
           "commit": "9da9af2",
           "text": "Redid First Run wizard"
+        },
+        {
+          "status": "changed",
+          "commit": "9da9af2",
+          "text": "Changed alert system to react-toastify"
+        },
+        {
+          "status": "changed",
+          "commit": "9da9af2",
+          "text": "New favicon"
         },
         {
           "status": "removed",
