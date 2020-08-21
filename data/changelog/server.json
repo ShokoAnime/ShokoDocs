@@ -2,6 +2,94 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "3.10.0",
+      "versionURL": "3100",
+      "date": "August 21st, 2020",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "status": "added",
+          "issue": "823",
+          "text": "Added a BUNCH of API v3 Endpoints"
+        },
+        {
+          "status": "added",
+          "commit": "3e3e1a3",
+          "text": "Added plugin API"
+        },
+        {
+          "status": "added",
+          "commit": "0a8afad",
+          "text": "Added support for renamer plugins"
+        },
+        {
+          "status": "added",
+          "commit": "6850765",
+          "text": "Added tray icon on Windows"
+        },
+        {
+          "status": "added",
+          "commit": "e65b6cf",
+          "text": "Added setting for deleting duplicates on import"
+        },
+        {
+          "status": "added",
+          "commit": "86251a8",
+          "text": "Added setting for renaming and then moving files instead of move and rename"
+        },
+        {
+          "status": "added",
+          "commit": "71ece81",
+          "text": "Added support for having the same folder as both drop source and destination"
+        },
+        {
+          "status": "changed",
+          "commit": "5224f8a",
+          "text": "Converted to .NET Core"
+        },
+        {
+          "status": "changed",
+          "commit": "5d2143e",
+          "text": "Made Shoko into a service on Windows"
+        },
+        {
+          "status": "changed",
+          "commit": "3d423ad",
+          "text": "Changed WebUI folder location"
+        },
+        {
+          "status": "changed",
+          "commit": "25dc4bf",
+          "text": "Better external subtitle handling"
+        },
+        {
+          "status": "changed",
+          "commit": "059eed1",
+          "text": "Mediainfo stability improvements"
+        },
+        {
+          "status": "fixed",
+          "commit": "2a1edf2",
+          "text": "Fixed missing episode stats"
+        },
+        {
+          "status": "fixed",
+          "commit": "5228d89",
+          "text": "Fixed a problem with Shoko fetching Plex servers on every request"
+        },
+        {
+          "status": "fixed",
+          "commit": "6b41cfd",
+          "text": "Fixed codec display on Desktop"
+        },
+        {
+          "status": "fixed",
+          "commit": "1bb8770",
+          "text": "Fixed trakt search"
+        }
+      ]
+    },
+    {
       "version": "3.9.7",
       "versionURL": "397",
       "date": "April 30th, 2020",
