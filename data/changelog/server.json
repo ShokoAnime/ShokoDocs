@@ -2,10 +2,10 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
-      "version": "3.10.0",
-      "versionURL": "3100",
+      "version": "4.0.0",
+      "versionURL": "400",
       "date": "August 21st, 2020",
-      "blogLink": "NA",
+      "blogLink": "https://shokoanime.com/blog/shoko-version-4-0-0-released/",
       "changes": [
         {
           "status": "added",
