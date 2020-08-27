@@ -2,6 +2,54 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/",
   "releases": [
     {
+      "version": "1.0.1 (dev3 - unstable)",
+      "versionURL": "101",
+      "date": "August 27th, 2020",
+      "blogLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/releases/tag/1.0.1-dev3",
+      "changes": [
+        {
+          "status": "added",
+          "commit": "4a1ca78",
+          "text": "Added startup messages to login page"
+        },
+        {
+          "status": "added",
+          "commit": "db6d829",
+          "text": "Added Plex and Trakt settings"
+        },
+        {
+          "status": "fixed",
+          "commit": "4f5d7b3",
+          "text": "Fixed dashboard refresh"
+        },
+        {
+          "status": "fixed",
+          "commit": "4f5d7b3",
+          "text": "Fixed unrecognized files list"
+        },
+        {
+          "status": "fixed",
+          "commit": "4f5d7b3",
+          "text": "Fixed import folder edit dialog"
+        },
+        {
+          "status": "fixed",
+          "commit": "4a1ca78",
+          "text": "Fixed 'AVDump Mismatched Files' action"
+        },
+        {
+          "status": "removed",
+          "commit": "4f5d7b3",
+          "text": "Removed create account link"
+        },
+        {
+          "status": "removed",
+          "commit": "db6d829",
+          "text": "Removed Plex and Trakt settings from the first run wizard"
+        }
+      ]
+    },
+    {
       "version": "1.0.0",
       "versionURL": "100",
       "date": "August 21st, 2020",
