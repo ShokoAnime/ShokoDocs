@@ -1,0 +1,71 @@
+{
+  "githubLink": "https://github.com/Cazzar/ShokoMetadata.bundle",
+  "releases": [
+    {
+      "version": "1.5.0",
+      "versionURL": "150",
+      "date": "August 29th, 2020",
+      "blogLink": "https://github.com/Cazzar/ShokoMetadata.bundle/releases/tag/v1.5.0",
+      "changes": [
+        {
+          "status": "added",
+          "commit": "bd9ec18",
+          "text": "Added single season ordering option"
+        },
+        {
+          "status": "changed",
+          "commit": "bd9ec18",
+          "text": "Separated 'Include Other' option into 'Include Specials' and 'Include Others'"
+        },
+        {
+          "status": "fixed",
+          "issue": "4",
+          "text": "Subdirectories are detected as different series now"
+        },
+        {
+          "status": "fixed",
+          "issue": "27",
+          "text": "Fixed an issue with scanning of multiple movies in single series"
+        }
+      ]
+    },
+    {
+      "version": "1.4.2",
+      "versionURL": "142",
+      "date": "July 31st, 2019",
+      "blogLink": "https://github.com/Cazzar/ShokoMetadata.bundle/releases/tag/v1.4.2",
+      "changes": [
+        {
+          "status": "added",
+          "commit": "c823ef7",
+          "text": "Added 'Mature' to the MPAA list"
+        },
+        {
+          "status": "added",
+          "commit": "ec4d960",
+          "text": "Added a summary sanitizer based off HAMA"
+        },
+        {
+          "status": "fixed",
+          "commit": "a7fdc06",
+          "text": "Fixed an issue with 'ismovie'"
+        },
+        {
+          "status": "fixed",
+          "commit": "6bd085d",
+          "text": "Fixed an error that occurs when there are no tags"
+        },
+        {
+          "status": "fixed",
+          "commit": "c4572cc",
+          "text": "Fixed an error that occurs when there are no roles"
+        },
+        {
+          "status": "fixed",
+          "commit": "c1fb229",
+          "text": "Fixed an issue with airdates"
+        }
+      ]
+    }
+  ]
+}
