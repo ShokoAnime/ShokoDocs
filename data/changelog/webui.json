@@ -2,10 +2,10 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/",
   "releases": [
     {
-      "version": "1.0.1 (dev3 - unstable)",
+      "version": "1.0.1",
       "versionURL": "101",
-      "date": "August 27th, 2020",
-      "blogLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/releases/tag/1.0.1-dev3",
+      "date": "August 29th, 2020",
+      "blogLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/releases/tag/1.0.1",
       "changes": [
         {
           "status": "added",
