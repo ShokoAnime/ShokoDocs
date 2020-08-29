@@ -2,6 +2,24 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "4.0.1",
+      "versionURL": "401",
+      "date": "August 29th, 2020",
+      "blogLink": "https://shokoanime.com/blog/shoko-version-4-0-1-released/",
+      "changes": [
+        {
+          "status": "fixed",
+          "commit": "655383b",
+          "text": "Fixed Import Folder Name for Plugin API."
+        },
+        {
+          "status": "fixed",
+          "commit": "763ff3e",
+          "text": "Fix TvDB thumbs in APIv3."
+        }
+      ]
+    },
+    {
       "version": "4.0.0",
       "versionURL": "400",
       "date": "August 21st, 2020",
@@ -331,7 +349,6 @@
           "commit": "9a814ef",
           "text": "API - Added support for marking episode as watched based on file."
         },
-
         {
           "status": "changed",
           "commit": "939b132",
