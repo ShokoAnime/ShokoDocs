@@ -63,7 +63,7 @@ Use the Package Center to install Docker.
 The latest Docker image is available on [Docker Hub](https://hub.docker.com/r/shokoanime/server). To get the image run the following in the command line.
 
 ```bash
-docker pull shokoanime/shokoserver
+docker pull shokoanime/server
 ```
 
 #### Docker Run
@@ -71,7 +71,7 @@ docker pull shokoanime/shokoserver
 To run a basic docker container for Shoko Server, you can run the following from the command line.
 
 ```bash
-docker run -p 8111 shokoanime/shokoserver
+docker run -p 8111 shokoanime/server
 ```
 
 This command will run a new empty docker instance with Shoko Server installed. At the same time port **8111** will be made available on the host to reach Shoko Server remotely. At this point you'll be able to use Shoko Desktop to connect to the server.
@@ -127,7 +127,7 @@ This command will run a new empty docker instance with Shoko Server installed. A
 </tr>
 <tr>
 	<td>
-		<pre><code class = "language-bash">shokoanime/shokoserver</code></pre>
+		<pre><code class = "language-bash">shokoanime/server</code></pre>
 	</td>
 	<td>
 		<p><a href = "https://docs.docker.com/engine/reference/run/" target = "_blank" rel = "noopener">Specifies the Image to derive the container from.</a></p>
@@ -139,7 +139,7 @@ This command will run a new empty docker instance with Shoko Server installed. A
 Putting everything together will get us the following configuration
 
 ```bash
-docker run -d --name shokoserver --restart always -p 8111:8111/tcp -v "/path/to/shoko/settings:/home/shoko/.shoko" -v "/path/to/anime:/anime" -v "/path/to/import:/import" shokoanime/shokoserver
+docker run -d --name shokoserver --restart always -p 8111:8111/tcp -v "/path/to/shoko/settings:/home/shoko/.shoko" -v "/path/to/anime:/anime" -v "/path/to/import:/import" shokoanime/server
 ```
 
 This will provide you a Docker Shoko Server instance that runs in the background with persistent configuration, as well as expose it on your server to connect with Shoko Desktop / WebUI.
@@ -188,9 +188,9 @@ Once down, click **Confirm** and then **Close**.
 {{% /page-column %}}
 {{< page-column image-url="/assets/images/server/Synology-Docker-Search-for-Shoko-Server.jpg" image-alt="Synology Docker Search for Shoko Server" >}}
 
-You can now search repositories from the Docker Hub Registry. Enter **shokoanime/shokoserver** into the search box above and click the **Search** button.
+You can now search repositories from the Docker Hub Registry. Enter **shokoanime/server** into the search box above and click the **Search** button.
 
-Check to make sure your results are accurate and click on the **shokoanime/shokoserver** to chose a release to download.
+Check to make sure your results are accurate and click on the **shokoanime/server** to chose a release to download.
 
 {{% alert type="primary" heading="Available Releases" %}}
 
@@ -260,7 +260,7 @@ version: "3"
 services:
     shoko_server:
         container_name: shokoserver
-        image: shokoanime/shokoserver
+        image: shokoanime/server
         restart: always
         ports:
             - "8111:8111/tcp"
