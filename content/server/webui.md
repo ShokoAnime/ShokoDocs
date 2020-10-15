@@ -39,6 +39,12 @@ id = "interactive-log-overview"
 markup = "mmark"
 +++
 
+{{< alert type="primary" heading="Disclaimer" >}}
+
+Please note, we're currently working on a rewrite of Shoko Docs and such the information below is outdated. However it should get you headed in the right direction, join our Discord server if you need additional help.
+
+{{< /alert >}}
+
 ## Accessing The Web UI
 
 Depending on the OS you're using, accessing the Web UI can be done using one of the following methods.
