@@ -1,11 +1,26 @@
-baseURL = "https://docs.shokoanime.com/"
-languageCode = "en-us"
-title = "Shoko Docs"
+baseURL = "https://shokoanime.com/"
+DefaultContentLanguage = "en"
+paginate =  6
+title = "Shoko"
+
+disableKinds = ["taxonomyTerm"]
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+	home = ["HTML", "RSS", "JSON"]
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+[taxonomies]
+	category = "category"
+	tag = "tag"
+
+[markup.goldmark.renderer]
+	unsafe= true
+
+[languages]
+	[languages.en]
+		contentDir = "content/en"
+		title = "Shoko"
+		languageName = "English"
+		weight = 1
+
+[params]
+  images = ["icon.png"]
