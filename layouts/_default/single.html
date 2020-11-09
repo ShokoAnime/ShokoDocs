@@ -29,7 +29,7 @@
         <!-- Page Content -->
         <div class="page-content">
             <h2 class="page-header">{{ .Title }}</h2>
-            <p class="page-update-date">Updated On: {{ .Page.Lastmod.Format "January 2, 2006" }}</p>
+            <p class="page-update-date">Updated On: {{ .GitInfo.AuthorDate.Format "January 2, 2006" }}</p>
             <hr class="hr1">
             {{ .Content }}
         </div>

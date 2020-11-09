@@ -2,6 +2,7 @@ baseURL = "https://shokoanime.com/"
 DefaultContentLanguage = "en"
 paginate =  6
 title = "Shoko"
+enableGitInfo = true
 
 disableKinds = ["taxonomyTerm"]
 

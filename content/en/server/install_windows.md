@@ -1,7 +1,6 @@
 +++
 title = "Shoko Server - Windows Install"
 description = "Information on how to install Shoko Server on Windows."
-date = 2017-12-29T01:44:32+00:00
 layout = "single"
 [[pageNav]]
 navTitle = "Getting Started"

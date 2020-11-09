@@ -542,7 +542,7 @@ a.nav-title {
     margin-bottom: 1rem;
     max-height: 30px;
     max-width: 100px;
-    padding: 0.5rem;
+    padding: 0.2rem 0.5rem;
     text-align: center;
     text-transform: uppercase;
     width: 100%;
@@ -570,7 +570,7 @@ a.nav-title {
 
 .changelog-item-text {
     margin-left: 2rem;
-    padding: 0.5rem;
+    padding: 0.2rem 0.5rem;
 }
 
 /*
