@@ -3,40 +3,57 @@
 
 {{ partial "head.html" . }}
 
-<body class="lang-{{ .Site.Language.Lang }}">
+<body data-spy="scroll" data-target="#page-nav" data-offset="80" class="lang-{{ .Site.Language.Lang }}">
 
 <div class="row page-wrapper">
 
-	<!-- Sidebar Nav -->
-	<div class="col-xl-2 sidebar-nav-wrapper">
-		<nav class="nav flex-column sidebar-nav">
-			<h3 class="nav-header">Shoko <span class="nav-header-highlight">Docs</span></h3>
-			{{ partial "nav-main.html" }}
-		</nav>
-	</div>
+    <!-- Sidebar Nav -->
+    <div class="col-xl-2 sidebar-nav-wrapper">
+        <nav class="nav flex-column sidebar-nav">
+            <h3 class="nav-header">Shoko <span class="nav-header-highlight">Docs</span></h3>
+            {{ partial "nav-main.html" }}
+        </nav>
+    </div>
 
-	<!-- Content -->
-	<div class="col-xl-8 content-wrapper">
+    <!-- Content -->
+    <div class="col-xl-8 content-wrapper">
 
-		<!-- Top Nav -->
-		<div class="top-nav-wrapper">
-			{{ partial "nav-top.html" . }}
-		</div>
+        <!-- Top Nav -->
+        <div class="top-nav-wrapper">
+            {{ partial "nav-top.html" . }}
+        </div>
 
+        <!-- Breadcrumbs -->
+        {{ partial "breadcrumb.html" . }}
 
-		<div class="page-content">
+        <!-- Page Content -->
+        <div class="page-content">
+            <h2 class="page-header">{{ .Title }}</h2>
+            <p class="page-update-date">Updated On: {{ .Page.Lastmod.Format "January 2, 2006" }}</p>
+            <hr class="hr1">
+            {{ .Content }}
+        </div>
 
-			{{ .Content }}
+        <!-- Footer -->
+        {{ partial "footer.html" . }}
 
-		</div>
+    </div>
 
-		{{ partial "footer.html" . }}
+    <!-- Page Nav -->
+    <div class="col-xl-2 page-nav-wrapper">
+        <div class="nav-links-wrapper page-nav-link-wrapper">
+            <ul class="nav flex-column flex-nowrap" id="page-nav">
 
-	</div>
+                {{ range .Params.pageNav }}
+                {{if .navTitle }}
+                <li class="page-nav-title">{{ .navTitle }}</li>
+                {{ end }}
+                <li class="nav-item"><a class="nav-link nav-menu page-nav-link" href="#{{ .id }}">{{ .name }}</a></li>
+                {{ end }}
 
-	<div class="col-xl-2 page-nav-wrapper">
-
-	</div>
+            </ul>
+        </div>
+    </div>
 
 </div>
 

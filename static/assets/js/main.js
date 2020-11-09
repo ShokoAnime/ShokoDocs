@@ -101,11 +101,11 @@ $(document).on('click', '.nav-sidebar > .nav-item > .nav-link', function (event)
 
 // ----------------------------------------------------------------------------------------------------------------
 
-// Lightbox
-
-$(document).on('click', '[data-toggle="lightbox"]', function(event) {
-	event.preventDefault();
-	$(this).ekkoLightbox();
+//Lightbox - Has to be last.
+document.addEventListener('DOMContentLoaded',function(){
+	new SmartPhoto(".js-smartPhoto",{
+		resizeStyle: 'fit'
+	});
 });
 
 // ----------------------------------------------------------------------------------------------------------------
