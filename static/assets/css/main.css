@@ -219,6 +219,7 @@ a.nav-title {
     margin: auto;
     max-width: 850px;
     padding: 4rem;
+    min-height: calc(100% - 377px);
 }
 
 .page-content > h2 {
