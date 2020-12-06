@@ -1,7 +1,7 @@
 +++
-title = "Shoko Server Changelog"
+title = "Shoko Server Web UI"
 layout  = "changelog-single"
-changelogType = "server"
+changelogType = "webui"
 exclude_search =  true
 +++
 

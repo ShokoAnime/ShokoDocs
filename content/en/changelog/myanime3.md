@@ -1,7 +1,7 @@
 +++
-title = "Shoko Server Changelog"
+title = "My Anime 3 Changelog"
 layout  = "changelog-single"
-changelogType = "server"
+changelogType = "myanime3"
 exclude_search =  true
 +++
 

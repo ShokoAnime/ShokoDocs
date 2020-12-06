@@ -1,7 +1,7 @@
 +++
 title = "Shoko Server Changelog"
 layout  = "changelog-single"
-changelogType = "server"
+changelogType = "desktop"
 exclude_search =  true
 +++
 

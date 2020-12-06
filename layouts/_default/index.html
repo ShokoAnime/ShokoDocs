@@ -5,41 +5,31 @@
 
 <body class="lang-{{ .Site.Language.Lang }}">
 
-<div class="row page-wrapper">
+<div class="page-wrapper">
 
-    <!-- Sidebar Nav -->
-    <div class="col-xl-2 sidebar-nav-wrapper">
-        <nav class="nav flex-column sidebar-nav">
-            <h3 class="nav-header">Shoko <span class="nav-header-highlight">Docs</span></h3>
-            {{ partial "nav-main.html" }}
-        </nav>
+    <div class="main-nav-wrapper">
+        <h3 class="main-nav-header">Shoko Docs</h3>
+        {{ partial "nav-main.html" . }}
     </div>
 
-    <!-- Content -->
-    <div class="col-xl-10 content-wrapper">
+    <div class="page-outer-wrapper">
 
-        <!-- Top Nav -->
-        <div class="top-nav-wrapper">
-            {{ partial "nav-top.html" . }}
-        </div>
+        {{ partial "nav-top.html" . }}
+        {{ partial "breadcrumb.html" . }}
 
-
-        <div class="index-content">
+        <div class="index-content-wrapper">
 
             {{ .Content }}
-
             <hr class="hr1">
+            {{ $data := index .Site.Data .Site.Language.Lang }}
+            {{ if eq (index .Site.Data .Site.Language.Lang) nil }}
+            {{ $data = .Site.Data.en }}
+            {{ end }}
 
-            <div class="row">
-
-                {{ $data := index .Site.Data .Site.Language.Lang }}
-                {{ if eq (index .Site.Data .Site.Language.Lang) nil }}
-                {{ $data = .Site.Data.en }}
-                {{ end }}
-
+            <div class="row quick-link-outer-wrapper">
                 {{ range $data.highlights.highlightsList }}
 
-                <div class="col-xxl-4 quick-link-wrapper">
+                <div class="col-xl-4 quick-link-wrapper">
                     <div class="quick-link-content-wrapper">
                         <i class="{{ .icon }} fa-3x quick-link-icon"></i>
                         <div class="quick-link-info">
@@ -51,13 +41,10 @@
                 </div>
 
                 {{ end }}
-
             </div>
 
         </div>
-
         {{ partial "footer.html" . }}
-
     </div>
 
 </div>

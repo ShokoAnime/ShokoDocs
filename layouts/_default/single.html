@@ -5,54 +5,42 @@
 
 <body data-spy="scroll" data-target="#page-nav" data-offset="80" class="lang-{{ .Site.Language.Lang }}">
 
-<div class="row page-wrapper">
+<div class="page-wrapper">
 
-    <!-- Sidebar Nav -->
-    <div class="col-xl-2 sidebar-nav-wrapper">
-        <nav class="nav flex-column sidebar-nav">
-            <h3 class="nav-header">Shoko <span class="nav-header-highlight">Docs</span></h3>
-            {{ partial "nav-main.html" }}
-        </nav>
+    <div class="main-nav-wrapper">
+        <h3 class="main-nav-header">Shoko Docs</h3>
+        {{ partial "nav-main.html" . }}
     </div>
 
-    <!-- Content -->
-    <div class="col-xl-8 content-wrapper">
+    <div class="page-outer-wrapper">
 
-        <!-- Top Nav -->
-        <div class="top-nav-wrapper">
-            {{ partial "nav-top.html" . }}
-        </div>
-
-        <!-- Breadcrumbs -->
+        {{ partial "nav-top.html" . }}
         {{ partial "breadcrumb.html" . }}
 
-        <!-- Page Content -->
-        <div class="page-content">
-            <h2 class="page-header">{{ .Title }}</h2>
-            <p class="page-update-date">Updated On: {{ .GitInfo.AuthorDate.Format "January 2, 2006" }}</p>
-            <hr class="hr1">
-            {{ .Content }}
+        <div class="page-section-wrapper">
+            <div class="page-content-wrapper {{ if eq "/search/" .Page.URL }}page-search-wrapper{{ end }}">
+                {{ .Content }}
+            </div>
+
+            <div class="page-nav-wrapper {{ if eq "/search/" .Page.URL }}page-nav-search{{ end }}">
+                <div class="nav-links-wrapper page-nav-link-wrapper">
+                    <ul class="nav flex-column flex-nowrap" id="page-nav">
+
+                        {{ range .Params.pageNav }}
+                        {{if .navTitle }}
+                        <li class="page-nav-title">{{ .navTitle }}</li>
+                        {{ end }}
+                        <li class="nav-item">
+                            <a class="nav-link nav-menu page-nav-link" href="#{{ .id }}">{{ .name }}</a>
+                        </li>
+                        {{ end }}
+
+                    </ul>
+                </div>
+            </div>
         </div>
 
-        <!-- Footer -->
         {{ partial "footer.html" . }}
-
-    </div>
-
-    <!-- Page Nav -->
-    <div class="col-xl-2 page-nav-wrapper">
-        <div class="nav-links-wrapper page-nav-link-wrapper">
-            <ul class="nav flex-column flex-nowrap" id="page-nav">
-
-                {{ range .Params.pageNav }}
-                {{if .navTitle }}
-                <li class="page-nav-title">{{ .navTitle }}</li>
-                {{ end }}
-                <li class="nav-item"><a class="nav-link nav-menu page-nav-link" href="#{{ .id }}">{{ .name }}</a></li>
-                {{ end }}
-
-            </ul>
-        </div>
     </div>
 
 </div>
@@ -61,3 +49,4 @@
 
 </body>
 </html>
+

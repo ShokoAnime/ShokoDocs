@@ -80,23 +80,11 @@ strong {
 }
 
 .hr1 {
-    background: var(--borderColor);
-    margin-bottom: 4rem;
-    margin-top: 1rem;
+    margin: 2rem 0;
 }
 
 .hr2 {
-    background: var(--borderColor);
-}
-
-.hr3 {
-    background: var(--borderColor);
-    margin-bottom: 2rem;
-}
-
-
-.content-wrapper {
-    padding: 0;
+    margin: 2rem 0;
 }
 
 /*
@@ -105,10 +93,36 @@ strong {
 ---------------------------------------------
 */
 
-.sidebar-nav-wrapper {
+.main-nav-wrapper {
     background: var(--navBackground);
-    padding: 0;
+    height: 100vh;
+    width: calc((100% - 1448px) / 2 + 260px);
+    min-width: 320px;
+    border-right: 1px var(--borderColor) solid;
+    position: sticky;
+    top: 0;
 }
+
+.main-nav-link-wrapper {
+    display: flex;
+}
+
+.main-nav-header {
+    padding-top: 2rem;
+    padding-left: calc(100% - 265px);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.nav-sidebar {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+    font-weight: 400;
+    padding-left: calc(100% - 265px);
+    margin-top: 2rem;
+}
+
 
 .sidebar-nav {
     height: auto;
@@ -129,16 +143,8 @@ strong {
     color: var(--linkHover);
 }
 
-.main-nav-link-wrapper {
-    margin: 1rem;
-    top: 50px;
-}
-
-.nav-sidebar {
-    -webkit-box-direction: normal;
-    -webkit-box-orient: vertical;
-    flex-direction: column;
-    font-weight: 400;
+.navbar {
+    padding: .5rem 0;
 }
 
 .nav-sidebar .nav {
@@ -148,16 +154,21 @@ strong {
 }
 
 .nav-sidebar .nav-link {
-    -webkit-box-pack: justify;
-    color: var(--fontColorAlt);
     display: flex;
-    font-weight: 600;
+    font-weight: 700;
     justify-content: space-between;
     padding: 3px 0;
 }
 
+a.nav-title {
+    color: var(--linkHover) !important;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
 .nav-title-wrapper .nav-link {
     margin-left: 0.75rem;
+    font-size: 0.9rem;
 }
 
 .nav-link.active {
@@ -172,13 +183,20 @@ strong {
 }
 
 .nav-item > a {
-    color: var(--fontColorAlt);
-    font-weight: 600;
+    color: var(--fontColor);
+    font-weight: 700;
 }
 
 .nav-item > a:hover {
     color: var(--linkHover);
-    text-decoration: none;
+}
+
+.nav-title-wrapper > a {
+    color: var(--fontColor);
+}
+
+.nav-title-wrapper > a:hover {
+    color: var(--linkHover);
 }
 
 .nav-secondary {
@@ -199,11 +217,6 @@ strong {
     transition: -webkit-transform 0.5s;
 }
 
-a.nav-title {
-    color: var(--linkHover) !important;
-    font-weight: 700;
-}
-
 /*
 ---------------------------------------------
 		3. Page
@@ -211,52 +224,53 @@ a.nav-title {
 */
 
 .page-wrapper {
-    height: 100vh;
-    margin: 0;
+    display: flex;
 }
 
-.page-content {
-    margin: auto;
-    max-width: 850px;
-    padding: 4rem;
-    min-height: calc(100% - 377px);
-}
-
-.page-content > h2 {
-    margin: 2rem 0;
-}
-
-.page-content > p > a {
-    font-weight: 600;
-}
-
-.page-header {
-    margin: 1rem 0 !important;
-}
-
-.page-update-date {
-    font-weight: 600;
-    margin: 0;
-}
-
-.page-nav-wrapper {
-    background: var(--pageNav);
-    margin: 0;
-    padding: 0;
+.page-outer-wrapper {
     width: 100%;
 }
 
+.page-section-wrapper {
+    display: flex;
+    margin: auto;
+    max-width: 1200px;
+    padding: 5rem 0;
+
+    min-height: calc(1226px - 308px);
+}
+
+.page-content-wrapper {
+    max-width: 800px;
+    width: 100%;
+}
+
+.page-search-wrapper {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.page-content-wrapper > h2 {
+    margin: 3rem 0;
+}
+
+.page-first-header {
+    margin: 0 0 3rem 0 !important;
+}
+
 .page-nav-wrapper {
-    padding-left: 0;
+    margin-left: 8rem;
+}
+
+.page-nav-search {
+    display: none;
 }
 
 .page-nav-link-wrapper {
-    margin-left: 2rem;
-    margin-top: 15rem;
     padding-left: 1rem;
     padding-right: 0;
     position: sticky;
-    top: 80px;
+    top: 50px;
 }
 
 .page-nav-title {
@@ -268,7 +282,7 @@ a.nav-title {
 
 .page-nav-link {
     color: var(--fontColor) !important;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     font-weight: 600;
     padding: 0.21em 0;
 }
@@ -306,31 +320,123 @@ a.nav-title {
 
 /*
 ---------------------------------------------
+		4. Top Nav
+---------------------------------------------
+*/
+
+.top-nav-wrapper {
+    border-bottom: 1px var(--borderColor) solid;
+    height: 90px;
+}
+
+.top-nav-link-wrapper {
+    display: flex;
+    padding: 1.5rem 4rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.top-nav-link {
+    color: var(--fontColor);
+    font-weight: 600;
+    margin-right: 2rem;
+}
+
+.search-wrapper {
+    display: flex;
+    margin-left: auto;
+}
+
+.search-input {
+    background-color: var(--backgroundColor);
+    border: none;
+    color: var(--fontColor);
+    font-weight: 600;
+    margin-left: 1rem;
+    outline: 0;
+    padding-top: 0.5rem;
+}
+
+.top-nav-search-icon {
+    margin: auto;
+}
+
+/*
+---------------------------------------------
+		4. Breadcrumbs
+---------------------------------------------
+*/
+
+.breadcrumb-outer-wrapper {
+    border-bottom: 1px var(--borderColor) solid;
+    background: var(--breadcrumbBackground);
+}
+
+.breadcrumb-wrapper {
+    display: flex;
+    padding: 1.5rem 4rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.breadcrumb-list > a {
+    font-weight: 600;
+}
+
+.breadcrumb-separator {
+    margin: 0 0.5rem;
+}
+
+.breadcrumb-active {
+    color: var(--fontStrong);
+    font-weight: 600;
+}
+
+.github-wrapper {
+    margin-left: auto;
+}
+
+.github-wrapper > a {
+    font-weight: 600;
+}
+
+.github-icon {
+    color: var(--linkNormal);
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+}
+
+/*
+---------------------------------------------
 		4. Index
 ---------------------------------------------
 */
 
-.index-content {
+.index-content-wrapper {
     margin: auto;
-    max-width: 1010px;
-    padding: 4rem;
+    max-width: 1200px;
+    padding: 5rem;
 }
 
-.index-content > h2 {
-    margin: 2rem 0;
+.index-content-wrapper > h2 {
+    margin-bottom: 2rem;
+}
+
+.quick-link-outer-wrapper {
+    margin: auto;
 }
 
 .quick-link-wrapper {
-    padding: 0.8rem;
-    width: 30.8%;
+    padding: 0.5rem 1rem 0.5rem 0;
+    width: 32%;
+    max-width: 32%;
 }
 
 .quick-link-content-wrapper {
     border: 2px solid var(--borderColor);
     border-radius: 10px;
-    height: 100%;
-    max-height: 213px;
     padding: 1rem;
+    height: 230px;
 }
 
 .quick-link-content-wrapper:hover {
@@ -374,49 +480,7 @@ a.nav-title {
 }
 
 .quick-link-text {
-    margin-bottom: 0;
-}
-
-
-/*
----------------------------------------------
-		5. Top Navigation
----------------------------------------------
-*/
-
-.top-nav-wrapper {
-    border-bottom: 1px var(--borderColor) solid;
-    height: 90px;
-}
-
-.top-nav-link-wrapper {
-    display: flex;
-    padding: 1.5rem 4rem;
-}
-
-.top-nav-link {
-    color: var(--fontColor);
-    font-weight: 600;
-    margin-right: 2rem;
-}
-
-.search-wrapper {
-    display: flex;
-    margin-left: auto;
-}
-
-.search-input {
-    background-color: var(--backgroundColor);
-    border: none;
-    color: var(--fontColor);
-    font-weight: 600;
-    margin-left: 1rem;
-    outline: 0;
-    padding-top: 0.5rem;
-}
-
-.top-nav-search-icon {
-    margin: auto;
+    margin-top: 1rem;
 }
 
 /*
@@ -426,18 +490,19 @@ a.nav-title {
 */
 
 .footer-wrapper {
-    background-color: var(--footerBackground);
+    background-color: var(--breadcrumbBackground);
     height: 80px;
     overflow: hidden;
     width: 100%;
+    border-top: 1px var(--borderColor) solid;
 }
 
 .footer-info {
-    color: var(--fontColorAlt);
-    display: flex;
+    color: var(--fontColor);
     height: 100%;
+    display: flex;
+    max-width: 1200px;
     margin: auto;
-    padding: 0 5rem;
 }
 
 .footer-links {
@@ -449,7 +514,7 @@ a.nav-title {
 }
 
 .footer-links > a {
-    color: var(--fontColorAlt) !important;
+    color: var(--fontColor) !important;
     font-weight: 600;
 }
 
@@ -475,52 +540,19 @@ a.nav-title {
 
 /*
 ---------------------------------------------
-		7. Breadcrumbs
----------------------------------------------
-*/
-
-.breadcrumb-wrapper {
-    background: var(--breadcrumbBackground);
-    display: flex;
-    padding: 1.5rem 5rem;
-}
-
-.breadcrumb-list > a {
-    font-weight: 600;
-}
-
-.breadcrumb-separator {
-    margin: 0 0.5rem;
-}
-
-.breadcrumb-active {
-    color: var(--fontStrong);
-    font-weight: 600;
-}
-
-.github-wrapper {
-    margin-left: auto;
-}
-
-.github-wrapper > a {
-    font-weight: 600;
-}
-
-.github-icon {
-    color: var(--linkNormal);
-    font-size: 1.3rem;
-    margin-right: 0.5rem;
-}
-
-/*
----------------------------------------------
 		8. Changelog
 ---------------------------------------------
 */
 
+.changelog-index-header {
+    margin-bottom: 2rem;
+}
+
 .changelog-header-wrapper {
     display: flex;
-    font-weight: 600;
+    font-family: "Exo 2", sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
 }
 
 .changelog-header-spacer {
@@ -576,7 +608,7 @@ a.nav-title {
 
 /*
 ---------------------------------------------
-		9. Changelog
+		9. FAQ
 ---------------------------------------------
 */
 

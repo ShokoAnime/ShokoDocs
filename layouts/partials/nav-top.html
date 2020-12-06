@@ -1,34 +1,36 @@
-<div class="top-nav-link-wrapper">
+<div class="top-nav-wrapper">
+    <div class="top-nav-link-wrapper">
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMobile"
+                    aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMobile"
-                aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <span class="navbar-divider"></span>
 
-        <span class="navbar-divider"></span>
+            <div class="collapse navbar-collapse top-nav-links" id="navbarMobile">
+                <div class="navbar-nav nav-links">
+                    <a class="navbar-link top-nav-link" href="https://docs.shokoanime.com">Home</a>
+                    <a class="navbar-link top-nav-link" href="https://shokoanime.com">Website</a>
+                    <a class="navbar-link top-nav-link" href="https://discord.gg/vpeHDsg" target="_blank"
+                       rel="noopener">Support</a>
+                    <a class="navbar-link top-nav-link" href="https://github.com/ShokoAnime/ShokoDocs" target="_blank"
+                       rel="noopener">Github</a>
+                </div>
 
-        <div class="collapse navbar-collapse top-nav-links" id="navbarMobile">
-            <div class="navbar-nav nav-links">
-                <a class="navbar-link top-nav-link" href="https://docs.shokoanime.com">Home</a>
-                <a class="navbar-link top-nav-link" href="https://shokoanime.com">Website</a>
-                <a class="navbar-link top-nav-link" href="https://discord.gg/vpeHDsg" target="_blank" rel="noopener">Support</a>
-                <a class="navbar-link top-nav-link" href="https://github.com/ShokoAnime/ShokoDocs" target="_blank"
-                   rel="noopener">Github</a>
             </div>
+        </nav>
 
+        <div class="search-wrapper">
+            <i class="fas fa-search top-nav-search-icon"></i>
+            <form name="cse" id="searchbox" action="/search/" method="get">
+                <input type="hidden" name="cx" value="000649133662658939805:7nv0dx66q_4"/>
+                <input type="hidden" name="ie" value="utf-8"/>
+                <input type="hidden" name="hl" value="en"/>
+                <input name="q" type="text" class="search-input" autocomplete="off" placeholder="Search ShokoDocs..."/>
+            </form>
         </div>
-    </nav>
 
-    <div class="search-wrapper">
-        <i class="fas fa-search top-nav-search-icon"></i>
-        <form name="cse" id="searchbox" action="/search/" method="get">
-            <input type="hidden" name="cx" value="000649133662658939805:7nv0dx66q_4"/>
-            <input type="hidden" name="ie" value="utf-8"/>
-            <input type="hidden" name="hl" value="en"/>
-            <input name="q" type="text" class="search-input" autocomplete="off" placeholder="Search ShokoDocs..."/>
-        </form>
     </div>
-
 </div>

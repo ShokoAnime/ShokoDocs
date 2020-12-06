@@ -1,7 +1,7 @@
 +++
-title = "Shoko Server Changelog"
+title = "Shoko Metadata"
 layout  = "changelog-single"
-changelogType = "server"
+changelogType = "shokometadata"
 exclude_search =  true
 +++
 

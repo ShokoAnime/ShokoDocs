@@ -25,28 +25,10 @@
                 {{ $data = .Site.Data.en }}
                 {{ end }}
 
-                {{ $name := index ($data.changelog.index) }}
+                {{ $type := string .Params.changelogType }}
+                {{ $gitLink :=(index $data.changelog $type).githubLink }}
 
-                {{ with $name }}
-                {{ range .names }}
-                {{ $name1 := . }}
-                {{ range first 1 (index $data.changelog $name1).releases }}
-
-                <h3 class="changelog-index-header">
-                    {{ if eq $name1 "server" }}
-                    {{ "Shoko Server" }}
-                    {{ else if eq $name1 "webui" }}
-                    {{ "Shoko Server Web UI" }}
-                    {{ else if eq $name1 "desktop" }}
-                    {{ "Shoko Desktop" }}
-                    {{ else if eq $name1 "myanime3" }}
-                    {{ "My Anime 3" }}
-                    {{ else if eq $name1 "nakamori" }}
-                    {{ "Nakamori" }}
-                    {{ else if eq $name1 "shokometadata" }}
-                    {{ "Shoko Metadata" }}
-                    {{ end }}
-                </h3>
+                {{ range (index $data.changelog $type).releases }}
 
                 <div id="v{{ .versionURL  }}" class="changelog-wrapper">
 
@@ -78,26 +60,16 @@
                 </div>
 
                 {{ end }}
-                {{ end }}
-                {{ end }}
-
             </div>
 
             <div class="page-nav-wrapper">
                 <div class="nav-links-wrapper page-nav-link-wrapper">
                     <ul class="nav flex-column flex-nowrap" id="page-nav">
 
-                        {{ range first 1 $data.changelog.server.releases}}
-                        <a class="nav-link nav-menu page-nav-title">Shoko Server</a>
+                        <a class="nav-link nav-menu page-nav-title">Lastest Releases</a>
+                        {{ range first 10 (index $data.changelog $type).releases }}
                         <li class="nav-item"><a class="nav-link nav-menu page-nav-link" href="#v{{ .versionURL }}">
-                            Version {{ .version }} - {{ .date }}</a>
-                        </li>
-                        {{ end }}
-                        {{ range first 1 $data.changelog.desktop.releases}}
-                        <a class="nav-link nav-menu page-nav-title">Shoko Desktop</a>
-                        <li class="nav-item"><a class="nav-link nav-menu page-nav-link" href="#v{{ .versionURL }}">
-                            Version {{ .version }} - {{ .date }}</a>
-                        </li>
+                            Version {{ .version }} - {{ .date }}</a></li>
                         {{ end }}
 
                     </ul>

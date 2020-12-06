@@ -17,7 +17,7 @@ name = "Additional Configuration"
 id = "additional-configuration"
 +++
 
-## Is Shoko Server Mandatory?
+## Is Shoko Server Mandatory?{.page-first-header}
 
 The short answer is **Yes**.
 
