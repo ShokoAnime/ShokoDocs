@@ -4,25 +4,32 @@
 		<li class="nav-item">
 			<a class="nav-link nav-menu sidenav-menu" href="#">Shoko Server<i class="nav-angle"></i></a>
 			<div class="nav nav-title-wrapper">
-				<a class="nav-title">Installing Shoko Server</a>
-				<a class="nav-link nav-menu" href="/server/install_windows">Shoko Server On Windows</a>
-				<a class="nav-link nav-menu" href="/server/install_linux">Shoko Server On Linux</a>
-				<a class="nav-title">Using Shoko Server</a>
-				<a class="nav-link nav-menu" href="/server/config">Configure Settings</a>
-				<a class="nav-link nav-menu" href="/server/webui">Configure Web UI</a>
+				<a class="nav-link nav-menu" href="{{ "server/install" | relURL }}">Install</a>
+				<a class="nav-link nav-menu" href="{{ "server/setup" | relURL }}">First Time Setup</a>
+			</div>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link nav-menu sidenav-menu" href="#">Shoko Metadata<i class="nav-angle"></i></a>
+			<div class="nav nav-title-wrapper">
+
+				<a class="nav-link nav-menu" href="{{ "shokometadata/install_windows" | relURL }}">Shoko Metadata On Windows</a>
+				<a class="nav-link nav-menu" href="">Shoko Metadata On Linux</a>
+
+				<a class="nav-link nav-menu" href="">Adding Shoko Library</a>
+				<a class="nav-link nav-menu" href="">Configure Shoko Settings</a>
 			</div>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link nav-menu sidenav-menu" href="#">Changelog<i class="nav-angle"></i></a>
 			<div class="nav nav-title-wrapper">
-				<a class="nav-link nav-menu" href="/changelog/server">Shoko Server</a>
-				<a class="nav-link nav-menu" href="/changelog/desktop">Shoko Desktop</a>
-				<a class="nav-link nav-menu" href="/changelog/webui">Shoko WebUI</a>
-				<a class="nav-link nav-menu" href="/changelog/shokometadata">Shoko Metadata</a>
-				<a class="nav-link nav-menu" href="/changelog/myanime3">My Anime 3</a>
+				<a class="nav-link nav-menu" href="{{ "changelog/server" | relURL }}">Shoko Server</a>
+				<a class="nav-link nav-menu" href="{{ "changelog/desktop" | relURL }}">Shoko Desktop</a>
+				<a class="nav-link nav-menu" href="{{ "changelog/webui" | relURL }}">Shoko WebUI</a>
+				<a class="nav-link nav-menu" href="{{ "changelog/shokometadata" | relURL }}">Shoko Metadata</a>
+				<a class="nav-link nav-menu" href="{{ "changelog/myanime3" | relURL }}">My Anime 3</a>
 			</div>
 		</li>
-		<li class="nav-item"><a href="/faq">Frequently Asked Questions</a></li>
+		<li class="nav-item"><a href="{{ "faq" | relURL }}">Frequently Asked Questions</a></li>
 		<span class="nav-secondary"></span>
 		<li class="nav-item"><a id="themeSwitcher" href="#">Dark Theme</a></li>
 

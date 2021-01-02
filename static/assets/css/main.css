@@ -35,11 +35,17 @@ body {
     background-color: var(--backgroundColor);
     color: var(--fontColor);
     display: none;
-    font-family: "Muli", sans-serif;
+    font-family: "Mulish", sans-serif;
     font-size: 1rem;
     font-weight: 400;
     height: 100%;
     line-height: 1.9;
+}
+
+code {
+    font-family: "Exo 2", sans-serif;
+    font-weight: 500;
+    color: var(--fontColor);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -49,9 +55,11 @@ h1, h2, h3, h4, h5, h6 {
 
 pre {
     border: var(--borderColor) 1px solid;
-    border-left: 5px solid var(--linkHover);
+    border-radius: 4px;
+    border-left: 7px solid var(--fontStrong);
     color: var(--fontColor);
-    margin: 1rem 0;
+    background-color: var(--navBackground);
+    margin: 1.5rem 0 !important;
     overflow: auto;
     padding: 1em;
 }
@@ -68,7 +76,8 @@ strong {
     margin: 2rem auto;
     max-height: 480px;
     max-width: 850px;
-    width: 100%;
+    width: auto;
+    image-rendering: -webkit-optimize-contrast;
 }
 
 .smartphoto-img-wrap {
@@ -235,8 +244,7 @@ a.nav-title {
     display: flex;
     margin: auto;
     max-width: 1200px;
-    padding: 5rem 0;
-
+    padding: 5rem 4rem;
     min-height: calc(1226px - 308px);
 }
 
@@ -251,11 +259,15 @@ a.nav-title {
 }
 
 .page-content-wrapper > h2 {
-    margin: 3rem 0;
+    margin: 2rem 0;
+}
+
+.page-content-wrapper > h5 {
+    margin: 1rem 0;
 }
 
 .page-first-header {
-    margin: 0 0 3rem 0 !important;
+    margin: 0 0 2rem 0 !important;
 }
 
 .page-nav-wrapper {
@@ -415,6 +427,7 @@ a.nav-title {
 .index-content-wrapper {
     margin: auto;
     max-width: 1200px;
+    min-height: calc(1226px - 308px);
     padding: 5rem;
 }
 
@@ -623,4 +636,37 @@ a.nav-title {
 
 .faq-card {
     background: var(--backgroundColor);
+}
+
+/*
+---------------------------------------------
+    8. Tables
+---------------------------------------------
+*/
+
+.table {
+    color: var(--fontColor);
+    font-size: 0.9375rem;
+}
+
+.table-bordered {
+    border: 1px solid var(--borderColor);
+}
+
+.table-bordered td, .table-bordered th {
+    border: 1px solid var(--borderColor);
+}
+
+.table-bordered tbody tr:nth-of-type(even) {
+    background-color: var(--rowBackgroundEven);
+}
+
+.table-bordered tbody tr:nth-of-type(odd) {
+    background-color: var(--rowBackgroundOdd);
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid var(--borderColor);
+    background: var(--navBackground);
 }

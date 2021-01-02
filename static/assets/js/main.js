@@ -18,15 +18,17 @@ $(window).on("load", function () {
 
 });
 
-$('#themeSwitcher').click(function () {
+$('#themeSwitcher').click(function (e) {
 
 	if (themeID === 1) {
+		e.preventDefault();
 		localStorage.setItem('theme', 'light');
 		$('link[id="dark"]').prop('disabled', true);
 		$('link[id="light"]').prop('disabled', false);
 		$('#themeSwitcher').text('Dark Theme');
 		themeID--;
 	} else {
+		e.preventDefault();
 		localStorage.setItem('theme', 'dark');
 		$('link[id="light"]').prop('disabled', true);
 		$('link[id="dark"]').prop('disabled', false);
