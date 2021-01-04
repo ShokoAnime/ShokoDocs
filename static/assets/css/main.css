@@ -59,7 +59,6 @@ pre {
     border-left: 7px solid var(--fontStrong);
     color: var(--fontColor);
     background-color: var(--navBackground);
-    margin: 1.5rem 0 !important;
     overflow: auto;
     padding: 1em;
 }
@@ -263,7 +262,7 @@ a.nav-title {
 }
 
 .page-content-wrapper > h5 {
-    margin: 1rem 0;
+    margin: 0.5rem 0 1.5rem 0;
 }
 
 .page-first-header {
@@ -669,4 +668,22 @@ a.nav-title {
     vertical-align: bottom;
     border-bottom: 2px solid var(--borderColor);
     background: var(--navBackground);
+}
+
+thead tr th:first-child,
+tbody tr td:first-child {
+    max-width: 350px;
+}
+
+.table-code-block {
+    border: var(--borderColor) 1px solid;
+    border-radius: 4px;
+    border-left: 7px solid var(--fontStrong);
+    color: var(--fontColor);
+    background-color: var(--navBackground);
+    margin: 1.5rem 0 !important;
+    overflow: auto;
+    padding: 1em;
+    display: block;
+    font-size: 87.5%;
 }

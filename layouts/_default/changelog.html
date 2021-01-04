@@ -29,21 +29,21 @@
 
                 {{ with $name }}
                 {{ range .names }}
-                {{ $name1 := . }}
-                {{ range first 1 (index $data.changelog $name1).releases }}
+                {{ $changelogName := . }}
+                {{ range first 1 (index $data.changelog $changelogName).releases }}
 
                 <h3 class="changelog-index-header">
-                    {{ if eq $name1 "server" }}
+                    {{ if eq $changelogName "server" }}
                     {{ "Shoko Server" }}
-                    {{ else if eq $name1 "webui" }}
+                    {{ else if eq $changelogName "webui" }}
                     {{ "Shoko Server Web UI" }}
-                    {{ else if eq $name1 "desktop" }}
+                    {{ else if eq $changelogName "desktop" }}
                     {{ "Shoko Desktop" }}
-                    {{ else if eq $name1 "myanime3" }}
+                    {{ else if eq $changelogName "myanime3" }}
                     {{ "My Anime 3" }}
-                    {{ else if eq $name1 "nakamori" }}
+                    {{ else if eq $changelogName "nakamori" }}
                     {{ "Nakamori" }}
-                    {{ else if eq $name1 "shokometadata" }}
+                    {{ else if eq $changelogName "shokometadata" }}
                     {{ "Shoko Metadata" }}
                     {{ end }}
                 </h3>
@@ -93,13 +93,30 @@
                             Version {{ .version }} - {{ .date }}</a>
                         </li>
                         {{ end }}
+                        {{ range first 1 $data.changelog.webui.releases}}
+                        <a class="nav-link nav-menu page-nav-title">Shoko Server Web UI</a>
+                        <li class="nav-item"><a class="nav-link nav-menu page-nav-link" href="#v{{ .versionURL }}">
+                            Version {{ .version }} - {{ .date }}</a>
+                        </li>
+                        {{ end }}
                         {{ range first 1 $data.changelog.desktop.releases}}
                         <a class="nav-link nav-menu page-nav-title">Shoko Desktop</a>
                         <li class="nav-item"><a class="nav-link nav-menu page-nav-link" href="#v{{ .versionURL }}">
                             Version {{ .version }} - {{ .date }}</a>
                         </li>
                         {{ end }}
-
+                        {{ range first 1 $data.changelog.myanime3.releases}}
+                        <a class="nav-link nav-menu page-nav-title">My Anime 3</a>
+                        <li class="nav-item"><a class="nav-link nav-menu page-nav-link" href="#v{{ .versionURL }}">
+                            Version {{ .version }} - {{ .date }}</a>
+                        </li>
+                        {{ end }}
+                        {{ range first 1 $data.changelog.shokometadata.releases}}
+                        <a class="nav-link nav-menu page-nav-title">Shoko Metadata</a>
+                        <li class="nav-item"><a class="nav-link nav-menu page-nav-link" href="#v{{ .versionURL }}">
+                            Version {{ .version }} - {{ .date }}</a>
+                        </li>
+                        {{ end }}
                     </ul>
                 </div>
             </div>
