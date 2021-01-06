@@ -17,9 +17,13 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
 	<!-- Shoko -->
-	<link rel="stylesheet" href="{{ "assets/css/main.css" | absURL }}">
+	<link rel="stylesheet" href="{{ "assets/css/main.min.css" | absURL }}">
 	<link rel="stylesheet" href="{{ "assets/css/light.min.css" | absURL }}" id="light">
 	<link rel="stylesheet" href="{{ "assets/css/dark.min.css" | absURL }}" id="dark">
 	<link rel="stylesheet" href="https://unpkg.com/smartphoto@1.1.0/css/smartphoto.min.css">
+
+	<!-- Include Open Graph & Twitter Card Templates -->
+	{{ partial "opengraph.html" . }}
+	{{ template "_internal/twitter_cards.html" . }}
 
 </head>

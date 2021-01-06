@@ -1,5 +1,7 @@
-+++ title = "Shoko Metadata - Windows Install"
++++ 
+title = "Shoko Metadata - Windows Install"
 description = "Information on how to install Shoko Metadata on Windows"
+aliases = ["/shokometadata"]
 layout = "single"
 [[pageNav]]
 navTitle = "Install Platforms"

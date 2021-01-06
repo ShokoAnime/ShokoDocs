@@ -12,16 +12,24 @@
             {{ $len := sub $len 2}}
             <a href="/">{{ .Site.Title }}</a>
             {{ range $index, $element := split $url "/" }}
-            {{ $.Scratch.Add "path" $element }}
-            {{ if ne $element "" }}
-            <span class="breadcrumb-separator">/</span>
-            {{ if ne $index $len }}
-            <a href='{{ $.Scratch.Get "path" | relLangURL }}'>{{ humanize . }}</a>
-            {{ else }}
-            <span class="breadcrumb-active">{{ $.Page.Title }}</span>
-            {{ end }}
-            {{ $.Scratch.Add "path" "/" }}
-            {{ end }}
+                {{ $.Scratch.Add "path" $element }}
+                {{ if ne $element "" }}
+                    <span class="breadcrumb-separator">/</span>
+                        {{ if ne $index $len }}
+                            {{ if eq $element "myanime3" }}
+                                {{ $elementPart := replace . "myanime3" "My Anime 3" }}
+                                <a href='{{ $.Scratch.Get "path" | relLangURL }}'>{{ $elementPart }}</a>
+                            {{ else if eq $element "shokometadata" }}
+                                {{ $elementPart := replace . "shokometadata" "Shoko Metadata" }}
+                                <a href='{{ $.Scratch.Get "path" | relLangURL }}'>{{ $elementPart }}</a>
+                            {{ else }}
+                                <a href='{{ $.Scratch.Get "path" | relLangURL }}'>{{ . | humanize }}</a>
+                            {{ end }}
+                        {{ else }}
+                            <span class="breadcrumb-active">{{ $.Page.Title }}</span>
+                        {{ end }}
+                {{ $.Scratch.Add "path" "/" }}
+                {{ end }}
             {{ end }}
 
         </div>

@@ -67,6 +67,21 @@ strong {
     color: var(--fontStrong);
 }
 
+.alert {
+    border-radius: .75rem;
+}
+
+.alert-heading {
+    font-size: 0.9125rem;
+    font-weight: 700;
+}
+
+.alert-text {
+    color: var(--fontColor) !important;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
 .markdown-image {
     border: 1px solid var(--borderColor);
     border-radius: 10px;

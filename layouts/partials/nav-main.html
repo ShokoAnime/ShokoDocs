@@ -1,34 +1,22 @@
 <div class="main-nav-link-wrapper">
 	<ul class="nav nav-sidebar nav-sidebar-pill" data-accordion="false">
 
-		<li class="nav-item">
-			<a class="nav-link nav-menu sidenav-menu" href="#">Shoko Server<i class="nav-angle"></i></a>
-			<div class="nav nav-title-wrapper">
-				<a class="nav-link nav-menu" href="{{ "server/install" | relURL }}">How To Install</a>
-				<a class="nav-link nav-menu" href="{{ "server/setup" | relURL }}">First Run Setup</a>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link nav-menu sidenav-menu" href="#">Shoko Metadata<i class="nav-angle"></i></a>
-			<div class="nav nav-title-wrapper">
-				<a class="nav-link nav-menu" href="{{ "shokometadata/install" | relURL }}">How To Install</a>
-				<a class="nav-link nav-menu" href="">Adding Shoko Library</a>
-				<a class="nav-link nav-menu" href="">Configure Shoko Settings</a>
-			</div>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link nav-menu sidenav-menu" href="#">Changelog<i class="nav-angle"></i></a>
-			<div class="nav nav-title-wrapper">
-				<a class="nav-link nav-menu" href="{{ "changelog/server" | relURL }}">Shoko Server</a>
-				<a class="nav-link nav-menu" href="{{ "changelog/desktop" | relURL }}">Shoko Desktop</a>
-				<a class="nav-link nav-menu" href="{{ "changelog/webui" | relURL }}">Shoko WebUI</a>
-				<a class="nav-link nav-menu" href="{{ "changelog/shokometadata" | relURL }}">Shoko Metadata</a>
-				<a class="nav-link nav-menu" href="{{ "changelog/myanime3" | relURL }}">My Anime 3</a>
-			</div>
-		</li>
-		<li class="nav-item"><a href="{{ "faq" | relURL }}">Frequently Asked Questions</a></li>
+		{{  if eq .Site.Language.Lang "en"  }}
+		{{ partial "nav-lang/nav-en.html" . }}
+		{{ end }}
+
 		<span class="nav-secondary"></span>
+
 		<li class="nav-item"><a id="themeSwitcher" href="#">Dark Theme</a></li>
+		<li class="nav-item">
+			<a class="nav-link nav-menu sidenav-menu" href="#">Language<i class="nav-angle"></i></a>
+			<div class="nav nav-title-wrapper">
+				{{ range .Translations }}
+				<a class="nav-link nav-menu" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+				{{ end }}
+				<a class="nav-link nav-menu" href="{{ "translate" | relLangURL }}">Translate</a>
+			</div>
+		</li>
 
 	</ul>
 </div>

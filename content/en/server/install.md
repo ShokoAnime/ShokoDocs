@@ -1,5 +1,6 @@
 +++ title = "Installing Shoko Server"
 description = "Information on how to install Shoko Server."
+aliases = ["/server"]
 layout = "single"
 [[pageNav]]
 navTitle = "Install Platforms"

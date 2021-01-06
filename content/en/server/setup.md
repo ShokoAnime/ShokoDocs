@@ -1,5 +1,5 @@
-+++ title = "Setting Up Shoko Server"
-description = "Information on setting up Shoko Server."
++++ title = "Shoko Server - First Run Setup"
+description = "Information on going through the First Run Setup in Shoko Server."
 layout = "single"
 [[pageNav]]
 navTitle = "First Run Setup"
