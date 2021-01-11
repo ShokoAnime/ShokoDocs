@@ -26,7 +26,7 @@ name = "Language Specific Nav Menu"
 id = "language-specific-nav-menu"
 +++
 
-##### Lets Translate! { class="page-content-first" }
+##### Lets Translate! { class="page-first-header" }
 
 First off, we want to say thank you for taking the time to translate the Shoko Website! Our goal is to reach as many users as possible and by translating the website, you're helping us make that happen.
 

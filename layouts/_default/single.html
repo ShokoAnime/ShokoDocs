@@ -18,11 +18,11 @@
         {{ partial "breadcrumb.html" . }}
 
         <div class="page-section-wrapper">
-            <div class="page-content-wrapper {{ if eq "/search/" .Page.URL }}page-search-wrapper{{ end }}">
+            <div class="page-content-wrapper {{ if eq "/search/" .RelPermalink }}page-search-wrapper{{ end }}">
                 {{ .Content }}
             </div>
 
-            <div class="page-nav-wrapper {{ if eq "/search/" .Page.URL }}page-nav-search{{ end }}">
+            <div class="page-nav-wrapper {{ if eq "/search/" .RelPermalink }}page-nav-search{{ end }}">
                 <div class="nav-links-wrapper page-nav-link-wrapper">
                     <ul class="nav flex-column flex-nowrap" id="page-nav">
 

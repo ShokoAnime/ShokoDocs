@@ -7,30 +7,13 @@ navTitle = "FAQ Sections"
 name = "General"
 id = "general"
 [[pageNav]]
-name = "Version 3.9.6 - November 27, 2019"
-id = "general1"
+name = "Server"
+id = "server"
+[[pageNav]]
+name = "Shoko Metadata"
+id = "shoko-metadata"
 +++
 
-#### General
-{{% hr %}}
+## Frequently Asked Questions { class="page-first-header" }
 
-{{< faq-section type="gen" >}}
-{{% faq type="gen" id="linux-support" question="Does Shoko Run On Linux?" %}}
-
-Yes it Does!
-
-Using [Docker](https://www.docker.com/) you can run **Shoko Server** natively on Linux. We've created a [Linux Install Guide](/linux) that we highly recommend all Linux users follow to properly install Shoko Server. If needed, additional support can be found by visiting our **Discord Server**. 
-
-Please keep in mind that Shoko Server on Linux is still in beta so issues are to be expected."
- 
-{{% /faq %}}
-{{% faq type="gen" id="linux-support1" question="Does Shoko Run On Linux?1" %}}
-
-Yes it Does!
-
-Using [Docker](https://www.docker.com/) you can run **Shoko Server** natively on Linux. We've created a [Linux Install Guide](/linux) that we highly recommend all Linux users follow to properly install Shoko Server. If needed, additional support can be found by visiting our **Discord Server**. 
-
-Please keep in mind that Shoko Server on Linux is still in beta so issues are to be expected."
- 
-{{% /faq %}}
-{{< /faq-section >}}
+The following are frequent questions we've compiled in one place to better help our users. For more in-depth information on a particular subject, we suggest checking the related page (if available in the documentation. Additional support can be found by joining our Discord server using the **Support** link located in the footer.

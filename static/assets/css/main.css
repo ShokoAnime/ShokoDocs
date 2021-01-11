@@ -1,11 +1,15 @@
 /*
 ---------------------------------------------
-		1. General
-		2. Sidebar Navigation
-		3. Page
-		4. Index
-		5. Top Navigation
-		6. Footer
+		01. General
+		02. Sidebar Navigation
+		03. Top Navigation
+		04. Page
+		05. Breadcrumbs
+		06. Index
+		07. Footer
+		08. Changelog
+		09. FAQ
+		10. Tables
 ---------------------------------------------
 */
 
@@ -43,9 +47,9 @@ body {
 }
 
 code {
+    color: var(--fontColor);
     font-family: "Exo 2", sans-serif;
     font-weight: 500;
-    color: var(--fontColor);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -54,11 +58,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 pre {
-    border: var(--borderColor) 1px solid;
-    border-radius: 4px;
-    border-left: 7px solid var(--fontStrong);
-    color: var(--fontColor);
     background-color: var(--navBackground);
+    border: var(--borderColor) 1px solid;
+    border-left: 7px solid var(--fontStrong);
+    border-radius: 4px;
+    color: var(--fontColor);
     overflow: auto;
     padding: 1em;
 }
@@ -87,11 +91,11 @@ strong {
     border-radius: 10px;
     display: flex;
     height: 100%;
+    image-rendering: -webkit-optimize-contrast;
     margin: 2rem auto;
     max-height: 480px;
     max-width: 850px;
     width: auto;
-    image-rendering: -webkit-optimize-contrast;
 }
 
 .smartphoto-img-wrap {
@@ -118,12 +122,12 @@ strong {
 
 .main-nav-wrapper {
     background: var(--navBackground);
-    height: 100vh;
-    width: calc((100% - 1448px) / 2 + 260px);
-    min-width: 320px;
     border-right: 1px var(--borderColor) solid;
+    height: 100vh;
+    min-width: 320px;
     position: sticky;
     top: 0;
+    width: calc((100% - 1448px) / 2 + 260px);
 }
 
 .main-nav-link-wrapper {
@@ -131,10 +135,10 @@ strong {
 }
 
 .main-nav-header {
-    padding-top: 2rem;
-    padding-left: calc(100% - 265px);
     font-size: 2rem;
     font-weight: 600;
+    padding-left: calc(100% - 265px);
+    padding-top: 2rem;
 }
 
 .nav-sidebar {
@@ -142,8 +146,8 @@ strong {
     -webkit-box-orient: vertical;
     flex-direction: column;
     font-weight: 400;
-    padding-left: calc(100% - 265px);
     margin-top: 2rem;
+    padding-left: calc(100% - 265px);
 }
 
 
@@ -185,13 +189,13 @@ strong {
 
 a.nav-title {
     color: var(--linkHover) !important;
-    font-weight: 700;
     font-size: 0.9rem;
+    font-weight: 700;
 }
 
 .nav-title-wrapper .nav-link {
-    margin-left: 0.75rem;
     font-size: 0.9rem;
+    margin-left: 0.75rem;
 }
 
 .nav-link.active {
@@ -242,7 +246,54 @@ a.nav-title {
 
 /*
 ---------------------------------------------
-		3. Page
+		3. Top Nav
+---------------------------------------------
+*/
+
+.top-nav-wrapper {
+    border-bottom: 1px var(--borderColor) solid;
+    height: 90px;
+}
+
+.top-nav-link-wrapper {
+    display: flex;
+    margin: auto;
+    max-width: 1200px;
+    padding: 1.5rem 4rem;
+}
+
+.top-nav-link {
+    color: var(--fontColor);
+    font-weight: 600;
+    margin-right: 2rem;
+}
+
+.top-nav-links {
+    width: 800px;
+}
+
+.search-wrapper {
+    display: flex;
+    margin-left: 8rem;
+}
+
+.top-nav-search-icon {
+    margin: auto;
+}
+
+.search-input {
+    background-color: var(--backgroundColor);
+    border: none;
+    color: var(--fontColor);
+    font-weight: 600;
+    margin-left: 1rem;
+    outline: 0;
+    padding-top: 0.5rem;
+}
+
+/*
+---------------------------------------------
+		4. Page
 ---------------------------------------------
 */
 
@@ -258,8 +309,8 @@ a.nav-title {
     display: flex;
     margin: auto;
     max-width: 1200px;
-    padding: 5rem 4rem;
     min-height: calc(1226px - 308px);
+    padding: 5rem 4rem;
 }
 
 .page-content-wrapper {
@@ -344,65 +395,27 @@ a.nav-title {
     width: 2px;
 }
 
-/*
----------------------------------------------
-		4. Top Nav
----------------------------------------------
-*/
-
-.top-nav-wrapper {
-    border-bottom: 1px var(--borderColor) solid;
-    height: 90px;
-}
-
-.top-nav-link-wrapper {
-    display: flex;
-    padding: 1.5rem 4rem;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.top-nav-link {
-    color: var(--fontColor);
-    font-weight: 600;
-    margin-right: 2rem;
-}
-
-.search-wrapper {
-    display: flex;
-    margin-left: auto;
-}
-
-.search-input {
-    background-color: var(--backgroundColor);
-    border: none;
-    color: var(--fontColor);
-    font-weight: 600;
-    margin-left: 1rem;
-    outline: 0;
-    padding-top: 0.5rem;
-}
-
-.top-nav-search-icon {
-    margin: auto;
-}
 
 /*
 ---------------------------------------------
-		4. Breadcrumbs
+		5. Breadcrumbs
 ---------------------------------------------
 */
 
 .breadcrumb-outer-wrapper {
-    border-bottom: 1px var(--borderColor) solid;
     background: var(--breadcrumbBackground);
+    border-bottom: 1px var(--borderColor) solid;
 }
 
 .breadcrumb-wrapper {
     display: flex;
-    padding: 1.5rem 4rem;
-    max-width: 1200px;
     margin: auto;
+    max-width: 1200px;
+    padding: 1.5rem 4rem;
+}
+
+.breadcrumb-list {
+    width: 800px;
 }
 
 .breadcrumb-list > a {
@@ -419,7 +432,7 @@ a.nav-title {
 }
 
 .github-wrapper {
-    margin-left: auto;
+    margin-left: 8rem;
 }
 
 .github-wrapper > a {
@@ -434,7 +447,7 @@ a.nav-title {
 
 /*
 ---------------------------------------------
-		4. Index
+		6. Index
 ---------------------------------------------
 */
 
@@ -454,16 +467,16 @@ a.nav-title {
 }
 
 .quick-link-wrapper {
+    max-width: 32%;
     padding: 0.5rem 1rem 0.5rem 0;
     width: 32%;
-    max-width: 32%;
 }
 
 .quick-link-content-wrapper {
     border: 2px solid var(--borderColor);
     border-radius: 10px;
-    padding: 1rem;
     height: 230px;
+    padding: 1rem;
 }
 
 .quick-link-content-wrapper:hover {
@@ -512,24 +525,24 @@ a.nav-title {
 
 /*
 ---------------------------------------------
-		6. Footer
+		7. Footer
 ---------------------------------------------
 */
 
 .footer-wrapper {
     background-color: var(--breadcrumbBackground);
+    border-top: 1px var(--borderColor) solid;
     height: 80px;
     overflow: hidden;
     width: 100%;
-    border-top: 1px var(--borderColor) solid;
 }
 
 .footer-info {
     color: var(--fontColor);
-    height: 100%;
     display: flex;
-    max-width: 1200px;
+    height: 100%;
     margin: auto;
+    max-width: 1200px;
 }
 
 .footer-links {
@@ -578,8 +591,8 @@ a.nav-title {
 .changelog-header-wrapper {
     display: flex;
     font-family: "Exo 2", sans-serif;
-    font-weight: 700;
     font-size: 1.1rem;
+    font-weight: 700;
 }
 
 .changelog-header-spacer {
@@ -652,9 +665,17 @@ a.nav-title {
     background: var(--backgroundColor);
 }
 
+.faq-card-body > h5 {
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+.faq-card-body {
+    padding: 1rem 0;
+}
+
 /*
 ---------------------------------------------
-    8. Tables
+    10. Tables
 ---------------------------------------------
 */
 
@@ -680,9 +701,9 @@ a.nav-title {
 }
 
 .table thead th {
-    vertical-align: bottom;
-    border-bottom: 2px solid var(--borderColor);
     background: var(--navBackground);
+    border-bottom: 2px solid var(--borderColor);
+    vertical-align: bottom;
 }
 
 thead tr th:first-child,
@@ -691,14 +712,14 @@ tbody tr td:first-child {
 }
 
 .table-code-block {
-    border: var(--borderColor) 1px solid;
-    border-radius: 4px;
-    border-left: 7px solid var(--fontStrong);
-    color: var(--fontColor);
     background-color: var(--navBackground);
+    border: var(--borderColor) 1px solid;
+    border-left: 7px solid var(--fontStrong);
+    border-radius: 4px;
+    color: var(--fontColor);
+    display: block;
+    font-size: 87.5%;
     margin: 1.5rem 0 !important;
     overflow: auto;
     padding: 1em;
-    display: block;
-    font-size: 87.5%;
 }

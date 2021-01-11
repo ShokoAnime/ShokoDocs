@@ -18,29 +18,32 @@
 		{{ partial "breadcrumb.html" . }}
 
 		<div class="page-section-wrapper">
-			<div class="page-content-wrapper {{ if eq "/search/" .Page.URL }}page-search-wrapper{{ end }}">
-			{{ .Content }}
-		</div>
-
-		<div class="page-nav-wrapper {{ if eq "/search/" .Page.URL }}page-nav-search{{ end }}">
-		<div class="nav-links-wrapper page-nav-link-wrapper">
-			<ul class="nav flex-column flex-nowrap" id="page-nav">
-
-				{{ range .Params.pageNav }}
-				{{if .navTitle }}
-				<li class="page-nav-title">{{ .navTitle }}</li>
+			<div class="page-content-wrapper">
+				{{ $headlessbundle := .Site.GetPage "/faq-questions" }}
+				{{ range ( $headlessbundle.Resources.ByType "page" ) }}
+				{{.Content}}
 				{{ end }}
-				<li class="nav-item">
-					<a class="nav-link nav-menu page-nav-link" href="#{{ .id }}">{{ .name }}</a>
-				</li>
-				{{ end }}
+			</div>
 
-			</ul>
+			<div class="page-nav-wrapper">
+			<div class="nav-links-wrapper page-nav-link-wrapper">
+				<ul class="nav flex-column flex-nowrap" id="page-nav">
+
+					{{ range .Params.pageNav }}
+					{{if .navTitle }}
+					<li class="page-nav-title">{{ .navTitle }}</li>
+					{{ end }}
+					<li class="nav-item">
+						<a class="nav-link nav-menu page-nav-link" href="#{{ .id }}">{{ .name }}</a>
+					</li>
+					{{ end }}
+
+				</ul>
+			</div>
 		</div>
 	</div>
-</div>
 
-{{ partial "footer.html" . }}
+	{{ partial "footer.html" . }}
 </div>
 
 </div>
