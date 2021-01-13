@@ -2,6 +2,42 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/",
   "releases": [
     {
+      "version": "1.1.0-dev6",
+      "versionURL": "110",
+      "date": "January 8th, 2021",
+      "blogLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/releases",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added relation settings"
+        },
+        {
+          "type": "added",
+          "text": "Added language settings"
+        },
+        {
+          "type": "added",
+          "text": "Added import settings"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed server status in the first run wizard"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed the `Storage State` and `Delete Action` anidb settings"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed files breakdown showing NaN"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed settings auto-reverting to defaults on page refresh"
+        }
+      ]
+    },
+    {
       "version": "1.0.1",
       "versionURL": "101",
       "date": "August 29th, 2020",
