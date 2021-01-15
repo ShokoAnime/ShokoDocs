@@ -8,6 +8,9 @@ navTitle = "Install Platforms"
 name = "Windows"
 id = "windows"
 [[pageNav]]
+name = "Linux"
+id = "linux"
+[[pageNav]]
 navTitle = "Editing Plex Scanners"
 name = "Windows"
 id = "windows2"
@@ -27,7 +30,7 @@ website and use the installation guides located in the menu on the left to prope
 Shoko Metadata has to be **manually installed** so make sure to follow the instructions below. This guide assumes you've
 installed Plex into the default install directory, make adjustments as needed to fit your installation.
 
-##### Windows
+### Windows
 
 If you haven't done so, [Download Shoko Metadata](https://shokoanime.com/downloads/) and extract the zip file, inside
 the zip folder is a folder labeled **ShokoMetadata.bundle**. Move this folder into the following directory.
@@ -59,14 +62,106 @@ Move both of these folders into the following directory.
 
 Proceed to **Editing Plex Scanners** to make the required edits for the scanners to work. 
 
-##### Linux
+### Linux
+
+**Before you continue**, to make it easier to follow the guide, regardless of the Plex install method, we will assign an environment
+variable (`$PLEX_HOME`) that will point to the base directory for your Plex content.
+
+Below are the three most common install methods, and what you need to do for each one before you continue with the rest of the guide. If you
+installed Plex using another method, then please assign the variable to your own, and be sure to use the correct user when executing the
+steps listed below.
+
+##### Bare-metal install
+
+Sign in with **the user responsible for running PMS** (be sure to replace `$USERNAME` with the username or user-id),
+```sh
+sudo su --login --shell=/bin/bash $USERNAME
+```
+
+and assign thes variable.
+```sh
+export PLEX_HOME="/var/lib/plex/Plex Media Server"
+```
+
+Skip to **The steps**.
+##### Snap (plexmediaserver)
+
+Sign in as `root` on your host-system,
+```sh
+sudo su --login --shell=/bin/bash root
+```
+
+and assign the variable.
+```sh
+export PLEX_HOME="/var/snap/plexmediaserver/common/Library/Application Support/Plex Media Server"
+```
+
+Skip to **The steps**.
+
+##### Docker (plexinc/pms-docker)
+
+Attach to the running **PMS container** (be sure to replace `$CONTAINERNAME` with the name or id of the container),
+```sh
+docker exec -it $CONTAINER_NAME /bin/bash
+```
+
+and and assign the variable.
+```sh
+export PLEX_HOME="/config/Library/Application Support/Plex Media Server"
+```
+
+Continue to **The steps**.
+
+#### The steps
+
+
+1\. Navigate to the **Plug-ins** directory of your install
+```sh
+cd "${PLEX_HOME}/Plug-ins";
+```
+
+2\. Download and extract the latest bundle from GibHub using **one** of the following commands:
+```sh
+curl -L --outout - https://github.com/Cazzar/ShokoMetadata.bundle/archive/master.tar.gz | tar -xzf -
+```
+or
+```sh
+wget -O - https://github.com/Cazzar/ShokoMetadata.bundle/archive/master.tar.gz | tar -xzf -
+```
+
+3\. Remove the suffix
+```sh
+mv ShokoMetadata.bundle-master ShokoMetadata.bundle
+```
+
+4\. Ensure that the **Scanners** directory exists in the base directory
+```sh
+mkdir -p "${PLEX_HOME}/Scanners"
+```
+
+5\. Move the scanners into the **Scanners** directory
+```sh
+cp -R ShokoMetadata.bundle/Contents/Resources/* ../Scanners/
+```
+
+6\. Edit the `Prefs` section **in each scanner** using your prefered terminal editor so they match with your **Shoko Server** install,
+or see **Editing Plex Scanners**>**Windows** for more info on what to modify.
+
+**Movie Scanner**
+```sh
+${EDITOR:-nano} "${PLEX_HOME}/Scanners/Movies/Shoko Movie Scanner.py"
+```
+
+**Series Scanner**
+```sh
+${EDITOR:-nano} "${PLEX_HOME}/Scanners/Series/Shoko Series Scanner.py"
+```
 
 ## Editing Plex Scanners
 
 With Shoko Metadata installed, you'll need to make a few edits to both the **Series** and **Movies** scanner.
-If you're only planning to use one of the scanner than you don't need to edit the other one.
 
-<h5 id="windows2">Windows</h5>
+<h3 id="windows2">Windows</h3>
 
 **Editing Shoko Movie Scanner**
 
@@ -80,7 +175,7 @@ Open **Shoko Movie Scanner.py** in your editor of choice and modify the **Prefs*
 most users you'll only need to change the **username** and **password**. As Python is space-sensitive make sure to not
 add or remove any spaces.
 
-```
+```py
 Prefs = {
     'Hostname': '127.0.0.1',
     'Port': 8111,
@@ -101,7 +196,7 @@ Open **Shoko Series Scanner.py** in your editor of choice and modify the **Prefs
 For most users you'll only need to change the **username** and **password**. As Python is space-sensitive make sure to
 not add or remove any spaces.
 
-```
+```py
 Prefs = {
     'Hostname': '127.0.0.1',
     'Port': 8111,
@@ -138,7 +233,7 @@ You'll notice the series scanner has a few more options available than the movie
     </tbody>
 </table>
 
-##### Combining Series & Movies
+### Combining Series & Movies
 
 By default, you need a separate library in Plex for Series Movies. However, you can modify the **Shoko Series
 Scanner.py** file, so you only have to use one scanner and one library for your entire collection.
@@ -147,8 +242,8 @@ Open **Shoko Series Scanner.py** in your editor of choice, if your editor suppor
 the following code. If your editor doesn't support it just do a search for **ismovie**, and it should take you to the
 line of code in question
 
-```                
+```py
 if (try_get(series_data, "ismovie", 0) == 1 and seasonNumber >= 1): continue # Ignore movies in preference for Shoko Movie Scanner, but keep specials as Plex sees specials as duplicate
 ```
 
-Remove the line and save and you can now have both anime series and movies in the same library. 
+Remove the line and save. Congratulations, you can now have both anime series and movies in the same library.
