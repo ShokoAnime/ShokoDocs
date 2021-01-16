@@ -50,6 +50,9 @@ code {
     color: var(--fontColor);
     font-family: "Exo 2", sans-serif;
     font-weight: 500;
+    background-color: #ffeff0;
+    border-radius: 4px;
+    padding: 2px 4px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -65,6 +68,10 @@ pre {
     color: var(--fontColor);
     overflow: auto;
     padding: 1em;
+}
+
+pre code {
+    background: none !important;
 }
 
 strong {
@@ -95,7 +102,18 @@ strong {
     margin: 2rem auto;
     max-height: 480px;
     max-width: 850px;
-    width: auto;
+    width: 100%;
+}
+
+.navbar-dark .navbar-toggler {
+    border-color: var(--fontColor)
+}
+
+.shoko-text {
+    display: none;
+    color: var(--linkHover);
+    font-size: 1.5rem;
+    margin-right: auto;
 }
 
 .smartphoto-img-wrap {
@@ -112,6 +130,10 @@ strong {
 
 .hr2 {
     margin: 2rem 0;
+}
+
+.navbar-mobile {
+    display: none;
 }
 
 /*
@@ -150,7 +172,6 @@ strong {
     padding-left: calc(100% - 265px);
 }
 
-
 .sidebar-nav {
     height: auto;
     position: sticky;
@@ -172,6 +193,7 @@ strong {
 
 .navbar {
     padding: .5rem 0;
+    width: 100%;
 }
 
 .nav-sidebar .nav {
@@ -289,6 +311,14 @@ a.nav-title {
     margin-left: 1rem;
     outline: 0;
     padding-top: 0.5rem;
+}
+
+.mobile-nav-wrapper {
+    display: flex;
+}
+
+.mobile-nav-menu {
+    margin-left: auto;
 }
 
 /*
@@ -460,67 +490,6 @@ a.nav-title {
 
 .index-content-wrapper > h2 {
     margin-bottom: 2rem;
-}
-
-.quick-link-outer-wrapper {
-    margin: auto;
-}
-
-.quick-link-wrapper {
-    max-width: 32%;
-    padding: 0.5rem 1rem 0.5rem 0;
-    width: 32%;
-}
-
-.quick-link-content-wrapper {
-    border: 2px solid var(--borderColor);
-    border-radius: 10px;
-    height: 230px;
-    padding: 1rem;
-}
-
-.quick-link-content-wrapper:hover {
-    border: 2px solid var(--linkHover);
-    cursor: pointer;
-}
-
-.quick-link-icon {
-    color: var(--linkHover);
-    margin-bottom: 1rem;
-    text-align: center;
-    width: 100%;
-}
-
-.quick-link-info {
-    margin: auto;
-    text-align: center;
-}
-
-.quick-link-header {
-    color: var(--fontColor);
-    font-size: 1.125rem;
-    margin-bottom: 0;
-}
-
-.quick-link-subheader {
-    color: var(--fontStrong);
-    display: inline-block;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    position: relative;
-}
-
-.quick-link-subheader:after {
-    border-bottom: 3px solid var(--fontStrong);
-    bottom: -5px;
-    content: "";
-    left: 0;
-    position: absolute;
-    width: 100%;
-}
-
-.quick-link-text {
-    margin-top: 1rem;
 }
 
 /*

@@ -1,4 +1,4 @@
-##### Shoko Metadata
+#### Shoko Metadata
 {{% hr %}}
 
 {{< faq-section type="shokometadata" >}}

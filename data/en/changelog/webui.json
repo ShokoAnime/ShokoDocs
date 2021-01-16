@@ -2,38 +2,54 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/",
   "releases": [
     {
-      "version": "1.1.0-dev6",
+      "version": "1.1.0",
       "versionURL": "110",
       "date": "January 8th, 2021",
       "blogLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/releases",
       "changes": [
         {
           "type": "added",
-          "text": "Added relation settings"
+          "text": "Added relation settings."
         },
         {
           "type": "added",
-          "text": "Added language settings"
+          "text": "Added language settings."
         },
         {
           "type": "added",
-          "text": "Added import settings"
+          "text": "Added import settings."
+        },
+        {
+          "type": "changed",
+          "text": "Input validation for import folder form."
+        },
+        {
+          "type": "changed",
+          "text": " Icon alignment in sidebar."
         },
         {
           "type": "fixed",
-          "text": "Fixed server status in the first run wizard"
+          "text": "Fixed server status in the first run wizard."
         },
         {
           "type": "fixed",
-          "text": "Fixed the `Storage State` and `Delete Action` anidb settings"
+          "text": "Fixed the Storage State and Delete Action AniDB settings."
         },
         {
           "type": "fixed",
-          "text": "Fixed files breakdown showing NaN"
+          "text": "Fixed files breakdown showing NaN."
         },
         {
           "type": "fixed",
-          "text": "Fixed settings auto-reverting to defaults on page refresh"
+          "text": "Fixed settings auto-reverting to defaults on page refresh."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed server status in the First-Run wizard."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue with AVDump being allowed even if key is missing."
         }
       ]
     },

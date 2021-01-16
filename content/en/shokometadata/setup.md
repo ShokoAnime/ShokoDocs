@@ -8,12 +8,12 @@ navTitle = "Plex Library Creation"
 name = "Creating A Shoko Library"
 id = "creating-a-shoko-library"
 [[pageNav]]
-navTitle = "Editing Plex Scanners"
-name = "Windows"
-id = "windows2"
+navTitle = "Syncing Watch States"
+name = "Shoko Server Web UI"
+id = "web-ui-settings"
 [[pageNav]]
-name = "Combining Series & Movies"
-id = "combining-series--movies"
+name = "Shoko Desktop"
+id = "shoko-desktop-settings"
 +++
 
 ## Creating A Shoko Library{.page-first-header}
@@ -61,5 +61,24 @@ Please note, if you set **SingleSeasonOrdering** to **True** during the install 
 
 The rest of the options are self-explanatory so once you've gone through them, click the **Add Library** button. Once the library has been added, initiate a scan within Plex and wait for Plex to add your collection. 
 
-##### Syncing Watch States
+### Syncing Watch States
 
+In order to properly sync watch states, you will need to have **Shoko Desktop** installed which you can download from our [Downloads](https://shokoanime.com/downloads) page. 
+
+##### Web UI Settings
+
+![Shoko Metadata - Plex Authentication](/assets/images/shoko-metadata/Shoko-Metadata-Plex-Auth.jpg)
+
+First thing you'll need to do is authenticate which you can do by navigating to **Settings** in the Shoko Server Web UI. When you click **Authenticate** it will redirect you and have you log into your Plex account. 
+
+If successful, you'll see the following message.
+
+![Shoko Metadata - Plex Synced](/assets/images/shoko-metadata/Shoko-Metadata-Plex-Synced.jpg)
+
+##### Shoko Desktop Settings
+
+![Shoko Metadata - Desktop Sync](/assets/images/shoko-metadata/Shoko-Metadata-Desktop-Sync.jpg)
+
+Open Shoko Desktop and navigate to the **Settings** tab and select **Essential**, from there scroll all the way to the bottom, and you'll see the **Plex Settings For ShokoMetadata** section.  
+
+If **Plex Host** is blank, click the drop-down to select it, It's ok for the list to be empty, simply click the **Refresh** button below, and it should populate with your plex server. Once selected you'll then need to select the **Plex Library** that contains your collection. You can select multiple libraries if you've chosen to split your anime tv series and movies. 

@@ -1,4 +1,4 @@
-##### General { .faq-header }
+### General { .faq-header }
 {{% hr %}}
 
 {{< faq-section type="general" >}}

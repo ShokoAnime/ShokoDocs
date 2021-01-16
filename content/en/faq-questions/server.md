@@ -1,4 +1,4 @@
-##### Server
+### Server
 {{% hr %}}
 
 {{< faq-section type="server" >}}

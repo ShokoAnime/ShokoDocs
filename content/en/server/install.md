@@ -23,17 +23,17 @@ The short answer, **Yes**.
 
 Shoko Server is where all the magic happens. It acts as a central database for every program and plugin under the Shoko suite allowing you to access, maintain and watch your anime collection. This also means that Shoko Server **must be  running** to use any other program or plugin that connect to it. Outside of file importing, Shoko Server is no more resource intensive than other programs you probably have running in the background, so you don't need to worry about Shoko Server eating up resources.
 
-##### Windows
+### Windows
 
 ![Shoko Server - Windows Install](/assets/images/shoko-server/Shoko-Server-Install-Windows-01.jpg)
 
 Navigate to the [Shoko Downloads](https://shokoanime.com/downloads/) page and download **Shoko Server**, unless told otherwise we always recommend downloading the **Stable** version. The installer will guide you through the installation process and should only take a couple of minutes. 
 
-##### Docker
+### Docker
 
 Make sure you have docker installed before you continue. For most users are installing docker from their package manager is advised, this way you will keep up with the latest updates and security updates. On the homepage of [Docker](https://docs.docker.com/install/) you can find the installation procedure for your distribution of the Docker Community Edition.
 
-First things first, download the image, and unless otherwise told, install the version tagged as `latest`:
+First things first, download the image, and unless otherwise told, install the version tagged as `latest`.
 
 ```bash
 $ docker pull shokoanime/server:latest
@@ -84,7 +84,7 @@ If you want a more detailed explanation, then refer to the below table for a bre
 			<a href="https://docs.docker.com/engine/reference/run/#name---name" target="_blank" rel="noopener">Name the
 				container.</a>
 			<br><br>
-			If you do not assign a container name with the --name option, then the daemon generates a
+			If you do not assign a container name with the <code>--name</code> option, then the daemon generates a
 			random string name for you. Defining a name can be a handy way to add meaning to a container. If you specify
 			a name, you can use it when referencing the container within a Docker network.
 		</td>
@@ -156,7 +156,7 @@ If you want a more detailed explanation, then refer to the below table for a bre
 			You can instruct the server to run as a certain set of
 			user/group ids. This makes working with permissions a lot easier since you can match your server with a
 			local account without effort. The example argument will make the server run with the uid and gid of the
-			current user, to find the value to use for <code>PUID and </code>PGID, you can run log into the target
+			current user, to find the value to use for <code>PUID</code> and <code>PGID</code>, you can run log into the target
 			system, either locally or over SSH, and execute the id command, supplied with the username of the user you
 			want to the server to run as.
 		</td>
@@ -176,7 +176,7 @@ If you want a more detailed explanation, then refer to the below table for a bre
 
 
 
-##### Docker Compose
+### Docker Compose
 
 To make management easier, we can combine all the previous items in a docker compose file.
 
@@ -202,10 +202,10 @@ services:
 
 This combines all of our previous configuration in an easy to read and edit format, and will allow you to create a powerful startup script that could (for example) include a MySQL server, a download client, and anything else you can think of that’s available in a docker format.
 
-##### Synology NAS
+#### Synology NAS
 
 TBD
 
-### Next Step
+## Next Step
 
 Once the server is installed, follow the instructions on the [First Run Setup](/server/setup) page to configure your fresh install of Shoko Server.

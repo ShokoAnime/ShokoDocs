@@ -25,7 +25,7 @@ Shoko Metadata is not a standalone plugin and **requires Shoko Server** installe
 work properly. If you haven't done this yet, [Download Shoko Server](https://shokoanime.com/downloads/) from our main
 website and use the installation guides located in the menu on the left to properly install and configure Shoko Server.
 
-## Installing Shoko Metadata
+### Installing Shoko Metadata
 
 Shoko Metadata has to be **manually installed** so make sure to follow the instructions below. This guide assumes you've
 installed Plex into the default install directory, make adjustments as needed to fit your installation.
@@ -113,7 +113,6 @@ export PLEX_HOME="/config/Library/Application Support/Plex Media Server"
 Continue to **The steps**.
 
 #### The steps
-
 
 1\. Navigate to the **Plug-ins** directory of your install
 ```sh

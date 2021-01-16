@@ -103,6 +103,19 @@ $(document).on('click', '.nav-sidebar > .nav-item > .nav-link', function (event)
 
 // ----------------------------------------------------------------------------------------------------------------
 
+// Sidenav
+function openNav() {
+	document.getElementById("mobileSidenav").style.display = "initial";
+	document.getElementById('mobileSidenav').classList.add('sidenav');
+	document.getElementById("mobileSidenav").style.width = "248px";
+}
+
+function closeNav() {
+	document.getElementById("mobileSidenav").style.width = "0";
+}
+
+// ----------------------------------------------------------------------------------------------------------------
+
 //Lightbox - Has to be last.
 document.addEventListener('DOMContentLoaded',function(){
 	new SmartPhoto(".js-smartPhoto",{

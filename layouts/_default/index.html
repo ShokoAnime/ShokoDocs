@@ -18,31 +18,7 @@
         {{ partial "breadcrumb.html" . }}
 
         <div class="index-content-wrapper">
-
             {{ .Content }}
-            <hr class="hr1">
-            {{ $data := index .Site.Data .Site.Language.Lang }}
-            {{ if eq (index .Site.Data .Site.Language.Lang) nil }}
-            {{ $data = .Site.Data.en }}
-            {{ end }}
-
-            <div class="row quick-link-outer-wrapper">
-                {{ range $data.highlights.highlightsList }}
-
-                <div class="col-xl-4 quick-link-wrapper">
-                    <div class="quick-link-content-wrapper">
-                        <i class="{{ .icon }} fa-3x quick-link-icon"></i>
-                        <div class="quick-link-info">
-                            <h5 class="quick-link-header">{{ .header }}</h5>
-                            <p class="quick-link-subheader">{{ .subheader }}</p>
-                            <p class="quick-link-text">{{ .text }}</p>
-                        </div>
-                    </div>
-                </div>
-
-                {{ end }}
-            </div>
-
         </div>
         {{ partial "footer.html" . }}
     </div>

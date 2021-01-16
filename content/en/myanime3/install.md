@@ -28,7 +28,7 @@ Shoko Metadata is not a standalone plugin and **requires Shoko Server** installe
 My Anime 3 is no longer in active development and has entered maintenance mode. Any developers interested in further developing My Anime 3, please contact **Elemental Crisis** on the Shoko Discord.
 {{< /alert >}}
 
-##### Installing My Anime 3
+### Installing My Anime 3
 
 Like other MediaPortal plugins, My Anime 3 uses the MPEI installer, so you should already be familiar with how to install plugins. Please note, My Anime 3 only supports the skins listed below. 
 
@@ -42,7 +42,7 @@ While we have no plans to add support for additional skins, we'll always accept 
 - Titan
 
 
-##### Initial Setup
+### Initial Setup
 
 ![MediaPortal Config](/assets/images/my-anime-3/MediaPortal-Config.jpg)
 
@@ -50,7 +50,7 @@ Once My Anime 3 has been installed, open the **MediaPortal Configuration** windo
 
 We recommend going through each of the settings tab as there are a lot of unique options just for My Anime 3 and how it functions in MediaPortal.
 
-##### Main Settings
+### Main Settings
 
 ![My Anime 3 - Main Screen](/assets/images/my-anime-3/My-Anime-3-Main.jpg)
 
@@ -58,13 +58,13 @@ Unless you're running MediaPortal on another computer or changed the port Shoko 
 
 If **Ask before starting streaming playback** is checked, My Anime 3 will ask each time during file playback if you want to stream the file. We recommend unchecking this box for users using MediaPortal and My Anime 3 on a different computer.
 
-##### Display Settings
+### Display Settings
 
 ![My Anime 3 - Display](/assets/images/my-anime-3/My-Anime-3-Display.jpg)
 
 These are all **personal preference** settings that affect what you see and don't see in My Anime 3 so there is no right or wrong way to configure them. You can also set the default audio language and subtitle language to avoid having to change if the series you are watching doesnt't have the correct ones as default.
 
-##### Other Settings
+### Other Settings
 
 ![My Anime 3 - Other](/assets/images/my-anime-3/My-Anime-3-Other.jpg)
 

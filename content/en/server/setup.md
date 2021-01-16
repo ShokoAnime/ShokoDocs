@@ -37,14 +37,14 @@ your browser's address bar.
 We've designed the Web UI to be as user-friendly as possible and pretty straightforward to reduce confusion for first
 time users.
 
-##### Database Setup
+### Database Setup
 
 ![Shoko-Server-First-Run-DB](/assets/images/shoko-server/Shoko-Server-First-Run-DB.jpg)
 
 While you have the option to change the **Database Type**, we strongly advise leaving it as **SQLite** as the other
 options are no longer supported and for legacy users only.
 
-##### Local User Account
+### Local User Account
 
 ![Shoko-Server-First-Run-Local](/assets/images/shoko-server/Shoko-Server-First-Run-Local.jpg)
 
@@ -52,7 +52,7 @@ In order to access Shoko Server, you'll need to create an account which will lin
 integrate. At this time, Shoko Server only supports one local account so multiple users with separate collections on the
 same computer is not possible.
 
-##### AniDB Account
+### AniDB Account
 
 ![Shoko-Server-First-Run-AniDB](/assets/images/shoko-server/Shoko-Server-First-Run-AniDB.jpg)
 
@@ -64,7 +64,7 @@ your credentials as you will not be able to proceed.
 
 If you don't have an account, [click here](https://anidb.net/) to create one.
 
-##### Community Sites
+### Community Sites
 
 ![Shoko-Server-First-Run-Community-Sites](/assets/images/shoko-server/Shoko-Server-First-Run-Community-Sites.jpg)
 
@@ -89,16 +89,16 @@ or cause unwanted issues.
     </tbody>
 </table>
 
-##### Start Server
+### Start Server
 
 ![Shoko-Server-First-Run-Server](/assets/images/shoko-server/Shoko-Server-First-Run-Server.jpg)
 
 With the main settings configured, you can now start Shoko Server.
 
 This should only take a couple of minutes. If you receive any errors, or it fails to continue forward, join us on
-Discord so we can help you fix the issue.
+Discord, so we can help you fix the issue.
 
-##### Import Folders
+### Import Folders
 
 ![Shoko-Server-First-Run-Import](/assets/images/shoko-server/Shoko-Server-First-Run-Import.jpg)
 
@@ -118,7 +118,7 @@ the
 **Save** button to add the Import Folder. If you need to add additional folders then make sure to do that as well before
 moving on.
 
-##### Installation & Setup Complete
+### Installation & Setup Complete
 
 ![Shoko-Server-Dashboard](/assets/images/shoko-server/Shoko-Server-Dashboard.jpg)
 
