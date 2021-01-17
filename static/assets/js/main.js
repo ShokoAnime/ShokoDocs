@@ -12,27 +12,27 @@ $(window).on("load", function () {
 	} else {
 		$('link[id="light"]').prop('disabled', true);
 		$("body").css("display", "initial");
-		$('#themeSwitcher').text('Light Theme');
+		$('#themeSwitcher, #themeSwitcherMobile').text('Light Theme');
 		themeID++;
 	}
 
 });
 
-$('#themeSwitcher').click(function (e) {
+$('#themeSwitcher, #themeSwitcherMobile').click(function (e) {
 
 	if (themeID === 1) {
 		e.preventDefault();
 		localStorage.setItem('theme', 'light');
 		$('link[id="dark"]').prop('disabled', true);
 		$('link[id="light"]').prop('disabled', false);
-		$('#themeSwitcher').text('Dark Theme');
+		$('#themeSwitcher, #themeSwitcherMobile').text('Dark Theme');
 		themeID--;
 	} else {
 		e.preventDefault();
 		localStorage.setItem('theme', 'dark');
 		$('link[id="light"]').prop('disabled', true);
 		$('link[id="dark"]').prop('disabled', false);
-		$('#themeSwitcher').text('Light Theme');
+		$('#themeSwitcher, #themeSwitcherMobile').text('Light Theme');
 		themeID++;
 	}
 
@@ -47,7 +47,6 @@ $('a.sidenav-menu').click(function () {
 	let leftNavActive = $('.nav.nav-sidebar.nav-sidebar-pill').find('.nav-link.nav-menu.sidenav-menu.active');
 
 	$(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
-
 	leftNavActive.length > 0 ? leftNavActive.removeClass('active') : '';
 
 });

@@ -47,11 +47,11 @@ body {
 }
 
 code {
+    background-color: #ffeff0;
+    border-radius: 4px;
     color: var(--fontColor);
     font-family: "Exo 2", sans-serif;
     font-weight: 500;
-    background-color: #ffeff0;
-    border-radius: 4px;
     padding: 2px 4px;
 }
 
@@ -110,8 +110,8 @@ strong {
 }
 
 .shoko-text {
-    display: none;
     color: var(--linkHover);
+    display: none;
     font-size: 1.5rem;
     margin-right: auto;
 }
@@ -512,6 +512,7 @@ a.nav-title {
     height: 100%;
     margin: auto;
     max-width: 1200px;
+    padding: 0 4rem;
 }
 
 .footer-links {
