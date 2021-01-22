@@ -1,4 +1,4 @@
-+++ title = "Shoko Server - First Run Setup"
++++ title = "First Run Setup"
 description = "Information on going through the First Run Setup in Shoko Server."
 layout = "single"
 [[pageNav]]
@@ -127,6 +127,4 @@ Congrats, you've successfully installed and setup Shoko Server!
 The install and setup guide is only meant to cover the minimal requirements required to get Shoko Server up and
 running. However, Shoko does provide fine-tuned options for those who are not satisfied with the default settings. We
 highly recommend going through all the available options in the **Settings** tab fine-tune Shoko and your collection.
-
-Learn more about the [Settings](https://anidb.net/) tab and more.
 

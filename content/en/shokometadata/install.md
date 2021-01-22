@@ -1,5 +1,5 @@
 +++ 
-title = "Shoko Metadata - Windows Install"
+title = "Installing Shoko Metadata"
 description = "Information on how to install Shoko Metadata on Windows"
 aliases = ["/shokometadata"]
 layout = "single"

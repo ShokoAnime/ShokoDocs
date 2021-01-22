@@ -1,4 +1,4 @@
-baseURL = "https://shokoanime.com/dev"
+baseURL = "https://shokoanime.com/"
 DefaultContentLanguage = "en"
 title = "Shoko"
 enableGitInfo = true

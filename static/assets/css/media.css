@@ -147,6 +147,16 @@
 
 @media screen and (max-width: 560px) {
 
+    /*General*/
+    h2, h3, h5 {
+        text-align: center;
+    }
+
+    .markdown-image {
+        height: 100%;
+        width: 100%;
+    }
+
     /*Index*/
     .index-content-wrapper {
         padding: 3rem;

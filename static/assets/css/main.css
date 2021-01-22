@@ -52,7 +52,7 @@ code {
     color: var(--fontColor);
     font-family: "Exo 2", sans-serif;
     font-weight: 500;
-    padding: 2px 4px;
+    padding: 6px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -97,12 +97,12 @@ strong {
     border: 1px solid var(--borderColor);
     border-radius: 10px;
     display: flex;
-    height: 100%;
+    height: auto;
     image-rendering: -webkit-optimize-contrast;
     margin: 2rem auto;
     max-height: 480px;
     max-width: 850px;
-    width: 100%;
+    width: auto;
 }
 
 .navbar-dark .navbar-toggler {
@@ -357,7 +357,7 @@ a.nav-title {
     margin: 2rem 0;
 }
 
-.page-content-wrapper > h5 {
+.page-content-wrapper > h3 {
     margin: 0.5rem 0 1.5rem 0;
 }
 
@@ -641,6 +641,10 @@ a.nav-title {
 
 .faq-card-body {
     padding: 1rem 0;
+}
+
+.accordion {
+    margin-bottom: 1rem;
 }
 
 /*

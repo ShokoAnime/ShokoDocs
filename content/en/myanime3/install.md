@@ -22,7 +22,7 @@ id = "other-settings"
 
 ## Is Shoko Server Mandatory?{.page-first-header}
 
-Shoko Metadata is not a standalone plugin and **requires Shoko Server** installed, configured and running in order to work properly. If you haven't done this yet, [Download Shoko Server](https://shokoanime.com/downloads/) from our main website and use the installation guides located in the menu on the left to properly install and configure Shoko Server.
+My Anime 3 is not a standalone plugin and **requires Shoko Server** installed, configured and running in order to work properly. If you haven't done this yet, [Download Shoko Server](https://shokoanime.com/downloads/) from our main website and use the installation guides located in the menu on the left to properly install and configure Shoko Server.
 
 {{< alert type="warning" heading="My Anime 3 - Future Development" >}}
 My Anime 3 is no longer in active development and has entered maintenance mode. Any developers interested in further developing My Anime 3, please contact **Elemental Crisis** on the Shoko Discord.
