@@ -67,28 +67,35 @@ Proceed to **Editing Plex Scanners** to make the required edits for the scanners
 **Before you continue**, to make it easier to follow the guide, regardless of the Plex install method, we will assign an environment
 variable (`$PLEX_HOME`) that will point to the base directory for your Plex content.
 
-Below are the three most common install methods, and what you need to do for each one before you continue with the rest of the guide. If you
-installed Plex using another method, then please assign the variable to your own, and be sure to use the correct user when executing the
+Below are the three most common install methods, and what you need to do for each one before you continue with the rest of the guide.
+
+{{< alert type="warning" heading="Custom installs" >}}
+If you installed Plex using another method, then please assign the variable to your own, and make sure to use the correct user when executing the
 steps listed below.
+{{< /alert >}}
 
 ##### Bare-metal install
 
-Sign in with **the user responsible for running PMS** (be sure to replace `$USERNAME` with the username or user-id),
+Sign in with **the user responsible for running PMS** (be sure to replace `<username>` with the username of the user),
 ```sh
-sudo su --login --shell=/bin/bash $USERNAME
+sudo -u <username> -s /bin/sh
 ```
 
-and assign thes variable.
+and assign the variable.
 ```sh
 export PLEX_HOME="/var/lib/plex/Plex Media Server"
 ```
+
+{{< alert type="warning" heading="Check your install location" >}}
+Some distributions may install Plex to a different base directory, or if you're running a custom install of Plex, then either make sure or tweak the above variable to lead to your **Plex Media Server** directory. If the above variable is not set correctly, then the guide will fail at the first step.
+{{< /alert >}}
 
 Skip to **The steps**.
 ##### Snap (plexmediaserver)
 
 Sign in as `root` on your host-system,
 ```sh
-sudo su --login --shell=/bin/bash root
+sudo -s /bin/sh
 ```
 
 and assign the variable.
@@ -100,9 +107,10 @@ Skip to **The steps**.
 
 ##### Docker (plexinc/pms-docker)
 
-Attach to the running **PMS container** (be sure to replace `$CONTAINERNAME` with the name or id of the container),
+This section assumes you're using the official docker image ([plexinc/pms-docker](.)) in docker, if you're using any other image,
+Attach to the running **PMS container** (be sure to replace `<container name>` with the name or id of the container),
 ```sh
-docker exec -it $CONTAINER_NAME /bin/bash
+docker exec -it <container name> /bin/sh
 ```
 
 and and assign the variable.
