@@ -1,71 +1,15 @@
-/*
-    1. Colors
-*/
-
-/*
----------------------------------------------
-    1. Colors
----------------------------------------------
-*/
-
 :root {
-
-	/* General */
-	--backgroundColor: #fff;
-	--borderColor: #dae1e7;
-	--cardBackground: #ffffff;
-	--fontColor: #333;
-
-	/* Navbar */
-	--navBackground: #162850;
-	--siteTitle: #ffffff;
-	--navLinkNormal: #efefef;
-	--navLinkHover: #5DADE2;
-
-	/* Page Header */
-	--pageHeaderBackground: #f9f9fb;
-	--pageHeaderGithub: #006cab;
-
-	/* SideNav */
-	--sideNavTitle: #006cab;
-	--searchBackground: #ffffff;
-	--searchfontColor: #333;
-
-	/* Page Navigation */
-	--pageIndicator: #eaeff4;
-	--pageIndicatorActive: #006cab;
-
-	/* Footer */
-	--footerBackground: #f9f9fb;
-
-	/* Tables */
-	--headerNormalBackground: #f9f9fb;
-	--headerChangelogBackground: #f9f9fb;
-	--rowBackgroundEven: #FFFFFF;
-	--rowBackgroundOdd: #E9F0F8;
-
-	/* Changelog Badges */
-	--badgetext: #ffffff;
-	--added: #3cd458;
-	--changed: #50a1ff;
-	--fixed: #ffba00;
-	--removed: #ff4954;
-
-	/* FAQ */
-	--accordionBackground: #f9f9fb;
-	--accordionCard: #ffffff;
-	--accordionArrow: #757575;
-
-	/* Tabs */
-	--tabsActive: #2196F3;
-	--tabsActiveBackground: #fffff;
-	--tabsActiveBorder: #dee2e6;
-	--tabsActiveBorderBottom: #ffffff;
-
-	/* Code */
-	--codeLeftBorder: #006cab;
-
-	/* Links */
-	--linkNormal: #E91E63;
-	--linkActive: #2196F3;
+    --backgroundColor: #ffffff;
+    --borderColor: #dae1e7;
+    --breadcrumbBackground: #F9F9F9;
+    --featureBackground: #F6F7F8;
+    --featureWrapper: #0A0B1D;
+    --fontColor: #708198;
+    --fontColorAlt: #ffffff;
+    --fontStrong: #5c76bf;
+    --linkHover: #2196F3;
+    --linkNormal: #ff4065;
+    --navBackground: #F5F6F8;
+    --rowBackgroundEven: #ffffff;
+    --rowBackgroundOdd: #e9f0f8;
 }

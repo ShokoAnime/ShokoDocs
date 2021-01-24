@@ -1,32 +1,55 @@
 <!doctype html>
 <html lang="en">
 
-{{ partial "head.html" . }}
+{{partial "head.html" .}}
 
-<body data-spy="scroll" data-target="#page-nav" data-offset="50">
+<body data-spy="scroll" data-target="#page-nav" data-offset="80" class="lang-{{.Site.Language.Lang}}">
 
-{{ partial "header.html" . }}
+<div class="page-wrapper">
 
-<div class="container container-wrapper">
-	<div class="row row-wrapper">
-
-		<div class="col-xl-2 sidenav-wrapper">
-
-			{{ partial "nav.html" . }}
-
-		</div>
-
-		<div class="col-xl-8 page-wrapper">
-
-			{{ .Content }}
-
-		</div>
-
+	<div class="main-nav-wrapper">
+		<h3 class="main-nav-header">Shoko Docs</h3>
+		{{partial "nav-main.html" .}}
 	</div>
+
+	<div class="page-outer-wrapper">
+
+		{{partial "nav-top.html" .}}
+		{{partial "breadcrumb.html" .}}
+
+		<div class="page-section-wrapper">
+			<div class="page-content-wrapper">
+				{{$headlessbundle := .Site.GetPage "/faq-questions"}}
+				{{range ( $headlessbundle.Resources.ByType "page" )}}
+				{{.Content}}
+				{{end}}
+			</div>
+
+			<div class="page-nav-wrapper">
+			<div class="nav-links-wrapper page-nav-link-wrapper">
+				<ul class="nav flex-column flex-nowrap" id="page-nav">
+
+					{{range .Params.pageNav}}
+					{{if .navTitle}}
+					<li class="page-nav-title">{{.navTitle}}</li>
+					{{end}}
+					<li class="nav-item">
+						<a class="nav-link nav-menu page-nav-link" href="#{{.id}}">{{.name}}</a>
+					</li>
+					{{end}}
+
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	{{partial "footer.html" .}}
 </div>
 
-{{ partial "footer.html" . }}
-{{ partial "scripts.html" . }}
+</div>
+
+{{partial "scripts.html" .}}
 
 </body>
 </html>
+
