@@ -1,0 +1,239 @@
+/*
+---------------------------------------------
+    Media Queries
+---------------------------------------------
+*/
+
+@media (max-width: 1600px) {
+
+    .main-nav-wrapper {
+        height: calc(100vh + 126px);
+    }
+
+}
+
+@media (max-width: 991px) {
+
+    /*Nav */
+    .main-nav-wrapper {
+        display: none;
+    }
+
+    /* Navbar & Sidenav*/
+    .navbar-collapse {
+        display: none;
+    }
+
+    .navbar-mobile {
+        display: inherit;
+    }
+
+    .navbar-mobile-icon {
+        background: no-repeat center center;
+        background-size: 100% 100%;
+        color: var(--fontColor);
+        display: inline-block;
+        padding: 0.5rem 0;
+        vertical-align: middle;
+    }
+
+    .top-nav-link-wrapper {
+        padding: 1rem 4rem;
+    }
+
+    .top-nav-links {
+        display: none;
+    }
+
+    .search-wrapper {
+        display: none;
+    }
+
+    .shoko-text {
+        display: initial;
+        font-family: "Exo 2", sans-serif;
+        font-weight: 600;
+    }
+
+    .nav-sidebar-pill {
+        align-self: flex-end;
+        margin: 2rem 2rem 0 0;
+        text-align: right;
+    }
+
+    .nav-sidebar .nav-item {
+        align-self: flex-end;
+        text-align: right;
+    }
+
+    .sidenav {
+        background-color: #111;
+        height: 100%;
+        list-style-type: none;
+        overflow-x: hidden;
+        padding-top: 60px;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 0;
+        z-index: 10;
+    }
+
+    .nav-sidebar .nav-link {
+        display: block;
+    }
+
+    .sidenav-menu {
+        font-size: 1rem !important;
+    }
+
+    .sidenav a {
+        display: block;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .sidenav .sidenav-close {
+        display: initial;
+        font-size: 3rem;
+        position: absolute;
+        right: 25px;
+        top: 0;
+    }
+
+    .sidenav-lange-theme {
+        align-self: flex-end;
+        margin-top: 1rem;
+        text-align: right;
+    }
+
+    /*Page*/
+    .page-nav-wrapper {
+        display: none;
+    }
+
+    /*Table*/
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        left: -9999px;
+        position: absolute;
+        top: -9999px;
+    }
+
+    tr {
+        border: 1px solid #ccc;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    td:before {
+        left: 6px;
+        padding-right: 10px;
+        position: absolute;
+        top: 6px;
+        white-space: nowrap;
+        width: 45%;
+    }
+
+}
+
+@media screen and (max-width: 560px) {
+
+    /*General*/
+    h2, h3, h5 {
+        text-align: center;
+    }
+
+    .markdown-image {
+        height: 100%;
+        width: 100%;
+    }
+
+    /*Index*/
+    .index-content-wrapper {
+        padding: 3rem;
+    }
+
+    /* Top Nav */
+    .search-wrapper {
+        display: none;
+    }
+
+    /*breadcrumbs*/
+    .breadcrumb-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .breadcrumb-list {
+        width: auto;
+    }
+
+    .github-wrapper {
+        margin: auto;
+        padding-top: 1rem;
+    }
+
+    /*Page*/
+    .page-content-wrapper > h2 {
+        text-align: center;
+    }
+
+    .page-content-wrapper > h3 {
+        text-align: center;
+    }
+
+    .page-content-wrapper > h5 {
+        text-align: center;
+    }
+
+    /*Changelog*/
+    .changelog-header-wrapper {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .changelog-header-spacer {
+        display: none;
+    }
+
+    .changelog-item {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .changelog-item-placeholder {
+        margin-bottom: 0;
+        max-height: initial;
+        max-width: initial;
+    }
+
+    .changelog-item-text {
+        margin: 1rem 0;
+        padding: .2rem .5rem;
+    }
+
+    /*Footer*/
+    .footer-info {
+        padding: 0;
+    }
+
+    .footer-links {
+        display: none;
+    }
+
+    .footer-copyright {
+        margin: auto;
+    }
+
+}
