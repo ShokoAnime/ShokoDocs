@@ -21,17 +21,26 @@ id = "next-step"
 
 The short answer, **Yes**.
 
-Shoko Server is where all the magic happens. It acts as a central database for every program and plugin under the Shoko suite allowing you to access, maintain and watch your anime collection. This also means that Shoko Server **must be  running** to use any other program or plugin that connect to it. Outside of file importing, Shoko Server is no more resource intensive than other programs you probably have running in the background, so you don't need to worry about Shoko Server eating up resources.
+Shoko Server is where all the magic happens. It acts as a central database for every program and plugin under the Shoko
+suite allowing you to access, maintain and watch your anime collection. This also means that Shoko Server **must be
+running** to use any other program or plugin that connect to it. Outside of file importing, Shoko Server is no more
+resource intensive than other programs you probably have running in the background, so you don't need to worry about
+Shoko Server eating up resources.
 
 ### Windows
 
 ![Shoko Server - Windows Install](/assets/images/shoko-server/Shoko-Server-Install-Windows-01.jpg)
 
-Navigate to the [Shoko Downloads](https://shokoanime.com/downloads/) page and download **Shoko Server**, unless told otherwise we always recommend downloading the **Stable** version. The installer will guide you through the installation process and should only take a couple of minutes. 
+Navigate to the [Shoko Downloads](https://shokoanime.com/downloads/) page and download **Shoko Server**, unless told
+otherwise we always recommend downloading the **Stable** version. The installer will guide you through the installation
+process and should only take a couple of minutes.
 
 ### Docker
 
-Make sure you have docker installed before you continue. For most users are installing docker from their package manager is advised, this way you will keep up with the latest updates and security updates. On the homepage of [Docker](https://docs.docker.com/install/) you can find the installation procedure for your distribution of the Docker Community Edition.
+Make sure you have docker installed before you continue. For most users are installing docker from their package manager
+is advised, this way you will keep up with the latest updates and security updates. On the homepage
+of [Docker](https://docs.docker.com/install/) you can find the installation procedure for your distribution of the
+Docker Community Edition.
 
 First things first, download the image, and unless otherwise told, install the version tagged as `latest`.
 
@@ -39,7 +48,8 @@ First things first, download the image, and unless otherwise told, install the v
 $ docker pull shokoanime/server:latest
 ``` 
 
-Now, you can run the command below, after substituting the paths below (the second and third volume mount point) with path(s) leading to your library and/or import folders.
+Now, you can run the command below, after substituting the paths below (the second and third volume mount point) with
+path(s) leading to your library and/or import folders.
 
 ```sh
 $ docker run -d --name shokoserver --restart always -p 8111:8111 -v "$home/.shoko:/home/shoko/.shoko" -v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import" -e PUID=$uid -e PGID=$gid shokoanime/server:latest
@@ -173,34 +183,36 @@ If you want a more detailed explanation, then refer to the below table for a bre
 	</tbody>
 </table>
 
-
-
-
 ### Docker Compose
 
 To make management easier, we can combine all the previous items in a docker compose file.
 
-In order to make this work, install docker-compose, a guide how to can be found [here](https://docs.docker.com/compose/install/) on the Docker website. Once **docker-compose** is installed, create a **docker-compose.yml** file anywhere on your system. Open the file and put the following inside, but remember to substitute the paths below with path(s) leading to your library and/or import folders.
+In order to make this work, install docker-compose, a guide how to can be
+found [here](https://docs.docker.com/compose/install/) on the Docker website. Once **docker-compose** is installed,
+create a **docker-compose.yml** file anywhere on your system. Open the file and put the following inside, but remember
+to substitute the paths below with path(s) leading to your library and/or import folders.
 
 ```yaml
 version: "3"
 services:
-    shoko_server:
-        container_name: shokoserver
-        image: shokoanime/server:latest
-        restart: always
-        env:
-            - "PUID=${uid}"
-            - "PGID=${gid}"
-        ports:
-            - "8111:8111"
-        volumes:
-            - "${home}:/home/shoko/.shoko"
-            - "/path/to/anime:/mnt/anime"
-            - "/path/to/import:/mnt/import"
+  shoko_server:
+    container_name: shokoserver
+    image: shokoanime/server:latest
+    restart: always
+    env:
+      - "PUID=${uid}"
+      - "PGID=${gid}"
+    ports:
+      - "8111:8111"
+    volumes:
+      - "${home}:/home/shoko/.shoko"
+      - "/path/to/anime:/mnt/anime"
+      - "/path/to/import:/mnt/import"
 ```
 
-This combines all of our previous configuration in an easy to read and edit format, and will allow you to create a powerful startup script that could (for example) include a MySQL server, a download client, and anything else you can think of that’s available in a docker format.
+This combines all of our previous configuration in an easy to read and edit format, and will allow you to create a
+powerful startup script that could (for example) include a MySQL server, a download client, and anything else you can
+think of that’s available in a docker format.
 
 #### Synology NAS
 
@@ -208,4 +220,5 @@ TBD
 
 ## Next Step
 
-Once the server is installed, follow the instructions on the [First Run Setup](/server/setup) page to configure your fresh install of Shoko Server.
+Once the server is installed, follow the instructions on the [First Run Setup](/server/setup) page to configure your
+fresh install of Shoko Server.

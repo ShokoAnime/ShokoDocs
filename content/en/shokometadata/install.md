@@ -1,6 +1,6 @@
 +++ 
 title = "Installing Shoko Metadata"
-description = "Information on how to install Shoko Metadata on Windows"
+description = "Information on how to install Shoko Metadata."
 aliases = ["/shokometadata"]
 layout = "single"
 [[pageNav]]
@@ -19,7 +19,7 @@ name = "Combining Series & Movies"
 id = "combining-series--movies"
 +++
 
-## Is Shoko Server Installed?{.page-first-header}
+## Is Shoko Server Mandatory?{.page-first-header}
 
 Shoko Metadata is not a standalone plugin and **requires Shoko Server** installed, configured and running in order to
 work properly. If you haven't done this yet, [Download Shoko Server](https://shokoanime.com/downloads/) from our main
