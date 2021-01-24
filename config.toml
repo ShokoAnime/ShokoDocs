@@ -1,6 +1,6 @@
-baseURL = "https://shokoanime.com/"
+baseURL = "https://docs.shokoanime.com/"
 DefaultContentLanguage = "en"
-title = "Shoko"
+title = "Shoko Docs"
 enableGitInfo = true
 
 disableKinds = ["taxonomyTerm"]
