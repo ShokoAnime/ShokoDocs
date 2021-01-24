@@ -124,8 +124,8 @@ An example of adding a CSS file for the German language.
 You'll also need to add the following conditional statement to the **head.html** file located in **layouts/partials/** in order for the language specific CSS file to load. Using the example below, replace the German language code with your language code and add it below the last language specific file and above the closing conditional tag, **{{end}}**.
 
 ```go
-  {{ else if eq .Site.Language.Lang "de"  }}
-  <link rel="stylesheet" href="{{ "assets/css/lang/de.min.css" | absURL }}">
+  {{else if eq .Site.Language.Lang "de" }}
+  <link rel="stylesheet" href="{{"assets/css/lang/de.min.css" | absURL}}">
 ```
 
 Any rules you add in the file will take priority over the ones found in the **main.css** file. We're more than willing to help if you're unfamiliar with CSS or have questions. Simply join our **Discord** server and let us know what we can do to help. 
@@ -148,14 +148,14 @@ The first example is how the link for the Shoko Server install page is set up fo
 
 **Normal 
 ```go
-<a class="nav-link nav-menu" href="{{ "server/install" | relURL }}">How To Install</a>
+<a class="nav-link nav-menu" href="{{"server/install" | relURL}}">How To Install</a>
 ```
 
 The second example shows the link for the Shoko Server install page for any other language.
 
 **Language Specific
 ```go
-<a class="nav-link nav-menu" href="{{ "server/install" | relLangURL }}">How To Install</a>
+<a class="nav-link nav-menu" href="{{"server/install" | relLangURL}}">How To Install</a>
 ```
 
 As you can see, we only change a parameter inside the **href** tag. This is the only change inside your file you'll need to make. 
@@ -163,15 +163,15 @@ As you can see, we only change a parameter inside the **href** tag. This is the 
 Adder you've finished, navigate to **layouts/partials/ and open **nav-main.html**, at the top you should see something similar to the following. 
 
 ```go
-{{  if eq .Site.Language.Lang "en"  }}
-{{ partial "nav-lang/nav-en.html" . }}
-{{ end }}
+{{ if eq .Site.Language.Lang "en" }}
+{{partial "nav-lang/nav-en.html" .}}
+{{end}}
 ```
 In the below example, we've added the conditional logic for the **German** language as indicated by **de** being used. 
 
-Copy the following example and place above the **{{ end }}** tag as seen in the above example. Make sure to change the language code in both lines to the language code that matches your language.
+Copy the following example and place above the **{{end}}** tag as seen in the above example. Make sure to change the language code in both lines to the language code that matches your language.
 
 ```go
-{{ else if eq .Site.Language.Lang "de"  }}
-{{ partial "nav-lang/nav-de.html" . }}
+{{else if eq .Site.Language.Lang "de" }}
+{{partial "nav-lang/nav-de.html" .}}
 ```
