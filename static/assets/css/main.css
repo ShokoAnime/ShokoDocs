@@ -248,6 +248,10 @@ a.nav-title {
     color: var(--linkHover);
 }
 
+.nav-item-single {
+    color: var(--linkHover) !important;
+}
+
 .nav-secondary {
     margin-top: 3rem;
 }

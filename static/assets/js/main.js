@@ -40,39 +40,7 @@ $('#themeSwitcher, #themeSwitcherMobile').click(function (e) {
 
 // ----------------------------------------------------------------------------------------------------------------
 
-// Add/Remove 'Active' class for Side Navigation.
-
-$('a.sidenav-menu').click(function () {
-
-	let leftNavActive = $('.nav.nav-sidebar.nav-sidebar-pill').find('.nav-link.nav-menu.sidenav-menu.active');
-
-	$(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
-	leftNavActive.length > 0 ? leftNavActive.removeClass('active') : '';
-
-});
-
-// ----------------------------------------------------------------------------------------------------------------
-
-// Smooth Scroll for Page Navigation.
-
-$('a[href^="#"].page-nav-link').on('click', function (e) {
-
-	e.preventDefault();
-	let hash = this.hash;
-
-	$('html, body').animate({scrollTop: $(hash).offset().top - 50}, 1000, function () {
-
-		// Add Active class to selected anchor.
-		$(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
-
-	});
-});
-
-
-// ----------------------------------------------------------------------------------------------------------------
-
 // Left Navigation Submenu & Arrow rotations.
-
 let navItemShow = $('.nav-sidebar .nav-item.show');
 let navSidebarIsAccordion = false;
 
@@ -91,7 +59,6 @@ $(document).on('click', '.nav-sidebar > .nav-item > .nav-link', function (event)
 	link.next('.nav').slideToggle();
 
 	if (navSidebarIsAccordion) {
-
 		link.closest('.nav-item').siblings('.nav-item').children('.nav:visible').slideUp().prev('.nav-link').children('.nav-angle').removeClass('rotate');
 	}
 
@@ -102,7 +69,45 @@ $(document).on('click', '.nav-sidebar > .nav-item > .nav-link', function (event)
 
 // ----------------------------------------------------------------------------------------------------------------
 
-// Sidenav
+// Add/Remove 'Active' class for Side Navigation.
+$('a.sidenav-menu').click(function () {
+
+	let leftNavActive = $('.nav.nav-sidebar.nav-sidebar-pill').find('.nav-link.nav-menu.sidenav-menu.active');
+
+	$(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
+	leftNavActive.length > 0 ? leftNavActive.removeClass('active') : '';
+
+});
+// ----------------------------------------------------------------------------------------------------------------
+
+// Show submenu for selected menu.
+$(window).on("load", function () {
+
+	let submenuContents = $('.nav.nav-title-wrapper').find('.active');
+	submenuContents.closest('.nav.nav-title-wrapper').css('display', 'block');
+
+});
+
+
+// ----------------------------------------------------------------------------------------------------------------
+
+// Smooth Scroll for Page Navigation.
+$('a[href^="#"].page-nav-link').on('click', function (e) {
+
+	e.preventDefault();
+	let hash = this.hash;
+
+	$('html, body').animate({scrollTop: $(hash).offset().top - 50}, 1000, function () {
+
+		// Add Active class to selected anchor.
+		$(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
+
+	});
+});
+
+// ----------------------------------------------------------------------------------------------------------------
+
+// Mobile Sidenav
 function openNav() {
 	document.getElementById("mobileSidenav").style.display = "initial";
 	document.getElementById('mobileSidenav').classList.add('sidenav');
