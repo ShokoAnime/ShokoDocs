@@ -13,8 +13,8 @@
 
     /*Nav*/
     .top-nav-link-wrapper {
-        max-width: 960px;
         margin: 0;
+        max-width: 960px;
     }
 
     .navbar {
@@ -31,8 +31,8 @@
 
     /*Breadcrumbs */
     .breadcrumb-wrapper {
-        max-width: 960px;
         margin: 0;
+        max-width: 960px;
     }
 
     .breadcrumb-list {
@@ -72,8 +72,8 @@
 
     /*Breadcrumbs */
     .breadcrumb-wrapper {
-        max-width: 825px;
         margin: 0;
+        max-width: 825px;
     }
 
     /*TopNav*/
@@ -86,7 +86,8 @@
 
     /*TopNav*/
     .top-nav-link-wrapper {
-        max-width: 830px;
+        max-width: 748px;
+        width: auto;
     }
 
     .top-nav-links {
@@ -95,8 +96,8 @@
 
     /*Breadcrumbs */
     .breadcrumb-wrapper {
-        max-width: 775px;
         margin: 0;
+        max-width: 775px;
     }
 
     /* Page Content*/
@@ -107,6 +108,72 @@
 
     .markdown-image {
         height: 100%;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 1340px) {
+
+    /*TopNav*/
+    .top-nav-links {
+        width: 566px;
+    }
+
+    /*Breadcrumbs */
+    .github-wrapper {
+        margin-right: 4rem;
+    }
+
+    /* Page Content*/
+    .page-nav-wrapper {
+        margin-left: 5rem;
+    }
+
+    .page-content-wrapper {
+        max-width: 500px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1290px) {
+
+    /*TopNav*/
+    .top-nav-links {
+        width: 534px;
+    }
+
+    /*Breadcrumbs */
+    .github-wrapper {
+        margin-right: 6rem;
+    }
+
+    /* Page Content*/
+    .page-nav-wrapper {
+        margin-left: 3rem;
+    }
+
+}
+
+@media (max-width: 1260px) {
+
+    /*TopNav*/
+    .top-nav-links {
+        width: 534px;
+    }
+
+    /*Breadcrumbs */
+    .github-wrapper {
+        margin-right: 6rem;
+    }
+
+    /* Page Content*/
+    .page-nav-wrapper {
+        display: none;
+    }
+
+    .page-content-wrapper {
+        max-width: 800px;
         width: 100%;
     }
 
@@ -209,6 +276,12 @@
         align-self: flex-end;
         margin-top: 1rem;
         text-align: right;
+    }
+
+    /*Breadcrumbs*/
+    .breadcrumb-wrapper {
+        margin: 0;
+        max-width: 840px;
     }
 
     /*Page*/
