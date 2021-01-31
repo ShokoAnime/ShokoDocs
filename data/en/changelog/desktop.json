@@ -2,6 +2,21 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoDesktop/",
   "releases": [
     {
+      "version": "4.1.0",
+      "versionURL": "410",
+      "date": "January 31st, 2021",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Refactored Plugin system."
+        },
+        {
+          "type": "changed",
+          "text": "Refactored Renamer system."
+        }
+      ]
+    },{
       "version": "4.0.0",
       "versionURL": "400",
       "date": "August 21st, 2020",

@@ -2,6 +2,33 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "4.1.0",
+      "versionURL": "410",
+      "date": "January 31st, 2021",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Refactored Plugin system."
+        },
+        {
+          "type": "changed",
+          "text": "Refactored Renamer system."
+        },
+        {
+          "type": "changed",
+          "text": "Cleanup when TvDB links are generated."
+        },
+        {
+          "type": "changed",
+          "text": "Improve the Title Matching for TvDB Matches."
+        },
+        {
+          "type": "changed",
+          "text": "Improve the Matching for long running, still airing series."
+        }
+      ]
+    },{
       "version": "4.0.1",
       "versionURL": "401",
       "date": "August 29th, 2020",
