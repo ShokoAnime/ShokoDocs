@@ -41,7 +41,7 @@ increase the time between updates to once a week, for example.
 ##### XML Cache:
 
 During initial import or when importing many series at once, it helps if you don't need to download everything. You can
-get a cache of XML files that hold series info from [link](URl). These go in the XML cache directory, and Shoko will use
+get a cache of XML files that hold series info from this [link](https://shokoanime.com/files/shoko-server/other/Anime_HTTP.zip). These go in the XML cache directory, and Shoko will use
 them to keep moving forward in case of ban, and if they are recent enough, then it won't even bother calling AniDB for
 updated info (unless you tell it to).
 
