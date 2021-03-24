@@ -2,26 +2,26 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/",
   "releases": [
     {
-      "version": "1.1.1",
+      "version": "1.1.1-dev1",
       "versionURL": "111",
-      "date": "NA",
-      "blogLink": "NA",
+      "date": "March 23rd, 2021",
+      "blogLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/releases/tag/1.1.1-dev1",
       "changes": [
         {
           "type": "added",
-          "text": "Add Recreate All Groups action."
-        },
-        {
-          "type": "changed",
-          "text": "Change MB to MiB and so on."
+          "text": "Added Recreate All Groups action"
         },
         {
           "type": "fixed",
-          "text": "Fix missing unrecognized files."
+          "text": "Fixed wrong sizes showing up in dashboard (Changed MB to MiB and so on)"
         },
         {
           "type": "fixed",
-          "text": "Fix files breakdown panel."
+          "text": "Fixed missing unrecognized files"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed files breakdown panel"
         }
       ]
     },
