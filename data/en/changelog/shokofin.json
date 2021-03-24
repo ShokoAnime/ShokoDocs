@@ -1,0 +1,69 @@
+{
+  "githubLink": "https://github.com/ShokoAnime/Shokofin/",
+  "releases": [
+    {
+      "version": "1.4.4",
+      "versionURL": "144",
+      "date": "March 25th, 2021",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed \"Invalid image received\" error"
+        }
+      ]
+    },
+    {
+      "version": "1.4.3",
+      "versionURL": "143",
+      "date": "March 18th, 2021",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Changed logger to include message along with stacktrace"
+        }
+      ]
+    },
+    {
+      "version": "1.4.2",
+      "versionURL": "142",
+      "date": "March 17th, 2021",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed series search for smaller titles"
+        }
+      ]
+    },
+    {
+      "version": "1.4.1",
+      "versionURL": "141",
+      "date": "March 16th, 2021",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed series metadata fetching API call"
+        }
+      ]
+    },
+    {
+      "version": "1.4.0",
+      "versionURL": "140",
+      "date": "March 4th, 2021",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Updated dotnet to 5.0 to make the plugin work with Jellyfin 10.7.x"
+        },
+        {
+          "type": "changed",
+          "text": "Changed episode types to match with latest Shoko daily"
+        }
+      ]
+    }
+  ]
+}
