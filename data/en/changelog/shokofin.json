@@ -2,6 +2,18 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "1.4.5",
+      "versionURL": "145",
+      "date": "March 25th, 2021",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed image null-check"
+        }
+      ]
+    },
+    {
       "version": "1.4.4",
       "versionURL": "144",
       "date": "March 25th, 2021",
