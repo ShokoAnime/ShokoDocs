@@ -52,7 +52,7 @@ Now, you can run the command below, after substituting the paths below (the seco
 path(s) leading to your library and/or import folders.
 
 ```sh
-$ docker run -d --name shokoserver --restart always -p 8111:8111 -v "$home/.shoko:/home/shoko/.shoko" -v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import" -e PUID=$uid -e PGID=$gid shokoanime/server:latest
+$ docker run -d --name shokoserver --restart always -p 8111:8111 -v "$HOME/.shoko:/home/shoko/.shoko" -v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import" -e PUID=$uid -e PGID=$gid shokoanime/server:latest
 ``` 
 
 If you want a more detailed explanation, then refer to the below table for a break-down of the above command:
