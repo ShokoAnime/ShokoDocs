@@ -126,7 +126,7 @@ If you want a more detailed explanation, then refer to the below table for a bre
 	</tr>
 	<tr>
 		<td>
-			<pre>-v "$home/.shoko:/home/shoko/.shoko"</pre>
+			<pre>-v "$HOME/.shoko:/home/shoko/.shoko"</pre>
 		</td>
 		<td>
 			<a href="https://docs.docker.com/engine/reference/run/#volume-shared-filesystems" target="_blank"
