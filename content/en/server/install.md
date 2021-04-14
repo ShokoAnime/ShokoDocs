@@ -216,7 +216,18 @@ think of that’s available in a docker format.
 
 #### Synology NAS
 
-TBD
+Make sure you have [Docker](https://www.synology.com/en-global/dsm/packages/Docker) installed on your Synology NAS 
+before you continue. This package can be found in the Package Center, under Third-party.
+
+You will need to find your User ID before continuing. Log in to your Synology NAS using SSH and type `id`. 
+You'll see an uid: note it down for later. To avoid getting your database cleared on updates, you should also 
+create a folder in the `docker` shared folder named `shokoserver`.
+
+Open Docker from the applications menu, then go to Containers. You'll need to download the 
+[Synology Container File](/content/en/server/synology-dockerfile.json) and fill out the anime folder path and your User ID. 
+Once that's done, go to Settings, Import and select the file you've just modified. Name the container `shokoserver`, then apply!
+
+Please note that if you want to edit volumes or environment variables, you'll need to stop the container first.
 
 ## Next Step
 
