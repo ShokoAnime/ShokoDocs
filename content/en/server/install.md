@@ -224,7 +224,7 @@ You'll see an uid: note it down for later. To avoid getting your database cleare
 create a folder in the `docker` shared folder named `shokoserver`.
 
 Open Docker from the applications menu, then go to Containers. You'll need to download the 
-[Synology Container File](/content/en/server/synology-dockerfile.json) and fill out the anime folder path and your User ID. 
+[Synology Container File](/server/synology-dockerfile.json) and fill out the anime folder path and your User ID. 
 Once that's done, go to Settings, Import and select the file you've just modified. Name the container `shokoserver`, then apply!
 
 Please note that if you want to edit volumes or environment variables, you'll need to stop the container first.
