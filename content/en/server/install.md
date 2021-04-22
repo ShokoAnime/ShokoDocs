@@ -180,6 +180,17 @@ If you want a more detailed explanation, then refer to the below table for a bre
 				to derive the container from.</a>
 		</td>
 	</tr>
+	<tr>
+		<td>
+			<pre>-e AVDUMP_MONO=true</pre>
+		</td>
+		<td>
+			<a href="https://docs.docker.com/engine/reference/run/#AVDump" target="_blank"
+			   rel="noopener">Enable AVDump</a>
+			<br><br>
+			AVDump currently requires large dependencies, so by specifying this environment variable, it tells the container to pull the dependencies for AVDump to work.
+		</td>
+	</tr>
 	</tbody>
 </table>
 
