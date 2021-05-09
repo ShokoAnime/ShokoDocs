@@ -129,7 +129,7 @@ cd "${PLEX_HOME}/Plug-ins";
 
 2\. Download and extract the latest bundle from GibHub using **one** of the following commands:
 ```sh
-curl -L --outout - https://github.com/Cazzar/ShokoMetadata.bundle/archive/master.tar.gz | tar -xzf -
+curl -L https://github.com/Cazzar/ShokoMetadata.bundle/archive/master.tar.gz | tar -xzf -
 ```
 or
 ```sh
