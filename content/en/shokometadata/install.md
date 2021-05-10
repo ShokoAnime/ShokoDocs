@@ -240,17 +240,3 @@ You'll notice the series scanner has a few more options available than the movie
     </tbody>
 </table>
 
-### Combining Series & Movies
-
-By default, you need a separate library in Plex for Series Movies. However, you can modify the **Shoko Series
-Scanner.py** file, so you only have to use one scanner and one library for your entire collection.
-
-Open **Shoko Series Scanner.py** in your editor of choice, if your editor supports it jump to **line 137** and remove
-the following code. If your editor doesn't support it just do a search for **ismovie**, and it should take you to the
-line of code in question
-
-```py
-if (try_get(series_data, "ismovie", 0) == 1 and seasonNumber >= 1): continue # Ignore movies in preference for Shoko Movie Scanner, but keep specials as Plex sees specials as duplicate
-```
-
-Remove the line and save. Congratulations, you can now have both anime series and movies in the same library.
