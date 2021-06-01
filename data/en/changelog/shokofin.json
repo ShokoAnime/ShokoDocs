@@ -2,6 +2,30 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "1.4.7",
+      "versionURL": "147",
+      "date": "June 2nd, 2021",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Run scrobbler only for Shoko recognized files"
+        }
+      ]
+    },
+    {
+      "version": "1.4.6",
+      "versionURL": "146",
+      "date": "June 1st, 2021",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "TvDB IDs are not set anymore."
+        }
+      ]
+    },
+    {
       "version": "1.4.5.1",
       "versionURL": "1451",
       "date": "March 26th, 2021",
