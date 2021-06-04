@@ -210,7 +210,7 @@ services:
     container_name: shokoserver
     image: shokoanime/server:latest
     restart: always
-    env:
+    environment:
       - "PUID=${uid}"
       - "PGID=${gid}"
     ports:
