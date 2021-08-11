@@ -8,10 +8,10 @@ name = "Windows"
 id = "windows"
 [[pageNav]]
 name = "Docker (Linux)"
-id = "docker"
+id = "docker-(linux)"
 [[pageNav]]
 name = "Docker Compose (Linux)"
-id = "docker-compose"
+id = "docker-compose-(linux)"
 [[pageNav]]
 name = "Next Step"
 id = "next-step"
@@ -35,7 +35,7 @@ Navigate to the [Shoko Downloads](https://shokoanime.com/downloads/) page and do
 otherwise we always recommend downloading the **Stable** version. The installer will guide you through the installation
 process and should only take a couple of minutes.
 
-### Docker
+### Docker (Linux)
 
 Make sure you have docker installed before you continue. For most users are installing docker from their package manager
 is advised, this way you will keep up with the latest updates and security updates. On the homepage
@@ -194,7 +194,7 @@ If you want a more detailed explanation, then refer to the below table for a bre
 	</tbody>
 </table>
 
-### Docker Compose
+### Docker Compose (Linux)
 
 To make management easier, we can combine all the previous items in a docker compose file.
 
