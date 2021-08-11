@@ -8,10 +8,10 @@ name = "Windows"
 id = "windows"
 [[pageNav]]
 name = "Docker (Linux)"
-id = "docker-(linux)"
+id = "docker-linux"
 [[pageNav]]
 name = "Docker Compose (Linux)"
-id = "docker-compose-(linux)"
+id = "docker-compose-linux"
 [[pageNav]]
 name = "Next Step"
 id = "next-step"
