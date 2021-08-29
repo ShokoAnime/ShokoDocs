@@ -2,6 +2,46 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "4.1.1",
+      "versionURL": "411",
+      "date": "August 29th, 2021",
+      "blogLink": "https://shokoanime.com/blog/shoko-version-4-1-1-released/",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Try Escaping Some Characters for MediaInfo."
+        },
+        {
+          "type": "changed",
+          "text": "Add a better unrecognized file message to the Group Aware Sorter."
+        },
+        {
+          "type": "changed",
+          "text": "Implement a sink for the Filesystem Watcher to allow Pausing."
+        },
+        {
+          "type": "fixed",
+          "text": "Plex unlinking doesn't work."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix external subtitle renaming."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix Fallback for Moving."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix infinite recursion in CanAccessFile."
+        },
+        {
+          "type": "removed",
+          "text": "Remove Cloud settings."
+        }
+      ]
+    },
+    {
       "version": "4.1.0",
       "versionURL": "410",
       "date": "February 1st, 2021",
@@ -28,7 +68,8 @@
           "text": "Improve the Matching for long running, still airing series."
         }
       ]
-    },{
+    },
+    {
       "version": "4.0.1",
       "versionURL": "401",
       "date": "August 29th, 2020",

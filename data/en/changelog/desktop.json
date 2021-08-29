@@ -2,6 +2,38 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoDesktop/",
   "releases": [
     {
+      "version": "4.1.1",
+      "versionURL": "411",
+      "date": "August 29th, 2021",
+      "blogLink": "https://shokoanime.com/blog/shoko-version-4-1-1-released/",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add ED2K uri to unrecognized and file search."
+        },
+        {
+          "type": "added",
+          "text": "Implement Multi-select and improvements to File Search Utility."
+        },
+        {
+          "type": "changed",
+          "text": "Add back the enabled checkbox for Renamers."
+        },
+        {
+          "type": "changed",
+          "text": "Refactored Renamer system."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix Visibility on Rehash."
+        },
+        {
+          "type": "removed",
+          "text": "Remove Cloud."
+        }
+      ]
+    },
+    {
       "version": "4.1.0",
       "versionURL": "410",
       "date": "February 1st, 2021",
@@ -16,7 +48,8 @@
           "text": "Refactored Renamer system."
         }
       ]
-    },{
+    },
+    {
       "version": "4.0.0",
       "versionURL": "400",
       "date": "August 21st, 2020",
