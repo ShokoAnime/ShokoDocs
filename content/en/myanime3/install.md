@@ -1,4 +1,5 @@
-+++ title = "Installing & Configuring My Anime 3"
++++ 
+title = "Installing & Configuring My Anime 3"
 description = "Information on how to install My Anime 3 plugin, a MediaPortal plugin."
 aliases = ["/myanime3"]
 layout = "single"
