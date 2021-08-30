@@ -13,18 +13,15 @@
 <link rel=stylesheet href=https://docs.shokoanime.com/assets/css/media.min.css>
 <link rel=stylesheet href=https://unpkg.com/smartphoto@1.1.0/css/smartphoto.min.css>
 <meta property="og:title" content="Configuring Shokofin">
-<meta property="og:description" content="Install There are multiple ways to install this plugin, but the recomended way is to use the official Jellyfin repository. Be sure to configure your plugin settings before using it on a library. Read more on that in the next section after you've finished your install.
-Official Repository  Navigate to the Dashboard Click on &amp;quot;Plugins&amp;quot; in the side-bar, and click it. Click on &amp;quot;Repisitories&amp;quot; on the top of the Plugins page.">
+<meta property="og:description" content="Information on how to install & configure Shokofin, a Jellyfin Plugin.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://docs.shokoanime.com/shokofin/configuration/">
+<meta property="og:url" content="https://docs.shokoanime.com/shokofin/install/">
 <meta property="og:image" content="https://docs.shokoanime.com/icon.png">
-<meta property="article:published_time" content="2020-12-03T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-08-30T02:20:42+02:00"><meta property="og:site_name" content="Shoko">
+<meta property="article:modified_time" content="2021-08-29T19:25:08-07:00"><meta property="og:site_name" content="Shoko">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://docs.shokoanime.com/icon.png">
 <meta name=twitter:title content="Configuring Shokofin">
-<meta name=twitter:description content="Install There are multiple ways to install this plugin, but the recomended way is to use the official Jellyfin repository. Be sure to configure your plugin settings before using it on a library. Read more on that in the next section after you've finished your install.
-Official Repository  Navigate to the Dashboard Click on &#34;Plugins&#34; in the side-bar, and click it. Click on &#34;Repisitories&#34; on the top of the Plugins page.">
+<meta name=twitter:description content="Information on how to install & configure Shokofin, a Jellyfin Plugin.">
 </head>
 <body data-spy=scroll data-target=#page-nav data-offset=80 class=lang-en>
 <div class=page-wrapper>
@@ -44,6 +41,12 @@ Official Repository  Navigate to the Dashboard Click on &#34;Plugins&#34; in the
 <div class="nav nav-title-wrapper">
 <a class="nav-link nav-menu" href=/shokometadata/install>How To Install</a>
 <a class="nav-link nav-menu" href=/shokometadata/setup>Setup Shoko Metadata</a>
+</div>
+</li>
+<li class=nav-item>
+<a class="nav-link nav-menu sidenav-menu" href=#>Shokofin<i class=nav-angle></i></a>
+<div class="nav nav-title-wrapper">
+<a class="nav-link nav-menu active" href=/shokofin/install>How To Install</a>
 </div>
 </li>
 <li class=nav-item>
@@ -120,6 +123,12 @@ Official Repository  Navigate to the Dashboard Click on &#34;Plugins&#34; in the
 </div>
 </li>
 <li class=nav-item>
+<a class="nav-link nav-menu sidenav-menu" href=#>Shokofin<i class=nav-angle></i></a>
+<div class="nav nav-title-wrapper">
+<a class="nav-link nav-menu active" href=/shokofin/install>How To Install</a>
+</div>
+</li>
+<li class=nav-item>
 <a class="nav-link nav-menu sidenav-menu" href=#>My Anime 3<i class=nav-angle></i></a>
 <div class="nav nav-title-wrapper">
 <a class="nav-link nav-menu" href=/myanime3/install>Install & Configuration</a>
@@ -164,43 +173,63 @@ Official Repository  Navigate to the Dashboard Click on &#34;Plugins&#34; in the
 </div>
 <div class=github-wrapper>
 <i class="fab fa-github github-icon"></i>
-<a href=https://github.com/shokoanime/Shokodocs/blob/master/content/shokofin/configuration.md>Edit On GitHub</a>
+<a href=https://github.com/shokoanime/Shokodocs/blob/master/content/shokofin/install.md>Edit On GitHub</a>
 </div>
 </div>
 </div>
 <div class=page-section-wrapper>
 <div class=page-content-wrapper>
-<h2 id=install>Install</h2>
-<p>There are multiple ways to install this plugin, but the recomended way is to use the official Jellyfin repository. Be sure to configure your plugin settings before using it on a library. Read more on that in the next section after you've finished your install.</p>
+<h2 class=page-first-header id=install>Install</h2>
+<p>There are multiple ways to install this plugin, but the recommended way is to use the official Jellyfin repository. Be sure to configure your plugin settings before using it on a library. Read more on that in the next section after you&rsquo;ve finished your install.</p>
 <h3 id=official-repository>Official Repository</h3>
 <ol>
 <li>Navigate to the Dashboard</li>
-<li>Click on "Plugins" in the side-bar, and click it.</li>
-<li>Click on "Repisitories" on the top of the Plugins page.</li>
+<li>Click on &ldquo;Plugins&rdquo; in the side-bar, and click it.</li>
+<li>Click on &ldquo;Repositories&rdquo; on the top of the Plugins page.</li>
 <li>Add new repository by clicking on the <strong>plus</strong>-icon (+) and enter the following details;
 <ul>
 <li>Repository Name: <code>Shokofin Stable</code></li>
 <li>Repository URL: <code>https://raw.githubusercontent.com/ShokoAnime/Shokofin/master/manifest.json</code></li>
-</ul></li>
-<li>Click on "Catalog" on the top of the Plugins page.</li>
-<li>Scroll down and till you find "Shokofin" under the Metadata section, and click it.</li>
+</ul>
+</li>
+<li>Click on &ldquo;Catalog&rdquo; on the top of the Plugins page.</li>
+<li>Scroll down and till you find &ldquo;Shokofin&rdquo; under the Metadata section, and click it.</li>
 <li>Click the blue <strong>Install</strong>-button. You will get a pop up warning you about using untrusted plugins. Click Ok.</li>
 <li>Restart your server to apply the changes.</li>
 </ol>
 <h3 id=github-releases>Github Releases</h3>
 <ol>
-<li><p>Download the <code>shokofin_*.zip</code> file from the latest release from GitHub <a href=https://github.com/ShokoAnime/shokofin/releases/latest>here</a>.</p></li>
-<li><p>Extract the contained <code>Shokofin.dll</code> and <code>meta.json</code>, place both the files in a folder named <code>Shokofin</code> and copy this folder to the <code>plugins</code> folder under the Jellyfin program data directory or inside the portable install directory. Refer to the "Data Directory" section on <a href=https://jellyfin.org/docs/general/administration/configuration.html>this page</a> for where to find your jellyfin install.</p></li>
-<li><p>Start or restart your server to apply the changes</p></li>
+<li>
+<p>Download the <code>shokofin_*.zip</code> file from the latest release from GitHub <a href=https://github.com/ShokoAnime/shokofin/releases/latest target=_blank rel=noopener>here</a>.</p>
+</li>
+<li>
+<p>Extract the contained <code>Shokofin.dll</code> and <code>meta.json</code>, place both the files in a folder named <code>Shokofin</code> and copy this folder to the <code>plugins</code> folder under the Jellyfin program data directory or inside the portable install directory. Refer to the &ldquo;Data Directory&rdquo; section on <a href=https://jellyfin.org/docs/general/administration/configuration.html target=_blank rel=noopener>this page</a> for where to find your jellyfin install.</p>
+</li>
+<li>
+<p>Start or restart your server to apply the changes</p>
+</li>
 </ol>
-<h2 id=setup>Setup</h2>
-<p>Before you start using the plugin it is important to make sure the connection settings are correct, otherwise the plugin will be unable to gather metadata from your running instance of <strong>Shoko Server</strong>. If you're running both Jellyfin and Shoko Server on the same machine and haven't changed the default username/password in Shoko Server, then you're all set to go, but if not then you need to provide the <code>Host</code>, <code>Username</code> and <code>Password</code> credentials in the plugin settings as shown below.</p>
-<p><figure><img src=/assets/images/shokofin/Shokofin-Connection-Options.jpg alt="Shokofin - Connection Options"></figure></p>
-<p>After you've tweaked the connection settings then you're free to change any of the other settings to your liking, but remember; you need to refresh (or rebuild) your library/libraries if you make any changes to the plugin settings.</p>
+<h3 id=setup>Setup</h3>
+<p>Before you start using the plugin it is important to make sure the connection settings are correct, otherwise the plugin will be unable to gather metadata from your running instance of <strong>Shoko Server</strong>. If you&rsquo;re running both Jellyfin and Shoko Server on the same machine and haven&rsquo;t changed the default username/password in Shoko Server, then you&rsquo;re all set to go, but if not then you need to provide the <code>Host</code>, <code>Username</code> and <code>Password</code> credentials in the plugin settings as shown below.</p>
+<p><a href=/assets/images/shokofin/Shokofin-Connection-Options.jpg class=js-smartPhoto data-caption="Shokofin - Connection Options" data-id data-group=images>
+<img class=markdown-image src=/assets/images/shokofin/Shokofin-Connection-Options.jpg alt="Shokofin - Connection Options" loading=lazy>
+</a>
+</p>
+<p>After you&rsquo;ve tweaked the connection settings then you&rsquo;re free to change any of the other settings to your liking, but remember; you need to refresh (or rebuild) your library/libraries if you make any changes to the plugin settings.</p>
 </div>
 <div class=page-nav-wrapper>
 <div class="nav-links-wrapper page-nav-link-wrapper">
 <ul class="nav flex-column flex-nowrap" id=page-nav>
+<li class=page-nav-title>Install & Config</li>
+<li class=nav-item>
+<a class="nav-link nav-menu page-nav-link" href=#official-repository>Official Repository</a>
+</li>
+<li class=nav-item>
+<a class="nav-link nav-menu page-nav-link" href=#github-releases>Github Releases</a>
+</li>
+<li class=nav-item>
+<a class="nav-link nav-menu page-nav-link" href=#setup>Setup</a>
+</li>
 </ul>
 </div>
 </div>
