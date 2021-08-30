@@ -2,6 +2,50 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "1.5.0",
+      "versionURL": "150",
+      "date": "August 30th, 2021",
+      "blogLink": "https://shokoanime.com/blog/hello-shokofin",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added an Api Manager for interacting with the Api (acts as a data store and api broker)"
+        },
+        {
+          "type": "added",
+          "text": "Added a Library \"Scanner\" for filtering out some entries for other use, and to \"pre-heat\" the data for the providers."
+        },
+        {
+          "type": "added",
+          "text": "Added an experimental library separation feature, to separate movie and series libraries."
+        },
+        {
+          "type": "added",
+          "text": "Added a new way to group series/seasons and box-sets/movies based on Shoko's Group feature."
+        },
+        {
+          "type": "changed",
+          "text": "Updated the configuration page. Be sure to update your Host field in the settings if you're upgrading from an older version."
+        },
+        {
+          "type": "changed",
+          "text": "TvDB IDs can be set again, but only if opt-in to it."
+        },
+        {
+          "type": "changed",
+          "text": "Other refactor of the internals, laying the groundwork for adding trailers, theme videos (opening/endings) and missing episode metadata to series/seasons."
+        },
+        {
+          "type": "changed",
+          "text": "Style changes throughout most of the code-base."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed the \"bug\" resulting in episode title for series of type movies only be named \"Complete Movie\"."
+        }
+      ]
+    },
+    {
       "version": "1.4.7",
       "versionURL": "147",
       "date": "June 2nd, 2021",
