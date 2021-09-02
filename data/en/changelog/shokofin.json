@@ -2,6 +2,50 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "1.6.0",
+      "versionURL": "160",
+      "date": "NA",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add a new option to allow switching between which source(s) to use for the series/season/episode descriptions."
+        },
+        {
+          "type": "added",
+          "text": "Add a new option to prefer series/season posters from AniDB over other sources. On by default."
+        },
+        {
+          "type": "added",
+          "text": "Added some more debug statements."
+        },
+        {
+          "type": "changed",
+          "text": "Updated the existing log statements."
+        },
+        {
+          "type": "changed",
+          "text": "Some code cleanup and removal of forgotten/left-over debug code from pre 1.5 release."
+        },
+        {
+          "type": "changed",
+          "text": "Changed the Scrobbler to always report back the current watch state to Shoko on playback stop if the feature is enabled. This will allow partial watch states to sync back to Shoko for display in Web UI in the future."
+        },
+        {
+          "type": "fixed",
+          "text": "The Scobbler will now also work with movies."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed Specials when Series Grouping is set to using Shoko's Groups"
+        },
+        {
+          "type": "removed",
+          "text": "Unlinked the Shoko Series Id from movies. It was not used for awhile, and will not show up in the metadata panel anymore."
+        }
+      ]
+    },
+    {
       "version": "1.5.0",
       "versionURL": "150",
       "date": "August 30th, 2021",
