@@ -189,15 +189,15 @@ installed Plex into the default install directory, make adjustments as needed to
 <h3 id=windows>Windows</h3>
 <p>If you haven&rsquo;t done so, <a href=https://shokoanime.com/downloads/ target=_blank rel=noopener>Download Shoko Metadata</a> and extract the zip file, inside
 the zip folder is a folder labeled <strong>ShokoMetadata.bundle</strong>. Move this folder into the following directory.</p>
-<pre><code>%LOCALAPPDATA%\Plex Media Server\Plug-ins
+<pre tabindex=0><code>%LOCALAPPDATA%\Plex Media Server\Plug-ins
 </code></pre><p>Now you need to move the <strong>Movie</strong> and <strong>Series</strong> scanners into the scanner folder. If you&rsquo;ve never installed custom
 scanners before you&rsquo;ll need to create this folder first.</p>
 <p>Create a folder labeled <strong>Scanners</strong> in the following directory.</p>
-<pre><code>%LOCALAPPDATA%\Plex Media Server
+<pre tabindex=0><code>%LOCALAPPDATA%\Plex Media Server
 </code></pre><p>The <strong>Movie</strong> and <strong>Series</strong> scanners are located in the following directory.</p>
-<pre><code>%LOCALAPPDATA%\Plex Media Server\Plug-ins\ShokoMetadata.bundle\Contents\Resources
+<pre tabindex=0><code>%LOCALAPPDATA%\Plex Media Server\Plug-ins\ShokoMetadata.bundle\Contents\Resources
 </code></pre><p>Move both of these folders into the following directory.</p>
-<pre><code>%LOCALAPPDATA%\Plex Media Server\Scanners
+<pre tabindex=0><code>%LOCALAPPDATA%\Plex Media Server\Scanners
 </code></pre><p>Proceed to <strong>Editing Plex Scanners</strong> to make the required edits for the scanners to work.</p>
 <h3 id=linux>Linux</h3>
 <p><strong>Before you continue</strong>, to make it easier to follow the guide, regardless of the Plex install method, we will assign an environment
@@ -255,7 +255,7 @@ or see <strong>Editing Plex Scanners</strong>><strong>Windows</strong> for more 
 <h3 id=windows2>Windows</h3>
 <p><strong>Editing Shoko Movie Scanner</strong></p>
 <p>Navigate to the following folder</p>
-<pre><code>%LOCALAPPDATA%\Plex Media Server\Scanners\Movies
+<pre tabindex=0><code>%LOCALAPPDATA%\Plex Media Server\Scanners\Movies
 </code></pre><p>Open <strong>Shoko Movie Scanner.py</strong> in your editor of choice and modify the <strong>Prefs</strong> section to match your Shoko setup. For
 most users you&rsquo;ll only need to change the <strong>username</strong> and <strong>password</strong>. As Python is space-sensitive make sure to not
 add or remove any spaces.</p>
@@ -267,7 +267,7 @@ add or remove any spaces.</p>
 }
 </code></pre></div><p><strong>Editing Shoko Series Scanner</strong></p>
 <p>Navigate to the following folder</p>
-<pre><code>%LOCALAPPDATA%\Plex Media Server\Scanners\Series
+<pre tabindex=0><code>%LOCALAPPDATA%\Plex Media Server\Scanners\Series
 </code></pre><p>Open <strong>Shoko Series Scanner.py</strong> in your editor of choice and modify the <strong>Prefs</strong> section to match your Shoko setup.
 For most users you&rsquo;ll only need to change the <strong>username</strong> and <strong>password</strong>. As Python is space-sensitive make sure to
 not add or remove any spaces.</p>

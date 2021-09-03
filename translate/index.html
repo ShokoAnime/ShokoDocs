@@ -240,7 +240,7 @@ Shoko is an anime cataloging program designed to automate the entire process of 
 <h5 id=language-specific-css>Language Specific CSS</h5>
 <p>To workaround unforeseen CSS changes that come with translating websites, we&rsquo;ve made it so <strong>language specific CSS</strong> files can be added to correct any CSS issues that might arise. Create a new file in the <strong>static/css/lang</strong> folder and name it the same as the <strong>language code</strong> you used in the <strong>config.toml</strong> file.</p>
 <p>An example of adding a CSS file for the German language.</p>
-<pre><code class=language-dir data-lang=dir>  static/css/lang/de.css
+<pre tabindex=0><code class=language-dir data-lang=dir>  static/css/lang/de.css
 </code></pre><p>You&rsquo;ll also need to add the following conditional statement to the <strong>head.html</strong> file located in <strong>layouts/partials/</strong> in order for the language specific CSS file to load. Using the example below, replace the German language code with your language code and add it below the last language specific file and above the closing conditional tag, <strong>{{end}}</strong>.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go>  {{<span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>eq</span> .<span style=color:#a6e22e>Site</span>.<span style=color:#a6e22e>Language</span>.<span style=color:#a6e22e>Lang</span> <span style=color:#e6db74>&#34;de&#34;</span> }}
   &lt;<span style=color:#a6e22e>link</span> <span style=color:#a6e22e>rel</span>=<span style=color:#e6db74>&#34;stylesheet&#34;</span> <span style=color:#a6e22e>href</span>=<span style=color:#e6db74>&#34;{{&#34;</span><span style=color:#a6e22e>assets</span><span style=color:#f92672>/</span><span style=color:#a6e22e>css</span><span style=color:#f92672>/</span><span style=color:#a6e22e>lang</span><span style=color:#f92672>/</span><span style=color:#a6e22e>de</span>.<span style=color:#a6e22e>min</span>.<span style=color:#a6e22e>css</span><span style=color:#e6db74>&#34; | absURL}}&#34;</span>&gt;
@@ -249,7 +249,7 @@ Shoko is an anime cataloging program designed to automate the entire process of 
 <p>Currently, there is no way to have <strong>Hugo</strong> use the <strong>English</strong> version of a page if a translation does not exist. To workaround this issue, you&rsquo;ll be creating a <strong>language specific nav menu</strong> that will allow you to specify which pages have been translated.</p>
 <p>Navigate to <strong>layouts/partials/nav-lang</strong> and copy the <strong>nav-en.html</strong> file, then rename it, so the <strong>language code</strong> matches your language.</p>
 <p>An example of adding the nav menu for the German language.</p>
-<pre><code class=language-dir data-lang=dir>  nav-de.html
+<pre tabindex=0><code class=language-dir data-lang=dir>  nav-de.html
 </code></pre><p>Open the file, you&rsquo;ll see a list of links. You&rsquo;ll need to modify the link URL for any page you&rsquo;ve translated, so it points to the translated version.</p>
 <p>The first example is how the link for the Shoko Server install page is set up for the EN site.</p>
 <p>**Normal</p>
