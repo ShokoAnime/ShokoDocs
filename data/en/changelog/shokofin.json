@@ -9,6 +9,10 @@
       "changes": [
         {
           "type": "added",
+          "text": "Added a missing metadata provider for seasons/episodes"
+        },
+        {
+          "type": "added",
           "text": "Add a new option to allow switching between which source(s) to use for the series/season/episode descriptions."
         },
         {
