@@ -17,7 +17,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://docs.shokoanime.com/server/install/">
 <meta property="og:image" content="https://docs.shokoanime.com/icon.png">
-<meta property="article:modified_time" content="2021-08-11T19:11:56+02:00"><meta property="og:site_name" content="Shoko">
+<meta property="article:modified_time" content="2021-09-22T21:26:37-05:00"><meta property="og:site_name" content="Shoko">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://docs.shokoanime.com/icon.png">
 <meta name=twitter:title content="Installing Shoko Server">
@@ -302,6 +302,7 @@ disks, and will copy-and-delete the file from the import folder to the drop-dest
 <tr>
 <td>
 <pre>-e PUID=$uid -e PGID=$gid</pre>
+<pre>-e TZ=Etc/UTC</pre>
 </td>
 <td>
 <a href=https://docs.docker.com/engine/reference/run/#env-environment-variables target=_blank rel=noopener>Set Environment Variables.</a>
@@ -312,6 +313,8 @@ local account without effort. The example argument will make the server run with
 current user, to find the value to use for <code>PUID</code> and <code>PGID</code>, you can run log into the target
 system, either locally or over SSH, and execute the id command, supplied with the username of the user you
 want to the server to run as.
+<br><br>
+You can set the timezone with the <code>TZ</code> environment variable.
 </td>
 </tr>
 <tr>
@@ -350,6 +353,7 @@ to substitute the paths below with path(s) leading to your library and/or import
     <span style=color:#f92672>environment</span>:
       - <span style=color:#e6db74>&#34;PUID=${uid}&#34;</span>
       - <span style=color:#e6db74>&#34;PGID=${gid}&#34;</span>
+      - <span style=color:#e6db74>&#34;TZ=Etc/UTC&#34;</span>
     <span style=color:#f92672>ports</span>:
       - <span style=color:#e6db74>&#34;8111:8111&#34;</span>
     <span style=color:#f92672>volumes</span>:
