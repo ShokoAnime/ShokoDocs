@@ -158,6 +158,7 @@ If you want a more detailed explanation, then refer to the below table for a bre
 	<tr>
 		<td>
 			<pre>-e PUID=$uid -e PGID=$gid</pre>
+			<pre>-e TZ=Etc/UTC</pre>
 		</td>
 		<td>
 			<a href="https://docs.docker.com/engine/reference/run/#env-environment-variables" target="_blank"
@@ -169,6 +170,8 @@ If you want a more detailed explanation, then refer to the below table for a bre
 			current user, to find the value to use for <code>PUID</code> and <code>PGID</code>, you can run log into the target
 			system, either locally or over SSH, and execute the id command, supplied with the username of the user you
 			want to the server to run as.
+			<br><br>
+			You can set the timezone with the <code>TZ</code> environment variable.
 		</td>
 	</tr>
 	<tr>
@@ -213,6 +216,7 @@ services:
     environment:
       - "PUID=${uid}"
       - "PGID=${gid}"
+      - "TZ=Etc/UTC"
     ports:
       - "8111:8111"
     volumes:
