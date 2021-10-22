@@ -255,7 +255,32 @@
 <div class=changelog-item-wrapper>
 <div class=changelog-item>
 <div id=changelog-item-added class=changelog-item-placeholder>added</div>
-<div class=changelog-item-text>Added a missing metadata provider for seasons/episodes.</div>
+<div class=changelog-item-text>Added metadata about Genres, Studios, Writers, Directors, and more, to Series/Seasons when appropriate. You need to be on the latest version of Shoko Server to be able to add this metadata, because it relies on some changes introduced in the latest minor release.</div>
+</div>
+<div class=changelog-item>
+<div id=changelog-item-added class=changelog-item-placeholder>added</div>
+<div class=changelog-item-text>Added trailers to Series/Seasons when appropriate.</div>
+</div>
+<div class=changelog-item>
+<div id=changelog-item-added class=changelog-item-placeholder>added</div>
+<div class=changelog-item-text>Added OPs/EDs as theme videos (videos that play in the background while you're navigating the UI) to Series/Seasons where appropriate.</div>
+</div>
+<div class=changelog-item>
+<div id=changelog-item-added class=changelog-item-placeholder>added</div>
+<div class=changelog-item-text>The plugin will now provide metadata about missing and unaired episodes.
+You can toggle them visible by heading over to the User Menu > Display > "Display missing episodes within seasons".</div>
+</div>
+<div class=changelog-item>
+<div id=changelog-item-added class=changelog-item-placeholder>added</div>
+<div class=changelog-item-text>Added proper support for Specials — and you can customise the behavior on the plugin will place Specials within seasons, if at all.</div>
+</div>
+<div class=changelog-item>
+<div id=changelog-item-added class=changelog-item-placeholder>added</div>
+<div class=changelog-item-text>Added support for some per-user settings and linking a Jellyfin user to a Shoko user. Note: Currently only scrobbling is implemented, even though there is an option to sync data from Shoko upon import.</div>
+</div>
+<div class=changelog-item>
+<div id=changelog-item-added class=changelog-item-placeholder>added</div>
+<div class=changelog-item-text>Added a file extension ignore list to the advanced section of the plugin settings. The list is used by the library scanner to conditionally skip the files with a certain extension altogether, because otherwise the plugin will try to send the file path to Shoko to look for a match, and complain that it can't find a match — even when there was no match to find in the first place.</div>
 </div>
 <div class=changelog-item>
 <div id=changelog-item-added class=changelog-item-placeholder>added</div>
@@ -271,11 +296,15 @@
 </div>
 <div class=changelog-item>
 <div id=changelog-item-changed class=changelog-item-placeholder>changed</div>
+<div class=changelog-item-text>Refreshed the plugin settings. Added descriptions for most of the existing options, added some new options, and reorganized all the options into new sections.</div>
+</div>
+<div class=changelog-item>
+<div id=changelog-item-changed class=changelog-item-placeholder>changed</div>
 <div class=changelog-item-text>Updated the existing log statements.</div>
 </div>
 <div class=changelog-item>
 <div id=changelog-item-changed class=changelog-item-placeholder>changed</div>
-<div class=changelog-item-text>Some code cleanup and removal of forgotten/left-over debug code from pre 1.5 release.</div>
+<div class=changelog-item-text>Some code cleanup and removal of forgotten/left-over debug code from pre-1.5 release.</div>
 </div>
 <div class=changelog-item>
 <div id=changelog-item-changed class=changelog-item-placeholder>changed</div>
@@ -283,15 +312,31 @@
 </div>
 <div class=changelog-item>
 <div id=changelog-item-fixed class=changelog-item-placeholder>fixed</div>
-<div class=changelog-item-text>The Scobbler will now also work with movies.</div>
+<div class=changelog-item-text>Libraries with physical seasons should now work as expected when series/season grouping is enabled.</div>
 </div>
 <div class=changelog-item>
 <div id=changelog-item-fixed class=changelog-item-placeholder>fixed</div>
-<div class=changelog-item-text>Fixed Specials when Series Grouping is set to using Shoko's Groups.</div>
+<div class=changelog-item-text>Fixed the library scanner for movies. The scanner didn't run for movies, resulting in trailers/openings/endings appearing as movies in the movies library.</div>
+</div>
+<div class=changelog-item>
+<div id=changelog-item-fixed class=changelog-item-placeholder>fixed</div>
+<div class=changelog-item-text>The scrobble feature (sync during playback) now work for movies as expected.</div>
+</div>
+<div class=changelog-item>
+<div id=changelog-item-fixed class=changelog-item-placeholder>fixed</div>
+<div class=changelog-item-text>Fixed the "Complete Movie" title for episodes in a series of type "movie".</div>
+</div>
+<div class=changelog-item>
+<div id=changelog-item-fixed class=changelog-item-placeholder>fixed</div>
+<div class=changelog-item-text>Fixed Specials.</div>
 </div>
 <div class=changelog-item>
 <div id=changelog-item-removed class=changelog-item-placeholder>removed</div>
-<div class=changelog-item-text>Unlinked the Shoko Series Id from movies. It was not used for awhile, and will not show up in the metadata panel anymore.</div>
+<div class=changelog-item-text>Genres will no longer show up as tags.</div>
+</div>
+<div class=changelog-item>
+<div id=changelog-item-removed class=changelog-item-placeholder>removed</div>
+<div class=changelog-item-text>Removed the hack to display Specials as normal episodes.</div>
 </div>
 </div>
 </div>
