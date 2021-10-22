@@ -2,6 +2,18 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "1.6.3",
+      "versionURL": "163",
+      "date": "October 22nd, 2021",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed a typo in the client-side code for the plugin settings preventing the settings to load properly."
+        }
+      ]
+    },
+    {
       "version": "1.6.2",
       "versionURL": "162",
       "date": "October 22nd, 2021",
