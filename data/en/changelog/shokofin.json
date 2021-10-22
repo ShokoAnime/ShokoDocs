@@ -2,14 +2,54 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
-      "version": "1.6.0",
-      "versionURL": "160",
-      "date": "NA",
+      "version": "1.6.2",
+      "versionURL": "162",
+      "date": "October 22nd, 2021",
       "blogLink": "NA",
       "changes": [
         {
           "type": "added",
-          "text": "Added a missing metadata provider for seasons/episodes"
+          "text": "You can now set the TvDB id when using not using Series/Season grouping under the advanced section in the plugin settings."
+        },
+        {
+          "type": "changed",
+          "text": "Updated the description for the library section in the plugin settings."
+        },
+        {
+          "type": "fixed",
+          "text": "Special ordering should now work as expected when using TvDB to group data."
+        }
+      ]
+    },
+    {
+      "version": "1.6.1",
+      "versionURL": "161",
+      "date": "October 18th, 2021",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "The library scanner will log the group if the the group instead of the series if appropriate."
+        },
+        {
+          "type": "fixed",
+          "text": "Not all images were used by the plugin. The plugin can now use all the images Shoko knows about for a particular series, season and/or episode."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed the magic number in the tag filter."
+        }
+      ]
+    },
+    {
+      "version": "1.6.0",
+      "versionURL": "160",
+      "date": "October 11th, 2021",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added a missing metadata provider for seasons/episodes."
         },
         {
           "type": "added",
@@ -41,7 +81,7 @@
         },
         {
           "type": "fixed",
-          "text": "Fixed Specials when Series Grouping is set to using Shoko's Groups"
+          "text": "Fixed Specials when Series Grouping is set to using Shoko's Groups."
         },
         {
           "type": "removed",
