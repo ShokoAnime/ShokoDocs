@@ -1,9 +1,9 @@
 +++
-title = "Configuring Shokofin"
-description = "Information on how to install & configure Shokofin, a Jellyfin Plugin."
+title = "Install Shokofin"
+description = "Information on how to install Shokofin."
 aliases = ["/install"]
 [[pageNav]]
-navTitle = "Install & Config"
+navTitle = "Install"
 name = "Official Repository"
 id = "official-repository"
 [[pageNav]]
