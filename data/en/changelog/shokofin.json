@@ -2,6 +2,42 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "1.7.0",
+      "versionURL": "170",
+      "date": "January 12th, 2022",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Allow inputting only the IP/DNS name in the host field in the connection settings."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix Unknown Seasons under the merge friendly grouping."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix for adding the TvDB/TMDB Id to episodes under the default grouping (no grouping)."
+        },
+        {
+          "type": "chore",
+          "text": "Update the descriptions for the user sync settings."
+        },
+        {
+          "type": "chore",
+          "text": "Update the description for the library separation setting. "
+        },
+        {
+          "type": "chore",
+          "text": "Update the name of the setting that needs to be toggled when changing the plugin library settings."
+        },
+        {
+          "type": "chore",
+          "text": "Try to clarify the descriptions for the specials placement setting, and remove the confusing (magical) default option."
+        }
+      ]
+    },
+    {
       "version": "1.6.3",
       "versionURL": "163",
       "date": "October 22nd, 2021",
