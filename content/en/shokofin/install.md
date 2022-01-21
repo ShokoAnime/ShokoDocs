@@ -3,6 +3,8 @@ title = "Install Shokofin"
 description = "Information on how to install Shokofin."
 aliases = ["/install"]
 [[pageNav]]
+navTitle = "Requirements"
+[[pageNav]]
 navTitle = "Install"
 name = "Official Repository"
 id = "official-repository"
@@ -14,9 +16,13 @@ name = "Setup"
 id = "setup"
 +++
 
-## Install{.page-first-header}
+## Requirements{.page-first-header}
 
-There are multiple ways to install this plugin, but the recommended way is to use the official Jellyfin repository. Be sure to configure your plugin settings before using it on a library. Read more on that in the next section after you've finished your install.
+The plugin requires a version of Jellyfin greater or equal to **10.7.0** (`>=10.7.0`) and an ustable version of Shoko Server greater or equal to **4.1.1** (`>=4.1.1`) to be installed. It also requires that you have already set up and are using Shoko Server, and that the directories/folders you intend to use in Jellyfin are fully indexed (and optionally managed) by Shoko Server, otherwise the plugin won't be able to funciton properly — it won't be able to find metadata about any entries that are not indexed by Shoko Server since the metadata we want is not available.
+
+## Install
+
+There are multiple ways to install this plugin, but the recommended way is to use the official Jellyfin repository. Be sure to establish a connection between the plugin and your running instance of **Shoko Server** in the plugin settings before trying to use it on a library. Read more on that in the next section after you've finished your install.
 
 ### Official Repository
 
@@ -41,8 +47,8 @@ There are multiple ways to install this plugin, but the recommended way is to us
 
 ### Setup
 
-Before you start using the plugin it is important to make sure the connection settings are correct, otherwise the plugin will be unable to gather metadata from your running instance of **Shoko Server**. If you're running both Jellyfin and Shoko Server on the same machine and haven't changed the default username/password in Shoko Server, then you're all set to go, but if not then you need to provide the `Host`, `Username` and `Password` credentials in the plugin settings as shown below.
+Before you start using the plugin it is important to connect the plugin to a running instance of **Shoko Server**. So head over to the plugin settings and provide the `Host`, `Username` and `Password` credentials and click the `Connect` button.
 
-![Shokofin - Connection Options](/assets/images/shokofin/Shokofin-Connection-Options.jpg)
+![Shokofin - Connection Settings](/assets/images/shokofin/Shokofin-Connection-Settings.jpg)
 
-After you've tweaked the connection settings then you're free to change any of the other settings to your liking, but remember; you need to refresh (or rebuild) your library/libraries if you make any changes to the plugin settings.
+After you've established a connection to a running instance of **Shoko Server** then you're free to either use the plugin as-is or to change any of the other settings to your liking.
