@@ -2,6 +2,26 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "1.7.1",
+      "versionURL": "171",
+      "date": "January 21st, 2022",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix the movie provider when using Shoko's Groups feature to group movies into box-sets."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix the description for movies with a main entry and part entries on AniDB."
+        },
+        {
+          "type": "chore",
+          "text": "Update the read-me file."
+        }
+      ]
+    },
+    {
       "version": "1.7.0",
       "versionURL": "170",
       "date": "January 12th, 2022",
