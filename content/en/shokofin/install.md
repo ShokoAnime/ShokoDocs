@@ -49,6 +49,6 @@ There are multiple ways to install this plugin, but the recommended way is to us
 
 Before you start using the plugin it is important to connect the plugin to a running instance of **Shoko Server**. So head over to the plugin settings and provide the `Host`, `Username` and `Password` credentials and click the `Connect` button.
 
-![Shokofin - Connection Settings](/assets/images/shokofin/Shokofin-Connection-Settings.jpg)
+![Shokofin - Connection Settings](/assets/images/shokofin/Shokofin-Connection-Settings.png)
 
 After you've established a connection to a running instance of **Shoko Server** then you're free to either use the plugin as-is or to change any of the other settings to your liking.
