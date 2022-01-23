@@ -2,6 +2,22 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "1.7.2",
+      "versionURL": "1.7.2",
+      "date": "NA",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix refreshing outside a library scan for entries."
+        },
+        {
+          "type": "chore",
+          "text": "Fix spelling for task names."
+        }
+      ]
+    },
+    {
       "version": "1.7.1",
       "versionURL": "171",
       "date": "January 21st, 2022",
