@@ -13,6 +13,10 @@
         },
         {
           "type": "chore",
+          "text": "Refactor Find to FirstOrDefault."
+        },
+        {
+          "type": "chore",
           "text": "Fix spelling for task names."
         }
       ]
