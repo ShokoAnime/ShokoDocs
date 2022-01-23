@@ -7,10 +7,16 @@
 Yes it Does!
 
 Using [Docker](https://www.docker.com/) you can run **Shoko Server** natively on Linux. We've created
-a [Linux Install Guide](/linux) that we highly recommend all Linux users follow to properly install Shoko Server. If
+a [Linux Install Guide](../server/install) that we highly recommend all Linux users follow to properly install Shoko Server. If
 needed, additional support can be found by visiting our **Discord Server**.
 
 Please keep in mind that Shoko Server on Linux is still in beta so issues are to be expected.
+
+{{% /faq %}} {{< faq-section type="general" >}} {{% faq type="general" id="linux-support-desktop" question="What about Shoko Desktop on Linux/MacOS?" %}}
+
+There are no plans to add Linux or MacOS support to **Shoko Desktop** as it is being phased out.
+
+Several community members have had success running the Windows client under Wine on [Linux](../server/linux-desktop) and on MacOS using the same wineprefix dependencies via Portingkit.
 
 {{% /faq %}} {{% faq type="general" id="anidb-ban" question="I've Been Banned From AniDB?" %}}
 
