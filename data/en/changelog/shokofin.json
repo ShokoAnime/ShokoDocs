@@ -8,16 +8,16 @@
       "blogLink": "NA",
       "changes": [
         {
-          "type": "fixed",
-          "text": "Fix refreshing outside a library scan for entries."
-        },
-        {
-          "type": "chore",
+          "type": "changed",
           "text": "Refactor Find to FirstOrDefault."
         },
         {
-          "type": "chore",
+          "type": "changed",
           "text": "Fix spelling for task names."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix refreshing outside a library scan for entries."
         }
       ]
     },
@@ -32,12 +32,12 @@
           "text": "Fix the movie provider when using Shoko's Groups feature to group movies into box-sets."
         },
         {
-          "type": "fixed",
-          "text": "Fix the description for movies with a main entry and part entries on AniDB."
+          "type": "changed",
+          "text": "Update the read-me file."
         },
         {
-          "type": "chore",
-          "text": "Update the read-me file."
+          "type": "fixed",
+          "text": "Fix the description for movies with a main entry and part entries on AniDB."
         }
       ]
     },
@@ -52,28 +52,28 @@
           "text": "Allow inputting only the IP/DNS name in the host field in the connection settings."
         },
         {
+          "type": "changed",
+          "text": "Update the descriptions for the user sync settings."
+        },
+        {
+          "type": "changed",
+          "text": "Update the description for the library separation setting. "
+        },
+        {
+          "type": "changed",
+          "text": "Update the name of the setting that needs to be toggled when changing the plugin library settings."
+        },
+        {
+          "type": "changed",
+          "text": "Try to clarify the descriptions for the specials placement setting, and remove the confusing (magical) default option."
+        },
+        {
           "type": "fixed",
           "text": "Fix Unknown Seasons under the merge friendly grouping."
         },
         {
           "type": "fixed",
           "text": "Fix for adding the TvDB/TMDB Id to episodes under the default grouping (no grouping)."
-        },
-        {
-          "type": "chore",
-          "text": "Update the descriptions for the user sync settings."
-        },
-        {
-          "type": "chore",
-          "text": "Update the description for the library separation setting. "
-        },
-        {
-          "type": "chore",
-          "text": "Update the name of the setting that needs to be toggled when changing the plugin library settings."
-        },
-        {
-          "type": "chore",
-          "text": "Try to clarify the descriptions for the specials placement setting, and remove the confusing (magical) default option."
         }
       ]
     },
