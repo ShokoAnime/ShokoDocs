@@ -596,21 +596,25 @@ a.nav-title {
 
 #changelog-item-added {
     background: #E1F0FF;
+    border: 1px solid #3699FF;
     color: #3699FF;
 }
 
 #changelog-item-changed {
     background: #C9F7F5;
+    border: 1px solid #1BC5BD;
     color: #1BC5BD;
 }
 
 #changelog-item-fixed {
     background: #FFF4DE;
+    border: 1px solid #FFA800;
     color: #FFA800;
 }
 
 #changelog-item-removed {
     background: #FFE2E5;
+    border: 1px solid #F64E60;
     color: #F64E60;
 }
 
