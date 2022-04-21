@@ -2,6 +2,26 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "1.7.3",
+      "versionURL": "1.7.3",
+      "date": "April 21st, 2022",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add image width and height when supported."
+        },
+        {
+          "type": "added",
+          "text": "Add more trace log points."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix GetDescription in TextUtil."
+        }
+      ]
+    },
+    {
       "version": "1.7.2",
       "versionURL": "1.7.2",
       "date": "January 23rd, 2022",
