@@ -1,282 +1,48 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>Installing & Configuring My Anime 3 | Shoko</title>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css integrity=sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2 crossorigin=anonymous>
-<link rel=preconnect href=https://fonts.gstatic.com>
-<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600&family=Mulish:wght@300;400;500;600;700&display=swap" rel=stylesheet>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css>
-<link rel=stylesheet href=https://docs.shokoanime.com/assets/css/main.min.css>
-<link rel=stylesheet href=https://docs.shokoanime.com/assets/css/light.min.css id=light>
-<link rel=stylesheet href=https://docs.shokoanime.com/assets/css/dark.min.css id=dark>
-<link rel=stylesheet href=https://docs.shokoanime.com/assets/css/media.min.css>
-<link rel=stylesheet href=https://unpkg.com/smartphoto@1.1.0/css/smartphoto.min.css>
-<meta property="og:title" content="Installing & Configuring My Anime 3">
-<meta property="og:description" content="Information on how to install My Anime 3 plugin, a MediaPortal plugin.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://docs.shokoanime.com/myanime3/install/">
-<meta property="og:image" content="https://docs.shokoanime.com/icon.png">
-<meta property="article:modified_time" content="2021-08-29T19:25:08-07:00"><meta property="og:site_name" content="Shoko">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://docs.shokoanime.com/icon.png">
-<meta name=twitter:title content="Installing & Configuring My Anime 3">
-<meta name=twitter:description content="Information on how to install My Anime 3 plugin, a MediaPortal plugin.">
-</head>
-<body data-spy=scroll data-target=#page-nav data-offset=80 class=lang-en>
-<div class=page-wrapper>
-<div class=main-nav-wrapper>
-<h3 class=main-nav-header>Shoko Docs</h3>
-<div class=main-nav-link-wrapper>
-<ul class="nav nav-sidebar nav-sidebar-pill" data-accordion=false>
-<li class=nav-item>
-<a class="nav-link nav-menu sidenav-menu" href=#>Shoko Server<i class=nav-angle></i></a>
-<div class="nav nav-title-wrapper">
-<a class="nav-link nav-menu" href=/server/install>How To Install</a>
-<a class="nav-link nav-menu" href=/server/setup>First Run Setup</a>
-</div>
-</li>
-<li class=nav-item>
-<a class="nav-link nav-menu sidenav-menu" href=#>Shoko Metadata<i class=nav-angle></i></a>
-<div class="nav nav-title-wrapper">
-<a class="nav-link nav-menu" href=/shokometadata/install>How To Install</a>
-<a class="nav-link nav-menu" href=/shokometadata/setup>Setup Shoko Metadata</a>
-</div>
-</li>
-<li class=nav-item>
-<a class="nav-link nav-menu sidenav-menu" href=#>Shokofin<i class=nav-angle></i></a>
-<div class="nav nav-title-wrapper">
-<a class="nav-link nav-menu" href=/shokofin/install>How To Install</a>
-</div>
-</li>
-<li class=nav-item>
-<a class="nav-link nav-menu sidenav-menu" href=#>My Anime 3<i class=nav-angle></i></a>
-<div class="nav nav-title-wrapper">
-<a class="nav-link nav-menu active" href=/myanime3/install>Install & Configuration</a>
-<a class="nav-link nav-menu" href=/myanime3/overview>Using My Anime 3</a>
-</div>
-</li>
-<li class=nav-item>
-<a class="nav-link nav-menu sidenav-menu" href=#>Changelog<i class=nav-angle></i></a>
-<div class="nav nav-title-wrapper">
-<a class="nav-link nav-menu" href=/changelog/server>Shoko Server</a>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Installing & Configuring My Anime 3 | Shoko</title><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css integrity=sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2 crossorigin=anonymous><link rel=preconnect href=https://fonts.gstatic.com><link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600&family=Mulish:wght@300;400;500;600;700&display=swap" rel=stylesheet><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css><link rel=stylesheet href=https://docs.shokoanime.com/assets/css/main.min.css><link rel=stylesheet href=https://docs.shokoanime.com/assets/css/light.min.css id=light><link rel=stylesheet href=https://docs.shokoanime.com/assets/css/dark.min.css id=dark><link rel=stylesheet href=https://docs.shokoanime.com/assets/css/media.min.css><link rel=stylesheet href=https://unpkg.com/smartphoto@1.1.0/css/smartphoto.min.css><meta property="og:title" content="Installing & Configuring My Anime 3"><meta property="og:description" content="Information on how to install My Anime 3 plugin, a MediaPortal plugin."><meta property="og:type" content="article"><meta property="og:url" content="https://docs.shokoanime.com/myanime3/install/"><meta property="og:image" content="https://docs.shokoanime.com/icon.png"><meta property="article:modified_time" content="2021-08-29T19:25:08-07:00"><meta property="og:site_name" content="Shoko"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://docs.shokoanime.com/icon.png"><meta name=twitter:title content="Installing & Configuring My Anime 3"><meta name=twitter:description content="Information on how to install My Anime 3 plugin, a MediaPortal plugin."></head><body data-spy=scroll data-target=#page-nav data-offset=80 class=lang-en><div class=page-wrapper><div class=main-nav-wrapper><h3 class=main-nav-header>Shoko Docs</h3><div class=main-nav-link-wrapper><ul class="nav nav-sidebar nav-sidebar-pill" data-accordion=false><li class=nav-item><a class="nav-link nav-menu sidenav-menu" href=#>Shoko Server<i class=nav-angle></i></a><div class="nav nav-title-wrapper"><a class="nav-link nav-menu" href=/server/install>How To Install</a>
+<a class="nav-link nav-menu" href=/server/setup>First Run Setup</a></div></li><li class=nav-item><a class="nav-link nav-menu sidenav-menu" href=#>Shoko Metadata<i class=nav-angle></i></a><div class="nav nav-title-wrapper"><a class="nav-link nav-menu" href=/shokometadata/install>How To Install</a>
+<a class="nav-link nav-menu" href=/shokometadata/setup>Setup Shoko Metadata</a></div></li><li class=nav-item><a class="nav-link nav-menu sidenav-menu" href=#>Shokofin<i class=nav-angle></i></a><div class="nav nav-title-wrapper"><a class="nav-link nav-menu" href=/shokofin/install>How To Install</a></div></li><li class=nav-item><a class="nav-link nav-menu sidenav-menu" href=#>My Anime 3<i class=nav-angle></i></a><div class="nav nav-title-wrapper"><a class="nav-link nav-menu active" href=/myanime3/install>Install & Configuration</a>
+<a class="nav-link nav-menu" href=/myanime3/overview>Using My Anime 3</a></div></li><li class=nav-item><a class="nav-link nav-menu sidenav-menu" href=#>Changelog<i class=nav-angle></i></a><div class="nav nav-title-wrapper"><a class="nav-link nav-menu" href=/changelog/server>Shoko Server</a>
 <a class="nav-link nav-menu" href=/changelog/desktop>Shoko Desktop</a>
 <a class="nav-link nav-menu" href=/changelog/webui>Shoko WebUI</a>
 <a class="nav-link nav-menu" href=/changelog/shokometadata>Shoko Metadata</a>
 <a class="nav-link nav-menu" href=/changelog/shokofin>Shokofin</a>
-<a class="nav-link nav-menu" href=/changelog/myanime3>My Anime 3</a>
-</div>
-</li>
-<li class=nav-item>
-<a href=/faq>Frequently Asked Questions</a>
-</li>
-<span class=nav-secondary></span>
-<li class=nav-item><a id=themeSwitcher href=#>Dark Theme</a></li>
-<li class=nav-item>
-<a class="nav-link nav-menu sidenav-menu" href=#>Language<i class=nav-angle></i></a>
-<div class="nav nav-title-wrapper">
-<a class="nav-link nav-menu" href=/translate>Translate</a>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class=page-outer-wrapper>
-<div class=top-nav-wrapper>
-<div class=top-nav-link-wrapper>
-<nav class="navbar navbar-expand-lg navbar-dark">
-<div class="navbar-nav nav-links top-nav-links">
-<a class="navbar-link top-nav-link" href=https://docs.shokoanime.com>Home</a>
+<a class="nav-link nav-menu" href=/changelog/myanime3>My Anime 3</a></div></li><li class=nav-item><a href=/faq>Frequently Asked Questions</a></li><span class=nav-secondary></span><li class=nav-item><a id=themeSwitcher href=#>Dark Theme</a></li><li class=nav-item><a class="nav-link nav-menu sidenav-menu" href=#>Language<i class=nav-angle></i></a><div class="nav nav-title-wrapper"><a class="nav-link nav-menu" href=/translate>Translate</a></div></li></ul></div></div><div class=page-outer-wrapper><div class=top-nav-wrapper><div class=top-nav-link-wrapper><nav class="navbar navbar-expand-lg navbar-dark"><div class="navbar-nav nav-links top-nav-links"><a class="navbar-link top-nav-link" href=https://docs.shokoanime.com>Home</a>
 <a class="navbar-link top-nav-link" href=https://shokoanime.com>Website</a>
 <a class="navbar-link top-nav-link" href=https://discord.gg/vpeHDsg target=_blank rel=noopener>Support</a>
-<a class="navbar-link top-nav-link" href=https://github.com/ShokoAnime/ShokoDocs target=_blank rel=noopener>Github</a>
-</div>
-<div class=search-wrapper>
-<i class="fas fa-search top-nav-search-icon"></i>
-<form name=cse id=searchbox action=/search/ method=get>
-<input type=hidden name=cx value=000649133662658939805:7nv0dx66q_4>
+<a class="navbar-link top-nav-link" href=https://github.com/ShokoAnime/ShokoDocs target=_blank rel=noopener>Github</a></div><div class=search-wrapper><i class="fas fa-search top-nav-search-icon"></i><form name=cse id=searchbox action=/search/ method=get><input type=hidden name=cx value=000649133662658939805:7nv0dx66q_4>
 <input type=hidden name=ie value=utf-8>
 <input type=hidden name=hl value=en>
-<input name=q type=text class=search-input autocomplete=off placeholder="Search ShokoDocs...">
-</form>
-</div>
-<span class=shoko-text>Shoko Docs</span>
-<span class=navbar-toggler onclick=openNav()>
-<i class="navbar-mobile-icon fas fa-bars fa-lg"></i>
-</span>
-<div class=navbar-collapse id=mobileSidenav>
-<div class=navbar-mobile>
-<a class=sidenav-close href=javascript:void(0) onclick=closeNav()>×</a>
-<ul class="nav nav-sidebar nav-sidebar-pill" data-accordion=false>
-<li class=nav-item>
-<a class="nav-link nav-menu sidenav-menu" href=#>Shoko Server<i class=nav-angle></i></a>
-<div class="nav nav-title-wrapper">
-<a class="nav-link nav-menu" href=/server/install>How To Install</a>
-<a class="nav-link nav-menu" href=/server/setup>First Run Setup</a>
-</div>
-</li>
-<li class=nav-item>
-<a class="nav-link nav-menu sidenav-menu" href=#>Shoko Metadata<i class=nav-angle></i></a>
-<div class="nav nav-title-wrapper">
-<a class="nav-link nav-menu" href=/shokometadata/install>How To Install</a>
-<a class="nav-link nav-menu" href=/shokometadata/setup>Setup Shoko Metadata</a>
-</div>
-</li>
-<li class=nav-item>
-<a class="nav-link nav-menu sidenav-menu" href=#>Shokofin<i class=nav-angle></i></a>
-<div class="nav nav-title-wrapper">
-<a class="nav-link nav-menu" href=/shokofin/install>How To Install</a>
-</div>
-</li>
-<li class=nav-item>
-<a class="nav-link nav-menu sidenav-menu" href=#>My Anime 3<i class=nav-angle></i></a>
-<div class="nav nav-title-wrapper">
-<a class="nav-link nav-menu active" href=/myanime3/install>Install & Configuration</a>
-<a class="nav-link nav-menu" href=/myanime3/overview>Using My Anime 3</a>
-</div>
-</li>
-<li class=nav-item>
-<a class="nav-link nav-menu sidenav-menu" href=#>Changelog<i class=nav-angle></i></a>
-<div class="nav nav-title-wrapper">
-<a class="nav-link nav-menu" href=/changelog/server>Shoko Server</a>
+<input name=q type=text class=search-input autocomplete=off placeholder="Search ShokoDocs..."></form></div><span class=shoko-text>Shoko Docs</span>
+<span class=navbar-toggler onclick=openNav()><i class="navbar-mobile-icon fas fa-bars fa-lg"></i></span><div class=navbar-collapse id=mobileSidenav><div class=navbar-mobile><a class=sidenav-close href=javascript:void(0) onclick=closeNav()>×</a><ul class="nav nav-sidebar nav-sidebar-pill" data-accordion=false><li class=nav-item><a class="nav-link nav-menu sidenav-menu" href=#>Shoko Server<i class=nav-angle></i></a><div class="nav nav-title-wrapper"><a class="nav-link nav-menu" href=/server/install>How To Install</a>
+<a class="nav-link nav-menu" href=/server/setup>First Run Setup</a></div></li><li class=nav-item><a class="nav-link nav-menu sidenav-menu" href=#>Shoko Metadata<i class=nav-angle></i></a><div class="nav nav-title-wrapper"><a class="nav-link nav-menu" href=/shokometadata/install>How To Install</a>
+<a class="nav-link nav-menu" href=/shokometadata/setup>Setup Shoko Metadata</a></div></li><li class=nav-item><a class="nav-link nav-menu sidenav-menu" href=#>Shokofin<i class=nav-angle></i></a><div class="nav nav-title-wrapper"><a class="nav-link nav-menu" href=/shokofin/install>How To Install</a></div></li><li class=nav-item><a class="nav-link nav-menu sidenav-menu" href=#>My Anime 3<i class=nav-angle></i></a><div class="nav nav-title-wrapper"><a class="nav-link nav-menu active" href=/myanime3/install>Install & Configuration</a>
+<a class="nav-link nav-menu" href=/myanime3/overview>Using My Anime 3</a></div></li><li class=nav-item><a class="nav-link nav-menu sidenav-menu" href=#>Changelog<i class=nav-angle></i></a><div class="nav nav-title-wrapper"><a class="nav-link nav-menu" href=/changelog/server>Shoko Server</a>
 <a class="nav-link nav-menu" href=/changelog/desktop>Shoko Desktop</a>
 <a class="nav-link nav-menu" href=/changelog/webui>Shoko WebUI</a>
 <a class="nav-link nav-menu" href=/changelog/shokometadata>Shoko Metadata</a>
 <a class="nav-link nav-menu" href=/changelog/shokofin>Shokofin</a>
-<a class="nav-link nav-menu" href=/changelog/myanime3>My Anime 3</a>
-</div>
-</li>
-<li class=nav-item>
-<a href=/faq>Frequently Asked Questions</a>
-</li>
-<li class=nav-item><a id=themeSwitcherMobile href=#>Dark Theme</a></li>
-<li class=nav-item>
-<a class="nav-link nav-menu sidenav-menu" href=#>Language<i class=nav-angle></i></a>
-<div class="nav nav-title-wrapper">
-<a class="nav-link nav-menu" href=/translate>Translate</a>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</nav>
-</div>
-</div>
-<div class=breadcrumb-outer-wrapper>
-<div class=breadcrumb-wrapper>
-<div class=breadcrumb-list>
-<a href=/>Shoko</a>
+<a class="nav-link nav-menu" href=/changelog/myanime3>My Anime 3</a></div></li><li class=nav-item><a href=/faq>Frequently Asked Questions</a></li><li class=nav-item><a id=themeSwitcherMobile href=#>Dark Theme</a></li><li class=nav-item><a class="nav-link nav-menu sidenav-menu" href=#>Language<i class=nav-angle></i></a><div class="nav nav-title-wrapper"><a class="nav-link nav-menu" href=/translate>Translate</a></div></li></ul></div></div></nav></div></div><div class=breadcrumb-outer-wrapper><div class=breadcrumb-wrapper><div class=breadcrumb-list><a href=/>Shoko</a>
 <span class=breadcrumb-separator>/</span>
 <a href=/myanime3>My Anime 3</a>
 <span class=breadcrumb-separator>/</span>
-<span class=breadcrumb-active>Installing & Configuring My Anime 3</span>
-</div>
-<div class=github-wrapper>
-<i class="fab fa-github github-icon"></i>
-<a href=https://github.com/shokoanime/Shokodocs/blob/master/content/myanime3/install.md>Edit On GitHub</a>
-</div>
-</div>
-</div>
-<div class=page-section-wrapper>
-<div class=page-content-wrapper>
-<h2 class=page-first-header id=is-shoko-server-mandatory>Is Shoko Server Mandatory?</h2>
-<p>My Anime 3 is not a standalone plugin and <strong>requires Shoko Server</strong> installed, configured and running in order to work
+<span class=breadcrumb-active>Installing & Configuring My Anime 3</span></div><div class=github-wrapper><i class="fab fa-github github-icon"></i>
+<a href=https://github.com/shokoanime/Shokodocs/blob/master/content/myanime3/install.md>Edit On GitHub</a></div></div></div><div class=page-section-wrapper><div class=page-content-wrapper><h2 class=page-first-header id=is-shoko-server-mandatory>Is Shoko Server Mandatory?</h2><p>My Anime 3 is not a standalone plugin and <strong>requires Shoko Server</strong> installed, configured and running in order to work
 properly. If you haven&rsquo;t done this yet, <a href=https://shokoanime.com/downloads/ target=_blank rel=noopener>Download Shoko Server</a> from our main website
-and use the installation guides located in the menu on the left to properly install and configure Shoko Server.</p>
-<div class="alert alert-warning" role=alert>
-<h4 class=alert-heading>My Anime 3 - Future Development</h4>
-<span class=alert-text>My Anime 3 is no longer in active development and
+and use the installation guides located in the menu on the left to properly install and configure Shoko Server.</p><div class="alert alert-warning" role=alert><h4 class=alert-heading>My Anime 3 - Future Development</h4><span class=alert-text>My Anime 3 is no longer in active development and
 has entered maintenance mode. Any developers interested in further developing My Anime 3, please contact <strong>Elemental
-Crisis</strong> on the Shoko Discord.</span>
-</div>
-<h3 id=installing-my-anime-3>Installing My Anime 3</h3>
-<p>Like other MediaPortal plugins, My Anime 3 uses the MPEI installer, so you should already be familiar with how to
-install plugins. Please note, My Anime 3 only supports the skins listed below.</p>
-<p>While we have no plans to add support for additional skins, we&rsquo;ll always accept PR&rsquo;s on Github for new skins.</p>
-<ul>
-<li>Ares</li>
-<li>Avallanche</li>
-<li>Avalon</li>
-<li>Default Wide HD</li>
-<li>Streamed MP</li>
-<li>Titan</li>
-</ul>
-<h3 id=initial-setup>Initial Setup</h3>
-<p><a href=/assets/images/my-anime-3/MediaPortal-Config.jpg class=js-smartPhoto data-caption="MediaPortal Config" data-id data-group=images>
-<img class=markdown-image src=/assets/images/my-anime-3/MediaPortal-Config.jpg alt="MediaPortal Config" loading=lazy>
-</a>
-</p>
-<p>Once My Anime 3 has been installed, open the <strong>MediaPortal Configuration</strong> window and from the list of <strong>plugins</strong>,
-select My Anime 3. Please note, Shoko Server will need to be running in order to make any changes.</p>
-<p>We recommend going through each of the settings tab as there are a lot of unique options just for My Anime 3 and how it
-functions in MediaPortal.</p>
-<h3 id=main-settings>Main Settings</h3>
-<p><a href=/assets/images/my-anime-3/My-Anime-3-Main.jpg class=js-smartPhoto data-caption="My Anime 3 - Main Screen" data-id data-group=images>
-<img class=markdown-image src=/assets/images/my-anime-3/My-Anime-3-Main.jpg alt="My Anime 3 - Main Screen" loading=lazy>
-</a>
-</p>
-<p>Unless you&rsquo;re running MediaPortal on another computer or changed the port Shoko Server uses, the default settings do not
+Crisis</strong> on the Shoko Discord.</span></div><h3 id=installing-my-anime-3>Installing My Anime 3</h3><p>Like other MediaPortal plugins, My Anime 3 uses the MPEI installer, so you should already be familiar with how to
+install plugins. Please note, My Anime 3 only supports the skins listed below.</p><p>While we have no plans to add support for additional skins, we&rsquo;ll always accept PR&rsquo;s on Github for new skins.</p><ul><li>Ares</li><li>Avallanche</li><li>Avalon</li><li>Default Wide HD</li><li>Streamed MP</li><li>Titan</li></ul><h3 id=initial-setup>Initial Setup</h3><p><a href=/assets/images/my-anime-3/MediaPortal-Config.jpg class=js-smartPhoto data-caption="MediaPortal Config" data-id data-group=images><img class=markdown-image src=/assets/images/my-anime-3/MediaPortal-Config.jpg alt="MediaPortal Config" loading=lazy></a></p><p>Once My Anime 3 has been installed, open the <strong>MediaPortal Configuration</strong> window and from the list of <strong>plugins</strong>,
+select My Anime 3. Please note, Shoko Server will need to be running in order to make any changes.</p><p>We recommend going through each of the settings tab as there are a lot of unique options just for My Anime 3 and how it
+functions in MediaPortal.</p><h3 id=main-settings>Main Settings</h3><p><a href=/assets/images/my-anime-3/My-Anime-3-Main.jpg class=js-smartPhoto data-caption="My Anime 3 - Main Screen" data-id data-group=images><img class=markdown-image src=/assets/images/my-anime-3/My-Anime-3-Main.jpg alt="My Anime 3 - Main Screen" loading=lazy></a></p><p>Unless you&rsquo;re running MediaPortal on another computer or changed the port Shoko Server uses, the default settings do not
 need to be changed. We also recommend using Shoko Server to <strong>modify your import folders</strong> to avoid potential problems.
 Keep in mind, if running MediaPortal on another machine, you&rsquo;ll need to properly map the <strong>Import Folder</strong> path in **
-Local Mapping**.</p>
-<p>If <strong>Ask before starting streaming playback</strong> is checked, My Anime 3 will ask each time during file playback if you want
-to stream the file. We recommend unchecking this box for users using MediaPortal and My Anime 3 on a different computer.</p>
-<h3 id=display-settings>Display Settings</h3>
-<p><a href=/assets/images/my-anime-3/My-Anime-3-Display.jpg class=js-smartPhoto data-caption="My Anime 3 - Display" data-id data-group=images>
-<img class=markdown-image src=/assets/images/my-anime-3/My-Anime-3-Display.jpg alt="My Anime 3 - Display" loading=lazy>
-</a>
-</p>
-<p>These are all <strong>personal preference</strong> settings that affect what you see and don&rsquo;t see in My Anime 3 so there is no right
+Local Mapping**.</p><p>If <strong>Ask before starting streaming playback</strong> is checked, My Anime 3 will ask each time during file playback if you want
+to stream the file. We recommend unchecking this box for users using MediaPortal and My Anime 3 on a different computer.</p><h3 id=display-settings>Display Settings</h3><p><a href=/assets/images/my-anime-3/My-Anime-3-Display.jpg class=js-smartPhoto data-caption="My Anime 3 - Display" data-id data-group=images><img class=markdown-image src=/assets/images/my-anime-3/My-Anime-3-Display.jpg alt="My Anime 3 - Display" loading=lazy></a></p><p>These are all <strong>personal preference</strong> settings that affect what you see and don&rsquo;t see in My Anime 3 so there is no right
 or wrong way to configure them. You can also set the default audio language and subtitle language to avoid having to
-change if the series you are watching doesnt&rsquo;t have the correct ones as default.</p>
-<h3 id=other-settings>Other Settings</h3>
-<p><a href=/assets/images/my-anime-3/My-Anime-3-Other.jpg class=js-smartPhoto data-caption="My Anime 3 - Other" data-id data-group=images>
-<img class=markdown-image src=/assets/images/my-anime-3/My-Anime-3-Other.jpg alt="My Anime 3 - Other" loading=lazy>
-</a>
-</p>
-<p>The Other section just contains a couple settings related to FFDShow processing. There really isn&rsquo;t a need to change the
-defaults unless you want to increase or decrease the wait times for the listed setting.</p>
-</div>
-<div class=page-nav-wrapper>
-<div class="nav-links-wrapper page-nav-link-wrapper">
-<ul class="nav flex-column flex-nowrap" id=page-nav>
-<li class=page-nav-title>Install & Config</li>
-<li class=nav-item>
-<a class="nav-link nav-menu page-nav-link" href=#installing-my-anime-3>Installing My Anime 3</a>
-</li>
-<li class=nav-item>
-<a class="nav-link nav-menu page-nav-link" href=#initial-setup>Initial Setup</a>
-</li>
-<li class=nav-item>
-<a class="nav-link nav-menu page-nav-link" href=#main-settings>Main Settings</a>
-</li>
-<li class=nav-item>
-<a class="nav-link nav-menu page-nav-link" href=#display-settings>Display Settings</a>
-</li>
-<li class=nav-item>
-<a class="nav-link nav-menu page-nav-link" href=#other-settings>Other Settings</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class=footer-wrapper>
-<div class=footer-info>
-<div class=footer-links>
-<a href=https://shokoanime.com target=_blank>Website</a>
+change if the series you are watching doesnt&rsquo;t have the correct ones as default.</p><h3 id=other-settings>Other Settings</h3><p><a href=/assets/images/my-anime-3/My-Anime-3-Other.jpg class=js-smartPhoto data-caption="My Anime 3 - Other" data-id data-group=images><img class=markdown-image src=/assets/images/my-anime-3/My-Anime-3-Other.jpg alt="My Anime 3 - Other" loading=lazy></a></p><p>The Other section just contains a couple settings related to FFDShow processing. There really isn&rsquo;t a need to change the
+defaults unless you want to increase or decrease the wait times for the listed setting.</p></div><div class=page-nav-wrapper><div class="nav-links-wrapper page-nav-link-wrapper"><ul class="nav flex-column flex-nowrap" id=page-nav><li class=page-nav-title>Install & Config</li><li class=nav-item><a class="nav-link nav-menu page-nav-link" href=#installing-my-anime-3>Installing My Anime 3</a></li><li class=nav-item><a class="nav-link nav-menu page-nav-link" href=#initial-setup>Initial Setup</a></li><li class=nav-item><a class="nav-link nav-menu page-nav-link" href=#main-settings>Main Settings</a></li><li class=nav-item><a class="nav-link nav-menu page-nav-link" href=#display-settings>Display Settings</a></li><li class=nav-item><a class="nav-link nav-menu page-nav-link" href=#other-settings>Other Settings</a></li></ul></div></div></div><div class=footer-wrapper><div class=footer-info><div class=footer-links><a href=https://shokoanime.com target=_blank>Website</a>
 <a class=footer-links-spacer href=https://discord.gg/vpeHDsg target=_blank>Support</a>
-<a href=https://github.com/ShokoAnime/ target=_blank>GitHub</a>
-</div>
-<div class=footer-copyright>
-<p>© 2022 Shoko. All Rights Reserved.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<script src=https://code.jquery.com/jquery-3.5.1.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
+<a href=https://github.com/ShokoAnime/ target=_blank>GitHub</a></div><div class=footer-copyright><p>© 2022 Shoko. All Rights Reserved.</p></div></div></div></div></div><script src=https://code.jquery.com/jquery-3.5.1.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js integrity=sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx crossorigin=anonymous></script>
 <script src=https://unpkg.com/smartphoto@1.1.0/js/smartphoto.min.js></script>
-<script src=https://docs.shokoanime.com/assets/js/main.js></script>
-</body>
-</html>
+<script src=https://docs.shokoanime.com/assets/js/main.js></script></body></html>
