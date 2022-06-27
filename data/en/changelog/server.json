@@ -68,6 +68,10 @@
           "text": "Hopefully fixed newer MariaDB compatibility."
         },
         {
+          "type": "fixed",
+          "text": "Fix TvDB episode entries to also respect user-overrides in the v3 REST API."
+        },
+        {
           "type": "removed",
           "text": "Removed Google Analytics as it was causing issues."
         }
