@@ -2,8 +2,28 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "2.0.0",
+      "versionURL": "200",
+      "date": "June 27th, 2022",
+      "blogLink": "https://shokoanime.com/blog/shoko-version-4-1-2-released/",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added support for Jellyfin 10.8."
+        },
+        {
+          "type": "changed",
+          "text": "Rewrite of Library Settings section on grouping."
+        },
+        {
+          "type": "removed",
+          "text": "Revmoed support for 10.7."
+        }
+      ]
+    },
+    {
       "version": "1.7.3",
-      "versionURL": "1.7.3",
+      "versionURL": "173",
       "date": "April 21st, 2022",
       "blogLink": "NA",
       "changes": [
@@ -23,7 +43,7 @@
     },
     {
       "version": "1.7.2",
-      "versionURL": "1.7.2",
+      "versionURL": "172",
       "date": "January 23rd, 2022",
       "blogLink": "NA",
       "changes": [

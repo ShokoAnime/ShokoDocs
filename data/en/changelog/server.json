@@ -2,6 +2,78 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "4.1.2",
+      "versionURL": "412",
+      "date": "June 27th, 2022",
+      "blogLink": "https://shokoanime.com/blog/shoko-version-4-1-2-released/",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added new endpoints to the v3 REST API."
+        },
+        {
+          "type": "added",
+          "text": "Added anime staff data."
+        },
+        {
+          "type": "added",
+          "text": "Scrobble to Trakt when using the v3 REST API."
+        },
+        {
+          "type": "added",
+          "text": "Added file, episode, and series events for plugins."
+        },
+        {
+          "type": "changed",
+          "text": "Update the tag filter system."
+        },
+        {
+          "type": "changed",
+          "text": "Do not err when moving a file to the same location, but err when moving to the location of another file."
+        },
+        {
+          "type": "changed",
+          "text": "Allow the renamers to run on all files, even unrecognised files."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed non-fuzzy series search in the v3 REST API."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed path conversion from windows to linux in file path search in the v3 REST API."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed model bindings in plex hook."
+        },
+        {
+          "type": "fixed",
+          "text": "Do not escape \"`\" for mediainfo."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix watch state not importing properly."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix descriptions in Swagger not showing up."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix the 'Orignal Work' tag in tag filters."
+        },
+        {
+          "type": "fixed",
+          "text": "Hopefully fixed newer MariaDB compatibility."
+        },
+        {
+          "type": "removed",
+          "text": "Removed Google Analytics as it was causing issues."
+        }
+      ]
+    },
+    {
       "version": "4.1.1",
       "versionURL": "411",
       "date": "August 29th, 2021",

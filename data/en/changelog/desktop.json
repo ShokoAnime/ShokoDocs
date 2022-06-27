@@ -2,6 +2,26 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoDesktop/",
   "releases": [
     {
+      "version": "4.1.2",
+      "versionURL": "412",
+      "date": "June 27th, 2022",
+      "blogLink": "https://shokoanime.com/blog/shoko-version-4-1-2-released/",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Pressing F5 in the multiple-files views (e.g. in the unrecognised tab) refreshes the view."
+        },
+        {
+          "type": "changed",
+          "text": "Quality of life improvements to the file delete files form."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix the \"Run on import\" checkbox in the renamer tab not loading the correct value on start."
+        }
+      ]
+    },
+    {
       "version": "4.1.1",
       "versionURL": "411",
       "date": "August 29th, 2021",
