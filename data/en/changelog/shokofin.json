@@ -2,6 +2,22 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "2.0.1",
+      "versionURL": "201",
+      "date": "July 2nd, 2022",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add task for clearing the plugin cache."
+        },
+        {
+          "type": "Fixed",
+          "text": "Fix playback position."
+        }
+      ]
+    },
+    {
       "version": "2.0.0",
       "versionURL": "200",
       "date": "June 27th, 2022",
