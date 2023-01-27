@@ -14,9 +14,6 @@ id = "linux"
 navTitle = "Editing Plex Scanners"
 name = "Windows"
 id = "windows2"
-[[pageNav]]
-name = "Combining Series & Movies"
-id = "combining-series--movies"
 +++
 
 ## Is Shoko Server Mandatory?{.page-first-header}
