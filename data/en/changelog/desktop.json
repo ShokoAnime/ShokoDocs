@@ -2,6 +2,46 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoDesktop/",
   "releases": [
     {
+      "version": "420",
+      "versionURL": "420",
+      "date": "March 21th, 2023",
+      "blogLink": "https://shokoanime.com/blog/shoko-version-420-released/",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Pressing F5 in the multiple-files views (e.g. in the unrecognised tab) refreshes the view."
+        },
+        {
+          "type": "added",
+          "text": "Added support for VLC playlists."
+        },
+        {
+          "type": "changed",
+          "text": "Moved to .net 6."
+        },
+        {
+          "type": "changed",
+          "text": "Improve image download capabilities in Desktop."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix scrobbling in VLC."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix file deletion dialog."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix opening urls from desktop."
+        },
+        {
+          "type": "fixed",
+          "text": "Dozens of minor fixes to improve overall stability."
+        }
+      ]
+    },
+    {
       "version": "4.1.2",
       "versionURL": "412",
       "date": "June 27th, 2022",
