@@ -1,8 +1,8 @@
 ### General { .faq-header }
-
 {{% hr %}}
 
-{{< faq-section type="general" >}} {{% faq type="general" id="linux-support" question="Does Shoko Run On Linux?" %}}
+{{< faq-section type="general" >}} 
+{{% faq type="general" id="linux-support" question="Does Shoko Run On Linux?" %}}
 
 Yes it Does!
 
@@ -12,13 +12,15 @@ needed, additional support can be found by visiting our **Discord Server**.
 
 Please keep in mind that Shoko Server on Linux is still in beta so issues are to be expected.
 
-{{% /faq %}} {{< faq-section type="general" >}} {{% faq type="general" id="linux-support-desktop" question="What about Shoko Desktop on Linux/MacOS?" %}}
+{{% /faq %}}
+{{% faq type="general" id="linux-support-desktop" question="What about Shoko Desktop on Linux/MacOS?" %}}
 
 There are no plans to add Linux or MacOS support to **Shoko Desktop** as it is being phased out.
 
 Several community members have had success running the Windows client under Wine on [Linux](../server/linux-desktop) and on MacOS using the same wineprefix dependencies via Portingkit.
 
-{{% /faq %}} {{% faq type="general" id="anidb-ban" question="I've Been Banned From AniDB?" %}}
+{{% /faq %}} 
+{{% faq type="general" id="anidb-ban" question="I've Been Banned From AniDB?" %}}
 
 The banned message you’re seeing is simply telling you that you’ve been **temporarily banned** for excessive connection
 attempts. AniDB will sometimes temporarily ban a user if their system thinks you are attempting to leech data by making
@@ -74,12 +76,13 @@ We're always making improvements to our rate limiter to avoid users getting a te
 getting banned for more than a day, join our **Discord Server**, so we can help diagnose the problem and make the
 experience smoother for you.
 
-{{% /faq %}} {{% faq type="general" id="site-streaming" question="Does Shoko Support Streaming From Different Websites?"
-%}}
+{{% /faq %}} 
+{{% faq type="general" id="site-streaming" question="Does Shoko Support Streaming From Different Websites?"%}}
 
 No, Shoko does not support streaming directly from websites such as Crunchy Roll.
 
-{{% /faq %}} {{% faq type="general" id="collection-streaming" question="Does Shoko Allow Me To Stream My Collection" %}}
+{{% /faq %}} 
+{{% faq type="general" id="collection-streaming" question="Does Shoko Allow Me To Stream My Collection" %}}
 
 Yes it does!
 
@@ -88,7 +91,8 @@ there are a few things you'll need to do in order to start streaming. First make
 allow outside access to Shoko. If using Shoko Desktop on another computer, make sure you're using one of the supported
 video players listed in **Settings And Video Players**.
 
-{{% /faq %}} {{% faq type="general" id="backup-collection" question="How Do I Backup My Collection?" %}}
+{{% /faq %}} 
+{{% faq type="general" id="backup-collection" question="How Do I Backup My Collection?" %}}
 
 While we currently do not offer a solution to backup your database whenever you'd like, we do automatically backup your
 database before updating Shoko to the latest version. If you need to restore an older version you'll find your backups
@@ -113,4 +117,5 @@ in the following locations.
     </tbody>
 </table>
 
-{{% /faq %}} {{< /faq-section >}}
+{{% /faq %}}
+{{< /faq-section >}}
