@@ -69,6 +69,10 @@
         },
         {
           "type": "fixed",
+          "text": "External sub files rename and move with the associated video file when running the renamer."
+        },
+        {
+          "type": "fixed",
           "text": "Dozens of minor fixes to improve overall stability."
         }
       ]
