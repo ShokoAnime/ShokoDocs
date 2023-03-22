@@ -21,15 +21,15 @@
         },
         {
           "type": "added",
-          "text": "Commit info included with every new release, both stable and daily."
-        },
-        {
-          "type": "added",
           "text": "Added new endpoints to the v3 REST API."
         },
         {
           "type": "changed",
-          "text": "Moved to .net 6."
+          "text": "Moved to .NET 6."
+        },
+        {
+          "type": "changed",
+          "text": "Significant speed improvements during the import process."
         },
         {
           "type": "changed",
@@ -37,11 +37,19 @@
         },
         {
           "type": "changed",
-          "text": "Speed improvements during import."
+          "text": "A rewritten AniDB provider — now more modern, more efficient, and less error prone."
         },
         {
           "type": "changed",
-          "text": "A rewritten AniDB provider — now more modern, more efficient, and less error prone."
+          "text": "Improved Filesystem Watcher"
+        },
+        {
+          "type": "changed",
+          "text": "Improved Support for Crossover Episodes"
+        },
+        {
+          "type": "changed",
+          "text": "Improved Stability with MediaInfo"
         },
         {
           "type": "changed",
@@ -53,7 +61,7 @@
         },
         {
           "type": "fixed",
-          "text": "Fixed lots of locking issues."
+          "text": "Fixed dozens of locking issues."
         },
         {
           "type": "fixed",
