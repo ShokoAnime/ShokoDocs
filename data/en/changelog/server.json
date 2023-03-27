@@ -56,6 +56,10 @@
           "text": "Startup refactor."
         },
         {
+          "type": "changed",
+          "text": "It will no longer automatically re-link to the same removed TvDB link when automatic linking is enabled and a link is removed."
+        },
+        {
           "type": "fixed",
           "text": "Fixed cache-control headers for web ui."
         },
