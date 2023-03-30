@@ -2,6 +2,18 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "4.2.1",
+      "versionURL": "421",
+      "date": "March 30th, 2023",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix up the series episode endpoint."
+        }
+      ]
+    },
+    {
       "version": "4.2.0",
       "versionURL": "420",
       "date": "March 29th, 2023",
