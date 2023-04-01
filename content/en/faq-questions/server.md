@@ -19,7 +19,7 @@ Yes, you are able to change your **Drop Destination** as many times as you want 
 Previously, Shoko did support both MySQL and SQL Server as possible database options due to multiple issues such as database access times and overall speed that were present when using an SQLite database with a large collection. Starting with **Version 3.6**, we've been steadily making improvements to address these issues that the benefits once provided by MySQL and SQL Server are now negligible. To that end and to reduce unrelated issues that could arise when using MySQL or SQL Server, support for MySQL and SQL Server as a database option has been deprecated and the option to select either of them has been removed.
 
 {{% /faq %}}
-{{% faq type="server" id="update-db-info" question="I Use MySQL / SQL Server, How Do I Update My DB Info?" %}}
+{{% faq type="server" id="update-db-info" question="I Use MySQL/MariaDB / SQL Server, How Do I Update My DB Info?" %}}
 
 Navigate to **C:\ProgramData\ShokoServer** and open the file labeled **settings.json**. You'll need to update the DB specific properties depending on what DB you use.
 
@@ -88,6 +88,22 @@ Navigate to **C:\ProgramData\ShokoServer** and open the file labeled **settings.
     </tr>
     </tbody>
 </table>
+
+{{% /faq %}}
+{{% faq type="server" id="supported-db-info" question="Which version of MySQL/MariaDB should I use?" %}}
+
+**MariaDB**
+
+Currently confirmed working MariaDB versions are **10.5.x - 10.9.x**.
+Using a version 10.10.x or higher MariaDB, **Shoko will not be able to connect**.
+This is because of an incompatibility with MySQLClient/NET.
+
+We recommend staying on a LTS release for your convenience and security. The current LTS release is **10.6.x**.
+
+**MySQL**
+
+Since MySQLClient/NET is used, all current releases should work.
+If you are running into issues with a specific version, please let us know!
 
 {{% /faq %}}
 {{< /faq-section >}}
