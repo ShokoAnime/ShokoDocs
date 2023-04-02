@@ -2,6 +2,18 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoDesktop/",
   "releases": [
     {
+      "version": "4.2.1",
+      "versionURL": "421",
+      "date": "April 2nd, 2023",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix the episode watch status displaying incorrect data."
+        }
+      ]
+    },
+    {
       "version": "420",
       "versionURL": "420",
       "date": "March 29th, 2023",

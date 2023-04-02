@@ -2,6 +2,22 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "4.2.2",
+      "versionURL": "422",
+      "date": "April 2nd, 2023",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix AniDB languages not being updated properly."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix the display of normal and special episode counts in Shoko Desktop."
+        }
+      ]
+    },
+    {
       "version": "4.2.1",
       "versionURL": "421",
       "date": "March 30th, 2023",
