@@ -220,7 +220,7 @@ services:
     ports:
       - "8111:8111"
     volumes:
-      - "$HOME:/home/shoko/.shoko"
+      - "$HOME/.shoko:/home/shoko/.shoko"
       - "/path/to/anime:/mnt/anime"
       - "/path/to/import:/mnt/import"
 ```
