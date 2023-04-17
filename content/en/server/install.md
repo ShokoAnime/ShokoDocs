@@ -147,10 +147,13 @@ If you want a more detailed explanation, then refer to the below table for a bre
 			In order for Shoko Server to manage your collection, you must map at
 			least one volume to the container.
 			<br><br>
-			<strong>Note:</strong> You can mount multiple library folders, and/or import folders, and they can be named
+			<strong>Note #1:</strong> The first path in the mapping (<code>/path/to/anime</code>) is the location on your host
+			computer, the second path (<code>/mnt/anime</code>) in the mapping is where you want to mount it inside the container.
+			<br><br>
+			<strong>Note #2:</strong> You can mount multiple library folders, and/or import folders, and they can be named
 			any way you like (e.g. /anime, /import, /export, /tv_shows, etc.).
 			<br><br>
-			When importing hard-linked files, be sure to mount the common root between your import folder and library
+			<strong>Note #3:</strong> When importing hard-linked files, be sure to mount the common root between your import folder and library
 			folder. Otherwise you will get duplicate files, because the containers sees the mount-points as separate
 			disks, and will copy-and-delete the file from the import folder to the drop-destination.
 		</td>
