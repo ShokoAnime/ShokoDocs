@@ -2,6 +2,30 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "3.0.1",
+      "versionURL": "301",
+      "date": "April 20th, 2023",
+      "blogLink": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Show images from all series linked to the Show if Shoko Groups are used."
+        },
+        {
+          "type": "fixed",
+          "text": "Add a fallback for when the main series for the group is not part of the current filtered view of the group. "
+        },
+        {
+          "type": "fixed",
+          "text": "Fix for faulty dates sent by Shoko, which in turn got them from AniDB."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix logic for how to determine the default series in a group."
+        }
+      ]
+    },
+    {
       "version": "3.0.0",
       "versionURL": "300",
       "date": "March 29th, 2023",
