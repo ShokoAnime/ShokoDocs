@@ -48,10 +48,7 @@ increase the time between updates to once a week, for example.
 
 ##### XML Cache:
 
-During initial import or when importing many series at once, it helps if you don't need to download everything. You can
-get a cache of XML files that hold series info from this [link](https://shokoanime.com/files/shoko-server/other/Anime_HTTP.zip). These go in the XML cache directory, and Shoko will use
-them to keep moving forward in case of ban, and if they are recent enough, then it won't even bother calling AniDB for
-updated info (unless you tell it to).
+**XML Cache Locations:**
 
 <table class="table table-bordered">
     <thead>
@@ -71,6 +68,21 @@ updated info (unless you tell it to).
     </tr>
     </tbody>
 </table>
+
+During initial import or when importing many series at once, it helps if you don't need to download everything. You can
+get a cache of XML files that hold series info from this [link](https://shokoanime.com/files/shoko-server/other/Anime_HTTP.zip). These go in the XML cache directory, and Shoko will use
+them to keep moving forward in case of ban, and if they are recent enough, then it won't even bother calling AniDB for
+updated info (unless you tell it to).
+
+
+1. Download `Anime_HTTP.zip` from this [link](https://shokoanime.com/files/shoko-server/other/Anime_HTTP.zip)
+1. Copy it to your Shoko Server directory
+   - Windows: `C:\ProgramData\ShokoServer`
+   - Linux: `~/.shoko/Shoko.CLI`
+2. Unzip `Anime_HTTP.zip`, if asked if you wish to replace files, do not as the files you have are likely newer
+   - Linux: `unzip -n Anime_HTTP.zip` to unzip without replacing files
+
+
 
 We're always making improvements to our rate limiter to avoid users getting a temporary ban. If you find yourself
 getting banned for more than a day, join our **Discord Server**, so we can help diagnose the problem and make the
