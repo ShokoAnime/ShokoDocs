@@ -1,0 +1,11 @@
+:root {
+	/*Docusaurus CSS Variables */
+	--ifm-color-primary: blue;
+
+
+
+	/*Custom CSS Variables*/
+	--primary-background: #FDFDFD;
+	--secondary-background: #F9F9FE;
+	--tertiary-background: #FEFEFE;
+}

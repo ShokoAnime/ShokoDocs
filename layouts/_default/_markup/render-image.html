@@ -1,3 +1,0 @@
-<a href="{{.Destination | safeURL | relURL}}" class="js-smartPhoto" data-caption="{{.Text}}" data-id="{{.Title}}" data-group="images">
-	<img class="markdown-image" src="{{.Destination | safeURL | relURL}}" alt="{{.Text}}" {{with .Title}} title="{{.}}"{{end}} loading="lazy"/>
-</a>

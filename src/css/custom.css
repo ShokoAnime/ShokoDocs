@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "./lightTheme.css";
+@import "./darkTheme.css";
+
+/* General */
+a {
+	font-weight: 600;
+}
+
+a:hover{
+	color: var(--highlight-color-1)
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Exo 2', sans-serif;
+	font-weight: 500;
+}
+
+h1 {
+	font-size: 2.5rem;
+	margin-bottom: 2rem;
+}
+
+h2 {
+	font-size: 1.75rem;
+	margin: 2rem 0 !important;
+}
+
+h3 {
+	font-size: 1.5rem;
+	margin: 2em 0 !important;
+}
+
+p {
+	margin: 1rem 0 !important;
+}
+
+strong {
+	color: var(--highlight-color-4)
+}
+
+.container {
+	font-size: 1.125rem;
+}
+
+.main-wrapper {
+	margin: 2rem auto;
+
+}
+
+/* Topnav */
+.navbar {
+	box-shadow: none;
+	background-color: var(--secondary-background);
+	border-bottom: 2px solid var(--tertiary-background);
+}
+
+.navbar .navbar__inner {
+	margin: 0 auto;
+	max-width: 1620px;
+}
+
+.navbar__icon {
+	display: flex;
+}
+
+.navbar__icon:before {
+	content: "";
+	height: 24px;
+	width: 24px;
+	margin-right: 0.5rem;
+	background-color: var(--font-color);
+}
+
+.navbar__icon:hover:before {
+	background-color: var(--highlight-color-1);
+}
+
+.navbar__discord:before {
+	mask: url(../../static/img/discord.svg) no-repeat 100% 100%;
+	mask-size: cover;
+}
+
+.navbar__github:before {
+	mask: url(../../static/img/github.svg) no-repeat 100% 100%;
+	mask-size: cover;
+}
+
+/* Sidenav*/
+.theme-doc-sidebar-container {
+	border-right: none !important;
+}
+
+.menu {
+	font-size: 0.875rem;
+	padding: 1rem 0 0 !important;
+}
+
+.menu__link,
+.menu__link--active:not(.menu__link--sublist)
+{
+	border-radius: 0.5rem;
+	padding: 0.875rem;
+}
+
+.menu__list-item-collapsible {
+	border-radius: 0.5rem;
+}
+
+/* Breadcrumbs */
+.breadcrumbs__link {
+	padding: 0;
+	background: none;
+	font-size: 0.875rem;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.breadcrumbs__item--active > .breadcrumbs__link,
+.breadcrumbs__link:any-link:hover {
+	background: none;
+	color: var(--highlight-color-1);
+}
+
+/*Content*/
+.theme-doc-footer-edit-meta-row {
+	border-top: 2px solid var(--tertiary-background);
+	padding-top: 2rem;
+	margin: auto;
+}
+
+.theme-doc-footer-edit-meta-row > .col {
+	margin: auto;
+}
+
+.pagination-nav__link {
+	border: none;
+}
+
+.pagination-nav__link:hover {
+	background: var(--tertiary-background);
+	border-radius: 0.5rem;
+}
+
+.pagination-nav__sublabel {
+	color: var(--font-color);
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+
+/* Pagenav */
+.table-of-contents {
+	border-left: 2px solid var(--tertiary-background);
+	font-size: 0.875rem;
+	font-weight: 500;
+}
+
+/* Footer */
+.footer {
+	background-color: var(--secondary-background);
+	border-top: 2px solid var(--tertiary-background);
+	height: 80px;
+}
