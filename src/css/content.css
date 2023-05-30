@@ -1,0 +1,61 @@
+/* Breadcrumbs */
+
+.breadcrumbs__link {
+	padding: 0;
+	background: none;
+	font-size: 0.875rem;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.breadcrumbs__item--active > .breadcrumbs__link,
+.breadcrumbs__link:any-link:hover {
+	background: none;
+	color: var(--highlight-color-1);
+}
+
+/* ToC */
+
+.table-of-contents {
+	border-left: 2px solid var(--tertiary-background);
+	font-size: 0.875rem;
+	font-weight: 500;
+}
+
+/* Page */
+
+.theme-doc-footer-edit-meta-row {
+	border-top: 2px solid var(--tertiary-background);
+	padding-top: 2rem;
+	margin: auto;
+}
+
+.theme-doc-footer-edit-meta-row > .col {
+	margin: auto;
+	padding-left: 0;
+}
+
+.theme-edit-this-page {
+	padding-left: 1rem;
+}
+
+.theme-edit-this-page:hover {
+	background: var(--tertiary-background);
+	border-radius: 0.5rem;
+	padding: 1.5rem 1rem 1.5rem
+}
+
+.pagination-nav__link {
+	border: none;
+}
+
+.pagination-nav__link:hover {
+	background: var(--tertiary-background);
+	border-radius: 0.5rem;
+}
+
+.pagination-nav__sublabel {
+	color: var(--font-color);
+	font-weight: 600;
+	text-transform: uppercase;
+}

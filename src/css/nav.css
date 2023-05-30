@@ -1,0 +1,33 @@
+/* Topnav */
+
+.navbar {
+	box-shadow: none;
+	background-color: var(--secondary-background);
+	border-bottom: 2px solid var(--tertiary-background);
+}
+
+.navbar .navbar__inner {
+	margin: 0 auto;
+	max-width: 1620px;
+}
+
+/* Sidenav*/
+.theme-doc-sidebar-container {
+	border-right: none !important;
+}
+
+.menu {
+	font-size: 0.875rem;
+	padding: 1rem 0 0 !important;
+}
+
+.menu__link,
+.menu__link--active:not(.menu__link--sublist)
+{
+	border-radius: 0.5rem;
+	padding: 0.875rem;
+}
+
+.menu__list-item-collapsible {
+	border-radius: 0.5rem;
+}

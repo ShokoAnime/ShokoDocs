@@ -1,0 +1,84 @@
+/* General */
+
+a {
+	font-weight: 600;
+}
+
+a:hover{
+	color: var(--highlight-color-1)
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	scrollbar-gutter: stable;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Exo 2', sans-serif;
+	font-weight: 500;
+}
+
+h1 {
+	font-size: 2.5rem;
+	margin-bottom: 2rem;
+}
+
+h2 {
+	font-size: 1.75rem;
+	margin: 2rem 0 !important;
+}
+
+h3 {
+	font-size: 1.5rem;
+	margin: 2em 0 !important;
+}
+
+p {
+	margin: 1rem 0 !important;
+}
+
+strong {
+	color: var(--highlight-color-4)
+}
+
+.container {
+	font-size: 1.125rem;
+}
+
+.main-wrapper {
+	margin: 2rem auto;
+	max-width: 1620px;
+	width: 100%;
+}
+
+.footer {
+	background-color: var(--secondary-background);
+	border-top: 2px solid var(--tertiary-background);
+	height: 80px;
+}
+
+.custom-icon {
+	display: flex;
+}
+
+.custom-icon:before {
+	content: "";
+	height: 24px;
+	width: 24px;
+	margin-right: 0.5rem;
+	background-color: var(--font-color);
+}
+
+.custom-icon:hover:before {
+	background-color: var(--highlight-color-1);
+}
+
+.icon-discord:before {
+	mask: url(../../static/img/discord.svg) no-repeat 100% 100%;
+	mask-size: cover;
+}
+
+.icon-github:before {
+	mask: url(../../static/img/github.svg) no-repeat 100% 100%;
+	mask-size: cover;
+}

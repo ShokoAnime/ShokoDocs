@@ -1,0 +1,84 @@
+/* EasyTable */
+
+.easy-header {
+	display: flex;
+	background: var(--tertiary-background);
+	padding: 1rem 2rem;
+}
+
+.easy-header-item {
+	width: 100%;
+	text-align: center;
+}
+
+.easy-row {
+	display: flex;
+	flex-direction: row;
+	background: var(--secondary-background);
+	padding: 1rem 2rem;
+	border-bottom: 2px solid var(--tertiary-background);
+}
+
+.easy-row-item {
+	width: 100%;
+	text-align: center;
+	margin: auto;
+}
+
+
+/* Changelog */
+
+.changelog-header {
+	display: flex;
+	gap: 1rem;
+	font-size: 1.3rem;
+	font-family: 'Exo 2', sans-serif;
+	background: var(--tertiary-background);
+	padding: 1rem;
+	border-radius: 0.5rem;
+}
+
+.changelog-hr {
+	height: 3px;
+	background: var(--tertiary-background)
+}
+
+.changelog-type-wrapper {
+	padding: 1rem;
+}
+
+.changelog-type {
+	text-transform: capitalize;
+	margin-bottom: 0.5rem;
+}
+
+.changelog-added {
+	color: var(--changelog-added);
+}
+
+.changelog-changed {
+	color: var(--changelog-changed);
+}
+
+.changelog-fixed {
+	color: var(--changelog-fixed);
+}
+
+.changelog-removed {
+	color: var(--changelog-removed);
+}
+
+/* ChangelogV2 */
+
+.changelogv2-header {
+	margin: auto 0;
+}
+
+.changelogv2-header > h2 {
+	font-size: 1.3rem;
+	margin: 0 !important;
+}
+
+.changelogv2-header > h2 > a {
+	display: none !important;
+}
