@@ -15,8 +15,8 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.4.1",
-    "@docusaurus/preset-classic": "2.4.1",
+    "@docusaurus/core": "0.0.0-5591",
+    "@docusaurus/preset-classic": "0.0.0-5591",
     "@mdx-js/react": "^1.6.22",
     "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.14",
@@ -33,6 +33,8 @@
     "@docusaurus/module-type-aliases": "2.4.1",
     "@tsconfig/docusaurus": "^1.0.5",
     "@types/lodash": "^4",
+    "@types/prettier": "^2",
+    "prettier": "2.8.8",
     "typescript": "^4.7.4"
   },
   "browserslist": {
