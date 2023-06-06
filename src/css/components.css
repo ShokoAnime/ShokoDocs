@@ -1,84 +1,138 @@
 /* EasyTable */
 
 .easy-header {
-	display: flex;
-	background: var(--tertiary-background);
-	padding: 1rem 2rem;
+    background: var(--tertiary-background);
+    display: flex;
+    padding: 1rem 2rem;
 }
 
 .easy-header-item {
-	width: 100%;
-	text-align: center;
+    text-align: center;
+    width: 100%;
 }
 
 .easy-row {
-	display: flex;
-	flex-direction: row;
-	background: var(--secondary-background);
-	padding: 1rem 2rem;
-	border-bottom: 2px solid var(--tertiary-background);
+    background: var(--secondary-background);
+    border-bottom: 2px solid var(--tertiary-background);
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 2rem;
 }
 
 .easy-row-item {
-	width: 100%;
-	text-align: center;
-	margin: auto;
+    margin: auto;
+    text-align: center;
+    width: 100%;
 }
-
 
 /* Changelog */
 
-.changelog-header {
-	display: flex;
-	gap: 1rem;
-	font-size: 1.3rem;
-	font-family: 'Exo 2', sans-serif;
-	background: var(--tertiary-background);
-	padding: 1rem;
-	border-radius: 0.5rem;
+.changelog-wrapper {
+    display: flex;
+    flex-direction: row;
 }
 
-.changelog-hr {
-	height: 3px;
-	background: var(--tertiary-background)
-}
-
-.changelog-type-wrapper {
-	padding: 1rem;
+.changelog-left {
+    background: var(--tertiary-background);
+    border-radius: 12.5px;
+    box-shadow: 0 1.5px 3px 0 rgb(0 0 0 / 15%);
+    margin-bottom: 1rem;
+    max-width: 958px;
+    padding: 2rem;
+    width: 100%;
 }
 
 .changelog-type {
-	text-transform: capitalize;
-	margin-bottom: 0.5rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.changelog-item-wrapper {
+    margin: 1rem 0;
 }
 
 .changelog-added {
-	color: var(--changelog-added);
+    color: var(--changelog-added);
 }
 
 .changelog-changed {
-	color: var(--changelog-changed);
+    color: var(--changelog-changed);
 }
 
 .changelog-fixed {
-	color: var(--changelog-fixed);
+    color: var(--changelog-fixed);
 }
 
 .changelog-removed {
-	color: var(--changelog-removed);
+    color: var(--changelog-removed);
 }
 
-/* ChangelogV2 */
-
-.changelogv2-header {
-	margin: auto 0;
+.changelog-right {
+    border-left: 3px solid var(--tertiary-background);
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    padding-left: 2rem;
+    width: 200px;
 }
 
-.changelogv2-header > h2 {
-	font-size: 1.3rem;
-	margin: 0 !important;
+.changelog-version {
+    font-weight: 500;
+    width: 138px;
 }
 
-.changelogv2-header > h2 > a {
-	display: none !important;
+.changelog-version:before {
+    background: var(--tertiary-background);
+    border: 2px solid var(--highlight-color-1);
+    border-radius: 50%;
+    content: "\A";
+    display: inline-block;
+    height: 10px;
+    margin-left: -2.55rem;
+    margin-top: 0.625rem;
+    position: absolute;
+    width: 10px;
+}
+
+.changelog-date,
+.changelog-link {
+    font-size: 14px;
+}
+
+/* Accordion */
+
+.accordion-wrapper {
+    margin-bottom: 0.5rem;
+}
+
+.accordion-header {
+    background: var(--tertiary-background);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.accordion-header:hover {
+    color: var(--highlight-color-1)
+}
+
+.accordion-header-open {
+    border-radius: 0.5rem 0.5rem 0 0;
+    color: var(--highlight-color-1);
+}
+
+.accordion-body {
+    background: var(--secondary-background);
+    border: 2px solid var(--tertiary-background);
+    padding: 1rem;
+}
+
+.accordion-body-open {
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.accordion-body-close {
+    display: none;
 }

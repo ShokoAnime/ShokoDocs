@@ -1,61 +1,71 @@
 /* Breadcrumbs */
 
 .breadcrumbs__link {
-	padding: 0;
-	background: none;
-	font-size: 0.875rem;
-	text-transform: uppercase;
-	font-weight: 600;
+    background: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0;
+    text-transform: uppercase;
 }
 
 .breadcrumbs__item--active > .breadcrumbs__link,
 .breadcrumbs__link:any-link:hover {
-	background: none;
-	color: var(--highlight-color-1);
+    background: none;
+    color: var(--highlight-color-1);
 }
 
 /* ToC */
 
 .table-of-contents {
-	border-left: 2px solid var(--tertiary-background);
-	font-size: 0.875rem;
-	font-weight: 500;
+    border-left: 2px solid var(--tertiary-background);
+    font-size: 0.875rem;
+    font-weight: 500;
 }
 
 /* Page */
 
 .theme-doc-footer-edit-meta-row {
-	border-top: 2px solid var(--tertiary-background);
-	padding-top: 2rem;
-	margin: auto;
+    border-top: 2px solid var(--tertiary-background);
+    margin: auto;
+    padding-top: 2rem;
 }
 
 .theme-doc-footer-edit-meta-row > .col {
-	margin: auto;
-	padding-left: 0;
+    margin: auto;
+    padding-left: 0;
 }
 
 .theme-edit-this-page {
-	padding-left: 1rem;
+    padding-left: 1rem;
 }
 
 .theme-edit-this-page:hover {
-	background: var(--tertiary-background);
-	border-radius: 0.5rem;
-	padding: 1.5rem 1rem 1.5rem
+    background: var(--tertiary-background);
+    border-radius: 0.5rem;
+    padding: 1.5rem 1rem 1.5rem
 }
 
 .pagination-nav__link {
-	border: none;
+    border: none;
 }
 
 .pagination-nav__link:hover {
-	background: var(--tertiary-background);
-	border-radius: 0.5rem;
+    background: var(--tertiary-background);
+    border-radius: 0.5rem;
 }
 
 .pagination-nav__sublabel {
-	color: var(--font-color);
-	font-weight: 600;
-	text-transform: uppercase;
+    color: var(--font-color);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Cards */
+
+.card.padding--lg.card {
+    color: var(--font-color)
+}
+
+.card.padding--lg.card:hover {
+    color: var(--highlight-color-1)
 }

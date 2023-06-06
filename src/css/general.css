@@ -1,84 +1,101 @@
 /* General */
 
 a {
-	font-weight: 600;
+    font-weight: 600;
 }
 
-a:hover{
-	color: var(--highlight-color-1)
+a:hover {
+    color: var(--highlight-color-1)
 }
 
 body {
-	font-family: 'Inter', sans-serif;
-	scrollbar-gutter: stable;
+    font-family: 'Inter', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Exo 2', sans-serif;
-	font-weight: 500;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 500;
 }
 
 h1 {
-	font-size: 2.5rem;
-	margin-bottom: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 h2 {
-	font-size: 1.75rem;
-	margin: 2rem 0 !important;
+    font-size: 1.75rem;
+    margin: 2rem 0 !important;
 }
 
 h3 {
-	font-size: 1.5rem;
-	margin: 2em 0 !important;
+    font-size: 1.5rem;
+    margin: 2em 0 !important;
+}
+
+html {
+    overflow: overlay; /* Temporary solution until scrollbar-gutter bug on Chromium is fixed. */
+    overflow-y: auto;
+    scrollbar-gutter: stable;
 }
 
 p {
-	margin: 1rem 0 !important;
+    margin: 1rem 0 !important;
 }
 
 strong {
-	color: var(--highlight-color-4)
+    color: var(--highlight-color-4)
 }
 
 .container {
-	font-size: 1.125rem;
+    font-size: 1.125rem;
 }
 
 .main-wrapper {
-	margin: 2rem auto;
-	max-width: 1620px;
-	width: 100%;
+    margin: 2rem auto;
+    max-width: 1620px;
+    width: 100%;
 }
 
 .footer {
-	background-color: var(--secondary-background);
-	border-top: 2px solid var(--tertiary-background);
-	height: 80px;
+    background-color: var(--secondary-background);
+    border-top: 2px solid var(--tertiary-background);
+    height: 80px;
 }
 
 .custom-icon {
-	display: flex;
+    display: flex;
 }
 
 .custom-icon:before {
-	content: "";
-	height: 24px;
-	width: 24px;
-	margin-right: 0.5rem;
-	background-color: var(--font-color);
+    background-color: var(--font-color);
+    content: "";
+    height: 24px;
+    margin-right: 0.5rem;
+    width: 24px;
 }
 
 .custom-icon:hover:before {
-	background-color: var(--highlight-color-1);
+    background-color: var(--highlight-color-1);
+}
+
+.icon-blog:before {
+    mask: url(../../static/img/nav/blog.svg) no-repeat 100% 100%;
+    mask-size: cover;
 }
 
 .icon-discord:before {
-	mask: url(../../static/img/discord.svg) no-repeat 100% 100%;
-	mask-size: cover;
+    mask: url(../../static/img/nav/discord.svg) no-repeat 100% 100%;
+    mask-size: cover;
+}
+
+.icon-download:before {
+    mask: url(../../static/img/nav/download.svg) no-repeat 100% 100%;
+    mask-size: cover;
 }
 
 .icon-github:before {
-	mask: url(../../static/img/github.svg) no-repeat 100% 100%;
-	mask-size: cover;
+    mask: url(../../static/img/nav/github.svg) no-repeat 100% 100%;
+    mask-size: cover;
 }
+
+

@@ -1,33 +1,33 @@
 [data-theme='dark'] {
-	/*Docusaurus CSS Variables */
-	--ifm-background-color: var(--primary-background) !important;
-	--ifm-font-color-base: var(--font-color);
-	--ifm-toc-link-color: var(--font-color);
-	--ifm-card-background-color: var(--tertiary-background);
-	--ifm-color-gray-700: var(--tertiary-background);
-	--ifm-color-gray-800: var(--tertiary-background);
-	--ifm-color-primary: var(--highlight-color-1);
-	--ifm-link-hover-color: var(--font-color);
-	--ifm-menu-color-background-active: var(--tertiary-background);
-	--ifm-menu-color-background-hover: var(--tertiary-background);
-	--ifm-navbar-background-color: var(--secondary-background);
-	--ifm-navbar-height: 80px;
+    /*Docusaurus CSS Variables */
+    --changelog-added: #3699FF;
+    --primary-background: #17181F;
+    --secondary-background: #15161C;
+    --tertiary-background: #101116;
+    --ifm-background-color: var(--primary-background) !important;
+    --ifm-card-background-color: var(--tertiary-background);
+    --changelog-changed: #1BC5BD;
+    --font-color: #CFD8E3;
+    --highlight-color-1: #279CEB;
+    --highlight-color-2: #FF5252;
+    --highlight-color-3: #BC8CFF;
+    --highlight-color-4: #E3B341;
 
-	/*Custom CSS Variables*/
-	--primary-background: #17181F;
-	--secondary-background: #15161C;
-	--tertiary-background: #101116;
+    /*Custom CSS Variables*/
+    --highlight-color-5: #41E382;
+    --highlight-color-6: #279CEB;
+    --ifm-color-gray-700: var(--tertiary-background);
 
-	--font-color: #CFD8E3;
-	--highlight-color-1: #279CEB;
-	--highlight-color-2: #FF5252;
-	--highlight-color-3: #BC8CFF;
-	--highlight-color-4: #E3B341;
-	--highlight-color-5: #41E382;
-	--highlight-color-6: #279CEB;
+    --ifm-color-gray-800: var(--tertiary-background);
+    --ifm-color-primary: var(--highlight-color-1);
+    --changelog-fixed: #FFA800;
+    --ifm-font-color-base: var(--font-color);
+    --ifm-link-hover-color: var(--highlight-color-1);
+    --ifm-menu-color-background-active: var(--tertiary-background);
+    --ifm-menu-color-background-hover: var(--tertiary-background);
 
-	--changelog-added: #3699FF;
-	--changelog-changed: #1BC5BD;
-	--changelog-fixed: #FFA800;
-	--changelog-removed: #F64E60;
+    --ifm-navbar-background-color: var(--secondary-background);
+    --ifm-navbar-height: 80px;
+    --changelog-removed: #F64E60;
+    --ifm-toc-link-color: var(--font-color);
 }
