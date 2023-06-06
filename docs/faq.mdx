@@ -1,0 +1,43 @@
+---
+sidebar_position: 3
+title: Frequently Asked Questions
+---
+
+import Accordion from '../src/components/Accordion/Accordion'
+import AccordionItem from '../src/components/Accordion/AccordionItem'
+
+## General
+
+<Accordion>
+  <AccordionItem title='System Requirements?'>
+    While Shoko itself does not have any minimum requirement and could technically run on just about any hardware setup,
+    we do have some general guidelines for optimal performance.
+
+    **Collection Size**
+
+    Shoko works with collections of all sizes, however its important to keep in mind that the larger your collection,
+    the
+    more resources Shoko will need to use. Users attempting to run Shoko on devices such as Raspberry Pi's and similar
+    devices will take significant performance hits and will experience less than optimal performance.
+
+    **Memory (RAM):**
+
+    To ensure smooth operations, it is recommended to allocate at least 1GB of dedicated RAM to the system. Keep in mind
+    that during the hashing process, RAM usage can increase significantly. Users with limited memory on their systems
+    may
+    experience slowdowns and delays in processes.
+
+    **Hashing Process:**
+
+    Hashing is a resource-intensive operation that involves significant CPU and I/O usage, as the entire file needs to
+    be
+    read and processed. If time is not a critical factor and you are willing to trade off processing speed, the hashing
+    process can be performed on lower-spec systems. However, it's important to be aware that hashing large files on
+    lower-spec systems may result in slower performance and longer processing times.
+  </AccordionItem>
+</Accordion>
+
+
+
+
+
