@@ -6,11 +6,6 @@
     padding: 1rem 2rem;
 }
 
-.easy-header-item {
-    text-align: center;
-    width: 100%;
-}
-
 .easy-row {
     background: var(--secondary-background);
     border-bottom: 2px solid var(--tertiary-background);
@@ -19,10 +14,15 @@
     padding: 1rem 2rem;
 }
 
-.easy-row-item {
-    margin: auto;
-    text-align: center;
-    width: 100%;
+.easy-row > div {
+    margin: auto 0;
+}
+
+.easy-row > div > code {
+    overflow-x: auto;
+    white-space: pre;
+    width: 85%;
+    display: flex;
 }
 
 /* Changelog */

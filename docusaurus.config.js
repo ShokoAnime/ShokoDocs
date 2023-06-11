@@ -90,12 +90,12 @@ const config = {
 				},
 			],
 		},
-		footer: {
-			copyright: `Copyright © ${new Date().getFullYear()} Shoko Docs. Built with Docusaurus.`,
-		},
 		prism: {
 			theme: lightCodeTheme,
 			darkTheme: darkCodeTheme,
+		},
+		footer: {
+			copyright: `Copyright © ${new Date().getFullYear()} Shoko Docs. Built with Docusaurus.`,
 		},
 	},
 }

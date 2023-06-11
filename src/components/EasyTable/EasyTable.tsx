@@ -1,45 +1,47 @@
-import React from 'react';
+import React from 'react'
+import ReactMarkdown from 'react-markdown'
 
-const EasyTable = ({ headers, data }) => {
-	const renderHeaders = () => {
-		return (
-			<div className='easy-header'>
-				{headers.map((header, index) => (
-					<div className='easy-header-item' key={index}>{header}</div>
-				))}
-			</div>
-		);
-	};
+interface EasyTableProps {
+  header: string[]
+  data: Array<Array<string | React.ReactNode>>
+  hideHeader?: boolean
+  columnWidths?: { [key: string]: string }
+}
 
-	const renderRows = () => {
-		return data.map((row, rowIndex) => (
-			<div className='easy-row' key={rowIndex}>
-				{headers.map((header, columnIndex) => {
-					if (header === 'Link') {
-						console.log(row.link.label)
-						return (
-							row.link.label === 'None' ?
-								<div className='easy-row-item' key={columnIndex}>
-									{row.link.label}
-								</div> :
-								<div className='easy-row-item' key={columnIndex}>
-									<a href={row.link.url}>{row.link.label}</a>
-								</div>
-						);
-					} else {
-						return <div className='easy-row-item' key={columnIndex}>{row[header.toLowerCase()]}</div>;
-					}
-				})}
-			</div>
-		));
-	};
+const EasyTable: React.FC<EasyTableProps> = ({ header, data, hideHeader = false, columnWidths = {} }) => {
+  const renderCell = (cellData: string | React.ReactNode) => {
+    if (typeof cellData === 'string') {
+      if (cellData.startsWith('<') && cellData.endsWith('>')) {
+        return <div dangerouslySetInnerHTML={{ __html: cellData }} />
+      } else {
+        return <ReactMarkdown>{cellData}</ReactMarkdown>
+      }
+    }
+    return cellData
+  }
 
-	return (
-		<div>
-			{renderHeaders()}
-			{renderRows()}
-		</div>
-	);
-};
+  return (
+    <div>
+      {!hideHeader && (
+        <div className="easy-header">
+          {header.map((column, index) => (
+            <div key={index} style={{ width: columnWidths[column] }}>
+              {column}
+            </div>
+          ))}
+        </div>
+      )}
+      {data.map((row, rowIndex) => (
+        <div className="easy-row" key={rowIndex}>
+          {row.map((cell, cellIndex) => (
+            <div key={cellIndex} style={{ width: columnWidths[header[cellIndex]] }}>
+              {renderCell(cell)}
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  )
+}
 
-export default EasyTable;
+export default EasyTable

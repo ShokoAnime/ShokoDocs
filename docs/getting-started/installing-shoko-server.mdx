@@ -1,0 +1,55 @@
+---
+sidebar_position: 1
+title: Installing Shoko Server
+---
+
+import EasyTable from '../../src/components/EasyTable/EasyTable'
+
+Shoko's installation process varies depending on the platform your attempting to install it on. We recommended following
+the guide and not deviating from the guide unless you know what your doing.
+
+If your platform is not listed on the page navigation on the right, it doesn't mean Shoko does not support it. It just
+means no one has written a guide on how to get Shoko installed on your platform.
+
+## Windows
+
+Windows user have it the easiest, navigate to the [Shoko Downloads](https://shokoanime.com/downloads/) page and download
+Shoko Server and unless you've been told otherwise, download the **Stable** version.  Once it's done downloading, run
+the installer and simply follow the instructions listed, it should only take a couple of minutes to install Shoko.
+
+## Docker (Linux)
+
+Make sure you have docker installed before you continue. For most users are installing docker from their package manager is advised, this way you will keep up with the latest updates and security updates. On the homepage of [Docker](https://docs.docker.com/install/) you can find the installation procedure for your distribution of the Docker Community Edition.
+
+First things first, download the image, and unless otherwise told, install the version tagged as `latest`.
+
+```sh
+$ docker pull shokoanime/server:latest
+```
+Now, you can run the command below, after substituting the paths below (the second and third volume mount point) with path(s) leading to your library and/or import folders.
+
+```sh
+$ docker run -d --name shokoserver --restart always -p 8111:8111 -v "$HOME/.shoko:/home/shoko/.shoko" -v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import" -e PUID=$UID -e PGID=$GID shokoanime/server:latest
+```
+
+If you want a more detailed explanation, then refer to the below table for a break-down of the above command:
+
+<EasyTable
+  header={['Command', 'Purpose']}
+  data={[
+    [
+      <code>docker run</code>,
+      'Create a docker container from an image.'
+    ],
+    [
+      <code>-d</code>,
+      'Offloads the process to the background. If you want to control the container, you can either omit this flag or run docker attach followed by the container name to reattach to the container.'
+    ],
+    [
+      <code>--name shokoserver</code>,
+      'If you do not assign a container name with the **--name** option, then the daemon generates a random string name for you. Defining a name can be a handy way to add meaning to a container. If you specify a name, you can use it when referencing the container within a Docker network.'
+    ]
+  ]}
+  hideHeader={false}
+  columnWidths={{ Command: '25%', Purpose: '75%' }}
+/>
