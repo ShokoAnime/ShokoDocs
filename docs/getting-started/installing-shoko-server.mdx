@@ -37,19 +37,94 @@ If you want a more detailed explanation, then refer to the below table for a bre
 <EasyTable
   header={['Command', 'Purpose']}
   data={[
-    [
-      <code>docker run</code>,
-      'Create a docker container from an image.'
-    ],
-    [
-      <code>-d</code>,
-      'Offloads the process to the background. If you want to control the container, you can either omit this flag or run docker attach followed by the container name to reattach to the container.'
-    ],
-    [
-      <code>--name shokoserver</code>,
-      'If you do not assign a container name with the **--name** option, then the daemon generates a random string name for you. Defining a name can be a handy way to add meaning to a container. If you specify a name, you can use it when referencing the container within a Docker network.'
-    ]
+      [
+          <code>docker run</code>,
+          'Create a docker container from an image.'
+      ],
+      [
+          <code>-d</code>,
+          'Run in detached mode. Offloads the process to the background. If you want to control the container, you can either omit this flag or run docker attach followed by the container name to reattach to the container.'
+      ],
+      [
+          <code>--name shokoserver</code>,
+          'Name the container. If you do not assign a container name with the **--name** option, then the daemon generates a random string name for you. Defining a name can be a handy way to add meaning to a container. If you specify a name, you can use it when referencing the container within a Docker network.'
+      ],
+      [
+          <code>--restart</code>,
+          'Automatically restart the server on failure. Make the container automatically restart if it fails. Shoko is bound to fail a few times, so setting this flag ensures that it will automatically restart and resume where it left of.'
+      ],
+      [
+          <code>-p 8111:8111</code>,
+          'Publish the container\'s ports. Binds the container\'s port to the same port on the host system, because otherwise a random port will be chosen on the host system - which we don\'t want to happen.'
+      ],
+      [
+          <code>-v "$HOME/.shoko:/home/shoko/.shoko"</code>,
+          'Mounts volumes. To preserve settings between updates, the settings folder must be remapped to a location outside the container. By default we map it to a folder in the user\'s home directory'
+      ],
+      [
+          <code>-v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import"</code>,
+          'Mounts volumes. In order for Shoko Server to manage your collection, you must map at least one volume to the container.<br />' +
+          '**Note #1:** The first path in the mapping (<code>/path/to/anime**</code>) is the location on your host computer, the second path (<code>/mnt/anime</code>) in the mapping is where you want to mount it inside the container.<br />' +
+          '**Note #2:** You can mount multiple library folders, and/or import folders, and they can be named any way you like (e.g. /anime, /import, /export, /tv_shows, etc.).<br />' +
+          '**Note #3:** When importing hard-linked files, be sure to mount the common root between your import folder and library folder. Otherwise, you will get duplicate files, because the containers sees the mount-points as separate disks, and will copy-and-delete the file from the import folder to the drop-destination.'
+      ],
+      [
+          <code>-e PUID=$UID -e PGID=$GID</code>,
+          'Set Environment Variables. You can instruct the server to run as a certain set of user/group ids. This makes working with permissions a lot easier since you can match your server with a local account without effort. The example argument will make the server run with the uid and gid of the current user, to find the value to use for PUID and PGID, you can run log into the target system, either locally or over SSH, and execute the id command, supplied with the username of the user you want to the server to run as.'
+      ],
+      [
+          <code>-e TZ=Etc/UTC</code>,
+          'Set Environment Variables. You can set the timezone with the TZ environment variable.'
+      ],
+      [
+          <code>shokoanime/server:latest</code>,
+          'Specifies the Image to derive the container from.'
+      ],
+      [
+          <code>-e AVDUMP_MONO=true</code>,
+          'Set Environment Variable for AVDump. AVDump currently requires large dependencies, so by specifying this environment variable, it tells the container to pull the dependencies for AVDump to work.'
+      ]
   ]}
   hideHeader={false}
   columnWidths={{ Command: '25%', Purpose: '75%' }}
 />
+
+## Docker Compose (Linux)
+
+To make management easier, we can combine all the previous items in a docker compose file.
+
+In order to make this work, install docker-compose, a guide how to can be found here on the Docker website. Once docker-compose is installed, create a docker-compose.yml file anywhere on your system. Open the file and put the following inside, but remember to substitute the paths below with path(s) leading to your library and/or import folders.
+
+```yaml
+version: "3"
+services:
+  shoko_server:
+    container_name: shokoserver
+    image: shokoanime/server:latest
+    restart: always
+    environment:
+      - "PUID=$UID"
+      - "PGID=$GID"
+      - "TZ=Etc/UTC"
+    ports:
+      - "8111:8111"
+    volumes:
+      - "$HOME/.shoko:/home/shoko/.shoko"
+      - "/path/to/anime:/mnt/anime"
+      - "/path/to/import:/mnt/import"
+```
+
+This combines all of our previous configuration in an easy to read and edit format, and will allow you to create a powerful startup script that could (for example) include a MySQL server, a download client, and anything else you can think of that’s available in a docker format.
+
+### Docker (Synology NAS)
+
+Make sure you have Docker installed on your Synology NAS before you continue. This package can be found in the Package Center, under Third-party.
+
+You will need to find your User ID before continuing. Log in to your Synology NAS using SSH and type `id`. You'll see an uid: note it down for later. To avoid getting your database cleared on updates, you should also create a folder in the `docker` shared folder named `shokoserver`.
+
+Open Docker from the applications menu, then go to Containers. You'll need to download the Synology Container File and fill out the anime folder path and your User ID. Once that's done, go to Settings, Import and select the file you've just modified. Name the container `shokoserver`, then apply!
+
+Please note that if you want to edit volumes or environment variables, you'll need to stop the container first.
+
+### Next Step
+Once the server is installed, follow the instructions on the [First Run Setup](first-run) page to configure your fresh install of Shoko Server.
