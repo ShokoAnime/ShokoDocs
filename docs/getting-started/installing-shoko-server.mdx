@@ -63,9 +63,9 @@ If you want a more detailed explanation, then refer to the below table for a bre
       ],
       [
           <code>-v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import"</code>,
-          'Mounts volumes. In order for Shoko Server to manage your collection, you must map at least one volume to the container.<br />' +
-          '**Note #1:** The first path in the mapping (**/path/to/anime**) is the location on your host computer, the second path (**/mnt/anime**) in the mapping is where you want to mount it inside the container.<br />' +
-          '**Note #2:** You can mount multiple library folders, and/or import folders, and they can be named any way you like (e.g. /anime, /import, /export, /tv_shows, etc.).<br />' +
+          'Mounts volumes. In order for Shoko Server to manage your collection, you must map at least one volume to the container.\n \n' +
+          '**Note #1:** The first path in the mapping (**/path/to/anime**) is the location on your host computer, the second path (**/mnt/anime**) in the mapping is where you want to mount it inside the container.\n \n' +
+          '**Note #2:** You can mount multiple library folders, and/or import folders, and they can be named any way you like (e.g. /anime, /import, /export, /tv_shows, etc.).\n \n' +
           '**Note #3:** When importing hard-linked files, be sure to mount the common root between your import folder and library folder. Otherwise, you will get duplicate files, because the containers sees the mount-points as separate disks, and will copy-and-delete the file from the import folder to the drop-destination.'
       ],
       [
