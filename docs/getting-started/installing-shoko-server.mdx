@@ -19,20 +19,34 @@ the installer and simply follow the instructions listed, it should only take a c
 
 ## Docker (Linux)
 
+Follow the instructions below for running Shoko using Docker, which is the recommended solution for Linux and NAS Systems supporting Docker.
+
 Make sure you have docker installed before you continue. For most users are installing docker from their package manager is advised, this way you will keep up with the latest updates and security updates. On the homepage of [Docker](https://docs.docker.com/install/) you can find the installation procedure for your distribution of the Docker Community Edition.
 
-First things first, download the image, and unless otherwise told, install the version tagged as `latest`.
+**NOTE:** We do <u>not</u> encourage using Docker on Windows using WSL or Hyper-V containers. It creates an unneeded abstraction layer which might cause unforeseen issues. You can do this at your own risk, as we can't support this setup.
+
+### Docker commandline
+
+First things first, pull the image, and unless otherwise told, install the version tagged as `latest`.
 
 ```sh
 $ docker pull shokoanime/server:latest
 ```
-Now, you can run the command below, after substituting the paths below (the second and third volume mount point) with path(s) leading to your library and/or import folders.
+After pulling the image, you can run the command below. Mare sure you substitute the paths under <code>-v</code> with the ones from your environment.
+You only need to replace the example paths before the <code>:</code> with your paths.
+
+For the setup you should have the following data ready:
+
+- path of your docker config folder (for permanent storage of config data)
+- path of your source (import) folder
+- path of your target (library) folder(s)
+- the GUID and PUID of the user you want shoko to run as (optional)
+
+If you are unsure how to obtain the needed info, please refer to the below table for a break-down of the following command:
 
 ```sh
 $ docker run -d --name shokoserver --restart always -p 8111:8111 -v "$HOME/.shoko:/home/shoko/.shoko" -v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import" -e PUID=$UID -e PGID=$GID shokoanime/server:latest
 ```
-
-If you want a more detailed explanation, then refer to the below table for a break-down of the above command:
 
 <EasyTable
   header={['Command', 'Purpose']}
@@ -43,38 +57,46 @@ If you want a more detailed explanation, then refer to the below table for a bre
       ],
       [
           <code>-d</code>,
-          'Run in detached mode. Offloads the process to the background. If you want to control the container, you can either omit this flag or run docker attach followed by the container name to reattach to the container.'
+          'Run in detached mode.\n \n' +
+          'Offloads the process to the background. If you want to control the container, you can either omit this flag or run docker attach followed by the container name to reattach to the container.'
       ],
       [
           <code>--name shokoserver</code>,
-          'Name the container. If you do not assign a container name with the **--name** option, then the daemon generates a random string name for you. Defining a name can be a handy way to add meaning to a container. If you specify a name, you can use it when referencing the container within a Docker network.'
+          'Name the container.\n \n' +
+          'If you do not assign a container name with the **--name** option, then the daemon generates a random string name for you. Defining a name can be a handy way to add meaning to a container. If you specify a name, you can use it when referencing the container within a Docker network.'
       ],
       [
           <code>--restart</code>,
-          'Automatically restart the server on failure. Make the container automatically restart if it fails. Shoko is bound to fail a few times, so setting this flag ensures that it will automatically restart and resume where it left of.'
+          'Automatically restart the server on failure.\n \n' +
+          'Make the container automatically restart if it fails. Shoko is bound to fail a few times, so setting this flag ensures that it will automatically restart and resume where it left of.'
       ],
       [
           <code>-p 8111:8111</code>,
-          'Publish the container\'s ports. Binds the container\'s port to the same port on the host system, because otherwise a random port will be chosen on the host system - which we don\'t want to happen.'
+          'Publish the container\'s ports.\n \n' +
+          'Binds the container\'s port to the same port on the host system, because otherwise a random port will be chosen on the host system - which we don\'t want to happen.'
       ],
       [
           <code>-v "$HOME/.shoko:/home/shoko/.shoko"</code>,
-          'Mounts volumes. To preserve settings between updates, the settings folder must be remapped to a location outside the container. By default we map it to a folder in the user\'s home directory'
+          'Mounts volumes.' +
+          '\n \nTo preserve settings between updates, the settings folder must be remapped to a location outside the container. By default we map it to a folder in the user\'s home directory'
       ],
       [
           <code>-v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import"</code>,
-          'Mounts volumes. In order for Shoko Server to manage your collection, you must map at least one volume to the container.\n \n' +
+          'Mounts volumes.\n \n' +
+          'In order for Shoko Server to manage your collection, you must map at least one volume to the container.\n \n' +
           '**Note #1:** The first path in the mapping (**/path/to/anime**) is the location on your host computer, the second path (**/mnt/anime**) in the mapping is where you want to mount it inside the container.\n \n' +
           '**Note #2:** You can mount multiple library folders, and/or import folders, and they can be named any way you like (e.g. /anime, /import, /export, /tv_shows, etc.).\n \n' +
           '**Note #3:** When importing hard-linked files, be sure to mount the common root between your import folder and library folder. Otherwise, you will get duplicate files, because the containers sees the mount-points as separate disks, and will copy-and-delete the file from the import folder to the drop-destination.'
       ],
       [
           <code>-e PUID=$UID -e PGID=$GID</code>,
-          'Set Environment Variables. You can instruct the server to run as a certain set of user/group ids. This makes working with permissions a lot easier since you can match your server with a local account without effort. The example argument will make the server run with the uid and gid of the current user, to find the value to use for **PUID** and **PGID**, you can run log into the target system, either locally or over SSH, and execute the id command, supplied with the username of the user you want to the server to run as.'
+          'Set Environment Variables.\n \n' +
+          'You can instruct the server to run as a certain set of user/group ids. This makes working with permissions a lot easier since you can match your server with a local account without effort. The example argument will make the server run with the uid and gid of the current user, to find the value to use for **PUID** and **PGID**, you can run log into the target system, either locally or over SSH, and execute the id command, supplied with the username of the user you want to the server to run as.'
       ],
       [
           <code>-e TZ=Etc/UTC</code>,
-          'Set Environment Variables. You can set the timezone with the **TZ** environment variable.'
+          'Set Environment Variables.\n \n' +
+          'You can set the timezone with the **TZ** environment variable.'
       ],
       [
           <code>shokoanime/server:latest</code>,
@@ -82,14 +104,15 @@ If you want a more detailed explanation, then refer to the below table for a bre
       ],
       [
           <code>-e AVDUMP_MONO=true</code>,
-          'Set Environment Variable for AVDump. AVDump currently requires large dependencies, so by specifying this environment variable, it tells the container to pull the dependencies for AVDump to work.'
+          'Set Environment Variable for AVDump.\n \n' +
+          'AVDump currently requires large dependencies, so by specifying this environment variable, it tells the container to pull the dependencies for AVDump to work.'
       ]
   ]}
   hideHeader={false}
-  columnWidths={{ Command: '25%', Purpose: '75%' }}
+  columnWidths={{ Command: '35%', Purpose: '65%' }}
 />
 
-## Docker Compose (Linux)
+### Docker compose
 
 To make management easier, we can combine all the previous items in a docker compose file.
 
@@ -116,7 +139,15 @@ services:
 
 This combines all of our previous configuration in an easy to read and edit format, and will allow you to create a powerful startup script that could (for example) include a MySQL server, a download client, and anything else you can think of that’s available in a docker format.
 
-### Docker (Synology NAS)
+## Docker (QNAP NAS)
+
+Make sure you have Docker installed on your QNAP NAS before you continue. This package can be found in the App Center, under the Name of **Container Station**.
+
+As the management using Container Station will feel a bit clunky, we recommend starting the container using the instructions given under **Docker commandline** above.
+
+More instructions are TBD.
+
+## Docker (Synology NAS)
 
 Make sure you have Docker installed on your Synology NAS before you continue. This package can be found in the Package Center, under Third-party.
 
@@ -126,5 +157,19 @@ Open Docker from the applications menu, then go to Containers. You'll need to do
 
 Please note that if you want to edit volumes or environment variables, you'll need to stop the container first.
 
-### Next Step
+## Docker (TrueNAS)
+
+### TrueNAS Scale
+
+TBD
+
+### TrueNAS Core
+
+Docker is not supported on this platform, as **TrueNAS Core** uses FreeBSD as base OS.
+
+## Docker (Unraid)
+
+TBD
+
+## Next Step
 Once the server is installed, follow the instructions on the [First Run Setup](first-run) page to configure your fresh installation of Shoko Server.
