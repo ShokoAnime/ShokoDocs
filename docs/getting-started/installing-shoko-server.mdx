@@ -64,17 +64,17 @@ If you want a more detailed explanation, then refer to the below table for a bre
       [
           <code>-v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import"</code>,
           'Mounts volumes. In order for Shoko Server to manage your collection, you must map at least one volume to the container.<br />' +
-          '**Note #1:** The first path in the mapping (<code>/path/to/anime**</code>) is the location on your host computer, the second path (<code>/mnt/anime</code>) in the mapping is where you want to mount it inside the container.<br />' +
+          '**Note #1:** The first path in the mapping (**/path/to/anime**) is the location on your host computer, the second path (**/mnt/anime**) in the mapping is where you want to mount it inside the container.<br />' +
           '**Note #2:** You can mount multiple library folders, and/or import folders, and they can be named any way you like (e.g. /anime, /import, /export, /tv_shows, etc.).<br />' +
           '**Note #3:** When importing hard-linked files, be sure to mount the common root between your import folder and library folder. Otherwise, you will get duplicate files, because the containers sees the mount-points as separate disks, and will copy-and-delete the file from the import folder to the drop-destination.'
       ],
       [
           <code>-e PUID=$UID -e PGID=$GID</code>,
-          'Set Environment Variables. You can instruct the server to run as a certain set of user/group ids. This makes working with permissions a lot easier since you can match your server with a local account without effort. The example argument will make the server run with the uid and gid of the current user, to find the value to use for PUID and PGID, you can run log into the target system, either locally or over SSH, and execute the id command, supplied with the username of the user you want to the server to run as.'
+          'Set Environment Variables. You can instruct the server to run as a certain set of user/group ids. This makes working with permissions a lot easier since you can match your server with a local account without effort. The example argument will make the server run with the uid and gid of the current user, to find the value to use for **PUID** and **PGID**, you can run log into the target system, either locally or over SSH, and execute the id command, supplied with the username of the user you want to the server to run as.'
       ],
       [
           <code>-e TZ=Etc/UTC</code>,
-          'Set Environment Variables. You can set the timezone with the TZ environment variable.'
+          'Set Environment Variables. You can set the timezone with the **TZ** environment variable.'
       ],
       [
           <code>shokoanime/server:latest</code>,
@@ -127,4 +127,4 @@ Open Docker from the applications menu, then go to Containers. You'll need to do
 Please note that if you want to edit volumes or environment variables, you'll need to stop the container first.
 
 ### Next Step
-Once the server is installed, follow the instructions on the [First Run Setup](first-run) page to configure your fresh install of Shoko Server.
+Once the server is installed, follow the instructions on the [First Run Setup](first-run) page to configure your fresh installation of Shoko Server.
