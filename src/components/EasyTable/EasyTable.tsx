@@ -4,11 +4,10 @@ import ReactMarkdown from 'react-markdown'
 interface EasyTableProps {
   header: string[]
   data: Array<Array<string | React.ReactNode>>
-  hideHeader?: boolean
   columnWidths?: { [key: string]: string }
 }
 
-const EasyTable: React.FC<EasyTableProps> = ({ header, data, hideHeader = false, columnWidths = {} }) => {
+const EasyTable = ({ header, data, columnWidths = {} }: EasyTableProps) => {
   const renderCell = (cellData: string | React.ReactNode) => {
     if (typeof cellData === 'string') {
       if (cellData.startsWith('<') && cellData.endsWith('>')) {
@@ -21,16 +20,14 @@ const EasyTable: React.FC<EasyTableProps> = ({ header, data, hideHeader = false,
   }
 
   return (
-    <div>
-      {!hideHeader && (
-        <div className="easy-header">
-          {header.map((column, index) => (
-            <div key={index} style={{ width: columnWidths[column] }}>
-              {column}
-            </div>
-          ))}
-        </div>
-      )}
+    <div className="easy-wrapper">
+      <div className="easy-header">
+        {header.map((column, index) => (
+          <div key={index} style={{ width: columnWidths[column] }}>
+            {column}
+          </div>
+        ))}
+      </div>
       {data.map((row, rowIndex) => (
         <div className="easy-row" key={rowIndex}>
           {row.map((cell, cellIndex) => (

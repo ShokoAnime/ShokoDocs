@@ -1,7 +1,7 @@
 /* General */
 
 a {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 a:hover {
@@ -13,7 +13,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Exo 2', sans-serif;
+    font-family: 'Sora', sans-serif;
     font-weight: 500;
 }
 
@@ -43,7 +43,8 @@ p {
 }
 
 strong {
-    color: var(--highlight-color-4)
+    color: var(--highlight-color-4);
+    font-weight: 500;
 }
 
 .container {

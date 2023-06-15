@@ -1,9 +1,13 @@
 /* EasyTable */
 
+.easy-wrapper {
+    margin: 2rem 0;
+}
+
 .easy-header {
     background: var(--tertiary-background);
     display: flex;
-    padding: 1rem 2rem;
+    padding: 1rem;
 }
 
 .easy-row {
@@ -11,11 +15,15 @@
     border-bottom: 2px solid var(--tertiary-background);
     display: flex;
     flex-direction: row;
-    padding: 1rem 2rem;
+    padding: 1rem;
 }
 
 .easy-row > div {
     margin: auto 0;
+}
+
+.easy-row > div > p {
+    margin: 0 !important;
 }
 
 .easy-row > div > code {
