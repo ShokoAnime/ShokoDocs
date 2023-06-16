@@ -26,38 +26,12 @@
 
 .theme-doc-footer-edit-meta-row {
     border-top: 2px solid var(--tertiary-background);
-    margin: auto;
     padding-top: 2rem;
-}
-
-.theme-doc-footer-edit-meta-row > .col {
-    margin: auto;
-    padding-left: 0;
-}
-
-.theme-edit-this-page {
-    padding-left: 1rem;
-}
-
-.theme-edit-this-page:hover {
-    background: var(--tertiary-background);
-    border-radius: 0.5rem;
-    padding: 1.5rem 1rem 1.5rem
+    justify-content: space-between;
 }
 
 .pagination-nav__link {
-    border: none;
-}
-
-.pagination-nav__link:hover {
-    background: var(--tertiary-background);
-    border-radius: 0.5rem;
-}
-
-.pagination-nav__sublabel {
-    color: var(--font-color);
-    font-weight: 600;
-    text-transform: uppercase;
+    border: 2px solid var(--tertiary-background);
 }
 
 /* Cards */

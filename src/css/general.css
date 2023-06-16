@@ -13,7 +13,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Exo 2', sans-serif;
     font-weight: 500;
 }
 
@@ -47,56 +47,58 @@ strong {
     font-weight: 500;
 }
 
-.container {
-    font-size: 1.125rem;
+.theme-doc-sidebar-container {
+    border-right: 2px solid var(--tertiary-background) !important;
+}
+
+.menu.thin-scrollbar {
+    margin-top: 0.5rem;
 }
 
 .main-wrapper {
-    margin: 2rem auto;
-    max-width: 1620px;
+    margin: 0 auto;
+    max-width: 1920px;
     width: 100%;
+}
+
+.container {
+    max-width: 1620px;
+}
+
+.col.docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {
+    margin: 0 auto;
+    max-width: 850px !important;
+    font-size: 1.125rem;
+    width: 100%;
+}
+
+.generatedIndexPage_node_modules-\@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module {
+    margin: 0 auto;
+}
+
+.plugin-id-default.docs-doc-id-changelog\/my-anime-3 * .container,
+.plugin-id-default.docs-doc-id-changelog\/shoko-desktop * .container,
+.plugin-id-default.docs-doc-id-changelog\/shoko-metadata * .container,
+.plugin-id-default.docs-doc-id-changelog\/shoko-server * .container,
+.plugin-id-default.docs-doc-id-changelog\/shoko-webui * .container,
+.plugin-id-default.docs-doc-id-changelog\/shokofin * .container {
+    max-width: max-content;
+    width: 1178px;
+}
+
+.col {
+    width: auto;
+    flex: inherit;
+}
+
+.col.col--3 {
+    max-width: 300px;
 }
 
 .footer {
     background-color: var(--secondary-background);
     border-top: 2px solid var(--tertiary-background);
     height: 80px;
-}
-
-.custom-icon {
-    display: flex;
-}
-
-.custom-icon:before {
-    background-color: var(--font-color);
-    content: "";
-    height: 24px;
-    margin-right: 0.5rem;
-    width: 24px;
-}
-
-.custom-icon:hover:before {
-    background-color: var(--highlight-color-1);
-}
-
-.icon-blog:before {
-    mask: url(../../static/img/nav/blog.svg) no-repeat 100% 100%;
-    mask-size: cover;
-}
-
-.icon-discord:before {
-    mask: url(../../static/img/nav/discord.svg) no-repeat 100% 100%;
-    mask-size: cover;
-}
-
-.icon-download:before {
-    mask: url(../../static/img/nav/download.svg) no-repeat 100% 100%;
-    mask-size: cover;
-}
-
-.icon-github:before {
-    mask: url(../../static/img/nav/github.svg) no-repeat 100% 100%;
-    mask-size: cover;
 }
 
 

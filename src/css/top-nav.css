@@ -1,0 +1,46 @@
+/* Nav Icons */
+
+nav.navbar.navbar--fixed-top {
+    border-bottom: 2px solid var(--tertiary-background);
+}
+
+.navbar__inner {
+    width: 1920px;
+    margin: 0 auto;
+}
+
+.custom-icon {
+    display: flex;
+}
+
+.custom-icon:before {
+    background-color: var(--font-color);
+    content: "";
+    height: 24px;
+    margin-right: 0.5rem;
+    width: 24px;
+}
+
+.custom-icon:hover:before {
+    background-color: var(--highlight-color-1);
+}
+
+.icon-blog:before {
+    mask: url(../../static/img/nav/blog.svg) no-repeat 100% 100%;
+    mask-size: cover;
+}
+
+.icon-discord:before {
+    mask: url(../../static/img/nav/discord.svg) no-repeat 100% 100%;
+    mask-size: cover;
+}
+
+.icon-download:before {
+    mask: url(../../static/img/nav/download.svg) no-repeat 100% 100%;
+    mask-size: cover;
+}
+
+.icon-github:before {
+    mask: url(../../static/img/nav/github.svg) no-repeat 100% 100%;
+    mask-size: cover;
+}

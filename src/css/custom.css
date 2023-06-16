@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @import "general.css";
-@import "nav.css";
+@import "top-nav.css";
 @import "components.css";
 @import "content.css";
 @import "theme-light.css";
