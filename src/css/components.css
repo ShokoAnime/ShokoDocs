@@ -38,6 +38,7 @@
 .changelog-wrapper {
     display: flex;
     flex-direction: row;
+    width: 1146px;
 }
 
 .changelog-left {

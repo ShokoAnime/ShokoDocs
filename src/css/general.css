@@ -32,16 +32,6 @@ h3 {
     margin: 2em 0 !important;
 }
 
-html {
-    overflow: overlay; /* Temporary solution until scrollbar-gutter bug on Chromium is fixed. */
-    overflow-y: auto;
-    scrollbar-gutter: stable;
-}
-
-p {
-    margin: 1rem 0 !important;
-}
-
 strong {
     color: var(--highlight-color-4);
     font-weight: 500;
@@ -52,7 +42,7 @@ strong {
 }
 
 .menu.thin-scrollbar {
-    margin-top: 0.5rem;
+    padding-top: 2rem !important;
 }
 
 .main-wrapper {
@@ -63,6 +53,7 @@ strong {
 
 .container {
     max-width: 1620px;
+    padding-top: 2rem !important;
 }
 
 .col.docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {
