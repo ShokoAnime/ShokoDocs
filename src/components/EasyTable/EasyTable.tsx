@@ -4,10 +4,11 @@ import ReactMarkdown from 'react-markdown'
 interface EasyTableProps {
   header: string[]
   data: Array<Array<string | React.ReactNode>>
+  center?: boolean
   columnWidths?: { [key: string]: string }
 }
 
-const EasyTable = ({ header, data, columnWidths = {} }: EasyTableProps) => {
+const EasyTable = ({ header, data, center = false, columnWidths = {} }: EasyTableProps) => {
   const renderCell = (cellData: string | React.ReactNode) => {
     if (typeof cellData === 'string') {
       if (cellData.startsWith('<') && cellData.endsWith('>')) {
@@ -21,7 +22,7 @@ const EasyTable = ({ header, data, columnWidths = {} }: EasyTableProps) => {
 
   return (
     <div className="easy-wrapper">
-      <div className="easy-header">
+      <div className={`easy-header ${center ? 'easy-header-center' : null}`}>
         {header.map((column, index) => (
           <div key={index} style={{ width: columnWidths[column] }}>
             {column}
@@ -29,7 +30,7 @@ const EasyTable = ({ header, data, columnWidths = {} }: EasyTableProps) => {
         ))}
       </div>
       {data.map((row, rowIndex) => (
-        <div className="easy-row" key={rowIndex}>
+        <div className={`easy-row ${center ? 'easy-row-center' : null}`} key={rowIndex}>
           {row.map((cell, cellIndex) => (
             <div key={cellIndex} style={{ width: columnWidths[header[cellIndex]] }}>
               {renderCell(cell)}

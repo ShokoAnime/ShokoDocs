@@ -5,17 +5,26 @@
 }
 
 .easy-header {
-    background: var(--tertiary-background);
+    background: var(--secondary-background);
     display: flex;
     padding: 1rem;
 }
 
+.easy-header-center,
+.easy-row-center {
+    text-align: center;
+}
+
 .easy-row {
-    background: var(--secondary-background);
+    background: var(--tertiary-background);
     border-bottom: 2px solid var(--tertiary-background);
     display: flex;
     flex-direction: row;
     padding: 1rem;
+}
+
+.easy-row:nth-child(odd) {
+    background: var(--secondary-background);
 }
 
 .easy-row > div {
@@ -42,7 +51,7 @@
 }
 
 .changelog-left {
-    background: var(--tertiary-background);
+    background: var(--secondary-background);
     border-radius: 12.5px;
     box-shadow: 0 1.5px 3px 0 rgb(0 0 0 / 15%);
     margin-bottom: 1rem;
@@ -97,7 +106,7 @@
     content: "\A";
     display: inline-block;
     height: 10px;
-    margin-left: -2.55rem;
+    margin-left: -2.53rem;
     margin-top: 0.625rem;
     position: absolute;
     width: 10px;
@@ -115,7 +124,7 @@
 }
 
 .accordion-header {
-    background: var(--tertiary-background);
+    background: var(--secondary-background);
     border-radius: 0.5rem;
     cursor: pointer;
     display: flex;
@@ -133,7 +142,7 @@
 }
 
 .accordion-body {
-    background: var(--secondary-background);
+    background: var(--primary-background);
     border: 2px solid var(--tertiary-background);
     padding: 1rem;
 }

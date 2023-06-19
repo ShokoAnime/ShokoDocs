@@ -25,11 +25,15 @@ h1 {
 h2 {
     font-size: 1.75rem;
     margin: 2rem 0 !important;
+    border-top: 2px solid var(--tertiary-background);
+    padding-top: 2rem;
 }
 
 h3 {
     font-size: 1.5rem;
     margin: 2em 0 !important;
+    border-top: 2px solid var(--tertiary-background);
+    padding-top: 2rem;
 }
 
 strong {
@@ -58,7 +62,7 @@ strong {
 
 .col.docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {
     margin: 0 auto;
-    max-width: 850px !important;
+    max-width: 900px !important;
     font-size: 1.125rem;
     width: 100%;
 }
@@ -89,7 +93,12 @@ strong {
 .footer {
     background-color: var(--secondary-background);
     border-top: 2px solid var(--tertiary-background);
+    font-weight: 500;
     height: 80px;
+}
+
+.footer > .container {
+    padding-top: 0 !important;
 }
 
 

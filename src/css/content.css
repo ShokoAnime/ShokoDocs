@@ -43,3 +43,9 @@
 .card.padding--lg.card:hover {
     color: var(--highlight-color-1)
 }
+
+h2.text--truncate.cardTitle_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module {
+    border-top: none;
+    padding: 0;
+    margin: 1rem 0 !important;
+}
