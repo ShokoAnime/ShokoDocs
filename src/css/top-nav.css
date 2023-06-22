@@ -2,6 +2,7 @@
 
 nav.navbar.navbar--fixed-top {
     border-bottom: 2px solid var(--tertiary-background);
+    box-shadow: none;
 }
 
 .navbar__inner {

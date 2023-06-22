@@ -18,7 +18,7 @@
 
 .table-of-contents {
     border-left: 2px solid var(--tertiary-background);
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 500;
 }
 
@@ -45,7 +45,7 @@
 }
 
 h2.text--truncate.cardTitle_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module {
-    border-top: none;
+    border-bottom: none;
     padding: 0;
     margin: 1rem 0 !important;
 }

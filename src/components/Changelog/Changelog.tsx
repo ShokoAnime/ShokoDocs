@@ -34,16 +34,20 @@ export default function Changelog(props) {
 
   return Lodash.map(releaseInfo, (info, infoKey) => (
     <div className='changelog-wrapper' key={infoKey}>
-      <div className='changelog-left'>{BuildChanges({ info })}</div>
-      <div className='changelog-right'>
+      <div className='changelog-info'>
         <div className='changelog-version'>Version {info.version}</div>
+        <div className='changelog-divider'>/</div>
         <div className='changelog-date'>{info.date}</div>
         {info.link !== 'NA' ? (
-          <a className='changelog-link' href={info.link} target='_blank'>
-            View Release Notes
-          </a>
+          <>
+            <div className='changelog-divider'>/</div>
+            <a className='changelog-link' href={info.link} target='_blank'>
+              View Release Notes
+            </a>
+          </>
         ) : null}
       </div>
+      <div className='changelog-content'>{BuildChanges({ info })}</div>
     </div>
   ))
 }

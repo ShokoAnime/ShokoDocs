@@ -1,23 +1,7 @@
 [data-theme='dark'] {
-    /*Docusaurus CSS Variables */
-    --ifm-background-color: var(--primary-background) !important;
-    --ifm-card-background-color: var(--secondary-background);
-    --ifm-color-gray-700: var(--tertiary-background);
-    --ifm-color-gray-800: var(--tertiary-background);
-    --ifm-color-primary: var(--highlight-color-1);
-    --ifm-font-color-base: var(--font-color);
-    --ifm-link-hover-color: var(--highlight-color-1);
-    --ifm-menu-color: var(--font-color);
-    --ifm-menu-color-background-active: var(--tertiary-background);
-    --ifm-menu-color-background-hover: var(--tertiary-background);
-    --ifm-navbar-background-color: var(--secondary-background);
-    --ifm-navbar-height: 80px;
-    --ifm-toc-link-color: var(--font-color);
-
-    /*Custom CSS Variables*/
     --primary-background: #1e1e20;
-    --secondary-background: #161618;
-    --tertiary-background: #52525952;
+    --secondary-background: #161618; /*282a36 | 29292f*/
+    --tertiary-background: #29292e;
     --font-color: #CFD8E3;
 
     --highlight-color-1: #279CEB;
@@ -25,10 +9,5 @@
     --highlight-color-3: #BC8CFF;
     --highlight-color-4: #E3B341;
     --highlight-color-5: #41E382;
-    --highlight-color-6: #279CEB;
-
-    --changelog-added: #3699FF;
-    --changelog-changed: #1BC5BD;
-    --changelog-fixed: #FFA800;
-    --changelog-removed: #F64E60;
 }
+
