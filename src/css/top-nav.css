@@ -5,6 +5,10 @@ nav.navbar.navbar--fixed-top {
     box-shadow: none;
 }
 
+.navbar__title {
+    font-size: 1.25rem;
+}
+
 .navbar__inner {
     width: 1920px;
     margin: 0 auto;
@@ -12,6 +16,12 @@ nav.navbar.navbar--fixed-top {
 
 .custom-icon {
     display: flex;
+}
+
+@media (max-width: 675px) {
+    .custom-icon {
+        display: none;
+    }
 }
 
 .custom-icon:before {

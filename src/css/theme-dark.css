@@ -4,10 +4,39 @@
     --tertiary-background: #29292e;
     --font-color: #CFD8E3;
 
-    --highlight-color-1: #279CEB;
-    --highlight-color-2: #FF5252;
-    --highlight-color-3: #BC8CFF;
-    --highlight-color-4: #E3B341;
-    --highlight-color-5: #41E382;
+    --highlight-color-1: #44A3FF;
+    --highlight-color-2: #FF6C6C;
+    --highlight-color-3: #B981FF;
+    --highlight-color-4: #F9C851;
+    --highlight-color-5: #10C469;
+
+    .alert--info {
+        --ifm-alert-background-color: var(--tertiary-background);
+        --ifm-alert-background-color-highlight: #5458F7;
+        --ifm-alert-border-color: #5458F7;
+        --ifm-alert-foreground-color: var(--font-color);
+    }
+
+    .alert--success {
+        --ifm-alert-background-color: var(--tertiary-background);
+        --ifm-alert-background-color-highlight: #00CC99;
+        --ifm-alert-border-color: #00CC99;
+        --ifm-alert-foreground-color: var(--font-color);
+    }
+
+    .alert--warning {
+        --ifm-alert-background-color: var(--tertiary-background);
+        --ifm-alert-background-color-highlight: #F2C94C;
+        --ifm-alert-border-color: #F2C94C;
+        --ifm-alert-foreground-color: var(--font-color);
+    }
+
+    .alert--danger {
+        --ifm-alert-background-color: var(--tertiary-background);
+        --ifm-alert-background-color-highlight: #EB5757;
+        --ifm-alert-border-color: #EB5757;
+        --ifm-alert-foreground-color: var(--font-color);
+    }
+
 }
 

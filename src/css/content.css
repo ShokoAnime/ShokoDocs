@@ -22,16 +22,35 @@
     font-weight: 500;
 }
 
+a.table-of-contents__link.toc-highlight.table-of-contents__link--active:before {
+    background: var(--highlight-color-1);
+    content: '';
+    height: 26px;
+    left: 0;
+    position: absolute;
+    width: 2px;
+}
+
 /* Page */
 
 .theme-doc-footer-edit-meta-row {
     border-top: 2px solid var(--tertiary-background);
-    padding-top: 2rem;
     justify-content: space-between;
+    padding-top: 2rem;
 }
 
 .pagination-nav__link {
     border: 2px solid var(--tertiary-background);
+}
+
+.theme-code-block:hover .buttonGroup_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Content-styles-module button {
+    background: var(--tertiary-background);
+    color: var(--highlight-color-1);
+    opacity: 1 !important;
+}
+
+.medium-zoom-image--opened {
+    image-rendering: pixelated;
 }
 
 /* Cards */
@@ -46,6 +65,6 @@
 
 h2.text--truncate.cardTitle_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module {
     border-bottom: none;
-    padding: 0;
     margin: 1rem 0 !important;
+    padding: 0;
 }

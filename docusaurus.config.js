@@ -46,6 +46,8 @@ const config = {
 		],
 	],
 
+	plugins: [require.resolve('docusaurus-plugin-image-zoom')],
+
 	themeConfig: {
 		docs: {
 			sidebar: {
@@ -96,6 +98,16 @@ const config = {
 		},
 		footer: {
 			copyright: `Copyright © ${new Date().getFullYear()} Shoko Docs. Built with Docusaurus.`,
+		},
+		zoom: {
+			selector: '.markdown :not(em) > img',
+			background: {
+				light: 'rgb(255, 255, 255)',
+				dark: 'rgb(30, 30, 32)',
+			},
+			config: {
+				// options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+			},
 		},
 	},
 }

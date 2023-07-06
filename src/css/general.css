@@ -53,8 +53,13 @@ h3 {
     padding-bottom: 2rem;
 }
 
+img {
+    border-radius: 10px;
+    image-rendering: auto;
+}
+
 strong {
-    color: var(--highlight-color-3);
+    color: var(--highlight-color-4);
     font-weight: 500;
 }
 
@@ -94,7 +99,7 @@ strong {
 .plugin-id-default.docs-doc-id-changelog\/shoko-server * .container,
 .plugin-id-default.docs-doc-id-changelog\/shoko-webui * .container,
 .plugin-id-default.docs-doc-id-changelog\/shokofin * .container {
-    max-width: max-content;
+    max-width: 100%;
     width: 1178px;
 }
 

@@ -36,11 +36,11 @@ export default function Changelog(props) {
     <div className='changelog-wrapper' key={infoKey}>
       <div className='changelog-info'>
         <div className='changelog-version'>Version {info.version}</div>
-        <div className='changelog-divider'>/</div>
+        <div className='changelog-divider'>|</div>
         <div className='changelog-date'>{info.date}</div>
         {info.link !== 'NA' ? (
           <>
-            <div className='changelog-divider'>/</div>
+            <div className='changelog-divider'>|</div>
             <a className='changelog-link' href={info.link} target='_blank'>
               View Release Notes
             </a>
