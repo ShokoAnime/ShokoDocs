@@ -1,6 +1,6 @@
 // Imports
 import React from 'react'
-import Lodash from 'Lodash'
+import Lodash from 'lodash'
 import { program, typeColor } from './Changelog.utils'
 
 export default function Changelog(props) {
