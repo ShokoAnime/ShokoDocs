@@ -45,7 +45,7 @@ For the setup you should have the following data ready:
 If you are unsure how to obtain the needed info, please refer to the below table for a break-down of the following command:
 
 ```sh
-$ docker run -d --name shokoserver --restart always -p 8111:8111 -v "$HOME/.shoko:/home/shoko/.shoko" -v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import" -e PUID=$UID -e PGID=$GID shokoanime/server:latest
+$ docker run -d --name shokoserver --restart always -p 8111:8111 -v "$HOME/.shoko:/home/shoko/.shoko" -v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import" -e PUID=$UID -e PGID=$GID --shm-size 256m shokoanime/server:latest
 ```
 
 <EasyTable
@@ -103,10 +103,17 @@ $ docker run -d --name shokoserver --restart always -p 8111:8111 -v "$HOME/.shok
           'Specifies the Image to derive the container from.'
       ],
       [
-          <code>-e AVDUMP_MONO=true</code>,
+          <code>--shm-size 256m</code>,
           'Set Environment Variable for AVDump.\n \n' +
-          'AVDump currently requires large dependencies, so by specifying this environment variable, it tells the container to pull the dependencies for AVDump to work.'
-      ]
+          'AVDump3 requires access to a larger portion of shared IPC memory than the **64MB** available by	default in docker containers, otherwise it might core dump when starting the dump process. Increasing it to	**256MB** is enough to avoid this.\n \n' +
+          '**Note:** AVDump3 is currently only available on the **daily** version of the server. If you\'re on **stable** then you can ignore this argument.'
+      ],
+      [
+          <code>-e AVDUMP_MONO=true</code>,
+          'Set Environment Variable for AVDump2.\n \n' +
+          'AVDump2 currently requires large dependencies, so by specifying this environment variable, it tells the container to pull the dependencies for AVDump2 to work.\n\n' +
+          '**Note:** AVDump2 is currently only available on the **stable** version of the server. If you\'re on **daily** then you can ignore this argument.'
+      ],
   ]}
   hideHeader={false}
   columnWidths={{ Command: '35%', Purpose: '65%' }}
@@ -122,6 +129,7 @@ In order to make this work, install docker-compose, a guide how to can be found 
 version: "3"
 services:
   shoko_server:
+    shm_size: 256m
     container_name: shokoserver
     image: shokoanime/server:latest
     restart: always
@@ -143,19 +151,36 @@ This combines all of our previous configuration in an easy to read and edit form
 
 Make sure you have Docker installed on your QNAP NAS before you continue. This package can be found in the App Center, under the Name of **Container Station**.
 
-As the management using Container Station will feel a bit clunky, we recommend starting the container using the instructions given under **Docker commandline** above.
+**Note:** As the management using **Container Station** will feel a bit clunky, we recommend starting the container using the instructions given under [Docker command-line](#docker-commandline) above.
 
 More instructions are TBD.
 
 ## Docker (Synology NAS)
 
-Make sure you have Docker installed on your Synology NAS before you continue. This package can be found in the Package Center, under Third-party.
+Make sure you have the [Synology Docker Application](https://www.synology.com/en-global/dsm/packages/Docker)
+installed on your Synology NAS before you continue. This package can be found in the Package Center,
+under the 'Third-party' section.
 
-You will need to find your User ID before continuing. Log in to your Synology NAS using SSH and type **id**. You'll see an uid: note it down for later. To avoid getting your database cleared on updates, you should also create a folder in the **docker** shared folder named **shokoserver**.
+**Note:** As the management using the **Synology Docker Application** will feel a bit clunky, we recommend
+creating the container using the instructions given under [Docker command-line](#docker-commandline)
+or [Docker compose](##docker-compose) above, but if you still want to use the application then you
+can follow along below.
 
-Open Docker from the applications menu, then go to Containers. You'll need to download the Synology Container File and fill out the anime folder path and your User ID. Once that's done, go to Settings, Import and select the file you've just modified. Name the container **shokoserver**, then apply!
+You will need to find your User ID (UID) before continuing. Log in to your Synology NAS using SSH and type `id`.
+You'll see the UID: note down the number for later. To avoid getting your database cleared on updates, you can also
+create a folder in the `docker` shared folder named `shokoserver` on the host and map it to `/home/shoko/.shoko`
+in the container with R/W access.
 
-Please note that if you want to edit volumes or environment variables, you'll need to stop the container first.
+Open Docker from the Application Menu, then go to the Containers tab. You'll need to download the
+**Synology Container File** and **fill out the anime folder path and replace the** <code>PUID</code> **with UID you previously acquired**.
+Once that's done, go to Settings, Import and select the file you've just modified. Name the container `shokoserver`, then apply!
+
+**Note #1:** If you want to edit volumes or environment variables, you'll need to stop the container first.
+
+**Note #2:** If you intend to use the **daily** version of the server then
+AVDump3 might crash since we are unable to modify the shared IPC memory size through the proprietary
+container format Synology uses, so if you do use this method to install the server then you have been
+warned.
 
 ## Docker (TrueNAS)
 
@@ -165,7 +190,7 @@ TBD
 
 ### TrueNAS Core
 
-Docker is not supported on this platform, as **TrueNAS Core** uses FreeBSD as base OS.
+Docker is not natively supported on this platform, as **TrueNAS Core** detrives from FreeBSD.
 
 However, you may find help for this by talking to the community on our **Discord Server**
 
