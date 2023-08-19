@@ -46,13 +46,13 @@ First things first, download the image, and unless otherwise told, install the v
 
 ```bash
 $ docker pull shokoanime/server:latest
-``` 
+```
 
 Now, you can run the command below, after substituting the paths below (the second and third volume mount point) with
 path(s) leading to your library and/or import folders.
 
 ```sh
-$ docker run -d --name shokoserver --restart always -p 8111:8111 -v "$HOME/.shoko:/home/shoko/.shoko" -v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import" -e PUID=$UID -e PGID=$GID shokoanime/server:latest
+$ docker run -d --name shokoserver --restart always -p 8111:8111 -v "$HOME/.shoko:/home/shoko/.shoko" -v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import" -e PUID=$UID -e PGID=$GID --shm-size 256m shokoanime/server:latest
 ```
 
 If you want a more detailed explanation, then refer to the below table for a break-down of the above command:
@@ -188,13 +188,33 @@ If you want a more detailed explanation, then refer to the below table for a bre
 	</tr>
 	<tr>
 		<td>
+			<pre>--shm-size 256m</pre>
+		</td>
+		<td>
+			<a href="https://docs.docker.com/engine/reference/run/#runtime-constraints-on-resources" target="_blank"
+			   rel="noopener">Set Larger Shared Memory for AVDump3.</a>
+			<br><br>
+			AVDump3 requires access to a larger portion of shared IPC memory than the <strong>64MB</strong> available by
+			default in docker containers, otherwise it might core dump when starting the dump process. Increasing it to
+			<strong>256MB</strong> is enough to avoid this.
+			<br><br>
+			<strong>Note:</strong> AVDump3 is currently only available on the <strong>daily</strong> version of the server.
+			If you're on <strong>stable</strong> then you can ignore this argument.
+		</td>
+	</tr>
+	<tr>
+		<td>
 			<pre>-e AVDUMP_MONO=true</pre>
 		</td>
 		<td>
 			<a href="https://docs.docker.com/engine/reference/run/#env-environment-variables" target="_blank"
-			   rel="noopener">Set Environment Variable for AVDump.</a>
+				rel="noopener">Set Environment Variable for AVDump2.</a>
 			<br><br>
-			AVDump currently requires large dependencies, so by specifying this environment variable, it tells the container to pull the dependencies for AVDump to work.
+			AVDump2 currently requires large dependencies, so by specifying this environment variable, it tells the container
+			to pull the dependencies for AVDump2 to work.
+			<br><br>
+			<strong>Note:</strong> AVDump2 is currently only available on the <strong>stable</strong> version of the server.
+			If you're on <strong>daily</strong> then you can ignore this argument.
 		</td>
 	</tr>
 	</tbody>
@@ -213,6 +233,7 @@ to substitute the paths below with path(s) leading to your library and/or import
 version: "3"
 services:
   shoko_server:
+    shm_size: 256m
     container_name: shokoserver
     image: shokoanime/server:latest
     restart: always
@@ -234,19 +255,24 @@ think of that’s available in a docker format.
 
 #### Synology NAS
 
-Make sure you have [Docker](https://www.synology.com/en-global/dsm/packages/Docker) installed on your Synology NAS 
+Make sure you have [Docker](https://www.synology.com/en-global/dsm/packages/Docker) installed on your Synology NAS
 before you continue. This package can be found in the Package Center, under Third-party.
 
-You will need to find your User ID before continuing. Log in to your Synology NAS using SSH and type `id`.
-You'll see an uid: note it down for later. To avoid getting your database cleared on updates, you should also
+You will need to find your User ID (UID) before continuing. Log in to your Synology NAS using SSH and type `id`.
+You'll see the UID: note down the number for later. To avoid getting your database cleared on updates, you can also
 create a folder in the `docker` shared folder named `shokoserver` on the host and map it to `/home/shoko/.shoko`
 in the container with R/W access.
 
-Open Docker from the applications menu, then go to Containers. You'll need to download the 
-[Synology Container File](/server/synology-dockerfile.json) and fill out the anime folder path and your User ID. 
+Open Docker from the Application Menu, then go to the Containers tab. You'll need to download the
+[Synology Container File](/server/synology-dockerfile.json) and <strong>fill out the anime folder path and replace the <code>PUID</code> your User's ID you previously acquired</strong>.
 Once that's done, go to Settings, Import and select the file you've just modified. Name the container `shokoserver`, then apply!
 
-Please note that if you want to edit volumes or environment variables, you'll need to stop the container first.
+<strong>Note #1:</strong> If you want to edit volumes or environment variables, you'll need to stop the container first.
+<br><br>
+<strong>Note #2:</strong> If you intend to use the <strong>daily</strong> version of the server then
+AVDump3 might crash since we are unable to modify the shared IPC memory size through the proprietary
+container format Synology uses, so if you do use this method to install the server then you have been
+warned.
 
 ## Next Step
 
