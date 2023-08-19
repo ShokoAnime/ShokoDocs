@@ -27,6 +27,7 @@ a:hover {
 
 body {
     font-family: 'Nunito', sans-serif;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -40,17 +41,17 @@ h1 {
 }
 
 h2 {
-    border-bottom: 2px solid var(--tertiary-background);
+    border-top: 2px solid var(--tertiary-background);
     font-size: 1.75rem;
     margin: 2rem 0 !important;
-    padding-bottom: 2rem;
+    padding-top: 2rem;
 }
 
 h3 {
-    border-bottom: 2px solid var(--tertiary-background);
+    border-top: 2px solid var(--tertiary-background);
     font-size: 1.5rem;
     margin: 2em 0 !important;
-    padding-bottom: 2rem;
+    padding-top: 2rem;
 }
 
 img {
@@ -63,53 +64,16 @@ strong {
     font-weight: 500;
 }
 
-.theme-doc-sidebar-container {
-    border-right: 2px solid var(--tertiary-background) !important;
+.theme-doc-sidebar-container.docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Sidebar-styles-module {
+    width: calc((100% - 1448px) / 2 + 260px);
 }
 
-.menu.thin-scrollbar {
-    padding-top: 2rem !important;
+.sidebar_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-styles-module {
+    margin-left: auto;
 }
 
-.main-wrapper {
-    margin: 0 auto;
-    max-width: 1920px;
-    width: 100%;
-}
-
-.container {
-    max-width: 1620px;
-    padding-top: 2rem !important;
-}
-
-.col.docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {
-    font-size: 1.125rem;
-    margin: 0 auto;
-    max-width: 900px !important;
-    width: 100%;
-}
-
-.generatedIndexPage_node_modules-\@docusaurus-theme-classic-lib-theme-DocCategoryGeneratedIndexPage-styles-module {
-    margin: 0 auto;
-}
-
-.plugin-id-default.docs-doc-id-changelog\/my-anime-3 * .container,
-.plugin-id-default.docs-doc-id-changelog\/shoko-desktop * .container,
-.plugin-id-default.docs-doc-id-changelog\/shoko-metadata * .container,
-.plugin-id-default.docs-doc-id-changelog\/shoko-server * .container,
-.plugin-id-default.docs-doc-id-changelog\/shoko-webui * .container,
-.plugin-id-default.docs-doc-id-changelog\/shokofin * .container {
-    max-width: 100%;
-    width: 1178px;
-}
-
-.col {
-    flex: inherit;
-    width: auto;
-}
-
-.col.col--3 {
-    max-width: 300px;
+nav.menu.thin-scrollbar {
+    padding: 1rem 0;
 }
 
 .footer {
