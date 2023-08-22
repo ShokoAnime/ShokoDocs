@@ -151,9 +151,16 @@ This combines all of our previous configuration in an easy to read and edit form
 
 Make sure you have Docker installed on your QNAP NAS before you continue. This package can be found in the App Center, under the Name of **Container Station**.
 
-**Note:** As the management using **Container Station** will feel a bit clunky, we recommend starting the container using the instructions given under [Docker command-line](#docker-commandline) above.
+**Note:** As the management using **Container Station** will feel a bit clunky, we recommend creating the container using the instructions given under [Docker command-line](#docker-commandline) above.
 
-More instructions are TBD.
+You can change (not all) settings, like autostart, of the container using Container Station GUI later, or use **Portainer**, which also lets you use the [Docker compose](#docker-compose) above in a **Stack** via an easy to use Web-GUI.
+Feel free to talk to the community on our **Discord Server** about using **Portainer** or docker-compose on your QNAP NAS.
+
+:::info Regarding Container Station v3
+The current version as of writing this is **3.0.4.533** which became available for **QTS 5.1.0.2466** just recently.
+If you are on an older version of QTS or QTS hero (ZFS variant of QTS) the available version and experience with Container Station might differ greatly.
+We always recommend an up-to-date QNAP QTS + App Center updates for the best experience and security.
+:::
 
 ## Docker (Synology NAS)
 
@@ -163,7 +170,7 @@ under the 'Third-party' section.
 
 **Note:** As the management using the **Synology Docker Application** will feel a bit clunky, we recommend
 creating the container using the instructions given under [Docker command-line](#docker-commandline)
-or [Docker compose](##docker-compose) above, but if you still want to use the application then you
+or [Docker compose](#docker-compose) above, but if you still want to use the application then you
 can follow along below.
 
 You will need to find your User ID (UID) before continuing. Log in to your Synology NAS using SSH and type `id`.
@@ -190,7 +197,7 @@ TBD
 
 ### TrueNAS Core
 
-Docker is not natively supported on this platform, as **TrueNAS Core** detrives from FreeBSD.
+Docker is not natively supported on this platform, as **TrueNAS Core** derives from FreeBSD.
 
 However, you may find help for this by talking to the community on our **Discord Server**
 
