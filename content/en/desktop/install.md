@@ -17,16 +17,6 @@ Navigate to the [Shoko Downloads](https://shokoanime.com/downloads/) page and do
 downloading the **Stable** version. The installer will guide you through the installation process and should only take 
 a couple of minutes.
 
-+++ title = "Running Shoko Desktop on Linux"
-description = "Settings that work for Wine emulation"
-aliases = ["/server/linux-desktop"]
-layout = "single"
-[[pageNav]]
-name = "Shoko Desktop Under Linux"
-id = "desktop_on_linux"
-
-+++
-
 ### Linux with Wine using Bottles
 
 1. Install Bottles (https://usebottles.com). This may require installing Flatpak and adding the Flathub repository if you don't have it already.
