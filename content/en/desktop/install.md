@@ -1,3 +1,22 @@
++++ title = "Installing Shoko Desktop"
+description = "Information on how to install Shoko Desktop."
+aliases = ["/desktop"]
+layout = "single"
+[[pageNav]]
+navTitle = "Install Platforms"
+name = "Windows"
+id = "windows"
+[[pageNav]]
+name = "Shoko Desktop Under Linux"
+id = "linux-with-wine-using-bottles"
++++
+
+### Windows {.page-first-header}
+
+Navigate to the [Shoko Downloads](https://shokoanime.com/downloads/) page and download **Shoko Server**, unless told otherwise, we always recommend 
+downloading the **Stable** version. The installer will guide you through the installation process and should only take 
+a couple of minutes.
+
 +++ title = "Running Shoko Desktop on Linux"
 description = "Settings that work for Wine emulation"
 aliases = ["/server/linux-desktop"]
@@ -8,7 +27,7 @@ id = "desktop_on_linux"
 
 +++
 
-## Running Shoko Desktop on Linux with Wine using Bottles {.page-first-header}
+### Linux with Wine using Bottles
 
 1. Install Bottles (https://usebottles.com). This may require installing Flatpak and adding the Flathub repository if you don't have it already.
 2. Before adding a bottle, go to Bottles preferences and under the "Runners" tab, install the latest Caffe or Proton GE. Other runners may also be installed, but we have verified that Caffe and Proton GE work. Other runners might work and might give better performance. We just know that the Soda runner can be slow and certain errors might pop up that prevent Shoko Desktop being utilized for all its functions.
@@ -19,6 +38,7 @@ id = "desktop_on_linux"
 
 Congratulations! You should now be able to run Shoko Desktop using the shortcut created in Bottles. Feel free to tweak other settings that might help improve performance for your system such as using discrete graphics, but what is now setup is the minimum needed to get things working.
 
-### Potential issues and fixes:
+#### Potential issues and fixes:
 - If Bottles has issues running the Shoko Desktop installer, you may need to copy the executable into the wine prefix for the bottle due to how Flatpak does its sandboxing. You would then have to run the executable from where it is located inside the prefix. Another option is to expose more directories to Flatpak which would reduce the amount of sandboxing and security of it. You can follow https://docs.usebottles.com/flatpak/expose-directories to see how to do so, but this should only be used as a last resort. If you have to go this route, you should be able to revert the changes made once the installer has finished.
 - If Shoko Desktop goes black while using it, resize the window. This will force a render since Wine is a bit weird with how Shoko Desktop draws itself.
+

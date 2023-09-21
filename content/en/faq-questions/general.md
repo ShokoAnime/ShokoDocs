@@ -17,7 +17,7 @@ Please keep in mind that Shoko Server on Linux is still in beta so issues are to
 
 There are no plans to add Linux or MacOS support to **Shoko Desktop** as it is being phased out.
 
-Several community members have had success running the Windows client under Wine on [Linux](../server/linux-desktop) and on MacOS using the same wineprefix dependencies via Portingkit.
+Several community members have had success running the Windows client under Wine on [Linux](../desktop/install.md) and on MacOS using the same wineprefix dependencies via Portingkit.
 
 {{% /faq %}} 
 {{% faq type="general" id="anidb-ban" question="I've Been Banned From AniDB?" %}}
