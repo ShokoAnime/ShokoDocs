@@ -6,6 +6,12 @@
 	</div>
 </li>
 <li class="nav-item">
+	<a class="nav-link nav-menu sidenav-menu {{if eq .RelPermalink "/desktop/"}}active{{end}}" href="#">Shoko Desktop<i class="nav-angle"></i></a>
+	<div class="nav nav-title-wrapper">
+		<a class="nav-link nav-menu {{if in .RelPermalink "/server/install/"}}active{{end}}" href="{{"desktop/install" | relURL}}">How To Install</a>
+	</div>
+</li>
+<li class="nav-item">
 	<a class="nav-link nav-menu sidenav-menu {{if eq .RelPermalink "/shokometadata/"}}active{{end}}" href="#">Shoko Metadata<i class="nav-angle"></i></a>
 	<div class="nav nav-title-wrapper">
 		<a class="nav-link nav-menu {{if in .RelPermalink "/shokometadata/install/"}}active{{end}}" href="{{"shokometadata/install" | relURL}}">How To Install</a>

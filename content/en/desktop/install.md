@@ -1,14 +1,23 @@
-+++ title = "Running Shoko Desktop on Linux"
-description = "Settings that work for Wine emulation"
-aliases = ["/server/linux-desktop"]
++++ title = "Installing Shoko Desktpp"
+description = "Information on how to install Shoko Desktop."
+aliases = ["/desktop"]
 layout = "single"
 [[pageNav]]
+navTitle = "Install Platforms"
+name = "Windows"
+id = "windows"
+[[pageNav]]
 name = "Shoko Desktop Under Linux"
-id = "desktop_on_linux"
-
+id = "linux-with-wine-using-bottles"
 +++
 
-## Running Shoko Desktop on Linux with Wine using Bottles {.page-first-header}
+### Windows {.page-first-header}
+
+Navigate to the [Shoko Downloads](https://shokoanime.com/downloads/) page and download **Shoko Server**, unless told otherwise, we always recommend 
+downloading the **Stable** version. The installer will guide you through the installation process and should only take 
+a couple of minutes.
+
+###  Linux with Wine using Bottles 
 
 1. Install Bottles (https://usebottles.com). This may require installing Flatpak and adding the Flathub repository if you don't have it already.
 2. Before adding a bottle, go to Bottles preferences and under the "Runners" tab, install the latest Caffe or Proton GE. Other runners may also be installed, but I have verified that Caffe and Proton GE work. Other runners might work and might give better performance. I just know that the Soda runner can be slow and certain errors might popup that prevent Shoko Desktop being utilized for all its functions.
