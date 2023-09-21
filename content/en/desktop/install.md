@@ -68,3 +68,4 @@ In Wineskin:
 
 #### Potential issues and fixes:
 - In the event that you close Wineskin while setting up and it will no longer open to it when launching the Shoko Desktop wrapper, go to the location of the wrapper in Finder, right click the app, and select Show Package Contents. You can then open the Wineskin.app contained to get back to configuring the wrapper.
+- If Shoko Desktop goes black while using it, resize the window. This will force a render since Wine is a bit weird with how Shoko Desktop draws itself.
