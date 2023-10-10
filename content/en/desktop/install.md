@@ -16,7 +16,7 @@ id = "macos-with-wineskin"
 
 ### Windows {.page-first-header}
 
-Navigate to the [Shoko Downloads](https://shokoanime.com/downloads/) page and download **Shoko Server**, unless told otherwise, we always recommend 
+Navigate to the [Shoko Downloads](https://shokoanime.com/downloads/) page and download **Shoko Desktop**, unless told otherwise, we always recommend 
 downloading the **Stable** version. The installer will guide you through the installation process and should only take 
 a couple of minutes.
 
