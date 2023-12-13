@@ -1,0 +1,58 @@
+---
+import TableOfContentsList from '../../node_modules/@astrojs/starlight/components/TableOfContents/TableOfContentsList.astro';
+import {Icon} from '@astrojs/starlight/components';
+
+const {locale, toc, editUrl, lastUpdated, entry, isFallback} = Astro.props;
+
+const githubEditUrl =
+	entry.data.githubURL && (locale === 'en' || isFallback)
+		? `${entry.data.githubURL}${entry.data.hasREADME ? 'README.md' : ''}`
+		: editUrl;
+---
+
+{
+	toc && (
+    <starlight-toc data-min-h={toc.minHeadingLevel} data-max-h={toc.maxHeadingLevel}>
+        <nav aria-labelledby="starlight__on-this-page">
+            <h2 id="starlight__on-this-page">
+                On This Page
+            </h2>
+            <>
+                <TableOfContentsList toc={toc.items}/>
+                <h2 class="contribute">Contribute</h2>
+                <ul>
+                    <li>
+                        <a href={`/${locale}/contribute/`}>
+                            <Icon name="open-book"/>
+                            Contribute
+                        </a>
+                    </li>
+                    <li>
+                        <a href={githubEditUrl}>
+                            <Icon name="pencil"/>
+							Edit This Page
+                        </a>
+                    </li>
+                    <li>
+                        Last Updated: {lastUpdated}
+                    </li>
+                </ul>
+            </>
+        </nav>
+    </starlight-toc>
+		)
+	}
+
+<style>
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    .contribute {
+        margin-top: 1rem;
+    }
+</style>
+
+<script src="../../node_modules/@astrojs/starlight/components/TableOfContents/starlight-toc.ts"
+></script>
