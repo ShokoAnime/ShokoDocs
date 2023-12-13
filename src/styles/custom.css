@@ -1,0 +1,40 @@
+:root {
+    --sl-color-text-invert: #0e092e;
+    --sl-color-text-accent: #ff8888;
+    --sl-color-text-bold: #ffd788;
+    --sl-color-text-link: #88bdff;
+}
+
+:root[data-theme='light'],
+[data-theme='light'] ::backdrop {
+    --sl-color-text-invert: #ffffff;
+    --sl-color-text-accent: #7158e1;
+    --sl-color-text-bold: #3d50f5;
+    --sl-color-text-link: #f44949;
+}
+
+.sl-markdown-content * a {
+    color: var(--sl-color-text-link);
+    font-weight: 600;
+}
+
+.sl-markdown-content * strong {
+    color: var(--sl-color-text-bold);
+    font-weight: 600;
+}
+
+.sl-flex.social-icons > a {
+    color: var(--sl-color-text-link);
+}
+
+.title-second {
+    color: var(--sl-color-white);
+}
+
+/* Hide Edit & Last Updated in Footer */
+.meta.sl-flex {
+    @media (min-width: 1152px) {
+        display: none;
+    }
+}
+
