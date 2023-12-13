@@ -1,13 +1,16 @@
 ---
-import TableOfContentsList from '../../node_modules/@astrojs/starlight/components/TableOfContents/TableOfContentsList.astro';
+import TableOfContentsList
+	from '../../node_modules/@astrojs/starlight/components/TableOfContents/TableOfContentsList.astro';
 import {Icon} from '@astrojs/starlight/components';
 
 const {locale, toc, editUrl, lastUpdated, entry, isFallback} = Astro.props;
 
-const githubEditUrl =
-	entry.data.githubURL && (locale === 'en' || isFallback)
-		? `${entry.data.githubURL}${entry.data.hasREADME ? 'README.md' : ''}`
-		: editUrl;
+// Parse and format the date
+const newDateString = new Date(lastUpdated).toLocaleDateString('en-us', {
+	month: 'short',
+	day: 'numeric',
+	year: 'numeric'
+});
 ---
 
 {
@@ -22,19 +25,22 @@ const githubEditUrl =
                 <h2 class="contribute">Contribute</h2>
                 <ul>
                     <li>
+                        <a href={editUrl}>
+                            <Icon name="pencil"/>
+                            Edit This Page
+                        </a>
+                    </li>
+                    <li>
                         <a href={`/${locale}/contribute/`}>
                             <Icon name="open-book"/>
-                            Contribute
+                            Contribute to ShokoDocs
                         </a>
                     </li>
-                    <li>
-                        <a href={githubEditUrl}>
-                            <Icon name="pencil"/>
-							Edit This Page
-                        </a>
-                    </li>
-                    <li>
-                        Last Updated: {lastUpdated}
+                </ul>
+                <ul class="updated">
+                    <li class="right-sidebar-panel:where(.astro-vbcgnfos) a">
+                        <Icon name="document"/>
+                        Last Updated On {newDateString}
                     </li>
                 </ul>
             </>
@@ -49,9 +55,22 @@ const githubEditUrl =
         list-style: none;
     }
 
+    li {
+        display: block;
+        font-size: var(--sl-text-xs);
+        text-decoration: none;
+        color: var(--sl-color-gray-3);
+        overflow-wrap: anywhere;
+    }
+
     .contribute {
         margin-top: 1rem;
     }
+
+    .updated {
+        margin-top: 1rem;
+    }
+
 </style>
 
 <script src="../../node_modules/@astrojs/starlight/components/TableOfContents/starlight-toc.ts"
