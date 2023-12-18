@@ -1,3 +1,5 @@
+@import "components.css";
+
 :root {
     --sl-color-text-invert: #0e092e;
     --sl-color-text-accent: #ff8888;
