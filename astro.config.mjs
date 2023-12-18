@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
@@ -8,7 +9,7 @@ export default defineConfig({
     title: 'ShokoDocs',
     logo: {
       light: './src/assets/light-logo.png',
-      dark: './src/assets/dark-logo.png',
+      dark: './src/assets/dark-logo.png'
     },
     social: {
       discord: 'https://discord.com/invite/vpeHDsg',
@@ -29,8 +30,6 @@ export default defineConfig({
       TableOfContents: './src/components/TableOfContents.astro',
       SiteTitle: './src/components/SiteTitle.astro'
     },
-    customCss: [
-      './src/styles/custom.css',
-    ],
-  })]
+    customCss: ['./src/styles/custom.css']
+  }), react()]
 });
