@@ -19,17 +19,17 @@ export default defineConfig({
       baseUrl: 'https://github.com/ShokoAnime/ShokoDocs'
     },
     lastUpdated: true,
-    sidebar: [{
-      label: 'Getting Started',
-      // Autogenerate a group of links for the 'getting-started' directory.
-      autogenerate: {
-        directory: 'getting-started'
-      }
-    }],
     components: {
       TableOfContents: './src/components/TableOfContents.astro',
       SiteTitle: './src/components/SiteTitle.astro'
     },
+    sidebar: [
+      { autogenerate: { directory: 'getting-started' }, label: 'Getting Started' },
+      { label: 'Shoko Suite', link: 'shoko-suite' },
+      { label: 'FAQ', link: 'faq' },
+      { autogenerate: { directory: 'changelog' }, label: 'Changelog' }
+    ]
+    ,
     customCss: ['./src/styles/custom.css']
   }), react()]
 });
