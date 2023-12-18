@@ -31,6 +31,11 @@ export default defineConfig({
       },
       label: 'Getting Started'
     }, {
+      autogenerate: {
+        directory: 'mediaserver-integration'
+      },
+      label: 'Mediaserver-Integration'
+    }, {
       label: 'Shoko Suite',
       link: 'shoko-suite'
     }, {

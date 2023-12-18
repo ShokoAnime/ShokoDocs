@@ -1,0 +1,90 @@
+{
+   "cap_add" : null,
+   "cap_drop" : null,
+   "cmd" : "",
+   "cpu_priority" : 50,
+   "devices" : null,
+   "enable_publish_all_ports" : false,
+   "enable_restart_policy" : true,
+   "enabled" : false,
+   "entrypoint_default" : "/bin/sh -c /bin/bash /dockerentry.sh",
+   "env_variables" : [
+      {
+         "key" : "PATH",
+         "value" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      },
+      {
+         "key" : "ASPNETCORE_URLS",
+         "value" : "http://+:80"
+      },
+      {
+         "key" : "DOTNET_RUNNING_IN_CONTAINER",
+         "value" : "true"
+      },
+      {
+         "key" : "DOTNET_VERSION",
+         "value" : "5.0.2"
+      },
+      {
+         "key" : "ASPNET_VERSION",
+         "value" : "5.0.2"
+      },
+      {
+         "key" : "PUID",
+         "value" : "replace-with-your-uid"
+      },
+      {
+         "key" : "PGID",
+         "value" : "100"
+      },
+      {
+         "key" : "AVDUMP_MONO",
+         "value" : "false"
+      },
+      {
+         "key" : "LANG",
+         "value" : "C.UTF-8"
+      },
+      {
+         "key" : "LC_CTYPE",
+         "value" : "C.UTF-8"
+      },
+      {
+         "key" : "LC_ALL",
+         "value" : "C.UTF-8"
+      }
+   ],
+   "exporting" : false,
+   "id" : "",
+   "image" : "shokoanime/server:latest",
+   "is_ddsm" : false,
+   "is_package" : false,
+   "links" : [],
+   "memory_limit" : 0,
+   "name" : "shokoserver",
+   "network" : [
+      {
+         "driver" : "host",
+         "name" : "host"
+      }
+   ],
+   "network_mode" : "host",
+   "port_bindings" : [],
+   "privileged" : false,
+   "shortcut" : {
+      "enable_shortcut" : false
+   },
+   "use_host_network" : true,
+   "volume_bindings" : [
+      {
+         "host_volume_file" : "/docker/shokoserver",
+         "mount_point" : "/home/shoko/.shoko",
+         "type" : "rw"
+      },
+      {
+         "host_volume_file" : "/path/to/anime",
+         "mount_point" : "/mnt/anime",
+         "type" : "rw"
+      }
+   ]
+}
