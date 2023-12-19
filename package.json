@@ -11,19 +11,21 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.3.3",
-    "@astrojs/mdx": "^2.0.1",
     "@astrojs/react": "^3.0.7",
-    "@astrojs/starlight": "^0.15.0",
+    "@astrojs/starlight": "^0.15.1",
     "@types/node": "^20.10.5",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
     "astro": "^4.0.6",
-    "astro-expressive-code": "^0.30.1",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^9.0.1",
     "sharp": "^0.32.6",
     "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.1",
+    "prettier-plugin-astro": "^0.12.2"
   }
 }
