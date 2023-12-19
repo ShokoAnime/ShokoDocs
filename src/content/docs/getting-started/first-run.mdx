@@ -1,0 +1,113 @@
+---
+title: First Run
+sidebar:
+    order: 3
+description: First Run Wizard after initial setup
+---
+
+With Shoko Server installed, the next step is configuring it but first, you'll need to make sure Shoko Server is running.
+
+Windows users can check their **system tray** for the Shoko icon and if not there, simply launch Shoko Server.
+
+Docker users will need to run the command to launch the container, and while the exact command will be different per
+person, it should look something like this.
+
+```sh
+docker run -d --name shokoserver --restart always -p 8111:8111 -v "$HOME/.shoko:/home/shoko/.shoko" -v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import" -e PUID=$UID -e PGID=$GID shokoanime/server:latest
+```
+
+With Shoko Server running, open your browser and navigate to [http://localhost:8111/](http://localhost:8111/) to view
+the Web UI. If Shoko Server is on a different computer, replace **localhost** with the IP address for of the computer
+Shoko Server is on.
+
+If successful, you should be greeted by the following.
+
+![Shoko Server - First Run - Welcome](./src/assets/shoko-server/shoko-server-first-run-welcome.png)
+
+A default background image is used for First Run. Once you start building your collection, the background image will
+be pulled from images downloaded for your collection.
+
+## Local Account
+
+![Shoko Server - First Run - Local Account](./src/assets/shoko-server/shoko-server-first-run-local-account.png)
+
+You'll need to create an account to use Shoko. This account will allow Shoko to manage links to all supported metadata
+sites, enabling the synchronization of watch states and collection status.
+
+There are no password requirements for your local account. However, we **highly** recommend saving your login
+information as we currently do not provide a user-friendly way to reset your password. If you do happen to forget it,
+check the [Frequently Asked Questions](../../faq) page for information on how to reset it.
+
+## AniDB Account
+
+![Shoko Server - First Run - AniDB Account](./src/assets/shoko-server/shoko-server-first-run-anidb-account.png)
+
+Shoko utilizes AniDB to compare your file hashes with its vast database, enabling a quick identification and addition
+of series to your collection. You'll need to input your AniDB username and password and then click the **Next** button
+to have Shoko preform a login test.
+
+:::caution[AniDB Password Issues]
+AniDB's API has an issue with passwords that contain non-alphanumeric characters. Please update your password before
+attempting to initiate the login test.
+:::
+
+### What is AniDB?
+
+AniDB is a **free** comprehensive anime database and file tracker used extensively by Shoko to provide metadata for
+the series and files in your collection. At this time, **AniDB is required** to use Shoko, which means you'll need to
+create an account if you don't already have one. If you're unsure about how AniDB operates, take a look at the
+[AniDB Policies](https://anidb.net/policy) page for additional information and what they do with the data sent to them.
+
+## Metadata Sites
+
+![Shoko Server - First Run - Metadata Sites](./src/assets/shoko-server/shoko-server-first-run-metadata-sites.png)
+
+Shoko uses multiple metadata sites to pull information and images for the series in your collection. These options
+are pretty much self-explanatory, but we recommend spending a couple of minutes going through them to configure them
+to your liking.
+
+:::tip[Relation Depth]
+This setting determines how deep Shoko should go to gather information on related series for a single series in your
+collection. If importing a **big collection**, we recommend changing the value for this setting to **1** to avoid
+temporary bans from AniDB.
+:::
+
+## Start Shoko Server
+
+![Shoko Server - First Run - Start Server](./src/assets/shoko-server/shoko-server-first-run-starting-server.png)
+
+With the initial configuration out of the way, it's time to start Shoko Server. Click the **Start Server** button to
+begin the process and should only take a couple of minutes.
+
+If you do happen to get an error during this process, you can try starting the server again. If you're still getting
+an error then we recommend jumping into our **Discord** server, so we can help solve the issue.
+
+## Import Folders
+
+![Shoko Server - First Run - Import](./src/assets/shoko-server/Shoko-Server-First-Run-Import.jpg)
+
+Import Folders are the physical location(s) of where your files are stored. This means two things, they **must be
+accessible by Shoko Server** and they are **always online**. If using **removable media**, make sure its connected
+before running any **import functions** or **file checking functions** to avoid Shoko removing the entries from your
+collection database.
+
+There are **two different Import Folder Types** you can use. The first is **Watch For New Files** which has Shoko add
+the contents of the folder to your collection. The second is **Drop Type** which has Shoko move files from the **Drop
+Source** into the **Drop Destination**. You can use both of these systems at the same time and/or use them both for the
+same import folder.
+
+Click **Add Import Folder** to add a new import folder, input the name you'd like to use for the import folder and then
+select or type the location. Decide on the **Import Folder Type** you'll be using for this Import Folder and then click
+the
+**Save** button to add the Import Folder. If you need to add additional folders then make sure to do that as well before
+moving on.
+
+### Installation & Setup Complete
+
+![Shoko Server - Dashboard](./src/assets/shoko-server/Shoko-Server-Dashboard.jpg)
+
+Congrats, you've successfully installed and setup Shoko Server!
+
+The install and setup guide is only meant to cover the minimal requirements required to get Shoko Server up and
+running. However, Shoko does provide fine-tuned options for those who are not satisfied with the default settings. We
+highly recommend going through all the available options in the **Settings** tab fine-tune Shoko and your collection

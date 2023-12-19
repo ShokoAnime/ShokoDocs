@@ -1,6 +1,9 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import mdx from "@astrojs/mdx";
+import react from "@astrojs/react";
 
+import expressiveCode from "astro-expressive-code";
 
 // https://astro.build/config
 export default defineConfig({
@@ -8,7 +11,7 @@ export default defineConfig({
     title: 'ShokoDocs',
     logo: {
       light: './src/assets/light-logo.png',
-      dark: './src/assets/dark-logo.png',
+      dark: './src/assets/dark-logo.png'
     },
     social: {
       discord: 'https://discord.com/invite/vpeHDsg',
@@ -18,19 +21,32 @@ export default defineConfig({
       baseUrl: 'https://github.com/ShokoAnime/ShokoDocs'
     },
     lastUpdated: true,
-    sidebar: [{
-      label: 'Getting Started',
-      // Autogenerate a group of links for the 'getting-started' directory.
-      autogenerate: {
-        directory: 'getting-started'
-      }
-    }],
     components: {
       TableOfContents: './src/components/TableOfContents.astro',
       SiteTitle: './src/components/SiteTitle.astro'
     },
-    customCss: [
-      './src/styles/custom.css',
-    ],
-  })]
+    sidebar: [{
+      autogenerate: {
+        directory: 'getting-started'
+      },
+      label: 'Getting Started'
+    }, {
+      autogenerate: {
+        directory: 'mediaserver-integration'
+      },
+      label: 'Mediaserver-Integration'
+    }, {
+      label: 'Shoko Suite',
+      link: 'shoko-suite'
+    }, {
+      label: 'FAQ',
+      link: 'faq'
+    }, {
+      autogenerate: {
+        directory: 'changelog'
+      },
+      label: 'Changelog'
+    }],
+    customCss: ['./src/styles/custom.css']
+  }), react(), expressiveCode(), mdx()]
 });
