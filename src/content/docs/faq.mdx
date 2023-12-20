@@ -1,13 +1,10 @@
 ---
-sidebar_position: 4
 title: Frequently Asked Questions
 ---
 
-import EasyTable from './src/components/EasyTable/EasyTable'
+import EasyTable from "./src/components/EasyTable/EasyTable";
 
 ## General
-
-[//]: # (@formatter:off)
 
 <details>
 <summary>What Are The System Requirements?</summary>
@@ -42,6 +39,7 @@ for additional info involving other platforms than amd64/x86_64.
 To ensure smooth operations, it is recommended to allocate at least 1GB of dedicated RAM to the system. Keep in mind
 that during the hashing process, RAM usage can increase significantly. Users with limited memory on their systems
 may experience slowdowns and delays in processes.
+
 </details>
 
 <details>
@@ -50,6 +48,7 @@ may experience slowdowns and delays in processes.
 There are no plans to add Linux or MacOS support to **Shoko Desktop** as it is being phased out.
 
 Several community members have had success running the Windows client under Wine on Linux and on MacOS.
+
 </details>
 
 ## Shoko Server
@@ -63,6 +62,7 @@ We've created a [Server Install Guide](/getting-started/installing-shoko-server)
 to follow to properly install and configure Shoko Server.
 
 If needed, additional support can be found by visiting our **Discord Server**.
+
 </details>
 
 <details>
@@ -75,6 +75,7 @@ Using [Docker](https://www.docker.com/) you can run **Shoko Server** on your dev
 the needed libraries present inside of a container.
 
 Please note that Shoko Server on ARM/Apple M devices is still in beta so issues are to be expected.
+
 </details>
 
 <details>
@@ -85,19 +86,13 @@ your database before updating Shoko to the latest version. If you need to restor
 backups in the following locations.
 
 <EasyTable
-header={['OS', 'Location']}
-data={[
-[
-'Windows',
-'C:\\ProgramData\\ShokoServer\\DatabaseBackup'
-],
-[
-'Linux/macOS',
-'~/.shoko/Shoko.CLI/DatabaseBackup'
-]
-]}
-hideHeader={false}
-columnWidths={{ OS: '25%', Location: '75%' }}
+  header={["OS", "Location"]}
+  data={[
+    ["Windows", "C:\\ProgramData\\ShokoServer\\DatabaseBackup"],
+    ["Linux/macOS", "~/.shoko/Shoko.CLI/DatabaseBackup"],
+  ]}
+  hideHeader={false}
+  columnWidths={{ OS: "25%", Location: "75%" }}
 />
 
 The directory for Linux/macOS might differ, if you changed it on the Docker commandline during
@@ -115,7 +110,7 @@ This can happen when a problem occurs while scanning files and downloading the r
 To fix this, please follow these steps:
 
 1. Unmatch the Series/Movie in question (you can find that in the Context menu for the entry, usually accessible by clicking the 3 Dots)
-2. Create a file called **.plexignore** in the folder of the Series/Movie, which only contains "*"
+2. Create a file called **.plexignore** in the folder of the Series/Movie, which only contains "\*"
 3. Rescan your library, the Series/Movie should get removed
 4. Run package clean up (found under Settings -> Trouble Shooting of the Plex Media Server) as well as database optimization
 5. Remove the .plexignore file
@@ -123,4 +118,5 @@ To fix this, please follow these steps:
 7. All media files and information should now be available and properly displayed.
 
 If you still have problems after following those steps, feel free to hop on our discord.
+
 </details>
