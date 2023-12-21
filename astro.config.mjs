@@ -2,8 +2,6 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import react from "@astrojs/react";
 
-import mdx from "@astrojs/mdx";
-
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -56,6 +54,5 @@ export default defineConfig({
       customCss: ["./src/styles/custom.css"],
     }),
     react(),
-    mdx(),
   ],
 });
