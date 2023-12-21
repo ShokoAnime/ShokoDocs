@@ -32,124 +32,124 @@
       "link": "https://shokoanime.com/blog/shoko-version-420-released/",
       "changes": [
         {
-            "type": "added",
-            "text": "Add basic watch state sync."
+          "type": "added",
+          "text": "Add basic watch state sync."
         },
         {
-            "type": "added",
-            "text": "Add ratings for H content and a setting to optionally skip sync for said content."
+          "type": "added",
+          "text": "Add ratings for H content and a setting to optionally skip sync for said content."
         },
         {
-            "type": "added",
-            "text": "Add source material genre."
+          "type": "added",
+          "text": "Add source material genre."
         },
         {
-            "type": "added",
-            "text": "Added an ignore folders filter."
+          "type": "added",
+          "text": "Added an ignore folders filter."
         },
         {
-            "type": "added",
-            "text": "Add the ability to display all titles and descriptions for multi-episode files."
+          "type": "added",
+          "text": "Add the ability to display all titles and descriptions for multi-episode files."
         },
         {
-            "type": "added",
-            "text": "**EXPERIMENTAL**: Add experimental section on the configuration page to configure experimental features."
+          "type": "added",
+          "text": "**EXPERIMENTAL**: Add experimental section on the configuration page to configure experimental features."
         },
         {
-            "type": "added",
-            "text": "**EXPERIMENTAL**: Add the ability to merge multiple versions for the entries with the same shoko episode id."
+          "type": "added",
+          "text": "**EXPERIMENTAL**: Add the ability to merge multiple versions for the entries with the same shoko episode id."
         },
         {
-            "type": "added",
-            "text": "**EXPERIMENTAL**: try implementing chronological season sorting as an experimental feature."
+          "type": "added",
+          "text": "**EXPERIMENTAL**: try implementing chronological season sorting as an experimental feature."
         },
         {
-            "type": "changed",
-            "text": "Tweak the misleading descriptions regarding sync options on the configuration page."
+          "type": "changed",
+          "text": "Tweak the misleading descriptions regarding sync options on the configuration page."
         },
         {
-            "type": "changed",
-            "text": "Tweak the multi-episode metadata setting description on the configuration page."
+          "type": "changed",
+          "text": "Tweak the multi-episode metadata setting description on the configuration page."
         },
         {
-            "type": "changed",
-            "text": "Tweak the series grouping description on the configuration page."
+          "type": "changed",
+          "text": "Tweak the series grouping description on the configuration page."
         },
         {
-            "type": "fixed",
-            "text": "Fix multi-series files breaking the import."
+          "type": "fixed",
+          "text": "Fix multi-series files breaking the import."
         },
         {
-            "type": "fixed",
-            "text": "Re-enable the setting for syncing on import."
+          "type": "fixed",
+          "text": "Re-enable the setting for syncing on import."
         },
         {
-            "type": "fixed",
-            "text": "Fix the user data sync."
+          "type": "fixed",
+          "text": "Fix the user data sync."
         },
         {
-            "type": "fixed",
-            "text": "Disable user sync settings then global toggle is disabled."
+          "type": "fixed",
+          "text": "Disable user sync settings then global toggle is disabled."
         },
         {
-            "type": "fixed",
-            "text": "Updated `GetTagFilter"
+          "type": "fixed",
+          "text": "Updated `GetTagFilter"
         },
         {
-            "type": "fixed",
-            "text": "Fix start/end date for show entry when using shoko groups."
+          "type": "fixed",
+          "text": "Fix start/end date for show entry when using shoko groups."
         },
         {
-            "type": "fixed",
-            "text": "Fix tag filters... hopefully."
+          "type": "fixed",
+          "text": "Fix tag filters... hopefully."
         },
         {
-            "type": "fixed",
-            "text": "Check for exact folder match while finding media folder."
+          "type": "fixed",
+          "text": "Check for exact folder match while finding media folder."
         },
         {
-            "type": "fixed",
-            "text": "Ensure the preferred image is always selected first."
+          "type": "fixed",
+          "text": "Ensure the preferred image is always selected first."
         },
         {
-            "type": "fixed",
-            "text": "Use the correct path separator character."
+          "type": "fixed",
+          "text": "Use the correct path separator character."
         },
         {
-            "type": "fixed",
-            "text": "Fix file locations not matching between client and server in different environments."
+          "type": "fixed",
+          "text": "Fix file locations not matching between client and server in different environments."
         },
         {
-            "type": "fixed",
-            "text": "Fix get user file stats since it can return 404 if there is no user file stats for the user."
+          "type": "fixed",
+          "text": "Fix get user file stats since it can return 404 if there is no user file stats for the user."
         },
         {
-            "type": "fixed",
-            "text": "Fix getting series/group info for paths."
+          "type": "fixed",
+          "text": "Fix getting series/group info for paths."
         },
         {
-            "type": "fixed",
-            "text": "Fix specials placement when using TvDB metadata."
+          "type": "fixed",
+          "text": "Fix specials placement when using TvDB metadata."
         },
         {
-            "type": "fixed",
-            "text": "Use operation system agnostic path separators."
+          "type": "fixed",
+          "text": "Use operation system agnostic path separators."
         },
         {
-            "type": "fixed",
-            "text": "Fix specials showing up in normal seasons when they should not."
+          "type": "fixed",
+          "text": "Fix specials showing up in normal seasons when they should not."
         },
         {
-            "type": "fixed",
-            "text": "Fix episode titles for some OVAs."
+          "type": "fixed",
+          "text": "Fix episode titles for some OVAs."
         },
         {
-            "type": "fixed",
-            "text": "Allow on-demand syncing of videos with chapter images."
+          "type": "fixed",
+          "text": "Allow on-demand syncing of videos with chapter images."
         },
         {
-            "type": "fixed",
-            "text": "Fix the episode endpoint changing it's model."
+          "type": "fixed",
+          "text": "Fix the episode endpoint changing it's model."
         }
       ]
     },
