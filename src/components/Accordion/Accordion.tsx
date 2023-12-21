@@ -1,14 +1,12 @@
 // Imports
-import React, { createContext, useState } from "react";
+import React from "react";
 
-export const CurrentAccordionContext = createContext({});
-
-const Accordion = (props) => {
-  const [isActive, setIsActive] = useState(false);
+const Accordion = ({ title, children }) => {
   return (
-    <CurrentAccordionContext.Provider value={{ isActive, setIsActive }}>
-      {props.children}
-    </CurrentAccordionContext.Provider>
+    <details className="accordion-wrapper">
+      <summary className="accordion-header">{title}</summary>
+      <div className="accordion-body">{children}</div>
+    </details>
   );
 };
 

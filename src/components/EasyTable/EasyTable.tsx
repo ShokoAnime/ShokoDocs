@@ -14,37 +14,35 @@ const EasyTable = ({
   center = false,
   columnWidths = {},
 }: EasyTableProps) => {
-  const renderCell = (cellData: string | React.ReactNode) => {
+  const getColumnWidthStyle = (columnName: string) => ({
+    width: columnWidths[columnName] || "auto",
+  });
+
+  const renderCellContent = (cellData: string | React.ReactNode) => {
     if (typeof cellData === "string") {
-      if (cellData.startsWith("<") && cellData.endsWith(">")) {
-        return <div dangerouslySetInnerHTML={{ __html: cellData }} />;
-      } else {
-        return <ReactMarkdown>{cellData}</ReactMarkdown>;
-      }
+      return cellData.startsWith("<") && cellData.endsWith(">") ? (
+        <div dangerouslySetInnerHTML={{ __html: cellData }} />
+      ) : (
+        <ReactMarkdown>{cellData}</ReactMarkdown>
+      );
     }
     return cellData;
   };
 
   return (
-    <div className="easy-wrapper">
-      <div className={`easy-header ${center ? "easy-header-center" : null}`}>
+    <div className={`easy-wrapper not-content ${center ? "easy-center" : ""}`}>
+      <div className="easy-header">
         {header.map((column, index) => (
-          <div key={index} style={{ width: columnWidths[column] }}>
+          <div key={index} style={getColumnWidthStyle(column)}>
             {column}
           </div>
         ))}
       </div>
       {data.map((row, rowIndex) => (
-        <div
-          className={`easy-row ${center ? "easy-row-center" : null}`}
-          key={rowIndex}
-        >
+        <div className="easy-row" key={rowIndex}>
           {row.map((cell, cellIndex) => (
-            <div
-              key={cellIndex}
-              style={{ width: columnWidths[header[cellIndex]] }}
-            >
-              {renderCell(cell)}
+            <div key={cellIndex} style={getColumnWidthStyle(header[cellIndex])}>
+              {renderCellContent(cell)}
             </div>
           ))}
         </div>
