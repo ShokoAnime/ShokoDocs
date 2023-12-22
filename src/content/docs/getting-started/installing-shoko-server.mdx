@@ -6,6 +6,7 @@ Description: Installing Shoko Server
 ---
 
 import EasyTable from "./src/components/EasyTable/EasyTable";
+import Accordion from "./src/components/Accordion/Accordion";
 
 Shoko's installation process varies depending on the platform your attempting to install it on. We recommended following
 the guide and not deviating from the guide unless you know what your doing.
@@ -25,8 +26,8 @@ Follow the instructions below for running Shoko using Docker, which is the recom
 
 Make sure you have docker installed before you continue. For most users are installing docker from their package manager is advised, this way you will keep up with the latest updates and security updates. On the homepage of [Docker](https://docs.docker.com/install/) you can find the installation procedure for your distribution of the Docker Community Edition.
 
-:::note
-We do <u>not</u> encourage using Docker on Windows using WSL or Hyper-V containers. It creates an unneeded abstraction layer which might cause unforeseen issues. You can do this at your own risk, as we can't support this setup.
+:::caution
+We do _not_ encourage using Docker on Windows using WSL or Hyper-V containers. It creates an unneeded abstraction layer which might cause unforeseen issues. You can do this at your own risk, as we can't support this setup.
 :::
 
 ### Docker commandline
@@ -37,7 +38,8 @@ First things first, pull the image, and unless otherwise told, install the versi
 $ docker pull shokoanime/server:latest
 ```
 
-After pulling the image, you can run the command below. Make sure you substitute the paths under '-v' with the ones from your environment.
+After pulling the image, you can run the command belo to start the container.
+Make sure you substitute the paths under '-v' with the ones from your environment.
 You only need to replace the example paths before the ':' with your paths.
 
 For the setup you should have the following data ready:
@@ -47,11 +49,11 @@ For the setup you should have the following data ready:
 - path of your target (library) folder(s)
 - the GUID and PUID of the user you want shoko to run as (optional)
 
-If you are unsure how to obtain the needed info, please refer to the below table for a break-down of the following command:
-
 ```sh
 $ docker run -d --name shokoserver --restart always -p 8111:8111 -v "$HOME/.shoko:/home/shoko/.shoko" -v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import" -e PUID=$UID -e PGID=$GID --shm-size 256m shokoanime/server:latest
 ```
+
+<Accordion title="Unsure how to obtain the needed info? Click here for a break-down of the previous command">
 
 <EasyTable
   header={["Command", "Purpose"]}
@@ -121,11 +123,25 @@ $ docker run -d --name shokoserver --restart always -p 8111:8111 -v "$HOME/.shok
   columnWidths={{ Command: "35%", Purpose: "65%" }}
 />
 
+</Accordion>
+
+:::note
+If you want to edit volumes or environment variables later, you need to stop the container first. This goes for all installation methods mentioned in this topic.
+:::
+
 ### Docker compose
 
 To make management easier, we can combine all the previous items in a docker compose file.
 
-In order to make this work, install docker-compose, a guide how to can be found here on the Docker website. Once docker-compose is installed, create a docker-compose.yml file anywhere on your system. Open the file and put the following inside, but remember to substitute the paths below with path(s) leading to your library and/or import folders.
+In order to make this work, install docker-compose, a guide how to can be found here on the Docker website. 
+
+:::note
+Docker-compose should be part of your NAS Docker implementation already. If in doubt, check the vendor or Application homepage for your NAS.
+:::
+
+Once docker-compose is installed, create a docker-compose.yml file anywhere on your system. Open the file and put the following inside, but remember to substitute the paths below with path(s) leading to your library and/or import folders.
+
+<Accordion title="'docker-compose.yml' example">
 
 ```yaml
 version: "3"
@@ -146,6 +162,7 @@ services:
       - "/path/to/anime:/mnt/anime"
       - "/path/to/import:/mnt/import"
 ```
+</Accordion>
 
 This combines all of our previous configuration in an easy to read and edit format, and will allow you to create a powerful startup script that could (for example) include a MySQL server, a download client, and anything else you can think of that’s available in a docker format.
 
@@ -154,46 +171,38 @@ This combines all of our previous configuration in an easy to read and edit form
 Make sure you have Docker installed on your QNAP NAS before you continue. This package can be found in the App Center, under the Name of **Container Station**.
 
 :::tip
-As the management using **Container Station** will feel a bit clunky, we recommend creating the container using the instructions given under [Docker command-line](#docker-commandline) above.
+As the management using **Container Station** will feel a bit clunky, we recommend creating the container using the instructions given under [Docker command-line](#docker-commandline) or [Docker Compose](#docker-compose) above.
+For the app, you will need to gather needed information in the same way as described in the [Docker command-line](#docker-commandline) installation.
 :::
 
 You can change (not all) settings, like autostart, of the container using Container Station GUI later, or use **Portainer**, which also lets you use the [Docker compose](#docker-compose) above in a **Stack** via an easy to use Web-GUI.
 Feel free to talk to the community on our **Discord Server** about using **Portainer** or docker-compose on your QNAP NAS.
 
 :::note[Regarding Container Station v3]
-The current version as of writing this is **3.0.4.533** which became available for **QTS 5.1.0.2466** just recently.
+The current version as of writing this is **3.0.4.533** which became available with **QTS 5.1.0.2466**.
 If you are on an older version of QTS or QTS hero (ZFS variant of QTS) the available version and experience with Container Station might differ greatly.
 We always recommend an up-to-date QNAP QTS + App Center updates for the best experience and security.
 :::
 
 ## Docker (Synology NAS)
 
-Make sure you have the [Synology Docker Application](https://www.synology.com/en-global/dsm/packages/Docker)
-installed on your Synology NAS before you continue. This package can be found in the Package Center,
-under the 'Third-party' section.
+Make sure you have the [Synology Docker Application](https://www.synology.com/en-global/dsm/packages/Docker) installed on your Synology NAS before you continue. This package can be found in the Package Center, under the 'Third-party' section.
 
 :::tip
-As the management using the **Synology Docker Application** will feel a bit clunky, we recommend
-creating the container using the instructions given under [Docker command-line](#docker-commandline)
-or [Docker compose](#docker-compose) above, but if you still want to use the application then you
-can follow along below.
+As the management using the **Synology Docker Application** will feel a bit clunky, we recommend creating the container using the instructions given under [Docker command-line](#docker-commandline) or [Docker compose](#docker-compose) above.
+For the app, you will need to gather needed information in the same way as described in the [Docker command-line](#docker-commandline) installation.
 :::
 
-You will need to find your User ID (UID) before continuing. Log in to your Synology NAS using SSH and type `id`.
-You'll see the UID: note down the number for later. To avoid getting your database cleared on updates, you can also
-create a folder in the `docker` shared folder named `shokoserver` on the host and map it to `/home/shoko/.shoko`
-in the container with R/W access.
+If you want to use the Synology Docker Application, please follow these steps:
 
-Open Docker from the Application Menu, then go to the Containers tab. You'll need to download the
-**[Synology Container File](../../../src/assets/data/synology-dockerfile.json)** and **fill out the anime folder path and replace the** 'PUID' **with UID you previously acquired**.
-Once that's done, go to Settings, Import and select the file you've just modified. Name the container `shokoserver`, then apply!
+Open Docker from the Application Menu, then go to the Containers tab. 
+You'll need to download the **[Synology Container File](../../../src/assets/data/synology-dockerfile.json)**.
+Replace the ``/path/to/anime``, `PUID` and `PGID` and once that's done, go to Settings, Import and select the file you've just modified. Name the container `shokoserver`, then apply!
 
-**Note #1:** If you want to edit volumes or environment variables, you'll need to stop the container first.
-
-**Note #2:** If you intend to use the **daily** version of the server then
-AVDump3 might crash since we are unable to modify the shared IPC memory size through the proprietary
-container format Synology uses, so if you do use this method to install the server then you have been
-warned.
+:::caution[Daily Server and Synology NAS]
+AVDump3 might crash since we are unable to modify the ```shm_size``` through the proprietary container format Synology uses.
+Because of this, we do not recommend running *daily server* on Synology NAS for the time being.
+:::
 
 ## Docker (TrueNAS)
 
