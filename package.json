@@ -11,9 +11,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.3.3",
-    "@astrojs/react": "^3.0.7",
+    "@astrojs/react": "^3.0.8",
     "@astrojs/starlight": "^0.15.1",
     "@fontsource/lexend-deca": "^5.0.8",
+    "@julian_cataldo/astro-lightbox": "^0.10.11",
     "@types/node": "^20.10.5",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "prettier": "^3.1.1",
-    "prettier-plugin-astro": "^0.12.2"
+    "prettier-plugin-astro": "^0.12.2",
+    "sass": "^1.69.5"
   }
 }
