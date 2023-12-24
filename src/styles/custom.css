@@ -25,7 +25,6 @@ details[open] > summary::after {
 /* Starlight Overwrites */
 
 /* Hero Overwrite */
-
 .hero {
   padding: 2rem 0;
 }
@@ -44,4 +43,9 @@ details[open] > summary::after {
   @media (min-width: 1152px) {
     display: none;
   }
+}
+
+/* ol and li Overwrite */
+ol > li {
+  margin-top: 0.5rem !important;
 }
