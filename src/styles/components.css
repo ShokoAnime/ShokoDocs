@@ -6,7 +6,7 @@
 
 .accordion-header {
 	/*background: #23262f;*/
-	border-bottom: 1px solid var(--easy-table-border);
+	border-bottom: 2px solid var(--sl-color-hairline);
 	cursor: pointer;
 	display: flex;
 	justify-content: space-between;
@@ -18,22 +18,22 @@ details[open] > .accordion-header {
 }
 
 .accordion-body {
-	border-bottom: 1px solid var(--easy-table-border);
+	border-bottom: 2px solid var(--sl-color-hairline);
 	padding: 1rem 1rem 2rem 1rem;
 }
 
 /* EasyTable */
 
 .easy-wrapper {
-	border: 1px solid var(--easy-table-border);
+	border: 2px solid var(--sl-color-hairline);
 	border-radius: 0.5rem;
 	margin: 2rem 0 !important;
 }
 
 .easy-header {
 	align-items: center;
-	background: var(--easy-table-row);
-	border-bottom: 1px solid var(--easy-table-border);
+	background: var(--sl-color-bg-nav);
+	border-bottom: 2px solid var(--sl-color-hairline);
 	border-top-left-radius: 0.5rem;
 	border-top-right-radius: 0.5rem;
 	display: flex;
@@ -53,8 +53,8 @@ details[open] > .accordion-header {
 }
 
 .easy-row:nth-child(odd) {
-	background: var(--easy-table-row);
-	border-top: 1px solid var(--easy-table-border);
+	background: var(--sl-color-bg-nav);
+	border-top: 2px solid var(--sl-color-hairline);
 }
 
 .easy-row:last-child {
@@ -78,33 +78,29 @@ details[open] > .accordion-header {
 }
 
 /* Changelog */
-
 .changelog-wrapper {
 	display: flex;
 	flex-direction: column;
 	font-size: 1.125rem;
 	max-width: 100%;
-	padding-bottom: 2rem;
-	width: 1146px;
 }
 
 .changelog-info {
-	border-bottom: 2px solid var(--tertiary-background);
+	border-bottom: 2px solid var(--sl-color-hairline);
 	display: flex;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 	padding-bottom: 1rem;
 }
 
 .changelog-version,
 .changelog-date,
 .changelog-link {
-	font-size: 1.25rem;
 	font-weight: 500;
+	margin-top: 0 !important;
 }
 
 .changelog-divider {
-	font-size: 1.25rem;
-	margin: 0 1rem;
+	margin: 0 1rem !important;
 }
 
 .changelog-type {
@@ -113,21 +109,30 @@ details[open] > .accordion-header {
 }
 
 .changelog-item-wrapper {
-	margin: 1rem 0;
+	margin: 1rem 0 !important;
+	list-style: none;
+	padding-left: 1em;
+	text-indent: -1em;
+}
+
+.changelog-item {
+	font-size: 1rem;
+	margin-bottom: 0;
+	margin-top: 0.25rem !important;
 }
 
 .changelog-added {
-	color: var(--highlight-color-1);
+	color: var(--changelog-added);
 }
 
 .changelog-changed {
-	color: var(--highlight-color-5);
+	color: var(--changelog-changed);
 }
 
 .changelog-fixed {
-	color: var(--highlight-color-4);
+	color: var(--changelog-fixed);
 }
 
 .changelog-removed {
-	color: var(--highlight-color-2);
+	color: var(--changelog-removed);
 }
