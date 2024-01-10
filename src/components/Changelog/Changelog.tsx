@@ -9,16 +9,18 @@ export default function Changelog(props) {
     date: string;
     link: string;
     version: string;
+    versionURL: string;
   }
 
   const releaseInfo = Lodash.map(
     program(props.name),
-    ({ changes, date, link, version }: releaseInfo) => {
+    ({ changes, date, link, version, versionURL }: releaseInfo) => {
       return {
         changes: Lodash.groupBy(changes, "type"),
         date: date,
         link: link,
         version: version,
+        versionURL: versionURL,
       };
     },
   );
@@ -27,16 +29,18 @@ export default function Changelog(props) {
     Lodash.map(release.info.changes, (changeGroupMap, changeGroupKey) => (
       <div className="changelog-type-wrapper" key={changeGroupKey}>
         <div className={typeColor(changeGroupKey)}>{changeGroupKey}</div>
-        <div className="changelog-item-wrapper">
+        <ul className="changelog-item-wrapper">
           {Lodash.map(changeGroupMap, (changeItemMap, changeItemKey) => (
-            <div key={changeItemKey}>- {changeItemMap.text}</div>
+            <li className="changelog-item" key={changeItemKey}>
+              - {changeItemMap.text}
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     ));
 
   return Lodash.map(releaseInfo, (info, infoKey) => (
-    <div className="changelog-wrapper" key={infoKey}>
+    <div className="changelog-wrapper" key={infoKey} id={info.versionURL}>
       <div className="changelog-info">
         <div className="changelog-version">Version {info.version}</div>
         <div className="changelog-divider">|</div>

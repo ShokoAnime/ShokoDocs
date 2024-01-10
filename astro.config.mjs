@@ -32,23 +32,37 @@ export default defineConfig({
         },
         {
           autogenerate: {
-            directory: "mediaserver-integration"
+            directory: "shoko-server"
           },
-          label: "Mediaserver-Integration"
+          label: "Shoko Server"
         },
         {
-          label: "Shoko Suite",
-          link: "shoko-suite"
+          autogenerate: {
+            directory: "shoko-metadata"
+          },
+          label: "Shoko Metadata (Plex)"
         },
         {
-          label: "FAQ",
-          link: "faq"
+          autogenerate: {
+            directory: "shokodi"
+          },
+          label: "Shokodi (Kodi)"
+        },
+        {
+          autogenerate: {
+            directory: "shokofin"
+          },
+          label: "Shokofin (Jellyfin)"
         },
         {
           autogenerate: {
             directory: "changelog"
           },
           label: "Changelog"
+        },
+        {
+          label: "FAQ",
+          link: "faq"
         }
       ],
       customCss: [
