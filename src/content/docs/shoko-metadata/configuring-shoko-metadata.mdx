@@ -52,11 +52,11 @@ You'll need to input the following information for Shoko Metadata to access your
 
 The rest of the options are self-explanatory so once you've gone through them, click the **Add Library** button. Once the library has been added, initiate a scan within Plex and wait for Plex to add your collection.
 
-### Syncing Watch States
+### Syncing Watch States using "Sync" action
 
 In order to properly sync watch states, you will need to have **Shoko Desktop** installed which you can download from our [Downloads](https://shokoanime.com/downloads) page.
 
-##### Web UI Settings
+##### Link and Authenticate using WebUI
 
 ![Shoko Metadata - Plex Authentication](./src/assets/shoko-metadata/Shoko-Metadata-Plex-Auth.jpg)
 
@@ -66,7 +66,7 @@ If successful, you'll see the following message.
 
 ![Shoko Metadata - Plex Synced](./src/assets/shoko-metadata/Shoko-Metadata-Plex-Synced.jpg)
 
-##### Shoko Desktop Settings
+##### Select Libraries using Shoko Desktop
 
 ![Shoko Metadata - Desktop Sync](./src/assets/shoko-metadata/Shoko-Metadata-Desktop-Sync.jpg)
 
@@ -74,20 +74,23 @@ Open Shoko Desktop and navigate to the **Settings** tab and select **Essential**
 
 If **Plex Host** is blank, click the drop-down to select it, It's ok for the list to be empty, simply click the **Refresh** button below, and it should populate with your plex server. Once selected you'll then need to select the **Plex Library** that contains your collection. You can select multiple libraries if you've chosen to split your anime tv series and movies.
 
-Now select **Users** in the Navigation on the left. Select the User you entered during the install process for Shoko Medatadata, enter your **Plex username** under "plex users" and hit "Save".
+##### Setting Plex Username using Shoko Desktop
+
+Open Shoko Desktop and navigate to the **Settings** tab and select **Users**. Select the User you entered during the install process for Shoko Medatadata, enter your **Plex username** under "plex users" and hit "Save".
 
 :::note
 You can find your plex username in plex WebUI by clicking your avatar or circled letter in the upper right corner.
 :::
 
-### Syncing Watch States For Plex Pass Users With Webhooks
+### Syncing Watch States for Plex Pass Users with Webhooks
 
-After following the instructions above and  If you are a Plex Pass user, you can use Webhooks to automatically forward scrobble events to Shoko Server.
-This way you don't need to run the "Sync Plex Watch Status" action manually.
+If you are a Plex Pass user, you can use Webhooks to forward scrobble events to Shoko Server. You can skip the linking process in that case,
+but it is still mandatory to [set the plex username using Shoko Desktop](#setting-plex-username-using-shoko-desktop). This way you don't need to run the "Sync Plex Watch Status" action manually. 
 
 :::note
 Currently this only works with regular Episodes. Special, Other and Movie Type episodes can not be detected and won't update their status.
 You need to run the "Sync Plex Watch Status" action or mark them as watched by hand in Shoko WebUI or Desktop.
+Keep in mind, that you have to link your Plex Server for this to work.
 :::
 
 To set up a Webhook, open your Plex WebUI and go to Settings (wrench icon). Under your username in the left menu, Select **Webhooks**.
