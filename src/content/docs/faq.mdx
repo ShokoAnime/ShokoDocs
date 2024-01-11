@@ -96,12 +96,25 @@ spectrum of topics, ranging from its essential features to the support for vario
       ["Windows", "C:\\ProgramData\\ShokoServer\\DatabaseBackup"],
       ["Linux/macOS", "~/.shoko/Shoko.CLI/DatabaseBackup"],
     ]}
-    hideHeader={false}
     columnWidths={{ OS: "25%", Location: "75%" }}
   />
 
   The directory for Linux/macOS might differ, if you changed it on the Docker commandline during
   [installation](/getting-started/installing-shoko-server).
+</Accordion>
+
+<Accordion title="I've Been Banned From AniDB">
+  The message you're encountering indicates a **temporary ban** due to excessive connection attempts. AniDB imposes such
+  bans when it suspects data leeching through numerous rapid connection attempts. In reality, this doesn't imply any
+  wrongdoing on your part. You simply need to wait for the ban to lift, which can range from 15 minutes to 24 hours,
+  depending on severity.
+
+  AniDB's API imposes two distinct types of bans, namely **HTTP and UDP**. In case a user receives a temporary ban for one
+  of these, Shoko will automatically cease sending data associated with the banned API. However, it will continue to
+  utilize the other API whenever feasible. It's important to note that this doesn't guarantee that all your commands
+  will be executed successfully since each API handles different sets of data. As a result, you may notice your queue
+  idling even when there are pending commands awaiting processing.
+
 </Accordion>
 
 ## Shoko Metadata

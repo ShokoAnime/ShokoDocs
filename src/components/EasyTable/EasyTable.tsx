@@ -19,13 +19,17 @@ const EasyTable = ({
   });
 
   const renderCellContent = (cellData: any) => {
+    if (typeof cellData === "object") {
+      return <a href={cellData.link}>{cellData.title}</a>;
+    }
+
     if (typeof cellData === "string") {
       if (cellData.startsWith("http")) {
         return <a href={cellData}>Website</a>;
       }
       return <ReactMarkdown>{cellData}</ReactMarkdown>;
     }
-    return cellData; // In case you still need to handle non-string types
+    return cellData;
   };
 
   return (

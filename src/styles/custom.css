@@ -15,11 +15,13 @@
   --sl-color-gray-5: #353841;
   --sl-color-gray-6: #24272f;
   --sl-color-black: #17181c;
+  --custom-bold: #dbbcff;
   --changelog-added: #44A3FF;
   --changelog-changed: #10C469;
   --changelog-fixed: #F9C851;
   --changelog-removed: #FF6C6C;
 }
+
 /* Light mode colors. */
 :root[data-theme='light'] {
   --sl-color-accent-low: #c7d6ff;
@@ -34,10 +36,15 @@
   --sl-color-gray-6: #eceef2;
   --sl-color-gray-7: #f5f6f8;
   --sl-color-black: #ffffff;
+  --custom-bold: #0114a2;
   --changelog-added: #3699FF;
   --changelog-changed: #23aca5;
   --changelog-fixed: #eca21a;
   --changelog-removed: #F64E60;
+}
+
+strong {
+  color: var(--custom-bold)
 }
 
 summary.accordion-header::after {
