@@ -79,3 +79,19 @@ Now select **Users** in the Navigation on the left. Select the User you entered 
 :::note
 You can find your plex username in plex WebUI by clicking your avatar or circled letter in the upper right corner.
 :::
+
+### Syncing Watch States For Plex Pass Users With Webhooks
+
+After following the instructions above and  If you are a Plex Pass user, you can use Webhooks to automatically forward scrobble events to Shoko Server.
+This way you don't need to run the "Sync Plex Watch Status" action manually.
+
+:::note
+Currently this only works with regular Episodes. Special, Other and Movie Type episodes can not be detected and won't update their status.
+You need to run the "Sync Plex Watch Status" action or mark them as watched by hand in Shoko WebUI or Desktop.
+:::
+
+To set up a Webhook, open your Plex WebUI and go to Settings (wrench icon). Under your username in the left menu, Select **Webhooks**.
+
+Click the button to add a Webhook and enter your Shoko Server URL: <code>http://`<shoko-server-ip>`:8111/plex</code> (replace `<shoko-server-ip>` accordingly).
+
+Save your changes. Now when playing an episode and everything was set up correctly, you should see scrobble events in your Shoko Server Log.
