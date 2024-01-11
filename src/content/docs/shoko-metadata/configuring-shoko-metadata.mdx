@@ -1,0 +1,81 @@
+---
+title: Configuring Shoko Metadata
+description: Information on how to configure Shoko Metadata (Plex).
+sidebar:
+  label: Configuring Shoko Metadata
+  order: 2
+---
+
+import EasyTable from "./src/components/EasyTable/EasyTable";
+
+## Creating A Shoko Library
+
+With **Shoko Server** running, open **Plex** and create a new libary.
+
+Either select **Movies** or **TV Shows**. Note if you did not do the edit mentioned on the [Installing Shoko Metadata](../installing-shoko-metadata) page to combine the libraries, you'll need to repeat these steps for the other library.
+
+When asked to select the **Media Folder**, browse to your anime collection. Even though Shoko will be providing the metadata, Plex still needs to know where the physical files are located.
+
+In the **Advanced** tab, if adding a TV library then select **Shoko Series Scanner** and **ShokoTV** or if adding a movie library then select **Shoko Series Scanner** and **ShokoMovies**.
+
+For users combining the library, make sure to add the library as a **TV Show** and use the **ShokoTV** agent.
+
+![Shoko Metadata - Inputting Server Information](./src/assets/shoko-metadata/Shoko-Metadata-Inputing-Server-Info.jpg)
+
+You'll need to input the following information for Shoko Metadata to access your collection.
+
+<EasyTable
+    header={["Option", "Description"]}
+    data={[
+      ["Username",
+       "The username for the **local account you inputted during the **First Run** setup in Shoko Server."
+      ],
+      [
+        "Password",
+        "The password for the **local account you inputted during the **First Run** setup in Shoko Server.",
+      ],
+      [
+        "Server IP",
+        "The IP address for the computer Shoko Server is on. You can leave this blank unless Shoko Server is on another computer.",
+      ],
+      [
+        "Port",
+        "The port Shoko Server uses, by default it's **8111**",
+      ],
+      [
+        "Use single season ordering",
+        "If you set **SingleSeasonOrdering** to True during the install process, make sure you check this box."
+      ]
+    ]}
+    columnWidths={{ Option: "30%", Description: "70%" }}
+  />
+
+The rest of the options are self-explanatory so once you've gone through them, click the **Add Library** button. Once the library has been added, initiate a scan within Plex and wait for Plex to add your collection.
+
+### Syncing Watch States
+
+In order to properly sync watch states, you will need to have **Shoko Desktop** installed which you can download from our [Downloads](https://shokoanime.com/downloads) page.
+
+##### Web UI Settings
+
+![Shoko Metadata - Plex Authentication](./src/assets/shoko-metadata/Shoko-Metadata-Plex-Auth.jpg)
+
+First thing you'll need to do is authenticate which you can do by navigating to **Settings** in the Shoko Server Web UI. When you click **Authenticate** it will redirect you and have you log into your Plex account.
+
+If successful, you'll see the following message.
+
+![Shoko Metadata - Plex Synced](./src/assets/shoko-metadata/Shoko-Metadata-Plex-Synced.jpg)
+
+##### Shoko Desktop Settings
+
+![Shoko Metadata - Desktop Sync](./src/assets/shoko-metadata/Shoko-Metadata-Desktop-Sync.jpg)
+
+Open Shoko Desktop and navigate to the **Settings** tab and select **Essential**, from there scroll all the way to the bottom, and you'll see the **Plex Settings For ShokoMetadata** section.
+
+If **Plex Host** is blank, click the drop-down to select it, It's ok for the list to be empty, simply click the **Refresh** button below, and it should populate with your plex server. Once selected you'll then need to select the **Plex Library** that contains your collection. You can select multiple libraries if you've chosen to split your anime tv series and movies.
+
+Now select **Users** in the Navigation on the left. Select the User you entered during the install process for Shoko Medatadata, enter your **Plex username** under "plex users" and hit "Save".
+
+:::note
+You can find your plex username in plex WebUI by clicking your avatar or circled letter in the upper right corner.
+:::
