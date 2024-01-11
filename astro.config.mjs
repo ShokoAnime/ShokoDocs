@@ -34,35 +34,44 @@ export default defineConfig({
           autogenerate: {
             directory: "shoko-server"
           },
-          label: "Shoko Server"
+          label: "Shoko Server",
+          collapsed: true,
         },
         {
           autogenerate: {
             directory: "shoko-metadata"
           },
-          label: "Shoko Metadata (Plex)"
+          label: "Shoko Metadata (Plex)",
+          collapsed: true,
         },
         {
           autogenerate: {
             directory: "shokodi"
           },
-          label: "Shokodi (Kodi)"
+          label: "Shokodi (Kodi)",
+          collapsed: true,
         },
         {
           autogenerate: {
             directory: "shokofin"
           },
-          label: "Shokofin (Jellyfin)"
+          label: "Shokofin (Jellyfin)",
+          collapsed: true,
         },
         {
           autogenerate: {
             directory: "changelog"
           },
-          label: "Changelog"
+          label: "Changelog",
+          collapsed: true,
         },
         {
           label: "FAQ",
           link: "faq"
+        },
+        {
+          label: "Contribute",
+          link: "contribute"
         }
       ],
       customCss: [
