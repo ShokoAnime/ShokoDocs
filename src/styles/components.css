@@ -136,3 +136,71 @@ details[open] > .accordion-header {
 .changelog-removed {
 	color: var(--changelog-removed);
 }
+
+.docker-compose-wrapper {
+	display: flex;
+	flex-direction: column;
+	row-gap: 0.5rem;
+	margin: 2rem 0
+}
+
+.docker-input-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 !important;
+}
+
+.docker-input-text {
+	font-weight: 600;
+	font-size: 1rem;
+}
+
+.docker-input-hr {
+	margin: 0.5rem 0;
+}
+
+.docker-input-input {
+	background: var(--sl-color-bg-nav);
+	border: none;
+	border-radius: 5px;
+	padding: 0.5rem;
+	text-align: center;
+	max-width: 400px;
+	width: 100%;
+}
+
+.docker-input-volume-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	margin: 0 !important;
+}
+
+.docker-input-volume-row {
+	column-gap: 1rem;
+	display: flex;
+	justify-content: end;
+}
+
+.docker-input-volume-text {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.docker-input-button {
+	background: var(--sl-color-bg-nav);
+	border: 2px solid var(--sl-color-hairline);
+	margin: 0 !important;
+	border-radius: 5px;
+	padding: 0.5rem 2rem;
+	cursor: pointer;
+	box-shadow: 10px var(--sl-color-hairline);
+}
+
+.docker-input-button:hover {
+	background: var(--sl-color-text-accent);
+	color: var(--sl-color-text-invert);
+}

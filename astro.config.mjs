@@ -1,9 +1,11 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import react from "@astrojs/react";
+import astroExpressiveCode from 'astro-expressive-code'
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'static',
   integrations: [
     starlight({
       title: "ShokoDocs",
@@ -78,9 +80,11 @@ export default defineConfig({
         './src/styles/custom.css',
         '@fontsource/lexend-deca',
         '@fontsource/lexend-deca/600.css'
-
-      ]
+      ],
+    }),
+    astroExpressiveCode({
+      themes: ['dracula-soft'],
     }),
     react()
-  ]
+  ],
 });
