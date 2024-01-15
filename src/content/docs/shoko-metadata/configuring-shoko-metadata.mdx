@@ -6,7 +6,7 @@ sidebar:
   order: 2
 ---
 
-import EasyTable from "./src/components/EasyTable/EasyTable";
+import EasyTable from "../../../components/EasyTable/EasyTable";
 
 ## Creating A Shoko Library
 
@@ -20,7 +20,7 @@ In the **Advanced** tab, if adding a TV library then select **Shoko Series Scann
 
 For users combining the library, make sure to add the library as a **TV Show** and use the **ShokoTV** agent.
 
-![Shoko Metadata - Inputting Server Information](./src/assets/shoko-metadata/Shoko-Metadata-Inputing-Server-Info.jpg)
+![Shoko Metadata - Inputting Server Information](/img/shoko-metadata/Shoko-Metadata-Inputing-Server-Info.jpg)
 
 You'll need to input the following information for Shoko Metadata to access your collection.
 
@@ -58,17 +58,17 @@ In order to properly sync watch states, you will need to have **Shoko Desktop** 
 
 ##### Link and Authenticate using WebUI
 
-![Shoko Metadata - Plex Authentication](./src/assets/shoko-metadata/Shoko-Metadata-Plex-Auth.jpg)
+![Shoko Metadata - Plex Authentication](/img/shoko-metadata/Shoko-Metadata-Plex-Auth.jpg)
 
 First thing you'll need to do is authenticate which you can do by navigating to **Settings** in the Shoko Server Web UI. When you click **Authenticate** it will redirect you and have you log into your Plex account.
 
 If successful, you'll see the following message.
 
-![Shoko Metadata - Plex Synced](./src/assets/shoko-metadata/Shoko-Metadata-Plex-Synced.jpg)
+![Shoko Metadata - Plex Synced](/img/shoko-metadata/Shoko-Metadata-Plex-Synced.jpg)
 
 ##### Select Libraries using Shoko Desktop
 
-![Shoko Metadata - Desktop Sync](./src/assets/shoko-metadata/Shoko-Metadata-Desktop-Sync.jpg)
+![Shoko Metadata - Desktop Sync](/img/shoko-metadata/Shoko-Metadata-Desktop-Sync.jpg)
 
 Open Shoko Desktop and navigate to the **Settings** tab and select **Essential**, from there scroll all the way to the bottom, and you'll see the **Plex Settings For ShokoMetadata** section.
 
@@ -85,7 +85,7 @@ You can find your plex username in plex WebUI by clicking your avatar or circled
 ### Syncing Watch States for Plex Pass Users with Webhooks
 
 If you are a Plex Pass user, you can use Webhooks to forward scrobble events to Shoko Server. You can skip the linking process in that case,
-but it is still mandatory to [set the plex username using Shoko Desktop](#setting-plex-username-using-shoko-desktop). This way you don't need to run the "Sync Plex Watch Status" action manually. 
+but it is still mandatory to [set the plex username using Shoko Desktop](#setting-plex-username-using-shoko-desktop). This way you don't need to run the "Sync Plex Watch Status" action manually.
 
 :::note
 Currently this only works with regular Episodes. Special, Other and Movie Type episodes can not be detected and won't update their status.

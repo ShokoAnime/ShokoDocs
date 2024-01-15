@@ -5,8 +5,9 @@ sidebar:
 Description: Instructions on how to install Shoko Server.
 ---
 
-import EasyTable from "./src/components/EasyTable/EasyTable";
-import Accordion from "./src/components/Accordion/Accordion";
+import EasyTable from "../../../components/EasyTable/EasyTable";
+import Accordion from "../../../components/Accordion/Accordion";
+import DockerCompose from "../../../components/DockerCompose/DockerCompose";
 
 The installation process for Shoko varies depending on the platform you're attempting to install it on.We recommend
 following the guide and not deviating from it unless you are familiar with what you are doing.
@@ -35,6 +36,26 @@ We do _not_ encourage using Docker on Windows using WSL or Hyper-V containers. I
 which might cause unforeseen issues. You can do this at your own risk, as we can't support this setup.
 :::
 
+### Docker compose (Recommended)
+
+To make management easier, we can combine all the previous items in a docker compose file.
+
+In order to make this work, install docker-compose, a guide how to can be found [here](https://docs.docker.com/compose/install/) on the Docker website.
+
+:::note
+Docker-compose should be part of your NAS Docker implementation already. If in doubt, check the vendor or Application
+homepage for your NAS.
+:::
+
+Once docker-compose is installed, create a docker-compose.yml file anywhere on your system and open the file. Then use
+the following to build out your docker-compose.yml file.
+
+<DockerCompose client:only="react"/>
+
+This combines all of our previous configurations in an easy to read and edit format, and will allow you to create a
+powerful startup script that could (for example) include a MySQL server, a download client, and anything else you can
+think of that’s available in a docker format.
+
 ### Docker commandline
 
 First things first, pull the image, and unless otherwise told, install the version tagged as `latest`.
@@ -58,7 +79,9 @@ For the setup you should have the following data ready:
 $ docker run -d --name shokoserver --restart always -p 8111:8111 -v "$HOME/.shoko:/home/shoko/.shoko" -v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import" -e PUID=$UID -e PGID=$GID --shm-size 256m shokoanime/server:latest
 ```
 
-<Accordion title="Unsure how to obtain the needed info? Click here for a break-down of the previous command">
+Unsure how to obtain the needed info? Click the accordion below for the breakdown.
+
+<Accordion title="Docker Command Breakdown">
 
   <EasyTable
     header={["Command", "Purpose"]}
@@ -132,47 +155,6 @@ $ docker run -d --name shokoserver --restart always -p 8111:8111 -v "$HOME/.shok
 :::note
 If you want to edit volumes or environment variables later, you need to stop the container first. This goes for all installation methods mentioned in this topic.
 :::
-
-### Docker compose
-
-To make management easier, we can combine all the previous items in a docker compose file.
-
-In order to make this work, install docker-compose, a guide how to can be found here on the Docker website.
-
-:::note
-Docker-compose should be part of your NAS Docker implementation already. If in doubt, check the vendor or Application
-homepage for your NAS.
-:::
-
-Once docker-compose is installed, create a docker-compose.yml file anywhere on your system. Open the file and put the
-following inside, but remember to substitute the paths below with path(s) leading to your library and/or import folders.
-
-<Accordion title="'docker-compose.yml' example">
-
-  ```yaml
-  version: "3"
-  services:
-  shoko_server:
-  shm_size: 256m
-  container_name: shokoserver
-  image: shokoanime/server:latest
-  restart: always
-  environment:
-  - "PUID=$UID"
-  - "PGID=$GID"
-  - "TZ=Etc/UTC"
-  ports:
-  - "8111:8111"
-  volumes:
-  - "$HOME/.shoko:/home/shoko/.shoko"
-  - "/path/to/anime:/mnt/anime"
-  - "/path/to/import:/mnt/import"
-  ```
-</Accordion>
-
-This combines all of our previous configuration in an easy to read and edit format, and will allow you to create a
-powerful startup script that could (for example) include a MySQL server, a download client, and anything else you can
-think of that’s available in a docker format.
 
 ## Docker (QNAP NAS)
 
