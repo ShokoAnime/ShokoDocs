@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import * as shiki from "shiki";
-import DockerInput from "@components/DockerCompose/DockerInput.tsx";
+import DockerComposeInput from "@components/DockerComposeInput/DockerComposeInput.tsx";
 shiki.setCDN("https://unpkg.com/shiki/");
 
 const DockerCompose = () => {
   const [highlightedCode, setHighlightedCode] = useState(null);
   const [userInput, setUserInput] = useState({
-    serviceName: "shoko_server",
-    containerName: "shoko_server",
     puid: "$UID",
     pgid: "$GID",
     tz: "Etc/UTC",
@@ -15,11 +13,19 @@ const DockerCompose = () => {
     volumes: ["./shoko-config:/home/shoko/.shoko"],
   });
 
+  const fieldLabels = {
+    puid: "PUID",
+    pgid: "PGID",
+    tz: "Time Zone",
+    port: "Port",
+    volumes: "Volumes",
+  };
+
   const code = `  version: "3"
     services:
-    ${userInput.serviceName}:
+    shoko_server:
       shm_size: 256m
-      container_name: ${userInput.containerName}
+      container_name: shoko_server
       image: shokoanime/server:latest
       restart: always
       environment:
@@ -45,40 +51,18 @@ const DockerCompose = () => {
   return (
     <div>
       <div className="docker-compose-wrapper">
-        <DockerInput
-          userInput={userInput}
-          setUserInput={setUserInput}
-          inputField="puid"
-          textField="PUID"
-        />
-        <hr className="docker-input-hr" />
-        <DockerInput
-          userInput={userInput}
-          setUserInput={setUserInput}
-          inputField="pgid"
-          textField="PGID"
-        />
-        <hr className="docker-input-hr" />
-        <DockerInput
-          userInput={userInput}
-          setUserInput={setUserInput}
-          inputField="tz"
-          textField="Time Zone"
-        />
-        <hr className="docker-input-hr" />
-        <DockerInput
-          userInput={userInput}
-          setUserInput={setUserInput}
-          inputField="port"
-          textField="Port"
-        />
-        <hr className="docker-input-hr" />
-        <DockerInput
-          userInput={userInput}
-          setUserInput={setUserInput}
-          inputField="volumes"
-          textField="Volumes"
-        />
+        {Object.keys(userInput).map((key) => (
+          <>
+            <DockerComposeInput
+              key={key}
+              userInput={userInput}
+              setUserInput={setUserInput}
+              inputField={key}
+              textField={fieldLabels[key] || key}
+            />
+            <hr className="docker-input-hr" />
+          </>
+        ))}
       </div>
       <div className="expressive-code">
         <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />
