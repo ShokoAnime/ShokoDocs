@@ -154,6 +154,10 @@ details[open] > .accordion-header {
 	row-gap: 0.5rem;
 }
 
+.docker-compose-code > pre {
+	padding: 1rem 0;
+}
+
 .docker-input-wrapper {
 	align-items: center;
 	display: flex;

@@ -64,8 +64,11 @@ const DockerCompose = () => {
           </>
         ))}
       </div>
-      <div className="expressive-code">
-        <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />
+      <div className="expressive-code not-content">
+        <code
+          className="docker-compose-code"
+          dangerouslySetInnerHTML={{ __html: highlightedCode }}
+        />
       </div>
     </div>
   );
