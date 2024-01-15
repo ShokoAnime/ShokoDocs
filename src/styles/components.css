@@ -1,11 +1,12 @@
+/* ---------------------------------- */
 /* Accordion */
+/* ---------------------------------- */
 
 .accordion-wrapper {
 	margin-top: 0 !important;
 }
 
 .accordion-header {
-	/*background: #23262f;*/
 	border-bottom: 2px solid var(--sl-color-hairline);
 	cursor: pointer;
 	display: flex;
@@ -22,7 +23,9 @@ details[open] > .accordion-header {
 	padding: 1rem 1rem 2rem 1rem;
 }
 
+/* ---------------------------------- */
 /* EasyTable */
+/* ---------------------------------- */
 
 .easy-wrapper {
 	border: 2px solid var(--sl-color-hairline);
@@ -77,7 +80,10 @@ details[open] > .accordion-header {
 	width: 85%;
 }
 
+/* ---------------------------------- */
 /* Changelog */
+/* ---------------------------------- */
+
 .changelog-wrapper {
 	display: flex;
 	flex-direction: column;
@@ -109,8 +115,8 @@ details[open] > .accordion-header {
 }
 
 .changelog-item-wrapper {
-	margin: 1rem 0 !important;
 	list-style: none;
+	margin: 1rem 0 !important;
 	padding-left: 1em;
 	text-indent: -1em;
 }
@@ -137,23 +143,27 @@ details[open] > .accordion-header {
 	color: var(--changelog-removed);
 }
 
+/* ---------------------------------- */
+/* Docker Compose & Input */
+/* ---------------------------------- */
+
 .docker-compose-wrapper {
 	display: flex;
 	flex-direction: column;
+	margin: 2rem 0;
 	row-gap: 0.5rem;
-	margin: 2rem 0
 }
 
 .docker-input-wrapper {
-	display: flex;
 	align-items: center;
+	display: flex;
 	justify-content: space-between;
 	margin: 0 !important;
 }
 
 .docker-input-text {
-	font-weight: 600;
 	font-size: 1rem;
+	font-weight: 600;
 }
 
 .docker-input-hr {
@@ -164,9 +174,9 @@ details[open] > .accordion-header {
 	background: var(--sl-color-bg-nav);
 	border: none;
 	border-radius: 5px;
+	max-width: 400px;
 	padding: 0.5rem;
 	text-align: center;
-	max-width: 400px;
 	width: 100%;
 }
 
@@ -174,8 +184,8 @@ details[open] > .accordion-header {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	width: 100%;
 	margin: 0 !important;
+	width: 100%;
 }
 
 .docker-input-volume-row {
@@ -185,19 +195,19 @@ details[open] > .accordion-header {
 }
 
 .docker-input-volume-text {
+	align-items: center;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 }
 
 .docker-input-button {
 	background: var(--sl-color-bg-nav);
 	border: 2px solid var(--sl-color-hairline);
-	margin: 0 !important;
 	border-radius: 5px;
-	padding: 0.5rem 2rem;
-	cursor: pointer;
 	box-shadow: 10px var(--sl-color-hairline);
+	cursor: pointer;
+	margin: 0 !important;
+	padding: 0.5rem 2rem;
 }
 
 .docker-input-button:hover {
