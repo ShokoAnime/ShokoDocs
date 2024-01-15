@@ -94,16 +94,19 @@ Navigate to **C:\ProgramData\ShokoServer** and open the file labeled **settings.
 
 **MariaDB**
 
-Currently confirmed working MariaDB versions are **10.5.x - 10.9.x**.
-Using a version 10.10.x or higher MariaDB, **Shoko will not be able to connect**.
-This is because of an incompatibility with MySQLClient/NET.
+Currently confirmed working MariaDB versions are **10.5.x - 10.11.x**.
+Using a version 11.x or higher MariaDB, **Shoko will not be able to connect**.
 
-We recommend staying on a LTS release for your convenience and security. The current LTS release is **10.6.x**.
+We recommend staying on the LTS release for your convenience and security. The current LTS release is **10.11.x**.
+
+Please note that MariaDB is a legacy database for Shoko and we highly advise you to use the current SQLite database for new installations.
 
 **MySQL**
 
-Since MySQLClient/NET is used, all current releases should work.
+Since MySqlConnector is used, all current releases should work.
 If you are running into issues with a specific version, please let us know!
+
+Please note that MySQL is a legacy database for Shoko and we highly advise you to use the current SQLite database for new installations.
 
 {{% /faq %}}
 {{< /faq-section >}}
