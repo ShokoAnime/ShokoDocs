@@ -6,6 +6,7 @@ shiki.setCDN("https://unpkg.com/shiki/");
 const DockerCompose = () => {
   const [highlightedCode, setHighlightedCode] = useState(null);
   const [userInput, setUserInput] = useState({
+    container: "shoko_server",
     puid: "$UID",
     pgid: "$GID",
     tz: "Etc/UTC",
@@ -14,6 +15,7 @@ const DockerCompose = () => {
   });
 
   const fieldLabels = {
+    container: "Container",
     puid: "PUID",
     pgid: "PGID",
     tz: "Time Zone",
@@ -25,7 +27,7 @@ const DockerCompose = () => {
     services:
     shoko_server:
       shm_size: 256m
-      container_name: shoko_server
+      container_name: ${userInput.container}
       image: shokoanime/server:latest
       restart: always
       environment:

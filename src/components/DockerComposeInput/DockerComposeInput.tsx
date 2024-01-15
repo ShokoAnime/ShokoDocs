@@ -2,6 +2,7 @@ import React from "react";
 
 // Interfaces
 interface UserInput {
+  container: string;
   puid: string;
   pgid: string;
   tz: string;
