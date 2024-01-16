@@ -10,15 +10,15 @@ import EasyTable from "../../../components/EasyTable/EasyTable";
 
 ## Creating A Shoko Library
 
-With **Shoko Server** running, open **Plex** and create a new libary.
+While Shoko Server is running, open Plex and create a new library. You can either choose Movies or TV Shows.
+Please note that if you haven't completed the **required edits** mentioned on the
+[Installing Shoko Metadata](../installing-shoko-metadata/) page, please go back and do it now.
 
-Either select **Movies** or **TV Shows**. Note if you did not do the edit mentioned on the [Installing Shoko Metadata](../installing-shoko-metadata) page to combine the libraries, you'll need to repeat these steps for the other library.
+When prompted to select the Media Folder, browse to your anime collection. Even though Shoko will provide the
+metadata, Plex still needs to know where the physical files are located.
 
-When asked to select the **Media Folder**, browse to your anime collection. Even though Shoko will be providing the metadata, Plex still needs to know where the physical files are located.
-
-In the **Advanced** tab, if adding a TV library then select **Shoko Series Scanner** and **ShokoTV** or if adding a movie library then select **Shoko Series Scanner** and **ShokoMovies**.
-
-For users combining the library, make sure to add the library as a **TV Show** and use the **ShokoTV** agent.
+In the Advanced tab, if you're adding a TV library, select **Shoko Series Scanner** and **ShokoTV**. If you're adding a
+movie library, choose **Shoko Series Scanner** and **ShokoMovies**.
 
 ![Shoko Metadata - Inputting Server Information](/img/shoko-metadata/Shoko-Metadata-Inputing-Server-Info.jpg)
 
@@ -28,29 +28,32 @@ You'll need to input the following information for Shoko Metadata to access your
     header={["Option", "Description"]}
     data={[
       ["Username",
-       "The username for the **local account you inputted during the **First Run** setup in Shoko Server."
+       "The username for the **local account** you created during the **First Run** setup in Shoko Server."
       ],
       [
         "Password",
-        "The password for the **local account you inputted during the **First Run** setup in Shoko Server.",
+        "The password for the **local account** you created during the **First Run** setup in Shoko Server.",
       ],
       [
         "Server IP",
-        "The IP address for the computer Shoko Server is on. You can leave this blank unless Shoko Server is on another computer.",
+        "The IP address for the computer where Shoko Server is located. This can be left blank unless Shoko Server is running on a different computer.",
       ],
       [
         "Port",
         "The port Shoko Server uses, by default it's **8111**",
       ],
       [
-        "Use single season ordering",
+        "Use Single Season Ordering",
         "If you set **SingleSeasonOrdering** to True during the install process, make sure you check this box."
       ]
     ]}
     columnWidths={{ Option: "30%", Description: "70%" }}
   />
 
-The rest of the options are self-explanatory so once you've gone through them, click the **Add Library** button. Once the library has been added, initiate a scan within Plex and wait for Plex to add your collection.
+Once you've reviewed and configured the remaining options, which are self-explanatory, click the **Add Library** button.
+After adding the library, initiate a scan within Plex and wait for Plex to add your collection.
+
+## NEEEDS UPDATING ONCE API KEY IS IN WEB UI
 
 ### Syncing Watch States using "Sync" action
 

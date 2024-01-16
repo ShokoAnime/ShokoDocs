@@ -8,42 +8,43 @@ sidebar:
 
 import EasyTable from "../../../components/EasyTable/EasyTable";
 
-:::note[Shoko Metadata Prerequisites]
-Shoko Metadata is not a standalone plugin and **requires Shoko Server** installed, configured and running.
-If you haven't done so, [Download Shoko Server](https://shokoanime.com/downloads/) from our main website and use the
-[Installing Shoko Server](../../../getting-started/installing-shoko-server) guide to properly install and configure Shoko Server.
-:::
-
-## Installing Shoko Metadata
 
 Shoko Metadata does not come with an installer. Please follow the manual installation instructions below. This guide assumes you've
 installed Plex into the default install directory, so make adjustments as needed to fit your installation.
+
+Shoko Metadata is not a standalone plugin and **requires Shoko Server** installed, configured and running.
+If you haven't done so, [Download Shoko Server](https://shokoanime.com/downloads/) from our main website and use the
+[Installing Shoko Server](../../../getting-started/installing-shoko-server) guide to properly install and configure Shoko Server.
 
 :::tip
 Make sure Plex Media Server is stopped before attempting to install the Plugin and Scanners. Otherwise, a restart of
 it might be necessary to make the scanner and metadata plugin work and appear in Library settings.
 :::
 
-### Windows installation
+## Windows
 
 [Download Shoko Metadata](https://shokoanime.com/downloads/) and extract the zip file. Inside the zip is a folder
-labeled **ShokoMetadata.bundle**. <br />Move this folder into the following directory: <code>%LOCALAPPDATA%\Plex Media Server\Plug-ins</code>
+labeled **ShokoMetadata.bundle**. Move this folder into the following directory:
 
-Now you need to move the **Movie** and **Series** scanners into the scanner folder.
+```cmd
+%LOCALAPPDATA%\Plex Media Server\Plug-ins
+````
 
-The **Movie** and **Series** scanners are located in the following directory:
+Now you need to move the **Movie** and **Series** scanners into the scanner folder. If you never installed custom
+scanners before, you might need to create the folder labeled **Scanners** manually. The **Movie** and **Series**
+scanners are located in the following directory:
 
-<code>%LOCALAPPDATA%\Plex Media Server\Plug-ins\ShokoMetadata.bundle\Contents\Resources</code><br />
+```cmd
+%LOCALAPPDATA%\Plex Media Server\Plug-ins\ShokoMetadata.bundle\Contents\Resources
+```
 
-Move both folders into the following directory: <code>%LOCALAPPDATA%\Plex Media Server\Scanners</code>
+Move both folders into the following directory.
 
-:::note
-If you never installed custom scanners before, you might need to create the folder labeled **Scanners** manually.
-:::
+```cmd
+%LOCALAPPDATA%\Plex Media Server\Scanners
+```
 
-Proceed to **Editing Plex Scanners** to make the required edits for the scanners to work.
-
-### Linux installation
+## Linux
 
 First, we will assign an environment variable `$PLEX_HOME` that will point to the base directory for your Plex content.
 This will make it easier to follow the guide, regardless of the Plex install method.
@@ -55,25 +56,20 @@ If you installed Plex using another method, then please assign the variable to y
 steps listed below.
 :::
 
-##### Bare-metal variable assignemnt
+#### Bare-Metal Variable
 
 Sign in with **the user responsible for running PMS** (replace `<username>` with the according username) and assign the variable:
 
 ```sh
 sudo -u <username> -s /bin/sh
-
 export PLEX_HOME="/var/lib/plex/Plex Media Server"
 ```
 
-:::caution[Check your install location]
 Some distributions may install Plex to a different base directory, or if you're running a custom install of Plex,
 then either make sure or tweak the above variable to lead to your **Plex Media Server** directory.
 If the above variable is not set correctly, then the guide will fail at the first step.
-:::
 
-Continue with [Installation steps](#installation-steps)
-
-##### Snap (plexmediaserver) variable assignment
+#### Snap (plexmediaserver) Variable
 
 Sign in as `root` on your host-system and assign the variable:
 
@@ -82,9 +78,7 @@ sudo -s /bin/sh
 export PLEX_HOME="/var/snap/plexmediaserver/common/Library/Application Support/Plex Media Server"
 ```
 
-Continue with [Installation steps](#installation-steps)
-
-##### Docker (plexinc/pms-docker)
+#### Docker (plexinc/pms-docker)
 
 :::caution
 This section assumes you're using the official docker image (plexinc/pms-docker). If you're using any other image,
@@ -99,61 +93,62 @@ docker exec -it <container name> /bin/sh
 export PLEX_HOME="/config/Library/Application Support/Plex Media Server"
 ```
 
-Continue with [Installation steps](#installation-steps)
+### Installation Steps
 
-#### Installation steps
-
-1\. Navigate to the **Plug-ins** directory of your install
+Navigate to the **Plug-ins** directory of your install
 
 ```sh
 cd "${PLEX_HOME}/Plug-ins";
 ```
 
-2\. Download and extract the latest bundle from GibHub using **one** of the following commands:
+Download and extract the latest bundle from GibHub using **one** of the following commands:
 
 ```sh
 curl -L https://github.com/Cazzar/ShokoMetadata.bundle/archive/master.tar.gz | tar -xzf -
 ```
 
-or
-
 ```sh
 wget -O - https://github.com/Cazzar/ShokoMetadata.bundle/archive/master.tar.gz | tar -xzf -
 ```
 
-3\. Remove the suffix
+Remove the suffix
 
 ```sh
 mv ShokoMetadata.bundle-master ShokoMetadata.bundle
 ```
 
-4\. Ensure that the **Scanners** directory exists in the base directory
+Ensure that the **Scanners** directory exists in the base directory
 
 ```sh
 mkdir -p "${PLEX_HOME}/Scanners"
 ```
 
-5\. Move the scanners into the **Scanners** directory
+Move the scanners into the **Scanners** directory
 
 ```sh
 cp -R ShokoMetadata.bundle/Contents/Resources/* ../Scanners/
 ```
 
-Continue to [Editing Plex Scanners/Linux instructions](#editing-plex-scanners-linux-instructions).
-
 ## Editing Plex Scanners
 
-With Shoko Metadata installed, you'll need to make a few edits to both the **Series** and **Movies** scanner.
+With Shoko Metadata installed, you'll need to make a few edits to both the **Series** and **Movies** scanner in
+order for them to properly work with Shoko.
 
-### Windows instructions
+### Windows
 
-**Editing Shoko Movie Scanner**
+We recommend doing the following edits in [VSCode](https://code.visualstudio.com/) or similar as Python is
+space-sensitive and extra or missing spaces can break the file.
 
-Navigate to <code>%LOCALAPPDATA%\Plex Media Server\Scanners\Movies</code>
+#### Editing Shoko Movie Scanner
 
-Open **Shoko Movie Scanner.py** in your editor of choice and modify the **Prefs** section to match your Shoko setup. For
-most users you'll only need to change the **username** and **password**. As Python is space-sensitive make sure to not
-add or remove any spaces.
+If you closed the window, open file explorer and navigate to the following.
+
+```cmd
+%LOCALAPPDATA%\Plex Media Server\Scanners\Movies
+```
+
+Open **Shoko Movie Scanner.py** and make adjustments to the **Prefs** section to align it with your Shoko
+configuration. For the majority of users, you'll simply need to update the **username** and **password** fields.
 
 ```py
 Prefs = {
@@ -164,14 +159,16 @@ Prefs = {
 }
 ```
 
-**Editing Shoko Series Scanner**
+#### Editing Shoko Series Scanner
 
-Navigate to <code>%LOCALAPPDATA%\Plex Media Server\Scanners\Series</code>
+If you closed the window, open file explorer and navigate to the following.
 
-Open **Shoko Series Scanner.py** in your editor of choice and modify the **Prefs** section to match your Shoko setup.
-For most users you'll only need to change the **username** and **password**. As Python is space-sensitive make sure to not add or remove any spaces.
+```cmd
+%LOCALAPPDATA%\Plex Media Server\Scanners\Series
+```
 
-Read [Advanced Settings](#advanced-settings) for the other options.
+Open **Shoko Series Scanner.py** and make adjustments to the **Prefs** section to align it with your Shoko
+configuration. For the majority of users, you'll simply need to update the **username** and **password** fields.
 
 ```py
 Prefs = {
@@ -185,13 +182,11 @@ Prefs = {
 }
 ```
 
-After these steps are finished, continue to [Configuring Shoko Metadata](../configuring-shoko-metadata). Don't forget to (re)start Plex Media Server!
+### Linux
 
-### Linux instructions
+Edit the `Prefs` section **in each scanner** using your prefered cmd editor so they match with your **Shoko Server** install.
 
-Edit the `Prefs` section **in each scanner** using your prefered terminal editor so they match with your **Shoko Server** install.
-
-**Movie Scanner**
+#### Movie Scanner
 
 ```sh
 ${EDITOR:-nano} "${PLEX_HOME}/Scanners/Movies/Shoko Movie Scanner.py"
@@ -208,15 +203,13 @@ Prefs = {
 }
 ```
 
-**Series Scanner**
+#### Series Scanner
 
 ```sh
 ${EDITOR:-nano} "${PLEX_HOME}/Scanners/Series/Shoko Series Scanner.py"
 ```
 
 For most users you'll only need to change the **username** and **password**. As Python is space-sensitive make sure to not add or remove any spaces.
-
-Read [Advanced Settings](#advanced-settings) for the other options.
 
 ```py
 Prefs = {
@@ -229,25 +222,22 @@ Prefs = {
     'SingleSeasonOrdering': False
 }
 ```
+## Series Scanner Advanced Settings
 
-After these steps are finished, continue to [Configuring Shoko Metadata](../configuring-shoko-metadata). Don't forget to (re)start Plex Media Server!
-
-## Advanced Settings
-
-You'll notice the series scanner has a few more options available than the movie scanner which are detailed below.
+You may have noticed that the series scanner provides a broader range of options compared to the movie scanner.
+These additional options are detailed below.
 
 <EasyTable
     header={["Option", "Description"]}
     data={[
       [
-        "IncludeSpecials", "Files marked as specials in Shoko will be shown in the seires as part of Season 0."
+        "IncludeSpecials", "Files marked as specials in Shoko will be shown in the series as part of Season 0."
       ],
       [
-        "IncludeOther", "Files marked as other in Shoko will be shown in the seires as part of Season 0."
+        "IncludeOther", "Files marked as other in Shoko will be shown in the series as part of Season 0."
       ],
       [
-        "SingleSeasonOrdering", "Episodes are no longer separated by seasons.\n \n" +
-        "All normal episodes are put into Season 1, specials into Season 0, openings/endings into Season -1, and trailers into Season -2."
+        "SingleSeasonOrdering", "Episodes are no longer separated by seasons. All normal episodes are put into Season 1, specials into Season 0, openings/endings into Season -1, and trailers into Season -2."
       ],
     ]}
     columnWidths={{ Option: "25%", Description: "75%" }}
