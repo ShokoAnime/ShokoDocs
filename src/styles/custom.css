@@ -89,3 +89,8 @@ details[open] > summary::after {
 ol > li {
   margin-top: 0.5rem !important;
 }
+
+/* Pre Margin Removal */
+pre {
+  margin: 0 !important;
+}
