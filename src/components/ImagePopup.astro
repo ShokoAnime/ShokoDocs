@@ -19,9 +19,6 @@
         z-index: 1000;
       `;
 
-        const parentP = img.closest("p");
-        parentP.classList.add("targeted-p");
-
         const fullscreenImg = new Image();
         fullscreenImg.src = event.target.src;
         fullscreenImg.style.cssText = "max-height: 100%; max-width: 90%;";
