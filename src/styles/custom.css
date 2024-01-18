@@ -3,7 +3,7 @@
 /* Dark mode colors. */
 :root {
   --sl-content-width: 900px;
-  --sl-font: 'Lexend Deca', serif;
+  --sl-font: 'Lexend Deca', sans-serif;
   --sl-color-accent-low: #131e4f;
   --sl-color-accent: #3447ff;
   --sl-color-accent-high: #b3c7ff;

@@ -3,7 +3,7 @@ import TableOfContentsList from "../../node_modules/@astrojs/starlight/component
 import { Icon } from "@astrojs/starlight/components";
 import { program } from "./Changelog/Changelog.utils";
 
-const { locale, toc, editUrl, lastUpdated, entry } = Astro.props;
+const { toc, editUrl, lastUpdated, entry } = Astro.props;
 
 // Parse and format the date
 const newDateString = new Date(lastUpdated).toLocaleDateString("en-us", {
@@ -27,7 +27,7 @@ const newDateString = new Date(lastUpdated).toLocaleDateString("en-us", {
           ) : (
             <ul>
               {program(entry.data.changelog).map((version) => (
-                <li key={version.version}>
+                <li>
                   <a href={`#${version.versionURL}`}>
                     Version {version.version} - {version.date}
                   </a>

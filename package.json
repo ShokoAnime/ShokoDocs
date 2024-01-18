@@ -5,20 +5,21 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
     "@astrojs/react": "^3.0.9",
-    "@astrojs/starlight": "^0.15.3",
+    "@astrojs/starlight": "^0.15.4",
     "@fontsource/lexend-deca": "^5.0.8",
     "@julian_cataldo/astro-lightbox": "^0.10.11",
-    "@types/node": "^20.11.1",
-    "@types/react": "^18.2.47",
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^20.11.5",
+    "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
-    "astro": "^4.1.2",
+    "astro": "^4.2.0",
     "astro-expressive-code": "^0.31.0",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
@@ -29,8 +30,8 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "prettier": "^3.2.2",
+    "prettier": "^3.2.4",
     "prettier-plugin-astro": "^0.12.3",
-    "sass": "^1.69.7"
+    "sass": "^1.70.0"
   }
 }

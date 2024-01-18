@@ -5,7 +5,6 @@ import astroExpressiveCode from 'astro-expressive-code'
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'static',
   integrations: [
     starlight({
       title: "ShokoDocs",
@@ -77,9 +76,9 @@ export default defineConfig({
         }
       ],
       customCss: [
-        './src/styles/custom.css',
         '@fontsource/lexend-deca',
-        '@fontsource/lexend-deca/600.css'
+        '@fontsource/lexend-deca/600.css',
+        './src/styles/custom.css',
       ],
     }),
     astroExpressiveCode({
