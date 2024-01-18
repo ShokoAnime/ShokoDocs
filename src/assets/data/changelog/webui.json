@@ -2,26 +2,210 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/",
   "releases": [
     {
-      "version": "1.1.1-dev1",
-      "versionURL": "111",
-      "date": "March 23rd, 2021",
-      "link": "https://github.com/ShokoAnime/ShokoServer-WebUI/releases/tag/1.1.1-dev1",
+      "version": "1.1.13",
+      "versionURL": "1113",
+      "date": "January 15th, 2024",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Update webui v1 to build with node 18."
+        }
+      ]
+    },
+    {
+      "version": "1.1.12",
+      "versionURL": "1112",
+      "date": "August 1st, 2023",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix settings fail to save"
+        }
+      ]
+    },
+    {
+      "version": "1.1.11",
+      "versionURL": "1111",
+      "date": "July 3rd, 2023",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix quick actions with falsely payload."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix first run for latest daily."
+        }
+      ]
+    },
+    {
+      "version": "1.1.10",
+      "versionURL": "1110",
+      "date": "May 28th, 2023",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix auto group relation settings when using daily Shoko Server."
+        }
+      ]
+    },
+    {
+      "version": "1.1.9",
+      "versionURL": "119",
+      "date": "April 11th, 2023",
+      "link": "NA",
       "changes": [
         {
           "type": "added",
-          "text": "Added Recreate All Groups action"
+          "text": "Add a way to remove pinned action from dashboard if it is invalid."
         },
         {
           "type": "fixed",
-          "text": "Fixed wrong sizes showing up in dashboard (Changed MB to MiB and so on)"
+          "text": "Fix crash if user had removed action pinned on dashboard."
+        }
+      ]
+    },
+    {
+      "version": "1.1.8",
+      "versionURL": "118",
+      "date": "April 9th, 2023",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add missing quick actions to v1."
         },
         {
           "type": "fixed",
-          "text": "Fixed missing unrecognized files"
+          "text": "Fix sourcemaps."
+        }
+      ]
+    },
+    {
+      "version": "1.1.7",
+      "versionURL": "117",
+      "date": "April 1st, 2023",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix folder browsing not working in 4.2.0"
+        }
+      ]
+    },
+    {
+      "version": "1.1.6",
+      "versionURL": "116",
+      "date": "August 9th, 2022",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Add Import New Files action."
+        }
+      ]
+    },
+    {
+      "version": "1.1.5",
+      "versionURL": "115",
+      "date": "July 29th, 2022",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix old logs in localStorage."
+        }
+      ]
+    },
+    {
+      "version": "1.1.4",
+      "versionURL": "114",
+      "date": "July 27th, 2022",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix paging issue with daily Shoko Server."
+        }
+      ]
+    },
+    {
+      "version": "1.1.3",
+      "versionURL": "113",
+      "date": "July 24th, 2022",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix recent files api in daily."
+        }
+      ]
+    },
+    {
+      "version": "1.1.2",
+      "versionURL": "112",
+      "date": "July 6th, 2022",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Increase delay for polling server status on startup."
+        }
+      ]
+    },
+    {
+      "version": "1.1.1",
+      "versionURL": "111",
+      "date": "February 22rd, 2022",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add sentry.io tracing."
+        },
+        {
+          "type": "added",
+          "text": "Add Recreate All Groups action."
+        },
+        {
+          "type": "changed",
+          "text": "Change errorboundary to use one from sentry."
+        },
+        {
+          "type": "changed",
+          "text": "Change MB to MiB and so on."
         },
         {
           "type": "fixed",
-          "text": "Fixed files breakdown panel"
+          "text": "Possible fix for whole panel being dragged on touch."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix flickering in logs tab."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix sentry in production builds."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix series summary bars."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix log timestamp wrapping."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix missing unrecognized files."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix files breakdown panel."
         }
       ]
     },

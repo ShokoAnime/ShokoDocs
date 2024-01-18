@@ -41,9 +41,6 @@ dependencies:
   medium-zoom:
     specifier: ^1.1.0
     version: 1.1.0
-  prismjs:
-    specifier: ^1.29.0
-    version: 1.29.0
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -53,6 +50,9 @@ dependencies:
   react-markdown:
     specifier: ^9.0.1
     version: 9.0.1(@types/react@18.2.47)(react@18.2.0)
+  react-medium-image-zoom:
+    specifier: ^5.1.10
+    version: 5.1.10(react-dom@18.2.0)(react@18.2.0)
   sharp:
     specifier: ^0.32.6
     version: 0.32.6
@@ -3761,6 +3761,16 @@ packages:
       vfile: 6.0.1
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /react-medium-image-zoom@5.1.10(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-sgadFY5yH0sEz5lVs9NubiwbVrtUeKnH9YdzXYv+cblrP8WXj2TSyT6J3sPw0pM5dGKbpjXjePye+42yWV4OSg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /react-refresh@0.14.0:

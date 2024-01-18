@@ -88,12 +88,15 @@ details[open] > .accordion-header {
 	display: flex;
 	flex-direction: column;
 	font-size: 1.125rem;
+	margin-top: 2rem !important;
 	max-width: 100%;
 }
 
 .changelog-info {
 	border-bottom: 2px solid var(--sl-color-hairline);
+	color: var(--sl-color-white);
 	display: flex;
+	font-size: 1.5rem;
 	margin-bottom: 1rem;
 	padding-bottom: 1rem;
 }
