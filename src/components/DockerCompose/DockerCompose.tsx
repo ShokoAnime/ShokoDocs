@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import * as shiki from "shiki";
 import DockerComposeInput from "@components/DockerComposeInput/DockerComposeInput.tsx";
 shiki.setCDN("https://unpkg.com/shiki/");

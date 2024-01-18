@@ -6,7 +6,7 @@ import shokofin from "../../assets/data/changelog/shokofin.json";
 import shokoMetadata from "../../assets/data/changelog/shokometadata.json";
 import myAnime3 from "../../assets/data/changelog/myanime3.json";
 
-export const program = (programName) => {
+export const program = (programName: string) => {
   switch (programName) {
     case "Shoko Server":
       return server.releases;
@@ -23,7 +23,7 @@ export const program = (programName) => {
   }
 };
 
-export const typeColor = (type) => {
+export const typeColor = (type: string) => {
   switch (type) {
     case "added":
       return "changelog-type changelog-added";

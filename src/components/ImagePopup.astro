@@ -2,7 +2,7 @@
   document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".sl-markdown-content img").forEach((img) => {
       img.closest("p").classList.add("img-parent");
-      img.style.cursor = "pointer";
+      (img as HTMLElement).style.cursor = "pointer";
       img.addEventListener("click", (event) => {
         const overlay = document.createElement("div");
         overlay.style.cssText = `
@@ -20,11 +20,12 @@
       `;
 
         const fullscreenImg = new Image();
-        fullscreenImg.src = event.target.src;
+        fullscreenImg.src = (event.target as HTMLImageElement).src;
         fullscreenImg.style.cssText = "max-height: 100%; max-width: 90%;";
 
         // Display Alt Text
-        const altText = event.target.alt || "No description available";
+        const altText =
+          (event.target as HTMLImageElement).alt || "No description available";
         const altTextDiv = document.createElement("div");
         altTextDiv.textContent = altText;
         altTextDiv.style.cssText = `

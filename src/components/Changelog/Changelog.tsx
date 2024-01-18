@@ -1,11 +1,15 @@
 // Imports
-import React from "react";
 import Lodash from "lodash";
 import { program, typeColor } from "./Changelog.utils";
 
-export default function Changelog(props) {
+export default function Changelog(props: { name: string }) {
+  interface versionChanges {
+    type: string;
+    text: string;
+  }
+
   interface releaseInfo {
-    changes: object;
+    changes: versionChanges[];
     date: string;
     link: string;
     version: string;
@@ -25,21 +29,29 @@ export default function Changelog(props) {
     },
   );
 
-  const BuildChanges = (release) =>
-    Lodash.map(release.info.changes, (changeGroupMap, changeGroupKey) => (
-      <div className="changelog-type-wrapper" key={changeGroupKey}>
-        <div className={typeColor(changeGroupKey)}>{changeGroupKey}</div>
-        <ul className="changelog-item-wrapper">
-          {Lodash.map(changeGroupMap, (changeItemMap, changeItemKey) => (
-            <li className="changelog-item" key={changeItemKey}>
-              - {changeItemMap.text}
-            </li>
-          ))}
-        </ul>
-      </div>
-    ));
+  console.log(releaseInfo);
 
-  return Lodash.map(releaseInfo, (info, infoKey) => (
+  const BuildChanges = (release: { info: releaseInfo }) =>
+    Lodash.map(
+      release.info.changes,
+      (changeGroupMap: object, changeGroupKey: string) => (
+        <div className="changelog-type-wrapper" key={changeGroupKey}>
+          <div className={typeColor(changeGroupKey)}>{changeGroupKey}</div>
+          <ul className="changelog-item-wrapper">
+            {Lodash.map(
+              changeGroupMap,
+              (changeItemMap: versionChanges, changeItemKey: string) => (
+                <li className="changelog-item" key={changeItemKey}>
+                  - {changeItemMap.text}
+                </li>
+              ),
+            )}
+          </ul>
+        </div>
+      ),
+    );
+
+  return Lodash.map(releaseInfo, (info: releaseInfo, infoKey: string) => (
     <div className="changelog-wrapper" key={infoKey} id={info.versionURL}>
       <div className="changelog-info">
         <div className="changelog-version">Version {info.version}</div>
