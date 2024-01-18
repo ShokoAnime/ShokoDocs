@@ -17,27 +17,16 @@ idling even when there are pending commands awaiting processing.
 
 ## Rate Limit & Enforcement
 
-AniDB provides access to two different APIs, an HTTP API and an UDP API.
+AniDB provides access to two different APIs, an HTTP API and a UDP API. Below are the official rate limits and the code
+snippet from Shoko showing we enforce their specified rate limit.
 
-**HTTP API**
+### HTTP API
 >You should not request more than one page every two seconds.
 >
 >[AniDB Wiki - HTTP API](https://wiki.anidb.net/HTTP_API_Definition#Flooding_and_Caching)
 
-**UDP API**
->Short Term:
-A Client MUST NOT send more than 0.5 packets per second (that's one packet every two seconds, not two packets a second!)
-The server will start to enforce the limit after the first 5 packets have been received.
->
->Long Term:
-A Client MUST NOT send more than one packet every four seconds over an extended amount of time.
-An extended amount of time is not defined. Use common sense.
->
-> [AniDB Wiki - UDP API](https://wiki.anidb.net/UDP_API_Definition#Flood_Protection)
+Code in Shoko to enforce this.
 
-Shoko enforces these rate limits as seen in the code snippets below.
-
-**HTTP API**
 ```c#
 //ShokoServer/Shoko.Server/Providers/AniDB/HTTP/HttpRateLimiter.cs
 public class HttpRateLimiter : AniDBRateLimiter
@@ -48,7 +37,20 @@ public class HttpRateLimiter : AniDBRateLimiter
     protected override long resetPeriod { get; init; } = 1800000;
 }
 ```
-**UDP API**
+
+### UDP API
+>Short Term:
+A Client MUST NOT send more than 0.5 packets per second (that's one packet every two seconds, not two packets a second!)
+The server will start to enforce the limit after the first 5 packets have been received.
+>
+>Long Term:
+A Client MUST NOT send more than one packet every four seconds over an extended amount of time.
+An extended amount of time is not defined. Use common sense.
+>
+> [AniDB Wiki - UDP API](https://wiki.anidb.net/UDP_API_Definition#Flood_Protection)
+
+Code in Shoko to enforce this.
+
 ```c#
 //ShokoServer/Shoko.Server/Providers/AniDB/UDP/UDPRateLimiter.cs
 public class UDPRateLimiter : AniDBRateLimiter
@@ -93,7 +95,7 @@ As of **January 10th, 2024**, there are **14,554 entries** in the XML Cache.
 [Click Here](https://shokoanime.com/files/shoko-server/other/Anime_HTTP.zip) to download the XML Cache and follow the
 instructions below to utilize it.
 
-**XML Cache Location**
+#### XML Cache Location
 
 <EasyTable
   header={["OS", "Location"]}

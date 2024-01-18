@@ -1,6 +1,7 @@
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".sl-markdown-content img").forEach((img) => {
+      img.closest("p").classList.add("img-parent");
       img.style.cursor = "pointer";
       img.addEventListener("click", (event) => {
         const overlay = document.createElement("div");
@@ -17,6 +18,9 @@
         align-items: center;
         z-index: 1000;
       `;
+
+        const parentP = img.closest("p");
+        parentP.classList.add("targeted-p");
 
         const fullscreenImg = new Image();
         fullscreenImg.src = event.target.src;
