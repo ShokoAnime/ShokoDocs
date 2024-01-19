@@ -29,8 +29,6 @@ export default function Changelog(props: { name: string }) {
     },
   );
 
-  console.log(releaseInfo);
-
   const BuildChanges = (release: { info: releaseInfo }) =>
     Lodash.map(
       release.info.changes,
