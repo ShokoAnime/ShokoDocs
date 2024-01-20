@@ -97,7 +97,7 @@ details[open] > .accordion-header {
   border-radius: 8px;
   color: var(--sl-color-white);
   display: flex;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-bottom: 2rem;
   padding: 0.5rem 1rem;
 }
@@ -107,6 +107,15 @@ details[open] > .accordion-header {
 .changelog-link {
   font-weight: 500;
   margin-top: 0 !important;
+}
+
+.changelog-development {
+  color: var(--sl-color-text-accent);
+  display: flex;
+  font-weight: 500;
+  margin-left: auto;
+  margin-top: 0 !important;
+  align-items: center;
 }
 
 .changelog-divider {

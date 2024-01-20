@@ -21,6 +21,36 @@ const Changelog = ({ name }) => {
     },
   );
 
+  const ChangeHeader = ({ date, version, link }) => (
+    <div className="changelog-info">
+      <div className="changelog-version">Version {version}</div>
+      {date !== "NA" && (
+        <>
+          <div className="changelog-divider">|</div>
+          <div className="changelog-date">{date}</div>
+        </>
+      )}
+      {link === "Dev" && (
+        <>
+          <div className="changelog-development">In Development</div>
+        </>
+      )}
+      {link !== "Dev" && link !== "NA" && (
+        <>
+          <div className="changelog-divider">|</div>
+          <a
+            className="changelog-link"
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Release Notes
+          </a>
+        </>
+      )}
+    </div>
+  );
+
   const BuildChanges = ({ info: { changes } }: { info: releaseInfo }) =>
     Object.entries(changes)
       .sort()
@@ -45,24 +75,7 @@ const Changelog = ({ name }) => {
   return releaseInfo.map(
     ({ changes, date, link, version, versionURL }, index) => (
       <div className="changelog-wrapper" key={index} id={versionURL}>
-        <div className="changelog-info">
-          <div className="changelog-version">Version {version}</div>
-          <div className="changelog-divider">|</div>
-          <div className="changelog-date">{date}</div>
-          {link !== "NA" && (
-            <>
-              <div className="changelog-divider">|</div>
-              <a
-                className="changelog-link"
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Release Notes
-              </a>
-            </>
-          )}
-        </div>
+        <ChangeHeader date={date} version={version} link={link} />
         <BuildChanges info={{ changes }} />
       </div>
     ),
