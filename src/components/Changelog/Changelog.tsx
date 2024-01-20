@@ -22,21 +22,25 @@ const Changelog = ({ name }) => {
   );
 
   const BuildChanges = ({ info: { changes } }: { info: releaseInfo }) =>
-    Object.entries(changes).map(([changeGroupKey, changeGroupList]) => (
-      <div className="changelog-type-wrapper" key={changeGroupKey}>
-        <div className={typeColor(changeGroupKey)}>{changeGroupKey}</div>
-        <ul className="changelog-item-wrapper">
-          {changeGroupList.map(({ text }, index) => (
-            <li
-              className={`changelog-item changelog-${changeGroupKey}`}
-              key={index}
-            >
-              {text}
-            </li>
-          ))}
-        </ul>
-      </div>
-    ));
+    Object.entries(changes)
+      .sort()
+      .map(([changeGroupKey, changeGroupList]) => (
+        <div className="changelog-type-wrapper" key={changeGroupKey}>
+          <div className={typeColor(changeGroupKey)}>{changeGroupKey}</div>
+          <ul className="changelog-item-wrapper">
+            {changeGroupList
+              .sort((a, b) => a.text.localeCompare(b.text))
+              .map(({ text }, index) => (
+                <li
+                  className={`changelog-item changelog-${changeGroupKey}`}
+                  key={index}
+                >
+                  {text}
+                </li>
+              ))}
+          </ul>
+        </div>
+      ));
 
   return releaseInfo.map(
     ({ changes, date, link, version, versionURL }, index) => (
