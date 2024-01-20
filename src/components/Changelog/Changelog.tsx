@@ -1,70 +1,68 @@
-// Imports
-import Lodash from "lodash";
 import { program, typeColor } from "./Changelog.utils";
 
-export default function Changelog(props: { name: string }) {
-  interface versionChanges {
-    type: string;
-    text: string;
-  }
+type versionChanges = {
+  type: string;
+  text: string;
+};
 
-  interface releaseInfo {
-    changes: versionChanges[];
-    date: string;
-    link: string;
-    version: string;
-    versionURL: string;
-  }
+type releaseInfo = {
+  changes: Record<string, versionChanges[]>;
+};
 
-  const releaseInfo = Lodash.map(
-    program(props.name),
-    ({ changes, date, link, version, versionURL }: releaseInfo) => {
-      return {
-        changes: Lodash.groupBy(changes, "type"),
-        date: date,
-        link: link,
-        version: version,
-        versionURL: versionURL,
-      };
+const Changelog = ({ name }) => {
+  const releaseInfo = program(name).map(
+    ({ changes, date, link, version, versionURL }) => {
+      const groupedChanges = changes.reduce((acc, { type, text }) => {
+        (acc[type] = acc[type] || []).push({ text });
+        return acc;
+      }, {});
+
+      return { changes: groupedChanges, date, link, version, versionURL };
     },
   );
 
-  const BuildChanges = (release: { info: releaseInfo }) =>
-    Lodash.map(
-      release.info.changes,
-      (changeGroupMap: object, changeGroupKey: string) => (
-        <div className="changelog-type-wrapper" key={changeGroupKey}>
-          <div className={typeColor(changeGroupKey)}>{changeGroupKey}</div>
-          <ul className="changelog-item-wrapper">
-            {Lodash.map(
-              changeGroupMap,
-              (changeItemMap: versionChanges, changeItemKey: string) => (
-                <li className="changelog-item" key={changeItemKey}>
-                  - {changeItemMap.text}
-                </li>
-              ),
-            )}
-          </ul>
-        </div>
-      ),
-    );
-
-  return Lodash.map(releaseInfo, (info: releaseInfo, infoKey: string) => (
-    <div className="changelog-wrapper" key={infoKey} id={info.versionURL}>
-      <div className="changelog-info">
-        <div className="changelog-version">Version {info.version}</div>
-        <div className="changelog-divider">|</div>
-        <div className="changelog-date">{info.date}</div>
-        {info.link !== "NA" ? (
-          <>
-            <div className="changelog-divider">|</div>
-            <a className="changelog-link" href={info.link} target="_blank">
-              View Release Notes
-            </a>
-          </>
-        ) : null}
+  const BuildChanges = ({ info: { changes } }: { info: releaseInfo }) =>
+    Object.entries(changes).map(([changeGroupKey, changeGroupList]) => (
+      <div className="changelog-type-wrapper" key={changeGroupKey}>
+        <div className={typeColor(changeGroupKey)}>{changeGroupKey}</div>
+        <ul className="changelog-item-wrapper">
+          {changeGroupList.map(({ text }, index) => (
+            <li
+              className={`changelog-item changelog-${changeGroupKey}`}
+              key={index}
+            >
+              {text}
+            </li>
+          ))}
+        </ul>
       </div>
-      <div className="changelog-content">{BuildChanges({ info })}</div>
-    </div>
-  ));
-}
+    ));
+
+  return releaseInfo.map(
+    ({ changes, date, link, version, versionURL }, index) => (
+      <div className="changelog-wrapper" key={index} id={versionURL}>
+        <div className="changelog-info">
+          <div className="changelog-version">Version {version}</div>
+          <div className="changelog-divider">|</div>
+          <div className="changelog-date">{date}</div>
+          {link !== "NA" && (
+            <>
+              <div className="changelog-divider">|</div>
+              <a
+                className="changelog-link"
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Release Notes
+              </a>
+            </>
+          )}
+        </div>
+        <BuildChanges info={{ changes }} />
+      </div>
+    ),
+  );
+};
+
+export default Changelog;
