@@ -7,9 +7,10 @@ import EasyTable from "../../../components/EasyTable/EasyTable";
 
 An AniDB ban is a common occurrence during the Shoko importing process for many users, usually triggered by excessive
 connection attempts or large importing sessions, though it doesn't imply any wrongdoing on your part. You simply need
-to wait for the ban to lift, which can range from 15 minutes to 24 hours,depending on severity.
+to wait for the ban to lift, which can range from 15 minutes to 24 hours, depending on severity.
 
-AniDB's API imposes two distinct types of bans, namely **HTTP and UDP**. In case a user receives a temporary ban for one
+AniDB's API imposes two distinct types of bans, namely **HTTP** and **UDP**. In case a user receives a temporary ban
+for one
 of these, Shoko will automatically cease sending data associated with the banned API. However, it will continue to
 utilize the other API whenever feasible. It's important to note that this doesn't guarantee that all your commands
 will be executed successfully since each API handles different sets of data. As a result, you may notice your queue

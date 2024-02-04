@@ -41,7 +41,11 @@ details[open] > .accordion-header {
   border-top-right-radius: 0.5rem;
   display: flex;
   font-weight: 600;
-  padding: 1rem;
+
+  & div {
+    padding: 1rem;
+  }
+
 }
 
 .easy-header-center,
@@ -52,7 +56,11 @@ details[open] > .accordion-header {
 .easy-row {
   display: flex;
   flex-direction: row;
-  padding: 1rem;
+
+  & div {
+    padding: 1rem;
+  }
+
 }
 
 .easy-row:nth-child(odd) {

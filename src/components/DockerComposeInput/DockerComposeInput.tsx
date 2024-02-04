@@ -25,12 +25,12 @@ interface VolumeInputProps {
 }
 
 // VolumeInput Component
-const VolumeInput = ({
+const VolumeInput: React.FC<VolumeInputProps> = ({
   volume,
   index,
   onVolumeChange,
   onRemoveVolume,
-}: VolumeInputProps) => (
+}) => (
   <div className="docker-input-volume-row">
     {index > 0 && (
       <button
@@ -49,12 +49,12 @@ const VolumeInput = ({
 );
 
 // DockerComposeInput Component
-const DockerComposeInput = ({
+const DockerComposeInput: React.FC<DockerInputProps> = ({
   setUserInput,
   userInput,
   inputField,
   textField,
-}: DockerInputProps) => {
+}) => {
   const handleVolumeChange = (index: number, value: string) => {
     const newVolumes = [...userInput.volumes];
     newVolumes[index] = value;
@@ -78,7 +78,7 @@ const DockerComposeInput = ({
           <input
             className="docker-input-input"
             id={inputField}
-            value={userInput[inputField]}
+            value={userInput[inputField as keyof UserInput]}
             onChange={(e) =>
               setUserInput({ ...userInput, [inputField]: e.target.value })
             }
