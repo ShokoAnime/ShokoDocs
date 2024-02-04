@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import * as shiki from "shiki";
 import DockerComposeInput from "@components/DockerComposeInput/DockerComposeInput.tsx";
-shiki.setCDN("https://unpkg.com/shiki/");
+shiki.setCDN("https://unpkg.com/shiki@0.14.7");
 
 const DockerCompose = () => {
   const [highlightedCode, setHighlightedCode] = useState(null);

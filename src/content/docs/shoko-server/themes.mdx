@@ -1,0 +1,119 @@
+---
+title: Web UI Themes
+description: Overview of the how themes work in Shoko.
+sidebar:
+  order: 3
+---
+
+import EasyTable from "../../../components/EasyTable/EasyTable";
+
+Although the default theme, Shoko Gray, is an excellent choice, we understand that some users may prefer a different
+color scheme. Instead of relying on third-party browser plugins like Stylus, users can effortlessly add and create
+new themes without any coding experience required.
+
+## Creating Your Custom Theme
+
+This process is manual and involves the creation and population of the theme file. The theme files are stored in a
+JSON template, and their location varies depending on your operating system which is listed below.
+
+<EasyTable
+  header={["OS", "Location"]}
+  data={[
+    ["Windows", "C:\\ProgramData\\ShokoServer\\themes"],
+    ["Linux/macOS", "~/.shoko/Shoko.CLI/themes"],
+  ]}
+  columnWidths={{ OS: "25%", Location: "75%" }}
+/>
+
+After accessing this folder, you can create a new JSON file with any name you prefer, such as **my-theme.json** as this
+is where you'll be putting the actual theme template located below.
+
+### Theme Template
+
+Here is the theme template that you can use to create your own theme. Please be aware that this is a JSON file, so
+it's important to use proper quotation marks to avoid any issues with the file. We have provided the default Shoko Gray
+HEX values for the theme settings, which you can easily replace with your own HEX values.
+
+```json
+{
+  "name": "Theme Name",
+  "version": "1.00",
+  "author": "Your Name",
+  "description": "Description",
+  "tags": [
+    "Theme",
+    "Tags",
+    "Go",
+    "Here"
+  ],
+  "url": "Link to theme repo, if available.",
+  "values": {
+    "button-danger": "#ff6c6c",
+    "button-danger-border": "#21242b",
+    "button-danger-hover": "#fa7676",
+    "button-danger-text": "#010f1c",
+    "button-primary": "#44a3ff",
+    "button-primary-border": "#21242b",
+    "button-primary-hover": "#64b3ff",
+    "button-primary-text": "#010f1c",
+    "button-secondary": "#353d4a",
+    "button-secondary-border": "#21242b",
+    "button-secondary-hover": "#404a59",
+    "button-secondary-text": "#cfd8e3",
+    "header-background": "#2c333e",
+    "header-icon": "#cfd8e3",
+    "header-text": "#cfd8e3",
+    "header-text-important": "#10c469",
+    "header-user-background": "#44a3ff",
+    "header-user-text": "#010f1c",
+    "logo-primary": "#44a3ff",
+    "logo-secondary": "#2c333e",
+    "panel-background": "#2c333e",
+    "panel-background-alt": "#282e38",
+    "panel-background-overlay": "#1e2027e5",
+    "panel-background-transparent": "#2c333ea6",
+    "panel-border": "#21242b",
+    "panel-icon": "#cfd8e3",
+    "panel-icon-action": "#44a3ff",
+    "panel-icon-danger": "#ff6c6c",
+    "panel-icon-important": "#10c469",
+    "panel-icon-warning": "#f9c851",
+    "panel-input": "#1e2027",
+    "panel-tags": "#3f4762",
+    "panel-text": "#cfd8e3",
+    "panel-text-danger": "#ff6c6c",
+    "panel-text-important": "#10c469",
+    "panel-text-other": "#b981ff",
+    "panel-text-primary": "#44a3ff",
+    "panel-text-warning": "#f9c851",
+    "slider-background": "#21242b",
+    "slider-background-alt": "#282e38",
+    "slider-color": "#44a3ff",
+    "slider-color-alt": "#44a3ff",
+    "topnav-background": "#353d4a",
+    "topnav-border": "#21242b",
+    "topnav-icon-important": "#10c469",
+    "topnav-icon-primary": "#cfd8e3",
+    "topnav-icon-warning": "#f9c851",
+    "topnav-text": "#cfd8e3",
+    "topnav-text-primary": "#44a3ff"
+  }
+}
+```
+
+### Transparency With Hex Colors
+
+You can append a two-digit HEX code to the end of your HEX value to specify the desired opacity for a variable. In the
+template provided above, variables like **panel-background-overlay** and **panel-background-transparent** utilize this
+method to apply opacity.
+
+The [following site](https://davidwalsh.name/hex-opacity) provides a comprehensive list of values and their
+corresponding HEX codes you can use.
+
+## Using a Custom Theme
+
+After you've downloaded the JSON file, copy it into the theme folder as listed above. Then in the Shoko Web UI, go
+into **Settings** and select **General** and look for **Theme Options**. There is a drop-down input you can click
+which will list every properly installed theme.
+
+If your new theme is not showing up, that means there is an issue with its structure, and it failed to load properly.

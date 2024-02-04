@@ -62,6 +62,10 @@ details[open] > summary::after {
   transform: rotate(90deg);
 }
 
+select {
+  outline: none;
+}
+
 .title-second {
   color: var(--sl-color-white);
 }
@@ -110,4 +114,16 @@ ol > li {
   flex-direction: column;
   margin: 1.5rem 0 !important;
   width: 100%;
+}
+
+/* Make Strong text match callout header color */
+.starlight-aside--note * strong,
+.starlight-aside--caution * strong,
+.starlight-aside--tip * strong,
+.starlight-aside--danger * strong {
+  color: var(--sl-color-asides-text-accent);
+}
+
+.shiki {
+  border-radius: 5px;
 }
