@@ -24,8 +24,6 @@ When asked to select the **Media Folder**, browse to your anime collection. Even
 
 In the **Advanced** tab, if adding a TV library then select **Shoko Series Scanner** and **ShokoTV** or if adding a movie library then select **Shoko Series Scanner** and **ShokoMovies**. 
 
-For users combining the library, make sure to add the library as a **TV Show** and use the **ShokoTV** agent. 
-
 ![Shoko Metadata - Inputting Server Information](/assets/images/shoko-metadata/Shoko-Metadata-Inputing-Server-Info.jpg)
 
 You'll need to input the following information for Shoko Metadata to access your collection.
