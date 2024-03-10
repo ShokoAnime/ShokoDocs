@@ -3,6 +3,7 @@
   "releases": [
     {
       "version": "4.2.0",
+      "versionURL": "420",
       "date": "TBD",
       "link": "NA",
       "changes": [
@@ -42,6 +43,7 @@
     },
     {
       "version": "4.1.2",
+      "versionURL": "412",
       "date": "June 27th, 2022",
       "link": "https://shokoanime.com/blog/shoko-version-4-1-2-released/",
       "changes": [
@@ -61,6 +63,7 @@
     },
     {
       "version": "4.1.1",
+      "versionURL": "411",
       "date": "August 29th, 2021",
       "link": "https://shokoanime.com/blog/shoko-version-4-1-1-released/",
       "changes": [
@@ -92,6 +95,7 @@
     },
     {
       "version": "4.1.0",
+      "versionURL": "410",
       "date": "February 1st, 2021",
       "link": "https://shokoanime.com/blog/shoko-version-4-1-0-released/",
       "changes": [
@@ -107,6 +111,7 @@
     },
     {
       "version": "4.0.0",
+      "versionURL": "400",
       "date": "August 21st, 2020",
       "link": "https://shokoanime.com/blog/shoko-version-4-0-0-released/",
       "changes": [
@@ -142,6 +147,7 @@
     },
     {
       "version": "3.9.7",
+      "versionURL": "397",
       "date": "April 30th, 2020",
       "link": "https://shokoanime.com/blog/shoko-version-3-9-7-released/",
       "changes": [
@@ -177,6 +183,7 @@
     },
     {
       "version": "3.9.6",
+      "versionURL": "396",
       "date": "November 27, 2019",
       "link": "https://shokoanime.com/blog/shoko-version-3-9-6-released/",
       "changes": [
@@ -202,6 +209,7 @@
     },
     {
       "version": "3.9.5",
+      "versionURL": "395",
       "date": "July 21, 2019",
       "link": "https://shokoanime.com/blog/shoko-version-3-9-5-released/",
       "changes": [
@@ -253,6 +261,7 @@
     },
     {
       "version": "3.9.4",
+      "versionURL": "394",
       "date": "December 31, 2018",
       "link": "https://shokoanime.com/blog/shoko-version-3-9-4-released/",
       "changes": [
@@ -280,6 +289,7 @@
     },
     {
       "version": "3.9.3",
+      "versionURL": "393",
       "date": "August 20, 2018",
       "link": "https://shokoanime.com/blog/shoko-version-3-9-3-released/",
       "changes": [

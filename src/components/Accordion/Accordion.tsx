@@ -1,6 +1,3 @@
-// Imports
-import React from "react";
-
 const Accordion = ({ title, children }) => {
   return (
     <details className="accordion-wrapper">

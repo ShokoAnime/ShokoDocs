@@ -2,11 +2,10 @@
 title: Installing Shoko Server
 sidebar:
   order: 1
-Description: Installing Shoko Server
+Description: Instructions on how to install Shoko Server.
 ---
 
-import EasyTable from "./src/components/EasyTable/EasyTable";
-import Accordion from "./src/components/Accordion/Accordion";
+import DockerCompose from "../../../components/DockerCompose/DockerCompose";
 
 The installation process for Shoko varies depending on the platform you're attempting to install it on.We recommend
 following the guide and not deviating from it unless you are familiar with what you are doing.
@@ -17,7 +16,7 @@ support it. It simply means that no one has written a guide on how to install Sh
 ## Windows
 
 Windows users have it the easiest, navigate to the [Shoko Downloads](https://shokoanime.com/downloads/) page and
-downloadShoko Server and unless you've been told otherwise, download the **Stable** version. Once it's done downloading,
+download Shoko Server and unless you've been told otherwise, download the **Stable** version. Once it's done downloading,
 runthe installer and follow the instructions listed, it should only take a couple of minutes to install Shoko.
 
 ## Linux
@@ -35,145 +34,22 @@ We do _not_ encourage using Docker on Windows using WSL or Hyper-V containers. I
 which might cause unforeseen issues. You can do this at your own risk, as we can't support this setup.
 :::
 
-### Docker commandline
+## Docker Compose (Recommended)
 
-First things first, pull the image, and unless otherwise told, install the version tagged as `latest`.
+Docker Compose is automatically included with all recent versions of Docker, so you don't need to worry about its
+availability. However, if you're having issues or not sure, please refer to your NAS manual or the vendor's
+website for confirmation.
 
-```sh
-$ docker pull shokoanime/server:latest
-```
+It's worth noting that Docker Compose is the **recommended method** for installing Shoko using Docker because it
+simplifies service management. We've provided a sample **docker-compose.yml** file below to make configuration easier.
+This file consolidates all the settings, making them readily editable.
 
-After pulling the image, you can run the command belo to start the container.
-Make sure you substitute the paths under '-v' with the ones from your environment.
-You only need to replace the example paths before the ':' with your paths.
+If you need to make changes to accommodate your setup, feel free to use the Docker Compose Builder below to update
+the values according to your preferences. Otherwise, simply copy the outputted config.
 
-For the setup you should have the following data ready:
+### Docker Compose Builder
 
-- path of your docker config folder (for permanent storage of config data)
-- path of your source (import) folder
-- path of your target (library) folder(s)
-- the GUID and PUID of the user you want shoko to run as (optional)
-
-```sh
-$ docker run -d --name shokoserver --restart always -p 8111:8111 -v "$HOME/.shoko:/home/shoko/.shoko" -v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import" -e PUID=$UID -e PGID=$GID --shm-size 256m shokoanime/server:latest
-```
-
-<Accordion title="Unsure how to obtain the needed info? Click here for a break-down of the previous command">
-
-  <EasyTable
-    header={["Command", "Purpose"]}
-    data={[
-      ["<code>docker run</code>", "Create a docker container from an image."],
-      [
-        "<code>-d</code>",
-        "Run in detached mode.\n \n" +
-        "Offloads the process to the background. If you want to control the container, you can either omit this flag or run docker attach followed by the container name to reattach to the container.",
-      ],
-      [
-        "<code>--name shokoserver</code>",
-        "Name the container.\n \n" +
-        "If you do not assign a container name with the **--name** option, then the daemon generates a random string name for you. Defining a name can be a handy way to add meaning to a container. If you specify a name, you can use it when referencing the container within a Docker network.",
-      ],
-      [
-        "<code>--restart</code>",
-        "Automatically restart the server on failure.\n \n" +
-        "Make the container automatically restart if it fails. Shoko is bound to fail a few times, so setting this flag ensures that it will automatically restart and resume where it left of.",
-      ],
-      [
-        "<code>-p 8111:8111</code>",
-        "Publish the container's ports.\n \n" +
-        "Binds the container's port to the same port on the host system, because otherwise a random port will be chosen on the host system - which we don't want to happen.",
-      ],
-      [
-        '<code>-v "$HOME/.shoko:/home/shoko/.shoko"</code>',
-        "Mounts volumes." +
-        "\n \nTo preserve settings between updates, the settings folder must be remapped to a location outside the container. By default we map it to a folder in the user's home directory",
-      ],
-      [
-        '<code>-v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import"</code>',
-        "Mounts volumes.\n \n" +
-        "In order for Shoko Server to manage your collection, you must map at least one volume to the container.\n \n" +
-        "**Note #1:** The first path in the mapping (**/path/to/anime**) is the location on your host computer, the second path (**/mnt/anime**) in the mapping is where you want to mount it inside the container.\n \n" +
-        "**Note #2:** You can mount multiple library folders, and/or import folders, and they can be named any way you like (e.g. /anime, /import, /export, /tv_shows, etc.).\n \n" +
-        "**Note #3:** When importing hard-linked files, be sure to mount the common root between your import folder and library folder. Otherwise, you will get duplicate files, because the containers sees the mount-points as separate disks, and will copy-and-delete the file from the import folder to the drop-destination.",
-      ],
-      [
-        "<code>-e PUID=$UID -e PGID=$GID</code>",
-        "Set Environment Variables.\n \n" +
-        "You can instruct the server to run as a certain set of user/group ids. This makes working with permissions a lot easier since you can match your server with a local account without effort. The example argument will make the server run with the uid and gid of the current user, to find the value to use for **PUID** and **PGID**, you can run log into the target system, either locally or over SSH, and execute the id command, supplied with the username of the user you want to the server to run as.",
-      ],
-      [
-        "<code>-e TZ=Etc/UTC</code>",
-        "Set Environment Variables.\n \n" +
-        "You can set the timezone with the **TZ** environment variable.",
-      ],
-      [
-        "<code>shokoanime/server:latest</code>",
-        "Specifies the CustomImage to derive the container from.",
-      ],
-      [
-        "<code>--shm-size 256m</code>",
-        "Set Environment Variable for AVDump.\n \n" +
-        "AVDump3 requires access to a larger portion of shared IPC memory than the **64MB** available by	default in docker containers, otherwise it might core dump when starting the dump process. Increasing it to	**256MB** is enough to avoid this.\n \n" +
-        "**Note:** AVDump3 is currently only available on the **daily** version of the server. If you're on **stable** then you can ignore this argument.",
-      ],
-      [
-        "<code>-e AVDUMP_MONO=true</code>",
-        "Set Environment Variable for AVDump2.\n \n" +
-        "AVDump2 currently requires large dependencies, so by specifying this environment variable, it tells the container to pull the dependencies for AVDump2 to work.\n\n" +
-        "**Note:** AVDump2 is currently only available on the **stable** version of the server. If you're on **daily** then you can ignore this argument.",
-      ],
-    ]}
-    hideHeader={false}
-    columnWidths={{ Command: "35%", Purpose: "65%" }}
-  />
-
-</Accordion>
-
-:::note
-If you want to edit volumes or environment variables later, you need to stop the container first. This goes for all installation methods mentioned in this topic.
-:::
-
-### Docker compose
-
-To make management easier, we can combine all the previous items in a docker compose file.
-
-In order to make this work, install docker-compose, a guide how to can be found here on the Docker website.
-
-:::note
-Docker-compose should be part of your NAS Docker implementation already. If in doubt, check the vendor or Application
-homepage for your NAS.
-:::
-
-Once docker-compose is installed, create a docker-compose.yml file anywhere on your system. Open the file and put the
-following inside, but remember to substitute the paths below with path(s) leading to your library and/or import folders.
-
-<Accordion title="'docker-compose.yml' example">
-
-  ```yaml
-  version: "3"
-  services:
-  shoko_server:
-  shm_size: 256m
-  container_name: shokoserver
-  image: shokoanime/server:latest
-  restart: always
-  environment:
-  - "PUID=$UID"
-  - "PGID=$GID"
-  - "TZ=Etc/UTC"
-  ports:
-  - "8111:8111"
-  volumes:
-  - "$HOME/.shoko:/home/shoko/.shoko"
-  - "/path/to/anime:/mnt/anime"
-  - "/path/to/import:/mnt/import"
-  ```
-</Accordion>
-
-This combines all of our previous configuration in an easy to read and edit format, and will allow you to create a
-powerful startup script that could (for example) include a MySQL server, a download client, and anything else you can
-think of that’s available in a docker format.
+<DockerCompose client:only="react"/>
 
 ## Docker (QNAP NAS)
 
@@ -181,8 +57,8 @@ Make sure you have Docker installed on your QNAP NAS before you continue. This p
 under the Name of **Container Station**.
 
 :::tip
-As the management using **Container Station** will feel a bit clunky, we recommend creating the container using the
-instructions given under [Docker command-line](#docker-commandline) or [Docker Compose](#docker-compose) above.
+Users have reported  that using the **Container Station** for management can be rough at times. If you're running into
+similar issues, we recommend creating the container using the instructions given under Docker Compose above.
 
 For the app, you will need to gather needed information in the same way as described in
 the [Docker command-line](#docker-commandline) installation.
@@ -216,7 +92,7 @@ the [Docker command-line](#docker-commandline) installation.
 If you want to use the Synology Docker Application, please follow these steps:
 
 Open Docker from the Application Menu, then go to the Containers tab. You'll need to download the *
-*[Synology Container File](../../../src/assets/data/synology-dockerfile.json)**. Replace the ``/path/to/anime``, `PUID`
+*[Synology Container File](../../../assets/data/synology-dockerfile.json)**. Replace the ``/path/to/anime``, `PUID`
 and `PGID` and once that's done, go to Settings, Import and select the file you've just modified. Name the
 container `shokoserver`, then apply!
 

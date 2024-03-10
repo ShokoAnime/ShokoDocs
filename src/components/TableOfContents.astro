@@ -1,8 +1,9 @@
 ---
 import TableOfContentsList from "../../node_modules/@astrojs/starlight/components/TableOfContents/TableOfContentsList.astro";
 import { Icon } from "@astrojs/starlight/components";
+import { program } from "./Changelog/Changelog.utils";
 
-const { locale, toc, editUrl, lastUpdated, entry, isFallback } = Astro.props;
+const { toc, editUrl, lastUpdated, entry } = Astro.props;
 
 // Parse and format the date
 const newDateString = new Date(lastUpdated).toLocaleDateString("en-us", {
@@ -21,7 +22,19 @@ const newDateString = new Date(lastUpdated).toLocaleDateString("en-us", {
       <nav aria-labelledby="starlight__on-this-page">
         <h2 id="starlight__on-this-page">On This Page</h2>
         <>
-          <TableOfContentsList toc={toc.items} />
+          {entry.data.changelog === undefined ? (
+            <TableOfContentsList toc={toc.items} />
+          ) : (
+            <ul>
+              {program(entry.data.changelog).map((version) => (
+                <li>
+                  <a href={`#${version.versionURL}`}>
+                    Version {version.version} - {version.date}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
           <h2 class="contribute">Contribute</h2>
           <ul>
             <li>
@@ -31,9 +44,9 @@ const newDateString = new Date(lastUpdated).toLocaleDateString("en-us", {
               </a>
             </li>
             <li>
-              <a href={`/${locale}/contribute/`}>
+              <a href={`/../contribute/`}>
                 <Icon name="open-book" />
-                Help Make ShokoDocs Better
+                Help Make Shoko Better
               </a>
             </li>
           </ul>

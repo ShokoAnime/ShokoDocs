@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import react from "@astrojs/react";
+import astroExpressiveCode from 'astro-expressive-code'
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,32 +33,57 @@ export default defineConfig({
         },
         {
           autogenerate: {
-            directory: "mediaserver-integration"
+            directory: "shoko-server"
           },
-          label: "Mediaserver-Integration"
+          label: "Shoko Server",
+          collapsed: true,
         },
         {
-          label: "Shoko Suite",
-          link: "shoko-suite"
+          autogenerate: {
+            directory: "shoko-metadata"
+          },
+          label: "Shoko Metadata (Plex)",
+          collapsed: true,
+        },
+        {
+          autogenerate: {
+            directory: "shokodi"
+          },
+          label: "Shokodi (Kodi)",
+          collapsed: true,
+        },
+        {
+          autogenerate: {
+            directory: "shokofin"
+          },
+          label: "Shokofin (Jellyfin)",
+          collapsed: true,
+        },
+        {
+          autogenerate: {
+            directory: "changelog"
+          },
+          label: "Changelog",
+          collapsed: true,
         },
         {
           label: "FAQ",
           link: "faq"
         },
         {
-          autogenerate: {
-            directory: "changelog"
-          },
-          label: "Changelog"
+          label: "Contribute",
+          link: "contribute"
         }
       ],
       customCss: [
         './src/styles/custom.css',
         '@fontsource/lexend-deca',
-        '@fontsource/lexend-deca/600.css'
-
-      ]
+        '@fontsource/lexend-deca/600.css',
+      ],
+    }),
+    astroExpressiveCode({
+      themes: ['dracula-soft'],
     }),
     react()
-  ]
+  ],
 });

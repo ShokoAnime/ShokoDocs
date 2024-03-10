@@ -2,8 +2,8 @@
 title: Frequently Asked Questions
 ---
 
-import EasyTable from "./src/components/EasyTable/EasyTable";
-import Accordion from "./src/components/Accordion/Accordion";
+import EasyTable from "../../components/EasyTable/EasyTable";
+import Accordion from "../../components/Accordion/Accordion";
 
 Listed below are some of the most commonly asked questions by new users about Shoko.These inquiries cover a broad
 spectrum of topics, ranging from its essential features to the support for various plugins
@@ -33,9 +33,9 @@ spectrum of topics, ranging from its essential features to the support for vario
   We suggest running Shoko on any modern amd64/x86_64 CPUs for optimum experience.
 
   Users attempting to run Shoko on ARM devices such as Raspberry Pi's and similar ones will take significant
-  performance hits and will experience less than optimal performance. Also see **Can Shoko Server Run on ARM/Apple M
-  processors?**
-  for additional info involving other platforms than amd64/x86_64.
+  performance hits and will experience less than optimal performance. See the
+  **Can Shoko Server Run on ARM/Apple M processors?** question below for additional info involving other
+  platforms than amd64/x86_64.
 
   **Memory (RAM):**
 
@@ -64,6 +64,13 @@ spectrum of topics, ranging from its essential features to the support for vario
   These plugins make your collection both viewable and playable in the specified media player.
 </Accordion>
 
+<Accordion title='Does Shoko Have a Public API?'>
+  Yes it does!
+
+  With Shoko Server running, navigate to **/swagger/** to see a list of all available endpoints. Additionally, each
+  endpoint can be tested once you authenticate if you're curious on the data returned by said endpoint.
+</Accordion>
+
 ## Shoko Server
 
 <Accordion title='Does Shoko Server Run on Linux/NAS?'>
@@ -81,8 +88,12 @@ spectrum of topics, ranging from its essential features to the support for vario
   [Docker](https://www.docker.com/), which allows you to run **Shoko Server** on your device within a container.
   This approach ensures that all necessary libraries are available.
 
-  However, it's important to note that running Shoko Server on ARM/Apple M devices is not officially supported.
-  Consequently, you may encounter issues that we are unable to assist with.
+  However, it's important to note that running Shoko Server on ARM/Apple M devices is **not officially supported**
+  at this time as our team is focusing on other priorities. Consequently, you may encounter issues that we are unable
+  to assist with.
+
+  With that said, we have **untested builds** available on [GitHub](https://github.com/ShokoAnime/ShokoServer/releases)
+  and encourage ARM64 users to try it out.
 </Accordion>
 
 <Accordion title='How Do I Backup My Collection?'>
@@ -96,7 +107,6 @@ spectrum of topics, ranging from its essential features to the support for vario
       ["Windows", "C:\\ProgramData\\ShokoServer\\DatabaseBackup"],
       ["Linux/macOS", "~/.shoko/Shoko.CLI/DatabaseBackup"],
     ]}
-    hideHeader={false}
     columnWidths={{ OS: "25%", Location: "75%" }}
   />
 
@@ -104,9 +114,25 @@ spectrum of topics, ranging from its essential features to the support for vario
   [installation](/getting-started/installing-shoko-server).
 </Accordion>
 
+<Accordion title="I've Been Banned From AniDB?">
+  The message you're encountering indicates a **temporary ban** due to excessive connection attempts. AniDB imposes such
+  bans when it suspects data leeching through numerous rapid connection attempts. In reality, this doesn't imply any
+  wrongdoing on your part. You simply need to wait for the ban to lift, which can range from 15 minutes to 24 hours,
+  depending on severity.
+
+  AniDB's API imposes two distinct types of bans, namely **HTTP and UDP**. In case a user receives a temporary ban for one
+  of these, Shoko will automatically cease sending data associated with the banned API. However, it will continue to
+  utilize the other API whenever feasible. It's important to note that this doesn't guarantee that all your commands
+  will be executed successfully since each API handles different sets of data. As a result, you may notice your queue
+  idling even when there are pending commands awaiting processing.
+
+  For more information on AniDB bans and how to minimize them, check the
+  [Understanding AniDB Bans](/shoko-server/anidb-ban/) page.
+</Accordion>
+
 ## Shoko Metadata
 
-<Accordion title='Fixing Missing Posters/Information In Plex When Using ShokoMetadata?'>
+<Accordion title="I'm Missing Posters/Information In Plex When Using ShokoMetadata?">
   This can happen when a problem occurs while scanning files and downloading the respective metadata.
 
   To fix this, please follow these steps:
@@ -122,4 +148,25 @@ spectrum of topics, ranging from its essential features to the support for vario
   7. All media files and information should now be available and properly displayed.
 
   If you still have problems after following those steps, feel free to hop on our discord.
+</Accordion>
+
+<Accordion title='Series Are Not Being Grouped Properly / Episode Imported But Not Showing Up'>
+  Its important to remember that even though Shoko is providing Metadata to Plex, you still need to follow Plex naming
+  conventions for folder and filenames.
+
+  We recommend not nesting related series and instead keeping your folder structure flat and naming said folders
+  similar to how AniDB names the series. Here is an example of folder structure and naming for one of the more
+  problematic series.
+
+  ```txt
+  - Jujutsu Kaisen (2023)
+  - Jujutsu Kaisen
+  - Jujutsu Kaisen 0
+  ```
+  Here is an example of how you would name a file for Jujutsu Kaisen (2023).
+
+  ```txt
+  Jujutsu Kaisen (2023) - 01.mkv
+  ```
+
 </Accordion>

@@ -1,0 +1,102 @@
+---
+title: Configuring Shoko Metadata
+description: Information on how to configure Shoko Metadata (Plex).
+sidebar:
+  order: 2
+---
+
+import EasyTable from "../../../components/EasyTable/EasyTable";
+
+## Creating A Shoko Library
+
+While Shoko Server is running, open Plex and create a new library. You can either choose Movies or TV Shows.
+Please note that if you haven't completed the **required edits** mentioned on the
+[Installing Shoko Metadata](../installing-shoko-metadata/) page, please go back and do it now.
+
+When prompted to select the Media Folder, browse to your anime collection. Even though Shoko will provide the
+metadata, Plex still needs to know where the physical files are located.
+
+In the Advanced tab, if you're adding a TV library, select **Shoko Series Scanner** and **ShokoTV**. If you're adding a
+movie library, choose **Shoko Series Scanner** and **ShokoMovies**.
+
+![Shoko Metadata - Inputting Server Information](../../../assets/img/shoko-metadata/shoko-metadata-inputing-server-info.jpg)
+
+You'll need to input the following information for Shoko Metadata to access your collection.
+
+<EasyTable
+    header={["Option", "Description"]}
+    data={[
+      ["Username",
+       "The username for the **local account** you created during the **First Run** setup in Shoko Server."
+      ],
+      [
+        "Password",
+        "The password for the **local account** you created during the **First Run** setup in Shoko Server.",
+      ],
+      [
+        "Server IP",
+        "The IP address for the computer where Shoko Server is located. This can be left blank unless Shoko Server is running on a different computer.",
+      ],
+      [
+        "Port",
+        "The port Shoko Server uses, by default it's **8111**",
+      ],
+      [
+        "Use Single Season Ordering",
+        "If you set **SingleSeasonOrdering** to True during the install process, make sure you check this box."
+      ]
+    ]}
+    columnWidths={{ Option: "30%", Description: "70%" }}
+/>
+
+Once you've reviewed and configured the remaining options, which are self-explanatory, click the **Add Library** button.
+After adding the library, initiate a scan within Plex and wait for Plex to add your collection.
+
+## NEEEDS UPDATING ONCE API KEY IS IN WEB UI
+
+### Syncing Watch States using "Sync" action
+
+In order to properly sync watch states, you will need to have **Shoko Desktop** installed which you can download from our [Downloads](https://shokoanime.com/downloads) page.
+
+##### Link and Authenticate using WebUI
+
+![Shoko Metadata - Plex Authentication](../../../assets/img/shoko-metadata/Shoko-Metadata-Plex-Auth.jpg)
+
+First thing you'll need to do is authenticate which you can do by navigating to **Settings** in the Shoko Server Web UI. When you click **Authenticate** it will redirect you and have you log into your Plex account.
+
+If successful, you'll see the following message.
+
+![Shoko Metadata - Plex Synced](../../../assets/img/shoko-metadata/Shoko-Metadata-Plex-Synced.jpg)
+
+##### Select Libraries using Shoko Desktop
+
+![Shoko Metadata - Desktop Sync](../../../assets/img/shoko-metadata/Shoko-Metadata-Desktop-Sync.jpg)
+
+Open Shoko Desktop and navigate to the **Settings** tab and select **Essential**, from there scroll all the way to the bottom, and you'll see the **Plex Settings For ShokoMetadata** section.
+
+If **Plex Host** is blank, click the drop-down to select it, It's ok for the list to be empty, simply click the **Refresh** button below, and it should populate with your plex server. Once selected you'll then need to select the **Plex Library** that contains your collection. You can select multiple libraries if you've chosen to split your anime tv series and movies.
+
+##### Setting Plex Username using Shoko Desktop
+
+Open Shoko Desktop and navigate to the **Settings** tab and select **Users**. Select the User you entered during the install process for Shoko Medatadata, enter your **Plex username** under "plex users" and hit "Save".
+
+:::note
+You can find your plex username in plex WebUI by clicking your avatar or circled letter in the upper right corner.
+:::
+
+### Syncing Watch States for Plex Pass Users with Webhooks
+
+If you are a Plex Pass user, you can use Webhooks to forward scrobble events to Shoko Server. You can skip the linking process in that case,
+but it is still mandatory to [set the plex username using Shoko Desktop](#setting-plex-username-using-shoko-desktop). This way you don't need to run the "Sync Plex Watch Status" action manually.
+
+:::note
+Currently this only works with regular Episodes. Special, Other and Movie Type episodes can not be detected and won't update their status.
+You need to run the "Sync Plex Watch Status" action or mark them as watched by hand in Shoko WebUI or Desktop.
+Keep in mind, that you have to link your Plex Server for this to work.
+:::
+
+To set up a Webhook, open your Plex WebUI and go to Settings (wrench icon). Under your username in the left menu, Select **Webhooks**.
+
+Click the button to add a Webhook and enter your Shoko Server URL: <code>http://`<shoko-server-ip>`:8111/plex</code> (replace `<shoko-server-ip>` accordingly).
+
+Save your changes. Now when playing an episode and everything was set up correctly, you should see scrobble events in your Shoko Server Log.

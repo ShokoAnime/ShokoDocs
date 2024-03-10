@@ -18,13 +18,16 @@ const EasyTable = ({
     width: columnWidths[columnName] || "auto",
   });
 
-  const renderCellContent = (cellData: string | React.ReactNode) => {
+  const renderCellContent = (cellData: any) => {
+    if (typeof cellData === "object") {
+      return <a href={cellData.link}>{cellData.title}</a>;
+    }
+
     if (typeof cellData === "string") {
-      return cellData.startsWith("<") && cellData.endsWith(">") ? (
-        <div dangerouslySetInnerHTML={{ __html: cellData }} />
-      ) : (
-        <ReactMarkdown>{cellData}</ReactMarkdown>
-      );
+      if (cellData.startsWith("http")) {
+        return <a href={cellData}>Website</a>;
+      }
+      return <ReactMarkdown>{cellData}</ReactMarkdown>;
     }
     return cellData;
   };
