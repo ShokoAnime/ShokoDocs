@@ -40,23 +40,23 @@ export default defineConfig({
         },
         {
           autogenerate: {
-            directory: "shoko-metadata"
+            directory: "plex-integration"
           },
-          label: "Shoko Metadata (Plex)",
+          label: "Plex Integration",
           collapsed: true,
         },
         {
           autogenerate: {
-            directory: "shokodi"
+            directory: "jellyfin-integration"
           },
-          label: "Shokodi (Kodi)",
+          label: "Jellyfin Integration",
           collapsed: true,
         },
         {
           autogenerate: {
-            directory: "shokofin"
+            directory: "kodi-integration"
           },
-          label: "Shokofin (Jellyfin)",
+          label: "Kodi Integration",
           collapsed: true,
         },
         {

@@ -7,7 +7,7 @@
   --sl-color-accent-low: #131e4f;
   --sl-color-accent: #3447ff;
   --sl-color-accent-high: #b3c7ff;
-  --sl-color-white: #ffffff;
+  --sl-color-white: #CFD8E3;
   --sl-color-gray-1: #eceef2;
   --sl-color-gray-2: #c0c2c7;
   --sl-color-gray-3: #888b96;
@@ -106,6 +106,10 @@ ol > li {
   margin-top: 0.5rem !important;
 }
 
+.content-panel * li {
+  margin-top: 0.5rem !important;
+}
+
 /* Add class to image parent tag */
 .img-parent {
   align-items: center;
@@ -124,6 +128,17 @@ ol > li {
   color: var(--sl-color-asides-text-accent);
 }
 
+.starlight-aside {
+  border-radius: 8px;
+  box-shadow: var(--ec-frm-frameBoxShdCssVal);
+}
+
+/* For Codeblock */
 .shiki {
   border-radius: 5px;
+}
+
+/* Fix for making Copy button top-aligned */
+.copy {
+  margin-top: 0.25rem !important;
 }
