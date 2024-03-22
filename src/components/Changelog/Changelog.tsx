@@ -69,28 +69,27 @@ const Changelog = ({ name }: { name: any }) => {
   );
 
   const BuildChanges = ({ info }: BuildChangesProps) =>
-    Object.entries(info.changes)
-      .sort((a, b) => a[0].localeCompare(b[0]))
-      .map(([changeGroupKey, changeGroupList]) => (
-        <div className="changelog-type-wrapper" key={changeGroupKey}>
-          <div className={typeColor(changeGroupKey)}>
-            {changeGroupKey} - {changeGroupList.length} Entries
-          </div>
-          <ul className="changelog-item-wrapper">
-            {changeGroupList
-              .sort((a, b) => a.text.localeCompare(b.text))
-              .map(({ text }, index) => (
-                <li
-                  className={`changelog-item changelog-${changeGroupKey}`}
-                  key={index}
-                >
-                  {text}
-                </li>
-              ))
-              .reverse()}
-          </ul>
+    Object.entries(info.changes).map(([changeGroupKey, changeGroupList]) => (
+      <div className="changelog-type-wrapper" key={changeGroupKey}>
+        <div className={typeColor(changeGroupKey)}>
+          {changeGroupKey} - {changeGroupList.length}{" "}
+          {changeGroupList.length > 1 ? "Entries" : "Entry"}
         </div>
-      ));
+        <ul className="changelog-item-wrapper">
+          {changeGroupList
+            .reverse()
+            .map(({ text }, index) => (
+              <li
+                className={`changelog-item changelog-${changeGroupKey}`}
+                key={index}
+              >
+                {text}
+              </li>
+            ))
+            .reverse()}
+        </ul>
+      </div>
+    ));
 
   return releaseInfo.map(
     ({ changes, date, link, version, versionURL }, index) => (
