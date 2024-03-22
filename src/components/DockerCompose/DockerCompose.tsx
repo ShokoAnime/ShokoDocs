@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
-import * as shiki from "shiki";
-import DockerComposeInput from "@components/DockerComposeInput/DockerComposeInput.tsx";
-shiki.setCDN("https://unpkg.com/shiki@0.14.7");
+import { useState } from "react";
+
+import DockerComposeInput from "../DockerComposeInput/DockerComposeInput";
 
 const DockerCompose = () => {
   const [highlightedCode, setHighlightedCode] = useState(null);
@@ -37,18 +36,7 @@ const DockerCompose = () => {
       ports:
         - "${userInput.port}:8111"
       volumes:
-        ${userInput.volumes.map((volume) => `- ${volume}`).join("\n        ")}`;
-
-  useEffect(() => {
-    shiki
-      .getHighlighter({ theme: "dracula-soft", langs: ["yaml"] })
-      .then((highlighter) => {
-        setHighlightedCode(highlighter.codeToHtml(code, { lang: "yaml" }));
-      })
-      .catch((reason) => {
-        console.error("Error in syntax highlighting:", reason);
-      });
-  }, [code]);
+        ${userInput.volumes.map((volume) => `- "${volume}"`).join("\n        ")}`;
 
   return (
     <div>
@@ -67,10 +55,9 @@ const DockerCompose = () => {
         ))}
       </div>
       <div className="expressive-code not-content">
-        <code
-          className="docker-compose-code"
-          dangerouslySetInnerHTML={{ __html: highlightedCode }}
-        />
+        <pre className="docker-output-codeblock">
+          <code>{code}</code>
+        </pre>
       </div>
     </div>
   );

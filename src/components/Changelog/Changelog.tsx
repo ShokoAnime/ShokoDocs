@@ -1,28 +1,45 @@
-import { program, typeColor } from "./Changelog.utils";
+import React from "react";
+import { program, typeColor } from "./Changelog.utils.ts";
+import type {
+  BuildChangesProps,
+  ChangeHeaderProps,
+  ProgramResult,
+  ReleaseInfo,
+  VersionChange,
+} from "./Changelog.interfaces.ts";
 
-type versionChanges = {
-  type: string;
-  text: string;
-};
-
-type releaseInfo = {
-  changes: Record<string, versionChanges[]>;
-};
-
-const Changelog = ({ name }) => {
-  const releaseInfo = program(name).map(
+const Changelog = ({ name }: { name: any }) => {
+  const releaseInfo: ReleaseInfo[] = (program(name) as ProgramResult[]).map(
     ({ changes, date, link, version, versionURL }) => {
-      const groupedChanges = changes.reduce((acc, { type, text }) => {
-        (acc[type] = acc[type] || []).push({ text });
-        return acc;
-      }, {});
+      const groupedChanges = changes.reduce(
+        (acc, { type, text }) => {
+          (acc[type] = acc[type] || []).push({ text });
+          return acc;
+        },
+        {} as Record<string, VersionChange[]>,
+      );
 
-      return { changes: groupedChanges, date, link, version, versionURL };
+      return {
+        changes: { changes: groupedChanges },
+        date,
+        link,
+        version,
+        versionURL,
+      };
     },
   );
 
-  const ChangeHeader = ({ date, version, link }) => (
+  const ChangeHeader = ({
+    date,
+    version,
+    link,
+    versionURL,
+  }: ChangeHeaderProps) => (
     <div className="changelog-info">
+      <h3
+        id={versionURL}
+        style={{ margin: "0 !important", width: "0 !important" }}
+      />
       <div className="changelog-version">Version {version}</div>
       {date !== "NA" && (
         <>
@@ -51,12 +68,14 @@ const Changelog = ({ name }) => {
     </div>
   );
 
-  const BuildChanges = ({ info: { changes } }: { info: releaseInfo }) =>
-    Object.entries(changes)
-      .sort()
+  const BuildChanges = ({ info }: BuildChangesProps) =>
+    Object.entries(info.changes)
+      .sort((a, b) => a[0].localeCompare(b[0]))
       .map(([changeGroupKey, changeGroupList]) => (
         <div className="changelog-type-wrapper" key={changeGroupKey}>
-          <div className={typeColor(changeGroupKey)}>{changeGroupKey}</div>
+          <div className={typeColor(changeGroupKey)}>
+            {changeGroupKey} - {changeGroupList.length} Entries
+          </div>
           <ul className="changelog-item-wrapper">
             {changeGroupList
               .sort((a, b) => a.text.localeCompare(b.text))
@@ -67,16 +86,22 @@ const Changelog = ({ name }) => {
                 >
                   {text}
                 </li>
-              ))}
+              ))
+              .reverse()}
           </ul>
         </div>
       ));
 
   return releaseInfo.map(
     ({ changes, date, link, version, versionURL }, index) => (
-      <div className="changelog-wrapper" key={index} id={versionURL}>
-        <ChangeHeader date={date} version={version} link={link} />
-        <BuildChanges info={{ changes }} />
+      <div className="changelog-wrapper" key={index}>
+        <ChangeHeader
+          date={date}
+          version={version}
+          link={link}
+          versionURL={versionURL}
+        />
+        <BuildChanges info={changes} />
       </div>
     ),
   );

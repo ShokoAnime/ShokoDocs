@@ -1,8 +1,6 @@
 ---
 title: Dashboard
 description: Overview of the Dashboard in the WebUI.
-sidebar:
-  order: 1
 ---
 
 import ImageComponent from "@components/ImagePopup.astro";
@@ -16,27 +14,22 @@ and upcoming episodes, among others.
 
 ![Shoko Server - Dashboard - Queue Processor](../../../assets/img/shoko-server/shoko-server-dashboard-queue.jpg)
 
-The Queue Processor is the comprehensive task runner responsible for processing all tasks related to your collection.
-It is divided into three workers: **Hasher**, **General**, and **Images**, with each worker handling specific tasks.
+The Queue Processor optimizes task management for your collection by intelligently allocating tasks across a dynamic
+pool of workers, enhancing efficiency and throughput.
 
-### Hasher
+### Dynamic Worker Allocation
 
-The hasher worker manages all file-related hashing tasks, which are necessary before any of the subsequent tasks can
-be executed. Our hashing system utilizes the [rHash](https://github.com/rhash/RHash) library for hashing, as it is cross-platform and generally performs
-well, depending on your CPU and available I/O.
+Based on your system's capabilities, specifically the CPU thread count plus two, the Queue Processor adjusts the number
+of workers to handle tasks efficiently. This scalable approach ensures optimal resource use, adapting to the workload
+in real-time.
 
-### General
+### Task Prioritization
 
-The general worker is responsible for handling every task that is not related to hashing or image downloading, which
-constitutes the majority of all tasks that Shoko will perform while building and managing your collection. It is not
-unusual for the number of tasks in this category to increase while commands are being executed or even appear to
-remain unchanged. This simply indicates that more related tasks were added than processed at that time.
-
-### Images
-
-The images worker handles all image downloading for the series in your collection. The amount of images downloaded per
-series will depend on your **AniDB** and **Metadata** settings. It is not unusual for this number to be in the hundreds
-or even thousands during import processing.
+A key feature of the Queue Processor is its ability to prioritize tasks effectively. It organizes tasks by type and
+dynamically adjusts priorities to address external constraints, such as rate limitations. This means tasks potentially
+slowed down by external factors are identified and de-prioritized, allowing other ready-to-run tasks to proceed. This
+strategy prevents bottlenecks caused by "stuck" tasks, ensuring a smooth and continuous workflow, and enhances the
+overall productivity by reducing idle worker time.
 
 ## Unrecognized Files
 
