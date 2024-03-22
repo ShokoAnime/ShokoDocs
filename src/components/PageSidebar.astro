@@ -2,15 +2,18 @@
 import MobileTableOfContents from "virtual:starlight/components/MobileTableOfContents";
 import TableOfContents from "virtual:starlight/components/TableOfContents";
 
+// @ts-ignore
 import { Contribute } from "./Contribute";
 import { program } from "./Changelog/Changelog.utils";
 
 const buildChangelogTOC = (changelogData) => {
-  const items = changelogData.map(({ version, date, versionURL }) => ({
-    slug: versionURL,
-    text: `Version ${version} - ${date}`,
-    children: [],
-  }));
+  const items = changelogData
+    .slice(0, 25)
+    .map(({ version, date, versionURL }) => ({
+      slug: versionURL,
+      text: `Version ${version} - ${date}`,
+      children: [],
+    }));
 
   return {
     labels: {

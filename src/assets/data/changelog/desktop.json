@@ -2,10 +2,66 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoDesktop/",
   "releases": [
     {
+      "version": "4.3.0",
+      "versionURL": "423",
+      "date": "TBD",
+      "link": "Dev",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Improve Duplicate Files utility UI."
+        },
+        {
+          "type": "changed",
+          "text": "Replaced old filtering system, no UI changes."
+        },
+        {
+          "type": "changed",
+          "text": "Improve Clarity Regarding Deleting Multiple Places for Files."
+        },
+        {
+          "type": "changed",
+          "text": "Improve Plex Responsiveness in Desktop."
+        },
+        {
+          "type": "fixed",
+          "text": "URLs not opening."
+        },
+        {
+          "type": "fixed",
+          "text": "VLC issue when reading filenames."
+        },
+        {
+          "type": "fixed",
+          "text": "Playback button not working when Player is set to Windows Default."
+        },
+        {
+          "type": "fixed",
+          "text": "Setting Default Poster."
+        },
+        {
+          "type": "removed",
+          "text": "Removed Queue from taskbar."
+        }
+      ]
+    },
+    {
+      "version": "4.2.1",
+      "versionURL": "421",
+      "date": "April 2nd, 2023 ",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Watch status for episodes not updating."
+        }
+      ]
+    },
+    {
       "version": "4.2.0",
       "versionURL": "420",
-      "date": "TBD",
-      "link": "NA",
+      "date": "March 29th, 2023",
+      "link": "https://shokoanime.com/blog/shoko-version-420-released/",
       "changes": [
         {
           "type": "added",
@@ -267,11 +323,11 @@
       "changes": [
         {
           "type": "changed",
-          "text": "Unrecognized Utility - Show AniDB's AnimeID next to each Series listed in the ListBox"
+          "text": "Unrecognized Utility - Show AniDB\u0027s AnimeID next to each Series listed in the ListBox"
         },
         {
           "type": "changed",
-          "text": "Unrecognized Utility - Search for AniDB's AnimeID."
+          "text": "Unrecognized Utility - Search for AniDB\u0027s AnimeID."
         },
         {
           "type": "changed",
@@ -296,6 +352,1330 @@
         {
           "type": "changed",
           "text": "Default to Full Series View, not Metro."
+        }
+      ]
+    },
+    {
+      "version": "3.9.2",
+      "versionURL": "392",
+      "date": "August 2, 2018",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix an issue when searching using more than three letters."
+        }
+      ]
+    },
+    {
+      "version": "3.9.1",
+      "versionURL": "391",
+      "date": "July 30, 2018",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Add additional logging for unrecognized files."
+        },
+        {
+          "type": "changed",
+          "text": "Add additional logging for recognized files."
+        },
+        {
+          "type": "changed",
+          "text": "Removed unnecessary rereshing from unrecognized series."
+        },
+        {
+          "type": "changed",
+          "text": "Update Plex settings and add a refresh button as an async call."
+        },
+        {
+          "type": "changed",
+          "text": "Update Shoko Server \"unable to connect\" message a little more verbose."
+        },
+        {
+          "type": "changed",
+          "text": "changed Trakt auth UI."
+        },
+        {
+          "type": "changed",
+          "text": "changed TvDB linking system and UI."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix validation logic when updating TvDB links."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix an issue with the AVDump utility when selecting multiple files."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix Horizontal Scrolling on Dashboard."
+        },
+        {
+          "type": "fixed",
+          "text": "General fixes to import folder system."
+        },
+        {
+          "type": "removed",
+          "text": "Removed MAL access and syncing."
+        }
+      ]
+    },
+    {
+      "version": "3.9.0",
+      "versionURL": "390",
+      "date": "June 21th, 2018",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Add additional logging for unrecognized files."
+        },
+        {
+          "type": "changed",
+          "text": "Add additional logging for recognized files."
+        },
+        {
+          "type": "changed",
+          "text": "Removed unnecessary rereshing from unrecognized series."
+        },
+        {
+          "type": "changed",
+          "text": "Update Plex settings and add a refresh button as an async call."
+        },
+        {
+          "type": "changed",
+          "text": "Update Shoko Server \"unable to connect\" message a little more verbose."
+        },
+        {
+          "type": "changed",
+          "text": "Updated Trakt auth UI."
+        },
+        {
+          "type": "changed",
+          "text": "Updated TvDB linking system and UI."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix validation logic when updating TvDB links."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix an issue with the AVDump utility when selecting multiple files."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix Horizontal Scrolling on Dashboard."
+        },
+        {
+          "type": "fixed",
+          "text": "General fixes to import folder system."
+        },
+        {
+          "type": "removed",
+          "text": "Removed MAL access and syncing."
+        }
+      ]
+    },
+    {
+      "version": "3.8.3",
+      "versionURL": "383",
+      "date": "February 4th, 2018",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Update Plex linking allowing users to link to their accounts and select the library."
+        },
+        {
+          "type": "changed",
+          "text": "Update folder selection method."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix for error when creating subgroups."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue that caused an error when Shoko attempted to remove MAL links."
+        }
+      ]
+    },
+    {
+      "version": "3.8.2",
+      "versionURL": "382",
+      "date": "December 24th, 2017",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add timeout to AVDump."
+        },
+        {
+          "type": "changed",
+          "text": "Give a reason when the client can\u0027t connect to server."
+        },
+        {
+          "type": "changed",
+          "text": "If the TvDB Episode Overview is not available, use the AniDB Episode Overview if available."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue with TvDB Linking."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue where Ignored Anime labels were not being ignored."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an error in TvDB linking form."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue where the Series MAL buttons did not work."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue where TvDB information was not updated properly."
+        }
+      ]
+    },
+    {
+      "version": "3.8.1",
+      "versionURL": "381",
+      "date": "October 1st, 2017",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add proper logging throughout Desktop."
+        },
+        {
+          "type": "changed",
+          "text": "Only show a single date if Start and End date are the same."
+        },
+        {
+          "type": "changed",
+          "text": "Update installer with permissions setup."
+        },
+        {
+          "type": "changed",
+          "text": "Make sure \"image loading error\" placeholder image is shown throughout Desktop."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed issue when resuming playlist playback."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed issue with original or older filenames being shown in Desktop if a file has been renamed."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed issue with deleting group filter conditions."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed various memory leaks in desktop."
+        }
+      ]
+    },
+    {
+      "version": "3.8.0.0",
+      "versionURL": "3800",
+      "date": "September 3rd, 2017",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "New File Rename Option, Recently Added."
+        },
+        {
+          "type": "added",
+          "text": "Add information about Plex pin."
+        },
+        {
+          "type": "added",
+          "text": "Add plex sync settings to Shoko Desktop."
+        },
+        {
+          "type": "added",
+          "text": "Added New Internal MPV player."
+        },
+        {
+          "type": "added",
+          "text": "Add plex UI interaction for the plex syncing added into Shoko Server."
+        },
+        {
+          "type": "added",
+          "text": "Add Settings for Multiple Files - Auto Deletion."
+        },
+        {
+          "type": "added",
+          "text": "Add flags for chaptered files."
+        },
+        {
+          "type": "added",
+          "text": "Make a proper delete file window for Multiple Files."
+        },
+        {
+          "type": "added",
+          "text": "Nep Nep the corrupted images!."
+        },
+        {
+          "type": "changed",
+          "text": "Add natural sorting to some utilities."
+        },
+        {
+          "type": "changed",
+          "text": "Support Dual and Multi Audio in Multiple Files Utility."
+        },
+        {
+          "type": "changed",
+          "text": "Make Manually Linked Files Sorted Naturally."
+        },
+        {
+          "type": "changed",
+          "text": "Use a FlexibleMessageBox for all MessageBoxes."
+        },
+        {
+          "type": "changed",
+          "text": "Show local and remote file location in utilities."
+        },
+        {
+          "type": "changed",
+          "text": "Cleanup and Fix Default Sorting of GroupFilters without sorting."
+        },
+        {
+          "type": "changed",
+          "text": "Improve File Quality Preferences."
+        },
+        {
+          "type": "changed",
+          "text": "Remove Downloads tab and move contents to utilities."
+        },
+        {
+          "type": "changed",
+          "text": "Improvements to the Recommended To Watch Dashboard."
+        },
+        {
+          "type": "changed",
+          "text": "Update Link strings."
+        },
+        {
+          "type": "changed",
+          "text": "Update form now has proper version comparison and will only report update available if version found online is higher."
+        },
+        {
+          "type": "changed",
+          "text": "Improvements to the Recommended To Watch Dashboard."
+        },
+        {
+          "type": "changed",
+          "text": "Make filtering on titles obey languages better."
+        },
+        {
+          "type": "changed",
+          "text": "Make background series searching more aesthetically smooth."
+        },
+        {
+          "type": "changed",
+          "text": "Make background series searching handling locking and tasks a bit better."
+        },
+        {
+          "type": "changed",
+          "text": "Move AVDump to Server."
+        },
+        {
+          "type": "fixed",
+          "text": "Memory issues."
+        },
+        {
+          "type": "fixed",
+          "text": "Multiple Files tab wont load on enter."
+        },
+        {
+          "type": "fixed",
+          "text": "AVDump giving an error trying to open clipboard."
+        },
+        {
+          "type": "fixed",
+          "text": "Error with internal MPV could not load file assembly."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed up AVDump throwing errors."
+        },
+        {
+          "type": "fixed",
+          "text": "Add proper binding for plex sections also handling null values better."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed Null Pointer exception in AddNewSeries."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed desktop freeze infinite loop."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed Resume on internal player."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed UpdateAnime throwing an UnsupportedOperationException due to threading."
+        },
+        {
+          "type": "fixed",
+          "text": "Set cursor back to Arrow if Recreate All Groups fails."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed Duplicate File Control, amongst other LongPath errors."
+        },
+        {
+          "type": "fixed",
+          "text": "Updated Language Strings, Fixed UI Issues."
+        },
+        {
+          "type": "fixed",
+          "text": "Make the Delete Files with Preferences more reliable."
+        },
+        {
+          "type": "fixed",
+          "text": "Make the Delete Files with Preferences more reliable."
+        },
+        {
+          "type": "fixed",
+          "text": "Speed up, clean up, Fix some bugs, fix group filter saving, editing, and deleting."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed unrecognized files\u0027 delete dialog text."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed ShokoMetadata Plex Header and add Info section for it."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed switching items when loading utility series matching in the background."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed next episode name in series view."
+        },
+        {
+          "type": "fixed",
+          "text": "Cleanup and fix memory leak."
+        },
+        {
+          "type": "removed",
+          "text": "Fixed Tag and Year Sorting."
+        },
+        {
+          "type": "removed",
+          "text": "Remove the Auto Link Buttons for Community Links."
+        },
+        {
+          "type": "removed",
+          "text": "Remove Downloads."
+        },
+        {
+          "type": "removed",
+          "text": "Remove Trakt Image Support."
+        }
+      ]
+    },
+    {
+      "version": "3.7.0.6",
+      "versionURL": "3706",
+      "date": "February 10th, 2017",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Add missing queue states."
+        },
+        {
+          "type": "fixed",
+          "text": "Always check new version."
+        }
+      ]
+    },
+    {
+      "version": "3.7.0.4",
+      "versionURL": "3704",
+      "date": "January 28th, 2017",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Add missing queue states."
+        },
+        {
+          "type": "fixed",
+          "text": "Always check new version."
+        }
+      ]
+    },
+    {
+      "version": "3.7.0.3",
+      "versionURL": "3703",
+      "date": "January 7th, 2017",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added new permissions check for programdata directory on startup."
+        },
+        {
+          "type": "changed",
+          "text": "Renamed JMM Player to Shoko Player."
+        },
+        {
+          "type": "fixed",
+          "text": "Switching Tabs Too Fast Crashes Desktop"
+        },
+        {
+          "type": "fixed",
+          "text": "Image path setting missing locale string."
+        },
+        {
+          "type": "fixed",
+          "text": "Additional null reference error handling."
+        }
+      ]
+    },
+    {
+      "version": "3.7.0.1",
+      "versionURL": "3701",
+      "date": "December 29th, 2016",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixes for migration of JMM Desktop folders."
+        },
+        {
+          "type": "fixed",
+          "text": "Updated SetProgramDataFolderPermission() to use same batch file method as server."
+        },
+        {
+          "type": "changed",
+          "text": "Removed process output readings as very unlikely to fail here and otherwise still logged."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed uninstall warning message."
+        }
+      ]
+    },
+    {
+      "version": "3.7.0.0",
+      "versionURL": "3700",
+      "date": "December 26th, 2016",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Have Search Show Missing Episodes In Details Box."
+        },
+        {
+          "type": "added",
+          "text": "Cloud Support."
+        },
+        {
+          "type": "added",
+          "text": "Internal Video Player MPV Added."
+        },
+        {
+          "type": "added",
+          "text": "Added Trakt scrobble support for most players"
+        },
+        {
+          "type": "added",
+          "text": "Add Update Images Button to Settings"
+        },
+        {
+          "type": "added",
+          "text": "Initial zoom player video player support."
+        },
+        {
+          "type": "added",
+          "text": "Added Relations message, updated Language Strings."
+        },
+        {
+          "type": "added",
+          "text": "Add JMMServer Image Path as possible option."
+        },
+        {
+          "type": "added",
+          "text": "Migrate Shoko Desktop files to ProgramData."
+        },
+        {
+          "type": "changed",
+          "text": "Update all posible dependencies to nugets."
+        },
+        {
+          "type": "changed",
+          "text": "Hashes are now selectable."
+        },
+        {
+          "type": "changed",
+          "text": "Remove Admin requirements."
+        },
+        {
+          "type": "changed",
+          "text": "Initial rework of updater supporting multiple channels."
+        },
+        {
+          "type": "fixed",
+          "text": "Freezes when user is added."
+        },
+        {
+          "type": "fixed",
+          "text": "retries connection too soon after ban creating a loop."
+        },
+        {
+          "type": "fixed",
+          "text": "Keep tab bar from scrolling off screen."
+        },
+        {
+          "type": "fixed",
+          "text": "Subpar perfomance on the client groupfilters."
+        },
+        {
+          "type": "fixed",
+          "text": "Modifying Users Speed Issue."
+        },
+        {
+          "type": "fixed",
+          "text": "Watched States Are Not Being Updated."
+        },
+        {
+          "type": "fixed",
+          "text": "MPC web ui integration starts spamming requests."
+        },
+        {
+          "type": "fixed",
+          "text": "NullPointer on Click RenameAllGroupse"
+        },
+        {
+          "type": "fixed",
+          "text": "Restoring Original Series Name Empties Group Name."
+        },
+        {
+          "type": "fixed",
+          "text": "Series In Group Extending Horizontal, Not Respecting Window Width."
+        },
+        {
+          "type": "fixed",
+          "text": "Unable To Set User Password."
+        },
+        {
+          "type": "fixed",
+          "text": "Trakt PIN / token not saved."
+        },
+        {
+          "type": "fixed",
+          "text": "Updating local path mapping results in empty valid local path."
+        },
+        {
+          "type": "fixed",
+          "text": "Background Worker Error When Selecting Tab During Startup."
+        },
+        {
+          "type": "fixed",
+          "text": "Misc Filters Fixes."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed Saving Error on ImportFolder."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix mislabeled Video Players."
+        },
+        {
+          "type": "fixed",
+          "text": "Bugfixing local detection of the files."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix Empty Directory choser in JMMClient."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixes Rename Utility not showing original filename."
+        },
+        {
+          "type": "removed",
+          "text": "Enable/Disable Streaming Option Removed."
+        },
+        {
+          "type": "removed",
+          "text": "Remove CRC32, SHA1 and MD5 hash options, now mandatory."
+        }
+      ]
+    },
+    {
+      "version": "3.6.1.0",
+      "versionURL": "3610",
+      "date": "September 9th, 2016",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added detection for MPC-BE x86 and x64."
+        },
+        {
+          "type": "fixed",
+          "text": "Series In Group Extending Horizontal, Not Respecting Window Width."
+        }
+      ]
+    },
+    {
+      "version": "3.6.0.4",
+      "versionURL": "3604",
+      "date": "September 3rd, 2016",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "JMM Client 3.6.0.3 fails to open."
+        }
+      ]
+    },
+    {
+      "version": "3.6.0.3",
+      "versionURL": "3603",
+      "date": "September 3rd, 2016",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Series selection for renaming preview not working."
+        },
+        {
+          "type": "fixed",
+          "text": "Restoring Original Series Name Empties Group Name."
+        }
+      ]
+    },
+    {
+      "version": "3.6.0.2",
+      "versionURL": "3602",
+      "date": "September 2nd, 2016",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "KB/Sec to kbps"
+        },
+        {
+          "type": "changed",
+          "text": "RSS Feed Escaped Characters Issue"
+        },
+        {
+          "type": "changed",
+          "text": "Grave accent ( ` ) vs apostrophe ( \u0027 )"
+        },
+        {
+          "type": "changed",
+          "text": "Remember Location During Refresh"
+        },
+        {
+          "type": "changed",
+          "text": "Auto fit text in episodes tabs"
+        },
+        {
+          "type": "changed",
+          "text": "Marked All Watched Button"
+        },
+        {
+          "type": "changed",
+          "text": "Relation Grouping"
+        },
+        {
+          "type": "changed",
+          "text": "VideoPlayer Settings layout"
+        },
+        {
+          "type": "changed",
+          "text": "No need to edit PATH environment variable for video player, will now pull location from registry"
+        },
+        {
+          "type": "changed",
+          "text": "All program icons have been refreshed."
+        },
+        {
+          "type": "changed",
+          "text": "Additional UI improvements have been made."
+        },
+        {
+          "type": "changed",
+          "text": "Hide Get Missing Data Now Button"
+        },
+        {
+          "type": "fixed",
+          "text": "Missing Icon for 12bit"
+        },
+        {
+          "type": "fixed",
+          "text": "RSS Feed Escaped Characters Issue"
+        },
+        {
+          "type": "fixed",
+          "text": "Grave accent issue with community sites"
+        },
+        {
+          "type": "fixed",
+          "text": "Watch status button image not changing when clicked"
+        },
+        {
+          "type": "fixed",
+          "text": "Can\u0027t delete in Ignored menu in JMM Desktop"
+        },
+        {
+          "type": "fixed",
+          "text": "Download Info Displayed Incorrectly When Sorting"
+        },
+        {
+          "type": "fixed",
+          "text": "Unable To Mouse Scroll When Viewing A Group"
+        },
+        {
+          "type": "fixed",
+          "text": "Image Displayed Incorrectly When Manually Linking Episodes"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed Language String in Playlist Controls and Video Player"
+        },
+        {
+          "type": "fixed",
+          "text": "TvDB Language Names Display Incorrectly"
+        },
+        {
+          "type": "fixed",
+          "text": "MAL watched stats dont update"
+        },
+        {
+          "type": "fixed",
+          "text": "\u0027Server Status\u0027 is not sync between server and client"
+        }
+      ]
+    },
+    {
+      "version": "3.5.0.2",
+      "versionURL": "3502",
+      "date": "May 20th, 2016",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Missing language files added"
+        }
+      ]
+    },
+    {
+      "version": "3.5.0.1",
+      "versionURL": "3501",
+      "date": "May 18th, 2016",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "New Group Filter - Most Recent Episode Air Date"
+        },
+        {
+          "type": "added",
+          "text": "Provide tag info to kodi for groups with multiple series"
+        },
+        {
+          "type": "added",
+          "text": "Added Sukebei to available torrent sites to search and browse"
+        },
+        {
+          "type": "added",
+          "text": "Added RSS Feed Reader for updates from word press in about page"
+        },
+        {
+          "type": "added",
+          "text": "Metro series view page can now be used in place of the usual series view page and is the default. This display can be toggled"
+        },
+        {
+          "type": "added",
+          "text": "Created \u0027Default Player\u0027 section in settings"
+        },
+        {
+          "type": "added",
+          "text": "Added support for Plex users"
+        },
+        {
+          "type": "added",
+          "text": "Added folder browsing for Torrent Black Hole"
+        },
+        {
+          "type": "changed",
+          "text": "Dashboards now properly show series that have been added after JMM desktop was started"
+        },
+        {
+          "type": "changed",
+          "text": "Show more detail on Unrecognized files tab, and allow sorting by all columns. Allow filtering on import folder"
+        },
+        {
+          "type": "changed",
+          "text": "On metro series view, episode details now show properly in hover anywhere withing the border"
+        },
+        {
+          "type": "changed",
+          "text": "Hardcoded text has been replaced allowing JMM Desktop to support multiple languages"
+        },
+        {
+          "type": "changed",
+          "text": "Change the default player to Windows Default, and allow the user to have this as an option for their default player"
+        },
+        {
+          "type": "fixed",
+          "text": "Opening a series on the Pinned tabbed no longer opens a duplicate if it is already pinned"
+        },
+        {
+          "type": "fixed",
+          "text": "Some series is not respected by Group Filters"
+        },
+        {
+          "type": "fixed",
+          "text": "Tag Filtering (Hiding) not working"
+        },
+        {
+          "type": "fixed",
+          "text": "BakaBT and Anime Bytes Search and Browse Broken"
+        },
+        {
+          "type": "fixed",
+          "text": "Login for BakaBT is broken"
+        },
+        {
+          "type": "fixed",
+          "text": "Fix old tags not being removed from series, and wrap long descriptions on Tags in tool tip so they are viewable"
+        },
+        {
+          "type": "fixed",
+          "text": "Metro Dashboard – Characters Overview Issues – Truncate long character names, Show details properly on hover"
+        },
+        {
+          "type": "fixed",
+          "text": "Cant scroll in JMM desktop AvDump"
+        },
+        {
+          "type": "fixed",
+          "text": "Nyaa Downloader Broken"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed a bug that caused the wrong video player to be used"
+        },
+        {
+          "type": "fixed",
+          "text": "User Settings very broken"
+        },
+        {
+          "type": "fixed",
+          "text": "Blank Poster/Fanart"
+        },
+        {
+          "type": "removed",
+          "text": "Remove AnimeSuki Option In Downloads"
+        }
+      ]
+    },
+    {
+      "version": "3.4.6.4",
+      "versionURL": "3464",
+      "date": "March 3rd, 2016",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added support for testing group names in File Renaming"
+        },
+        {
+          "type": "added",
+          "text": "Support for Torrent BlackHole"
+        },
+        {
+          "type": "added",
+          "text": "Added G test for file renamer"
+        }
+      ]
+    },
+    {
+      "version": "3.4.6.2",
+      "versionURL": "3462",
+      "date": "November 9th, 2015",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Show a summary of the folders that files are stored in for a series"
+        }
+      ]
+    },
+    {
+      "version": "3.4.5.3",
+      "versionURL": "3453",
+      "date": "November 2nd, 2015",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Display a friendly message when AniDB is missing episode information"
+        },
+        {
+          "type": "added",
+          "text": "New option to always use the AniDB Poster"
+        },
+        {
+          "type": "fixed",
+          "text": "Cater for Trakt shows not having a runtime value set"
+        },
+        {
+          "type": "removed",
+          "text": "Remove auto updates and instead just check for new version functionality"
+        }
+      ]
+    },
+    {
+      "version": "3.4.5.2",
+      "versionURL": "3452",
+      "date": "October 12th nd, 2015",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Unwatched episodes counter sometimes doesn\u0027t update on addition of new episode"
+        },
+        {
+          "type": "fixed",
+          "text": "Scrolling issues with JMM Desktop 3.4.4.3"
+        },
+        {
+          "type": "fixed",
+          "text": "Incorrect text for Trakt Update button in collection tab"
+        },
+        {
+          "type": "fixed",
+          "text": "Hide tags when unwatched or just hide them altogether through collapsing"
+        },
+        {
+          "type": "fixed",
+          "text": "Tooltip Image on Series- Details page shows random Cover instead of currently displayed Image"
+        },
+        {
+          "type": "fixed",
+          "text": "Comments from Users always empty"
+        }
+      ]
+    },
+    {
+      "version": "3.4.4.3",
+      "versionURL": "3443",
+      "date": "September 10th, 2015",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Combine Trakt comments and anidb comments on regular series control"
+        },
+        {
+          "type": "changed",
+          "text": "Format Trakt comments and anidb comments (on dashboard and series control) to be uniform size"
+        },
+        {
+          "type": "added",
+          "text": "Add ability to view details of a Trakt/AniDB comment, and also open on the website"
+        },
+        {
+          "type": "removed",
+          "text": "Remove user images for Trakt users (no longer provided in API)"
+        },
+        {
+          "type": "removed",
+          "text": "Remove Trakt activity from dashboards"
+        },
+        {
+          "type": "removed",
+          "text": "Drop support for approving/denying Trakt friend requests"
+        },
+        {
+          "type": "added",
+          "text": "Add refresh button to series control on Metro dashboard"
+        },
+        {
+          "type": "changed",
+          "text": "Series control on Metro dashboard nows shows the previously played episode as well as more information about the next episode"
+        },
+        {
+          "type": "added",
+          "text": "Allow syncing of Trakt collection and history status per series"
+        },
+        {
+          "type": "added",
+          "text": "Characters/Seiyuu are now shown on the metro series view"
+        },
+        {
+          "type": "changed",
+          "text": "Dock the top Toolbar on the Metro Series Page"
+        },
+        {
+          "type": "added",
+          "text": "Add vlc ini file reading for recent plays"
+        },
+        {
+          "type": "fixed",
+          "text": "Poster Display will now properly use the default or a random one from the selection of enabled posters"
+        },
+        {
+          "type": "fixed",
+          "text": "Rating type blocks rating number from view"
+        },
+        {
+          "type": "added",
+          "text": "Delete multiple highlighted file in the unrecognized tab"
+        },
+        {
+          "type": "changed",
+          "text": "Auto scale TvDB page to fit screen/windows size"
+        },
+        {
+          "type": "fixed",
+          "text": "Random Series tag list does not show tag filter"
+        },
+        {
+          "type": "fixed",
+          "text": "While using the rename feature the CRC turns to all-zeroes"
+        }
+      ]
+    },
+    {
+      "version": "3.4.3.1",
+      "versionURL": "3431",
+      "date": "May 4th, 2015",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Limit the length of anime titles to 30 characters on the Pinned tab"
+        },
+        {
+          "type": "changed",
+          "text": "Prevent other tabs from shifting to the right when mouse hovers over a tab"
+        },
+        {
+          "type": "fixed",
+          "text": "Problem viewing all variations of a file"
+        },
+        {
+          "type": "changed",
+          "text": "Changes to controls so that all data is visible and smooth scrolling is enabled (Multiple Files, Episode List)"
+        },
+        {
+          "type": "changed",
+          "text": "Changes to controls so using mouse to scroll through a list works (Multiple Files, Episode List, Related Anime, Similar Anime, Search Tab, Episodes/Recommendations/Shouts on Metro Dashboard, All controls on Regular Dashboard, Anime Detail)"
+        },
+        {
+          "type": "changed",
+          "text": "Changes to File Summary control to remove weird spacing"
+        },
+        {
+          "type": "added",
+          "text": "New button to re-hash on files on Unrecognized Files tab"
+        },
+        {
+          "type": "added",
+          "text": "New button to re-scan selected files on Unrecognized Files tab"
+        },
+        {
+          "type": "fixed",
+          "text": "Properly handle German language for rating control and prevent JMM Desktop crashing"
+        },
+        {
+          "type": "fixed",
+          "text": "Prevent errors on download recommendations when selecting \"Get Missing Data\""
+        },
+        {
+          "type": "fixed",
+          "text": "Clipboard error when using AVDump"
+        }
+      ]
+    },
+    {
+      "version": "3.4.2.16",
+      "versionURL": "34216",
+      "date": "January 31th, 2015",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix bug for MySQL which prevented multiple MAL links being selected for one anime"
+        },
+        {
+          "type": "fixed",
+          "text": "Fix rendering error when selecting the community recommendation for TvDB links"
+        }
+      ]
+    },
+    {
+      "version": "3.4.2.14",
+      "versionURL": "34214",
+      "date": "January 29th, 2015",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Show file version number in multiple files utility tab"
+        },
+        {
+          "type": "added",
+          "text": "Add an option to the mini calendar widget to only show upcoming anime"
+        },
+        {
+          "type": "changed",
+          "text": "Sort the mini calendar widget by newest first instead of oldest first"
+        },
+        {
+          "type": "added",
+          "text": "Add a button to the mini calendar widget to refresh the data from AniDB"
+        },
+        {
+          "type": "fixed",
+          "text": "Auto download amount for MovieDB posters was using the wrong setting"
+        },
+        {
+          "type": "fixed",
+          "text": "Auto download amounts for TvDB and MovieDB images were not respecting the limits set by the user"
+        },
+        {
+          "type": "added",
+          "text": "Add ability on the \u0027New Series\u0027 screen to use AniDB ID directly when searching for a series"
+        },
+        {
+          "type": "changed",
+          "text": "Allow MAL links to be re-assigned without needing to delete first"
+        },
+        {
+          "type": "fixed",
+          "text": "Rendering issues when TvDB or Trakt links are added or removed"
+        }
+      ]
+    },
+    {
+      "version": "3.4.2.11",
+      "versionURL": "34211",
+      "date": "January 21th, 2015",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "JMM Desktop is unresponsive"
+        }
+      ]
+    },
+    {
+      "version": "3.4.2.10",
+      "versionURL": "34210",
+      "date": "January 14th, 2015",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "JMM Desktop constantly using half a CPU core"
+        },
+        {
+          "type": "fixed",
+          "text": "Tool tips on the TvDB settings are slightly wrong"
+        },
+        {
+          "type": "fixed",
+          "text": "Error message: \"Object reference not set to an instance of an object\""
+        }
+      ]
+    },
+    {
+      "version": "3.4.2.4",
+      "versionURL": "3424",
+      "date": "November 11th st, 2014",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Show tag descriptions in tooltips for custom tags"
+        },
+        {
+          "type": "added",
+          "text": "Show more detailed file size information by group and including bitrate"
+        }
+      ]
+    },
+    {
+      "version": "3.4.2.2",
+      "versionURL": "3422",
+      "date": "November 10th, 2014",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add the ability to create your own custom tags, and use them in group filters"
+        },
+        {
+          "type": "added",
+          "text": "Show total size of all files in the File Summary widget for an anime series"
+        }
+      ]
+    },
+    {
+      "version": "3.4.2.1",
+      "versionURL": "3421",
+      "date": "November 5th, 2014",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Group Filter Name is invisible when creating a new Group Filter"
+        }
+      ]
+    },
+    {
+      "version": "3.4.2.0",
+      "versionURL": "3420",
+      "date": "October 29th, 2014",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed sorting of episode numbers in TvDB/Trakt selections"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed MovieDB linking (updated to the latest API version)"
+        },
+        {
+          "type": "added",
+          "text": "Implement button to update info from from MovieDB"
+        },
+        {
+          "type": "changed",
+          "text": "Allow Trakt linking to work in the same way as TvDB"
+        },
+        {
+          "type": "changed",
+          "text": "WebCache - de-couple Trakt settings from TvDB settings"
         }
       ]
     }
