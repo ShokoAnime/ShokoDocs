@@ -2,6 +2,178 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "4.3.0",
+      "versionURL": "430",
+      "date": "NA",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "New queueing system, the queue processor."
+        },
+        {
+          "type": "added",
+          "text": "Added SHOKO_HOME environment variable support."
+        },
+        {
+          "type": "added",
+          "text": "Mark episodes as hidden so they don't count against you."
+        },
+        {
+          "type": "added",
+          "text": "Added MEDIAINFO_PATH environment variable support."
+        },
+        {
+          "type": "added",
+          "text": "A ton of new API endpoints."
+        },
+        {
+          "type": "added",
+          "text": "Added missing relation, alternative version."
+        },
+        {
+          "type": "changed",
+          "text": "Update to AVDump 3."
+        },
+        {
+          "type": "changed",
+          "text": "Auto install AvDump 3 on Linux."
+        },
+        {
+          "type": "changed",
+          "text": "Migrate settings when new version is released."
+        },
+        {
+          "type": "changed",
+          "text": "Refined group creation/update logic in the v3 API."
+        },
+        {
+          "type": "changed",
+          "text": "Enabled image width/height customization via a feature flag in API."
+        },
+        {
+          "type": "changed",
+          "text": "Refined Shoko's watched series logic to avoid false status based solely on episode count match."
+        },
+        {
+          "type": "changed",
+          "text": "Refactor and unify various search methods used in the API."
+        },
+        {
+          "type": "changed",
+          "text": "Ensure the Main Series is always listed first in a group."
+        },
+        {
+          "type": "changed",
+          "text": "Rename All Groups action does not rename custom named groups."
+        },
+        {
+          "type": "changed",
+          "text": "Check for missing images only if \"Run Import on Start\" is enabled."
+        },
+        {
+          "type": "changed",
+          "text": "Only check and use the air date for normal episodes."
+        },
+        {
+          "type": "changed",
+          "text": "Eliminate language bias in main titles and treat any non-main/official titles as synonyms."
+        },
+        {
+          "type": "changed",
+          "text": "Properly handle HTTP 400 errors for Trakt authentication."
+        },
+        {
+          "type": "changed",
+          "text": "Update AniDB MyList syncing to allow generic files."
+        },
+        {
+          "type": "changed",
+          "text": "Improved Shoko Server startup speed."
+        },
+        {
+          "type": "changed",
+          "text": "Validate group main series when previous main series entry has changed."
+        },
+        {
+          "type": "fixed",
+          "text": "Preferred Episode Naming not respecting selected languages."
+        },
+        {
+          "type": "fixed",
+          "text": "Filesystem Watcher crashing during startup."
+        },
+        {
+          "type": "fixed",
+          "text": "Group details not automatically updating when switching the default series for unnamed groups."
+        },
+        {
+          "type": "fixed",
+          "text": "Removal of empty groups when the last series is moved out."
+        },
+        {
+          "type": "fixed",
+          "text": "Resolved 403 and 404 errors during image download."
+        },
+        {
+          "type": "fixed",
+          "text": "Series air date issues due to missing AniDB data."
+        },
+        {
+          "type": "fixed",
+          "text": "Updating Watched State when marking as deleted."
+        },
+        {
+          "type": "fixed",
+          "text": "Multiple hashing related issues leading to incomplete hashing due to external events."
+        },
+        {
+          "type": "fixed",
+          "text": "Newly imported episodes showing as duplicates."
+        },
+        {
+          "type": "fixed",
+          "text": "SQL Server port issues."
+        },
+        {
+          "type": "fixed",
+          "text": "Potential nullable reference in mediainfo."
+        },
+        {
+          "type": "fixed",
+          "text": "Database locking and then not unlocking."
+        },
+        {
+          "type": "fixed",
+          "text": "Handle malformed file chapter timestamps."
+        },
+        {
+          "type": "fixed",
+          "text": "Handle series updating when AniDB episode is removed."
+        },
+        {
+          "type": "fixed",
+          "text": "Incorrect missing episodes stats"
+        },
+        {
+          "type": "fixed",
+          "text": "VOBSUB not being renamed and skipped."
+        },
+        {
+          "type": "fixed",
+          "text": "TraktTV episode matching."
+        },
+        {
+          "type": "fixed",
+          "text": "Shoko creating series for related anime not in your collection."
+        },
+        {
+          "type": "removed",
+          "text": "AVDUMP_MONO env var from Dockerfiles as its no longer needed."
+        }
+      ]
+    },
+    {
       "version": "4.2.2",
       "versionURL": "422",
       "date": "April 2nd, 2023",
