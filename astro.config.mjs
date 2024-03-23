@@ -46,6 +46,8 @@ export default defineConfig({
 							label: 'Utilities',
 							items: [
 								{ label: 'Unrecognized Files', link: '/shoko-server/utilities/unrecognized-files'},
+								{ label: 'Series Without Files', link: '/shoko-server/utilities/series-without-files'},
+								{ label: 'File Search', link: '/shoko-server/utilities/file-search'},
 							],
 						},
 						{

@@ -308,5 +308,5 @@ details[open] > .accordion-header {
     background-color: var(--sl-color-bg-sidebar);;
     border-radius: 5px;
     box-shadow: var(--ec-frm-frameBoxShdCssVal);
-    padding: 1rem 0;
+    padding: 1rem;
 }

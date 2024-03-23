@@ -25,44 +25,56 @@ interface VolumeInputProps {
 }
 
 // VolumeInput Component
-const VolumeInput: React.FC<VolumeInputProps> = ({
-  volume,
-  index,
-  onVolumeChange,
-  onRemoveVolume,
-}) => (
-  <div className="docker-input-volume-row">
-    {index > 0 && (
-      <button
-        className="docker-input-button"
-        onClick={() => onRemoveVolume(index)}
-      >
-        Delete
-      </button>
-    )}
-    <input
-      className="docker-input-input"
-      value={volume}
-      onChange={(e) => onVolumeChange(index, e.target.value)}
-    />
-  </div>
+interface VolumeInputProps {
+  volume: string;
+  index: number;
+  onVolumeChange: (index: number, value: string) => void;
+  onRemoveVolume: (index: number) => void;
+}
+
+const VolumeInput = React.memo(
+  ({ volume, index, onVolumeChange, onRemoveVolume }: VolumeInputProps) => (
+    <div className="docker-input-volume-row">
+      {index > 0 && (
+        <button
+          className="docker-input-button"
+          type="button"
+          onClick={() => onRemoveVolume(index)}
+        >
+          Delete
+        </button>
+      )}
+      <input
+        className="docker-input-input"
+        value={volume}
+        onChange={(e) => onVolumeChange(index, e.target.value)}
+      />
+    </div>
+  ),
+  (prevProps, nextProps) =>
+    prevProps.volume === nextProps.volume &&
+    prevProps.index === nextProps.index,
 );
 
 // DockerComposeInput Component
-const DockerComposeInput: React.FC<DockerInputProps> = ({
-  setUserInput,
+const DockerComposeInput = ({
   userInput,
+  setUserInput,
   inputField,
   textField,
-}) => {
+}: DockerInputProps): JSX.Element => {
   const handleVolumeChange = (index: number, value: string) => {
-    const newVolumes = [...userInput.volumes];
-    newVolumes[index] = value;
-    setUserInput((prev) => ({ ...prev, volumes: newVolumes }));
+    setUserInput((prev) => ({
+      ...prev,
+      volumes: prev.volumes.map((v, i) => (i === index ? value : v)),
+    }));
   };
 
   const addVolume = () =>
-    setUserInput((prev) => ({ ...prev, volumes: [...prev.volumes, ""] }));
+    setUserInput((prev) => ({
+      ...prev,
+      volumes: [...prev.volumes, ""],
+    }));
 
   const removeVolume = (index: number) =>
     setUserInput((prev) => ({
@@ -78,7 +90,7 @@ const DockerComposeInput: React.FC<DockerInputProps> = ({
           <input
             className="docker-input-input"
             id={inputField}
-            value={userInput[inputField as keyof UserInput]}
+            value={userInput[inputField]}
             onChange={(e) =>
               setUserInput({ ...userInput, [inputField]: e.target.value })
             }
