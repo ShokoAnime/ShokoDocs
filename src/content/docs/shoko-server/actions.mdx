@@ -1,0 +1,230 @@
+---
+title: Actions
+description: Overview of the Actions in the WebUI.
+---
+
+import ImageComponent from "@components/ImagePopup.astro";
+import EasyTable from "@components/EasyTable/EasyTable";
+
+Actions are tasks, or groups of tasks, that perform different functionalities based on the nature of the action itself.
+Many actions are tailored for troubleshooting, aiming to address unique situations where errors occurred during the
+import process or where an issue arose during the metadata download process, leading to missing or corrupted data.
+Additionally, for every part of the automation process that can be disabled, there is a corresponding action that
+can be run to preform that specific part.
+
+![Shoko Server - Actions](../../../assets/img/shoko-server/shoko-server-actions.jpg)
+
+Actions are straightforward, with their functions detailed below each action name. For reference, we've included the
+same information below.
+
+## Import
+
+<EasyTable
+  header={['Name', 'Description']}
+  data={[
+    [
+      'Action',
+      'The name assigned to the import folder used for visual purposes only.',
+    ],
+    [
+      'Run Import',
+      'Scans for new files in Shoko folders, computes their hashes, and searches AniDB and TvDB for metadata and images.'
+    ],
+    [
+      'Remove Missing Files',
+      'Deletes entries in Shoko and MyList for files that are no longer accessible.'
+    ],
+    [
+      'Remove Missing Files (Keep in MyList)',
+      'Deletes entries in Shoko, while retaining them in MyList, for files that are no longer accessible.'
+    ],
+    [
+      'Import New Files',
+      'Scans import folders and imports only the new files identified within the import folder.'
+    ]
+  ]}
+  center={true}
+  columnWidths={{ Name: '25%', Description: '75%' }}
+/>
+
+## AniDB
+
+<EasyTable
+  header={['Name', 'Description']}
+  data={[
+    [
+      'Action',
+      'The name assigned to the import folder used for visual purposes only.',
+    ],
+    [
+      'Download Missing AniDB Data',
+      'Downloads XML data from AniDB forcefully. Use this only if the XML has been edited, deleted, or if Shoko has unexpectedly closed or crashed.'
+    ],
+    [
+      'Sync AniDB Votes',
+      'Sync Series & Episode Votes from Shoko to AniDB.'
+    ],
+    [
+      'Sync AniDB MyList',
+      'Syncs all Series & Episode watch state data from Shoko to AniDB. THIS IS A ONE-WAY ACTION AND WILL OVERWRITE ALL ANIDB DATA!'
+    ],
+    [
+      'Add All Manual Links To MyList',
+      'Syncs Manually Linked Episodes to your MyList. File entries on AniDB will show up as Generic.'
+    ],
+    [
+      'Update All AniDB Info',
+      'Update all Series information with the latest data from AniDB.'
+    ],
+    [
+      'Update AniDB Calendar',
+      'Updates the \'Upcoming Anime\' calendar in Shoko with the most recent information from AniDB.'
+    ]
+  ]}
+  center={true}
+  columnWidths={{ Name: '25%', Description: '75%' }}
+/>
+
+## Trakt
+
+<EasyTable
+  header={['Name', 'Description']}
+  data={[
+    [
+      'Action',
+      'The name assigned to the import folder used for visual purposes only.',
+    ],
+    [
+      'Sync Trakt Collection',
+      'Sync watch states from Shoko to Trakt. THIS IS A ONE-WAY ACTION AND WILL OVERWRITE ALL TRAKT DATA!'
+    ],
+    [
+      'Update All Trakt Info',
+      'Sync all info for Series from Trakt to Shoko.'
+    ]
+  ]}
+  center={true}
+  columnWidths={{ Name: '25%', Description: '75%' }}
+/>
+
+## TvDB
+
+<EasyTable
+  header={['Name', 'Description']}
+  data={[
+    [
+      'Action',
+      'The name assigned to the import folder used for visual purposes only.',
+    ],
+    [
+      'Regenerate TvDB Links',
+      'Recreates all episode matches for TvDB. This action is generally not required unless specifically instructed by a member of the Shoko team or mentioned in the release notes.'
+    ],
+    [
+      'Update All TvDB Info',
+      'Update all Series information with the latest data from TvDB.'
+    ]
+  ]}
+  center={true}
+  columnWidths={{ Name: '25%', Description: '75%' }}
+/>
+
+## TMDB
+
+<EasyTable
+  header={['Name', 'Description']}
+  data={[
+    [
+      'Action',
+      'The name assigned to the import folder used for visual purposes only.',
+    ],
+    [
+      ' Update All MovieDB Info',
+      'Updates information for all movie-related entries in your collection.'
+    ]
+  ]}
+  center={true}
+  columnWidths={{ Name: '25%', Description: '75%' }}
+/>
+
+## Shoko
+
+<EasyTable
+  header={['Name', 'Description']}
+  data={[
+    [
+      'Action',
+      'The name assigned to the import folder used for visual purposes only.',
+    ],
+    [
+      'AVDump Mismatched Files',
+      'Scans the library, detects files without a hash match in AniDB, and runs AVDump on them.'
+    ],
+    [
+      'Recreate All Groups',
+      'Deletes all existing groups in Shoko and recreates them.'
+    ],
+    [
+      'Rename All Groups',
+      'Renames all default groups, excluding those with custom names, using the current language settings.'
+    ],
+    [
+      'Update Missing AniDB Release Groups',
+      'Checks AniDB for updated data on files in your collection that lack a release group.'
+    ],
+    [
+      'Update Missing AniDB File Info',
+      'Updates AniDB files lacking file information, including those missing release groups and those with outdated internal data versions.'
+    ],
+    [
+      'Update All Mediainfo',
+      'Runs MediaInfo on every file in your collection to update their metadata.'
+    ],
+    [
+      'Update Series Stats',
+      'Updates all series in your collection, recalculating totals, remainders, and watched statuses of items.'
+    ]
+  ]}
+  center={true}
+  columnWidths={{ Name: '25%', Description: '75%' }}
+/>
+
+## Images
+
+<EasyTable
+  header={['Name', 'Description']}
+  data={[
+    [
+      'Action',
+      'The name assigned to the import folder used for visual purposes only.',
+    ],
+    [
+      'Update All Images',
+      'Updates and downloads all missing images from AniDB and TvDB.'
+    ],
+    [
+      'Validate All Images',
+      'Identifies any invalid images and re-downloads them.'
+    ]
+  ]}
+  center={true}
+  columnWidths={{ Name: '25%', Description: '75%' }}
+/>
+
+## Plex
+
+<EasyTable
+  header={['Name', 'Description']}
+  data={[
+    [
+      'Action',
+      'The name assigned to the import folder used for visual purposes only.',
+    ],
+    [
+      'Sync Plex Watch Status',
+      'Synchronizes watch states with Plex.'
+    ],
+  ]}
+  center={true}
+  columnWidths={{ Name: '25%', Description: '75%' }}
+/>

@@ -1,20 +1,12 @@
-@import "components.css";
+@import "overrides.css";
+/* Astro & Starlight Overrides */
+@import "components.css"; /* Custom Components */
 
-/* Dark mode colors. */
+/* CSS Variables */
+
 :root {
   --sl-content-width: 900px;
-  --sl-font: 'Lexend Deca', sans-serif;
-  --sl-color-accent-low: #131e4f;
-  --sl-color-accent: #3447ff;
-  --sl-color-accent-high: #b3c7ff;
-  --sl-color-white: #ffffff;
-  --sl-color-gray-1: #eceef2;
-  --sl-color-gray-2: #c0c2c7;
-  --sl-color-gray-3: #888b96;
-  --sl-color-gray-4: #545861;
-  --sl-color-gray-5: #353841;
-  --sl-color-gray-6: #24272f;
-  --sl-color-black: #17181c;
+  --sl-font: 'Lexend Deca Variable', sans-serif;
   --custom-bold: #dbbcff;
   --changelog-added: #44A3FF;
   --changelog-changed: #10C469;
@@ -22,29 +14,12 @@
   --changelog-removed: #FF6C6C;
 }
 
-/* Light mode colors. */
 :root[data-theme='light'] {
-  --sl-color-accent-low: #c7d6ff;
-  --sl-color-accent: #364bff;
-  --sl-color-accent-high: #182775;
-  --sl-color-white: #17181c;
-  --sl-color-gray-1: #24272f;
-  --sl-color-gray-2: #353841;
-  --sl-color-gray-3: #545861;
-  --sl-color-gray-4: #888b96;
-  --sl-color-gray-5: #c0c2c7;
-  --sl-color-gray-6: #eceef2;
-  --sl-color-gray-7: #f5f6f8;
-  --sl-color-black: #ffffff;
   --custom-bold: #0114a2;
   --changelog-added: #3699FF;
   --changelog-changed: #23aca5;
   --changelog-fixed: #eca21a;
   --changelog-removed: #F64E60;
-}
-
-img {
-  border-radius: 0.5rem;
 }
 
 strong {
@@ -66,64 +41,10 @@ select {
   outline: none;
 }
 
-.title-second {
-  color: var(--sl-color-white);
-}
-
-/* Starlight Overwrites */
-
-/* Hero Overwrite */
-.hero {
-  padding: 2rem 0;
-}
-
-/* Markdown Overwrite */
-.sl-markdown-content :not(a, strong, em, del, span, input, code) + :not(a, strong, em, del, span, input, code, :where(.not-content *)) {
-  margin-top: 1rem;
-}
-
-.sl-markdown-content > h2, h3 {
-  margin: 2rem 0 !important;
-}
-
 pre {
+  margin-top: 0 !important;
+}
+
+code > div {
   margin: 0 !important;
-}
-
-.expressive-code .ec-line {
-  margin: 0;
-}
-
-/* Hide Edit & Last Updated in Footer */
-.meta.sl-flex {
-  @media (min-width: 1152px) {
-    display: none;
-  }
-}
-
-/* ol and li Overwrite */
-ol > li {
-  margin-top: 0.5rem !important;
-}
-
-/* Add class to image parent tag */
-.img-parent {
-  align-items: center;
-  border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  margin: 1.5rem 0 !important;
-  width: 100%;
-}
-
-/* Make Strong text match callout header color */
-.starlight-aside--note * strong,
-.starlight-aside--caution * strong,
-.starlight-aside--tip * strong,
-.starlight-aside--danger * strong {
-  color: var(--sl-color-asides-text-accent);
-}
-
-.shiki {
-  border-radius: 5px;
 }

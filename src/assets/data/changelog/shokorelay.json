@@ -1,0 +1,25 @@
+{
+  "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
+  "releases": [
+    {
+      "version": "1.0.1",
+      "versionURL": "101",
+      "date": "March 27th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.0.1",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixes an issue where Linux based Plex setups could potentially see extraneous errors spammed in the log file"
+        },
+        {
+          "type": "added",
+          "text": "Adds better compatibility to the four automation scripts when running them on a Linux based system"
+        },
+        {
+          "type": "added",
+          "text": "Adds some additional error handling to animethemes.py"
+        }
+      ]
+    }
+  ]
+}

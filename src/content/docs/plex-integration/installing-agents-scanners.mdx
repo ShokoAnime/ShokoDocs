@@ -1,41 +1,60 @@
 ---
-title: Installing Shoko Metadata
-description: Information on how to install and configure Shoko Metadata (Plex).
+title: Installing Agents & Scanners
+description: Information on how to install and configure Shoko Metadata & Shoko Relay.
 sidebar:
-  label: Installing Shoko Metadata
   order: 1
 ---
 
 import EasyTable from "../../../components/EasyTable/EasyTable";
 
+Both Shoko Metadata and Shoko Relay do not come with an installer. Please follow the manual installation instructions
+below. This guide assumes you've installed Plex into the **default install directory**, so make adjustments as
+needed to fit your installation.
 
-Shoko Metadata does not come with an installer. Please follow the manual installation instructions below. This guide assumes you've
-installed Plex into the default install directory, so make adjustments as needed to fit your installation.
-
-Shoko Metadata is not a standalone plugin and **requires Shoko Server** installed, configured and running.
-If you haven't done so, [Download Shoko Server](https://shokoanime.com/downloads/) from our main website and use the
-[Installing Shoko Server](../../../getting-started/installing-shoko-server) guide to properly install and configure Shoko Server.
+Shoko Metadata and Shoko Relay are not stand-alone plugins; they depend on having Shoko Server installed, configured,
+and running. If you haven't done so, [Download Shoko Server](https://shokoanime.com/downloads/) from our main
+website and use the [Installing Shoko Server](../../../getting-started/installing-shoko-server) guide to properly
+install and configure Shoko Server.
 
 :::tip
-Make sure Plex Media Server is stopped before attempting to install the Plugin and Scanners. Otherwise, a restart of
-it might be necessary to make the scanner and metadata plugin work and appear in Library settings.
+Make sure Plex Media Server is stopped before attempting to install the Agents and Scanners. Otherwise, a restart of
+it might be necessary to make the agents and scanners work and appear in Library settings.
 :::
+
+## Shoko Relay or Shoko Metadata?
+
+Shoko Relay began as a fork/PR of Shoko Metadata, intended to introduce features that were absent in the original. Over
+time, as more adjustments were made, it developed its own unique set of functionalities. This development was due to
+differing opinions on what the plugin should include, leading to the creation of Shoko Relay. You can read a list of
+the [Changes from Shoko Metadata](https://github.com/natyusha/ShokoRelay.bundle?tab=readme-ov-file#changes-from-shoko-metadata)
+to decide which plugin you'd like to use.
+
+Both plugins are outstanding for media playback; the decision essentially comes down to identifying which plugin best
+suits your needs
 
 ## Windows
 
-[Download Shoko Metadata](https://shokoanime.com/downloads/) and extract the zip file. Inside the zip is a folder
-labeled **ShokoMetadata.bundle**. Move this folder into the following directory:
+Download [Shoko Metadata](https://shokoanime.com/downloads/) or [ Shoko Relay](https://shokoanime.com/downloads/) and
+extract the zip file. Depending on the plugin you downloaded, you'll either have **ShokoMetadata.bundle** or
+**ShokoRelay.bundle** as the contents. If there is **anything** after the **.bundle** part, make sure to delete it.
+Once done, move the folder into the following directory.
 
 ```cmd
 %LOCALAPPDATA%\Plex Media Server\Plug-ins
 ````
 
-Now you need to move the **Movie** and **Series** scanners into the scanner folder. If you never installed custom
-scanners before, you might need to create the folder labeled **Scanners** manually. The **Movie** and **Series**
-scanners are located in the following directory:
+Now you need to move the scanners into the scanner folder. If you never installed custom scanners before, you might
+need to create the folder labeled **Scanners** manually. Please note, **Shoko Relay** does not have a movie scanner.
 
-```cmd
+The **Movie** and **Series** scanners are located in the
+following directory:
+
+```cmd title="ShokoMetadata"
 %LOCALAPPDATA%\Plex Media Server\Plug-ins\ShokoMetadata.bundle\Contents\Resources
+```
+
+```cmd title="ShokoRelay"
+%LOCALAPPDATA%\Plex Media Server\Plug-ins\ShokoRelay.bundle\Contents\Resources
 ```
 
 Move both folders into the following directory.
@@ -103,18 +122,30 @@ cd "${PLEX_HOME}/Plug-ins";
 
 Download and extract the latest bundle from GibHub using **one** of the following commands:
 
-```sh
+```sh title="ShokoMetadata"
 curl -L https://github.com/Cazzar/ShokoMetadata.bundle/archive/master.tar.gz | tar -xzf -
 ```
 
-```sh
+```sh title="ShokoRelay"
+curl -L https://github.com/natyusha/ShokoRelay.bundle/archive/master.tar.gz | tar -xzf -
+```
+
+```sh title="ShokoMetadata"
 wget -O - https://github.com/Cazzar/ShokoMetadata.bundle/archive/master.tar.gz | tar -xzf -
 ```
 
-Remove the suffix
+```sh title="ShokoRelay"
+wget -O - https://github.com/natyusha/ShokoRelay.bundle/archive/master.tar.gz | tar -xzf -
+```
 
-```sh
+If needed, make sure to remove the suffix.
+
+```sh title="ShokoMetadata"
 mv ShokoMetadata.bundle-master ShokoMetadata.bundle
+```
+
+```sh title="ShokoRelay"
+mv ShokoRelay.bundle-master ShokoRelay.bundle
 ```
 
 Ensure that the **Scanners** directory exists in the base directory
@@ -132,7 +163,7 @@ cp -R ShokoMetadata.bundle/Contents/Resources/* ../Scanners/
 ## Editing Plex Scanners
 
 With Shoko Metadata installed, you'll need to make a few edits to both the **Series** and **Movies** scanner in
-order for them to properly work with Shoko.
+order for them to properly work with Shoko. Please note, **Shoko Relay** does not have a movie scanner.
 
 ### Windows
 
@@ -159,7 +190,7 @@ Prefs = {
 }
 ```
 
-#### Editing Shoko Series Scanner
+#### Editing Shoko Series Scanner / Shoko Relay Scanner
 
 If you closed the window, open file explorer and navigate to the following.
 
@@ -167,8 +198,9 @@ If you closed the window, open file explorer and navigate to the following.
 %LOCALAPPDATA%\Plex Media Server\Scanners\Series
 ```
 
-Open **Shoko Series Scanner.py** and make adjustments to the **Prefs** section to align it with your Shoko
-configuration. For the majority of users, you'll simply need to update the **username** and **password** fields.
+Open **Shoko Series Scanner.py**  or **Shoko Relay Scanner.py** depending on which plugin you installed and make
+adjustments to the **Prefs** section to align it with your Shoko configuration. For the majority of users, you'll
+simply need to update the **username** and **password** fields.
 
 ```py
 Prefs = {
@@ -185,6 +217,30 @@ Prefs = {
 ### Linux
 
 Edit the `Prefs` section **in each scanner** using your prefered cmd editor so they match with your **Shoko Server** install.
+
+#### Series Scanner
+
+```sh title="ShokoMetadata"
+${EDITOR:-nano} "${PLEX_HOME}/Scanners/Series/Shoko Series Scanner.py"
+```
+
+```sh title="ShokoRelay"
+${EDITOR:-nano} "${PLEX_HOME}/Scanners/Series/Shoko Relay Scanner.py"
+```
+
+For most users, you'll only need to change the **username** and **password**. As Python is space-sensitive, make sure to not add or remove any spaces.
+
+```py
+Prefs = {
+    'Hostname': '127.0.0.1',
+    'Port': 8111,
+    'Username': 'username',
+    'Password': 'password',
+    'IncludeSpecials': True,
+    'IncludeOther': True,
+    'SingleSeasonOrdering': False
+}
+```
 
 #### Movie Scanner
 
@@ -203,42 +259,23 @@ Prefs = {
 }
 ```
 
-#### Series Scanner
-
-```sh
-${EDITOR:-nano} "${PLEX_HOME}/Scanners/Series/Shoko Series Scanner.py"
-```
-
-For most users you'll only need to change the **username** and **password**. As Python is space-sensitive make sure to not add or remove any spaces.
-
-```py
-Prefs = {
-    'Hostname': '127.0.0.1',
-    'Port': 8111,
-    'Username': 'username',
-    'Password': 'password',
-    'IncludeSpecials': True,
-    'IncludeOther': True,
-    'SingleSeasonOrdering': False
-}
-```
 ## Series Scanner Advanced Settings
 
 You may have noticed that the series scanner provides a broader range of options compared to the movie scanner.
 These additional options are detailed below.
 
 <EasyTable
-    header={["Option", "Description"]}
-    data={[
-      [
-        "IncludeSpecials", "Files marked as specials in Shoko will be shown in the series as part of Season 0."
-      ],
-      [
-        "IncludeOther", "Files marked as other in Shoko will be shown in the series as part of Season 0."
-      ],
-      [
-        "SingleSeasonOrdering", "Episodes are no longer separated by seasons. All normal episodes are put into Season 1, specials into Season 0, openings/endings into Season -1, and trailers into Season -2."
-      ],
-    ]}
-    columnWidths={{ Option: "25%", Description: "75%" }}
-  />
+  header={["Option", "Description"]}
+  data={[
+    [
+      "IncludeSpecials", "Files marked as specials in Shoko will be shown in the series as part of Season 0."
+    ],
+    [
+      "IncludeOther", "Files marked as other in Shoko will be shown in the series as part of Season 0."
+    ],
+    [
+      "SingleSeasonOrdering", "Episodes are no longer separated by seasons. All normal episodes are put into Season 1, specials into Season 0, openings/endings into Season -1, and trailers into Season -2."
+    ],
+  ]}
+  columnWidths={{ Option: "25%", Description: "75%" }}
+/>
