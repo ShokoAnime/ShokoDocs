@@ -2,6 +2,22 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.1.0",
+      "versionURL": "110",
+      "date": "March 28th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.0",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added an external configuration file for the automation scripts"
+        },
+        {
+          "type": "removed",
+          "text": "Removed the internal configuration options for each automation script"
+        }
+      ]
+    },
+    {
       "version": "1.0.1",
       "versionURL": "101",
       "date": "March 27th, 2024",
