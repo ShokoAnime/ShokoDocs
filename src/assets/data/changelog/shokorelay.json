@@ -12,6 +12,10 @@
           "text": "Added an external configuration file for the automation scripts"
         },
         {
+          "type": "added",
+          "text": "Added optional X-Plex-Token authentication method for the automation scripts"
+        },
+        {
           "type": "removed",
           "text": "Removed the internal configuration options for each automation script"
         }
