@@ -1,6 +1,42 @@
 {
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
+      {
+      "version": "1.1.1",
+      "versionURL": "111",
+      "date": "March 31st, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.1",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added Shoko's preferred title as an option for episode titles and as the initial fallback"
+        },
+        {
+          "type": "added",
+          "text": "Added Volume (number) to the final episode title fallback and excluded Episode/Volume 0"
+        }
+      ]
+    },
+    {
+      "version": "1.1.0",
+      "versionURL": "110",
+      "date": "March 28th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.0",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added an external configuration file for the automation scripts"
+        },
+        {
+          "type": "added",
+          "text": "Added optional X-Plex-Token authentication method for the automation scripts"
+        },
+        {
+          "type": "removed",
+          "text": "Removed the internal configuration options for each automation script"
+        }
+      ]
+    },
     {
       "version": "1.0.1",
       "versionURL": "101",
