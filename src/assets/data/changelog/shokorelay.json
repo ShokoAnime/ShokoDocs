@@ -1,7 +1,23 @@
 {
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
-      {
+    {
+      "version": "1.1.2",
+      "versionURL": "112",
+      "date": "April 3rd, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.2",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added Shoko to Plex watched state syncing to watched-sync.py"
+        },
+        {
+          "type": "added",
+          "text": "Added a social media preview and readme header logo"
+        }
+      ]
+    },
+    {
       "version": "1.1.1",
       "versionURL": "111",
       "date": "March 31st, 2024",
