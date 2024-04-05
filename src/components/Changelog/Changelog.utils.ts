@@ -2,6 +2,7 @@ import server from "../../assets/data/changelog/server.json";
 import serverWebUI from "../../assets/data/changelog/webui.json";
 import desktop from "../../assets/data/changelog/desktop.json";
 import shokofin from "../../assets/data/changelog/shokofin.json";
+import shokorelay from "../../assets/data/changelog/shokorelay.json";
 import shokoMetadata from "../../assets/data/changelog/shokometadata.json";
 import myAnime3 from "../../assets/data/changelog/myanime3.json";
 
@@ -11,6 +12,7 @@ type ProgramName =
   | "Shoko Desktop"
   | "Shoko Metadata"
   | "Shokofin"
+  | "ShokoRelay"
   | "My Anime 3";
 
 export const program = (programName: ProgramName) => {
@@ -20,6 +22,7 @@ export const program = (programName: ProgramName) => {
     "Shoko Desktop": desktop.releases,
     "Shoko Metadata": shokoMetadata.releases,
     Shokofin: shokofin.releases,
+    ShokoRelay: shokorelay.releases,
     "My Anime 3": myAnime3.releases,
   };
 
