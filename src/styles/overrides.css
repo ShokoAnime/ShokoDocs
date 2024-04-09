@@ -100,3 +100,13 @@ a:where(.astro-mtc4kjc6)[aria-current=true]::before {
   background-color: var(--sl-color-text-accent);
   transition: top .25s cubic-bezier(0, 1, .5, 1), background-color .5s, opacity .25s;
 }
+
+/* Remove H1 styling on FAQ. */
+#general,
+#shoko-server,
+#shoko-metadata--shoko-relay,
+#shokofin {
+  border: none !important;
+  padding-top: 0 !important;
+  margin: 3rem 0 !important;
+}
