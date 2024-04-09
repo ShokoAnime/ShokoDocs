@@ -1,7 +1,7 @@
 ---
 title: Running Shoko Server
 sidebar:
-  order: 2
+ order: 2
 description: Instructions on how to setup Shoko Server after installing.
 ---
 
@@ -90,19 +90,26 @@ an error then we recommend jumping into our **Discord** server, so we can help s
 
 ![Shoko Server - First Run - Start Server](../../../assets/img/shoko-server/shoko-server-first-run-import-folders.jpg)
 
-Import Folders are the physical locations where your files are stored. This implies two key points:
-they **must be accessible by Shoko Server** and should be **always online**. If you're using **removable media**,
-ensure it's connected before executing any **import functions** or **file checking functions**. This precaution is
-necessary to prevent Shoko from removing entries from your collection database.
+Import folders are the physical locations for where your files are stored, critical for Shoko's functionality. These
+locations need to be consistently accessible to Shoko and remain online, ensuring Shoko does not mistakenly remove
+files from your collection. While you can use removable or cloud-based media, Shoko is not optimized for these
+storage types. Operations such as automatic imports or file checks might inadvertently remove items from your
+collection due to the nature of these storage solutions.
 
-There are **two different types of Import Folders**. The first type is **Watch For New Files**, where Shoko adds the
-contents of the folder to your collection. The second type is **Drop Type**, which allows Shoko to move files from
-the **Drop Source** to the **Drop Destination**. You can use both systems simultaneously and/or apply them to the
-same import folder.
+When setting up an import folder, you have two options. The first, **Watch For New Files**, instructs Shoko to monitor
+the folder for any new files or changes, automatically importing any new files detected. The second option involves
+using **Drop Folders** as a means to move files from a **Drop Source** to a **Drop Destination**, facilitating file
+management and organization.
 
-To add a new import folder, click **Add Import Folder**. Then, input the desired name for the import folder and select
-or type its location. Choose the **Import Folder Type** you want to use for this folder and click the **Save** button
-to add it. If you need to add more folders, make sure to do so before proceeding.
+To create a new import folder, select **Add Import Folder**. Next, enter your preferred name for the import folder and
+specify its location by selecting from available options or entering it manually. Select the **Import Folder Type** that
+best suits your needs for this folder. Once completed, click the **Save** button to finalize its addition. Should you
+need to include additional folders, ensure this is done before moving on to the next steps.
+
+:::tip[Best of Both Worlds]
+You can use both Import Folder Types simultaneously, enabling Shoko to monitor your drop source and automatically
+move files upon detecting any changes.
+:::
 
 ## Data Collection
 

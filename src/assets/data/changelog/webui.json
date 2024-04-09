@@ -2,6 +2,42 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/",
   "releases": [
     {
+      "version": "1.1.16",
+      "versionURL": "1116",
+      "date": "April 8th, 2024",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Accessing init status in login on daily server."
+        }
+      ]
+    },
+    {
+      "version": "1.1.15",
+      "versionURL": "1115",
+      "date": "January 9th, 2024",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "removed",
+          "text": "Remove capturing generic exceptions in v1."
+        }
+      ]
+    },
+    {
+      "version": "1.1.14",
+      "versionURL": "1114",
+      "date": "January 18th, 2024",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Sentry release so sourcemaps work."
+        }
+      ]
+    },
+    {
       "version": "1.1.13",
       "versionURL": "1113",
       "date": "January 15th, 2024",
