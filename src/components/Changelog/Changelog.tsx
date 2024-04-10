@@ -1,4 +1,3 @@
-import React from "react";
 import { program, typeColor } from "./Changelog.utils.ts";
 import type {
   BuildChangesProps,

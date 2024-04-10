@@ -14,7 +14,7 @@ export default defineConfig({
 			},
 			social: {
 				discord: "https://discord.com/invite/vpeHDsg",
-				github: "https://github.com/withastro/starlight"
+				github: "https://github.com/ShokoAnime"
 			},
 			editLink: {
 				baseUrl: "https://github.com/ShokoAnime/ShokoDocs"
