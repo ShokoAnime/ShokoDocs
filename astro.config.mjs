@@ -1,10 +1,10 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import react from "@astrojs/react";
-import astroExpressiveCode from 'astro-expressive-code'
 
 // https://astro.build/config
 export default defineConfig({
+	// base: '/docs-new',
 	integrations: [
 		starlight({
 			title: "ShokoDocs",
@@ -96,9 +96,6 @@ export default defineConfig({
 					link: "contribute"
 				},
 			],
-		}),
-		astroExpressiveCode({
-			themes: ['dracula-soft'],
 		}),
 		react()
 	],
