@@ -10,16 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.9",
-    "@astrojs/react": "^3.1.0",
-    "@astrojs/starlight": "^0.21.1",
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/react": "^3.2.0",
+    "@astrojs/starlight": "^0.21.5",
     "@fontsource-variable/lexend-deca": "^5.0.12",
     "@types/lodash": "^4.17.0",
-    "@types/node": "^20.11.28",
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
-    "astro": "^4.5.5",
-    "astro-expressive-code": "^0.31.0",
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.75",
+    "@types/react-dom": "^18.2.24",
+    "astro": "^4.5.18",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
     "react": "^18.2.0",
@@ -27,6 +26,6 @@
     "react-markdown": "^9.0.1",
     "sharp": "^0.32.6",
     "shiki": "^0.14.7",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.5"
   }
 }
