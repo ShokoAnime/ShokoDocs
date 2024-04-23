@@ -34,7 +34,7 @@ const changelogList = buildChangelogTOC(changelogData);
    <MobileTableOfContents {...Astro.props} />
   </div>
   <div class="right-sidebar-panel sl-hidden lg:sl-block">
-   <div class="sl-container">
+   <div class="sl-container position-indicator">
     <TableOfContents {...Astro.props} />
     <Contribute
      editUrl={Astro.props.editUrl}
@@ -49,7 +49,7 @@ const changelogList = buildChangelogTOC(changelogData);
    <MobileTableOfContents {...changelogList} />
   </div>
   <div class="right-sidebar-panel sl-hidden lg:sl-block">
-   <div class="sl-container">
+   <div class="sl-container position-indicator">
     <TableOfContents {...changelogList} />
     <Contribute
      editUrl={Astro.props.editUrl}

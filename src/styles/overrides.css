@@ -85,11 +85,11 @@
 }
 
 /* So ::before works properly on ToC. */
-a:where(.astro-mtc4kjc6) {
+.position-indicator a:first-child {
 	position: relative;
 }
 
-a:where(.astro-mtc4kjc6)[aria-current=true]::before {
+.position-indicator a[aria-current=true]:first-of-type::before {
 	content: "";
 	position: absolute;
 	left: -17px;
