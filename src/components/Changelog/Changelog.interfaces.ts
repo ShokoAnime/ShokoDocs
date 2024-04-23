@@ -1,39 +1,39 @@
 export interface VersionChange {
-  text: string;
+ text: string;
 }
 
 export interface ReleaseChanges {
-  changes: Record<string, VersionChange[]>;
+ changes: Record<string, VersionChange[]>;
 }
 
 export interface ReleaseInfo {
-  changes: ReleaseChanges;
-  date: string;
-  link: string;
-  version: string;
-  versionURL: string;
+ changes: ReleaseChanges;
+ date: string;
+ link: string;
+ version: string;
+ versionURL: string;
 }
 
 export interface ChangeHeaderProps {
-  date: string;
-  version: string;
-  link: string;
-  versionURL: string;
+ date: string;
+ version: string;
+ link: string;
+ versionURL: string;
 }
 
 export interface BuildChangesProps {
-  info: ReleaseChanges;
+ info: ReleaseChanges;
 }
 
 export interface ProgramResult {
-  changes: Change[];
-  date: string;
-  link: string;
-  version: string;
-  versionURL: string;
+ changes: Change[];
+ date: string;
+ link: string;
+ version: string;
+ versionURL: string;
 }
 
 export interface Change {
-  type: string;
-  text: string;
+ type: string;
+ text: string;
 }
