@@ -1,26 +1,26 @@
 ---
 // @ts-nocheck
-import MobileTableOfContents from "@astrojs/starlight/components/MobileTableOfContents.astro";
-import TableOfContents from "@astrojs/starlight/components/TableOfContents.astro";
+import MobileTableOfContents from '@astrojs/starlight/components/MobileTableOfContents.astro';
+import TableOfContents from '@astrojs/starlight/components/TableOfContents.astro';
 
-import { Contribute } from "./Contribute";
-import { program } from "./Changelog/Changelog.utils";
+import { Contribute } from './Contribute';
+import { program } from './Changelog/Changelog.utils';
 
 const buildChangelogTOC = (changelogData) => {
-  const items = changelogData
-    .slice(0, 25)
-    .map(({ version, date, versionURL }) => ({
-      slug: versionURL,
-      text: `Version ${version} - ${date}`,
-      children: [],
-    }));
+ const items = changelogData
+  .slice(0, 25)
+  .map(({ version, date, versionURL }) => ({
+   slug: versionURL,
+   text: `Version ${version} - ${date}`,
+   children: [],
+  }));
 
-  return {
-    labels: {
-      "tableOfContents.onThisPage": "On This Page",
-    },
-    toc: { items },
-  };
+ return {
+  labels: {
+   'tableOfContents.onThisPage': 'On This Page',
+  },
+  toc: { items },
+ };
 };
 
 const changelogData = program(Astro.props.entry.data.changelog);
@@ -28,78 +28,76 @@ const changelogList = buildChangelogTOC(changelogData);
 ---
 
 {
-  Astro.props.toc && Astro.props.entry.data.changelog === undefined ? (
-    <>
-      <div class="lg:sl-hidden">
-        <MobileTableOfContents {...Astro.props} />
-      </div>
-      <div class="right-sidebar-panel sl-hidden lg:sl-block">
-        <div class="sl-container">
-          <TableOfContents {...Astro.props} />
-          <Contribute
-            editUrl={Astro.props.editUrl}
-            lastUpdated={Astro.props.lastUpdated}
-          />
-        </div>
-      </div>
-    </>
+ Astro.props.toc && Astro.props.entry.data.changelog === undefined ? (
+ <>
+  <div class="lg:sl-hidden">
+   <MobileTableOfContents {...Astro.props} />
+  </div>
+  <div class="right-sidebar-panel sl-hidden lg:sl-block">
+   <div class="sl-container">
+    <TableOfContents {...Astro.props} />
+    <Contribute
+     editUrl={Astro.props.editUrl}
+     lastUpdated={Astro.props.lastUpdated}
+    />
+   </div>
+  </div>
+ </>
   ) : (
-    <>
-      <div class="lg:sl-hidden">
-        <MobileTableOfContents {...changelogList} />
-      </div>
-      <div class="right-sidebar-panel sl-hidden lg:sl-block">
-        <div class="sl-container">
-          <TableOfContents {...changelogList} />
-          <Contribute
-            editUrl={Astro.props.editUrl}
-            lastUpdated={Astro.props.lastUpdated}
-          />
-        </div>
-      </div>
-    </>
+ <>
+  <div class="lg:sl-hidden">
+   <MobileTableOfContents {...changelogList} />
+  </div>
+  <div class="right-sidebar-panel sl-hidden lg:sl-block">
+   <div class="sl-container">
+    <TableOfContents {...changelogList} />
+    <Contribute
+     editUrl={Astro.props.editUrl}
+     lastUpdated={Astro.props.lastUpdated}
+    />
+   </div>
+  </div>
+ </>
   )
-}
+ }
 
 <style>
-  .right-sidebar-panel {
-    padding: 1rem var(--sl-sidebar-pad-x);
-  }
+	.right-sidebar-panel {
+		padding: 1rem var(--sl-sidebar-pad-x);
+	}
 
-  .sl-container {
-    width: calc(var(--sl-sidebar-width) - 2 * var(--sl-sidebar-pad-x));
-  }
+	.sl-container {
+		width: calc(var(--sl-sidebar-width) - 2 * var(--sl-sidebar-pad-x));
+	}
 
-  .right-sidebar-panel :global(h2) {
-    color: var(--sl-color-white);
-    font-size: var(--sl-text-h5);
-    font-weight: 600;
-    line-height: var(--sl-line-height-headings);
-    margin-bottom: 0.5rem;
-  }
+	.right-sidebar-panel :global(h2) {
+		color: var(--sl-color-white);
+		font-size: var(--sl-text-h5);
+		font-weight: 600;
+		line-height: var(--sl-line-height-headings);
+		margin-bottom: 0.5rem;
+	}
 
-  .right-sidebar-panel :global(:where(a)) {
-    display: block;
-    font-size: var(--sl-text-xs);
-    text-decoration: none;
-    color: var(--sl-color-gray-3);
-    overflow-wrap: anywhere;
-  }
+	.right-sidebar-panel :global(:where(a)) {
+		display: block;
+		font-size: var(--sl-text-xs);
+		text-decoration: none;
+		color: var(--sl-color-gray-3);
+		overflow-wrap: anywhere;
+	}
 
-  .right-sidebar-panel :global(:where(a):hover) {
-    color: var(--sl-color-white);
-  }
+	.right-sidebar-panel :global(:where(a):hover) {
+		color: var(--sl-color-white);
+	}
 
-  @media (min-width: 72rem) {
-    .sl-container {
-      max-width: calc(
-        (
-          (
-              100vw - var(--sl-sidebar-width) - 2 * var(--sl-content-pad-x) - 2 *
-                var(--sl-sidebar-pad-x)
-            ) * 0.25 /* MAGIC NUMBER 🥲 */
-        )
-      );
-    }
-  }
+	@media (min-width: 72rem) {
+		.sl-container {
+			max-width: calc(
+					(
+					(100vw - var(--sl-sidebar-width) - 2 * var(--sl-content-pad-x) - 2 *
+					var(--sl-sidebar-pad-x)) * 0.25 /* MAGIC NUMBER 🥲 */
+					)
+			);
+		}
+	}
 </style>

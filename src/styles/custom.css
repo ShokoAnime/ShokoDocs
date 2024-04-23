@@ -5,55 +5,55 @@
 /* CSS Variables */
 
 :root {
-  --sl-content-width: 900px;
-  --sl-font: 'Lexend Deca Variable', sans-serif;
-  --custom-bold: #dbbcff;
-  --changelog-added: #44A3FF;
-  --changelog-changed: #10C469;
-  --changelog-fixed: #F9C851;
-  --changelog-removed: #FF6C6C;
+	--sl-content-width: 900px;
+	--sl-font: 'Lexend Deca Variable', sans-serif;
+	--custom-bold: #dbbcff;
+	--changelog-added: #44A3FF;
+	--changelog-changed: #10C469;
+	--changelog-fixed: #F9C851;
+	--changelog-removed: #FF6C6C;
 }
 
 :root[data-theme='light'] {
-  --custom-bold: #0114a2;
-  --changelog-added: #3699FF;
-  --changelog-changed: #23aca5;
-  --changelog-fixed: #eca21a;
-  --changelog-removed: #F64E60;
+	--custom-bold: #0114a2;
+	--changelog-added: #3699FF;
+	--changelog-changed: #23aca5;
+	--changelog-fixed: #eca21a;
+	--changelog-removed: #F64E60;
 }
 
 strong {
-  color: var(--custom-bold)
+	color: var(--custom-bold)
 }
 
 summary.accordion-header::after {
-  content: '>';
-  display: inline-block;
-  margin-left: 1ch;
-  transition: 0.2s;
+	content: '>';
+	display: inline-block;
+	margin-left: 1ch;
+	transition: 0.2s;
 }
 
 details[open] > summary::after {
-  transform: rotate(90deg);
+	transform: rotate(90deg);
 }
 
 select {
-  outline: none;
+	outline: none;
 }
 
 pre {
-  margin-top: 0 !important;
+	margin-top: 0 !important;
 }
 
 code > div {
-  margin: 0 !important;
+	margin: 0 !important;
 }
 
 h2 {
-  border-top: 1px solid var(--sl-color-gray-6);
-  padding-top: 2rem;
+	border-top: 1px solid var(--sl-color-gray-6);
+	padding-top: 2rem;
 }
 
 .group-label > .large {
-  font-size: 0.875rem;
+	font-size: 0.875rem;
 }
