@@ -1,8 +1,8 @@
 // @ts-ignore
-import lastUpdated from '/public/files/lastUpdated.json';
+import lastUpdated from '/public/files/last-updated.json';
 import EasyTable from '@components/EasyTable/EasyTable.tsx';
 
-const RecentlyUpdated = () => {
+const LastUpdated = () => {
  const recentUpdates = lastUpdated
   .slice(0, 10)
   .map((data) => [
@@ -12,8 +12,12 @@ const RecentlyUpdated = () => {
   ]);
 
  return (
-  <EasyTable header={['Page', 'Location', 'Updated On']} data={recentUpdates} />
+  <EasyTable
+   header={['Page', 'Location', 'Updated On']}
+   data={recentUpdates}
+   lineOnly={true}
+  />
  );
 };
 
-export default RecentlyUpdated;
+export default LastUpdated;
