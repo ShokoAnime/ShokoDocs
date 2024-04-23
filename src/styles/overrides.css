@@ -79,7 +79,7 @@
 /* Remove H1 styling on Hero header. */
 .hero h1,
 #popular-topics,
-#recently-updated-pages {
+#last-updated-pages {
 	border: none !important;
 	padding-bottom: 0 !important;
 }
