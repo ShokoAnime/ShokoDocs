@@ -2,6 +2,18 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.1.3",
+      "versionURL": "113",
+      "date": "April 23rd, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.3",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Disabled Plex scanner grouping to remove any chance of unwanted folder grouping or file mergers"
+        }
+      ]
+    },
+    {
       "version": "1.1.2",
       "versionURL": "112",
       "date": "April 3rd, 2024",

@@ -4,3 +4,145 @@ description: Information on how to use the Shoko Relay utility scripts.
 sidebar:
   order: 4
 ---
+
+import EasyTable from "../../../components/EasyTable/EasyTable";
+
+Shoko Relay includes several utility / automation scripts which can help to quickly add full length theme songs, automatic collection posters, correct negative season numbers, rapid watched state syncing, and more.
+
+The scripts require basic knowledge of running Python scripts and other simple commands in a terminal. The scripts themselves are located in the `.\Contents\Scripts` folder inside `ShokoRelay.bundle` and can be moved to whatever location is convenient for the user (as long as the `config.py` file is kept in the same folder).
+
+:::note
+In depth information about each script and its functionality can be found in the Shoko Relay [Readme](https://github.com/natyusha/ShokoRelay.bundle?tab=readme-ov-file#scripts).
+:::
+
+### Prerequisites
+Before using any of the scripts you must have the requisite dependencies installed. For more information on using Python scripts in general check out the Python 3 docs for [linux](https://docs.python.org/3/using/unix.html#on-linux) or [windows](https://docs.python.org/3/using/windows.html).
+
+<EasyTable
+    header={["Dependency", "animethemes", "collection-posters", "force-metadata", "watched-sync"]}
+    data={[
+      [
+        "[Python 3](https://www.python.org/downloads/)",
+        "✔️",
+        "✔️",
+        "✔️",
+        "✔️"
+      ],
+      [
+        "[Python-PlexAPI](https://pypi.org/project/PlexAPI/)",
+        "❌",
+        "✔️",
+        "✔️",
+        "✔️"
+      ],
+      [
+        "[Requests](https://pypi.org/project/requests/)",
+        "✔️",
+        "✔️",
+        "❌",
+        "✔️"
+      ],
+      [
+        "[FFmpeg](https://ffmpeg.org/)",
+        "✔️",
+        "❌",
+        "❌",
+        "❌"
+      ]
+    ]}
+    columnWidths={{ Dependency: "28%", animethemes: "18%", "collection-posters": "18%", "force-metadata": "18%", "watched-sync": "18%" }}
+/>
+
+:::caution[FFmpeg on Windows]
+When installing FFmpeg on Windows make sure to add it to the PATH by editing Windows environment variables or using the following command: `setx /m PATH "PATHTOFFMPEG"`.
+:::
+
+#### Configuration
+After installing the dependencies you must use a text editor to enter your Shoko and Plex credentials (as well as several other options) into the included `config.py` file. The configuration file contains 3 sections which will be detailed below.
+
+##### Plex Server Configuration
+<EasyTable
+    header={["Option", "Description"]}
+    data={[
+      [
+        "Username",
+        "The username for the **admin account** of your Plex server."
+      ],
+      [
+        "Password",
+        "The password for the **admin account** of your Plex server. Skip this setting if two-factor authentication is in use."
+      ],
+      [
+        "ServerName",
+        "The name of your Plex server."
+      ],
+      [
+        "LibraryNames",
+        "The names of any libraries which you want the scripts to interact with. **Must be formatted as a Python list** e.g. `'LibraryNames': ['Anime Shows', 'Anime Movies'],`"
+      ],
+      [
+        "ExtraUsers",
+        "The names of any managed or home accounts on your Plex server which you want to include for watched state syncing. **Must be formatted as a Python list** e.g. `'ExtraUsers': ['Family'],`"
+      ],
+      [
+        "DataFolder",
+        "The base [Plex Media Server Data Directory](https://support.plex.tv/articles/202915258-where-is-the-plex-media-server-data-directory-located/) (where the Metadata folder is located). **Requires double backslashes on Windows**"
+      ],
+      [
+        "PostersFolder",
+        "The folder containing any custom collection Posters for automatic application. **Requires double backslashes on Windows**"
+      ],
+      [
+        "X-Plex-Token",
+        "For those using two-factor authentication this must be filled in, otherwise utilise the password field listed above. Information on where to get an X-Plex-Token is available [here](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/)."
+      ]
+    ]}
+    columnWidths={{ Option: "25%", Description: "75%" }}
+/>
+
+##### Shoko Server Configuration 
+<EasyTable
+    header={["Option", "Description"]}
+    data={[
+      [
+        "Hostname",
+        "The IP address for the computer where Shoko Server is located."
+      ],
+      [
+        "Port",
+        "The port Shoko Server uses, by default it's **8111**"
+      ],
+      [
+        "Username",
+        "The username for the **local account** you created during the **First Run** setup in Shoko Server."
+      ],
+      [
+        "Password",
+        "The password for the **local account** you created during the **First Run** setup in Shoko Server."
+      ]
+    ]}
+    columnWidths={{ Option: "25%", Description: "75%" }}
+/>
+
+##### AnimeThemes Configuration
+<EasyTable
+    header={["Option", "Description"]}
+    data={[
+      [
+        "FFplay_Enabled",
+        "Whether the AnimeThemes script will playback the song after downloading or not."
+      ],
+      [
+        "FFplay_Volume",
+        "The volume of the audio playback if it is enabled."
+      ],
+      [
+        "BatchOverwrite",
+        "Whether the batch argument will overwrite **Theme.mp3** files or not"
+      ]
+    ]}
+    columnWidths={{ Option: "25%", Description: "75%" }}
+/>
+
+#### Usage
+Once the configuration has been completed simply run the scripts from a terminal. Example commands and arguments are available in the [Readme](https://github.com/natyusha/ShokoRelay.bundle?tab=readme-ov-file#scripts).
