@@ -5,6 +5,8 @@ sidebar:
   order: 3
 ---
 
+import EasyTable from "../../../components/EasyTable/EasyTable";
+
 Shoko Relay does not come with an installer. Please follow the manual installation instructions below. This guide assumes you've
 installed Plex into the **default install directory**, so make adjustments as needed to fit your installation.
 
@@ -149,3 +151,186 @@ Move the scanner into the **Scanners** directory
 ```sh
 cp -R ShokoMetadata.bundle/Contents/Resources/* ../Scanners/
 ```
+
+## Creating A Shoko Relay Library
+While Shoko Server is running, open Plex and create a new "TV Shows" library.
+Please note that if you haven't completed the **required edits** mentioned on the
+[Installing Agents & Scanners](../installing-agents-scanners/#editing-plex-scanners) page, please go back and do it now.
+
+When prompted to select the Media Folder, browse to your anime collection. Even though Shoko will provide the
+metadata, Plex still needs to know where the physical files are located.
+
+In the Advanced tab, select **Shoko Relay Scanner** and **ShokoRelay**.
+
+![Shoko Relay - Inputting Server Information](../../../assets/img/shoko-relay/Shoko-Relay-Inputting-Server-Info.jpg)
+
+You'll need to input the following information for Shoko Relay to access your collection:
+
+<EasyTable
+    header={["Option", "Description"]}
+    data={[
+      [
+        "The Shoko Server Username",
+        "The username for the **local account** you created during the **First Run** setup in Shoko Server."
+      ],
+      [
+        "The Shoko Server Password",
+        "The password for the **local account** you created during the **First Run** setup in Shoko Server.",
+      ],
+      [
+        "The Shoko Server Server Hostname",
+        "The IP address for the computer where Shoko Server is located. This can be left blank unless Shoko Server is running on a different computer.",
+      ],
+      [
+        "The Shoko Server Port",
+        "The port Shoko Server uses, by default it's **8111**",
+      ]
+    ]}
+    columnWidths={{ Option: "30%", Description: "70%" }}
+/>
+
+It is also recommended to change the following options at the bottom of the same page:
+
+<EasyTable
+    header={["Option", "Setting"]}
+    data={[
+      [
+        "Collections",
+        "Hide items which are in collections"
+      ],
+      [
+        "Seasons",
+        "Hide for single-season series",
+      ]
+    ]}
+    columnWidths={{ Option: "30%", Setting: "70%" }}
+/>
+
+Once you’ve reviewed and configured the remaining options, which are self-explanatory, click the **Add Library** button. After adding the library, initiate a scan within Plex and wait for Plex to add your collection.
+
+Lastly, in Plex Settings: `Settings > Agents > Shows > ShokoRelay` move the following entry to the top of the list and enable it:
+  - [x] Local Media Assets (TV)
+
+## Notes
+### Troubleshooting
+When encountering any issues with the scanner or agent, please note that there are detailed logs available in the [Plex Media Server Logs Folder](https://support.plex.tv/articles/200250417-plex-media-server-log-files/) which can help to pinpoint any issues:
+- Agent Logs: `\Plex Media Server\Logs\PMS Plugin Logs\com.plexapp.agents.shokorelay.log`
+- Scanner Logs: `\Plex Media Server\Logs\Shoko Relay Scanner.log`
+
+:::tip[Important]
+When encountering bad matches/metadata the first thing to check for is if TheTVDB match and episode mapping is correct in Shoko for the series in question.
+:::
+
+:::caution[Warning]
+Under extremely specific circumstances Plex will automatically group files together without user intervention. This occurs when storing all of the files from multiple AniDB entries in a single folder (located in the root directory of the Plex library) with no other subfolders present inside of it. To resolve this simply create an empty subfolder in any directory affected by this or separate the files from each AniDB series into their own folders/subfolders.
+:::
+
+### Handling "Stuck" Metadata
+In cases where metadata (generally posters) won't update there is a quick 3 step process to fix it:
+1. Navigate to the series > More "..." Button > Unmatch
+2. Settings > Manage > Troubleshooting > Clean Bundles + Optimize Database
+3. Navigate back to the series > More "..." Button > Match > Select top result
+
+If this somehow still fails then a full [Plex Dance](https://forums.plex.tv/t/the-plex-dance/197064) is likely required.
+
+### Cast & Crew Limitations
+If "staff listings" are enabled in the settings the following custom agent limitations apply:
+- All Cast & Crew members are listed under the cast section only
+- Directors, Producers and Writers will be empty when attempting to filter for them in Plex
+- All Crew members are available for filtering under Actor only
+- The links in the Cast & Crew section under individual episodes won't return any results
+
+### Automatic Season Naming Limitations
+Due to custom agent limitations certain season names which contain special files will not name themselves correctly. These can be renamed manually or with the included [force-metadata.py](../shoko-relay-utility-scripts) script that accesses the Plex API. The affected season names and their intended names are listed below:
+- Season -1 → Credits **OR** [Unknown Season] → Credits
+- Season -2 → Trailers
+- Season -3 → Parodies
+- Season -4 → Other
+
+### Ambiguous Title Replacement
+In cases where AniDB uses ambiguous episode titles the series title will be used instead (with the original title appended to it as necessary). A list of the titles considered ambiguous by the agent are as follows:
+- Complete Movie
+- Music Video
+- OAD
+- OVA
+- Short Movie
+- TV Special
+- Web
+
+:::note
+The appended titles will appear after an em dash (**—**) making it easy to search for anything affected by this.
+:::
+
+### Combining Series
+If you have TheTVDB matching enabled in Shoko and `SingleSeasonOrdering` disabled the agent will prioritise episode numbering from it by default. This allows shows which are separated on AniDB to be combined into a single entry inside Plex. To Achieve this simply multi-select (with the primary series as the first selection) the series in your Plex library which you know are part of a single TheTVDB entry then select `Merge`.
+
+Using Fairy Tail as an example all of the following series can be safely merged into a single entry in Plex if they are correctly matched to TheTVDB in Shoko:
+- Fairy Tail
+- Fairy Tail (2011)
+- Fairy Tail (2014)
+- Fairy Tail (2018)
+
+:::tip[Important]
+Only do this when you are happy with the metadata for the series to be merged as you will be unable to correctly refresh it without splitting the series apart first.
+:::
+
+### Minimum Tag Weight
+Many tags on AniDB use a [3 Star Weight System](https://wiki.anidb.net/Tags#Star-rating_-_the_Weight_system) which represents a value from 0 (no stars) to 600 (3 stars) and determines how relevant the tag is to the series it is applied to. By setting this value you can filter out tags below a certain star threshold if desired.
+
+### Assumed Content Ratings
+If "assumed content ratings" are enabled in the agent settings the [target audience](https://anidb.net/tag/2606/animetb) and [content indicator](https://anidb.net/tag/2604/animetb) tags from AniDB will be used to roughly match the [TV Parental Guidlines](http://www.tvguidelines.org/resources/TheRatings.pdf) system. The target audience tags will conservatively set the initial rating anywhere from TV-Y to TV-14, then the content indicators will be appended. If the tag weights for the content indicators are high enough (> 400 or **\*\***) the rating will be raised to compensate. A general overview is listed in the table below:
+
+<EasyTable
+    header={["Tag", "Rating"]}
+    data={[
+      [
+        "Kodomo",
+        "TV-Y"
+      ],
+      [
+        "Mina",
+        "TV-G"
+      ],
+      [
+        "Shoujo, Shounen",
+        "TV-PG"
+      ],
+      [
+        "Josei, Seinen",
+        "TV-14"
+      ],
+      [
+        "Nudity, Sex",
+        "TV-\*-S"
+      ],
+      [
+        "__\*\*__ Violence",
+        "TV-14-V"
+      ],
+      [
+        "__\*\*__ Nudity",
+        "TV-14-S"
+      ],
+      [
+        "Borderline Porn (override)",
+        "TV-MA "
+      ],
+      [
+        "__\*\*\+__ Nudity, __\*\*__ sex",
+        "TV-MA-S"
+      ],
+      [
+        "__\*\*\+__ Violence",
+        "TV-MA-V"
+      ],
+      [
+        "18 Restricted (override)",
+        "X",
+      ]
+    ]}
+    columnWidths={{ Option: "70%", Setting: "30%" }}
+/>
+
+:::note
+Many series are missing these tags on AniDB so adding them is encouraged to help improve everyone's metadata.
+:::
