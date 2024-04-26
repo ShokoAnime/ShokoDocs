@@ -15,8 +15,8 @@ The scripts require basic knowledge of running Python scripts and other simple c
 In depth information about each script and its functionality can be found in the Shoko Relay [Readme](https://github.com/natyusha/ShokoRelay.bundle?tab=readme-ov-file#scripts).
 :::
 
-### Prerequisites
-Before using any of the scripts you must have the requisite dependencies installed. For more information on using Python scripts in general check out the Python 3 docs for [linux](https://docs.python.org/3/using/unix.html#on-linux) or [windows](https://docs.python.org/3/using/windows.html). 
+## Prerequisites
+Before using any of the scripts you must have the requisite dependencies installed. For more information on using Python scripts in general check out the Python 3 docs for [linux](https://docs.python.org/3/using/unix.html#on-linux) or [windows](https://docs.python.org/3/using/windows.html).
 
 <EasyTable
     header={["Dependency", "AnimeThemes", "Collection-Posters", "Force-Metadata", "Watched-Sync"]}
@@ -57,7 +57,7 @@ Before using any of the scripts you must have the requisite dependencies install
 When installing FFmpeg on Windows make sure to add it to the **PATH** by editing [Windows environment variables](https://phoenixnap.com/kb/ffmpeg-windows#ftoc-heading-4) or using the following command: `setx /m PATH "PATHTOFFMPEG"`.
 :::
 
-### Configuration
+## Configuration
 After installing the dependencies you must use a text editor to enter your Shoko and Plex credentials (as well as several other options) into the included `config.py` file. The configuration file contains 3 sections which will be detailed below.
 
 ##### Plex Server Configuration
@@ -100,7 +100,7 @@ After installing the dependencies you must use a text editor to enter your Shoko
     columnWidths={{ Option: "25%", Description: "75%" }}
 />
 
-##### Shoko Server Configuration 
+##### Shoko Server Configuration
 <EasyTable
     header={["Option", "Description"]}
     data={[
@@ -144,55 +144,58 @@ After installing the dependencies you must use a text editor to enter your Shoko
     columnWidths={{ Option: "25%", Description: "75%" }}
 />
 
-### Running the Scripts
+## Running the Scripts
 Once the configuration has been completed simply run the scripts from a terminal. Arguments and example commands for each script will be listed below.
 
-##### AnimeThemes
+### AnimeThemes
 Run in a terminal `animethemes.py` with the working directory set to a folder containing an anime series. If the anime has been matched by Shoko Server it will grab the anidbID and use that to match with an AnimeThemes anime entry.
 
 Append the arguments "slug" / "offset" `animethemes.py slug offset` in order to specify which opening or ending to download.
-  - slug: must be the first argument and is formatted as "op", "ed", "op2", "ed2" and so on
-  - offset: an optional single digit number which must be the second argument if the slug is provided
+- slug: must be the first argument and is formatted as "op", "ed", "op2", "ed2" and so on
+- offset: an optional single digit number which must be the second argument if the slug is provided
 
-Append the argument "batch" `animethemes.py batch` when running the script on multiple folders at a time. 
-  - batch: must be the sole argument and is simply entered as "batch"
+Append the argument "batch" `animethemes.py batch` when running the script on multiple folders at a time.
+- batch: must be the sole argument and is simply entered as "batch"
 
 ###### Example Commands:
 :::note
 Using bash / cmd respectively and assuming that both the script and FFmpeg can be called directly from PATH.
 :::
-- Library Batch Processing
-  - `for d in "/PathToAnime/"*/; do cd "$d" && animethemes.py batch; done`
-  - `for /d %d in ("X:\PathToAnime\*") do cd /d %d && animethemes.py batch`
-- Fix "Mushoku Tensei II: Isekai Ittara Honki Dasu" Matching to Episode 0 (offset to the next animethemes match)
-  - `cd "/PathToMushokuTenseiII"; animethemes.py 1`
-  - `cd /d "X:\PathToMushokuTenseiII" && animethemes.py 1`
-- Same as above but download the second ending instead of the default OP
-  - `cd "/PathToMushokuTenseiII"; animethemes.py ed2 1`
-  - `cd /d "X:\PathToMushokuTenseiII" && animethemes.py ed2 1`
-- Download the 9th Opening of Bleach
-  - `cd "/PathToBleach"; animethemes.py op9`
-  - `cd /d "X:\PathToBleach" && animethemes.py op9`
+Library Batch Processing:
+- `for d in "/PathToAnime/"*/; do cd "$d" && animethemes.py batch; done`
+- `for /d %d in ("X:\PathToAnime\*") do cd /d %d && animethemes.py batch`
 
-##### Collection-Posters
+Fix "Mushoku Tensei II: Isekai Ittara Honki Dasu" Matching to Episode 0 (offset to the next animethemes match):
+- `cd "/PathToMushokuTenseiII"; animethemes.py 1`
+- `cd /d "X:\PathToMushokuTenseiII" && animethemes.py 1`
+
+Same as above but download the second ending instead of the default OP:
+- `cd "/PathToMushokuTenseiII"; animethemes.py ed2 1`
+- `cd /d "X:\PathToMushokuTenseiII" && animethemes.py ed2 1`
+
+Download the 9th Opening of Bleach:
+- `cd "/PathToBleach"; animethemes.py op9`
+- `cd /d "X:\PathToBleach" && animethemes.py op9`
+
+### Collection-Posters
 Run in a terminal `collection-posters.py` to set Plex collection posters to the user provided ones or Shoko's.
 - Any Posters in the "PostersFolder" must have the same name as their respective collection in Plex.
 - The following characters must be stripped from the filenames: \ / : * ? " < > |
 - The accepted file extension are: jpg / jpeg / png / tbn
 
 Append the argument "clean" `collection-posters.py clean` if you want to remove old collection posters instead.
-  - This works by deleting everything but the newest custom poster for all collections.
+- This works by deleting everything but the newest custom poster for all collections.
 
-##### Force-Metadata
+### Force-Metadata
 Run in a terminal `force-metadata.py` to remove empty collections, rename negative seasons and normalise sort titles. Append the argument "full" `force-metadata.py full` if you want to do a time consuming full metadata clean up.
 
 :::caution[Warning]
 In "full" mode you must wait until the Plex activity queue is fully completed before advancing to the next step (with the enter key) or this will not function correctly.
-  - You can tell if Plex is done by looking at the library in the desktop/web client or checking the logs in your "PMS Plugin Logs" folder for activity.
-  - This may take a significant amount of time to complete with a large library so it is recommended to run the first step overnight.
+- You can tell if Plex is done by looking at the library in the desktop/web client or checking the logs in your "PMS Plugin Logs" folder for activity.
+- This may take a significant amount of time to complete with a large library so it is recommended to run the first step overnight.
 :::
 
-##### Watched-Sync
+### Watched-Sync
 Run in a terminal `watched-sync.py` to sync watched states from Plex to Shoko. Append a relative date suffix as an argument to narrow down the time frame and speed up the process:
 - `watched-sync.py 2w` would return results from the last 2 weeks
 - `watched-sync.py 3d` would return results from the last 3 days
