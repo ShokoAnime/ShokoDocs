@@ -2,6 +2,18 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.1.5",
+      "versionURL": "115",
+      "date": "May 1st, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.5",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added a new script: rescan-recent.py"
+        }
+      ]
+    },
+    {
       "version": "1.1.4",
       "versionURL": "114",
       "date": "April 25th, 2024",
