@@ -1,0 +1,75 @@
+---
+title: Recommendations & Limitations
+sidebar:
+  order: 3
+description: Learn how to optimize your setup for the best experience with detailed recommendations and understand the limitations.
+---
+
+{/*
+ TODO: This is just a draft. All seconds on this page are subject to change. I've just noted down some of the things for now.
+*/}
+
+# Recommendations
+
+## General
+
+### Recreation is your friend
+
+If something doesn't work, or something got messed up, then the cleanest (but not necessarily the best) solution is to delete your existing library and create a new one. The watch data stored in Jellyfin is disjointed from the library structure and will survive the recreation. Though do note that some issues can be fixed simply by doing a full refresh on the entry or library, so you should try that first to see if it resolves the problem.
+
+## Using the Virtual File System (VFS)
+
+The Virtual File System (VFS) allows you to disregard the underlying disk file structure, automatically meeting Jellyfin's system requirements for file organization. This setup ensures that no unrecognized files appear in your library and allows you to fully leverage Jellyfin's native features effortlessly. While this approach is relatively new and still undergoing testing, it is stable enough for daily use. We encourage adopting this system and reporting any issues you encounter to help improve it further.
+
+:::caution[Note]
+The VFS is automatically managed by the plugin and should not be manually altered by the user. Changes in Shoko, such as adjustments to groupings or episode relocations, can trigger automatic updates in the VFS. Other plugins may store some types of files directly in the VFS, such as subtitles and extras in folders not linked by a Shoko ID; these files will be correctly associated with their respective media items in the underlying library.
+:::
+
+## Not Using the Virtual File System
+
+It is best to adhere to an AniDB-compatible file structure, with the exception of the extras being placed in the `extras` folder, and OPs/EDs being placed in the `backdrops` folder for native Jellyfin integration.
+The first part can easily be done by enabling and using the renaming system in Shoko, but the later part will need a more custom renamer to accomplish using Shoko. Alternatively, you can have a file structure using Shoko's groups too, but this is generally not advised since it can easily be messed up on Jellyfin's side if the groups change in Shoko.
+
+### No Unrecognized Files
+
+Keep unrecognized files — files not recognized in **Shoko Server** — away from the folders provided to Jellyfin. They will not be handled by the plugin, and be either filtered out
+or cluter your library depending on the settings you've chosen.
+
+# Limitations
+
+## General
+
+### One base-item per path
+
+Jellyfin can handle only one item per path. It allows the selection of the same folder for multiple libraries, necessitating careful management:
+- Use symbolic links or directory junctions pointing to the root of the media library to manage multiple libraries (e.g., separate libraries for movies and shows).
+- Enable options in Jellyfin to segregate movies from shows if you wish to maintain distinct categories.
+
+## With the Virtual File System
+
+### Symbolic Links on Windows
+
+Symbolic links, necessary for VFS functionality, require enabling Developer Mode in Windows:
+- Follow the [guide to enable Developer Mode](https://learn.microsoft.com/en-us/windows/apps/get-started/developer-mode-features-and-debugging#use-regedit-to-enable-your-device), then restart Jellyfin to create symbolic links.
+- Check Jellyfin plugin settings for warnings about the need to enable this feature.
+
+### Direct Mode Support
+
+Direct Play does not function with the VFS enabled because symbolic links created by VFS are only visible to the Jellyfin host:
+- Opt to disable Direct Play in your player settings or refrain from using the VFS if this feature is essential to your setup.
+
+:::caution
+This will no longer be an issue in version 10.9 as the relevant feature will be removed.
+:::
+
+## Without the Virtual File System
+
+### Jellyfin's File Structure Requirements
+
+Jellyfin requires a specific file structure when not using the VFS:
+- Adhere to the structure guidelines provided in Jellyfin’s [Series Guide](#) and [Movies Guide](#) to ensure compatibility.
+- Failure to meet these requirements may lead to issues with media recognition and metadata handling.
+
+:::caution[Note]
+Shokofin leverages AniDB as the primary source for metadata. Using Shoko's groups feature allows grouping multiple AniDB entries under a single show in Jellyfin, though not all configurations are compatible. Refer to the structure recommendations above.
+:::
