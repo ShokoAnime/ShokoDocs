@@ -158,8 +158,11 @@ Once the configuration has been completed simply run the scripts from a terminal
 Run in a terminal `animethemes.py` with the working directory set to a folder containing an anime series. If the anime has been matched by Shoko Server it will grab the anidbID and use that to match with an AnimeThemes anime entry.
 
 Append the arguments "slug" / "offset" `animethemes.py slug offset` in order to specify which opening or ending to download.
-- slug: must be the first argument and is formatted as "op", "ed", "op2", "ed2" and so on
+- slug: an optional identifier which must be the first argument and is formatted as "op", "ed", "op2", "ed2" and so on
 - offset: an optional single digit number which must be the second argument if the slug is provided
+
+Append the argument "play" to the commands above to run in "Preview" mode.
+- play: for force enabling FFplay and disabling Theme.mp3 generation, must be the last or sole argument and is simply entered as "play"
 
 Append the argument "batch" `animethemes.py batch` when running the script on multiple folders at a time.
 - batch: must be the sole argument and is simply entered as "batch"
@@ -184,6 +187,10 @@ Download the 9th Opening of Bleach:
 - `cd "/PathToBleach"; animethemes.py op9`
 - `cd /d "X:\PathToBleach" && animethemes.py op9`
 
+Preview the 9th Opening of Bleach
+- `cd "/PathToBleach"; animethemes.py op9 play`
+- `cd /d "X:\PathToBleach" && animethemes.py op9 play`
+
 ### Collection-Posters
 Run in a terminal `collection-posters.py` to set Plex collection posters to the user provided ones or Shoko's.
 - Any Posters in the "PostersFolder" must have the same name as their respective collection in Plex.
@@ -194,7 +201,7 @@ Append the argument "clean" `collection-posters.py clean` if you want to remove 
 - This works by deleting everything but the newest custom poster for all collections.
 
 ### Force-Metadata
-Run in a terminal `force-metadata.py` to remove empty collections, rename negative seasons and normalise sort titles. Append the argument "full" `force-metadata.py full` if you want to do a time consuming full metadata clean up.
+Run in a terminal `force-metadata.py` to remove empty collections, rename negative seasons, normalise sort titles and add original titles. Append the argument "full" `force-metadata.py full` if you want to do a time consuming full metadata clean up.
 
 :::caution[Warning]
 In "full" mode you must wait until the Plex activity queue is fully completed before advancing to the next step (with the enter key) or this will not function correctly.
