@@ -87,7 +87,9 @@ export default defineConfig({
       {
        label: 'Lua Renamer',
        items: [
-        { label: 'Getting Started', link: '/renaming-plugins/lua-renamer/getting-started' }
+        { label: 'Getting Started', link: '/renaming-plugins/lua-renamer/getting-started' },
+        { label: 'Script Authoring', link: '/renaming-plugins/lua-renamer/script-authoring' },
+        { label: 'Frequently Asked Questions', link: '/renaming-plugins/lua-renamer/faq' }
        ]
       }
      ]
