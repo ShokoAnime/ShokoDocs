@@ -1,0 +1,52 @@
+---
+title: Getting Started
+description: How to set up and use Lua Renamer
+---
+
+Lua Renamer is a [plugin for Shoko Server](https://github.com/Mik1ll/LuaRenamer). It allows users to rename their collection via an Lua 5.4 interface.  
+This renamer is fitting for users with more advanced collection renaming/organization requirements.
+
+Limitations: The Lua environment is sandboxed such that interaction with the operating system/file system/networking is unavailable.
+
+For support/questions join the Shoko Discord server and message mikill.
+
+## Installation
+
+1. Download the [the release appropriate for your Shoko Server version.](https://github.com/Mik1ll/LuaRenamer/releases)
+    * The [latest release](https://github.com/Mik1ll/LuaRenamer/releases/latest) should be compatible with current Stable
+    * Pre-releases will be compatible with Shoko Daily depending on the Abstractions Version, check https://github.com/ShokoAnime/ShokoServer/tags for the current version
+2. Unzip the files into destination
+    * (Windows) `C:\ProgramData\ShokoServer\plugins`
+    * (Docker) wherever the container location `/home/shoko/.shoko/Shoko.CLI/plugins` is mounted
+3. Restart Shoko Server
+4. (Recommended) Install VS Code and [the Lua extension](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) to edit your script. The extension uses [LuaCATS annotations](https://luals.github.io/wiki/annotations/)
+5. Follow instructions in the next section to add your script
+
+## Usage
+
+### With Shoko Desktop
+
+1. Open Shoko Desktop
+2. Navigate to Utilities/File Renaming
+3. Use the Default script or create a new one and set the type of the script to LuaRenamer in the drop-down menu
+4. Replace any text in the box with the [example script](https://github.com/Mik1ll/LuaRenamer/blob/master/LuaRenamer/lua/example.lua)
+5. Add the files you wish to rename
+6. Test your script before renaming by pressing Preview.
+    * There is no preview for file moving, only renaming
+    * Pressing Rename does not move files by default, the checkbox to move must also be checked
+7. Save your script
+
+### Linux/Without Shoko Desktop
+
+1. Download [the linux scripts](https://github.com/Mik1ll/LuaRenamer/tree/master/Linux%20Scripts)
+2. Download the [example script](https://github.com/Mik1ll/LuaRenamer/blob/master/LuaRenamer/lua/example.lua) (also bundled with the plugin, in the lua subfolder)
+3. Preview the results with the preview script `./preview_rename_script.sh example.lua [# results]`
+4. Add your script to Shoko with the add script `./add_rename_script.sh example.lua`
+5. If you want to rename and move all existing files use the rename script `./rename_and_move_all.sh example`
+
+### Renaming on Import
+
+If you wish to rename/move your files on import you must do two things:
+
+1. Set Rename/Move On Import to true in Shoko settings (settings-server.json)
+2. Ensure your script is saved with the run on import setting true and that it is the only script with the setting enabled
