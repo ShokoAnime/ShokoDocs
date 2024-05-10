@@ -2,6 +2,26 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.1.7",
+      "versionURL": "117",
+      "date": "May 7th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.7",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added help pages for each of the scripts with -h or --help arguments"
+        },
+        {
+          "type": "added",
+          "text": "Added version information to the agent logs and Info.plist"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed a potential file lock issue with FFplay and animethemes.py"
+        }
+      ]
+    },
+    {
       "version": "1.1.6",
       "versionURL": "116",
       "date": "May 5th, 2024",
