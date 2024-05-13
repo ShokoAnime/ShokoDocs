@@ -2,6 +2,30 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.1.8",
+      "versionURL": "118",
+      "date": "May 13th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.8",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added a requirements.txt for the scripts"
+        },
+        {
+          "type": "added",
+          "text": "Added an option to ignore air dates for negative seasons to workaround a playback order bug"
+        },
+        {
+          "type": "added",
+          "text": "Added an action for automatically creating a zipped release asset without anything appended to the folder name"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue where episode metadata would not fully parse with SingleSeasonOrdering enabled"
+        }
+      ]
+    },
+    {
       "version": "1.1.7",
       "versionURL": "117",
       "date": "May 7th, 2024",
