@@ -2,6 +2,42 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.1.10",
+      "versionURL": "1110",
+      "date": "May 14th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.10",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed subdir_dirs variable assignment from v1.1.9 which was incorrect (resulting in improper subfolder grouping removal)"
+        }
+      ]
+    },
+    {
+      "version": "1.1.9",
+      "versionURL": "119",
+      "date": "May 14th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.9",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Don't use preferred titles for Ambiguous Title replacement since they may be a different language"
+        },
+        {
+          "type": "added",
+          "text": "Clarify how the Episode Title agent setting works regarding Ambiguous Titles"
+        },
+        {
+          "type": "added",
+          "text": "Clear several metadata fields when no results are available in Shoko"
+        },
+        {
+          "type": "removed",
+          "text": "Remove Shoko API Keys from Logs"
+        }
+      ]
+    },
+    {
       "version": "1.1.8",
       "versionURL": "118",
       "date": "May 13th, 2024",
