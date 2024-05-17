@@ -2,6 +2,70 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.1.12",
+      "versionURL": "1112",
+      "date": "May 17th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.12",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Changed the config.py setting order to match shoko docs"
+        },
+        {
+          "type": "changed",
+          "text": "Reenable TvDB Episode Title + Summary Fallbacks with more robust error checking"
+        },
+        {
+          "type": "added",
+          "text": "Added a new fallback case for specials e.g. \"Episode S1\""
+        },
+        {
+          "type": "added",
+          "text": "Added a version indicator to the scanner logs"
+        },
+        {
+          "type": "added",
+          "text": "Added a note on SingleSeasonOrdering in the Scanner"
+        },
+        {
+          "type": "added",
+          "text": "Added tar.gz release assets for ease of installation on linux"
+        }
+      ]
+    },
+    {
+      "version": "1.1.11",
+      "versionURL": "1111",
+      "date": "May 16th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.11",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added Language codes or \"SHOKO\" to the agent logs after titles"
+        },
+        {
+          "type": "added",
+          "text": "Added Shoko IDs to the scanner Logs after titles"
+        },
+        {
+          "type": "added",
+          "text": "Added TvDB Titles and IDs to the scanner logs if SingleSeasonOrdering is disabled"
+        },
+        {
+          "type": "added",
+          "text": "Added Log Level to the scanner logs for better readability"
+        },
+        {
+          "type": "added",
+          "text": "Added an option to exclude the Plex admin account from watched state syncing in config.py"
+        },
+        {
+          "type": "added",
+          "text": "Specify which script some of the settings apply to in config.py"
+        }
+      ]
+    },
+    {
       "version": "1.1.10",
       "versionURL": "1110",
       "date": "May 14th, 2024",
@@ -58,6 +122,10 @@
         {
           "type": "fixed",
           "text": "Fixed an issue where episode metadata would not fully parse with SingleSeasonOrdering enabled"
+        },
+        {
+          "type": "removed",
+          "text": "Removed IncludeSpecials and IncludeOther scanner options as they are niche and cause problems with automatic scanning"
         }
       ]
     },
@@ -96,7 +164,7 @@
           "text": "Fixed the collection-posters.py script not fully functioning on Linux"
         },
         {
-          "type": "fixed",
+          "type": "changed",
           "text": "Changed all script shebangs from python to python3"
         },
         {

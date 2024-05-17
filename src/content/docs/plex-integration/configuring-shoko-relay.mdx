@@ -10,7 +10,7 @@ import EasyTable from "../../../components/EasyTable/EasyTable";
 Shoko Relay does not come with an installer. Please follow the manual installation instructions below. This guide assumes you've
 installed Plex into the **default install directory**, so make adjustments as needed to fit your installation.
 
-Shoko Relay is not a standalone plugin and **requires Shoko Server** installed, configured and running.
+Shoko Relay is not a standalone plugin and **requires Shoko Server** to be installed, configured and running.
 If you haven't done so, [Download Shoko Server](https://shokoanime.com/downloads/) from our main website and use the
 [Installing Shoko Server](/getting-started/installing-shoko-server) guide to properly install and configure Shoko Server.
 
@@ -22,23 +22,34 @@ it might be necessary to make the scanner and metadata plugin work and appear in
 ## Shoko Relay Vs Shoko Metadata?
 
 Shoko Relay itself started as a personal fork of Shoko Metadata to add minor preferred changes. Over time, as more
-changes were made, the difference between the two plugins started going leading it to eventually become Shoko Relay.
+changes were made, the difference between the two plugins grew leading it to eventually become Shoko Relay.
 
-Below is a list of the main changes.
+Below is a list of the main changes:
 
-- Utilizes Shoko's v3 API for metadata retrieval.
-- Lists the studio for series and movies.
-- Lists writers and directors for episodes and movies.
-- Applies ratings (e.g., 'TV-14', 'TV-Y') based on AniDB tags.
-- Offers language configuration for series titles beyond Shoko's default.
-- Enables an 'Alt Title' language setting for series titles, searchable in Plex.
-- Provides options for episode title language preferences.
-- Uses TVDB descriptions and titles from Shoko when absent in AniDB.
-- Replaces vague AniDB titles with the series name and an episode type suffix.
-- Combines movies and series in a single library.
-- Merges multi-season shows from TheTVDB into one entry.
-- Includes support for Credits, Parodies, Trailers, and special file types.
-- Support for files with multiple episodes.
+- Uses Shoko's v3 API for fetching metadata and matching files
+- Allows:
+  - Movies and series to be in the same library at once
+  - Multi "season" shows matched on TheTVDB to be merged into a single entry
+- Allows the user to configure:
+  - The language for the series or episode titles (to use a different language than Shoko's)
+  - An "Alt Title" language for the series title (which will be searchable in Plex)
+- Optionally:
+  - Series and movies will list the Main Staff along with Seiyuu (CV) under "Cast & Crew"
+    - **Note:** They will all appear as actors due to Crew not being accessible for custom agents
+  - Individual episodes will list the Writer as Original Work (原作) and Director as Direction (監督)
+    - **Note:** Only supported if there is a single entry for each credit to avoid incorrect metadata
+  - Will apply content ratings like "TV-14", "TV-Y" etc. (if the corresponding AniDB tags are present)
+- Removes the original tag hiding options and replaces them with a tag weight system similar to what [HAMA](https://github.com/ZeroQI/Hama.bundle) uses
+  - Note: Automatically ignores all tags from Shoko's [TagBlacklistAniDBHelpers](https://github.com/ShokoAnime/ShokoServer/blob/9c0ae9208479420dea3b766156435d364794e809/Shoko.Server/Utilities/TagFilter.cs#L37) list
+- Series and movies will list the Studio as Animation Work (アニメーション制作) or Work (制作)
+- Support for:
+  - Files which contain more than one episode or episodes which span multiple files
+  - Credits / Parodies / Trailers and Other types of special files
+  - Individual episode ratings (from AniDB)
+- Will replace:
+  - Ambiguous AniDB episode titles with the series title plus a suffix for the type of episode
+  - Inconsistently capitalised genre tags with ones using [AniDB Capitalisation Rules](https://wiki.anidb.net/Capitalisation)
+- Will use TheTVDB episode descriptions and titles if AniDB is missing that information
 
 Both plugins excel at media playback; the choice between them boils down to determining which plugin aligns best
 with your specific needs.
@@ -52,24 +63,23 @@ correct user when executing the steps listed below.
 ## Windows
 
 [Download Shoko Relay](https://shokoanime.com/downloads/) and extract the zip file. Inside the zip is a folder,
-rename the folder to **ShokoRelay.bundle** and move this folder into the following directory.
+ensure that it is named **ShokoRelay.bundle** then move it into the following directory.
 
 ```cmd
 %LOCALAPPDATA%\Plex Media Server\Plug-ins
 ````
 
-Now you need to move the **Series** scanner into the scanner folder. If you never installed custom
-scanners before, you might need to create the folder labeled **Scanners** manually. The **Series**
-scanner is located in the following directory:
+Now you need to move the **Scanners** folder into the **Plex Media Server** folder. The **Scanners**
+folder is located in the following directory:
 
 ```cmd
-%LOCALAPPDATA%\Plex Media Server\Plug-ins\ShokoMetadata.bundle\Contents\Resources
+%LOCALAPPDATA%\Plex Media Server\Plug-ins\ShokoRelay.bundle\Contents
 ```
 
-Move  into the following directory.
+Move it into the following directory:
 
 ```cmd
-%LOCALAPPDATA%\Plex Media Server\Scanners
+%LOCALAPPDATA%\Plex Media Server
 ```
 
 ## Linux
@@ -124,32 +134,20 @@ Navigate to the **Plug-ins** directory of your install
 cd "${PLEX_HOME}/Plug-ins";
 ```
 
-Download and extract the latest bundle from GibHub using **one** of the following commands:
+Download and extract the latest release from GitHub using **one** of the following commands:
 
 ```sh
-curl -L https://github.com/natyusha/ShokoRelay.bundle/archive/master.tar.gz | tar -xzf -
+curl -L https://github.com/natyusha/ShokoRelay.bundle/releases/latest/download/ShokoRelay.bundle.tar.gz | tar -xzf -
 ```
 
 ```sh
-wget -O - https://github.com/natyusha/ShokoRelay.bundle/archive/master.tar.gz | tar -xzf -
+wget -O - https://github.com/natyusha/ShokoRelay.bundle/releases/latest/download/ShokoRelay.bundle.tar.gz | tar -xzf -
 ```
 
-Remove the suffix.
+Move the **Scanners** folder into the **Plex Media Server** directory
 
 ```sh
-mv ShokoRelay.bundle-master ShokoRelay.bundle
-```
-
-Ensure that the **Scanners** directory exists in the base directory
-
-```sh
-mkdir -p "${PLEX_HOME}/Scanners"
-```
-
-Move the scanner into the **Scanners** directory
-
-```sh
-cp -R ShokoMetadata.bundle/Contents/Resources/* ../Scanners/
+cp -R ShokoRelay.bundle/Contents/Scanners ../
 ```
 
 ## Creating A Shoko Relay Library
