@@ -87,16 +87,20 @@ After installing the dependencies you must use a text editor to enter your Shoko
         "The names of any libraries which you want the scripts to interact with. **Must be formatted as a Python list** e.g. `'LibraryNames': ['Anime Shows', 'Anime Movies'],`"
       ],
       [
-        "ExtraUsers",
-        "The names of any managed or home accounts on your Plex server which you want to include for watched state syncing. **Must be formatted as a Python list** e.g. `'ExtraUsers': ['Family'],`"
+        "PostersFolder",
+        "For `collection-posters.py` the folder containing any custom collection Posters for automatic application. **Requires double backslashes on Windows** e.g. `'PostersFolder': 'M:\\Anime\\Posters',`"
       ],
       [
         "DataFolder",
-        "The base [Plex Media Server Data Directory](https://support.plex.tv/articles/202915258-where-is-the-plex-media-server-data-directory-located/) (where the Metadata folder is located). **Requires double backslashes on Windows**"
+        "For `collection-posters.py clean` the base [Plex Media Server Data Directory](https://support.plex.tv/articles/202915258-where-is-the-plex-media-server-data-directory-located/) (where the Metadata folder is located). **Requires double backslashes on Windows**"
       ],
       [
-        "PostersFolder",
-        "The folder containing any custom collection Posters for automatic application. **Requires double backslashes on Windows** e.g. `'PostersFolder': 'M:\\Anime\\Posters',`"
+        "ExtraUsers",
+        "For `watched-sync.py` the names of any managed or home accounts on your Plex server which you want to include for watched state syncing. **Must be formatted as a Python list** e.g. `'ExtraUsers': ['Family'],`"
+      ],
+      [
+        "SyncAdmin",
+        "For `watched-sync.py` whether to sync watched states from Plex's admin account or not."
       ],
       [
         "X-Plex-Token",
