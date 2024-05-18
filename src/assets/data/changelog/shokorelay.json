@@ -2,6 +2,22 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.1.13",
+      "versionURL": "1113",
+      "date": "May 18th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.13",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed the genre capitalization rules to capitalize the last word of all genres even if they are an article/conjunction/short preposition"
+        },
+        {
+          "type": "added",
+          "text": "Added an agent option for moving common series title prefixes like \"Gekijouban\", \"Eiga\" etc. to the end of the title"
+        }
+      ]
+    },
+    {
       "version": "1.1.12",
       "versionURL": "1112",
       "date": "May 17th, 2024",
