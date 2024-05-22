@@ -2,6 +2,26 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.1.14",
+      "versionURL": "1114",
+      "date": "May 22nd, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.14",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added a check which ensures that a TvDB entry hasn't been deleted and display clear warnings in the logs if it has"
+        },
+        {
+          "type": "added",
+          "text": "Added \"Special\" to Ambiguous Titles (SingleEntryTitles) for replacement"
+        },
+        {
+          "type": "removed",
+          "text": "Removed \"86\" hard-coded search replacement as the bug was fixed in Shoko Server"
+        }
+      ]
+    },
+    {
       "version": "1.1.13",
       "versionURL": "1113",
       "date": "May 18th, 2024",
