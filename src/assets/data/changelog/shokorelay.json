@@ -2,6 +2,26 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.1.15",
+      "versionURL": "1115",
+      "date": "May 24th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.14",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed \"collection-posters.py clean\" not sorting posters by creation date (missing key) which could potentially delete the wrong posters"
+        },
+        {
+          "type": "changed",
+          "text": "Changed Shoko API Device names to be more consistent"
+        },
+        {
+          "type": "changed",
+          "text": "Changed some log formatting for better readability"
+        }
+      ]
+    },
+    {
       "version": "1.1.14",
       "versionURL": "1114",
       "date": "May 22nd, 2024",
