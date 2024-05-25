@@ -2,10 +2,26 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.1.16",
+      "versionURL": "1116",
+      "date": "May 25th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.16",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added forced scanning of unrecognized files to rescan-recent.py"
+        },
+        {
+          "type": "added",
+          "text": "Added support for collection posters with the following file extensions: bmp / gif / jpe / tif / tiff / webp"
+        }
+      ]
+    },
+    {
       "version": "1.1.15",
       "versionURL": "1115",
       "date": "May 24th, 2024",
-      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.14",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.15",
       "changes": [
         {
           "type": "fixed",
