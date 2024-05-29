@@ -2,7 +2,6 @@
 title: Frequently Asked Questions
 description: Common questions and usage scenarios
 ---
-
 #### How do I split my collection across import folders?
 
 The easiest option is to set the destination by import folder name. Keep in mind the import folder must have the Destination or Both drop type. You may also specify the destination by the full path of the import folder on the server or by referencing it directly via `importfolders`.
@@ -27,7 +26,7 @@ end
 
 #### How do I group my anime according to Shoko?
 
-Adding Shoko group name to subfolder path when there are multiple series in group.  
+Adding Shoko group name to subfolder path when there are multiple series in group.
 
 ```lua
 if #groups == 1 and #groups[1].animes > 1 then
@@ -41,5 +40,5 @@ AniDB, Shoko's metadata provider does not have the concept of seasons. Therefore
 
 #### How can I hard/soft link my files instead of moving them?
 
-Neither Shoko nor this plugin has the ability to create file links. I recommend creating any links before the file is processed by Shoko. Usually download clients have the option to run a script on download completion. You can create a script to link files to a Shoko drop source folder. Feel free to contact me if you need help with this.  
+Neither Shoko nor this plugin has the ability to create file links. I recommend creating any links before the file is processed by Shoko. Usually download clients have the option to run a script on download completion. You can create a script to link files to a Shoko drop source folder. Feel free to contact me if you need help with this.
 Note: If you hard link your files you will need to create an import folder for each file system/volume used.

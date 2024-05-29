@@ -2,7 +2,6 @@
 title: Script Authoring
 description: Notes on writing or editing lua scripts
 ---
-
 Lua Renamer provides a programming interface for more versatile file structure and renaming scenarios. This page details how to author scripts and the scripting environment.
 
 Check out https://learnxinyminutes.com/docs/lua/ if you are new to Lua.
@@ -21,8 +20,8 @@ The example script provides a sensible default renaming template. Some variables
 
 ## The Environment
 
-The lua environment is sandboxed, removing operations from standard libraries such as `io`, and `os`. See BaseEnv in [LuaContext](https://github.com/Mik1ll/LuaRenamer/blob/master/LuaRenamer/LuaContext.cs).  
-The script is run in a fresh environment for every file.  
+The lua environment is sandboxed, removing operations from standard libraries such as `io`, and `os`. See BaseEnv in [LuaContext](https://github.com/Mik1ll/LuaRenamer/blob/master/LuaRenamer/LuaContext.cs).
+The script is run in a fresh environment for every file.
 Only the output variables defined in [env.lua](https://github.com/Mik1ll/LuaRenamer/blob/master/LuaRenamer/lua/env.lua) will have any effect outside of the script.
 
 * [env.lua](https://github.com/Mik1ll/LuaRenamer/blob/master/LuaRenamer/lua/env.lua)*: The starting environment, output variable values will change renaming/moving behaviour
@@ -45,8 +44,8 @@ In addition to the `filename`, `destination` and `subfolder` output variables, t
 
 ## Notes for File Moving
 
-<wbr/>Import folders are only valid destination candidates if they exist and have either the 'Destination' or 'Both' Drop Type. Using `use_existing_anime_location` allows for an import folder with 'Excluded' drop type to be picked. This may change in the future.  
-Destination defaults to the nearest (to the file) valid import folder.  
+<wbr/>Import folders are only valid destination candidates if they exist and have either the 'Destination' or 'Both' Drop Type. Using `use_existing_anime_location` allows for an import folder with 'Excluded' drop type to be picked. This may change in the future.
+Destination defaults to the nearest (to the file) valid import folder.
 Destination is set via:
 
 * <wbr/>Import folder name (string)
@@ -55,11 +54,11 @@ Destination is set via:
 
 If destination set via path, it is matched to import folder path with converted directory seperators but no other special handling (relative path or expansion).
 
-Subfolder defaults to the anime title in your preferred language.  
+Subfolder defaults to the anime title in your preferred language.
 Subfolder is set via:
 
 * Subfolder name (string)
 * Path segments (array-table, e.g. `{"parent dir name", "subdir name", "..."}`)
 
-If set via a string subfolder name, directory separators within the string are ignored or replaced depending on preference.  
+If set via a string subfolder name, directory separators within the string are ignored or replaced depending on preference.
 Also see [`use_existing_anime_location` in Script Settings](#eAnimeLocation)

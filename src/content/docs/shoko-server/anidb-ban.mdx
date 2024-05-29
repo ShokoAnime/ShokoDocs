@@ -2,8 +2,8 @@
 title: Understanding AniDB Bans
 description: Learn how to minimize your chances of receiving an AniDB Ban.
 ---
-
 import EasyTable from "../../../components/EasyTable/EasyTable";
+import GetFileInfo from '../../../components/GetFileInfo.astro'
 
 An AniDB ban is a common occurrence during the Shoko importing process for many users, usually triggered by excessive
 connection attempts or large importing sessions, though it doesn't imply any wrongdoing on your part. You simply need
@@ -89,7 +89,7 @@ these cached files are recent enough, Shoko may not have to request updated info
 specify otherwise.
 
 :::tip[XML Cache Count]
-As of **January 10th, 2024**, there are **14,554 entries** in the XML Cache.
+<GetFileInfo/>
 :::
 
 Please note, this is not a dump of the data on AniDB. These are files created and used by Shoko that is checked against
@@ -100,7 +100,7 @@ AniDB's data. [Click Here](https://shokoanime.com/files/shoko-server/other/Anime
 <EasyTable
   header={["OS", "Location"]}
   data={[
-    ["Windows", "C:\ProgramData\ShokoServer"],
+    ["Windows", "C:\\ProgramData\\ShokoServer"],
     ["Linux/macOS", "~/.shoko/Shoko.CLI/"],
   ]}
   columnWidths={{ OS: "25%", Location: "75%" }}
