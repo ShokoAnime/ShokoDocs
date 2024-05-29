@@ -1,0 +1,30 @@
+---
+const fileUrl = 'https://shokoanime.com/files/shoko-server/other/repo_info.txt';
+
+const getFileInfo = async () => {
+ try {
+  const response = await fetch(fileUrl);
+  return await response.text();
+ } catch (error) {
+  console.error('Failed to fetch file:', error);
+  return '';
+ }
+};
+
+const formatFileInfo = (fileContent) => {
+ const lines = fileContent.split('\n');
+ const dateLine = lines[0];
+ const filesLine = lines[1];
+
+ const date = dateLine.split(': ')[1].split(' ')[0];
+ const fileCount = parseInt(filesLine.split(': ')[1]).toLocaleString();
+
+ return { date, fileCount };
+};
+
+const fileContent = await getFileInfo();
+const { date, fileCount } = formatFileInfo(fileContent);
+---
+<span>
+  As of <strong>{date}</strong> there are <strong>{fileCount}</strong> files in the XML Cache.
+</span>

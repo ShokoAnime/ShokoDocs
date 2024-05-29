@@ -1,6 +1,7 @@
-import { defineConfig } from 'astro/config';
-import starlight from '@astrojs/starlight';
 import react from '@astrojs/react';
+import starlight from '@astrojs/starlight';
+import { defineConfig } from 'astro/config';
+import starlightImageZoom from 'starlight-image-zoom'
 
 // https://astro.build/config
 export default defineConfig({
@@ -110,6 +111,7 @@ export default defineConfig({
      link: 'contribute',
     },
    ],
+   plugins: [starlightImageZoom()],
   }),
   react(),
  ],

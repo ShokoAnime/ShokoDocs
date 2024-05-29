@@ -3,6 +3,7 @@
 import MobileTableOfContents from '@astrojs/starlight/components/MobileTableOfContents.astro';
 import TableOfContents from '@astrojs/starlight/components/TableOfContents.astro';
 
+// @ts-ignore
 import { Contribute } from './Contribute';
 import { program } from './Changelog/Changelog.utils';
 
@@ -26,7 +27,6 @@ const buildChangelogTOC = (changelogData) => {
 const changelogData = program(Astro.props.entry.data.changelog);
 const changelogList = buildChangelogTOC(changelogData);
 ---
-
 {
  Astro.props.toc && Astro.props.entry.data.changelog === undefined ? (
  <>
