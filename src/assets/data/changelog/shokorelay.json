@@ -2,6 +2,22 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.1.17",
+      "versionURL": "1117",
+      "date": "Jun 6th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.17",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added the \"Suggestive Dialogue\" content descriptor (for \"Assumed Content Ratings\")"
+        },
+        {
+          "type": "added",
+          "text": "Added a TV-14 rating upgrade for anime with a 300 weight of the \"Sex\" tag (for \"Assumed Content Ratings\")"
+        }
+      ]
+    },
+    {
       "version": "1.1.16",
       "versionURL": "1116",
       "date": "May 25th, 2024",
