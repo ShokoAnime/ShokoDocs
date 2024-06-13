@@ -291,13 +291,45 @@ section](#signalr) of this page.
 ### Metadata Downloaders
 ![Shokofin - Library Settings - Metadata Downloaders](/src/assets/img/shokofin/Shokofin-Library-Metadata-Downloaders.png)
 
+When using Shokofin, it is recommended to not enable any other metadata providers for all library types to prevent mixed 
+metadata along with a slew of other problems from occurring. This is due to other metadata providers identifying the
+media incorrectly or just clashing in general with how your collection is organized.
 
+### Metadata Savers
+![Shokofin - Library Settings - Metadata Savers](/src/assets/img/shokofin/Shokofin-Library-Metadata-Savers.png)
+
+
+:::danger[Important]
+    **DO NOT** enable metadata saving using Nfo files with libraries managed by Shoko, and if any are present among
+    your media library, **DELETE THEM NOW**. The reasoning behind this is that Jellyfin prioritizes metadata from Nfo
+    files above any other metadata provider. This results in weird or broken behavior since Shokofin is unable to
+    override metadata that's sourced from an Nfo.
+    
+    Either find any files in your library that have the `.nfo` extension using your file explorer and delete them, or
+    run the following command in a terminal according to your operating system. Be sure to substitute the path with the
+    location of your library.
+
+    ###### Windows (Powershell):
+    
+    ```powershell
+    Get-ChildItem -Path 'C:\path\to\library\' '*.nfo' | Remove-Item
+    ```
+
+    ###### Linux:
+    
+    ```sh
+    find /path/to/library/ -name "*.nfo" -type f -delete
+    ```
+:::
 
 ### Image Fetchers
 ![Shokofin - Library Settings - Image Fetchers](/src/assets/img/shokofin/Shokofin-Library-Image-Fetchers.png)
+
+Shoko should be enabled and set as the top-most image fetcher for all library types and categories. Any additional metadata providers may be enabled, but can have mixed results where incorrect images are fetched. Ones that are
+known to work without issue alongside Shokofin are the Embedded Image Extractor and Screen Grabber providers.
 
 ### Saving Artwork Into Media Folders
 ![Shokofin - Library Settings - Saving Artwork](/src/assets/img/shokofin/Shokofin-Library-Saving-Artwork.png)
 
 ### Merge Series Across Folders
-![Shokofin - Library Settings (4)](/src/assets/img/shokofin/Shokofin-Library-Merge-Series.png)
+![Shokofin - Library Settings - Merge Series](/src/assets/img/shokofin/Shokofin-Library-Merge-Series.png)
