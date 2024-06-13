@@ -230,4 +230,20 @@ Automatically merge cour seasons
 
 ## Creating a Shoko Library
 
-Now that Shokofin is configured, you can now create a library for your collection.
+Before creating a library, be sure the plugin is configured to your liking as certain options may require creating a library from scratch when changed due to how Jellyfin works internally. More information on the subject can be found in the [Limitations and Recommendations](#temp) section of the docs for Shokofin.
+
+Now lets get started by adding a new library in Jellyfin's dashboard, specifying the library name, type, and file paths to your media.
+
+![Shokofin - Library Settings (1)](/src/assets/img/shokofin/Shokofin-Library-Settings-1.png)
+
+{/* Somehow word that path needs to be the root of the import folder that Shoko uses for the media, though the path doesn't need to match what shoko knows. Just that the structure in the folder matches relatively */}
+The "Shows" type is best for most use cases, as Shokofin will still display anime movies in the library unless configured to separate movies from shows. If you
+configured Shokofin to separate movies, you will need to create a "Shows" library as well as a "Movies" library.
+
+Setting the type to "Mixed movies and Shows" is not recommended due to quarks within Jellyfin, and with how Shokofin works as a plugin. Any other library type is otherwise unsupported.
+
+![Shokofin - Library Settings (2)](/src/assets/img/shokofin/Shokofin-Library-Settings-2.png)
+![Shokofin - Library Settings (3)](/src/assets/img/shokofin/Shokofin-Library-Settings-3.png)
+![Shokofin - Library Settings (4)](/src/assets/img/shokofin/Shokofin-Library-Settings-4.png)
+![Shokofin - Library Settings (5)](/src/assets/img/shokofin/Shokofin-Library-Settings-5.png)
+![Shokofin - Library Settings (6)](/src/assets/img/shokofin/Shokofin-Library-Settings-6.png)
