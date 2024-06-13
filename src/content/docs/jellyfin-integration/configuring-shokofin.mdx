@@ -239,7 +239,10 @@ Automatically merge cour seasons
 
 ## Creating a Shoko Library
 
-Before creating a library, be sure the plugin is configured to your liking as certain options may require creating a library from scratch when changed due to how Jellyfin works internally. More information on the subject can be found in the [Recommendations and Limitations](/jellyfin-integration/recommendations-and-limitations/#TODO) section of the docs for Shokofin.
+Before creating a library, be sure the plugin is configured to your liking as certain options may require creating a
+library from scratch when changed due to how Jellyfin works internally. More information on the subject can be found in
+the [Recommendations and Limitations](/jellyfin-integration/recommendations-and-limitations/#TODO) section of the docs
+for Shokofin.
 
 ![Shokofin - Library Dashboard](/src/assets/img/shokofin/Shokofin-Library-Dashboard.png)
 
@@ -249,31 +252,46 @@ experience with Shokofin is detailed as follows:
 ### Content Type
 ![Shokofin - Library Settings - Content Type](/src/assets/img/shokofin/Shokofin-Library-Content-Type.png)
 
-The "Shows" type is best for most use cases, as Shokofin will still display anime movies in the library unless configured to separate movies from shows. If you
-configured Shokofin to separate movies, you will need to create a "Shows" library as well as a "Movies" library.
+The "Shows" type is best for most use cases, as Shokofin will still display anime movies in the library unless
+configured to separate movies from shows. If you configured Shokofin to separate movies, you will need to create a
+"Shows" library as well as a "Movies" library.
 
-Setting the type to "Mixed Movies and Shows" *will* work, but is not recommended due to quirks within Jellyfin, and with how Shokofin works as a plugin. Any other library type is otherwise unsupported.
+Setting the type to "Mixed Movies and Shows" *will* work, but is not recommended due to quirks within Jellyfin, and with
+how Shokofin works as a plugin. Any other library type is otherwise unsupported.
 
 ### Folders
 ![Shokofin - Library Settings - Folders](/src/assets/img/shokofin/Shokofin-Library-Folders.png)
 
-When specifying the media library's file path, be aware that any path you give must point to a directory with the same contents that Shoko Server sees.
+When specifying the media library's file path, be aware that any path you give must point to a directory with the same
+contents that Shoko Server sees.
 
-For example, if Shoko Server knows the import folder for your collection as `C:\ShokoImport\`, and Jellyfin is given a folder `/mnt/anime`, as long as both
-directories contain the same things, Shokofin will be able to identify your media. Pointing Jellyfin to further nested folders seen within Shoko's import
-folder will also work, such as `/mnt/anime/shows` and `/mnt/anime/movies` given that both `C:\ShokoImport\shows` and `C:\ShokoImport\movies` also exist.
+For example, if Shoko Server knows the import folder for your collection as `C:\ShokoImport\`, and Jellyfin is given a
+folder `/mnt/anime`, as long as both directories contain the same things, Shokofin will be able to identify your media.
+Pointing Jellyfin to further nested folders seen within Shoko's import folder will also work, such as `/mnt/anime/shows`
+and `/mnt/anime/movies` given that both `C:\ShokoImport\shows` and `C:\ShokoImport\movies` also exist.
 
 ### Language and Country
 ![Shokofin - Library Settings - Language and Country](/src/assets/img/shokofin/Shokofin-Library-Lang-and-Country.png)
+{/* TODO: Describe how these settings will not do anything UNLESS certain overrides are set */}
 
 ### Embedded Info
-![Shokofin - Library Settings - Embedded Info)](/src/assets/img/shokofin/Shokofin-Library-Embedded-Info.png)
+![Shokofin - Library Settings - Embedded Info](/src/assets/img/shokofin/Shokofin-Library-Embedded-Info.png)
+{/* Does this section even matter? */}
 
 ### Real Time Monitoring
 ![Shokofin - Library Settings - Real Time Monitoring](/src/assets/img/shokofin/Shokofin-Library-Real-Time-Monitoring.png)
 
+Real time monitoring can be enabled if you desire, which will let Jellyfin listen to file system events for new and
+modified files. This option will not do anything however if your file system does not support these events, and is
+especially common with network mounts like NFS or SMB shares. As an alternative, Shokofin provides a feature called
+Signalr in it's plugin settings which will allow Shokofin to maintain a constant connection to Shoko Server to recieve
+and trigger updates for new and updated files. More information on configuring this feature can be found in the [Signalr
+section](#signalr) of this page.
+
 ### Metadata Downloaders
 ![Shokofin - Library Settings - Metadata Downloaders](/src/assets/img/shokofin/Shokofin-Library-Metadata-Downloaders.png)
+
+
 
 ### Image Fetchers
 ![Shokofin - Library Settings - Image Fetchers](/src/assets/img/shokofin/Shokofin-Library-Image-Fetchers.png)
