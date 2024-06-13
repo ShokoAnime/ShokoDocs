@@ -12,19 +12,28 @@ Description: Information on how to configure Shokofin to fit your setup.
     TODO: Add Revam's changes for VFS library management.
 */}
 
-With Shokofin installed, there's a couple things that need to be done before it can be used as a metadata provider for your anime collection. The goal is to get Shokofin configured to your liking in a way so that you don't have to visit the settings very often once set.
+With Shokofin installed, there's a couple things that need to be done before it can be used as a metadata provider for
+your anime collection. The goal is to get Shokofin configured to your liking in a way so that you don't have to visit
+the settings very often once set.
 
 ## Connecting to Shoko Server
 
-Before you start using the plugin, it is important to connect it to a running instance of **Shoko Server**. Head over to Shokofin's plugin settings and provide the host, username, and password to get that connected.
+Before you start using the plugin, it is important to connect it to a running instance of **Shoko Server**. Head over to
+Shokofin's plugin settings and provide the host, username, and password to get that connected.
 
 ![Shokofin - Connection Settings](/src/assets/img/shokofin/Shokofin-Connection-Settings.png)
 
-After you've established a connection to a running instance of **Shoko Server**, feel free to skim through the plugin settings detailed below and adjust Shokofin to your liking. If the defaults work just fine, go ahead and skip to [Creating a Shoko Library.](#creating-a-shoko-library)
+After you've established a connection to a running instance of **Shoko Server**, feel free to skim through the plugin
+settings detailed below and adjust Shokofin to your liking. If the defaults work just fine, go ahead and skip to
+[Creating a Shoko Library.](#creating-a-shoko-library)
 
 ## Configuring the Plugin Settings
 
-The following will detail what each setting does and common use cases where necessary. Do note that certain options when changed will require a library recreation for existing libraries that use Shokofin as a provider and will be indicated where appropriate. Additional information on the subject can be found in the [Limitations and Recommendations](#temp) section of the docs for Shokofin.
+The following will detail what each setting does and common use cases where necessary. Do note that certain options when
+changed will require a library recreation for existing libraries that use Shokofin as a provider and will be indicated
+where appropriate. Additional information on the subject can be found in the
+[Recommendations and Limitations](/jellyfin-integration/recommendations-and-limitations/#TODO) section of the docs for
+Shokofin.
 
 ### Metadata Settings
 
@@ -217,7 +226,7 @@ Always split existing versions of movies before merging multiple versions
         - Enabling this setting will make sure there will be no merge conflicts by splitting up all the existing merged versions. It will probably also make the plugin do a lot of unneeded work 99.5% of the time, but will help for the last 0.5% that actually need this to be done before every merge. An example is ensuring multiple parts of a movie series (e.g. "Part 1", "Part 2", etc.) are not merged in core Jellyfin because they contain the same Shoko Series Id.
 
 Always split existing versions of episodes before merging multiple versions
-
+`
     - Always split existing merged items before starting the merge.
 
     - What is this setting for?
@@ -230,20 +239,47 @@ Automatically merge cour seasons
 
 ## Creating a Shoko Library
 
-Before creating a library, be sure the plugin is configured to your liking as certain options may require creating a library from scratch when changed due to how Jellyfin works internally. More information on the subject can be found in the [Limitations and Recommendations](#temp) section of the docs for Shokofin.
+Before creating a library, be sure the plugin is configured to your liking as certain options may require creating a library from scratch when changed due to how Jellyfin works internally. More information on the subject can be found in the [Recommendations and Limitations](/jellyfin-integration/recommendations-and-limitations/#TODO) section of the docs for Shokofin.
 
-Now lets get started by adding a new library in Jellyfin's dashboard, specifying the library name, type, and file paths to your media.
+![Shokofin - Library Dashboard](/src/assets/img/shokofin/Shokofin-Library-Dashboard.png)
 
-![Shokofin - Library Settings (1)](/src/assets/img/shokofin/Shokofin-Library-Settings-1.png)
+Let's get started by adding a new library in Jellyfin's dashboard. All important options that will impact your
+experience with Shokofin is detailed as follows:
 
-{/* Somehow word that path needs to be the root of the import folder that Shoko uses for the media, though the path doesn't need to match what shoko knows. Just that the structure in the folder matches relatively */}
+### Content Type
+![Shokofin - Library Settings - Content Type](/src/assets/img/shokofin/Shokofin-Library-Content-Type.png)
+
 The "Shows" type is best for most use cases, as Shokofin will still display anime movies in the library unless configured to separate movies from shows. If you
 configured Shokofin to separate movies, you will need to create a "Shows" library as well as a "Movies" library.
 
-Setting the type to "Mixed movies and Shows" is not recommended due to quarks within Jellyfin, and with how Shokofin works as a plugin. Any other library type is otherwise unsupported.
+Setting the type to "Mixed Movies and Shows" *will* work, but is not recommended due to quirks within Jellyfin, and with how Shokofin works as a plugin. Any other library type is otherwise unsupported.
 
-![Shokofin - Library Settings (2)](/src/assets/img/shokofin/Shokofin-Library-Settings-2.png)
-![Shokofin - Library Settings (3)](/src/assets/img/shokofin/Shokofin-Library-Settings-3.png)
-![Shokofin - Library Settings (4)](/src/assets/img/shokofin/Shokofin-Library-Settings-4.png)
-![Shokofin - Library Settings (5)](/src/assets/img/shokofin/Shokofin-Library-Settings-5.png)
-![Shokofin - Library Settings (6)](/src/assets/img/shokofin/Shokofin-Library-Settings-6.png)
+### Folders
+![Shokofin - Library Settings - Folders](/src/assets/img/shokofin/Shokofin-Library-Folders.png)
+
+When specifying the media library's file path, be aware that any path you give must point to a directory with the same contents that Shoko Server sees.
+
+For example, if Shoko Server knows the import folder for your collection as `C:\ShokoImport\`, and Jellyfin is given a folder `/mnt/anime`, as long as both
+directories contain the same things, Shokofin will be able to identify your media. Pointing Jellyfin to further nested folders seen within Shoko's import
+folder will also work, such as `/mnt/anime/shows` and `/mnt/anime/movies` given that both `C:\ShokoImport\shows` and `C:\ShokoImport\movies` also exist.
+
+### Language and Country
+![Shokofin - Library Settings - Language and Country](/src/assets/img/shokofin/Shokofin-Library-Lang-and-Country.png)
+
+### Embedded Info
+![Shokofin - Library Settings - Embedded Info)](/src/assets/img/shokofin/Shokofin-Library-Embedded-Info.png)
+
+### Real Time Monitoring
+![Shokofin - Library Settings - Real Time Monitoring](/src/assets/img/shokofin/Shokofin-Library-Real-Time-Monitoring.png)
+
+### Metadata Downloaders
+![Shokofin - Library Settings - Metadata Downloaders](/src/assets/img/shokofin/Shokofin-Library-Metadata-Downloaders.png)
+
+### Image Fetchers
+![Shokofin - Library Settings - Image Fetchers](/src/assets/img/shokofin/Shokofin-Library-Image-Fetchers.png)
+
+### Saving Artwork Into Media Folders
+![Shokofin - Library Settings - Saving Artwork](/src/assets/img/shokofin/Shokofin-Library-Saving-Artwork.png)
+
+### Merge Series Across Folders
+![Shokofin - Library Settings (4)](/src/assets/img/shokofin/Shokofin-Library-Merge-Series.png)
