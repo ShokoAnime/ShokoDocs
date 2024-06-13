@@ -285,8 +285,8 @@ Real time monitoring can be enabled if you desire, which will let Jellyfin liste
 modified files. This option will not do anything however if your file system does not support these events, and is
 especially common with network mounts like NFS or SMB shares. As an alternative, Shokofin provides a feature called
 Signalr in it's plugin settings which will allow Shokofin to maintain a constant connection to Shoko Server to recieve
-and trigger updates for new and updated files. More information on configuring this feature can be found in the [Signalr
-section](#signalr) of this page.
+and trigger updates for new and updated files/metadata. More information on configuring this feature can be found in the
+[Signalr section](#signalr) of this page.
 
 ### Metadata Downloaders
 ![Shokofin - Library Settings - Metadata Downloaders](/src/assets/img/shokofin/Shokofin-Library-Metadata-Downloaders.png)
@@ -333,3 +333,7 @@ known to work without issue alongside Shokofin are the Embedded Image Extractor 
 
 ### Merge Series Across Folders
 ![Shokofin - Library Settings - Merge Series](/src/assets/img/shokofin/Shokofin-Library-Merge-Series.png)
+
+If you are using the VFS feature provided by Shokofin, this only needs to be enabled if multiple folders were added to
+the library earlier on in the configuration. For non-VFS managed libraries, it is recommended to enable this no matter what. Enabling lets Shokofin properly group your media into series that reflect your Shoko library without being limited
+by Jellyfin and the media's underlying folder structure.
