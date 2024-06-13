@@ -30,26 +30,55 @@ Shokofin.
 
 ### Metadata Settings
 
+
 ### Library Settings
+![Shokofin - Plugin Settings - Library (1)](/src/assets/img/shokofin/Shokofin-Settings-Library-1.png)
+![Shokofin - Plugin Settings - Library (2)](/src/assets/img/shokofin/Shokofin-Settings-Library-2.png)
+![Shokofin - Plugin Settings - Library (3)](/src/assets/img/shokofin/Shokofin-Settings-Library-3.png)
+![Shokofin - Plugin Settings - Library (4)](/src/assets/img/shokofin/Shokofin-Settings-Library-4.png)
+![Shokofin - Plugin Settings - Library (5)](/src/assets/img/shokofin/Shokofin-Settings-Library-5.png)
+![Shokofin - Plugin Settings - Library (6)](/src/assets/img/shokofin/Shokofin-Settings-Library-6.png)
+![Shokofin - Plugin Settings - Library (7)](/src/assets/img/shokofin/Shokofin-Settings-Library-7.png)
+![Shokofin - Plugin Settings - Library (8)](/src/assets/img/shokofin/Shokofin-Settings-Library-8.png)
+![Shokofin - Plugin Settings - Library (9)](/src/assets/img/shokofin/Shokofin-Settings-Library-9.png)
 
 ### Media Folder Settings
+![Shokofin - Plugin Settings - Media Folder (1)](/src/assets/img/shokofin/Shokofin-Settings-Media-Folder-1.png)
+![Shokofin - Plugin Settings - Media Folder (2)](/src/assets/img/shokofin/Shokofin-Settings-Media-Folder-2.png)
+![Shokofin - Plugin Settings - Media Folder (3)](/src/assets/img/shokofin/Shokofin-Settings-Media-Folder-3.png)
 
 ### Signalr
+![Shokofin - Plugin Settings - Signalr (1)](/src/assets/img/shokofin/Shokofin-Settings-Signalr-1.png)
+![Shokofin - Plugin Settings - Signalr (2)](/src/assets/img/shokofin/Shokofin-Settings-Signalr-2.png)
+![Shokofin - Plugin Settings - Signalr (3)](/src/assets/img/shokofin/Shokofin-Settings-Signalr-3.png)
+![Shokofin - Plugin Settings - Signalr (4)](/src/assets/img/shokofin/Shokofin-Settings-Signalr-4.png)
 
 ### User Settings
+![Shokofin - Plugin Settings - User (1)](/src/assets/img/shokofin/Shokofin-Settings-User-1.png)
+![Shokofin - Plugin Settings - User (2)](/src/assets/img/shokofin/Shokofin-Settings-User-2.png)
+![Shokofin - Plugin Settings - User (3)](/src/assets/img/shokofin/Shokofin-Settings-User-3.png)
+![Shokofin - Plugin Settings - User (4)](/src/assets/img/shokofin/Shokofin-Settings-User-4.png)
+![Shokofin - Plugin Settings - User (5)](/src/assets/img/shokofin/Shokofin-Settings-User-5.png)
+![Shokofin - Plugin Settings - User (6)](/src/assets/img/shokofin/Shokofin-Settings-User-6.png)
 
 ### Plugin Compatibility Settings
 
 ### Advanced Settings
+![Shokofin - Plugin Settings - Advanced (1)](/src/assets/img/shokofin/Shokofin-Settings-Advanced-1.png)
+![Shokofin - Plugin Settings - Advanced (2)](/src/assets/img/shokofin/Shokofin-Settings-Advanced-2.png)
 
 ### Experimental Settings
+![Shokofin - Plugin Settings - Experimental (1)](/src/assets/img/shokofin/Shokofin-Settings-Experimental-1.png)
+![Shokofin - Plugin Settings - Experimental (2)](/src/assets/img/shokofin/Shokofin-Settings-Experimental-2.png)
+![Shokofin - Plugin Settings - Experimental (3)](/src/assets/img/shokofin/Shokofin-Settings-Experimental-3.png)
 
 ## Creating a Shoko Library
 
 Before creating a library, be sure the plugin is configured to your liking as certain options may require creating a
 library from scratch when changed due to how Jellyfin works internally. More information on the subject can be found in
 the [Recommendations and Limitations](/jellyfin-integration/recommendations-and-limitations/#TODO) section of the docs
-for Shokofin.
+for Shokofin. Creating a new library rather than enabling Shokofin on an existing library is required due to the nature
+of how Jellyfin and Shokofin work together.
 
 ![Shokofin - Library Dashboard](/src/assets/img/shokofin/Shokofin-Library-Dashboard.png)
 
@@ -80,12 +109,17 @@ and `/mnt/anime/movies` given that both `C:\ShokoImport\shows` and `C:\ShokoImpo
 ### Language and Country
 ![Shokofin - Library Settings - Language and Country](/src/assets/img/shokofin/Shokofin-Library-Lang-and-Country.png)
 
-With Shokofin, setting the preferred download language or country does nothing unless you set any overrides within the
-plugin settings. (? This needs to be verified)
+With Shokofin, setting the preferred download language will not do anything unless a corresponding override was set in
+the plugin's [Metadata Settings.](#metadata-settings) If a relavent override is set that makes use of the library's
+language preferences, this is the value that will be used for determining the overridden metadata.
+
+Country is not used by Shokofin at this time and can be left unset.
 
 ### Embedded Info
 ![Shokofin - Library Settings - Embedded Info](/src/assets/img/shokofin/Shokofin-Library-Embedded-Info.png)
-{/* Does this section even matter? */}
+
+To prevent any possible clashing with Shokofin's metadata retrieval, leave these two options disabled as it can result
+in mixed metadata and other strange behavior.
 
 ### Real Time Monitoring
 ![Shokofin - Library Settings - Real Time Monitoring](/src/assets/img/shokofin/Shokofin-Library-Real-Time-Monitoring.png)
