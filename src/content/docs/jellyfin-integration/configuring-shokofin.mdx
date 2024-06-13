@@ -12,27 +12,21 @@ Description: Information on how to configure Shokofin to fit your setup.
     TODO: Add Revam's changes for VFS library management.
 */}
 
-Before you start using the plugin it is important to connect the plugin to a running instance of **Shoko Server**. So head over to the plugin settings and provide the `Host`, `Username` and `Password` credentials and click the `Connect` button.
+With Shokofin installed, there's a couple things that need to be done before it can be used as a metadata provider for your anime collection. The goal is to get Shokofin configured to your liking in a way so that you don't have to visit the settings very often once set.
+
+## Connecting to Shoko Server
+
+Before you start using the plugin, it is important to connect it to a running instance of **Shoko Server**. Head over to Shokofin's plugin settings and provide the host, username, and password to get that connected.
 
 ![Shokofin - Connection Settings](/src/assets/img/shokofin/Shokofin-Connection-Settings.png)
 
-After you've established a connection to a running instance of **Shoko Server** then you're free to either use the plugin as-is or to change any of the other settings to your liking.
+After you've established a connection to a running instance of **Shoko Server**, feel free to skim through the plugin settings detailed below and adjust Shokofin to your liking. If the defaults work just fine, go ahead and skip to [Creating a Shoko Library.](#creating-a-shoko-library)
 
-## Connection Settings
+## Configuring the Plugin Settings
 
-Host:
+The following will detail what each setting does and common use cases where necessary. Do note that certain options when changed will require a library recreation for existing libraries that use Shokofin as a provider and will be indicated where appropriate. Additional information on the subject can be found in the [Limitations and Recommendations](#temp) section of the docs for Shokofin.
 
-    - This is the URL leading to where Shoko is running. You can input a full url, or just the dns name/ip.
-
-Username:
-
-    - The user should be an administrator in Shoko, preferably without any filtering applied.
-
-Reset the connection.
-
-    - Be sure to stop any tasks using this plugin before you press the button.
-
-## Metadata Settings
+### Metadata Settings
 
 Main title source:
 
@@ -62,7 +56,7 @@ Minimalistic AniDB descriptions
 
     - Remove any lines starting with '* ', '-- ', '~ ', 'Note', 'Source', and/or 'Summary'
 
-## Plugin Compatibility Settings
+### Plugin Compatibility Settings
 
 We can optionally set some ids for interoperability with other plugins.
 
@@ -78,7 +72,7 @@ Add TMDB IDs
 
     - Enabling this will add the TMDB ID for all supported item types where an ID is available.
 
-## Library Settings
+### Library Settings
 
 If you wish to set the Series/Grouping setting below to "Don't group Series into Seasons", you must disable "Automatically merge series that are spread across multiple folders" in the settings for all Libraries that depend on Shokofin for their metadata.
 On the other hand, if you want to have Series and Grouping be determined by Shoko, or TvDB/TMDB - you must enable the "Automatically merge series that are spread across multiple folders" setting for all Libraries that use Shokofin for their metadata.
@@ -130,7 +124,7 @@ Mark specials
 
     - Add a number to the title of each Special episode
 
-## User Settings
+### User Settings
 
 Configure settings for:
 
@@ -168,7 +162,7 @@ Password:
 
     - The password for account. It can be empty.
 
-## Tag Settings
+### Tag Settings
 
 Hide unverified tags.
 
@@ -184,7 +178,7 @@ Hide any tags related to the setting — a time or place in which the story occu
 
 Hide any tags that involve how or where it aired, or any awards it got
 
-## Advanced Settings
+### Advanced Settings
 
 Enable Crash Reporting.
 
@@ -202,7 +196,7 @@ Ignored folder names:
 
     - A comma separated list of folder names which will be ignored during the library scan.
 
-## Experimental Settings
+### Experimental Settings
 
 Any features/settings in this section is still considered to be in an experimental state. You can enable them, but at the risk if them messing up your library.
 
@@ -234,3 +228,6 @@ Automatically merge cour seasons
 
     - Coming soon™ to a media library near you.
 
+## Creating a Shoko Library
+
+Now that Shokofin is configured, you can now create a library for your collection.
