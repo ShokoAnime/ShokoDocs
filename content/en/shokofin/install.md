@@ -35,6 +35,7 @@ compatible with what.
 | `3.x.x`    | `10.8`   | `4.2.0`       |
 | `dev`      | `10.8`   | `4.2.2`       |
 | Soon™      | `10.9`   | Soon™         |
+{.table .table-bordered}
 
 ### Official Repository
 
