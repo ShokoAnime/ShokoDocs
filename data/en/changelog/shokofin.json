@@ -2,6 +2,198 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "4.0.0",
+      "versionURL": "400",
+      "date": "July 4th, 2024",
+      "blogLink": "https://shokoanime.com/blog/shokofin-400-released/",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added support for Jellyfin 10.9."
+        },
+        {
+          "type": "changed",
+          "text": "Overhauled the settings. Please reconfigure your settings again after the upgrade, because they will have been partially reset."
+        },
+        {
+          "type": "changed",
+          "text": "Use relative based episode numbering."
+        },
+        {
+          "type": "changed",
+          "text": "Removed search results since we as a plugin don't need them."
+        },
+        {
+          "type": "changed",
+          "text": "Removed support for setting TvDB identifiers on entities."
+        },
+        {
+          "type": "added",
+          "text": "Added the Virtual File System (VFS), a new feature responsible for making sure your library is always compatible with Jellyfin's structure. Including better — more integrated and less hacky — support for special features, trailers, and theme videos, both for shows, seasons and movies! And, it's configurable to boot."
+        },
+        {
+          "type": "added",
+          "text": "Better collection support for movies and shows."
+        },
+        {
+          "type": "added",
+          "text": "SignalR events for real-time metadata and file updates from Shoko to Jellyfin."
+        },
+        {
+          "type": "added",
+          "text": "Lazy sync for live-session watch scrobbling, to prevent accidental clicks from affecting your watch history."
+        },
+        {
+          "type": "added",
+          "text": "Add a setting for the \"Add missing metadata\" feature that was previously always enabled, and improve the logic."
+        },
+        {
+          "type": "added",
+          "text": "Added trailers, theme videos and special features metadata providers for the VFS."
+        },
+        {
+          "type": "added",
+          "text": "Added content ratings and production locations using AniDB, with the ability to override a rating per series using custom tags in Shoko Server."
+        },
+        {
+          "type": "added",
+          "text": "Added the ability to override the perceived series type in Jellyfin using custom tags in Shoko Server."
+        },
+        {
+          "type": "added",
+          "text": "EXPERIMENTAL: The season merging option have now been implemented. The feature is still experimental though, so use at your own risk."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed error while iterating media folder list."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed strict filtering for directories."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed series images not loading and pseudo random image order for series."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed user sync and log when the file doesn't exist instead of throwing."
+        },
+        {
+          "type": "fixed",
+          "text": "Simplify user data sync logic."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed log messages for user data sync manager."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed Shoko redirects for groups and series for the new Shoko Web UI."
+        },
+        {
+          "type": "fixed",
+          "text": "Don't use negative season numbers."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed status for not-yet-ended shows."
+        },
+        {
+          "type": "fixed",
+          "text": "Catch directory not existing."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed image display issues for clients that need to use the public host url. "
+        },
+        {
+          "type": "fixed",
+          "text": "Update merge all episodes to use the correct configuration value to check if it should split the existing merged episodes before merging."
+        },
+        {
+          "type": "fixed",
+          "text": "Use password type for password field in the connection settings section in the plugin settings."
+        },
+        {
+          "type": "fixed",
+          "text": "Clear all caches after a library scan is complete."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed ignored sub-title removal."
+        },
+        {
+          "type": "fixed",
+          "text": "Only merge with entries in the same media folder."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed chronological season ordering."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed ending date for shows with unaired seasons in them."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed incompatibly with stable Shoko Server."
+        },
+        {
+          "type": "changed",
+          "text": "Remove unneeded stored offset."
+        },
+        {
+          "type": "changed",
+          "text": "Use english title for episode title if we're using the main title."
+        },
+        {
+          "type": "changed",
+          "text": "Fix casing for scheduled task names."
+        },
+        {
+          "type": "changed",
+          "text": "Add more ignored sub-titles."
+        },
+        {
+          "type": "changed",
+          "text": "Refactored internals to better align with the Jellyfin structure and less align with the Shoko structure."
+        },
+        {
+          "type": "changed",
+          "text": "Better caching of data internally."
+        },
+        {
+          "type": "changed",
+          "text": "Flatten namespaces and enable nullable on all files."
+        },
+        {
+          "type": "changed",
+          "text": "QoL development improvements."
+        },
+        {
+          "type": "changed",
+          "text": "Updated logo."
+        },
+        {
+          "type": "changed",
+          "text": "Added discord notifications for development builds. Join our discord to get more frequent updates for what changes, when it changes! 😉"
+        },
+        {
+          "type": "changed",
+          "text": "Added changelog to GH pre-releases."
+        },
+        {
+          "type": "changed",
+          "text": "Added changelog to development manifest releases."
+        },
+        {
+          "type": "changed",
+          "text": "Added issue templates to the repository."
+        }
+      ]
+    },
+    {
       "version": "3.0.1",
       "versionURL": "301",
       "date": "April 20th, 2023",
@@ -53,15 +245,15 @@
         },
         {
             "type": "added",
-            "text": "**EXPERIMENTAL**: Add experimental section on the configuration page to configure experimental features."
+            "text": "EXPERIMENTAL: Add experimental section on the configuration page to configure experimental features."
         },
         {
             "type": "added",
-            "text": "**EXPERIMENTAL**: Add the ability to merge multiple versions for the entries with the same shoko episode id."
+            "text": "EXPERIMENTAL: Add the ability to merge multiple versions for the entries with the same shoko episode id."
         },
         {
             "type": "added",
-            "text": "**EXPERIMENTAL**: try implementing chronological season sorting as an experimental feature."
+            "text": "EXPERIMENTAL: try implementing chronological season sorting as an experimental feature."
         },
         {
             "type": "changed",
