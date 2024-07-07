@@ -2,6 +2,22 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.1.18",
+      "versionURL": "1118",
+      "date": "Jul 8th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.18",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed failed_list initialization placement in force-metadata.py (thanks dasco144)"
+        },
+        {
+          "type": "added",
+          "text": "Added the minimum required version of Shoko Server to the readme"
+        }
+      ]
+    },
+    {
       "version": "1.1.17",
       "versionURL": "1117",
       "date": "Jun 6th, 2024",
