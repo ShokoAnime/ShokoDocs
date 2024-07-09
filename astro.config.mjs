@@ -1,6 +1,7 @@
-import { defineConfig } from 'astro/config';
-import starlight from '@astrojs/starlight';
 import react from '@astrojs/react';
+import starlight from '@astrojs/starlight';
+import { defineConfig } from 'astro/config';
+import starlightImageZoom from 'starlight-image-zoom'
 
 // https://astro.build/config
 export default defineConfig({
@@ -81,6 +82,20 @@ export default defineConfig({
      collapsed: true,
     },
     {
+     label: 'Renaming Plugins',
+     collapse: true,
+     items: [
+      {
+       label: 'Lua Renamer',
+       items: [
+        { label: 'Getting Started', link: '/renaming-plugins/lua-renamer/getting-started' },
+        { label: 'Script Authoring', link: '/renaming-plugins/lua-renamer/script-authoring' },
+        { label: 'Frequently Asked Questions', link: '/renaming-plugins/lua-renamer/faq' }
+       ]
+      }
+     ]
+    },
+    {
      autogenerate: {
       directory: 'changelog',
      },
@@ -96,6 +111,7 @@ export default defineConfig({
      link: 'contribute',
     },
    ],
+   plugins: [starlightImageZoom()],
   }),
   react(),
  ],
