@@ -83,7 +83,7 @@ export default defineConfig({
     },
     {
      label: 'Renaming Plugins',
-     collapse: true,
+     collapsed: true,
      items: [
       {
        label: 'Lua Renamer',
