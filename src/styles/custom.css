@@ -26,13 +26,6 @@ strong {
 	color: var(--custom-bold)
 }
 
-summary.accordion-header::after {
-	content: '>';
-	display: inline-block;
-	margin-left: 1ch;
-	transition: 0.2s;
-}
-
 details[open] > summary::after {
 	transform: rotate(90deg);
 }
