@@ -34,6 +34,7 @@ export default defineConfig({
       directory: 'getting-started',
      },
      label: 'Getting Started',
+     collapsed: true,
     },
     {
      label: 'Shoko Server',

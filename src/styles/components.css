@@ -26,6 +26,7 @@
 /* ---------------------------------- */
 
 .accordion-wrapper {
+	border: none !important;
 	margin-top: 0 !important;
 }
 
@@ -35,6 +36,19 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 1rem;
+	position: relative;
+}
+
+.accordion-header::before {
+	display: none !important;
+}
+
+.accordion-header::after {
+	content: '>';
+	display: inline-block;
+	position: absolute;
+	right: 1rem;
+	transition: 0.2s;
 }
 
 details[open] > .accordion-header {
