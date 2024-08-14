@@ -321,7 +321,7 @@ details[open] > .accordion-header {
 }
 
 .docker-output-codeblock {
-	background-color: var(--sl-color-bg-sidebar);;
+	background: var(--sl-color-bg-nav);
 	border-radius: 5px;
 	box-shadow: var(--ec-frm-frameBoxShdCssVal);
 	padding: 1rem;

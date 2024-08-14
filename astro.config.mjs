@@ -26,7 +26,7 @@ export default defineConfig({
    },
    customCss: [
     './src/styles/custom.css',
-    '@fontsource-variable/lexend-deca',
+    '@fontsource-variable/open-sans',
    ],
    sidebar: [
     {
