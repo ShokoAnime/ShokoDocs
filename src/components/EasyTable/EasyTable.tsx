@@ -26,7 +26,7 @@ const EasyTable = ({
   }
 
   if (typeof cellData === 'object') {
-   return <a href={cellData.link}>{cellData.name}</a>;
+   return <a href={cellData.link}>{cellData.title}</a>;
   }
 
   if (typeof cellData === 'string') {

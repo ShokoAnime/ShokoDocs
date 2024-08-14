@@ -1,12 +1,15 @@
-@import "overrides.css";
 /* Astro & Starlight Overrides */
-@import "components.css"; /* Custom Components */
+@import "overrides.css";
+
+/* Custom Components */
+@import "components.css";
 
 /* CSS Variables */
 
 :root {
 	--sl-content-width: 900px;
-	--sl-font: 'Lexend Deca Variable', sans-serif;
+	--sl-font: 'Open Sans Variable', sans-serif;
+	--sl-color-text: #e3e3e3;
 	--custom-bold: #dbbcff;
 	--changelog-added: #44A3FF;
 	--changelog-changed: #10C469;
@@ -15,11 +18,20 @@
 }
 
 :root[data-theme='light'] {
+	--sl-color-text: #1c1e21;
 	--custom-bold: #0114a2;
 	--changelog-added: #3699FF;
 	--changelog-changed: #23aca5;
 	--changelog-fixed: #eca21a;
 	--changelog-removed: #F64E60;
+}
+
+a {
+	font-weight: 600;
+}
+
+p {
+	font-weight: 500;
 }
 
 strong {
@@ -45,6 +57,10 @@ code > div {
 h2 {
 	border-top: 1px solid var(--sl-color-gray-6);
 	padding-top: 2rem;
+}
+
+h4 {
+	margin: 2rem 0 !important;
 }
 
 .group-label > .large {

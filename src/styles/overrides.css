@@ -18,18 +18,18 @@
 @media (min-width: 50rem) {
 
 	/* Remove header background. */
-	.header.astro-dqmhwrg4 {
+	.page > .header {
 		background: var(--sl-color-bg);
 		border-bottom: 1px solid var(--sl-color-hairline);
 	}
 
 	/* Set search outer container max width. */
-	.header.sl-flex.astro-aaphstyd > .sl-flex.astro-aaphstyd {
+	.header.sl-flex > .sl-flex {
 		max-width: 56.25rem;
 	}
 
 	/* Set search max width. */
-	button:where(.astro-dn3vl26n)[data-open-modal]{
+	.header > .sl-flex * button {
 		margin: 0 auto;
 		max-width: 40rem;
 	}
@@ -43,25 +43,6 @@
 	/* Increase sidebar top padding. */
 	.sidebar-content {
 		padding-top: 1.5rem;
-	}
-
-	/* Change header top margin. */
-	.top-level:where(.astro-4mjceqbz)>li:where(.astro-4mjceqbz)+li:where(.astro-4mjceqbz) {
-		margin-top: 0.2rem;
-	}
-
-	/* Change sidebar nav header size. */
-	.large:where(.astro-dlw5qa7i) {
-		font-size: var(--sl-text-sm);
-	}
-
-	/* Increase sidebar header padding. */
-	summary:where(.astro-4mjceqbz) {
-		padding: 0.5em var(--sl-sidebar-item-padding-inline);
-	}
-
-	ul:where(.astro-4mjceqbz) ul:where(.astro-4mjceqbz) li:where(.astro-4mjceqbz):has(>a[aria-current=page]) {
-		border-inline-start-color: var(--sl-color-text-accent);
 	}
 
 }
@@ -120,8 +101,43 @@
 	color: var(--sl-color-asides-text-accent);
 }
 
+
+/* Changing how asides look. */
 .starlight-aside {
-	border-radius: 5px;
+	border: 1px solid;
+	border-radius: .5rem;
+	color: var(--sl-color-white);
+	font-size: .9375rem;
+	margin: 2rem 0 !important;
+}
+
+.starlight-aside__title,
+.starlight-aside__icon {
+	align-items: center;
+	font-size: .9375rem;
+}
+
+.starlight-aside--caution {
+	background-color: color-mix(in srgb, var(--sl-color-orange-low), transparent 75%);
+	border-color: var(--sl-color-orange);
+}
+
+.starlight-aside--danger {
+	background-color: color-mix(in srgb, var(--sl-color-red-low), transparent 75%);
+	border-color: var(--sl-color-red);
+	--sl-color-asides-text-accent: var(--sl-color-red-high);
+}
+
+.starlight-aside--tip {
+	background-color: color-mix(in srgb, var(--sl-color-purple-low), transparent 75%);
+	border-color: var(--sl-color-purple);
+	--sl-color-asides-text-accent: var(--sl-color-purple-high);
+}
+
+.starlight-aside--note {
+	background-color: color-mix(in srgb, var(--sl-color-blue-low), transparent 75%);
+	border-color: var(--sl-color-blue);
+	--sl-color-asides-text-accent: var(--sl-color-blue-high);
 }
 
 /* Reduce padding on Hero section. */
@@ -163,4 +179,14 @@
 	border: none !important;
 	margin: 3rem 0 !important;
 	padding-top: 0 !important;
+}
+
+/* Change previous/next font size. */
+.link-title {
+	font-size: var(--sl-text-lg);
+}
+
+/* Reduce margin for previous/next button. */
+.meta.sl-flex {
+	margin-top: 1.5rem;
 }
