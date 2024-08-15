@@ -105,7 +105,7 @@ details[open] > .accordion-header {
 }
 
 .easy-row > div {
-	margin: auto 0;
+	margin: auto 0 !important;
 }
 
 .easy-row > div > p {
@@ -117,6 +117,14 @@ details[open] > .accordion-header {
 	overflow-x: auto;
 	white-space: pre;
 	width: 85%;
+}
+
+.easy-cell-line {
+	padding: 0 0 1rem 0 !important;
+}
+
+.easy-cell-line-last {
+	padding: 0 !important;
 }
 
 /* ---------------------------------- */
