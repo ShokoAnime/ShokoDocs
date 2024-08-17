@@ -63,8 +63,21 @@ It is also recommended to change the following options at the bottom of the same
 
 Once you’ve reviewed and configured the remaining options, which are self-explanatory, click the **Add Library** button. After adding the library, initiate a scan within Plex and wait for Plex to add your collection.
 
-Lastly, in Plex Settings: `Settings > Agents > Shows > ShokoRelay` move the following entry to the top of the list and enable it:
+Lastly, in Plex: `Settings > Agents > Shows > ShokoRelay` move the following entry to the top of the list and enable it:
   - [x] Local Media Assets (TV)
+
+### Recommended Shoko Server Configuration
+Enable the following options in Shoko to ensure that Plex has at least one source of metadata for everything:
+- `Settings > AniDB > Download Options`
+  - [x] Character Images
+  - [x] Creator Images
+- `Settings > Metadata Sites > TMDB Options`
+  - [x] Auto Link
+  - [x] Auto Link Restricted
+  - [x] Download Backdrops
+- `Settings > Collection > Relation Options`
+  - [x] Auto Group Series
+  - [x] Determine Main Series Using Relation Weighing
 
 ## Notes
 ### Troubleshooting
@@ -73,7 +86,7 @@ When encountering any issues with the scanner or agent, please note that there a
 - Scanner Logs: `\Plex Media Server\Logs\Shoko Relay Scanner.log`
 
 :::tip[Important]
-When encountering bad matches/metadata the first thing to check for is if TheTVDB match and episode mapping is correct in Shoko for the series in question.
+When encountering bad matches/metadata the first thing to check for is if TMDB match and episode mapping is correct in Shoko for the series in question.
 :::
 
 :::caution[Warning]
@@ -125,9 +138,9 @@ The appended titles will appear after an em dash (**—**) making it easy to sea
 :::
 
 ### Combining Series
-If you have TheTVDB matching enabled in Shoko and `SingleSeasonOrdering` disabled the agent will prioritize episode numbering from it by default. This allows shows which are separated on AniDB to be combined into a single entry inside Plex. To Achieve this simply multi-select (with the primary series as the first selection) the series in your Plex library which you know are part of a single TheTVDB entry then select `Merge`.
+If you have TMDB matching enabled in Shoko and `SingleSeasonOrdering` disabled the agent will prioritize episode numbering from it by default. This allows shows which are separated on AniDB to be combined into a single entry inside Plex. To Achieve this simply multi-select (with the primary series as the first selection) the series in your Plex library which you know are part of a single TMDB entry then select `Merge`.
 
-Using Fairy Tail as an example all of the following series can be safely merged into a single entry in Plex if they are correctly matched to TheTVDB in Shoko:
+Using Fairy Tail as an example all of the following series can be safely merged into a single entry in Plex if they are correctly matched to TMDB in Shoko:
 - Fairy Tail
 - Fairy Tail (2011)
 - Fairy Tail (2014)
