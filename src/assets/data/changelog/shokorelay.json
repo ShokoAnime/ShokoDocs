@@ -2,6 +2,42 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.00",
+      "versionURL": "1200",
+      "date": "Aug 17th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.00",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Changed all TvDB references/usage in the bundle to new TMDB alternatives"
+        },
+        {
+          "type": "changed",
+          "text": "Changed episode thumbnail links to use the default selection"
+        },
+        {
+          "type": "added",
+          "text": "Added TMDB descriptions for series and episodes if configured in Shoko"
+        },
+        {
+          "type": "added",
+          "text": "Added several logging improvements (mainly cast & crew image logs)"
+        },
+        {
+          "type": "added",
+          "text": "Added several readme additions including recommended settings for Shoko"
+        },
+        {
+          "type": "fixed",
+          "text": "Account for \"Fanarts\" recently being renamed to \"Backdrops\" in APIv3"
+        },
+        {
+          "type": "removed",
+          "text": "Removed support for banner images as they are unsupported by TMDB and almost completely deprecated in Plex"
+        }
+      ]
+    },
+    {
       "version": "1.1.18",
       "versionURL": "1118",
       "date": "Jul 8th, 2024",
