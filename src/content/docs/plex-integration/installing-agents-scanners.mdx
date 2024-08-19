@@ -5,6 +5,7 @@ sidebar:
   order: 1
 ---
 import EasyTable from "../../../components/EasyTable/EasyTable";
+import { Steps } from '@astrojs/starlight/components';
 
 Both Shoko Metadata and Shoko Relay do not come with an installer. Please follow the manual installation instructions
 below. This guide assumes you've installed Plex into the **default install directory**, so make adjustments as
@@ -31,52 +32,185 @@ to decide which plugin you'd like to use.
 Both plugins are outstanding for media playback; the decision essentially comes down to identifying which plugin best
 suits your needs
 
+
 ## Windows
 
-Download [Shoko Metadata](https://shokoanime.com/downloads/) or [ Shoko Relay](https://shokoanime.com/downloads/) and
-extract the zip file. Depending on the plugin you downloaded, you'll either have **ShokoMetadata.bundle** or
-**ShokoRelay.bundle** as the contents. If there is **anything** after the **.bundle** part, make sure to rename it.
-Once done, move the folder into the following directory.
+Installing on Windows is pretty straightforward and requires minimal editing on your part. If you run into any issues,
+retrace your steps and if still stuck, feel free to ask for help on our Discord server.
 
-```cmd
-%LOCALAPPDATA%\Plex Media Server\Plug-ins
-````
+:::tip[VSCode]
+We recommend doing the edits listed below in [VSCode](https://code.visualstudio.com/) or similar as Python is
+space-sensitive and extra or missing spaces can break the file.
+:::
 
-Now you need to move the scanners into the scanner folder. If you never installed custom scanners before, you might
-need to create the folder labeled **Scanners** manually. Please note, **Shoko Relay** does not have a movie scanner.
+### Shoko Relay
 
-The **Movie** and **Series** scanners are located in the
-following directory:
+Before you continue forward, make sure you have Shoko Server installed and running and have downloaded the
+[Shoko Relay](https://shokoanime.com/downloads/) agent and scanner.
 
-```cmd title="ShokoMetadata"
-%LOCALAPPDATA%\Plex Media Server\Plug-ins\ShokoMetadata.bundle\Contents\Resources
-```
+#### Install
 
-```cmd title="ShokoRelay"
-%LOCALAPPDATA%\Plex Media Server\Plug-ins\ShokoRelay.bundle\Contents\Resources
-```
+<Steps>
+1. Download and Extract the Plugin
+    - Download the [Shoko Relay](https://shokoanime.com/downloads/) plugin.
+    - Extract the `.zip` file. You should have a folder named `ShokoRelay.bundle` after extraction.
+    - Ensure there is nothing after the `.bundle` in the folder name; if there is, rename the folder to remove any
+    additional text.
 
-Move both folders into the following directory.
+2. Move the Plugin Folder
+    - Move the `ShokoRelay.bundle` folder to the following directory:
+      ```cmd
+      %LOCALAPPDATA%\Plex Media Server\Plug-ins
+      ```
 
-```cmd
-%LOCALAPPDATA%\Plex Media Server\Scanners
-```
+3. Install the Series Scanner
+    - Note that Shoko Relay does not include a movie scanner.
+    - Navigate to the following directory:
+      ```cmd
+      %LOCALAPPDATA%\Plex Media Server\Plug-ins\ShokoRelay.bundle\Contents\Resources
+      ```
+    - Move the `Series` scanner folder into the following directory:
+      ```cmd
+      %LOCALAPPDATA%\Plex Media Server\Scanners
+      ```
+</Steps>
+
+#### Editing Series Scanner
+
+If you closed the window, open file explorer and navigate to the following.
+
+<Steps>
+1. Navigate to the Plex scanners directory:
+      ```cmd
+      %LOCALAPPDATA%\Plex Media Server\Scanners\Series
+      ```
+
+2. Open Shoko Relay Scanner.py.
+3. Make adjustments to the Prefs section to align it with your Shoko configuration. For most users, you'll only need
+to update the username and password fields:
+    ```py
+    Prefs = {
+    'Hostname': '127.0.0.1',
+    'Port': 8111,
+    'Username': 'username',
+    'Password': 'password',
+    'IncludeSpecials': True,
+    'IncludeOther': True,
+    'SingleSeasonOrdering': False
+    }
+    ```
+</Steps>
+
+Please see the [Series Scanner Advanced Settings](#series-scanner-advanced-settings) section for more information on
+the advanced settings available for the series scanner.
+
+### Shoko Metadata
+Before you continue forward, make sure you have Shoko Server installed and running and have downloaded the
+[ShokoMetadata](https://shokoanime.com/downloads/) agents and scanners.
+
+#### Install
+
+<Steps>
+1. Download and Extract the Plugin
+    - Download the [Shoko Metadata](https://shokoanime.com/downloads/) plugin.
+    - Extract the `.zip` file. You should have a folder named `ShokoMetadata.bundle` after extraction.
+    - Ensure there is nothing after the `.bundle` in the folder name; if there is, rename the folder to remove any
+    additional text.
+
+2. Move the Plugin Folder
+    - Move the `ShokoMetadata.bundle` folder to the following directory:
+      ```cmd
+      %LOCALAPPDATA%\Plex Media Server\Plug-ins
+      ```
+
+3. Install the Scanners
+    - If you haven't installed custom scanners before, you might need to manually create the `Scanners` folder in
+    the Plex directory.
+    - Navigate to the following directory:
+      ```cmd
+      %LOCALAPPDATA%\Plex Media Server\Plug-ins\ShokoMetadata.bundle\Contents\Resources
+      ```
+    - Move the `Movie` and `Series` scanner folders into the following directory:
+      ```cmd
+      %LOCALAPPDATA%\Plex Media Server\Scanners
+      ```
+</Steps>
+
+#### Editing Shoko Movie Scanner
+
+If you closed the window, open file explorer and navigate to the following.
+
+<Steps>
+1. Navigate to the Plex scanners directory:
+      ```cmd
+      %LOCALAPPDATA%\Plex Media Server\Scanners\Movies
+      ```
+
+2. Open Shoko Movie Scanner.py.
+3. Make adjustments to the Prefs section to align it with your Shoko configuration. For most users, you'll only need
+to update the username and password fields:
+    ```py
+    Prefs = {
+    'Hostname': '127.0.0.1',
+    'Port': 8111,
+    'Username': 'username',
+    'Password': 'password',
+    }
+    ```
+</Steps>
+
+#### Editing Shoko Series Scanner
+
+If you closed the window, open file explorer and navigate to the following.
+
+<Steps>
+1. Navigate to the Plex scanners directory:
+      ```cmd
+      %LOCALAPPDATA%\Plex Media Server\Scanners\Series
+      ```
+
+2. Open Shoko Series Scanner.py.
+3. Make adjustments to the Prefs section to align it with your Shoko configuration. For most users, you'll only need
+to update the username and password fields:
+    ```py
+    Prefs = {
+    'Hostname': '127.0.0.1',
+    'Port': 8111,
+    'Username': 'username',
+    'Password': 'password',
+    'IncludeSpecials': True,
+    'IncludeOther': True,
+    'SingleSeasonOrdering': False
+    }
+    ```
+</Steps>
+
+Please see the [Series Scanner Advanced Settings](#series-scanner-advanced-settings) section for more information on
+the advanced settings available for the series scanner.
 
 ## Linux
+
+Getting everything configured on Linux is a bit more involved than on Windows, but it's still relatively simple. If you
+run into any issues, retrace your steps and if still stuck, feel free to ask for help on our Discord server.
+
+### Prerequisite Steps
 
 First, we will assign an environment variable `$PLEX_HOME` that will point to the base directory for your Plex content.
 This will make it easier to follow the guide, regardless of the Plex install method.
 
-Below are the three most common install methods, and what you need to do for each one before you continue with the rest of the guide.
+Below are the three most common install methods, and what you need to do for each one before you continue with the rest
+of the guide.
 
 :::caution[Custom installs]
-If you installed Plex using another method, then please assign the variable to your own, and make sure to use the correct user when executing the
+If you installed Plex using another method, then please assign the variable to your own, and make sure to use the
+correct user when executing the
 steps listed below.
 :::
 
 #### Bare-Metal Variable
 
-Sign in with **the user responsible for running PMS** (replace `<username>` with the according username) and assign the variable:
+Sign in with **the user responsible for running PMS** (replace `<username>` with the according username) and
+assign the variable:
 
 ```sh
 sudo -u <username> -s /bin/sh
@@ -100,8 +234,8 @@ export PLEX_HOME="/var/snap/plexmediaserver/common/Library/Application Support/P
 
 :::caution
 This section assumes you're using the official docker image (plexinc/pms-docker). If you're using any other image,
-(e.g. linuxserver/plex), then either make sure or tweak the above variable to lead to your **Plex Media Server** directory.
-If the above variable is not set correctly, then the guide will fail at the first step.
+(e.g. linuxserver/plex), then either make sure or tweak the above variable to lead to your **Plex Media Server**
+directory. If the above variable is not set correctly, then the guide will fail at the first step.
 :::
 
 Attach to the running **PMS container** (replace `<container name>` accordingly) and and assign the variable:
@@ -111,98 +245,151 @@ docker exec -it <container name> /bin/sh
 export PLEX_HOME="/config/Library/Application Support/Plex Media Server"
 ```
 
-### Installation Steps
+### Shoko Relay
 
-Navigate to the **Plug-ins** directory of your install
+Before you continue forward, make sure you have Shoko Server installed and running and have downloaded the
+[Shoko Relay](https://shokoanime.com/downloads/) agents and scanners.
 
-```sh
-cd "${PLEX_HOME}/Plug-ins";
-```
+#### Install
 
-Download and extract the latest bundle from GibHub using **one** of the following commands:
+<Steps>
+1. Navigate to the Plug-ins Directory
+    - Open a terminal and navigate to the `Plug-ins` directory of your Plex installation:
+      ```sh
+      cd "${PLEX_HOME}/Plug-ins";
+      ```
 
-```sh title="ShokoMetadata"
-curl -L https://github.com/Cazzar/ShokoMetadata.bundle/archive/master.tar.gz | tar -xzf -
-```
+2. Download and Extract the Bundle
+    - Use one of the following commands to download and extract the latest Shoko Relay bundle from GitHub:
+      ```sh title="Using curl"
+      curl -L https://github.com/natyusha/ShokoRelay.bundle/archive/master.tar.gz | tar -xzf -
+      ```
+      ```sh title="Using wget"
+      wget -O - https://github.com/natyusha/ShokoRelay.bundle/archive/master.tar.gz | tar -xzf -
+      ```
 
-```sh title="ShokoRelay"
-curl -L https://github.com/natyusha/ShokoRelay.bundle/archive/master.tar.gz | tar -xzf -
-```
+3. Rename the Folder (if necessary)
+    - If the extracted folder has a suffix, remove it by renaming the folder:
+      ```sh
+      mv ShokoRelay.bundle-master ShokoRelay.bundle
+      ```
 
-```sh title="ShokoMetadata"
-wget -O - https://github.com/Cazzar/ShokoMetadata.bundle/archive/master.tar.gz | tar -xzf -
-```
+4. Ensure the Scanners Directory Exists
+    - Make sure the `Scanners` directory exists in the base Plex directory:
+      ```sh
+      mkdir -p "${PLEX_HOME}/Scanners"
+      ```
 
-```sh title="ShokoRelay"
-wget -O - https://github.com/natyusha/ShokoRelay.bundle/archive/master.tar.gz | tar -xzf -
-```
+5. Move the Scanners
+    - Copy the scanners from the extracted bundle to the `Scanners` directory:
+      ```sh
+      cp -R ShokoRelay.bundle/Contents/* ../Scanners/
+      ```
+</Steps>
 
-If needed, make sure to remove the suffix.
+#### Editing Shoko Series Scanner
 
-```sh title="ShokoMetadata"
-mv ShokoMetadata.bundle-master ShokoMetadata.bundle
-```
+If you closed the window, open file explorer and navigate to the following.
 
-```sh title="ShokoRelay"
-mv ShokoRelay.bundle-master ShokoRelay.bundle
-```
+<Steps>
+1. Open the Shoko Series Scanner.py file:
+      ```sh
+      ${EDITOR:-nano} "${PLEX_HOME}/Scanners/Series/Shoko Series Scanner.py"
+      ```
+2. Make adjustments to the Prefs section to align it with your Shoko configuration. For most users, you'll only need
+to update the username and password fields:
+    ```py
+    Prefs = {
+    'Hostname': '127.0.0.1',
+    'Port': 8111,
+    'Username': 'username',
+    'Password': 'password',
+    'IncludeSpecials': True,
+    'IncludeOther': True,
+    'SingleSeasonOrdering': False
+    }
+    ```
+</Steps>
 
-Ensure that the **Scanners** directory exists in the base directory
+Please see the [Series Scanner Advanced Settings](#series-scanner-advanced-settings) section for more information on
+the advanced settings available for the series scanner.
 
-```sh
-mkdir -p "${PLEX_HOME}/Scanners"
-```
+### Shoko Metadata
 
-Move the scanners into the **Scanners** directory
+Before you continue forward, make sure you have Shoko Server installed and running and have downloaded the
+[ShokoMetadata](https://shokoanime.com/downloads/) agents and scanners.
 
-```sh
-cp -R ShokoMetadata.bundle/Contents/Resources/* ../Scanners/
-```
+#### Install
 
-## Editing Plex Scanners
+<Steps>
+1. Navigate to the Plug-ins Directory
+    - Open a terminal and navigate to the `Plug-ins` directory of your Plex installation:
+      ```sh
+      cd "${PLEX_HOME}/Plug-ins";
+      ```
 
-With Shoko Metadata installed, you'll need to make a few edits to both the **Series** and **Movies** scanner in
-order for them to properly work with Shoko. Please note, **Shoko Relay** does not have a movie scanner.
+2. Download and Extract the Bundle
+    - Use one of the following commands to download and extract the latest Shoko Metadata bundle from GitHub:
+      ```sh title="Using curl"
+      curl -L https://github.com/Cazzar/ShokoMetadata.bundle/archive/master.tar.gz | tar -xzf -
+      ```
+      ```sh title="Using wget"
+      wget -O - https://github.com/Cazzar/ShokoMetadata.bundle/archive/master.tar.gz | tar -xzf -
+      ```
 
-### Windows
+3. Rename the Folder (if necessary)
+    - If the extracted folder has a suffix, remove it by renaming the folder:
+      ```sh
+      mv ShokoMetadata.bundle-master ShokoMetadata.bundle
+      ```
 
-We recommend doing the following edits in [VSCode](https://code.visualstudio.com/) or similar as Python is
-space-sensitive and extra or missing spaces can break the file.
+4. Ensure the Scanners Directory Exists
+    - Make sure the `Scanners` directory exists in the base Plex directory:
+      ```sh
+      mkdir -p "${PLEX_HOME}/Scanners"
+      ```
+
+5. Move the Scanners
+    - Copy the scanners from the extracted bundle to the `Scanners` directory:
+      ```sh
+      cp -R ShokoMetadata.bundle/Contents/Resources/* ../Scanners/
+      ```
+</Steps>
 
 #### Editing Shoko Movie Scanner
 
 If you closed the window, open file explorer and navigate to the following.
 
-```cmd
-%LOCALAPPDATA%\Plex Media Server\Scanners\Movies
-```
-
-Open **Shoko Movie Scanner.py** and make adjustments to the **Prefs** section to align it with your Shoko
-configuration. For the majority of users, you'll simply need to update the **username** and **password** fields.
-
-```py
-Prefs = {
+<Steps>
+1. Open the Shoko Movie Scanner.py file:
+      ```sh
+      ${EDITOR:-nano} "${PLEX_HOME}/Scanners/Series/Shoko Movie Scanner.py"
+      ```
+2. Make adjustments to the Prefs section to align it with your Shoko configuration. For most users, you'll only need
+to update the username and password fields:
+    ```py
+    Prefs = {
     'Hostname': '127.0.0.1',
     'Port': 8111,
     'Username': 'username',
     'Password': 'password',
-}
-```
+    }
+    ```
+</Steps>
 
-#### Editing Shoko Series Scanner / Shoko Relay Scanner
+#### Editing Shoko Series Scanner
 
 If you closed the window, open file explorer and navigate to the following.
 
-```cmd
-%LOCALAPPDATA%\Plex Media Server\Scanners\Series
-```
-
-Open **Shoko Series Scanner.py**  or **Shoko Relay Scanner.py** depending on which plugin you installed and make
-adjustments to the **Prefs** section to align it with your Shoko configuration. For the majority of users, you'll
-simply need to update the **username** and **password** fields.
-
-```py
-Prefs = {
+<Steps>
+1. Open the Shoko Series Scanner.py file:
+      ```sh
+      ${EDITOR:-nano} "${PLEX_HOME}/Scanners/Series/Shoko Series Scanner.py"
+      ```
+2. Make adjustments to the Prefs section to align it with your Shoko configuration. For most users, you'll only need
+to update the username and password fields:
+    ```py
+    Prefs = {
     'Hostname': '127.0.0.1',
     'Port': 8111,
     'Username': 'username',
@@ -210,53 +397,9 @@ Prefs = {
     'IncludeSpecials': True,
     'IncludeOther': True,
     'SingleSeasonOrdering': False
-}
-```
-
-### Linux
-
-Edit the `Prefs` section **in each scanner** using your preferred cmd editor so they match with your **Shoko Server** install.
-
-#### Series Scanner
-
-```sh title="ShokoMetadata"
-${EDITOR:-nano} "${PLEX_HOME}/Scanners/Series/Shoko Series Scanner.py"
-```
-
-```sh title="ShokoRelay"
-${EDITOR:-nano} "${PLEX_HOME}/Scanners/Series/Shoko Relay Scanner.py"
-```
-
-For most users, you'll only need to change the **username** and **password**. As Python is space-sensitive, make sure to not add or remove any spaces.
-
-```py
-Prefs = {
-    'Hostname': '127.0.0.1',
-    'Port': 8111,
-    'Username': 'username',
-    'Password': 'password',
-    'IncludeSpecials': True,
-    'IncludeOther': True,
-    'SingleSeasonOrdering': False
-}
-```
-
-#### Movie Scanner
-
-```sh
-${EDITOR:-nano} "${PLEX_HOME}/Scanners/Movies/Shoko Movie Scanner.py"
-```
-
-For most users you'll only need to change the **username** and **password**. As Python is space-sensitive make sure to not add or remove any spaces.
-
-```py
-Prefs = {
-    'Hostname': '127.0.0.1',
-    'Port': 8111,
-    'Username': 'username',
-    'Password': 'password',
-}
-```
+    }
+    ```
+</Steps>
 
 ## Series Scanner Advanced Settings
 
@@ -267,13 +410,16 @@ These additional options are detailed below.
   header={["Option", "Description"]}
   data={[
     [
-      "IncludeSpecials", "Files marked as specials in Shoko will be shown in the series as part of Season 0."
+      "IncludeSpecials",
+      "Files marked as specials in Shoko will be shown in the series as part of Season 0."
     ],
     [
-      "IncludeOther", "Files marked as other in Shoko will be shown in the series as part of Season 0."
+      "IncludeOther",
+      "Files marked as other in Shoko will be shown in the series as part of Season 0."
     ],
     [
-      "SingleSeasonOrdering", "Episodes are no longer separated by seasons. All normal episodes are put into Season 1, specials into Season 0, openings/endings into Season -1, and trailers into Season -2."
+      "SingleSeasonOrdering",
+      "Episodes are no longer separated by seasons. All normal episodes are put into Season 1, specials into Season 0, openings/endings into Season -1, and trailers into Season -2."
     ],
   ]}
   columnWidths={{ Option: "25%", Description: "75%" }}

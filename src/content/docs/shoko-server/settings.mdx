@@ -4,12 +4,14 @@ description: Overview of the Settings in the WebUI.
 ---
 import EasyTable from "../../../components/EasyTable/EasyTable";
 
-The Settings section allows you to customize the data collection and metadata handling for your series in Shoko. It's
+The Settings section allows you to customize data collection and metadata handling for your series in Shoko. It’s
 organized into six main categories: General, Import, AniDB, Metadata Sites, User Management, and API Keys. These
-settings enable you to control the type and quantity of information Shoko collects, ensuring that it downloads and
-stores only what's necessary. This approach helps prevent the accumulation of unwanted metadata, streamlining
-your collection's overall metadata size. Each section offers a range of options, from simple operational changes to
-in-depth data and user management. This lets you customize Shoko's performance to suit your needs.
+settings enable you to control the type and amount of information Shoko collects, ensuring that it only downloads
+and stores what’s necessary.
+
+This approach helps prevent the accumulation of unwanted metadata, streamlining your
+collection’s overall size. Each section offers a range of options, from simple operational tweaks to in-depth data
+and user management, allowing you to tailor Shoko’s performance to your specific needs.
 
 ## General
 
@@ -28,7 +30,8 @@ since they lasted updated.
 
 :::caution[Switching Channels]
 While you are more than welcome to switch both Server and Web Ui channels, you can only switch back to stable when a
-new version of **Shoko Server** is released. Unless you absolutely need to, stick on Stable.
+new version of **Shoko Server** is released. Keep in mind dailies are meant for testing new features and can break
+your collection so unless you absolutely need to, which you probably don't, stick to Stable.
 :::
 
 ### Theme Options
@@ -36,9 +39,9 @@ new version of **Shoko Server** is released. Unless you absolutely need to, stic
 The Theme Options in Shoko serve as a gateway for users to customize the software's interface according to their
 personal aesthetic preferences. While Shoko is pre-installed with a default theme, users looking to diversify their
 experience can visit the Web UI Themes section on our website to explore and download a range of available themes.
-For those interested in creating a unique interface, the Custom Theme section provides detailed instructions. Theme
-descriptions provide author credits for support contact and issue reporting, along with the ability to manually check
-for possible theme update.
+
+For those interested in creating a unique interface, the [Web UI Theme](/shoko-server/themes) section provides
+detailed instructions on how to create and install custom themes.
 
 ### Notifications
 
@@ -62,39 +65,40 @@ All import settings deal with how Shoko handles importing your files. As this se
 refer to the table below for information on each option.
 
 <EasyTable
-  header={['Option', 'Description']}
-  data={[
-    [
-      'Import on Start',
-      'When enabled, Shoko will start importing files when the program is first launched.',
-    ],
-    [
-      'Rename on Import',
-      'When enabled and there is a renamer configured, Shoko will rename imported files.',
-    ],
-    [
-      'Move on Import',
-      'When enabled and when there is both a source and destination import folder. Shoko will move files to the ' +
-      'destination import folder',
-    ],
-    [
-      'Move After Rename',
-      'When enabled and when there is a renamer configured and there is both a source and destination import folder, ' +
-      'Shoko will rename the file first and then move it.',
-    ],
-    [
-      'Set File as Watched if Episode is Watched',
-      'When MyList functionality is enabled, an episode marked as watched on AniDB will have the file marked as ' +
-      'watched when imported.',
-    ],
-    [
-      'Video Extensions',
-      'All the formats Shoko will import within the set import folders.',
-    ],
-  ]}
-  center={true}
-  columnWidths={{ Option: '25%', Description: '75%'}}
+ header={['Option', 'Description']}
+ data={[
+  [
+   'Import on Start',
+   'When enabled, Shoko will start importing files when the program is first launched.',
+  ],
+  [
+   'Rename on Import',
+   'When enabled and there is a renamer configured, Shoko will rename imported files.',
+  ],
+  [
+   'Move on Import',
+   'When enabled and when there is both a source and destination import folder. Shoko will move files to the ' +
+   'destination import folder',
+  ],
+  [
+   'Move After Rename',
+   'When enabled and when there is a renamer configured and there is both a source and destination import folder, ' +
+   'Shoko will rename the file first and then move it.',
+  ],
+  [
+   'Set File as Watched if Episode is Watched',
+   'When MyList functionality is enabled, an episode marked as watched on AniDB will have the file marked as ' +
+   'watched when imported.',
+  ],
+  [
+   'Video Extensions',
+   'All the formats Shoko will import within the set import folders.',
+  ],
+ ]}
+ center={true}
+ columnWidths={{ Option: '25%', Description: '75%'}}
 />
+
 
 ## AniDB
 
@@ -135,7 +139,7 @@ updates for your AniDB MyList.
 
 ## Collection
 
-IMAGE GOES HERE
+![Shoko Server - Settings - Collection](../../../assets/img/shoko-server/shoko-server-settings-collection.jpg)
 
 Collection settings affect how series and grouped within your collection and how series and episode names are displayed
 for yoru collection. Please note, these settings can affect more than just the Web UI as multiple plugins do provide
@@ -171,18 +175,13 @@ All Groups** action depending on which changes you made.
 Shoko uses various metadata sites to pull additional information for the series in your collection and for tracking
 watched states with certain sites and plugins.
 
-### MovieDB Options
+### TMDB Options
 
-These settings determine if additional images, such as posters and fanart will be downloaded for the series in your
-collection. If enabled, you can also determine how many images of each type you want to download for each series.
-
-### TVDB Options
-
-TVDB serves as one of our primary metadata providers, offering both data and images for the series in your collection.
+TMDB serves as one of our primary metadata providers, offering both data and images for the series in your collection.
 While it's not mandatory, we strongly recommend enabling the Auto Link setting to ensure that your collection benefits
-from episode data. You can also specify the language in which you want TVDB data to be downloaded. However, if the
+from episode data. You can also specify the language in which you want TMDB data to be downloaded. However, if the
 data is not available in your selected language, it will be downloaded in English. Additionally, extra images like
-posters, fan art, and banners will be fetched for the series in your collection. If you choose to enable this feature,
+posters, backdrops, and banners will be fetched for the series in your collection. If you choose to enable this feature,
 you can also specify how many images of each type you'd like to download for each series.
 
 ### Trakt Options
