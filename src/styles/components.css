@@ -1,5 +1,5 @@
 /* ---------------------------------- */
-/* TOC - Contribute  */
+/* TOC - Contribute                   */
 /* ---------------------------------- */
 .toc-contribute-wrapper {
 	display: flex;
@@ -22,7 +22,7 @@
 }
 
 /* ---------------------------------- */
-/* Accordion */
+/* Accordion                          */
 /* ---------------------------------- */
 
 .accordion-wrapper {
@@ -61,7 +61,7 @@ details[open] > .accordion-header {
 }
 
 /* ---------------------------------- */
-/* EasyTable */
+/* EasyTable                          */
 /* ---------------------------------- */
 
 .easy-wrapper {
@@ -254,9 +254,8 @@ details[open] > .accordion-header {
 	background: var(--changelog-removed);
 }
 
-
 /* ---------------------------------- */
-/* Docker Compose & Input */
+/* Docker Compose & Input             */
 /* ---------------------------------- */
 
 .docker-compose-wrapper {
@@ -336,4 +335,13 @@ details[open] > .accordion-header {
 	border-radius: 5px;
 	box-shadow: var(--ec-frm-frameBoxShdCssVal);
 	padding: 1rem;
+}
+
+/* ---------------------------------- */
+/* FAQ                                */
+/* ---------------------------------- */
+
+.faq-wrapper {
+	border-bottom: 1px solid var(--sl-color-hairline);
+	padding-bottom: 2rem
 }
