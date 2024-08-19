@@ -52,6 +52,7 @@ export default defineConfig({
                 { label: 'Release Management', link: '/shoko-server/utilities/release-management' },
                 { label: 'Series Without Files', link: '/shoko-server/utilities/series-without-files' },
                 { label: 'File Search', link: '/shoko-server/utilities/file-search' },
+                { label: 'File Rename', link: '/shoko-server/utilities/file-rename' },
               ],
             },
             {
@@ -88,6 +89,7 @@ export default defineConfig({
           label: 'Renaming Plugins',
           collapsed: true,
           items: [
+            { label: 'Getting Started', link: '/renaming-plugins/available-renamers' },
             {
               label: 'Lua Renamer',
               items: [
