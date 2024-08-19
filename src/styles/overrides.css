@@ -80,19 +80,6 @@
 	margin-top: 0.25rem !important;
 }
 
-/* Add class to image parent tag. */
-.img-parent {
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	margin: 1.5rem 0 !important;
-	width: 100%;
-}
-
-.img-parent > img {
-	border-radius: 0.5rem;
-}
-
 /* Make Strong text match callout header color. */
 .starlight-aside--note * strong,
 .starlight-aside--caution * strong,
@@ -100,7 +87,6 @@
 .starlight-aside--danger * strong {
 	color: var(--sl-color-asides-text-accent);
 }
-
 
 /* Changing how asides look. */
 .starlight-aside {
@@ -172,10 +158,16 @@
 }
 
 /* Remove H1 styling on FAQ. */
-#general,
 #shoko-server,
 #shoko-metadata--shoko-relay,
 #shokofin {
+	border: none !important;
+	margin: 3rem 0 !important;
+	padding-top: 0 !important;
+}
+
+/* Remove H1 styling on FAQ. */
+#general:has(+ .accordion-wrapper) {
 	border: none !important;
 	margin: 3rem 0 !important;
 	padding-top: 0 !important;

@@ -66,14 +66,16 @@ details[open] > .accordion-header {
 
 .easy-wrapper {
 	border-radius: 0.5rem;
+	margin-top: 2rem !important;
 }
 
 .easy-header {
 	align-items: center;
-	background: var(--sl-color-bg-nav);
-	border-bottom: 2px solid var(--sl-color-hairline);
+	background: var(--table-background);
+	/*border-bottom: 2px solid var(--sl-color-hairline);*/
 	display: flex;
 	font-weight: 600;
+	border-radius: 8px;
 
 	& div {
 		margin-top: 0 !important;
@@ -100,8 +102,9 @@ details[open] > .accordion-header {
 }
 
 .easy-row:nth-child(odd) {
-	background: var(--sl-color-bg-nav);
-	border-top: 2px solid var(--sl-color-hairline);
+	background: var(--table-background);
+	/*border-top: 2px solid var(--sl-color-hairline);*/
+	border-radius: 8px;
 }
 
 .easy-row > div {
@@ -128,7 +131,7 @@ details[open] > .accordion-header {
 }
 
 /* ---------------------------------- */
-/* Changelog */
+/* Changelog                          */
 /* ---------------------------------- */
 
 .changelog-wrapper {

@@ -9,12 +9,12 @@
 :root {
 	--sl-content-width: 850px;
 	--sl-font: 'Open Sans Variable', sans-serif;
-	--sl-color-text: #e3e3e3;
 	--custom-bold: #dbbcff;
 	--changelog-added: #44A3FF;
 	--changelog-changed: #10C469;
 	--changelog-fixed: #F9C851;
 	--changelog-removed: #FF6C6C;
+	--table-background: #1b1d23
 }
 
 :root[data-theme='light'] {
@@ -24,6 +24,7 @@
 	--changelog-changed: #23aca5;
 	--changelog-fixed: #eca21a;
 	--changelog-removed: #F64E60;
+	--table-background: #f6f7f9
 }
 
 a {
@@ -65,4 +66,8 @@ h4 {
 
 .group-label > .large {
 	font-size: 0.875rem;
+}
+
+starlight-image-zoom-zoomable {
+	margin-top: 0.5rem;
 }
