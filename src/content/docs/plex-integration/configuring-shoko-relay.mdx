@@ -4,7 +4,9 @@ description: Information on how to install and configure Shoko Relay (Plex).
 sidebar:
   order: 3
 ---
+
 import EasyTable from "../../../components/EasyTable/EasyTable";
+import { Steps } from '@astrojs/starlight/components';
 
 ## Creating A Shoko Relay Library
 While Shoko Server is running, open Plex and create a new "TV Shows" library.
@@ -94,10 +96,14 @@ Under extremely specific circumstances Plex will automatically group files toget
 :::
 
 ### Handling "Stuck" Metadata
+
 In cases where metadata (generally posters) won't update there is a quick 3 step process to fix it:
+
+<Steps>
 1. Navigate to the series > More "..." Button > Unmatch
 2. Settings > Manage > Troubleshooting > Clean Bundles + Optimize Database
 3. Navigate back to the series > More "..." Button > Match > Select top result
+</Steps>
 
 If this somehow still fails then a full [Plex Dance](https://forums.plex.tv/t/the-plex-dance/197064) is likely required.
 
