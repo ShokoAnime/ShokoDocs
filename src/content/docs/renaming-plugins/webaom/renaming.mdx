@@ -1,0 +1,37 @@
+---
+title: Renaming
+description: Using the WebAOM renamer for renaming files
+---
+
+Note: results of renaming will differ from WebAOM in some areas.
+
+A script is composed of a list of rules evaluated from top to bottom.  
+`[[ELSE] IF {test}/ELSE] DO ADD {part}/SET {part}/FAIL`
+
+This page will highlight the main differences from the WebAOM renamer as described on [the WebAOM renaming section on the AniDB wiki](https://wiki.anidb.net/WebAOM#Move/rename_system).
+
+### Statements
+
+Statements Absent: FAIL, RETURN
+
+### Tests
+
+Tests Absent: Q, C, J, P, L.
+
+Tests Changed: U (Resolution Height), Z (Bit Depth).
+
+Test Added: F (File Version), H (Episode type prefix), W (Resolution Width), M (Manually Linked: leave empty).
+
+Numerical test operators were added: =, >=, \<=, \<, >.
+
+Operators are used by prefixing the condition within the parentheses *e.g.* `H(>=2)`.
+
+When using ; (AND) and , (OR):
+* Tests are read from left to right, but all tests after an ; (AND) are evaluated before any , (OR) test is evaluated.
+* If the first test and all tests after an ; (AND) are true, the result is true; then, if any OR test is true, the result is true.
+
+### Tags
+
+Tags Absent: %epk, %gen, %inv, %md5/%MD5, %qua, %sha/%SHA.
+
+Tags Added: %dep (Deprecated), %grl (Group long name), %sna (Name of file on AniDB), %vdh (Video Height).
