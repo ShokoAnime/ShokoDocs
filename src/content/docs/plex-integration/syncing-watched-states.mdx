@@ -21,14 +21,17 @@ Before you continue, make sure that you have a populated Library in Plex which u
     - It will redirect you and have you log into your Plex account.
     - If successful, you'll see the following message.
     ![Shoko - Plex Synced](../../../assets/img/shoko-relay/Shoko-Relay-Plex-Synced.jpg)
+
 2. Select Your Plex Server and Libraries
     - Return to **Settings** > **Metadata Sites** in the Shoko Server Web UI.
     - The Server dropdown in the Plex section should now be available.
     - Select your Plex Server and then any Libraries you would like to sync.
     - Hit Save.
-3. Configure Additional Plex Users
-    - When you would like to sync from more users than just your Plex Admin account.
+
+3. Configure Plex Users
+    - Configure the usernames of the Plex accounts you would like to sync with Shoko.
     - **CURRENTLY UNAVAILABLE FROM THE WEBUI**
+
 4. Run the Action
     - Click the Actions button in the WebUI navigation bar.
     - Go to the Plex Section and click the **Sync Plex Watch Status** entry.
@@ -41,18 +44,28 @@ Currently the "Sync Plex Watch Status" action doesn't function with cross platfo
 
 #### Using Webhooks (Plex Pass)
 
-If you are a Plex Pass user, you can use Webhooks to forward scrobble events to Shoko Server. It is still mandatory to set the Plex Username as detailed in the [steps above](#using-the-sync-plex-watch-status-action). This way you don't need to run the "Sync Plex Watch Status" action manually.
+If you are a Plex Pass user, you can use Webhooks to forward scrobble events to Shoko Server. It is still mandatory to set the Plex username as detailed in the [steps above](#using-the-sync-plex-watch-status-action). This way you don't need to run the "Sync Plex Watch Status" action manually.
 
 :::caution[Warning]
 Currently this only works with regular Episodes. Special, Other, ThemeSong, Trailer, Parody, and Movie Type episodes can not be detected and won't update their status.
 You will need to run the "Sync Plex Watch Status" action, mark them as watched by hand in the Shoko WebUI, or use a utility script.
 :::
 
-To set up a Webhook, open your Plex WebUI and go to Settings (wrench icon). Under your username in the left menu, Select **Webhooks**.
+<Steps>
+1. Navigate to the Plex Server Settings
+    - To set up a Webhook, open your Plex WebUI and go to Settings (wrench icon).
+    - Under your username in the left menu, Select **Webhooks**.
 
-Click the button to add a Webhook and enter your Shoko Server URL: `http://<shoko-server-ip>:8111/plex` (replace `<shoko-server-ip>` accordingly).
+2. Add the Webhook
+    - Click the button to add a Webhook and enter your Shoko Server URL:
+      ```
+      http://<shoko-server-ip>:8111/plex
+      ```
+    - Replace `<shoko-server-ip>` accordingly.
 
-Save your changes. Now when playing an episode (with everything was set up correctly), you should see scrobble events in your Shoko Server Log.
+3. Save Your Changes
+    - Now when playing an episode (with everything set up correctly), you should see scrobble events in your Shoko Server log.
+</Steps>
 
 #### Using a Utility Script (Advanced)
 
