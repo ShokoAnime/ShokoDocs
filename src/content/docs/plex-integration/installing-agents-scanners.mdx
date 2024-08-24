@@ -73,7 +73,7 @@ Before you continue forward, make sure you have Shoko Server installed and runni
       ```
 </Steps>
 
-#### Editing Series Scanner
+#### Editing Shoko Relay Scanner
 
 If you closed the window, open file explorer and navigate to the following.
 
@@ -101,7 +101,7 @@ Please see the [Series Scanner Advanced Settings](#series-scanner-advanced-setti
 the advanced settings available for the series scanner.
 
 ### Shoko Metadata
-Before you continue forward, make sure you have Shoko Server installed and running and have downloaded the
+Before you continue, make sure you have Shoko Server installed and running and have downloaded the
 [ShokoMetadata](https://shokoanime.com/downloads/) agents and scanners.
 
 #### Install
@@ -147,10 +147,10 @@ If you closed the window, open file explorer and navigate to the following.
 to update the username and password fields:
     ```py
     Prefs = {
-    'Hostname': '127.0.0.1',
-    'Port': 8111,
-    'Username': 'username',
-    'Password': 'password',
+        'Hostname': '127.0.0.1',
+        'Port': 8111,
+        'Username': 'username',
+        'Password': 'password',
     }
     ```
 </Steps>
@@ -170,13 +170,13 @@ If you closed the window, open file explorer and navigate to the following.
 to update the username and password fields:
     ```py
     Prefs = {
-    'Hostname': '127.0.0.1',
-    'Port': 8111,
-    'Username': 'username',
-    'Password': 'password',
-    'IncludeSpecials': True,
-    'IncludeOther': True,
-    'SingleSeasonOrdering': False
+        'Hostname': '127.0.0.1',
+        'Port': 8111,
+        'Username': 'username',
+        'Password': 'password',
+        'IncludeSpecials': True,
+        'IncludeOther': True,
+        'SingleSeasonOrdering': False
     }
     ```
 </Steps>
@@ -243,7 +243,7 @@ export PLEX_HOME="/config/Library/Application Support/Plex Media Server"
 
 ### Shoko Relay
 
-Before you continue forward, make sure you have Shoko Server installed and running.
+Before you continue, make sure you have Shoko Server installed and running.
 
 #### Install
 
@@ -391,16 +391,16 @@ These additional options are detailed below.
   header={["Option", "Description"]}
   data={[
     [
-      "IncludeSpecials",
+      "IncludeSpecials (Metadata Only)",
       "Files marked as specials in Shoko will be shown in the series as part of Season 0."
     ],
     [
-      "IncludeOther",
+      "IncludeOther (Metadata Only)",
       "Files marked as other in Shoko will be shown in the series as part of Season 0."
     ],
     [
       "SingleSeasonOrdering",
-      "Episodes are no longer separated by seasons. All normal episodes are put into Season 1, specials into Season 0, openings/endings into Season -1, and trailers into Season -2."
+      "Episodes are no longer separated by seasons when matched with TMDB. All normal episodes are put into Season 1, and specials into Season 0"
     ],
   ]}
   columnWidths={{ Option: "25%", Description: "75%" }}
