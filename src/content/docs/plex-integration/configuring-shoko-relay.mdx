@@ -4,68 +4,84 @@ description: Information on how to install and configure Shoko Relay (Plex).
 sidebar:
   order: 3
 ---
-
 import EasyTable from "../../../components/EasyTable/EasyTable";
 import { Steps } from '@astrojs/starlight/components';
 
-## Creating A Shoko Relay Library
-While Shoko Server is running, open Plex and create a new "TV Shows" library.
-Please note that if you haven't completed the **required edits** mentioned on the
-[Installing Agents & Scanners](../installing-agents-scanners/#editing-plex-scanners) page, please go back and do it now.
+If you chose Shoko Metadata as your Plex Agent/Scanner combo you can skip this page and move directly to the [Syncing Watched States](../syncing-watched-states) page.
 
-When prompted to select the Media Folder, browse to your anime collection. Even though Shoko will provide the
-metadata, Plex still needs to know where the physical files are located.
+#### Creating A Shoko Relay Library
 
-In the Advanced tab, select **Shoko Relay Scanner** and **ShokoRelay**.
+<Steps>
+1. Add a Plex Library
+    - While Shoko Server is running, open Plex and create a new "TV Shows" library.
+    - Ensure that you have completed the **required edits** mentioned on the [Installing Agents & Scanners](../installing-agents-scanners/#editing-shoko-relay-scannerr) page.
 
-![Shoko Relay - Inputting Server Information](../../../assets/img/shoko-relay/Shoko-Relay-Inputting-Server-Info.jpg)
+2. Add a Folder to Your Library
+    - When prompted to add folders to your library, browse to your anime collection.
+    - Even though Shoko will provide the metadata, Plex still needs to know where the physical files are located.
 
-You'll need to input the following information for Shoko Relay to access your collection:
+3. Configure the Advanced Settings
+    - In the Advanced tab, select: Scanner **Shoko Relay Scanner** and Agent **ShokoRelay**.
+    - Enter your Shoko Server credentials which are the only required settings.
+    ![Shoko Relay - Inputting Server Information](../../../assets/img/shoko-relay/Shoko-Relay-Inputting-Server-Info.jpg)
 
-<EasyTable
-    header={["Option", "Description"]}
-    data={[
-      [
-        "The Shoko Server Username",
-        "The username for the **local account** you created during the **First Run** setup in Shoko Server."
-      ],
-      [
-        "The Shoko Server Password",
-        "The password for the **local account** you created during the **First Run** setup in Shoko Server."
-      ],
-      [
-        "The Shoko Server Server Hostname",
-        "The IP address for the computer where Shoko Server is located. This can be left blank unless Shoko Server is running on a different computer."
-      ],
-      [
-        "The Shoko Server Port",
-        "The port Shoko Server uses, by default it's **8111**"
-      ]
-    ]}
-    columnWidths={{ Option: "30%", Description: "70%" }}
-/>
+    For more information on each of the required settings consult the table below:
 
-It is also recommended to change the following options at the bottom of the same page:
+    <EasyTable
+        header={["Option", "Description"]}
+        data={[
+          [
+            "The Shoko Server Username",
+            "The username for the **local account** you created during the **First Run** setup in Shoko Server."
+          ],
+          [
+            "The Shoko Server Password",
+            "The password for the **local account** you created during the **First Run** setup in Shoko Server."
+          ],
+          [
+            "The Shoko Server Server Hostname",
+            "The IP address for the computer where Shoko Server is located. This can be left blank unless Shoko Server is running on a different computer."
+          ],
+          [
+            "The Shoko Server Port",
+            "The port Shoko Server uses, by default it's **8111**"
+          ],
+          [
+            "Use Single Season Ordering *Not Recommended*",
+            "If you set **SingleSeasonOrdering** to True during the install process, make sure you check this box."
+          ]
+        ]}
+        columnWidths={{ Option: "30%", Description: "70%" }}
+    />
 
-<EasyTable
-    header={["Option", "Setting"]}
-    data={[
-      [
-        "Collections",
-        "Hide items which are in collections"
-      ],
-      [
-        "Seasons",
-        "Hide for single-season series"
-      ]
-    ]}
-    columnWidths={{ Option: "30%", Setting: "70%" }}
-/>
+4. Change Recommended Options
 
-Once you’ve reviewed and configured the remaining options, which are self-explanatory, click the **Add Library** button. After adding the library, initiate a scan within Plex and wait for Plex to add your collection.
 
-Lastly, in Plex: `Settings > Agents > Shows > ShokoRelay` move the following entry to the top of the list and enable it:
-  - [x] Local Media Assets (TV)
+    Changing the following options at the bottom of Advanced Settings page is also recommended:
+
+    <EasyTable
+        header={["Option", "Setting"]}
+        data={[
+          [
+            "Collections",
+            "Hide items which are in collections"
+          ],
+          [
+            "Seasons",
+            "Hide for single-season series"
+          ]
+        ]}
+        columnWidths={{ Option: "30%", Setting: "70%" }}
+    />
+
+5. Add the Library
+    - Once you’ve reviewed and configured the remaining options, click the **Add Library** button.
+    - After adding the library, initiate a scan within Plex and wait for Plex to add your collection.
+6. Allow Local Metadata
+    - In Plex Navigate to: `Settings > Agents > Shows > ShokoRelay`
+    - Move the following entry to the top of the list and enable it:
+    - [x] Local Media Assets (TV)
+</Steps>
 
 ### Recommended Shoko Server Configuration
 Enable the following options in Shoko to ensure that Plex has at least one source of metadata for everything:
@@ -80,7 +96,7 @@ Enable the following options in Shoko to ensure that Plex has at least one sourc
   - [x] Auto Group Series
   - [x] Determine Main Series Using Relation Weighing
 
-## Notes
+## Additional Information
 ### Troubleshooting
 When encountering any issues with the scanner or agent, please note that there are detailed logs available in the [Plex Media Server Logs Folder](https://support.plex.tv/articles/200250417-plex-media-server-log-files/) which can help to pinpoint any issues:
 - Agent Logs: `\Plex Media Server\Logs\PMS Plugin Logs\com.plexapp.agents.shokorelay.log`
@@ -98,11 +114,9 @@ Under extremely specific circumstances Plex will automatically group files toget
 
 In cases where metadata (generally posters) won't update there is a quick 3 step process to fix it:
 
-<Steps>
 1. Navigate to the series > More "..." Button > Unmatch
 2. Settings > Manage > Troubleshooting > Clean Bundles + Optimize Database
 3. Navigate back to the series > More "..." Button > Match > Select top result
-</Steps>
 
 If this somehow still fails then a full [Plex Dance](https://forums.plex.tv/t/the-plex-dance/197064) is likely required.
 

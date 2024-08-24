@@ -12,7 +12,7 @@ type ProgramName =
 	| 'Shoko Desktop'
 	| 'Shoko Metadata'
 	| 'Shokofin'
-	| 'ShokoRelay'
+	| 'Shoko Relay'
 	| 'My Anime 3';
 
 export const program = (programName: ProgramName) => {
@@ -22,7 +22,7 @@ export const program = (programName: ProgramName) => {
 		'Shoko Desktop': desktop.releases,
 		'Shoko Metadata': shokoMetadata.releases,
 		Shokofin: shokofin.releases,
-		ShokoRelay: shokorelay.releases,
+		'Shoko Relay': shokorelay.releases,
 		'My Anime 3': myAnime3.releases,
 	};
 

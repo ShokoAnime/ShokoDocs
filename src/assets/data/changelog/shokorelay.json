@@ -2,8 +2,20 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
-      "version": "1.2.00",
-      "versionURL": "1200",
+      "version": "1.2.1",
+      "versionURL": "121",
+      "date": "Aug 23rd, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.1",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Account for \"Poster ID\" recently being changed from string to int in APIv3"
+        }
+      ]
+    },
+    {
+      "version": "1.2.0",
+      "versionURL": "120",
       "date": "Aug 17th, 2024",
       "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.00",
       "changes": [
