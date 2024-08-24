@@ -14,7 +14,7 @@ const OUTPUT_FILE_PATH = path.join(__dirname, '../public/files/last-updated.json
 const WORD_REPLACEMENTS = {
 	faq: 'FAQ',
 	webui: 'Web UI',
-	shokorelay: 'ShokoRelay',
+	shokorelay: 'Shoko Relay',
 };
 
 // Function to get the last updated date from Git
