@@ -178,18 +178,28 @@ details[open] > .accordion-header {
 
 .changelog-type-wrapper {
 	margin-bottom: 1rem;
-	padding-left: 2.5rem;
+	margin-left: 2.5rem;
 	position: relative;
 
 }
 
 .changelog-type-wrapper:before {
-	border-left: 1px solid var(--sl-color-gray-3);;
+	border-left: 2px solid var(--sl-color-gray-3);;
 	content: '';
 	position: absolute;
-	top: 24px;
-	left: 1.016rem;
-	height: calc(100% - 21px);
+	left: calc(-1.5rem - 1px);
+	height: 100%;
+	z-index: -1;
+}
+
+.changelog-type:after {
+	content: '';
+	position: absolute;
+	left: calc(-1.5rem - 1px);
+	height: 50%;
+	background-color: var(--sl-color-bg);
+	width: 4px;
+	top: 0;
 }
 
 .changelog-type {
@@ -198,6 +208,7 @@ details[open] > .accordion-header {
 	display: flex;
 	font-weight: 600;
 	text-transform: capitalize;
+	position: relative;
 }
 
 .changelog-type:before {
@@ -209,7 +220,8 @@ details[open] > .accordion-header {
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
 	position: absolute;
-	left: 9px;
+	left: calc(-1.5rem - .5rem);
+	z-index: 1;
 }
 
 .changelog-item-wrapper {
@@ -234,9 +246,21 @@ details[open] > .accordion-header {
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
 	position: absolute;
-	left: -27.3px;
-	top: 10px;
+	left: calc(-1.5rem - .25rem);
+	top: calc(50% - .25rem);
+	z-index: 1;
 }
+
+.changelog-item:last-child:after {
+	content: '';
+	position: absolute;
+	left: calc(-1.5rem - 1px);
+	height: 50%;
+	background-color: var(--sl-color-bg);
+	width: 4px;
+	bottom: 0;
+}
+
 
 .changelog-added:before {
 	background: var(--changelog-added);
