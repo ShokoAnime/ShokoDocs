@@ -91,6 +91,14 @@ export default defineConfig({
           items: [
             { label: 'Getting Started', link: '/renaming-plugins/available-renamers' },
             {
+              label: 'WebAOM',
+              items: [
+                { label: 'Getting Started', link: '/renaming-plugins/webaom/getting-started' },
+                { label: 'Renaming', link: '/renaming-plugins/webaom/renaming' },
+                { label: 'Moving', link: '/renaming-plugins/webaom/moving' },
+              ]
+            },
+            {
               label: 'Lua Renamer',
               items: [
                 { label: 'Getting Started', link: '/renaming-plugins/lua-renamer/getting-started' },
