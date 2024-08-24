@@ -38,7 +38,7 @@ Before you continue, make sure that you have a populated Library in Plex which u
       ![Shoko - Plex Sync Action](../../../assets/img/shoko-relay/Shoko-Relay-Plex-Sync-Action.jpg)
 </Steps>
 
-:::caution[Warning]
+:::caution[Cross Platform Compatibility]
 Currently the "Sync Plex Watch Status" action doesn't function with cross platform setups e.g. Windows for Plex and Unix for Shoko at the same time.
 :::
 
@@ -46,7 +46,7 @@ Currently the "Sync Plex Watch Status" action doesn't function with cross platfo
 
 If you are a Plex Pass user, you can use Webhooks to forward scrobble events to Shoko Server. It is still mandatory to set the Plex username as detailed in the [steps above](#using-the-sync-plex-watch-status-action). This way you don't need to run the "Sync Plex Watch Status" action manually.
 
-:::caution[Warning]
+:::caution[Episode Type Compatibility]
 Currently this only works with regular Episodes. Special, Other, ThemeSong, Trailer, Parody, and Movie Type episodes can not be detected and won't update their status.
 You will need to run the "Sync Plex Watch Status" action, mark them as watched by hand in the Shoko WebUI, or use a utility script.
 :::
@@ -69,14 +69,15 @@ You will need to run the "Sync Plex Watch Status" action, mark them as watched b
 
 #### Using a Utility Script (Advanced)
 
+Syncing via utility script is the most robust method as it works cross platform, and with any episode type. As a caveat, it also requires the most effort and knowledge to set up.
 
-Configuration instructions are available on the [Shoko Relay Utility Scripts](../shoko-relay-utility-scripts) page. Once `config.py` has been properly filled out the [Watched-Sync](../shoko-relay-utility-scripts/#watched-sync) script can be run on a demand using task scheduler, cron, or an equivalent.
+Configuration instructions are available on the [Shoko Relay Utility Scripts](../shoko-relay-utility-scripts) page. Once `config.py` has been properly filled out the [Watched-Sync](../shoko-relay-utility-scripts/#watched-sync) script can be run on demand.
 
-:::note
-Syncing via utility script is the most robust method as it works cross platform, and with any episode type. As a caveat, it also requires the most effort to set up (basic knowledge of using python scripts is required).
+:::tip[Using a Scheduler]
+Using Task Sceduler on Windows, Cron on Linux, or any other automation equivalent to run the `watched-sync.py` script on a schedule allows this method to be "Set and Forget".
 :::
 
-As an example, running the following command on a daily schedule would automatically sync all Plex watched states to Shoko until the schedule is removed.
+To illustrate, running the following simple command on a daily schedule would automatically sync all Plex watched states to Shoko until the schedule is removed.
 
 ```sh
 watched-sync.py 1d
