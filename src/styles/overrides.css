@@ -157,7 +157,7 @@
 	z-index: 0;
 }
 
-/* Remove H1 styling on FAQ. */
+/* Remove H1 styling on particular headers. */
 #shoko-server,
 #shoko-metadata--shoko-relay,
 #shokofin {

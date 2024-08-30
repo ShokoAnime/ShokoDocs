@@ -9,10 +9,18 @@ Shoko allows user to create custom renaming plugins for use with the file rename
 available renamers that can be used with Shoko.
 
 <EasyTable
-    header={["Renamer", "Description"]}
-    data={[
-        ["WebAOM", "Default renamer built into Shoko."],
-        ["Lua Renamer", "Uses the Lua scripting language to create custom renaming scripts."],
-    ]}
-    columnWidths={{ OS: "25%", Location: "75%" }}
+  columns={[
+    { name: 'Renamer', header: 'Renamer' },
+    { name: 'Description', header: 'Description' }
+  ]}
+  data={[
+    {
+      Renamer: "WebAOM",
+      Description: "Default renamer built into Shoko."
+    },
+    {
+      Renamer: "Lua Renamer",
+      Description: "Uses the Lua scripting language to create custom renaming scripts."
+    }
+  ]}
 />

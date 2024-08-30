@@ -28,33 +28,33 @@ any issues.
 The second section **Display Options** has various widget-related settings which are outlined below.
 
 <EasyTable
- header={['Name', 'Description']}
- data={[
-  [
-   'Combine Continue Watching & Next Up',
-   'As the name suggests, enabling this setting will combine these two sections. Leaving a modified Continue Watching widget that display both sets of information. ',
-  ],
-  [
-   'Hide R18 Content',
-   'Checked by default, when unchecked, series with the R18 tag will show in every widget where applicable.',
-  ],
-  [
-   'Shoko News Posts',
-   'Allows you to define how many news posts from the Shoko site to show, feel free to set it to 100.',
-  ],
-  [
-   'Recently Imported Episodes',
-   'This setting lets you define how many episodes are displayed in the Recently Imported widget. There is a maximum limit of 100 episodes, and if you set it to anything higher, it will default to 100.',
-  ],
-  [
-   'Recently Imported Series',
-   'This setting lets you define how many series are displayed in the Recently Imported widget. There is a maximum limit of 100 episodes, and if you set it to anything higher, it will default to 100.',
-  ],
- ]}
- center={true}
- columnWidths={{ Name: '25%', Description: '75%'}}
+  columns={[
+    { name: 'Name', header: 'Name', width: '23%' },
+    { name: 'Description', header: 'Description' }
+  ]}
+  data={[
+    {
+      Name: 'Combine Continue Watching & Next Up',
+      Description: 'As the name suggests, enabling this setting will combine these two sections. Leaving a modified Continue Watching widget that display both sets of information.'
+    },
+    {
+      Name: 'Hide R18 Content',
+      Description: 'Checked by default, when unchecked, series with the R18 tag will show in every widget where applicable.'
+    },
+    {
+      Name: 'Shoko News Posts',
+      Description: 'Allows you to define how many news posts from the Shoko site to show, feel free to set it to 100.'
+    },
+    {
+      Name: 'Recently Imported Episodes',
+      Description: 'This setting lets you define how many episodes are displayed in the Recently Imported widget. There is a maximum limit of 100 episodes, and if you set it to anything higher, it will default to 100.'
+    },
+    {
+      Name: 'Recently Imported Series',
+      Description: 'This setting lets you define how many series are displayed in the Recently Imported widget. There is a maximum limit of 100 episodes, and if you set it to anything higher, it will default to 100.'
+    }
+  ]}
 />
-
 
 ## Queue Processor
 
@@ -96,26 +96,28 @@ In the **settings-server.json** file, add the following key to the Quartz sectio
 In the table below you'll find a list of job names and description.
 
 <EasyTable
- header={['Job Name', 'Default', 'Description']}
- data={[
-  [
-   'HashFileJob',
-   '1',
-   'Determines how many workers are allocated to hashing files',
-  ],
-  [
-   'UpdateTmdbShowJob',
-   '1',
-   'Determines how many workers are allocated to running TMDB series tasks.',
-  ],
-  [
-   'UpdateTmdbMovieJob',
-   '1',
-   'Determines how many workers are allocated to running TMDB movie tasks.',
-  ],
- ]}
- center={true}
- columnWidths={{ 'Job Name': '25%', 'Default': '15%', Description: '60%'}}
+  columns={[
+    { name: 'Job Name', header: 'Job Name' },
+    { name: 'Default', header: 'Default' },
+    { name: 'Description', header: 'Description' }
+  ]}
+  data={[
+    {
+      'Job Name': 'HashFileJob',
+      'Default': '1',
+      'Description': 'Determines how many workers are allocated to hashing files'
+    },
+    {
+      'Job Name': 'UpdateTmdbShowJob',
+      'Default': '1',
+      'Description': 'Determines how many workers are allocated to running TMDB series tasks.'
+    },
+    {
+      'Job Name': 'UpdateTmdbMovieJob',
+      'Default': '1',
+      'Description': 'Determines how many workers are allocated to running TMDB movie tasks.'
+    }
+  ]}
 />
 
 ## Unrecognized Files
@@ -174,27 +176,28 @@ drop type, and watch indicator. You can refer to the table below for more inform
 ### Import Folder Options
 
 <EasyTable
-  header={['Name', 'Description']}
-  data={[
-    [
-      'Name',
-      'The name assigned to the import folder used for visual purposes only.',
-    ],
-    [
-      'Location',
-      'The actual location of the import folder, relative to where Shoko is installed.',
-    ],
-    [
-      'Drop Type',
-      'This setting tells Shoko how to handle this folder when processing your files. \n The **Source** option instructs Shoko to grab files from this folder and move them to another import folder marked as Destination.  \n The **Both** option allows Shoko to perform the moving actions without actually relocating the files, which enables renaming on import or applying any custom renamer settings.  \n Finally, The **None** option tells Shoko not to perform any actions on the folder, which is typically paired with Watch For New Files set to Yes.',
-    ],
-    [
-      'Watch For New Files',
-      'A true/false setting which tells Shoko to monitor the import folder for new files. If set to **no**, you\'ll have to use the **Import Files** action to update your collection.'
-    ],
+  columns={[
+    { name: 'Name', header: 'Name', width: '15%' },
+    { name: 'Description', header: 'Description' }
   ]}
-  center={true}
-  columnWidths={{ Name: '30%', Description: '70%'}}
+  data={[
+    {
+      Name: 'Name',
+      Description: 'The name assigned to the import folder used for visual purposes only.'
+    },
+    {
+      Name: 'Location',
+      Description: 'The actual location of the import folder, relative to where Shoko is installed.'
+    },
+    {
+      Name: 'Drop Type',
+      Description: 'This setting tells Shoko how to handle this folder when processing your files. \n The **Source** option instructs Shoko to grab files from this folder and move them to another import folder marked as Destination.  \n The **Both** option allows Shoko to perform the moving actions without actually relocating the files, which enables renaming on import or applying any custom renamer settings.  \n Finally, The **None** option tells Shoko not to perform any actions on the folder, which is typically paired with Watch For New Files set to Yes.'
+    },
+    {
+      Name: 'Watch For New Files',
+      Description: 'A true/false setting which tells Shoko to monitor the import folder for new files. If set to **no**, you\'ll have to use the **Import Files** action to update your collection.'
+    }
+  ]}
 />
 
 ## Shoko News

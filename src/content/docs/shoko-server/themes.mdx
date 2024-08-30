@@ -14,12 +14,20 @@ This process is manual and involves the creation and population of the theme fil
 JSON template, and their location varies depending on your operating system which is listed below.
 
 <EasyTable
-  header={["OS", "Location"]}
-  data={[
-    ["Windows", "C:\\ProgramData\\ShokoServer\\themes"],
-    ["Linux/macOS", "~/.shoko/Shoko.CLI/themes"],
+  columns={[
+    { name: 'OS', header: 'OS' },
+    { name: 'Location', header: 'Location' }
   ]}
-  columnWidths={{ OS: "25%", Location: "75%" }}
+  data={[
+    {
+      OS: 'Windows',
+      Location: 'C:\\ProgramData\\ShokoServer\\themes'
+    },
+    {
+      OS: 'Linux/macOS',
+      Location: '~/.shoko/Shoko.CLI/themes'
+    }
+  ]}
 />
 
 After accessing this folder, you can create a new JSON file with any name you prefer, such as **my-theme.json** as this

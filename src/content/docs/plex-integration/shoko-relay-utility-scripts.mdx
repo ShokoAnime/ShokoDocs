@@ -20,42 +20,48 @@ In depth information about each script and its functionality can be found in the
 Before using any of the scripts you must have the requisite dependencies installed. For more information on using Python scripts in general check out the Python 3 docs for [linux](https://docs.python.org/3/using/unix.html#on-linux) or [windows](https://docs.python.org/3/using/windows.html).
 
 <EasyTable
-    header={["Dependency", "Anime Themes", "Collection Posters", "Force Metadata", "Rescan Recent", "Watched Sync"]}
-    data={[
-      [
-        "[Python 3](https://www.python.org/downloads/)",
-        "✔️",
-        "✔️",
-        "✔️",
-        "✔️",
-        "✔️"
-      ],
-      [
-        "[Python-PlexAPI](https://pypi.org/project/PlexAPI/)",
-        "❌",
-        "✔️",
-        "✔️",
-        "❌",
-        "✔️"
-      ],
-      [
-        "[Requests](https://pypi.org/project/requests/)",
-        "✔️",
-        "✔️",
-        "❌",
-        "✔️",
-        "✔️"
-      ],
-      [
-        "[FFmpeg](https://ffmpeg.org/download.html)",
-        "✔️",
-        "❌",
-        "❌",
-        "❌",
-        "❌"
-      ]
-    ]}
-    columnWidths={{ Dependency: "20%", "Anime Themes": "16%", "Collection Posters": "16%", "Force Metadata": "16%", "Rescan Recent": "16%", "Watched Sync": "16%" }}
+  columns={[
+    { name: 'Dependency', header: 'Dependency' },
+    { name: 'AnimeThemes', header: 'Anime Themes' },
+    { name: 'CollectionPosters', header: 'Collection Posters' },
+    { name: 'ForceMetadata', header: 'Force Metadata' },
+    { name: 'RescanRecent', header: 'Rescan Recent' },
+    { name: 'WatchedSync', header: 'Watched Sync' }
+  ]}
+  data={[
+    {
+      Dependency: "[Python 3](https://www.python.org/downloads/)",
+      AnimeThemes: "✔️",
+      CollectionPosters: "✔️",
+      ForceMetadata: "✔️",
+      RescanRecent: "✔️",
+      WatchedSync: "✔️"
+    },
+    {
+      Dependency: "[Python-PlexAPI](https://pypi.org/project/PlexAPI/)",
+      AnimeThemes: "❌",
+      CollectionPosters: "✔️",
+      ForceMetadata: "✔️",
+      RescanRecent: "❌",
+      WatchedSync: "✔️"
+    },
+    {
+      Dependency: "[Requests](https://pypi.org/project/requests/)",
+      AnimeThemes: "✔️",
+      CollectionPosters: "✔️",
+      ForceMetadata: "❌",
+      RescanRecent: "✔️",
+      WatchedSync: "✔️"
+    },
+    {
+      Dependency: "[FFmpeg](https://ffmpeg.org/download.html)",
+      AnimeThemes: "✔️",
+      CollectionPosters: "❌",
+      ForceMetadata: "❌",
+      RescanRecent: "❌",
+      WatchedSync: "❌"
+    }
+  ]}
 />
 
 :::caution[FFmpeg on Windows]
@@ -66,91 +72,100 @@ When installing FFmpeg on Windows make sure to add it to the **PATH** by editing
 After installing the dependencies you must use a text editor to enter your Shoko and Plex credentials (as well as several other options) into the included `config.py` file. The configuration file contains 4 sections which will be detailed below.
 
 ##### Plex Server Configuration
+
 <EasyTable
-    header={["Option", "Description"]}
-    data={[
-      [
-        "Username",
-        "The username for the **admin account** of your Plex server."
-      ],
-      [
-        "Password",
-        "The password for the **admin account** of your Plex server. Skip this setting if two-factor authentication is in use."
-      ],
-      [
-        "ServerName",
-        "The name of your Plex server."
-      ],
-      [
-        "LibraryNames",
-        "The names of any libraries which you want the scripts to interact with. **Must be formatted as a Python list** e.g. `'LibraryNames': ['Anime Shows', 'Anime Movies'],`"
-      ],
-      [
-        "PostersFolder",
-        "For `collection-posters.py` the folder containing any custom collection Posters for automatic application. **Requires double backslashes on Windows** e.g. `'PostersFolder': 'M:\\Anime\\Posters',`"
-      ],
-      [
-        "DataFolder",
-        "For `collection-posters.py clean` the base [Plex Media Server Data Directory](https://support.plex.tv/articles/202915258-where-is-the-plex-media-server-data-directory-located/) (where the Metadata folder is located). **Requires double backslashes on Windows**"
-      ],
-      [
-        "ExtraUsers",
-        "For `watched-sync.py` the names of any managed or home accounts on your Plex server which you want to include for watched state syncing. **Must be formatted as a Python list** e.g. `'ExtraUsers': ['Family'],`"
-      ],
-      [
-        "SyncAdmin",
-        "For `watched-sync.py` whether to sync watched states from Plex's admin account or not."
-      ],
-      [
-        "X-Plex-Token",
-        "For those using two-factor authentication this must be filled in, otherwise utilize the password field listed above. Information on where to get an X-Plex-Token is available [here](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/)."
-      ]
-    ]}
-    columnWidths={{ Option: "25%", Description: "75%" }}
+  columns={[
+    { name: 'Option', header: 'Option' },
+    { name: 'Description', header: 'Description' }
+  ]}
+  data={[
+    {
+      Option: "Username",
+      Description: "The username for the **admin account** of your Plex server."
+    },
+    {
+      Option: "Password",
+      Description: "The password for the **admin account** of your Plex server. Skip this setting if two-factor authentication is in use."
+    },
+    {
+      Option: "ServerName",
+      Description: "The name of your Plex server."
+    },
+    {
+      Option: "LibraryNames",
+      Description: "The names of any libraries which you want the scripts to interact with. **Must be formatted as a Python list** e.g. `'LibraryNames': ['Anime Shows', 'Anime Movies'],`"
+    },
+    {
+      Option: "PostersFolder",
+      Description: "For `collection-posters.py` the folder containing any custom collection Posters for automatic application. **Requires double backslashes on Windows** e.g. `'PostersFolder': 'M:\\\\Anime\\\\Posters',`"
+    },
+    {
+      Option: "DataFolder",
+      Description: "For `collection-posters.py clean` the base [Plex Media Server Data Directory](https://support.plex.tv/articles/202915258-where-is-the-plex-media-server-data-directory-located/) (where the Metadata folder is located). **Requires double backslashes on Windows**"
+    },
+    {
+      Option: "ExtraUsers",
+      Description: "For `watched-sync.py` the names of any managed or home accounts on your Plex server which you want to include for watched state syncing. **Must be formatted as a Python list** e.g. `'ExtraUsers': ['Family'],`"
+    },
+    {
+      Option: "SyncAdmin",
+      Description: "For `watched-sync.py` whether to sync watched states from Plex's admin account or not."
+    },
+    {
+      Option: "X-Plex-Token",
+      Description: "For those using two-factor authentication this must be filled in, otherwise utilize the password field listed above. Information on where to get an X-Plex-Token is available [here](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/)."
+    }
+  ]}
 />
 
 ##### Shoko Server Configuration
+
 <EasyTable
-    header={["Option", "Description"]}
-    data={[
-      [
-        "Hostname",
-        "The IP address for the computer where Shoko Server is located."
-      ],
-      [
-        "Port",
-        "The port Shoko Server uses, by default it's **8111**"
-      ],
-      [
-        "Username",
-        "The username for the **local account** you created during the **First Run** setup in Shoko Server."
-      ],
-      [
-        "Password",
-        "The password for the **local account** you created during the **First Run** setup in Shoko Server."
-      ]
-    ]}
-    columnWidths={{ Option: "25%", Description: "75%" }}
+  columns={[
+    { name: 'Option', header: 'Option' },
+    { name: 'Description', header: 'Description' }
+  ]}
+  data={[
+    {
+      Option: "Hostname",
+      Description: "The IP address for the computer where Shoko Server is located."
+    },
+    {
+      Option: "Port",
+      Description: "The port Shoko Server uses, by default it's **8111**"
+    },
+    {
+      Option: "Username",
+      Description: "The username for the **local account** you created during the **First Run** setup in Shoko Server."
+    },
+    {
+      Option: "Password",
+      Description: "The password for the **local account** you created during the **First Run** setup in Shoko Server."
+    }
+  ]}
 />
 
 ##### AnimeThemes Configuration
+
 <EasyTable
-    header={["Option", "Description"]}
-    data={[
-      [
-        "FFplay_Enabled",
-        "Whether the AnimeThemes script will playback the song after downloading or not."
-      ],
-      [
-        "FFplay_Volume",
-        "The volume of the audio playback if it is enabled."
-      ],
-      [
-        "BatchOverwrite",
-        "Whether the batch argument will overwrite **Theme.mp3** files or not."
-      ]
-    ]}
-    columnWidths={{ Option: "25%", Description: "75%" }}
+  columns={[
+    { name: 'Option', header: 'Option' },
+    { name: 'Description', header: 'Description' }
+  ]}
+  data={[
+    {
+      Option: "FFplay_Enabled",
+      Description: "Whether the AnimeThemes script will playback the song after downloading or not."
+    },
+    {
+      Option: "FFplay_Volume",
+      Description: "The volume of the audio playback if it is enabled."
+    },
+    {
+      Option: "BatchOverwrite",
+      Description: "Whether the batch argument will overwrite **Theme.mp3** files or not."
+    }
+  ]}
 />
 
 ##### Path Remapping for Rescan-Recent
