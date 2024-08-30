@@ -27,16 +27,43 @@ Below lists the corresponding versions of Jellyfin and Shoko Server that are com
 the correct version for your setup to guarantee functionality.
 
 <EasyTable
-    header={["Shokofin", "Jellyfin", "Shoko Server"]}
-    data={[
-      ["`0.x.x`",     "`10.7`",   "`4.0.0`&mdash;`4.1.2`"],
-      ["`1.x.x`",     "`10.7`",   "`4.1.0`&mdash;`4.1.2`"],
-      ["`2.x.x`",     "`10.8`",   "`4.1.2`"              ],
-      ["`3.x.x`",     "`10.8`",   "`4.2.0`"              ],
-      ["`dev`",       "`10.8`",   "`daily`"              ],
-      ["Soon&trade;", "`10.9`",   "Soon&trade;"          ],
-    ]}
-    columnWidths={{ Shokofin: "33%", Jellyfin: "33%", ShokoServer: "33%"}}
+  columns={[
+    { name: 'Shokofin', header: 'Shokofin' },
+    { name: 'Jellyfin', header: 'Jellyfin' },
+    { name: 'ShokoServer', header: 'Shoko Server' }
+  ]}
+  data={[
+    {
+      Shokofin: '`0.x.x`',
+      Jellyfin: '`10.7`',
+      ShokoServer: '`4.0.0`&mdash;`4.1.2`'
+    },
+    {
+      Shokofin: '`1.x.x`',
+      Jellyfin: '`10.7`',
+      ShokoServer: '`4.1.0`&mdash;`4.1.2`'
+    },
+    {
+      Shokofin: '`2.x.x`',
+      Jellyfin: '`10.8`',
+      ShokoServer: '`4.1.2`'
+    },
+    {
+      Shokofin: '`3.x.x`',
+      Jellyfin: '`10.8`',
+      ShokoServer: '`4.2.0`'
+    },
+    {
+      Shokofin: '`unstable`',
+      Jellyfin: '`10.8`',
+      ShokoServer: '`daily`'
+    },
+    {
+      Shokofin: 'Soon&trade;',
+      Jellyfin: '`10.9`',
+      ShokoServer: 'Soon&trade;'
+    }
+  ]}
 />
 
 There are multiple ways to install this plugin, but the recommended way is to use our official Jellyfin repository.
@@ -48,7 +75,7 @@ There are multiple ways to install this plugin, but the recommended way is to us
 3. Click on **Repositories** on the top of the Plugins page.
 2. Add new repository by clicking on the **plus** icon **(+)** and enter the following details;
     - **Repository Name:** `Shokofin Stable`
-    - **Repository URL:** `https://raw.githubusercontent.com/ShokoAnime/Shokofin/metadata/stable/manifest.json`
+    - **Repository URL:** `https://raw.githubusercontent.com/ShokoAnime/Shokofin/master/manifest.json`
 3. Click on **Catalog** on the top of the Plugins page.
 4. Scroll down until you find **Shoko** under the **Metadata** section, and click it.
 5. Click the blue **Install** button. You will get a pop-up warning you about using untrusted plugins. Click Ok.
@@ -57,7 +84,7 @@ There are multiple ways to install this plugin, but the recommended way is to us
 :::caution[Note]
   To install **unstable** builds of Shokofin, the following repository URL is needed instead:
 
-  `https://raw.githubusercontent.com/ShokoAnime/Shokofin/metadata/dev/manifest.json`
+  `https://raw.githubusercontent.com/ShokoAnime/Shokofin/master/manifest-unstable.json`
 :::
 
 #### Github Releases

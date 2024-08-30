@@ -21,104 +21,115 @@ longer compatible with Shoko Server. Information on why they have been discontin
 ## Programs
 
 <EasyTable
-	header={['Name', 'Dev', 'Platform', 'Status', 'Link']}
-	data={[
-		[
-			'Shoko Server',
-			'Shoko Team',
-			'Win / Linux / Arm64',
-			'Active',
-			'https://shokoanime.com/downloads'
-		],
-		[
-			'Shoko Web UI',
-			'Shoko Team',
-			'Browser',
-			'Active',
-			'None'
-		],
-		[
-			'Shoko Desktop',
-			'Shoko Team',
-			'Windows',
-			'Maintenance Mode',
-			'https://shokoanime.com/downloads'
-		]
-	]}
-	center={true}
-	columnWidths={{Name: '20%', Dev: '20%', Platform: '25%', Status: '25%', Link: '15%'}}
+  columns={[
+    { name: 'name', header: 'Name' },
+    { name: 'dev', header: 'Dev' },
+    { name: 'platform', header: 'Platform' },
+    { name: 'status', header: 'Status' },
+    { name: 'link', header: 'Link' },
+  ]}
+  data={[
+    {
+      name: 'Shoko Server',
+      dev: 'Shoko Team',
+      platform: 'Win / Linux / Arm64',
+      status: 'Active',
+      link: 'https://shokoanime.com/downloads'
+    },
+    {
+      name: 'Shoko Web UI',
+      dev: 'Shoko Team',
+      platform: 'Browser',
+      status: 'Active',
+      link: 'None'
+    },
+    {
+      name: 'Shoko Desktop',
+      dev: 'Shoko Team',
+      platform: 'Windows',
+      status: 'Maintenance Mode',
+      link: 'https://shokoanime.com/downloads'
+    }
+  ]}
 />
 
 ## Media Player Plugins
 
 <EasyTable
-	header={['Name', 'Dev', 'Platform', 'Status', 'Link']}
-	data={[
-		[
-			'Shoko Metadata',
-			'Cazzar',
-			'Plex',
-			'Active',
-			'https://github.com/Cazzar/ShokoMetadata.bundle'
-		],
-		[
-			'Shoko Relay',
-			'natyusha',
-			'Plex',
-			'Active',
-			'https://github.com/natyusha/ShokoRelay.bundle'
-		],
-		[
-			'Shokofin',
-			'Revam',
-			'Jellyfin',
-			'Active',
-			'https://shokoanime.com/downloads'
-		],
-		[
-			'Shokodi',
-			'Da3dsoul',
-			'Kodi',
-			'Active',
-			'https://shokoanime.com/downloads'
-		],
-		[
-			'Nakamori',
-			'BigRetroMike',
-			'Kodi',
-			'Active',
-			'https://github.com/bigretromike/nakamori/'
-		],
-		[
-			'My Anime 3',
-			'Shoko Team',
-			'MediaPortal',
-			'Maintenance Mode',
-			'https://shokoanime.com/downloads'
-		]
-	]}
-	center={true}
-	columnWidths={{Name: '20%', Dev: '20%', Platform: '20%', Status: '25%', Link: '15%'}}
+  columns={[
+    { name: 'name', header: 'Name' },
+    { name: 'dev', header: 'Dev' },
+    { name: 'platform', header: 'Platform' },
+    { name: 'status', header: 'Status' },
+    { name: 'link', header: 'Link' },
+  ]}
+  data={[
+    {
+      name: 'Shoko Metadata',
+      dev: 'Cazzar',
+      platform: 'Plex',
+      status: 'Active',
+      link: 'https://github.com/Cazzar/ShokoMetadata.bundle'
+    },
+    {
+      name: 'Shoko Relay',
+      dev: 'natyusha',
+      platform: 'Plex',
+      status: 'Active',
+      link: 'https://github.com/natyusha/ShokoRelay.bundle'
+    },
+    {
+      name: 'Shokofin',
+      dev: 'Revam',
+      platform: 'Jellyfin',
+      status: 'Active',
+      link: 'https://shokoanime.com/downloads'
+    },
+    {
+      name: 'Shokodi',
+      dev: 'Da3dsoul',
+      platform: 'Kodi',
+      status: 'Active',
+      link: 'https://shokoanime.com/downloads'
+    },
+    {
+      name: 'Nakamori',
+      dev: 'BigRetroMike',
+      platform: 'Kodi',
+      status: 'Active',
+      link: 'https://github.com/bigretromike/nakamori/'
+    },
+    {
+      name: 'My Anime 3',
+      dev: 'Shoko Team',
+      platform: 'MediaPortal',
+      status: 'Maintenance Mode',
+      link: 'https://shokoanime.com/downloads'
+    }
+  ]}
 />
 
 ## Discontinued Programs & Plugins
 
 <EasyTable
-	header={['Name', 'Dev', 'Platform', 'Discontinued Reason',]}
-	data={[
-		[
-			'Anime Buddy',
-			'Shoko Team',
-			'Windows',
-			{title: 'Discontinued Blog Post', link: 'https://shokoanime.com/blog/anime-buddy-discontinued/'}
-		],
-		[
-			'Shoko on Plex',
-			'MaxPiva',
-			'Plex (Plugin)',
-			'Discontinued in favor of ShokoMetadata.'
-		]
-	]}
-	center={true}
-	columnWidths={{Name: '20%', Dev: '20%', Platform: '20%', "Discontinued Reason": '50%',}}
+  columns={[
+    { name: 'name', header: 'Name' },
+    { name: 'dev', header: 'Dev' },
+    { name: 'platform', header: 'Platform' },
+    { name: 'discontinuedReason', header: 'Discontinued Reason' },
+  ]}
+  data={[
+    {
+      name: 'Anime Buddy',
+      dev: 'Shoko Team',
+      platform: 'Windows',
+      discontinuedReason: {title: 'Discontinued Blog Post', link: 'https://shokoanime.com/blog/anime-buddy-discontinued/'}
+    },
+    {
+      name: 'Shoko on Plex',
+      dev: 'MaxPiva',
+      platform: 'Plex (Plugin)',
+      discontinuedReason: 'Discontinued in favor of ShokoMetadata.'
+    }
+  ]}
 />

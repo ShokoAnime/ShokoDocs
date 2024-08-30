@@ -28,30 +28,32 @@ If you chose Shoko Metadata as your Plex Agent/Scanner combo you can skip this p
     For more information on each of the required settings consult the table below:
 
     <EasyTable
-        header={["Option", "Description"]}
-        data={[
-          [
-            "The Shoko Server Username",
-            "The username for the **local account** you created during the **First Run** setup in Shoko Server."
-          ],
-          [
-            "The Shoko Server Password",
-            "The password for the **local account** you created during the **First Run** setup in Shoko Server."
-          ],
-          [
-            "The Shoko Server Server Hostname",
-            "The IP address for the computer where Shoko Server is located. This can be left blank unless Shoko Server is running on a different computer."
-          ],
-          [
-            "The Shoko Server Port",
-            "The port Shoko Server uses, by default it's **8111**"
-          ],
-          [
-            "Use Single Season Ordering *Not Recommended*",
-            "If you set **SingleSeasonOrdering** to True during the install process, make sure you check this box."
-          ]
-        ]}
-        columnWidths={{ Option: "30%", Description: "70%" }}
+      columns={[
+        { name: 'Option', header: 'Option' },
+        { name: 'Description', header: 'Description' }
+      ]}
+      data={[
+        {
+          Option: "The Shoko Server Username",
+          Description: "The username for the **local account** you created during the **First Run** setup in Shoko Server."
+        },
+        {
+          Option: "The Shoko Server Password",
+          Description: "The password for the **local account** you created during the **First Run** setup in Shoko Server."
+        },
+        {
+          Option: "The Shoko Server Server Hostname",
+          Description: "The IP address for the computer where Shoko Server is located. This can be left blank unless Shoko Server is running on a different computer."
+        },
+        {
+          Option: "The Shoko Server Port",
+          Description: "The port Shoko Server uses, by default it's **8111**"
+        },
+        {
+          Option: "Use Single Season Ordering *Not Recommended*",
+          Description: "If you set **SingleSeasonOrdering** to True during the install process, make sure you check this box."
+        }
+      ]}
     />
 
 4. Change Recommended Options
@@ -60,18 +62,20 @@ If you chose Shoko Metadata as your Plex Agent/Scanner combo you can skip this p
     Changing the following options at the bottom of Advanced Settings page is also recommended:
 
     <EasyTable
-        header={["Option", "Setting"]}
-        data={[
-          [
-            "Collections",
-            "Hide items which are in collections"
-          ],
-          [
-            "Seasons",
-            "Hide for single-season series"
-          ]
-        ]}
-        columnWidths={{ Option: "30%", Setting: "70%" }}
+      columns={[
+        { name: 'Option', header: 'Option' },
+        { name: 'Setting', header: 'Setting' }
+      ]}
+      data={[
+        {
+          Option: "Collections",
+          Setting: "Hide items which are in collections"
+        },
+        {
+          Option: "Seasons",
+          Setting: "Hide for single-season series"
+        }
+      ]}
     />
 
 5. Add the Library
@@ -176,58 +180,60 @@ Many tags on AniDB use a [3 Star Weight System](https://wiki.anidb.net/Tags#Star
 If "assumed content ratings" are enabled in the agent settings the [target audience](https://anidb.net/tag/2606/animetb) and [content indicator](https://anidb.net/tag/2604/animetb) tags from AniDB will be used to roughly match the [TV Parental Guidelines](http://www.tvguidelines.org/resources/TheRatings.pdf) system. The target audience tags will conservatively set the initial rating anywhere from TV-Y to TV-14, then the content indicators will be appended. If the tag weights for the content indicators are high enough (> 400 or **\*\***) the rating will be raised to compensate. A general overview is listed in the table below:
 
 <EasyTable
-    header={["Tag", "Rating"]}
-    data={[
-      [
-        "Kodomo",
-        "TV-Y"
-      ],
-      [
-        "Mina",
-        "TV-G"
-      ],
-      [
-        "Shoujo, Shounen",
-        "TV-PG"
-      ],
-      [
-        "Josei, Seinen",
-        "TV-14"
-      ],
-      [
-        "Sexual Humour",
-        "TV-\*-D"
-      ],
-      [
-        "Nudity, Sex",
-        "TV-\*-S"
-      ],
-      [
-        "__\*\*__ Violence",
-        "TV-14-V"
-      ],
-      [
-        "__\*\*__ Nudity, __\*\+__ Sex",
-        "TV-14-S"
-      ],
-      [
-        "Borderline Porn (override)",
-        "TV-MA "
-      ],
-      [
-        "__\*\*\+__ Nudity, __\*\*__ Sex",
-        "TV-MA-S"
-      ],
-      [
-        "__\*\*\+__ Violence",
-        "TV-MA-V"
-      ],
-      [
-        "18 Restricted (override)",
-        "X",
-      ]
-    ]}
-    columnWidths={{ Option: "70%", Setting: "30%" }}
+  columns={[
+    { name: 'Tag', header: 'Tag' },
+    { name: 'Rating', header: 'Rating' }
+  ]}
+  data={[
+    {
+      Tag: "Kodomo",
+      Rating: "TV-Y"
+    },
+    {
+      Tag: "Mina",
+      Rating: "TV-G"
+    },
+    {
+      Tag: "Shoujo, Shounen",
+      Rating: "TV-PG"
+    },
+    {
+      Tag: "Josei, Seinen",
+      Rating: "TV-14"
+    },
+    {
+      Tag: "Sexual Humour",
+      Rating: "TV-*-D"
+    },
+    {
+      Tag: "Nudity, Sex",
+      Rating: "TV-*-S"
+    },
+    {
+      Tag: "__**__ Violence",
+      Rating: "TV-14-V"
+    },
+    {
+      Tag: "__**__ Nudity, __*+__ Sex",
+      Rating: "TV-14-S"
+    },
+    {
+      Tag: "Borderline Porn (override)",
+      Rating: "TV-MA "
+    },
+    {
+      Tag: "__**+__ Nudity, __**__ Sex",
+      Rating: "TV-MA-S"
+    },
+    {
+      Tag: "__**+__ Violence",
+      Rating: "TV-MA-V"
+    },
+    {
+      Tag: "18 Restricted (override)",
+      Rating: "X"
+    }
+  ]}
 />
 
 :::note

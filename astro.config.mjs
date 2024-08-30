@@ -89,7 +89,7 @@ export default defineConfig({
           label: 'Renaming Plugins',
           collapsed: true,
           items: [
-            { label: 'Getting Started', link: '/renaming-plugins/available-renamers' },
+            { label: 'Available Renamers', link: '/renaming-plugins/available-renamers' },
             {
               label: 'WebAOM',
               items: [

@@ -65,40 +65,37 @@ All import settings deal with how Shoko handles importing your files. As this se
 refer to the table below for information on each option.
 
 <EasyTable
- header={['Option', 'Description']}
- data={[
-  [
-   'Import on Start',
-   'When enabled, Shoko will start importing files when the program is first launched.',
-  ],
-  [
-   'Rename on Import',
-   'When enabled and there is a renamer configured, Shoko will rename imported files.',
-  ],
-  [
-   'Move on Import',
-   'When enabled and when there is both a source and destination import folder. Shoko will move files to the ' +
-   'destination import folder',
-  ],
-  [
-   'Move After Rename',
-   'When enabled and when there is a renamer configured and there is both a source and destination import folder, ' +
-   'Shoko will rename the file first and then move it.',
-  ],
-  [
-   'Set File as Watched if Episode is Watched',
-   'When MyList functionality is enabled, an episode marked as watched on AniDB will have the file marked as ' +
-   'watched when imported.',
-  ],
-  [
-   'Video Extensions',
-   'All the formats Shoko will import within the set import folders.',
-  ],
- ]}
- center={true}
- columnWidths={{ Option: '25%', Description: '75%'}}
+  columns={[
+    { name: 'Option', header: 'Option' },
+    { name: 'Description', header: 'Description' }
+  ]}
+  data={[
+    {
+      Option: 'Import on Start',
+      Description: 'When enabled, Shoko will start importing files when the program is first launched.'
+    },
+    {
+      Option: 'Rename on Import',
+      Description: 'When enabled and there is a renamer configured, Shoko will rename imported files.'
+    },
+    {
+      Option: 'Move on Import',
+      Description: 'When enabled and when there is both a source and destination import folder. Shoko will move files to the destination import folder'
+    },
+    {
+      Option: 'Move After Rename',
+      Description: 'When enabled and when there is a renamer configured and there is both a source and destination import folder, Shoko will rename the file first and then move it.'
+    },
+    {
+      Option: 'Set File as Watched if Episode is Watched',
+      Description: 'When MyList functionality is enabled, an episode marked as watched on AniDB will have the file marked as watched when imported.'
+    },
+    {
+      Option: 'Video Extensions',
+      Description: 'All the formats Shoko will import within the set import folders.'
+    }
+  ]}
 />
-
 
 ## AniDB
 

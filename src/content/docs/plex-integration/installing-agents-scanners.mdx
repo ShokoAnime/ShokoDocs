@@ -388,20 +388,22 @@ You may have noticed that the series scanner provides a broader range of options
 These additional options are detailed below.
 
 <EasyTable
-  header={["Option", "Description"]}
-  data={[
-    [
-      "IncludeSpecials *Metadata Only*",
-      "Files marked as specials in Shoko will be shown in the series as part of Season 0."
-    ],
-    [
-      "IncludeOther *Metadata Only*",
-      "Files marked as other in Shoko will be shown in the series as part of Season 0."
-    ],
-    [
-      "SingleSeasonOrdering",
-      "Episodes are no longer separated by seasons when matched with TMDB. All normal episodes are put into Season 1, and specials into Season 0"
-    ],
+  columns={[
+    { name: 'Option', header: 'Option' },
+    { name: 'Description', header: 'Description' }
   ]}
-  columnWidths={{ Option: "25%", Description: "75%" }}
+  data={[
+    {
+      Option: "IncludeSpecials *Metadata Only*",
+      Description: "Files marked as specials in Shoko will be shown in the series as part of Season 0."
+    },
+    {
+      Option: "IncludeOther *Metadata Only*",
+      Description: "Files marked as other in Shoko will be shown in the series as part of Season 0."
+    },
+    {
+      Option: "SingleSeasonOrdering",
+      Description: "Episodes are no longer separated by seasons when matched with TMDB. All normal episodes are put into Season 1, and specials into Season 0"
+    }
+  ]}
 />

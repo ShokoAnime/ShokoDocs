@@ -27,7 +27,8 @@
 
 .accordion-wrapper {
 	border: none !important;
-	margin-top: 0 !important;
+	border-radius: 8px;
+	padding: 0 !important;
 }
 
 .accordion-header {
@@ -36,7 +37,10 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 1rem;
+	padding-left: 1.5rem !important;
 	position: relative;
+	margin-bottom: 0 !important;
+
 }
 
 .accordion-header::before {
@@ -57,77 +61,59 @@ details[open] > .accordion-header {
 
 .accordion-body {
 	border-bottom: 2px solid var(--sl-color-hairline);
-	padding: 1rem 1rem 2rem 1rem;
+	padding: 2rem 1rem;
+	margin: 0 !important;
 }
 
 /* ---------------------------------- */
 /* EasyTable                          */
 /* ---------------------------------- */
 
-.easy-wrapper {
-	border-radius: 0.5rem;
-	margin-top: 2rem !important;
+.easy-table-wrapper {
+  width: 100%;
 }
 
-.easy-header {
-	align-items: center;
-	background: var(--table-background);
-	/*border-bottom: 2px solid var(--sl-color-hairline);*/
-	display: flex;
-	font-weight: 600;
-	border-radius: 8px;
-
-	& div {
-		margin-top: 0 !important;
-		padding: 1rem;
-	}
-
+.easy-table {
+  display: table !important;
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.easy-header-center,
-.easy-row-center {
-	text-align: center;
+.easy-table td {
+  word-break: break-word;
 }
 
-.easy-row {
-	display: flex;
-	flex-direction: row;
-	margin-top: 0 !important;
-
-	& div {
-		margin-top: 0 !important;
-		padding: 1rem;
-	}
-
+.easy-table td, .easy-table th {
+  padding: 0.5rem !important;
 }
 
-.easy-row:nth-child(odd) {
-	background: var(--table-background);
-	/*border-top: 2px solid var(--sl-color-hairline);*/
-	border-radius: 8px;
+.easy-table tr:last-child td {
+  border-bottom: none;
 }
 
-.easy-row > div {
-	margin: auto 0 !important;
+.easy-table td > code {
+  display: inline-block;
+  overflow-x: auto;
+  white-space: pre;
+  max-width: 100%;
 }
 
-.easy-row > div > p {
-	margin: 0 !important;
+.easy-table td > p {
+  margin-bottom: 0.5em;
 }
 
-.easy-row > div > code {
-	display: flex;
-	overflow-x: auto;
-	white-space: pre;
-	width: 85%;
+.easy-table td > p:last-child {
+  margin-bottom: 0;
 }
 
-.easy-cell-line {
-	padding: 0 0 1rem 0 !important;
-}
+@media (max-width: 1023px) {
+  .easy-table-wrapper {
+    overflow-x: auto;
+  }
 
-.easy-cell-line-last {
-	padding: 0 !important;
+  .easy-table {
+    min-width: max-content;
+  }
 }
 
 /* ---------------------------------- */
@@ -359,13 +345,4 @@ details[open] > .accordion-header {
 	border-radius: 5px;
 	box-shadow: var(--ec-frm-frameBoxShdCssVal);
 	padding: 1rem;
-}
-
-/* ---------------------------------- */
-/* FAQ                                */
-/* ---------------------------------- */
-
-.faq-wrapper {
-	border-bottom: 1px solid var(--sl-color-hairline);
-	padding-bottom: 2rem
 }
