@@ -46,9 +46,10 @@ Currently the "Sync Plex Watch Status" action doesn't function with cross platfo
 
 If you are a Plex Pass user, you can use Webhooks to forward scrobble events to Shoko Server. It is still mandatory to set the Plex username as detailed in the [steps above](#using-the-sync-plex-watch-status-action). This way you don't need to run the "Sync Plex Watch Status" action manually.
 
-:::caution[Episode Type Compatibility]
-Currently this only works with regular Episodes. Special, Other, ThemeSong, Trailer, Parody, and Movie Type episodes can not be detected and won't update their status.
-You will need to run the "Sync Plex Watch Status" action, mark them as watched by hand in the Shoko WebUI, or use a utility script.
+:::caution[Episode Type & Manually Marked Issues]
+Currently this only works with regular Episodes. Special, Other, ThemeSong, Trailer, Parody, and Movie Type episodes can not be detected and won't update their status. It should also be noted that Plex webhooks do not function with things that are manually marked as watched in Plex's UI.
+
+To resolve the aforementioned issues, you will need to run the "Sync Plex Watch Status" action, mark things as watched by hand in Shoko's WebUI, or use a utility script.
 :::
 
 <Steps>

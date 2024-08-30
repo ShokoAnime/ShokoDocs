@@ -2,6 +2,38 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.3",
+      "versionURL": "123",
+      "date": "Aug 28th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.3",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added the agent option to add all posters and backdrops from Shoko instead of just the preferred one"
+        },
+        {
+          "type": "changed",
+          "text": "Changed the agent options formatting for readability as well as modifying some setting names"
+        }
+      ]
+    },
+    {
+      "version": "1.2.2",
+      "versionURL": "122",
+      "date": "Aug 25th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.2",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed an error in the agent when attempting to download theme music without a TMDB match"
+        },
+        {
+          "type": "changed",
+          "text": "Changed the summary options in the agent so that they are all in a single dropdown"
+        }
+      ]
+    },
+    {
       "version": "1.2.1",
       "versionURL": "121",
       "date": "Aug 23rd, 2024",
@@ -17,7 +49,7 @@
       "version": "1.2.0",
       "versionURL": "120",
       "date": "Aug 17th, 2024",
-      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.00",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.0",
       "changes": [
         {
           "type": "changed",
