@@ -2,6 +2,118 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.8",
+      "versionURL": "128",
+      "date": "Sep 7th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.8",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added a fallback name for cases where a seiyuu on AniDB has no character attached to it"
+        },
+        {
+          "type": "added",
+          "text": "Added further refinements to the summary sanitizer"
+        }
+      ]
+    },
+    {
+      "version": "1.2.7",
+      "versionURL": "127",
+      "date": "Sep 5th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.7",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added a fallback to AniDB episode numbering when multiple AniDB episode entries are linked to a single TMDB episode"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed the TMDB title check which wasn't fully implemented after switching from TheTVDB"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed rescan-recent.py not fully functioning after some recent APIv3 changes"
+        },
+        {
+          "type": "added",
+          "text": "Added logging for the TMDB type along with the ID"
+        },
+        {
+          "type": "added",
+          "text": "Added a note on combining episodes to the readme"
+        }
+      ]
+    },
+    {
+      "version": "1.2.6",
+      "versionURL": "126",
+      "date": "Sep 2nd, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.6",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added a fallback to TMDB when the AniDB description is rendered empty by the sanitizer"
+        },
+        {
+          "type": "added",
+          "text": "Added logging if there was a fallback attempt for the description"
+        },
+        {
+          "type": "changed",
+          "text": "Changed the AniDB link detection to catch more URL formats"
+        },
+        {
+          "type": "changed",
+          "text": "Changed the two optional line sanitizers to be more robust"
+        }
+      ]
+    },
+    {
+      "version": "1.2.5",
+      "versionURL": "125",
+      "date": "Aug 30th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.5",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added BBCode [i] tag removal to the summary sanitizer"
+        },
+        {
+          "type": "added",
+          "text": "Added double space removal to the summary sanitizer"
+        },
+        {
+          "type": "removed",
+          "text": "Removed season poster main series fallback due to priority issues"
+        }
+      ]
+    },
+    {
+      "version": "1.2.4",
+      "versionURL": "124",
+      "date": "Aug 30th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.4",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added support for TMDB season posters"
+        },
+        {
+          "type": "added",
+          "text": "Added \"written by\" lines to the summary sanitizer \"Misc. Lines\" option"
+        },
+        {
+          "type": "added",
+          "text": "Added readme additions pertaining to Plex plugin deprecation and Shoko creator images"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed summary sanitizer empty line removal not being the last step"
+        }
+      ]
+    },
+    {
       "version": "1.2.3",
       "versionURL": "123",
       "date": "Aug 28th, 2024",
