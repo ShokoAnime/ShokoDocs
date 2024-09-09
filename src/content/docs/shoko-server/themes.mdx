@@ -2,16 +2,20 @@
 title: Web UI Themes
 description: Overview of the how themes work in Shoko.
 ---
-import EasyTable from "../../../components/EasyTable/EasyTable";
 
-Although the default theme, Shoko Gray, is an excellent choice, we understand that some users may prefer a different
-color scheme. Instead of relying on third-party browser plugins like Stylus, users can effortlessly add and create
-new themes without any coding experience required.
+import { Steps } from '@astrojs/starlight/components';
+import EasyTable from '../../../components/EasyTable/EasyTable';
+import Accordion from "../../../components/Accordion/Accordion";
 
-## Creating Your Custom Theme
+Shoko by default includes a fully customizable theme system that allows users to change the look and feel of the Web UI
+to their liking. This eliminates the need for third-party plugins like Stylus and allows users to easily create and if
+desired, share their themes with the community.
 
-This process is manual and involves the creation and population of the theme file. The theme files are stored in a
-JSON template, and their location varies depending on your operating system which is listed below.
+## Understanding Custom Themes
+
+In Shoko, a single theme consists of two files, a JSON file that contains the theme information and a CSS file that
+contains the styling. Both files are required for the theme to work correctly and are stored in the **themes** folder
+located in one of the following directories depending on your operating system.
 
 <EasyTable
   columns={[
@@ -30,118 +34,145 @@ JSON template, and their location varies depending on your operating system whic
   ]}
 />
 
-After accessing this folder, you can create a new JSON file with any name you prefer, such as **my-theme.json** as this
-is where you'll be putting the actual theme template located below.
+Please note, unless manually installing themes, we recommend using the Web UI to install themes as it simplifies the
+process and ensures the theme is correctly installed.
+
+## Downloading & Installing Themes
+
+Web UI Themes are available from our website and can be downloaded from the [Web UI Themes](https://shokoanime.com/themes)
+page. Please note, themes downloaded from the Shoko website are only the JSON file with the CSS file being downloaded
+when the theme is installed.
+
+Once you've downloaded your theme, you can install it using the Web UI. Follow the steps below to install your theme.
+
+<Steps>
+1. Open the Web UI and navigate to the **Settings** section.
+2. Select **General** from the menu.
+3. Under **Theme Options**, click the **Upload Theme** button.
+4. Select the theme file you downloaded.
+</Steps>
+
+:::note[About Installing Themes]
+Themes are auto-installed once imported, simply switch to the theme and click **Save** to apply it.
+:::
+
+## Creating Your Own Theme
+
+Creating a custom theme is a straightforward process that requires you to create two files, a JSON file that contains the
+theme information and a CSS file that contains the styling. Both files are stored in the **themes** folder, refer to the
+locations above for the correct directory.
+
+We recommend using the two templates below to create your custom theme. Both templates provide a starting point for
+creating your theme, and you can customize them to your liking.
 
 ### Theme Template
 
-Here is the theme template that you can use to create your own theme. Please be aware that this is a JSON file, so
-it's important to use proper quotation marks to avoid any issues with the file. We have provided the default Shoko Gray
-HEX values for the theme settings, which you can easily replace with your own HEX values.
+Below is a template you can use to create your custom theme. Make sure your theme includes both the JSON and CSS files,
+otherwise it will not work correctly. We also recommend naming both files the same for easy identification, though this
+is not required as the value for the **css** key in the JSON file is used to identify the CSS file.
 
-```json
+:::note[HEX Values Not Required]
+While we use HEX values in the example below and in the default Shoko theme, you can use any valid CSS color value.
+:::
+
+<Accordion title='Theme JSON Example'>
+ ```json
 {
   "name": "Theme Name",
   "version": "1.00",
   "author": "Your Name",
   "description": "Description",
-  "tags": [
-    "Theme",
-    "Tags",
-    "Go",
-    "Here"
-  ],
-  "url": "Link to theme repo, if available.",
-  "values": {
-    "button-danger": "#ff6c6c",
-    "button-danger-border": "#21242b",
-    "button-danger-hover": "#fa7676",
-    "button-danger-text": "#010f1c",
-    "button-primary": "#44a3ff",
-    "button-primary-border": "#21242b",
-    "button-primary-hover": "#64b3ff",
-    "button-primary-text": "#010f1c",
-    "button-secondary": "#353d4a",
-    "button-secondary-border": "#282c34",
-    "button-secondary-hover": "#404a59",
-    "button-secondary-text": "#cfd8e3",
-    "header-background": "#2c333e",
-    "header-icon": "#cfd8e3",
-    "header-icon-primary": "#44a3ff",
-    "header-text": "#cfd8e3",
-    "header-text-important": "#10c469",
-    "header-user-background": "#44a3ff",
-    "header-user-text": "#010f1c",
-    "panel-background": "#2c333e",
-    "panel-background-alt": "#282e38",
-    "panel-background-selected-row": "#283654",
-    "panel-background-overlay": "#282e38e5",
-    "panel-background-poster-overlay": "#282e38a6",
-    "panel-background-transparent": "#282e38a6",
-    "panel-border": "#21242b",
-    "panel-icon": "#cfd8e3",
-    "panel-icon-action": "#44a3ff",
-    "panel-icon-danger": "#ff6c6c",
-    "panel-icon-important": "#10c469",
-    "panel-icon-warning": "#f9c851",
-    "panel-input": "#1e2027",
-    "panel-menu-item-background": "#85c3ff1a",
-    "panel-menu-item-background-hover": "#bacfe41a",
-    "panel-menu-item-text": "#a9d5ff",
-    "panel-table-header": "#22262f",
-    "panel-tags": "#3f4762",
-    "panel-text": "#cfd8e3",
-    "panel-text-danger": "#ff6c6c",
-    "panel-text-important": "#10c469",
-    "panel-text-other": "#b981ff",
-    "panel-text-primary": "#44a3ff",
-    "panel-text-warning": "#f9c851",
-    "panel-toggle-background": "#85c3ff1a",
-    "panel-toggle-background-alt": "#282e38",
-    "panel-toggle-background-hover": "#bacfe41a",
-    "panel-toggle-text": "#a9d5ff",
-    "panel-toggle-text-alt": "#cfd8e3",
-    "slider-background": "#21242b",
-    "slider-background-alt": "#282e38",
-    "slider-color": "#44a3ff",
-    "slider-color-alt": "#44a3ff",
-    "topnav-background": "#353d4a",
-    "topnav-border": "#21242b",
-    "topnav-icon": "#cfd8e3",
-    "topnav-icon-important": "#10c469",
-    "topnav-icon-primary": "#44a3ff",
-    "topnav-icon-warning": "#f9c851",
-    "topnav-text": "#cfd8e3",
-    "topnav-text-primary": "#44a3ff",
-    "logo-outline": "#000",
-    "logo-skin": "#fdf5e8",
-    "logo-face-shadow": "#fe514d",
-    "logo-eye-ref1": "#e3e4d6",
-    "logo-eye-ref2": "#e8c8bb",
-    "logo-eye-ref3": "#ffc2b2",
-    "logo-eye-gradient1": "#ae303b",
-    "logo-eye-gradient2": "#ec4050",
-    "logo-eye-gradient3": "#fd877d",
-    "logo-hair-gradient1": "#c33144",
-    "logo-hair-gradient2": "#6b8cdb",
-    "logo-hair-gradient3": "#79f0f8"
-  }
+  "type": "dark",
+  "colors": ["blue", "green", "red"],
+  "css": "./theme-name.css",
+  "update": "Repo URL"
 }
 ```
+</Accordion>
+
+<Accordion title='Theme CSS Example'>
+```css
+& {
+  --button-danger: #FF5252;
+  --button-danger-border: #0B0E17;
+  --button-danger-hover: #fa7676;
+  --button-danger-text: #010f1c;
+  --button-primary: #3B82F6;
+  --button-primary-border: #0B0E17;
+  --button-primary-hover: #64b3ff;
+  --button-primary-text: #010f1c;
+  --button-secondary: #313946;
+  --button-secondary-border: #0B0E17;
+  --button-secondary-hover: #404a59;
+  --button-secondary-text: #cfd8e3;
+  --header-background: #191F2C;
+  --header-icon: #cfd8e3;
+  --header-icon-primary: #3B82F6;
+  --header-text: #cfd8e3;
+  --header-text-important: #06C270;
+  --header-user-background: #3B82F6;
+  --header-user-text: #010f1c;
+  --panel-background: #191F2C;
+  --panel-background-alt: #171C28;
+  --panel-background-selected-row: #243148;
+  --panel-background-overlay: #212f3de5;
+  --panel-background-poster-overlay: #212f3de5;
+  --panel-background-transparent: #191F2Ca6;
+  --panel-border: #0B0E17;
+  --panel-icon: #cfd8e3;
+  --panel-icon-action: #3B82F6;
+  --panel-icon-danger: #FF5252;
+  --panel-icon-important: #06C270;
+  --panel-icon-warning: #F1C40F;
+  --panel-input: #121823;
+  --panel-menu-item-background: #0f355a;
+  --panel-menu-item-background-hover: #283e61;
+  --panel-menu-item-text: #a9d5ff;
+  --panel-table-header: #0d141f;
+  --panel-tags: #3f4762;
+  --panel-text: #cfd8e3;
+  --panel-text-danger: #FF5252;
+  --panel-text-important: #06C270;
+  --panel-text-other: #AC72F5;
+  --panel-text-primary: #3B82F6;
+  --panel-text-warning: #F1C40F;
+  --panel-toggle-background: #0f355a;
+  --panel-toggle-background-alt: #6e8aa61a;
+  --panel-toggle-background-hover: #283e61;
+  --panel-toggle-text: #a9d5ff;
+  --panel-toggle-text-alt: #cfd8e3;
+  --slider-background: #0B0E17;
+  --slider-background-alt: #171C28;
+  --slider-color: #3B82F6;
+  --slider-color-alt: #3B82F6;
+  --topnav-background: #101723;
+  --topnav-border: #0B0E17;
+  --topnav-icon: #cfd8e3;
+  --topnav-icon-important: #06C270;
+  --topnav-icon-primary: #cfd8e3;
+  --topnav-icon-warning: #F1C40F;
+  --topnav-text: #cfd8e3;
+  --topnav-text-primary: #3B82F6;
+  --logo-outline: #000;
+  --logo-skin: #fdf5e8;
+  --logo-face-shadow: #fe514d;
+  --logo-eye-ref1: #e3e4d6;
+  --logo-eye-ref2: #e8c8bb;
+  --logo-eye-ref3: #ffc2b2;
+  --logo-eye-gradient1: #ae303b;
+  --logo-eye-gradient2: #ec4050;
+  --logo-eye-gradient3: #fd877d;
+  --logo-hair-gradient1: #c33144;
+  --logo-hair-gradient2: #6b8cdb;
+  --logo-hair-gradient3: #79f0f8;
+}
+```
+ </Accordion>
 
 ### Transparency With Hex Colors
 
-You can append a two-digit HEX code to the end of your HEX value to specify the desired opacity for a variable. In the
-template provided above, variables like **panel-background-overlay** and **panel-background-transparent** utilize this
-method to apply opacity.
+When using Hex colors, you can append a two-digit HEX code to the end of your HEX value to specify the desired opacity
+for a variable. In the template provided above, variables like **panel-background-overlay** and
+**panel-background-transparent** utilize this method to apply opacity.
 
-The [following site](https://davidwalsh.name/hex-opacity) provides a comprehensive list of values and their
-corresponding HEX codes you can use.
-
-## Using a Custom Theme
-
-After you've downloaded the JSON file, copy it into the theme folder as listed above. Then in the Shoko Web UI, go
-into **Settings** and select **General** and look for **Theme Options**. There is a drop-down input you can click
-which will list every properly installed theme.
-
-If your new theme is not showing up, that means there is an issue with its structure, and it failed to load properly.
+The [following site](https://davidwalsh.name/hex-opacity) provides a comprehensive list of values and their corresponding HEX codes you can use.
