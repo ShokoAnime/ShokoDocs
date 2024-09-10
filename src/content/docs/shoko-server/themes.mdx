@@ -8,42 +8,14 @@ import EasyTable from '../../../components/EasyTable/EasyTable';
 import Accordion from "../../../components/Accordion/Accordion";
 
 Shoko by default includes a fully customizable theme system that allows users to change the look and feel of the Web UI
-to their liking. This eliminates the need for third-party plugins like Stylus and allows users to easily create and if
+to their liking. This eliminates the need for third-party plugins like Stylus and allows users to easily create, and if
 desired, share their themes with the community.
-
-## Understanding Custom Themes
-
-In Shoko, a single theme consists of two files, a JSON file that contains the theme information and a CSS file that
-contains the styling. Both files are required for the theme to work correctly and are stored in the **themes** folder
-located in one of the following directories depending on your operating system.
-
-<EasyTable
-  columns={[
-    { name: 'OS', header: 'OS' },
-    { name: 'Location', header: 'Location' }
-  ]}
-  data={[
-    {
-      OS: 'Windows',
-      Location: 'C:\\ProgramData\\ShokoServer\\themes'
-    },
-    {
-      OS: 'Linux/macOS',
-      Location: '~/.shoko/Shoko.CLI/themes'
-    }
-  ]}
-/>
-
-Please note, unless manually installing themes, we recommend using the Web UI to install themes as it simplifies the
-process and ensures the theme is correctly installed.
 
 ## Downloading & Installing Themes
 
 Web UI Themes are available from our website and can be downloaded from the [Web UI Themes](https://shokoanime.com/themes)
-page. Please note, themes downloaded from the Shoko website are only the JSON file with the CSS file being downloaded
-when the theme is installed.
-
-Once you've downloaded your theme, you can install it using the Web UI. Follow the steps below to install your theme.
+page. Once you've downloaded your theme, you can install it using the Web UI. Follow the steps below to
+install your theme.
 
 <Steps>
 1. Open the Web UI and navigate to the **Settings** section.
@@ -53,45 +25,64 @@ Once you've downloaded your theme, you can install it using the Web UI. Follow t
 </Steps>
 
 :::note[About Installing Themes]
-Themes are auto-installed once imported, simply switch to the theme and click **Save** to apply it.
+Themes are auto-applied once imported, but the settings are not yet saved! Press **Save** if you want to save your new
+theme as the theme to use.
 :::
 
 ## Creating Your Own Theme
 
-Creating a custom theme is a straightforward process that requires you to create two files, a JSON file that contains the
-theme information and a CSS file that contains the styling. Both files are stored in the **themes** folder, refer to the
-locations above for the correct directory.
+We recommend using one of the templates below if you want to create your very own custom theme. All templates provide a
+starting point for creating your theme, but they all have their strengths and weaknesses. If you plan to share your
+theme with others then it's highly recommended to go with the "Online Theme Example," and storing it somewhere on the
+internet. We also support just supplying either a single JSON file or CSS file if all you want is your own personal
+theme.
 
-We recommend using the two templates below to create your custom theme. Both templates provide a starting point for
-creating your theme, and you can customize them to your liking.
-
-### Theme Template
-
-Below is a template you can use to create your custom theme. Make sure your theme includes both the JSON and CSS files,
-otherwise it will not work correctly. We also recommend naming both files the same for easy identification, though this
-is not required as the value for the **css** key in the JSON file is used to identify the CSS file.
+:::note[File Names]
+Be sure to name the files you intend to use using only alphanumeric characters, dashes (\-), or underscores (\_). If you
+need spacing between words, then use dashes (\-).
+:::
 
 :::note[HEX Values Not Required]
 While we use HEX values in the example below and in the default Shoko theme, you can use any valid CSS color value.
 :::
 
-<Accordion title='Theme JSON Example'>
+<Accordion title='Online Theme Example'>
+JSON File Name: `your-favourite-theme.json`
  ```json
 {
-  "name": "Theme Name",
-  "version": "1.00",
-  "author": "Your Name",
-  "description": "Description",
-  "type": "dark",
-  "colors": ["blue", "green", "red"],
-  "css": "./theme-name.css",
-  "update": "Repo URL"
+  // You can write comments in here since our JSON parser supports JSON with comments!
+
+  // The name of your theme
+  "name": "Your Favourite Theme",
+
+  // The version string. We support "<major>[.<minor>[.<patch>[.<build>]]]", so
+  // any of the following will work; "1", "1.2", "1.2.3", or "1.2.3.4"
+  "version": "1.2",
+
+  // The author. Only important if you plan to share your theme with others.
+  // Though, it is a required field, so be sure to include _something_!
+  "author": "You",
+
+  // Description. The same as above applies.
+  "description": "A very descriptive line or paragraph about the theme. You can write as much or little as you want. You choose.",
+
+  // The tags will only matter for the online "store" so you can typically ignore them unless you plan to feature the theme in the "store."
+  "tags": ["type:dark", "color:red", "color:blue", "color:green"],
+
+  // Url to where the CSS file is hosted if it's not inlined in the JSON file. It can be relative to the update URL if one is defined.
+  "cssUrl": "./your-faviourite-theme.css",
+
+  // Url to where the json theme definition (this file!) will live online. Used for installing and auto-updates.
+  "updateUrl": "https://raw.githubusercontent.com/ShokoAnime/Shoko-Themes/api/themes/your-faviourite-theme.json",
 }
 ```
-</Accordion>
 
-<Accordion title='Theme CSS Example'>
+CSS File Name: `your-faviourite-theme.css`
 ```css
+/*
+ * You can optionally define these colors outside the `& { … }` block, but your
+ * linter will probably complain if you use one.
+ */
 & {
   --button-danger: #FF5252;
   --button-danger-border: #0B0E17;
@@ -166,8 +157,212 @@ While we use HEX values in the example below and in the default Shoko theme, you
   --logo-hair-gradient2: #6b8cdb;
   --logo-hair-gradient3: #79f0f8;
 }
+
+/*
+ * You can write any custom CSS you want in here.
+ * You make the rules (_literally_)!
+ */
+.rounded, .rounded-md, .rounded-lg {
+  border-radius: 0 !important;
+}
 ```
- </Accordion>
+</Accordion>
+
+<Accordion title='JSON-only Theme Example'>
+```json
+{
+  // You can write comments in here since our JSON parser supports JSON with comments!
+
+  // The name of your theme
+  "name": "Your Favourite Theme",
+
+  // The version string. We support "<major>[.<minor>[.<patch>[.<build>]]]", so
+  // any of the following will work; "1", "1.2", "1.2.3", or "1.2.3.4"
+  "version": "1.2",
+
+  // The author. Only important if you plan to share your theme with others.
+  // Though, it is a required field, so be sure to include _something_!
+  "author": "You",
+
+  // Description. The same as above applies.
+  "description": "A very descriptive line or paragraph about the theme. You can write as much or little as you want. You choose.",
+
+
+  // CSS variables to include or override in the theme. Alternatively you can
+  // write them inline in the "css" field below.
+  "values": {
+    "button-danger": "#FF5252",
+    "button-danger-border": "#0B0E17",
+    "button-danger-hover": "#fa7676",
+    "button-danger-text": "#010f1c",
+    "button-primary": "#3B82F6",
+    "button-primary-border": "#0B0E17",
+    "button-primary-hover": "#64b3ff",
+    "button-primary-text": "#010f1c",
+    "button-secondary": "#313946",
+    "button-secondary-border": "#0B0E17",
+    "button-secondary-hover": "#404a59",
+    "button-secondary-text": "#cfd8e3",
+    "header-background": "#191F2C",
+    "header-icon": "#cfd8e3",
+    "header-icon-primary": "#3B82F6",
+    "header-text": "#cfd8e3",
+    "header-text-important": "#06C270",
+    "header-user-background": "#3B82F6",
+    "header-user-text": "#010f1c",
+    "panel-background": "#191F2C",
+    "panel-background-alt": "#171C28",
+    "panel-background-selected-row": "#243148",
+    "panel-background-overlay": "#212f3de5",
+    "panel-background-poster-overlay": "#212f3de5",
+    "panel-background-transparent": "#191F2Ca6",
+    "panel-border": "#0B0E17",
+    "panel-icon": "#cfd8e3",
+    "panel-icon-action": "#3B82F6",
+    "panel-icon-danger": "#FF5252",
+    "panel-icon-important": "#06C270",
+    "panel-icon-warning": "#F1C40F",
+    "panel-input": "#121823",
+    "panel-menu-item-background": "#0f355a",
+    "panel-menu-item-background-hover": "#283e61",
+    "panel-menu-item-text": "#a9d5ff",
+    "panel-table-header": "#0d141f",
+    "panel-tags": "#3f4762",
+    "panel-text": "#cfd8e3",
+    "panel-text-danger": "#FF5252",
+    "panel-text-important": "#06C270",
+    "panel-text-other": "#AC72F5",
+    "panel-text-primary": "#3B82F6",
+    "panel-text-warning": "#F1C40F",
+    "panel-toggle-background": "#0f355a",
+    "panel-toggle-background-alt": "#6e8aa61a",
+    "panel-toggle-background-hover": "#283e61",
+    "panel-toggle-text": "#a9d5ff",
+    "panel-toggle-text-alt": "#cfd8e3",
+    "slider-background": "#0B0E17",
+    "slider-background-alt": "#171C28",
+    "slider-color": "#3B82F6",
+    "slider-color-alt": "#3B82F6",
+    "topnav-background": "#101723",
+    "topnav-border": "#0B0E17",
+    "topnav-icon": "#cfd8e3",
+    "topnav-icon-important": "#06C270",
+    "topnav-icon-primary": "#cfd8e3",
+    "topnav-icon-warning": "#F1C40F",
+    "topnav-text": "#cfd8e3",
+    "topnav-text-primary": "#3B82F6",
+    "logo-outline": "#000",
+    "logo-skin": "#fdf5e8",
+    "logo-face-shadow": "#fe514d",
+    "logo-eye-ref1": "#e3e4d6",
+    "logo-eye-ref2": "#e8c8bb",
+    "logo-eye-ref3": "#ffc2b2",
+    "logo-eye-gradient1": "#ae303b",
+    "logo-eye-gradient2": "#ec4050",
+    "logo-eye-gradient3": "#fd877d",
+    "logo-hair-gradient1": "#c33144",
+    "logo-hair-gradient2": "#6b8cdb",
+    "logo-hair-gradient3": "#79f0f8",
+  },
+  /*
+   * If you have any other css changes that are not variable overrides then you can inline it in the "css" field as shown below.
+   */
+  "css": "/* You can write any custom CSS you want in here. You make the rules (_literally_)! */ .rounded, .rounded-md, .rounded-lg { border-radius: 0 !important; }",
+}
+```
+</Accordion>
+
+<Accordion title='CSS-only Theme Example'>
+File Name: `your-faviourite-theme.css`
+```css
+/*
+ * You can optionally define these colors outside the `& { … }` block, but your
+ * linter will probably complain if you use one.
+ */
+& {
+  --button-danger: #FF5252;
+  --button-danger-border: #0B0E17;
+  --button-danger-hover: #fa7676;
+  --button-danger-text: #010f1c;
+  --button-primary: #3B82F6;
+  --button-primary-border: #0B0E17;
+  --button-primary-hover: #64b3ff;
+  --button-primary-text: #010f1c;
+  --button-secondary: #313946;
+  --button-secondary-border: #0B0E17;
+  --button-secondary-hover: #404a59;
+  --button-secondary-text: #cfd8e3;
+  --header-background: #191F2C;
+  --header-icon: #cfd8e3;
+  --header-icon-primary: #3B82F6;
+  --header-text: #cfd8e3;
+  --header-text-important: #06C270;
+  --header-user-background: #3B82F6;
+  --header-user-text: #010f1c;
+  --panel-background: #191F2C;
+  --panel-background-alt: #171C28;
+  --panel-background-selected-row: #243148;
+  --panel-background-overlay: #212f3de5;
+  --panel-background-poster-overlay: #212f3de5;
+  --panel-background-transparent: #191F2Ca6;
+  --panel-border: #0B0E17;
+  --panel-icon: #cfd8e3;
+  --panel-icon-action: #3B82F6;
+  --panel-icon-danger: #FF5252;
+  --panel-icon-important: #06C270;
+  --panel-icon-warning: #F1C40F;
+  --panel-input: #121823;
+  --panel-menu-item-background: #0f355a;
+  --panel-menu-item-background-hover: #283e61;
+  --panel-menu-item-text: #a9d5ff;
+  --panel-table-header: #0d141f;
+  --panel-tags: #3f4762;
+  --panel-text: #cfd8e3;
+  --panel-text-danger: #FF5252;
+  --panel-text-important: #06C270;
+  --panel-text-other: #AC72F5;
+  --panel-text-primary: #3B82F6;
+  --panel-text-warning: #F1C40F;
+  --panel-toggle-background: #0f355a;
+  --panel-toggle-background-alt: #6e8aa61a;
+  --panel-toggle-background-hover: #283e61;
+  --panel-toggle-text: #a9d5ff;
+  --panel-toggle-text-alt: #cfd8e3;
+  --slider-background: #0B0E17;
+  --slider-background-alt: #171C28;
+  --slider-color: #3B82F6;
+  --slider-color-alt: #3B82F6;
+  --topnav-background: #101723;
+  --topnav-border: #0B0E17;
+  --topnav-icon: #cfd8e3;
+  --topnav-icon-important: #06C270;
+  --topnav-icon-primary: #cfd8e3;
+  --topnav-icon-warning: #F1C40F;
+  --topnav-text: #cfd8e3;
+  --topnav-text-primary: #3B82F6;
+  --logo-outline: #000;
+  --logo-skin: #fdf5e8;
+  --logo-face-shadow: #fe514d;
+  --logo-eye-ref1: #e3e4d6;
+  --logo-eye-ref2: #e8c8bb;
+  --logo-eye-ref3: #ffc2b2;
+  --logo-eye-gradient1: #ae303b;
+  --logo-eye-gradient2: #ec4050;
+  --logo-eye-gradient3: #fd877d;
+  --logo-hair-gradient1: #c33144;
+  --logo-hair-gradient2: #6b8cdb;
+  --logo-hair-gradient3: #79f0f8;
+}
+
+/*
+ * You can write any custom CSS you want in here.
+ * You make the rules (_literally_)!
+ */
+.rounded, .rounded-md, .rounded-lg {
+  border-radius: 0 !important;
+}
+```
+</Accordion>
 
 ### Transparency With Hex Colors
 
@@ -176,3 +371,30 @@ for a variable. In the template provided above, variables like **panel-backgroun
 **panel-background-transparent** utilize this method to apply opacity.
 
 The [following site](https://davidwalsh.name/hex-opacity) provides a comprehensive list of values and their corresponding HEX codes you can use.
+
+
+## Understanding Custom Themes
+
+In Shoko, a single theme consists of one or two files, a JSON file that contains the theme information and a CSS file
+that contains the styling. Only one file is required at minimum for the theme to work correctly and both are stored in
+the **themes** folder located in one of the following directories depending on your operating system.
+
+<EasyTable
+  columns={[
+    { name: 'OS', header: 'OS' },
+    { name: 'Location', header: 'Location' }
+  ]}
+  data={[
+    {
+      OS: 'Windows',
+      Location: 'C:\\ProgramData\\ShokoServer\\themes'
+    },
+    {
+      OS: 'Linux/macOS',
+      Location: '~/.shoko/Shoko.CLI/themes'
+    }
+  ]}
+/>
+
+Please note, we recommend using the Web UI to install themes as it simplifies the process and ensures the theme is
+correctly installed.
