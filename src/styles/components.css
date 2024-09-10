@@ -1,5 +1,5 @@
 /* ---------------------------------- */
-/* TOC - Contribute  */
+/* TOC - Contribute                   */
 /* ---------------------------------- */
 .toc-contribute-wrapper {
 	display: flex;
@@ -22,11 +22,13 @@
 }
 
 /* ---------------------------------- */
-/* Accordion */
+/* Accordion                          */
 /* ---------------------------------- */
 
 .accordion-wrapper {
-	margin-top: 0 !important;
+	border: none !important;
+	border-radius: 8px;
+	padding: 0 !important;
 }
 
 .accordion-header {
@@ -35,6 +37,22 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 1rem;
+	padding-left: 1.5rem !important;
+	position: relative;
+	margin-bottom: 0 !important;
+
+}
+
+.accordion-header::before {
+	display: none !important;
+}
+
+.accordion-header::after {
+	content: '>';
+	display: inline-block;
+	position: absolute;
+	right: 1rem;
+	transition: 0.2s;
 }
 
 details[open] > .accordion-header {
@@ -43,70 +61,63 @@ details[open] > .accordion-header {
 
 .accordion-body {
 	border-bottom: 2px solid var(--sl-color-hairline);
-	padding: 1rem 1rem 2rem 1rem;
-}
-
-/* ---------------------------------- */
-/* EasyTable */
-/* ---------------------------------- */
-
-.easy-wrapper {
-	border-radius: 0.5rem;
-}
-
-.easy-header {
-	align-items: center;
-	background: var(--sl-color-bg-nav);
-	border-bottom: 2px solid var(--sl-color-hairline);
-	display: flex;
-	font-weight: 600;
-
-	& div {
-		margin-top: 0 !important;
-		padding: 1rem;
-	}
-
-}
-
-.easy-header-center,
-.easy-row-center {
-	text-align: center;
-}
-
-.easy-row {
-	display: flex;
-	flex-direction: row;
-	margin-top: 0 !important;
-
-	& div {
-		margin-top: 0 !important;
-		padding: 1rem;
-	}
-
-}
-
-.easy-row:nth-child(odd) {
-	background: var(--sl-color-bg-nav);
-	border-top: 2px solid var(--sl-color-hairline);
-}
-
-.easy-row > div {
-	margin: auto 0;
-}
-
-.easy-row > div > p {
+	padding: 2rem 1rem;
 	margin: 0 !important;
 }
 
-.easy-row > div > code {
-	display: flex;
-	overflow-x: auto;
-	white-space: pre;
-	width: 85%;
+/* ---------------------------------- */
+/* EasyTable                          */
+/* ---------------------------------- */
+
+.easy-table-wrapper {
+  width: 100%;
+}
+
+.easy-table {
+  display: table !important;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.easy-table td {
+  word-break: break-word;
+}
+
+.easy-table td, .easy-table th {
+  padding: 0.5rem !important;
+}
+
+.easy-table tr:last-child td {
+  border-bottom: none;
+}
+
+.easy-table td > code {
+  display: inline-block;
+  overflow-x: auto;
+  white-space: pre;
+  max-width: 100%;
+}
+
+.easy-table td > p {
+  margin-bottom: 0.5em;
+}
+
+.easy-table td > p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1023px) {
+  .easy-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .easy-table {
+    min-width: max-content;
+  }
 }
 
 /* ---------------------------------- */
-/* Changelog */
+/* Changelog                          */
 /* ---------------------------------- */
 
 .changelog-wrapper {
@@ -153,18 +164,28 @@ details[open] > .accordion-header {
 
 .changelog-type-wrapper {
 	margin-bottom: 1rem;
-	padding-left: 2.5rem;
+	margin-left: 2.5rem;
 	position: relative;
 
 }
 
 .changelog-type-wrapper:before {
-	border-left: 1px solid var(--sl-color-gray-3);;
+	border-left: 2px solid var(--sl-color-gray-3);;
 	content: '';
 	position: absolute;
-	top: 24px;
-	left: 1.016rem;
-	height: calc(100% - 21px);
+	left: calc(-1.5rem - 1px);
+	height: 100%;
+	z-index: -1;
+}
+
+.changelog-type:after {
+	content: '';
+	position: absolute;
+	left: calc(-1.5rem - 1px);
+	height: 50%;
+	background-color: var(--sl-color-bg);
+	width: 4px;
+	top: 0;
 }
 
 .changelog-type {
@@ -173,6 +194,7 @@ details[open] > .accordion-header {
 	display: flex;
 	font-weight: 600;
 	text-transform: capitalize;
+	position: relative;
 }
 
 .changelog-type:before {
@@ -184,7 +206,8 @@ details[open] > .accordion-header {
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
 	position: absolute;
-	left: 9px;
+	left: calc(-1.5rem - .5rem);
+	z-index: 1;
 }
 
 .changelog-item-wrapper {
@@ -209,9 +232,21 @@ details[open] > .accordion-header {
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
 	position: absolute;
-	left: -27.3px;
-	top: 10px;
+	left: calc(-1.5rem - .25rem);
+	top: calc(50% - .25rem);
+	z-index: 1;
 }
+
+.changelog-item:last-child:after {
+	content: '';
+	position: absolute;
+	left: calc(-1.5rem - 1px);
+	height: 50%;
+	background-color: var(--sl-color-bg);
+	width: 4px;
+	bottom: 0;
+}
+
 
 .changelog-added:before {
 	background: var(--changelog-added);
@@ -229,9 +264,8 @@ details[open] > .accordion-header {
 	background: var(--changelog-removed);
 }
 
-
 /* ---------------------------------- */
-/* Docker Compose & Input */
+/* Docker Compose & Input             */
 /* ---------------------------------- */
 
 .docker-compose-wrapper {
@@ -307,7 +341,7 @@ details[open] > .accordion-header {
 }
 
 .docker-output-codeblock {
-	background-color: var(--sl-color-bg-sidebar);;
+	background: var(--sl-color-bg-nav);
 	border-radius: 5px;
 	box-shadow: var(--ec-frm-frameBoxShdCssVal);
 	padding: 1rem;

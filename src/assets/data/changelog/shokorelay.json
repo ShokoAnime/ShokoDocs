@@ -2,6 +2,230 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.8",
+      "versionURL": "128",
+      "date": "Sep 7th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.8",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added a fallback name for cases where a seiyuu on AniDB has no character attached to it"
+        },
+        {
+          "type": "added",
+          "text": "Added further refinements to the summary sanitizer"
+        }
+      ]
+    },
+    {
+      "version": "1.2.7",
+      "versionURL": "127",
+      "date": "Sep 5th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.7",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added a fallback to AniDB episode numbering when multiple AniDB episode entries are linked to a single TMDB episode"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed the TMDB title check which wasn't fully implemented after switching from TheTVDB"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed rescan-recent.py not fully functioning after some recent APIv3 changes"
+        },
+        {
+          "type": "added",
+          "text": "Added logging for the TMDB type along with the ID"
+        },
+        {
+          "type": "added",
+          "text": "Added a note on combining episodes to the readme"
+        }
+      ]
+    },
+    {
+      "version": "1.2.6",
+      "versionURL": "126",
+      "date": "Sep 2nd, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.6",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added a fallback to TMDB when the AniDB description is rendered empty by the sanitizer"
+        },
+        {
+          "type": "added",
+          "text": "Added logging if there was a fallback attempt for the description"
+        },
+        {
+          "type": "changed",
+          "text": "Changed the AniDB link detection to catch more URL formats"
+        },
+        {
+          "type": "changed",
+          "text": "Changed the two optional line sanitizers to be more robust"
+        }
+      ]
+    },
+    {
+      "version": "1.2.5",
+      "versionURL": "125",
+      "date": "Aug 30th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.5",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added BBCode [i] tag removal to the summary sanitizer"
+        },
+        {
+          "type": "added",
+          "text": "Added double space removal to the summary sanitizer"
+        },
+        {
+          "type": "removed",
+          "text": "Removed season poster main series fallback due to priority issues"
+        }
+      ]
+    },
+    {
+      "version": "1.2.4",
+      "versionURL": "124",
+      "date": "Aug 30th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.4",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added support for TMDB season posters"
+        },
+        {
+          "type": "added",
+          "text": "Added \"written by\" lines to the summary sanitizer \"Misc. Lines\" option"
+        },
+        {
+          "type": "added",
+          "text": "Added readme additions pertaining to Plex plugin deprecation and Shoko creator images"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed summary sanitizer empty line removal not being the last step"
+        }
+      ]
+    },
+    {
+      "version": "1.2.3",
+      "versionURL": "123",
+      "date": "Aug 28th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.3",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added the agent option to add all posters and backdrops from Shoko instead of just the preferred one"
+        },
+        {
+          "type": "changed",
+          "text": "Changed the agent options formatting for readability as well as modifying some setting names"
+        }
+      ]
+    },
+    {
+      "version": "1.2.2",
+      "versionURL": "122",
+      "date": "Aug 25th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.2",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed an error in the agent when attempting to download theme music without a TMDB match"
+        },
+        {
+          "type": "changed",
+          "text": "Changed the summary options in the agent so that they are all in a single dropdown"
+        }
+      ]
+    },
+    {
+      "version": "1.2.1",
+      "versionURL": "121",
+      "date": "Aug 23rd, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.1",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Account for \"Poster ID\" recently being changed from string to int in APIv3"
+        }
+      ]
+    },
+    {
+      "version": "1.2.0",
+      "versionURL": "120",
+      "date": "Aug 17th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.0",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Changed all TvDB references/usage in the bundle to new TMDB alternatives"
+        },
+        {
+          "type": "changed",
+          "text": "Changed episode thumbnail links to use the default selection"
+        },
+        {
+          "type": "added",
+          "text": "Added TMDB descriptions for series and episodes if configured in Shoko"
+        },
+        {
+          "type": "added",
+          "text": "Added several logging improvements (mainly cast & crew image logs)"
+        },
+        {
+          "type": "added",
+          "text": "Added several readme additions including recommended settings for Shoko"
+        },
+        {
+          "type": "fixed",
+          "text": "Account for \"Fanarts\" recently being renamed to \"Backdrops\" in APIv3"
+        },
+        {
+          "type": "removed",
+          "text": "Removed support for banner images as they are unsupported by TMDB and almost completely deprecated in Plex"
+        }
+      ]
+    },
+    {
+      "version": "1.1.18",
+      "versionURL": "1118",
+      "date": "Jul 8th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.18",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed failed_list initialization placement in force-metadata.py (thanks dasco144)"
+        },
+        {
+          "type": "added",
+          "text": "Added the minimum required version of Shoko Server to the readme"
+        }
+      ]
+    },
+    {
+      "version": "1.1.17",
+      "versionURL": "1117",
+      "date": "Jun 6th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.17",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added the \"Suggestive Dialogue\" content descriptor (for \"Assumed Content Ratings\")"
+        },
+        {
+          "type": "added",
+          "text": "Added a TV-14 rating upgrade for anime with a 300 weight of the \"Sex\" tag (for \"Assumed Content Ratings\")"
+        }
+      ]
+    },
+    {
       "version": "1.1.16",
       "versionURL": "1116",
       "date": "May 25th, 2024",

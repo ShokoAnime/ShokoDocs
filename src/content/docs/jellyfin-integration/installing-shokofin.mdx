@@ -27,16 +27,43 @@ Below lists the corresponding versions of Jellyfin and Shoko Server that are com
 the correct version for your setup to guarantee functionality.
 
 <EasyTable
-    header={["Shokofin", "Jellyfin", "Shoko Server"]}
-    data={[
-      ["`0.x.x`",     "`10.7`",   "`4.0.0`&mdash;`4.1.2`"],
-      ["`1.x.x`",     "`10.7`",   "`4.1.0`&mdash;`4.1.2`"],
-      ["`2.x.x`",     "`10.8`",   "`4.1.2`"              ],
-      ["`3.x.x`",     "`10.8`",   "`4.2.0`"              ],
-      ["`dev`",       "`10.8`",   "`daily`"              ],
-      ["Soon&trade;", "`10.9`",   "Soon&trade;"          ],
-    ]}
-    columnWidths={{ Shokofin: "33%", Jellyfin: "33%", ShokoServer: "33%"}}
+  columns={[
+    { name: 'Shokofin', header: 'Shokofin' },
+    { name: 'Jellyfin', header: 'Jellyfin' },
+    { name: 'ShokoServer', header: 'Shoko Server' }
+  ]}
+  data={[
+    {
+      Shokofin: '`0.x.x`',
+      Jellyfin: '`10.7`',
+      ShokoServer: '`4.0.0`&mdash;`4.1.2`'
+    },
+    {
+      Shokofin: '`1.x.x`',
+      Jellyfin: '`10.7`',
+      ShokoServer: '`4.1.0`&mdash;`4.1.2`'
+    },
+    {
+      Shokofin: '`2.x.x`',
+      Jellyfin: '`10.8`',
+      ShokoServer: '`4.1.2`'
+    },
+    {
+      Shokofin: '`3.x.x`',
+      Jellyfin: '`10.8`',
+      ShokoServer: '`4.2.0`'
+    },
+    {
+      Shokofin: '`unstable`',
+      Jellyfin: '`10.8`',
+      ShokoServer: '`daily`'
+    },
+    {
+      Shokofin: 'Soon&trade;',
+      Jellyfin: '`10.9`',
+      ShokoServer: 'Soon&trade;'
+    }
+  ]}
 />
 
 There are multiple ways to install this plugin, but the recommended way is to use our official Jellyfin repository.

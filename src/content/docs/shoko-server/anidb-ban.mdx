@@ -98,12 +98,20 @@ AniDB's data. [Click Here](https://shokoanime.com/files/shoko-server/other/Anime
 #### XML Cache Location
 
 <EasyTable
-  header={["OS", "Location"]}
-  data={[
-    ["Windows", "C:\\ProgramData\\ShokoServer"],
-    ["Linux/macOS", "~/.shoko/Shoko.CLI/"],
+  columns={[
+    { name: 'OS', header: 'OS' },
+    { name: 'Location', header: 'Location' }
   ]}
-  columnWidths={{ OS: "25%", Location: "75%" }}
+  data={[
+    {
+      OS: 'Windows',
+      Location: 'C:\\ProgramData\\ShokoServer'
+    },
+    {
+      OS: 'Linux/macOS',
+      Location: '~/.shoko/Shoko.CLI/'
+    }
+  ]}
 />
 
 Unzip **Anime_HTTP.zip** and extract it into the directory listed above, depending on your platform. If prompted to

@@ -12,14 +12,17 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
-    "@astrojs/react": "^3.4.0",
-    "@astrojs/starlight": "^0.21.5",
-    "@fontsource-variable/lexend-deca": "^5.0.13",
-    "@types/node": "^20.12.12",
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/starlight": "^0.25.5",
+    "@fontsource-variable/noto-sans": "^5.0.5",
+    "@fontsource-variable/open-sans": "^5.0.30",
+    "@fontsource-variable/sora": "^5.0.19",
+    "@types/node": "^20.16.1",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "astro": "^4.9.2",
-    "prettier": "^3.2.5",
+    "astro": "^4.14.2",
+    "dprint": "^0.47.2",
+    "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.13.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -27,6 +30,6 @@
     "sharp": "^0.32.6",
     "shiki": "^0.14.7",
     "starlight-image-zoom": "^0.5.0",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.4"
   }
 }

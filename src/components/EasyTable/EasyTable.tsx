@@ -1,76 +1,74 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-interface EasyTableProps {
- header: string[];
- data: Array<Array<string | React.ReactNode>>;
- columnWidths?: { [key: string]: string };
- center?: boolean;
- lineOnly?: boolean;
+interface Column {
+  name: string;
+  header?: string;
+  width?: string;
 }
 
-const EasyTable = ({
- header,
- data,
- center = false,
- columnWidths = {},
- lineOnly = false,
-}: EasyTableProps) => {
- const getColumnWidthStyle = (columnName: string) => ({
-  width: columnWidths[columnName] || '100%',
- });
+interface EasyTableProps {
+  columns: Column[];
+  data: any[];
+}
 
- const renderCellContent = (cellData: any) => {
-  if (typeof cellData.props?.href !== 'undefined') {
-   return <a href={cellData.props.href}>{cellData.props.children}</a>;
+const renderCellContent = (content: any): React.ReactNode => {
+  if (typeof content === 'object' && content !== null) {
+    if (content.link && content.title) {
+      return <a href={content.link}>{content.title}</a>;
+    }
+    return JSON.stringify(content);
   }
 
-  if (typeof cellData === 'object') {
-   return <a href={cellData.link}>{cellData.name}</a>;
+  if (typeof content === 'string') {
+    if (content.startsWith('http')) {
+      return <a href={content}>Link</a>;
+    }
+
+    // Split the content into paragraphs based on '\n'
+    const paragraphs = content.split('\n').filter(p => p.trim() !== '');
+
+    if (paragraphs.length > 1) {
+      return (
+        <>
+          {paragraphs.map((paragraph, index) => <ReactMarkdown key={index}>{paragraph}</ReactMarkdown>)}
+        </>
+      );
+    } else {
+      return <ReactMarkdown>{content}</ReactMarkdown>;
+    }
   }
 
-  if (typeof cellData === 'string') {
-   if (cellData.startsWith('http')) {
-    return <a href={cellData}>Website</a>;
-   }
-   return <ReactMarkdown>{cellData}</ReactMarkdown>;
-  }
-  return cellData;
- };
+  return content;
+};
 
- return (
-  <div className={`easy-wrapper ${center ? 'easy-center' : ''}`}>
-   <div
-    className="easy-header"
-    style={{
-     background: lineOnly && 'none',
-     borderBottom: lineOnly && 'none',
-    }}
-   >
-    {header.map((column, index) => (
-     <div key={index} style={getColumnWidthStyle(column)}>
-      {column}
-     </div>
-    ))}
-   </div>
-   {data.map((row, rowIndex) => (
-    <div
-     className="easy-row"
-     key={rowIndex}
-     style={{
-      background: lineOnly && 'none',
-      borderTop: lineOnly && '2px solid var(--sl-color-hairline)',
-     }}
-    >
-     {row.map((cell, cellIndex) => (
-      <div key={cellIndex} style={getColumnWidthStyle(header[cellIndex])}>
-       {renderCellContent(cell)}
-      </div>
-     ))}
+const EasyTable = ({ columns, data }: EasyTableProps) => {
+  return (
+    <div className="easy-table-wrapper">
+      <table className="easy-table">
+        <thead>
+          <tr>
+            {columns.map((column) => (
+              <th key={column.name} style={{ width: column.width }}>
+                {column.header || column.name}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row, rowIndex) => (
+            <tr key={rowIndex}>
+              {columns.map((column) => (
+                <td key={column.name}>
+                  {renderCellContent(row[column.name])}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
-   ))}
-  </div>
- );
+  );
 };
 
 export default EasyTable;

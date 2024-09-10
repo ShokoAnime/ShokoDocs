@@ -4,47 +4,51 @@ sidebar:
   order: 1
 Description: Instructions on how to install Shoko Server.
 ---
+
+import { Steps } from '@astrojs/starlight/components';
 import DockerCompose from "../../../components/DockerCompose/DockerCompose";
 
-The installation process for Shoko varies depending on the platform you're attempting to install it on.We recommend
-following the guide and not deviating from it unless you are familiar with what you are doing.
+The installation process for Shoko depends on the platform you're using. We strongly recommend following the provided
+guide without deviations unless you're confident in what you're doing.
 
-If your platform is not listed in the page navigation on the right, it doesn't necessarily mean that Shoko does not
-support it. It simply means that no one has written a guide on how to install Shoko on your specific platform.
+If your platform isn't listed in the navigation menu on the right, it doesn't necessarily mean that Shoko is
+unsupported. It may simply indicate that a guide hasn't been written yet for your specific platform.
 
 ## Windows
 
-Windows users have it the easiest, navigate to the [Shoko Downloads](https://shokoanime.com/downloads/) page and
-download Shoko Server and unless you've been told otherwise, download the **Stable** version. Once it's done downloading,
-run the installer and follow the instructions listed, it should only take a couple of minutes to install Shoko.
+Windows users have the simplest process. Start by visiting the [Shoko Downloads](https://shokoanime.com/downloads/) page and download Shoko Server.
+Unless instructed otherwise, choose the Stable version. Once the download is complete, run the installer and
+follow the on-screen instructions. The installation should only take a few minutes.
+
+:::caution
+We do not recommend using Docker on Windows with WSL or Hyper-V containers. This setup introduces an unnecessary
+abstraction layer that may cause unforeseen issues. If you choose to proceed, you do so at your own risk, as we
+cannot provide support for this configuration.
+:::
 
 ## Linux
 
-Follow the instructions below for running Shoko on Linux using Docker, which is the recommended solution for Linux and
-NAS Systems supporting Docker.
+Follow the instructions below to run Shoko on Linux using Docker. This is the preferred method for Linux and NAS
+systems that support Docker. Running Shoko bare metal on Linux is not recommended due the additional work and skill
+level required to properly install.
 
-Make sure you have docker installed before you continue. For most users are installing docker from their package manager
-is advised, this way you will keep up with the latest updates and security updates. On the homepage
-of [Docker](https://docs.docker.com/install/) you can find the installation procedure for your distribution of the
-Docker Community Edition.
+Ensure Docker is installed before proceeding. For most users, installing Docker through their package manager is
+recommended, as this ensures you stay up-to-date with the latest updates and security patches. You can find the
+installation procedure for your distribution of the Docker Community Edition on the [Docker](https://docs.docker.com/install/) homepage.
 
-:::caution
-We do _not_ encourage using Docker on Windows using WSL or Hyper-V containers. It creates an unneeded abstraction layer
-which might cause unforeseen issues. You can do this at your own risk, as we can't support this setup.
-:::
 
 ## Docker Compose (Recommended)
 
-Docker Compose is automatically included with all recent versions of Docker, so you don't need to worry about its
-availability. However, if you're having issues or not sure, please refer to your NAS manual or the vendor's
-website for confirmation.
+Docker Compose is automatically included with all recent versions of Docker, so its availability shouldn't be a
+concern. However, if you encounter issues or are unsure, please refer to your NAS manual or the vendor's website
+for confirmation.
 
-It's worth noting that Docker Compose is the **recommended method** for installing Shoko using Docker because it
-simplifies service management. We've provided a sample **docker-compose.yml** file below to make configuration easier.
-This file consolidates all the settings, making them readily editable.
+It's important to note that Docker Compose is the **recommended method** for installing Shoko with Docker as it
+simplifies service management. We've provided a sample docker-compose.yml file below to streamline the configuration
+process. This file consolidates all the settings, making them easy to edit.
 
-If you need to make changes to accommodate your setup, feel free to use the Docker Compose Builder below to update
-the values according to your preferences. Otherwise, simply copy the outputted config.
+If you need to adjust the configuration to suit your setup, feel free to use the **Docker Compose Builder** below to
+modify the values according to your preferences. Otherwise, simply copy the generated config.
 
 ### Docker Compose Builder
 
@@ -52,59 +56,58 @@ the values according to your preferences. Otherwise, simply copy the outputted c
 
 ## Docker (QNAP NAS)
 
-Make sure you have Docker installed on your QNAP NAS before you continue. This package can be found in the App Center,
-under the Name of **Container Station**.
+Ensure that Docker is installed on your QNAP NAS before proceeding. You can find this package in the App Center,
+listed under the name **Container Station**.
 
 :::tip
-Users have reported  that using the **Container Station** for management can be rough at times. If you're running into
-similar issues, we recommend creating the container using the instructions given under Docker Compose above.
-
-For the app, you will need to gather needed information in the same way as described in
-the [Docker command-line](#docker-commandline) installation.
+Users have reported that managing containers with Container Station can sometimes be challenging. If you encounter
+similar issues, we recommend creating the container using the Docker Compose instructions provided above.
 :::
 
-You can change (not all) settings, like autostart, of the container using Container Station GUI later, or use *
-*Portainer**, which also lets you use the [Docker compose](#docker-compose) above in a **Stack** via an easy to use Web-GUI.
-Feel free to talk to the community on our **Discord Server** about using **Portainer** or docker-compose on your QNAP
-NAS.
+You can modify certain settings, like autostart, for the container later using the Container Station GUI.
+Alternatively, you can use **Portainer**, which also allows you to manage the Docker Compose setup in a Stack through
+an easy-to-use web GUI.
 
-:::note[Regarding Container Station v3]
-The current version as of writing this is **3.0.4.533** which became available with **QTS 5.1.0.2466**.
-If you are on an older version of QTS or QTS hero (ZFS variant of QTS) the available version and experience with
-Container Station might differ greatly.We always recommend an up-to-date QNAP QTS + App Center updates for the best
+If you have any questions about using Portainer or Docker Compose on your QNAP NAS, feel
+free to reach out to the community on our Discord Server.
+
+### Regarding Container Station v3
+
+As of this writing, the current version is 3.0.4.533, which was released with QTS 5.1.0.2466. If you're using an
+older version of QTS or QTS hero (the ZFS variant of QTS), the available version and experience with Container Station
+may differ significantly. We always recommend keeping your QNAP QTS and App Center updates current for the best
 experience and security.
-:::
 
 ## Docker (Synology NAS)
 
-Make sure you have the [Synology Docker Application](https://www.synology.com/en-global/dsm/packages/Docker) installed on your Synology NAS before you continue.
-This package can be found in the Package Center, under the 'Third-party' section.
+Ensure that the [Synology Docker Application](https://www.synology.com/en-global/dsm/packages/Docker) is installed on your Synology NAS before proceeding. You can find
+this package in the Package Center, under the **Third-party** section.
 
 :::tip
-As the management using the **Synology Docker Application** will feel a bit clunky, we recommend creating the container
-using the instructions given under [Docker command-line](#docker-commandline) or [Docker compose](#docker-compose) above.
-
-For the app, you will need to gather needed information in the same way as described in
-the [Docker command-line](#docker-commandline) installation.
+Since managing containers with the Synology Docker Application can feel a bit clunky, we recommend creating the
+container using the instructions provided under Docker Compose above.
 :::
 
-If you want to use the Synology Docker Application, please follow these steps:
+If you prefer to use the Synology Docker Application, follow these steps:
 
-Open Docker from the Application Menu, then go to the Containers tab. You'll need to download the
-**[Synology Container File](/files/synology-dockerfile.json)**. Replace the ``/path/to/anime``, `PUID`
-and `PGID` and once that's done, go to Settings, Import and select the file you've just modified. Name the
-container `shokoserver`, then apply!
+<Steps>
+1. Open Docker from the Application Menu and navigate to the Containers tab.
+2. Download the [Synology Container File](/files/synology-dockerfile.json).
+3. Replace the ``PUID``, ``PGID``, and ``/path/to/anime`` in the file with your specific values.
+4. Once you've made these changes, go to Settings, select Import, and choose the file you've just modified.
+5. Name the container ShokoServer, then apply the settings.
+</Steps>
 
 :::caution[Daily Server and Synology NAS]
-AVDump3 might crash since we are unable to modify the ```shm_size``` through the proprietary container format Synology
-uses.
-Because of this, we do not recommend running *daily server* on Synology NAS for the time being.
+AVDump3 may crash due to the inability to modify the shm_size in the proprietary container format used by Synology.
+As a result, we do not recommend running daily server on Synology NAS at this time.
 :::
 
 ## Docker (TrueNAS)
 
-Docker is not natively supported on this platform, as **TrueNAS Core** derives from FreeBSD. We recommend joining
-our Discord Server and engaging with other NAS users to find a viable solution.
+Docker is not natively supported on this platform, as TrueNAS Core is based on FreeBSD. We recommend joining our
+Discord Server and connecting with other NAS users to explore possible solutions. If you discover a viable
+workaround, please consider sharing it with the community.
 
 
 

@@ -11,57 +11,60 @@ If you can't find a particular item from the list below that suits your skills o
 please feel free to reach out on our Discord server for further possibilities.
 
 <EasyTable
-  header={['Project', 'Language', 'Maintainer(s)', 'Additional Notes',]}
-  data={[
-    [
-      'Shoko Server',
-      'C# / .NET',
-      'Da3dsoul',
-      'Tons of small tasks to help get you familiar with the codebase.'
-    ],
-    [
-      'Shoko Web UI',
-      'JS / React',
-      'Avael / Mohan226 / Elemental Crisis',
-      'Bug fixes and minor enhancements to help get you familiar with the codebase.'
-    ],
-    [
-      'ShokoDocs',
-      'Markdown',
-      'Elemental Crisis',
-      'Updating old documentation and adding new pages.'
-    ],
-    [
-      'ShokoMetadata',
-      'Python',
-      'Cazzar',
-      'No active work but always refactoring and improvements always welcomed.'
-    ],
-    [
-      'Shoko Relay',
-      'Python',
-      'Natyusha',
-      'Always accepting requests, check [Github Repo](https://github.com/natyusha/ShokoRelay.bundle) for more info.'
-    ],
-    [
-      'Shokofin',
-      'C#',
-      'Revam',
-      'No active work but always refactoring and improvements always welcomed.'
-    ],
-    [
-      'Shokodi',
-      'C#',
-      'Da3dsoul',
-      'No active work but always refactoring and improvements always welcomed.'
-    ],
-    [
-      'My Anime 3',
-      'C#',
-      'Da3dsoul',
-      'Major refactor & possible rebuild for MediaPortal 2.'
-    ],
+  columns={[
+    { name: 'Project', header: 'Project', width: '20%' },
+    { name: 'Language', header: 'Language', width: '15%' },
+    { name: 'Maintainer(s)', header: 'Maintainer(s)' },
+    { name: 'Additional Notes', header: 'Additional Notes' }
   ]}
-  center={true}
-  columnWidths={{ Project: '20%', Language: '15%', "Maintainer(s)": '25%', "Additional Notes": '40%', }}
+  data={[
+    {
+      Project: 'Shoko Server',
+      Language: 'C# / .NET',
+      'Maintainer(s)': 'Da3dsoul',
+      'Additional Notes': 'Tons of small tasks to help get you familiar with the codebase.'
+    },
+    {
+      Project: 'Shoko Web UI',
+      Language: 'JS / React',
+      'Maintainer(s)': 'Avael / Mohan226 / Elemental Crisis',
+      'Additional Notes': 'Bug fixes and minor enhancements to help get you familiar with the codebase.'
+    },
+    {
+      Project: 'ShokoDocs',
+      Language: 'Markdown',
+      'Maintainer(s)': 'Elemental Crisis',
+      'Additional Notes': 'Updating old documentation and adding new pages.'
+    },
+    {
+      Project: 'ShokoMetadata',
+      Language: 'Python',
+      'Maintainer(s)': 'Cazzar',
+      'Additional Notes': 'No active work but always refactoring and improvements always welcomed.'
+    },
+    {
+      Project: 'Shoko Relay',
+      Language: 'Python',
+      'Maintainer(s)': 'Natyusha',
+      'Additional Notes': 'Always accepting requests, check [Github Repo](https://github.com/natyusha/ShokoRelay.bundle) for more info.'
+    },
+    {
+      Project: 'Shokofin',
+      Language: 'C#',
+      'Maintainer(s)': 'Revam',
+      'Additional Notes': 'No active work but always refactoring and improvements always welcomed.'
+    },
+    {
+      Project: 'Shokodi',
+      Language: 'C#',
+      'Maintainer(s)': 'Da3dsoul',
+      'Additional Notes': 'No active work but always refactoring and improvements always welcomed.'
+    },
+    {
+      Project: 'My Anime 3',
+      Language: 'C#',
+      'Maintainer(s)': 'Da3dsoul',
+      'Additional Notes': 'Major refactor & possible rebuild for MediaPortal 2.'
+    }
+  ]}
 />

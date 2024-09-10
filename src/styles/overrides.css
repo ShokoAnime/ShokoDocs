@@ -11,6 +11,40 @@
 /* Fixed weird padding between header and content. */
 .content-panel {
 	padding-bottom: 0;
+	padding-top: 1rem;
+}
+
+/* Custom Page Style */
+@media (min-width: 50rem) {
+
+	/* Remove header background. */
+	.page > .header {
+		background: var(--sl-color-bg);
+		border-bottom: 1px solid var(--sl-color-hairline);
+	}
+
+	/* Set search outer container max width. */
+	.header.sl-flex > .sl-flex {
+		max-width: 56.25rem;
+	}
+
+	/* Set search max width. */
+	.header > .sl-flex * button {
+		margin: 0 auto;
+		max-width: 40rem;
+	}
+
+	/* Remove sidebar background. */
+	.sidebar-pane {
+		background: none;
+		border-inline-end: 1px solid var(--sl-color-hairline);
+	}
+
+	/* Increase sidebar top padding. */
+	.sidebar-content {
+		padding-top: 1.5rem;
+	}
+
 }
 
 /* Remove left border from ToC. */
@@ -46,19 +80,6 @@
 	margin-top: 0.25rem !important;
 }
 
-/* Add class to image parent tag. */
-.img-parent {
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	margin: 1.5rem 0 !important;
-	width: 100%;
-}
-
-.img-parent > img {
-	border-radius: 0.5rem;
-}
-
 /* Make Strong text match callout header color. */
 .starlight-aside--note * strong,
 .starlight-aside--caution * strong,
@@ -67,8 +88,42 @@
 	color: var(--sl-color-asides-text-accent);
 }
 
+/* Changing how asides look. */
 .starlight-aside {
-	border-radius: 5px;
+	border: 1px solid;
+	border-radius: .5rem;
+	color: var(--sl-color-white);
+	font-size: .9375rem;
+	margin: 2rem 0 !important;
+}
+
+.starlight-aside__title,
+.starlight-aside__icon {
+	align-items: center;
+	font-size: .9375rem;
+}
+
+.starlight-aside--caution {
+	background-color: color-mix(in srgb, var(--sl-color-orange-low), transparent 75%);
+	border-color: var(--sl-color-orange);
+}
+
+.starlight-aside--danger {
+	background-color: color-mix(in srgb, var(--sl-color-red-low), transparent 75%);
+	border-color: var(--sl-color-red);
+	--sl-color-asides-text-accent: var(--sl-color-red-high);
+}
+
+.starlight-aside--tip {
+	background-color: color-mix(in srgb, var(--sl-color-purple-low), transparent 75%);
+	border-color: var(--sl-color-purple);
+	--sl-color-asides-text-accent: var(--sl-color-purple-high);
+}
+
+.starlight-aside--note {
+	background-color: color-mix(in srgb, var(--sl-color-blue-low), transparent 75%);
+	border-color: var(--sl-color-blue);
+	--sl-color-asides-text-accent: var(--sl-color-blue-high);
 }
 
 /* Reduce padding on Hero section. */
@@ -90,24 +145,40 @@
 }
 
 .position-indicator a[aria-current=true]:first-of-type::before {
-	content: "";
-	position: absolute;
-	left: -17px;
-	z-index: 0;
-	opacity: 1;
-	width: 1px;
-	border-radius: 2px;
-	height: 18px;
 	background-color: var(--sl-color-text-accent);
+	border-radius: 2px;
+	content: "";
+	height: 18px;
+	left: -17px;
+	opacity: 1;
+	position: absolute;
 	transition: top .25s cubic-bezier(0, 1, .5, 1), background-color .5s, opacity .25s;
+	width: 1px;
+	z-index: 0;
 }
 
-/* Remove H1 styling on FAQ. */
-#general,
+/* Remove H1 styling on particular headers. */
 #shoko-server,
 #shoko-metadata--shoko-relay,
 #shokofin {
 	border: none !important;
-	padding-top: 0 !important;
 	margin: 3rem 0 !important;
+	padding-top: 0 !important;
+}
+
+/* Remove H1 styling on FAQ. */
+#general:has(+ .accordion-wrapper) {
+	border: none !important;
+	margin: 3rem 0 !important;
+	padding-top: 0 !important;
+}
+
+/* Change previous/next font size. */
+.link-title {
+	font-size: var(--sl-text-lg);
+}
+
+/* Reduce margin for previous/next button. */
+.meta.sl-flex {
+	margin-top: 1.5rem;
 }

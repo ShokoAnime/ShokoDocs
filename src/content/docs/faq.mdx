@@ -100,14 +100,22 @@ spectrum of topics, ranging from its essential features to the support for vario
   your database before updating Shoko to the latest version. If you need to restore an older version you'll find your
   backups in the following locations.
 
-  <EasyTable
-    header={["OS", "Location"]}
-    data={[
-      ["Windows", "C:\\ProgramData\\ShokoServer\\DatabaseBackup"],
-      ["Linux/macOS", "~/.shoko/Shoko.CLI/DatabaseBackup"],
-    ]}
-    columnWidths={{ OS: "25%", Location: "75%" }}
-  />
+ <EasyTable
+  columns={[
+    { name: 'OS', header: 'OS' },
+    { name: 'Location', header: 'Location' }
+  ]}
+  data={[
+    {
+      OS: 'Windows',
+      Location: 'C:\\ProgramData\\ShokoServer\\DatabaseBackup'
+    },
+    {
+      OS: 'Linux/macOS',
+      Location: '~/.shoko/Shoko.CLI/DatabaseBackup'
+    }
+  ]}
+/>
 
   The directory for Linux/macOS might differ, if you changed it on the Docker commandline during
   [installation](/getting-started/installing-shoko-server).

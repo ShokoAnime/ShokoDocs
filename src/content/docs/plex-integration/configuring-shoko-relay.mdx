@@ -5,218 +5,109 @@ sidebar:
   order: 3
 ---
 import EasyTable from "../../../components/EasyTable/EasyTable";
+import { Steps } from '@astrojs/starlight/components';
 
-Shoko Relay does not come with an installer. Please follow the manual installation instructions below. This guide assumes you've
-installed Plex into the **default install directory**, so make adjustments as needed to fit your installation.
+If you chose Shoko Metadata as your Plex Agent/Scanner combo you can skip this page and move directly to the [Syncing Watched States](../syncing-watched-states) page.
 
-Shoko Relay is not a standalone plugin and **requires Shoko Server** to be installed, configured and running.
-If you haven't done so, [Download Shoko Server](https://shokoanime.com/downloads/) from our main website and use the
-[Installing Shoko Server](/getting-started/installing-shoko-server) guide to properly install and configure Shoko Server.
+#### Creating A Shoko Relay Library
 
-:::tip
-Make sure Plex Media Server is stopped before attempting to install the Plugin and Scanners. Otherwise, a restart of
-it might be necessary to make the scanner and metadata plugin work and appear in Library settings.
-:::
+<Steps>
+1. Add a Plex Library
+    - While Shoko Server is running, open Plex and create a new "TV Shows" library.
+    - Ensure that you have completed the **required edits** mentioned on the [Installing Agents & Scanners](../installing-agents-scanners/#editing-shoko-relay-scannerr) page.
 
-## Shoko Relay Vs Shoko Metadata?
+2. Add a Folder to Your Library
+    - When prompted to add folders to your library, browse to your anime collection.
+    - Even though Shoko will provide the metadata, Plex still needs to know where the physical files are located.
 
-Shoko Relay itself started as a personal fork of Shoko Metadata to add minor preferred changes. Over time, as more
-changes were made, the difference between the two plugins grew leading it to eventually become Shoko Relay.
+3. Configure the Advanced Settings
+    - In the Advanced tab, select: Scanner **Shoko Relay Scanner** and Agent **ShokoRelay**.
+    - Enter your Shoko Server credentials which are the only required settings.
+    ![Shoko Relay - Inputting Server Information](../../../assets/img/shoko-relay/Shoko-Relay-Inputting-Server-Info.jpg)
 
-Below is a list of the main changes:
+    For more information on each of the required settings consult the table below:
 
-- Uses Shoko's v3 API for fetching metadata and matching files
-- Allows:
-  - Movies and series to be in the same library at once
-  - Multi "season" shows matched on TheTVDB to be merged into a single entry
-- Allows the user to configure:
-  - The language for the series or episode titles (to use a different language than Shoko's)
-  - An "Alt Title" language for the series title (which will be searchable in Plex)
-- Optionally:
-  - Series and movies will list the Main Staff along with Seiyuu (CV) under "Cast & Crew"
-    - **Note:** They will all appear as actors due to Crew not being accessible for custom agents
-  - Individual episodes will list the Writer as Original Work (原作) and Director as Direction (監督)
-    - **Note:** Only supported if there is a single entry for each credit to avoid incorrect metadata
-  - Will apply content ratings like "TV-14", "TV-Y" etc. (if the corresponding AniDB tags are present)
-  - Will move common series title prefixes like "Gekijouban", "Eiga" etc. to the end of the title
-- Removes the original tag hiding options and replaces them with a tag weight system similar to what [HAMA](https://github.com/ZeroQI/Hama.bundle) uses
-  - Note: Automatically ignores all tags from Shoko's [TagBlacklistAniDBHelpers](https://github.com/ShokoAnime/ShokoServer/blob/9c0ae9208479420dea3b766156435d364794e809/Shoko.Server/Utilities/TagFilter.cs#L37) list
-- Series and movies will list the Studio as Animation Work (アニメーション制作) or Work (制作)
-- Support for:
-  - Files which contain more than one episode or episodes which span multiple files
-  - Credits / Parodies / Trailers and Other types of special files
-  - Individual episode ratings (from AniDB)
-- Will replace:
-  - Ambiguous AniDB episode titles with the series title plus a suffix for the type of episode
-  - Inconsistently capitalised genre tags with ones using [AniDB Capitalisation Rules](https://wiki.anidb.net/Capitalisation)
-- Will use TheTVDB episode descriptions and titles if AniDB is missing that information
+    <EasyTable
+      columns={[
+        { name: 'Option', header: 'Option' },
+        { name: 'Description', header: 'Description' }
+      ]}
+      data={[
+        {
+          Option: "The Shoko Server Username",
+          Description: "The username for the **local account** you created during the **First Run** setup in Shoko Server."
+        },
+        {
+          Option: "The Shoko Server Password",
+          Description: "The password for the **local account** you created during the **First Run** setup in Shoko Server."
+        },
+        {
+          Option: "The Shoko Server Server Hostname",
+          Description: "The IP address for the computer where Shoko Server is located. This can be left blank unless Shoko Server is running on a different computer."
+        },
+        {
+          Option: "The Shoko Server Port",
+          Description: "The port Shoko Server uses, by default it's **8111**"
+        },
+        {
+          Option: "Use Single Season Ordering *Not Recommended*",
+          Description: "If you set **SingleSeasonOrdering** to True during the install process, make sure you check this box."
+        }
+      ]}
+    />
 
-Both plugins excel at media playback; the choice between them boils down to determining which plugin aligns best
-with your specific needs.
-
-:::caution[Custom installs]
-If you installed Plex using another method, then please assign the variable to your own, and make sure to use the
-correct user when executing the steps listed below.
-:::
+4. Change Recommended Options
 
 
-## Windows
+    Changing the following options at the bottom of Advanced Settings page is also recommended:
 
-[Download Shoko Relay](https://shokoanime.com/downloads/) and extract the zip file. Inside the zip is a folder,
-ensure that it is named **ShokoRelay.bundle** then move it into the following directory.
+    <EasyTable
+      columns={[
+        { name: 'Option', header: 'Option' },
+        { name: 'Setting', header: 'Setting' }
+      ]}
+      data={[
+        {
+          Option: "Collections",
+          Setting: "Hide items which are in collections"
+        },
+        {
+          Option: "Seasons",
+          Setting: "Hide for single-season series"
+        }
+      ]}
+    />
 
-```cmd
-%LOCALAPPDATA%\Plex Media Server\Plug-ins
-````
+5. Add the Library
+    - Once you’ve reviewed and configured the remaining options, click the **Add Library** button.
+    - After adding the library, initiate a scan within Plex and wait for Plex to add your collection.
+6. Allow Local Metadata
+    - In Plex Navigate to: `Settings > Agents (Legacy) > Shows > ShokoRelay`
+    - Move the following entry to the top of the list and enable it:
+    - [x] Local Media Assets (TV)
+</Steps>
 
-Now you need to move the **Scanners** folder into the **Plex Media Server** folder. The **Scanners**
-folder is located in the following directory:
+### Recommended Shoko Server Configuration
+Enable the following options in Shoko to ensure that Plex has at least one source of metadata for everything:
+- `Settings > AniDB > Download Options`
+  - [x] Character Images
+  - [x] Creator Images (Currently Nonfunctional in Shoko)
+- `Settings > Metadata Sites > TMDB Options`
+  - [x] Auto Link
+  - [x] Auto Link Restricted
+  - [x] Download Backdrops
+- `Settings > Collection > Relation Options`
+  - [x] Auto Group Series
+  - [x] Determine Main Series Using Relation Weighing
 
-```cmd
-%LOCALAPPDATA%\Plex Media Server\Plug-ins\ShokoRelay.bundle\Contents
-```
-
-Move it into the following directory:
-
-```cmd
-%LOCALAPPDATA%\Plex Media Server
-```
-
-## Linux
-
-First, we will assign an environment variable `$PLEX_HOME` that will point to the base directory for your Plex content.
-This will make it easier to follow the guide, regardless of the Plex install method.
-
-Below are the three most common install methods, and what you need to do for each one before you continue with the rest of the guide.
-
-#### Bare-Metal Variable
-
-Sign in with **the user responsible for running PMS** (replace `<username>` with the according username) and assign the variable:
-
-```sh
-sudo -u <username> -s /bin/sh
-export PLEX_HOME="/var/lib/plex/Plex Media Server"
-```
-
-Some distributions may install Plex to a different base directory, or if you're running a custom install of Plex,
-then either make sure or tweak the above variable to lead to your **Plex Media Server** directory.
-If the above variable is not set correctly, then the guide will fail at the first step.
-
-#### Snap (plexmediaserver) Variable
-
-Sign in as `root` on your host-system and assign the variable:
-
-```sh
-sudo -s /bin/sh
-export PLEX_HOME="/var/snap/plexmediaserver/common/Library/Application Support/Plex Media Server"
-```
-
-#### Docker (plexinc/pms-docker)
-
-:::caution
-This section assumes you're using the official docker image (plexinc/pms-docker). If you're using any other image,
-(e.g. linuxserver/plex), then either make sure or tweak the above variable to lead to your **Plex Media Server** directory.
-If the above variable is not set correctly, then the guide will fail at the first step.
-:::
-
-Attach to the running **PMS container** (replace `<container name>` accordingly) and and assign the variable:
-
-```sh
-docker exec -it <container name> /bin/sh
-export PLEX_HOME="/config/Library/Application Support/Plex Media Server"
-```
-
-### Installation Steps
-
-Navigate to the **Plug-ins** directory of your install
-
-```sh
-cd "${PLEX_HOME}/Plug-ins";
-```
-
-Download and extract the latest release from GitHub using **one** of the following commands:
-
-```sh
-curl -L https://github.com/natyusha/ShokoRelay.bundle/releases/latest/download/ShokoRelay.bundle.tar.gz | tar -xzf -
-```
-
-```sh
-wget -O - https://github.com/natyusha/ShokoRelay.bundle/releases/latest/download/ShokoRelay.bundle.tar.gz | tar -xzf -
-```
-
-Move the **Scanners** folder into the **Plex Media Server** directory
-
-```sh
-cp -R ShokoRelay.bundle/Contents/Scanners ../
-```
-
-## Creating A Shoko Relay Library
-While Shoko Server is running, open Plex and create a new "TV Shows" library.
-Please note that if you haven't completed the **required edits** mentioned on the
-[Installing Agents & Scanners](../installing-agents-scanners/#editing-plex-scanners) page, please go back and do it now.
-
-When prompted to select the Media Folder, browse to your anime collection. Even though Shoko will provide the
-metadata, Plex still needs to know where the physical files are located.
-
-In the Advanced tab, select **Shoko Relay Scanner** and **ShokoRelay**.
-
-![Shoko Relay - Inputting Server Information](../../../assets/img/shoko-relay/Shoko-Relay-Inputting-Server-Info.jpg)
-
-You'll need to input the following information for Shoko Relay to access your collection:
-
-<EasyTable
-    header={["Option", "Description"]}
-    data={[
-      [
-        "The Shoko Server Username",
-        "The username for the **local account** you created during the **First Run** setup in Shoko Server."
-      ],
-      [
-        "The Shoko Server Password",
-        "The password for the **local account** you created during the **First Run** setup in Shoko Server."
-      ],
-      [
-        "The Shoko Server Server Hostname",
-        "The IP address for the computer where Shoko Server is located. This can be left blank unless Shoko Server is running on a different computer."
-      ],
-      [
-        "The Shoko Server Port",
-        "The port Shoko Server uses, by default it's **8111**"
-      ]
-    ]}
-    columnWidths={{ Option: "30%", Description: "70%" }}
-/>
-
-It is also recommended to change the following options at the bottom of the same page:
-
-<EasyTable
-    header={["Option", "Setting"]}
-    data={[
-      [
-        "Collections",
-        "Hide items which are in collections"
-      ],
-      [
-        "Seasons",
-        "Hide for single-season series"
-      ]
-    ]}
-    columnWidths={{ Option: "30%", Setting: "70%" }}
-/>
-
-Once you’ve reviewed and configured the remaining options, which are self-explanatory, click the **Add Library** button. After adding the library, initiate a scan within Plex and wait for Plex to add your collection.
-
-Lastly, in Plex Settings: `Settings > Agents > Shows > ShokoRelay` move the following entry to the top of the list and enable it:
-  - [x] Local Media Assets (TV)
-
-## Notes
+## Additional Information
 ### Troubleshooting
 When encountering any issues with the scanner or agent, please note that there are detailed logs available in the [Plex Media Server Logs Folder](https://support.plex.tv/articles/200250417-plex-media-server-log-files/) which can help to pinpoint any issues:
 - Agent Logs: `\Plex Media Server\Logs\PMS Plugin Logs\com.plexapp.agents.shokorelay.log`
 - Scanner Logs: `\Plex Media Server\Logs\Shoko Relay Scanner.log`
 
 :::tip[Important]
-When encountering bad matches/metadata the first thing to check for is if TheTVDB match and episode mapping is correct in Shoko for the series in question.
+When encountering bad matches/metadata the first thing to check for is if TMDB match and episode mapping is correct in Shoko for the series in question.
 :::
 
 :::caution[Warning]
@@ -224,7 +115,9 @@ Under extremely specific circumstances Plex will automatically group files toget
 :::
 
 ### Handling "Stuck" Metadata
+
 In cases where metadata (generally posters) won't update there is a quick 3 step process to fix it:
+
 1. Navigate to the series > More "..." Button > Unmatch
 2. Settings > Manage > Troubleshooting > Clean Bundles + Optimize Database
 3. Navigate back to the series > More "..." Button > Match > Select top result
@@ -268,9 +161,9 @@ The appended titles will appear after an em dash (**—**) making it easy to sea
 :::
 
 ### Combining Series
-If you have TheTVDB matching enabled in Shoko and `SingleSeasonOrdering` disabled the agent will prioritise episode numbering from it by default. This allows shows which are separated on AniDB to be combined into a single entry inside Plex. To Achieve this simply multi-select (with the primary series as the first selection) the series in your Plex library which you know are part of a single TheTVDB entry then select `Merge`.
+If you have TMDB matching enabled in Shoko and `SingleSeasonOrdering` disabled the agent will prioritize episode numbering from it by default. This allows shows which are separated on AniDB to be combined into a single entry inside Plex. To Achieve this simply multi-select (with the primary series as the first selection) the series in your Plex library which you know are part of a single TMDB entry then select `Merge`.
 
-Using Fairy Tail as an example all of the following series can be safely merged into a single entry in Plex if they are correctly matched to TheTVDB in Shoko:
+Using Fairy Tail as an example all of the following series can be safely merged into a single entry in Plex if they are correctly matched to TMDB in Shoko:
 - Fairy Tail
 - Fairy Tail (2011)
 - Fairy Tail (2014)
@@ -280,61 +173,70 @@ Using Fairy Tail as an example all of the following series can be safely merged 
 Only do this when you are happy with the metadata for the series to be merged as you will be unable to correctly refresh it without splitting the series apart first.
 :::
 
+### Combining Episodes
+Sometimes you may encounter a single episode which is split across multiple files. In order to ensure that all of the files are treated as a single entity you can follow Plex's [Naming Conventions](https://support.plex.tv/articles/naming-and-organizing-your-tv-show-files/#toc-6). For an ideal playback experience, it is recommended to merge these types of files together.
+
 ### Minimum Tag Weight
 Many tags on AniDB use a [3 Star Weight System](https://wiki.anidb.net/Tags#Star-rating_-_the_Weight_system) which represents a value from 0 (no stars) to 600 (3 stars) and determines how relevant the tag is to the series it is applied to. By setting this value you can filter out tags below a certain star threshold if desired.
 
 ### Assumed Content Ratings
-If "assumed content ratings" are enabled in the agent settings the [target audience](https://anidb.net/tag/2606/animetb) and [content indicator](https://anidb.net/tag/2604/animetb) tags from AniDB will be used to roughly match the [TV Parental Guidlines](http://www.tvguidelines.org/resources/TheRatings.pdf) system. The target audience tags will conservatively set the initial rating anywhere from TV-Y to TV-14, then the content indicators will be appended. If the tag weights for the content indicators are high enough (> 400 or **\*\***) the rating will be raised to compensate. A general overview is listed in the table below:
+If "assumed content ratings" are enabled in the agent settings the [target audience](https://anidb.net/tag/2606/animetb) and [content indicator](https://anidb.net/tag/2604/animetb) tags from AniDB will be used to roughly match the [TV Parental Guidelines](http://www.tvguidelines.org/resources/TheRatings.pdf) system. The target audience tags will conservatively set the initial rating anywhere from TV-Y to TV-14, then the content indicators will be appended. If the tag weights for the content indicators are high enough (> 400 or **\*\***) the rating will be raised to compensate. A general overview is listed in the table below:
 
 <EasyTable
-    header={["Tag", "Rating"]}
-    data={[
-      [
-        "Kodomo",
-        "TV-Y"
-      ],
-      [
-        "Mina",
-        "TV-G"
-      ],
-      [
-        "Shoujo, Shounen",
-        "TV-PG"
-      ],
-      [
-        "Josei, Seinen",
-        "TV-14"
-      ],
-      [
-        "Nudity, Sex",
-        "TV-\*-S"
-      ],
-      [
-        "__\*\*__ Violence",
-        "TV-14-V"
-      ],
-      [
-        "__\*\*__ Nudity",
-        "TV-14-S"
-      ],
-      [
-        "Borderline Porn (override)",
-        "TV-MA "
-      ],
-      [
-        "__\*\*\+__ Nudity, __\*\*__ Sex",
-        "TV-MA-S"
-      ],
-      [
-        "__\*\*\+__ Violence",
-        "TV-MA-V"
-      ],
-      [
-        "18 Restricted (override)",
-        "X",
-      ]
-    ]}
-    columnWidths={{ Option: "70%", Setting: "30%" }}
+  columns={[
+    { name: 'Tag', header: 'Tag' },
+    { name: 'Rating', header: 'Rating' }
+  ]}
+  data={[
+    {
+      Tag: "Kodomo",
+      Rating: "TV-Y"
+    },
+    {
+      Tag: "Mina",
+      Rating: "TV-G"
+    },
+    {
+      Tag: "Shoujo, Shounen",
+      Rating: "TV-PG"
+    },
+    {
+      Tag: "Josei, Seinen",
+      Rating: "TV-14"
+    },
+    {
+      Tag: "Sexual Humour",
+      Rating: "TV-*-D"
+    },
+    {
+      Tag: "Nudity, Sex",
+      Rating: "TV-*-S"
+    },
+    {
+      Tag: "__**__ Violence",
+      Rating: "TV-14-V"
+    },
+    {
+      Tag: "__**__ Nudity, __*+__ Sex",
+      Rating: "TV-14-S"
+    },
+    {
+      Tag: "Borderline Porn (override)",
+      Rating: "TV-MA "
+    },
+    {
+      Tag: "__**+__ Nudity, __**__ Sex",
+      Rating: "TV-MA-S"
+    },
+    {
+      Tag: "__**+__ Violence",
+      Rating: "TV-MA-V"
+    },
+    {
+      Tag: "18 Restricted (override)",
+      Rating: "X"
+    }
+  ]}
 />
 
 :::note
