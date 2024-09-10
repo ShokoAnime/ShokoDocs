@@ -13,9 +13,10 @@ desired, share their themes with the community.
 
 ## Understanding Custom Themes
 
-In Shoko, a single theme consists of two files, a JSON file that contains the theme information and a CSS file that
-contains the styling. Both files are required for the theme to work correctly and are stored in the **themes** folder
-located in one of the following directories depending on your operating system.
+In Shoko, a single theme consists of one or two files, a JSON file that contains the theme information and a CSS file
+that contains the styling. If you're developing a local theme, you only need the CSS file, as the JSON file is only
+required for sharing themes with the community. Both files are stored in the **themes** folder located in one of the
+following directories depending on your operating system.
 
 <EasyTable
   columns={[
@@ -53,17 +54,24 @@ Once you've downloaded your theme, you can install it using the Web UI. Follow t
 </Steps>
 
 :::note[About Installing Themes]
-Themes are auto-installed once imported, simply switch to the theme and click **Save** to apply it.
+Themes are auto-applied once imported, but the settings are not yet saved! Press **Save** if you want to save your new
+theme as the theme to use.
 :::
 
 ## Creating Your Own Theme
 
-Creating a custom theme is a straightforward process that requires you to create two files, a JSON file that contains the
-theme information and a CSS file that contains the styling. Both files are stored in the **themes** folder, refer to the
-locations above for the correct directory.
+Creating a custom theme is a straightforward process that requires you to create one or two files, a JSON file that
+contains the theme information and a CSS file that contains the styling. Both files are stored in the **themes**
+folder, refer to the locations above for the correct directory.
 
-We recommend using the two templates below to create your custom theme. Both templates provide a starting point for
-creating your theme, and you can customize them to your liking.
+We **highly** recommend using the templates below to create your custom theme. If you plan to share your theme with the
+community, you'll need to use both the JSON and CSS templates. If you're creating a local theme, you only need the CSS
+template.
+
+:::note[File Names]
+Be sure to name the files you intend to use using only alphanumeric characters, dashes (\-), or underscores (\_). If you
+need spacing between words, then use dashes (\-).
+:::
 
 ### Theme Template
 
@@ -79,15 +87,52 @@ While we use HEX values in the example below and in the default Shoko theme, you
  ```json
 {
   "name": "Theme Name",
-  "version": "1.00",
+  "version": "1.0.0",
   "author": "Your Name",
   "description": "Description",
-  "type": "dark",
-  "colors": ["blue", "green", "red"],
-  "css": "./theme-name.css",
-  "update": "Repo URL"
+  "tags": ["dark", "red", "blue", "green"],
+  "cssUrl": "./theme-name.css",
+  "updateUrl": "Repo URL"
 }
 ```
+
+ <EasyTable
+  columns={[
+    { name: 'Key', header: 'Key', width: '25%' },
+    { name: 'Description', header: 'Description' }
+  ]}
+  data={[
+    {
+      Key: 'name',
+      Description: 'The name of your theme'
+    },
+    {
+      Key: 'version',
+      Description: 'The version string, preferred format is X.X.X to keep it simple.'
+    },
+    {
+      Key: 'author',
+      Description: 'Author of the theme.'
+    },
+    {
+      Key: 'description',
+      Description: 'Description of the theme.'
+    },
+    {
+      Key: 'tags',
+      Description: 'List of tags for the theme. A single tag for the type (dark, light, OMLED) and colors (red, blue, green).'
+    },
+    {
+      Key: 'cssUrl',
+      Description: 'URL to where the CSS file is hosted.'
+    },
+    {
+      Key: 'updateUrl',
+      Description: 'URL to where this file is located. Used for installing and auto-updates.'
+    },
+  ]}
+/>
+
 </Accordion>
 
 <Accordion title='Theme CSS Example'>
