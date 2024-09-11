@@ -216,12 +216,12 @@ remove the library in Jellyfin, wait for the library to fully disappear from the
     },
     {
       Option: "Add Release Group to VFS entries",
-      Description: "",
+      Description: "Will add full or short release group names to all automatically linked files in the VFS. 'No Group' will be used if the file is not associated with a release group in Shoko. \n**Warning:** The release group in the file name may change if the release group info is incomplete, unavailable, or otherwise updated in Shoko at a later date. This may cause episode/movie entries to be 'removed' and 'added' as new entries when that happens.  Use at your own risk.",
       Default: ""
     },
     {
       Option: "Add Resolution to VFS entries",
-      Description: "",
+      Description: "Will add the resolution of the media to all automatically linked files in the VFS if available. \n**Warning:** Though rare, we may fail to read the media info in Shoko when the files were first added (e.g. because of a corrupt file, encountering an unsupported new codec, etc.), then reading it later. This may cause episode/movie entries to be 'removed' and 'added' as new entries when that happens. Use at your own risk.",
       Default: ""
     },
     {
@@ -230,7 +230,7 @@ remove the library in Jellyfin, wait for the library to fully disappear from the
       Default: "N/A"
     },
     {
-      Option: "Virtual File System (VFS)",
+      Option: "Virtual File System (**VFS**)",
       Description: "",
       Default: "&#x2713;"
     },
