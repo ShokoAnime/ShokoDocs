@@ -5,6 +5,9 @@ sidebar:
 Description: Information on how to configure Shokofin to fit your setup.
 ---
 
+import EasyTable from "../../../components/EasyTable/EasyTable";
+
+
 With Shokofin installed, there's a couple things that need to be done before it can be used as a metadata provider for
 your anime collection. The goal is to get Shokofin configured to your liking in a way so that you don't have to visit
 the settings very often once set.
@@ -12,9 +15,33 @@ the settings very often once set.
 ## Connecting to Shoko Server
 
 Before you start using the plugin, it is important to connect it to a running instance of **Shoko Server**. Head over to
-Shokofin's plugin settings and provide the host, username, and password to get that connected.
+Shokofin's plugin settings and provide the private host, username, and password to get that connected.
 
-![Shokofin - Connection Settings](/src/assets/img/shokofin/Shokofin-Connection-Settings.png)
+<EasyTable
+  columns={[
+    { name: 'Option', header: 'Option', width: '20%'},
+    { name: 'Description', header: 'Description' }
+  ]}
+  data={[
+    {
+      Option: "Private Host URL",
+      Description: "The local IP or hostname that your running **Shoko Server** can be accessed directly from wherever Jellyfin is running."
+    },
+    {
+      Option: "Public Host URL (Optional)",
+      Description: "A public IP or hostname that can be used to access **Shoko Server** when the private host URL is not accessible from your browser when accessing Jellyfin. Most commonly used when Jellyfin is accessed outside your network or other complex network setups. If you do not know what any of this means, leave this field empty."
+    },
+    {
+      Option: "Username",
+      Description: "The username to your administrator account for Shoko Server."
+    }
+    ,
+    {
+      Option: "Password",
+      Description: "The password to your administrator account for Shoko Server."
+    }
+  ]}
+/>
 
 After you've established a connection to a running instance of **Shoko Server**, feel free to skim through the plugin
 settings detailed below and adjust Shokofin to your liking. If the defaults work just fine, go ahead and skip to
@@ -30,37 +57,86 @@ Shokofin.
 
 ### Metadata Settings
 
-##### Add Prefix to Episodes
-![Shokofin - Plugin Settings - Metadata (1)](/src/assets/img/shokofin/Shokofin-Settings-Metadata-1.png)
+The following settings will allow you to customize what information Shokofin will pull in as metadata for your media
+entries. Any changes to these settings will require you to replace all metadata for libraries that use the plugin as a
+provider.
 
-##### Add All Metadata for Multi-Episode Entries
-![Shokofin - Plugin Settings - Metadata (2)](/src/assets/img/shokofin/Shokofin-Settings-Metadata-2.png)
-
-##### Allow Any Title in Selected Language
-![Shokofin - Plugin Settings - Metadata (3)](/src/assets/img/shokofin/Shokofin-Settings-Metadata-3.png)
-
-##### Cleanup AniDB Overviews
-![Shokofin - Plugin Settings - Metadata (4)](/src/assets/img/shokofin/Shokofin-Settings-Metadata-4.png)
-
-##### Ignore Unverified Tags
-![Shokofin - Plugin Settings - Metadata (5)](/src/assets/img/shokofin/Shokofin-Settings-Metadata-5.png)
-
-##### Override Titles and Description Source
-![Shokofin - Plugin Settings - Metadata (6)](/src/assets/img/shokofin/Shokofin-Settings-Metadata-6.png)
-
-![Shokofin - Plugin Settings - Metadata (7)](/src/assets/img/shokofin/Shokofin-Settings-Metadata-7.png)
-
-##### Override Tag and Genre Sources
-
-![Shokofin - Plugin Settings - Metadata (8)](/src/assets/img/shokofin/Shokofin-Settings-Metadata-8.png)
-
-##### Override Content Rating and Production Location Sources
-![Shokofin - Plugin Settings - Metadata (9)](/src/assets/img/shokofin/Shokofin-Settings-Metadata-9.png)
-
-##### Add AniDB and TMDB IDs
-![Shokofin - Plugin Settings - Metadata (10)](/src/assets/img/shokofin/Shokofin-Settings-Metadata-10.png) {/* Not sure if this is going to move in the plugin settings. I'll check back in a few days. */}
+<EasyTable
+  columns={[
+    { name: 'Option', header: 'Option', width: '20%'},
+    { name: 'Description', header: 'Description' },
+    { name: 'Default', header: 'Default'}
+  ]}
+  data={[
+    {
+      Option: "Add prefix to episodes",
+      Description: "Add the type and number to the title of non-standard episodes such as specials (e.g. S1, O1, etc.)",
+      Default: "&#x2713;"
+    },
+    {
+      Option: "Allow any title in selected language",
+      Description: "Allows for alternative titles to be utilized if an official title is not present in the given language. Only applies to AniDB title selectors when using a title override that follows language settings.",
+      Default: ""
+    },
+    {
+      Option: "Cleanup AniDB overviews",
+      Description: "Prettifies AniDB descriptions to markdown supported by Jellyfin.",
+      Default: "&#x2713;"
+    },
+    {
+      Option: "Ignore unverified tags",
+      Description: "Don't use any user submitted tags that have not been verified by AniDB.",
+      Default: "&#x2713;"
+    },
+    {
+      Option: "Override main/alternate title",
+      Description: "Enable to override and prioritize where titles are sourced from between Shoko and available sources.",
+      Default: ""
+    },
+    {
+      Option: "Override description source",
+      Description: "Enable to override and prioritize where series and episode descriptions are sourced from based on the library's configured language between Shoko and available sources.",
+      Default: ""
+    },
+    {
+      Option: "Override tag/genre sources",
+      Description: "Enable to override which kinds of tags/genres to use along with their weights and specificity.",
+      Default: ""
+    },
+    {
+      Option: "Override content rating sources",
+      Description: "Enable to override and prioritize which sources to use when determining media content ratings (TV-G, TV-PG, TV-MA, XXX).",
+      Default: ""
+    },
+    {
+      Option: "Override production location sources",
+      Description: "Enable to override and prioritize which sources to use when providing info about the media's production location.",
+      Default: ""
+    },
+    {
+      Option: "Add Third Party IDs",
+      Description: "Enable which third party IDs to provide for other plugins to consume with supported media items.",
+      Default: "&#x2713;"
+    }
+  ]}
+/>
 
 ### Library Settings
+
+<EasyTable
+  columns={[
+    { name: 'Option', header: 'Option', width: '20%'},
+    { name: 'Description', header: 'Description' },
+    { name: 'Default', header: 'Default'}
+  ]}
+  data={[
+    {
+      Option: "Add prefix to episodes",
+      Description: "Add the type and number to the title of non-standard episodes such as specials (e.g. S1, O1, etc.)",
+      Default: "&#x2713;"
+    },
+  ]}
+/>
 
 ##### Use Shoko Groups for Shows
 ![Shokofin - Plugin Settings - Library (1)](/src/assets/img/shokofin/Shokofin-Settings-Library-1.png)
@@ -133,8 +209,8 @@ Shokofin.
 ### Experimental Settings
 
 In this section, you will see some settings that are actively being developed. With that does come the risk of strange
-or inneficient behavior when changing any of these settings. Be sure to read what each option does before changing so
-you have an idea what's relavent to you as well as what to expect.
+or inefficient behavior when changing any of these settings. Be sure to read what each option does before changing so
+you have an idea what's relevant to you as well as what to expect.
 
 ##### Automatically Merge Versions
 ![Shokofin - Plugin Settings - Experimental (1)](/src/assets/img/shokofin/Shokofin-Settings-Experimental-1.png)
@@ -198,7 +274,7 @@ and `/mnt/anime/movies` given that both `C:\ShokoImport\shows` and `C:\ShokoImpo
 ![Shokofin - Library Settings - Language and Country](/src/assets/img/shokofin/Shokofin-Library-Lang-and-Country.png)
 
 With Shokofin, setting the preferred download language will not do anything unless a corresponding override was set in
-the plugin's [Metadata Settings.](#metadata-settings) If a relavent override is set that makes use of the library's
+the plugin's [Metadata Settings.](#metadata-settings) If a relevant override is set that makes use of the library's
 language preferences, this is the value that will be used for determining the overridden metadata.
 
 Country is not used by Shokofin at this time and can be left unset.
