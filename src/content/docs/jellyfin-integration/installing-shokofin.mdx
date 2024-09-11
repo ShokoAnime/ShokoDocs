@@ -7,25 +7,24 @@ Description: Information on how to install and configure Shokofin (Jellyfin)
 import EasyTable from "../../../components/EasyTable/EasyTable";
 import { Steps } from '@astrojs/starlight/components';
 
-**Shokofin** is an anime metadata provider plugin for **Jellyfin** that works in tandem with **Shoko Server** to provide
-metadata tailored to your personal anime collection. For information on what Shoko Server is and the benefits that can
-come from using it to identify and manage your collection, visit our [Official Website](https://shokoanime.com/).
+**Shokofin** is a plugin for **Jellyfin** that works in tandem with **Shoko Server** to provide metadata tailored to
+your personal anime collection. For information on what Shoko Server is and the benefits that can come from using it to identify and manage your collection, visit our [Home page](https://shokoanime.com/) or explore these docs before you
+attempt to set up Shokofin.
 
-## Requirements
+:::caution[Pre-Requirements]
+**Before installing Shokofin it is required that you have already set up and are using Shoko Server** and that the files
+you intend to display in Jellyfin are indexed (_and optionally managed_) by Shoko Server. **Otherwise, the plugin won't
+be able to provide any metadata for your files**, because there is simply no metadata to provide for them. You can use
+the [Installing Shoko Server](/getting-started/installing-shoko-server) guide to properly install and configure Shoko
+Server before setting up Shokofin.
+:::
 
-Shokofin is not meant to be used stand-alone and requires Shoko Server to be installed, configured, and running before
-it can pull in metadata specific to your library. If you haven't done so, [Download Shoko Server](https://shokoanime.com/downloads/)
-from our main website and use the [Installing Shoko Server](/getting-started/installing-shoko-server) guide to
-properly install and configure Shoko Server.
+### Taking the First Step
 
-Shokofin requires Shoko Server to already be setup and in use, and that the directories/folders you intend to
-use in Jellyfin are fully indexed (and optionally managed) by Shoko Server. Without doing so beforehand, Shokofin will be
-unable to identify any of your anime series.
+There are multiple ways to install this plugin, but the recommended way is to use our **Official Jellyfin Repository**.
 
-## Install
-
-Below lists the corresponding versions of Jellyfin and Shoko Server that are compatible with Shokofin. Be sure to install
-the correct version for your setup to guarantee functionality.
+Below lists the corresponding versions of Jellyfin and Shoko Server that are compatible with Shokofin. Be sure to
+install the correct version for your setup to guarantee functionality.
 
 <EasyTable
   columns={[
@@ -37,12 +36,12 @@ the correct version for your setup to guarantee functionality.
     {
       Shokofin: '`0.x.x`',
       Jellyfin: '`10.7`',
-      ShokoServer: '`4.0.0`&mdash;`4.1.2`'
+      ShokoServer: '`4.0.0` &mdash; `4.1.2`'
     },
     {
       Shokofin: '`1.x.x`',
       Jellyfin: '`10.7`',
-      ShokoServer: '`4.1.0`&mdash;`4.1.2`'
+      ShokoServer: '`4.1.0` &mdash; `4.1.2`'
     },
     {
       Shokofin: '`2.x.x`',
@@ -67,41 +66,53 @@ the correct version for your setup to guarantee functionality.
   ]}
 />
 
-There are multiple ways to install this plugin, but the recommended way is to use our official Jellyfin repository.
-
 #### Official Repository
 
 <Steps>
+
 1. Navigate to the **Dashboard**
+
 2. Click on **Plugins** in the side-bar, and click it.
+
 3. Click on **Repositories** on the top of the Plugins page.
-2. Add new repository by clicking on the **plus** icon **(+)** and enter the following details;
+
+4. Add new repository by clicking on the **plus** icon **(+)** and enter the following details;
     - **Repository Name:** `Shokofin Stable`
-    - **Repository URL:** `https://raw.githubusercontent.com/ShokoAnime/Shokofin/master/manifest.json`
-3. Click on **Catalog** on the top of the Plugins page.
-4. Scroll down until you find **Shoko** under the **Metadata** section, and click it.
-5. Click the blue **Install** button. You will get a pop-up warning you about using untrusted plugins. Click Ok.
-6. Restart your server to apply the changes.
+    - **Repository URL:** `https://raw.githubusercontent.com/ShokoAnime/Shokofin/metadata/stable/manifest.json`
+
+5. Click on **Catalog** on the top of the Plugins page.
+
+6. Scroll down until you find **Shoko** under the **Metadata** section, and click it.
+
+7. Click the blue **Install** button. You will get a pop-up warning you about using untrusted plugins. Click Ok.
+
+8. Restart your server to apply the changes.
+
 </Steps>
 
-:::caution[Note]
-  To install **unstable** builds of Shokofin, the following repository URL is needed instead:
+:::caution[Dev Builds]
+  To install the **development** builds, use the following repository URL instead:
 
-  `https://raw.githubusercontent.com/ShokoAnime/Shokofin/master/manifest-unstable.json`
+  `https://raw.githubusercontent.com/ShokoAnime/Shokofin/metadata/dev/manifest.json`
 :::
 
 #### Github Releases
 
 <Steps>
-1. Download the `shoko_*.zip` file from the latest release from GitHub [here](https://github.com/ShokoAnime/shokofin/releases/latest).
-2. Extract the contained `*.dll`s and `meta.json`, place the files in a folder named `Shokofin`, and copy this folder to the
-  `plugins` folder inside the Jellyfin data directory.
-  Refer to the "Data Directory" section on [this page](https://jellyfin.org/docs/general/administration/configuration.html) for where to find your Jellyfin install.
+
+1. Download the `shoko_*.zip` file from the [latest release from GitHub](https://github.com/ShokoAnime/shokofin/releases/latest).
+
+2. Extract the contained `*.dll`s and `meta.json`, place the files in a folder named `Shokofin`, and copy this folder to
+   the `plugins` folder inside the Jellyfin data directory. Refer to the "Data Directory" section on
+   [this page](https://jellyfin.org/docs/general/administration/configuration.html) for where to find your Jellyfin
+   install.
+
 3. Start or restart your server to apply the changes.
+
 </Steps>
 
 ### Next Steps
 
-Congratulations! If everything went well, Shokofin should now be installed. Proceed to the next page for instructions on how to connect
-Shokofin to your Shoko Server instance along with any other configuration steps needed to properly setup Shokofin for recognizing your
-anime library.
+Congratulations! If everything went well, Shokofin should now be installed. Proceed to the next page for instructions on
+how to connect Shokofin to your Shoko Server instance along with any other configuration steps needed to properly setup
+Shokofin for recognizing your anime library.
