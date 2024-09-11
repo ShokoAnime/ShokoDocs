@@ -5,6 +5,7 @@ sidebar:
 Description: Information on how to install and configure Shokofin (Jellyfin)
 ---
 import EasyTable from "../../../components/EasyTable/EasyTable";
+import { Steps } from '@astrojs/starlight/components';
 
 **Shokofin** is an anime metadata provider plugin for **Jellyfin** that works in tandem with **Shoko Server** to provide
 metadata tailored to your personal anime collection. For information on what Shoko Server is and the benefits that can
@@ -70,6 +71,7 @@ There are multiple ways to install this plugin, but the recommended way is to us
 
 #### Official Repository
 
+<Steps>
 1. Navigate to the **Dashboard**
 2. Click on **Plugins** in the side-bar, and click it.
 3. Click on **Repositories** on the top of the Plugins page.
@@ -80,6 +82,7 @@ There are multiple ways to install this plugin, but the recommended way is to us
 4. Scroll down until you find **Shoko** under the **Metadata** section, and click it.
 5. Click the blue **Install** button. You will get a pop-up warning you about using untrusted plugins. Click Ok.
 6. Restart your server to apply the changes.
+</Steps>
 
 :::caution[Note]
   To install **unstable** builds of Shokofin, the following repository URL is needed instead:
@@ -89,11 +92,13 @@ There are multiple ways to install this plugin, but the recommended way is to us
 
 #### Github Releases
 
+<Steps>
 1. Download the `shoko_*.zip` file from the latest release from GitHub [here](https://github.com/ShokoAnime/shokofin/releases/latest).
 2. Extract the contained `*.dll`s and `meta.json`, place the files in a folder named `Shokofin`, and copy this folder to the
   `plugins` folder inside the Jellyfin data directory.
   Refer to the "Data Directory" section on [this page](https://jellyfin.org/docs/general/administration/configuration.html) for where to find your Jellyfin install.
 3. Start or restart your server to apply the changes.
+</Steps>
 
 ### Next Steps
 
