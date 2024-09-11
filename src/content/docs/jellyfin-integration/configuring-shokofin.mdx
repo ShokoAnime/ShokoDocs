@@ -123,6 +123,10 @@ provider.
 
 ### Library Settings
 
+Configure the behavior for how your media will be grouped and displayed within a library. Any changes to these settings
+will require you to remove the library in Jellyfin, wait for the library to fully disappear from the Jellyfin homepage,
+and create it once again following the instructions at [Creating a Shoko Library.](#creating-a-shoko-library)
+
 <EasyTable
   columns={[
     { name: 'Option', header: 'Option', width: '20%'},
@@ -132,94 +136,66 @@ provider.
   data={[
     {
       Option: "Automatically merge multiple versions of videos",
-      Description: "",
+      Description: "Enable to allow Shokofin to merge alternate versions of the same media into a single displayed entry.",
       Default: "&#x2713;"
     },
     {
-      Option: "Use shoko groups for shows",
-      Description: "",
+      Option: "Use Shoko groups for shows",
+      Description: "Enable this to have Shokofin group your media the same way that can be seen in Shoko. This requires grouping to be setup and configured within Shoko itself for this setting to work.",
       Default: ""
     },
     {
       Option: "Separate movies from shows",
-      Description: "",
+      Description: "Enable this to filter out anything that is not a show from a Jellyfin Shows library.",
       Default: ""
     },
     {
       Option: "Filter movie libraries",
-      Description: "",
+      Description: "Enable this to filter out anything that is not a movie from a Jellyfin Movies library.",
       Default: "&#x2713;"
     },
     {
-      Option: "Specials placement within seasons:",
-      Description: "",
+      Option: "Specials placement within seasons",
+      Description: "Change this to adjust where specials are placed in their respective season or filter them out entirely.",
       Default: "Always place specials after the normal episodes"
     },
     {
-      Option: "Collections:",
-      Description: "",
+      Option: "Collections",
+      Description: "Configure how native Jellyfin collections should be created if at all based on Shoko provided metadata.",
       Default: "Do not create collections"
     },
     {
       Option: "Require two entries for a collection",
-      Description: "",
+      Description: "If collection creation is enabled, only create a collection when the collection will contain at least two items.",
       Default: "&#x2713;"
     },
     {
       Option: "Force movie special features",
-      Description: "",
+      Description: "Append all specials that belong to an AniDB movie series as special features for the movie(s). By default only some specials will be automatically recognized as special features, but by enabling this option you will force all specials to be used as special features. This setting applies to movie series across all library types, and will break movie series that contain specials in a show type library.",
       Default: ""
     },
     {
       Option: "Add trailers",
-      Description: "",
+      Description: "Makes trailers appear as a native feature that Jellyfin can use. This setting is only applicable when using a [VFS](#virtual-file-system-vfs) managed library.",
       Default: "&#x2713;"
     },
     {
       Option: "Add credits as theme videos",
-      Description: "",
+      Description: "Make OPs/EDs appear as a native theme video that Jellyfin can use. This setting is only applicable when using a [VFS](#virtual-file-system-vfs) managed library.",
       Default: "&#x2713;"
     },
     {
       Option: "Add credits as special features",
-      Description: "",
+      Description: "Make OPs/EDs show up as native special features within Jellyfin. This setting is only applicable when using a [VFS](#virtual-file-system-vfs) managed library.",
       Default: ""
     },
     {
       Option: "Add Missing Episodes/Seasons",
-      Description: "",
+      Description: "Add episode/season entries for media that is not currently present in your local collection. Display settings for each Jellyfin user will have to be adjusted to show missing episode information to make use of this feature, otherwise 'empty' seasons will appear within a series if the episodes are not available locally.",
       Default: "&#x2713;"
     },
-
   ]}
 />
-
-##### Use Shoko Groups for Shows
-![Shokofin - Plugin Settings - Library (1)](/src/assets/img/shokofin/Shokofin-Settings-Library-1.png)
-
-##### Separate Movies From Shows
-![Shokofin - Plugin Settings - Library (2)](/src/assets/img/shokofin/Shokofin-Settings-Library-2.png)
-
-##### Special Placement Within Seasons
-![Shokofin - Plugin Settings - Library (3)](/src/assets/img/shokofin/Shokofin-Settings-Library-3.png)
-
-##### Collections
-![Shokofin - Plugin Settings - Library (4)](/src/assets/img/shokofin/Shokofin-Settings-Library-4.png)
-
-##### Require Two Entries for a Collection
-![Shokofin - Plugin Settings - Library (5)](/src/assets/img/shokofin/Shokofin-Settings-Library-5.png)
-
-##### Force Movie Special Features
-![Shokofin - Plugin Settings - Library (6)](/src/assets/img/shokofin/Shokofin-Settings-Library-6.png)
-
-##### Add Trailers
-![Shokofin - Plugin Settings - Library (7)](/src/assets/img/shokofin/Shokofin-Settings-Library-7.png)
-
-##### Add Credits as Theme Videos and Special Features
-![Shokofin - Plugin Settings - Library (8)](/src/assets/img/shokofin/Shokofin-Settings-Library-8.png)
-
-##### Add Missing Episodes/Seasons
-![Shokofin - Plugin Settings - Library (9)](/src/assets/img/shokofin/Shokofin-Settings-Library-9.png)
 
 ### Media Folder Settings
 ![Shokofin - Plugin Settings - Media Folder (1)](/src/assets/img/shokofin/Shokofin-Settings-Media-Folder-1.png)
