@@ -15,12 +15,12 @@
     "@astrojs/react": "^3.6.2",
     "@astrojs/starlight": "^0.25.5",
     "@fontsource-variable/noto-sans": "^5.0.5",
-    "@fontsource-variable/open-sans": "^5.0.30",
-    "@fontsource-variable/sora": "^5.0.19",
-    "@types/node": "^20.16.1",
-    "@types/react": "^18.3.3",
+    "@fontsource-variable/open-sans": "^5.0.31",
+    "@fontsource-variable/sora": "^5.0.20",
+    "@types/node": "^20.16.5",
+    "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
-    "astro": "^4.14.2",
+    "astro": "^4.15.4",
     "dprint": "^0.47.2",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.13.0",
@@ -30,6 +30,6 @@
     "sharp": "^0.32.6",
     "shiki": "^0.14.7",
     "starlight-image-zoom": "^0.5.0",
-    "typescript": "^5.5.4"
+    "typescript": "^5.6.2"
   }
 }
