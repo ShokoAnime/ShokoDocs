@@ -272,32 +272,32 @@ Probably should explain wtf SignalR even is and why someone would want/need it.
   data={[
     {
       Option: "Auto Connect On Start",
-      Description: "",
+      Description: "Attempt to connect to your running Shoko Server when Jellyfin starts up.",
       Default: ""
     },
     {
-      Option: "Auto Reconnect Intervals:",
-      Description: "",
-      Default: ""
+      Option: "Auto Reconnect Intervals",
+      Description: "A comma separated list of intervals given in seconds to try to reconnect to your running Shoko Server if Shokofin ever gets disconnected.",
+      Default: "0, 2, 10, 30, 60, 120, 300"
     },
     {
       Option: "SignalR Event Sources",
       Description: "",
-      Default: ""
+      Default: "Shoko, AniDB, TMDB"
     },
     {
       Option: "Configure settings for:",
-      Description: "Applicable to the remaining settings in this section.",
-      Default: ""
+      Description: "Applicable to the remaining settings in this section. Swap between configuring the defaults of newly created libraries or for any existing libraries.",
+      Default: "N/A"
     },
     {
       Option: "File Events",
-      Description: "",
+      Description: "Have Shokofin listen for file events from Shoko Server when new media gets added or moved around in the file system and trigger library updates accordingly. Especially useful if your Jellyfin library is using a network share for it's media location where native file events may not be available for Jellyfin's real time monitoring to function.",
       Default: ""
     },
     {
       Option: "Metadata Update Events",
-      Description: "",
+      Description: "Have Shokofin listen for metadata update events from Shoko Server when metadata gets updated and trigger library updates accordingly. Can be useful when media was missing episode titles or other info initially but was added at a later time.",
       Default: ""
     },
   ]}
