@@ -236,7 +236,7 @@ remove the library in Jellyfin, wait for the library to fully disappear from the
     },
     {
       Option: "Library Filtering",
-      Description: "Choose how Shokofin filters out unrecognized media from your library. Set to Strict to hide all media not yet recognized by Shoko. Set to Lax to allow unrecognized media to appear in the library. Set to Auto to have Shokofin filter out unrecognized media only if no other providers are enabled for the library. Only applies to libraries not using the VFS as VFS manages libraries will always act as though Strict has been set.",
+      Description: "Adjust how Shokofin filters out unrecognized media from your library. Set to Strict to hide all media not yet recognized by Shoko. Set to Lax to allow unrecognized media to appear in the library. Set to Auto to have Shokofin filter out unrecognized media only if no other providers are enabled for the library. Only applies to libraries not using the VFS as VFS manages libraries will always act as though Strict has been set.",
       Default: "Auto"
     },
   ]}
@@ -305,59 +305,49 @@ Probably should explain wtf SignalR even is and why someone would want/need it.
 
 ### User Settings
 
-Explain the dropdown and how you can configure settings for each **Jellyfin** user
+Configure watch-state synchronization for each Jellyfin user. By default, all synchronization features are disabled and must be configured and linked to a user in Shoko Server if desired.
 
 <EasyTable
   columns={[
     { name: 'Option', header: 'Option', width: '20%'},
-    { name: 'Description', header: 'Description' },
-    { name: 'Default', header: 'Default'}
+    { name: 'Description', header: 'Description' }
   ]}
   data={[
     {
       Option: "Enable synchronization features",
-      Description: "",
-      Default: ""
+      Description: "Enable syncing certain data between Jellyfin and Shoko Server. The specific behavior on what gets synced and when can be configured using the remaining options in this section."
     },
     {
       Option: "Sync watch-state on import or refresh",
-      Description: "",
-      Default: ""
+      Description: "When media gets scanned into your library or when a library's metadata gets refreshed, sync watch-state between Jellyfin and Shoko Server."
     },
     {
       Option: "Sync watch-state after playback",
-      Description: "",
-      Default: ""
+      Description: "When you finish watching a movie, episode, or other media item, sync it's watch-state with Shoko Server."
     },
     {
       Option: "Sync watch-state events during playback",
-      Description: "",
-      Default: ""
+      Description: "Sync partial watch-state on play/pause/stop/resume events during media playback to Shoko Server."
     },
     {
       Option: "Sync watch-state live during playback",
-      Description: "",
-      Default: ""
+      Description: "Sync partial watch-state at a set interval during media playback to Shoko Server."
     },
     {
       Option: "Lazy sync watch-state events with shoko",
-      Description: "",
-      Default: ""
+      Description: "Wait 10 seconds before syncing any of the above configured watch-state events to Shoko Server. This will prevent accidental clicks and/or previews from marking a file as watched in Shoko Server, and will also keep them more in sync with Jellyfin since it's closer to how Jellyfin handles the watch-state internally."
     },
     {
       Option: "Sync watch-state for restricted videos",
-      Description: "",
-      Default: ""
+      Description: "Allow syncing watch-state for hentai and adult content to Shoko Server."
     },
     {
       Option: "Username",
-      Description: "",
-      Default: ""
+      Description: "The user in Shoko Server to sync the above watch-state events to."
     },
     {
       Option: "Password",
-      Description: "",
-      Default: ""
+      Description: "The password for the specified Shoko Server account."
     },
   ]}
 />
