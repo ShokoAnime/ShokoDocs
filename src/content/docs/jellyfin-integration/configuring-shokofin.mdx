@@ -25,11 +25,11 @@ Shokofin's plugin settings and provide the private host, username, and password 
   data={[
     {
       Option: "Private Host URL",
-      Description: "The local IP or hostname that your running **Shoko Server** can be accessed directly from wherever Jellyfin is running."
+      Description: "The local IP or hostname that your running Shoko Server can be accessed directly from wherever Jellyfin is running."
     },
     {
       Option: "Public Host URL (Optional)",
-      Description: "A public IP or hostname that can be used to access **Shoko Server** when the private host URL is not accessible from your browser when accessing Jellyfin. Most commonly used when Jellyfin is accessed outside your network or other complex network setups. If you do not know what any of this means, leave this field empty."
+      Description: "A public IP or hostname that can be used to access Shoko Server when the private host URL is not accessible from your browser when accessing Jellyfin. Most commonly used when Jellyfin is accessed outside your network or other complex network setups. If you do not know what any of this means, leave this field empty."
     },
     {
       Option: "Username",
@@ -70,7 +70,7 @@ provider.
   data={[
     {
       Option: "Add prefix to episodes",
-      Description: "Add the type and number to the title of non-standard episodes such as specials (e.g. S1, O1, etc.)",
+      Description: "Add the type and number to the title of non-standard episodes such as specials. (e.g. S1, O1)",
       Default: "&#x2713;"
     },
     {
@@ -85,17 +85,17 @@ provider.
     },
     {
       Option: "Ignore unverified tags",
-      Description: "Don't use any user submitted tags that have not been verified by AniDB.",
+      Description: "Don't use any user-submitted tags that have not been verified by AniDB.",
       Default: "&#x2713;"
     },
     {
       Option: "Override main/alternate title",
-      Description: "Enable to override and prioritize where titles are sourced from between Shoko and available sources.",
+      Description: "Enable to override and prioritize where titles are sourced from between Shoko Server and available sources.",
       Default: ""
     },
     {
       Option: "Override description source",
-      Description: "Enable to override and prioritize where series and episode descriptions are sourced from based on the library's configured language between Shoko and available sources.",
+      Description: "Enable to override and prioritize where series and episode descriptions are sourced from based on the library's configured language between Shoko Server and available sources.",
       Default: ""
     },
     {
@@ -141,7 +141,7 @@ and create it once again following the instructions at [Creating a Shoko Library
     },
     {
       Option: "Use Shoko groups for shows",
-      Description: "Enable this to have Shokofin group your media the same way that can be seen in Shoko. This requires grouping to be setup and configured within Shoko itself for this setting to work.",
+      Description: "Enable this to have Shokofin group your media the same way that can be seen in Shoko Server. This requires grouping to be setup and configured within Shoko Server itself for this setting to work.",
       Default: ""
     },
     {
@@ -161,7 +161,7 @@ and create it once again following the instructions at [Creating a Shoko Library
     },
     {
       Option: "Collections",
-      Description: "Configure how native Jellyfin collections should be created if at all based on Shoko provided metadata.",
+      Description: "Configure how native Jellyfin collections should be created if at all based on Shoko Server provided metadata.",
       Default: "Do not create collections"
     },
     {
@@ -216,12 +216,12 @@ remove the library in Jellyfin, wait for the library to fully disappear from the
     },
     {
       Option: "Add Release Group to VFS entries",
-      Description: "Will add full or short release group names to all automatically linked files in the VFS. 'No Group' will be used if the file is not associated with a release group in Shoko. \n**Warning:** The release group in the file name may change if the release group info is incomplete, unavailable, or otherwise updated in Shoko at a later date. This may cause episode/movie entries to be 'removed' and 'added' as new entries when that happens.  Use at your own risk.",
+      Description: "Will add full or short release group names to all automatically linked files in the VFS. 'No Group' will be used if the file is not associated with a release group in Shoko Server. \n**Warning:** The release group in the file name may change if the release group info is incomplete, unavailable, or otherwise updated in Shoko Server at a later date. This may cause episode/movie entries to be 'removed' and 'added' as new entries when that happens.  Use at your own risk.",
       Default: ""
     },
     {
       Option: "Add Resolution to VFS entries",
-      Description: "Will add the resolution of the media to all automatically linked files in the VFS if available. \n**Warning:** Though rare, we may fail to read the media info in Shoko when the files were first added (e.g. because of a corrupt file, encountering an unsupported new codec, etc.), then reading it later. This may cause episode/movie entries to be 'removed' and 'added' as new entries when that happens. Use at your own risk.",
+      Description: "Will add the resolution of the media to all automatically linked files in the VFS if available. \n**Warning:** Though rare, we may fail to read the media info in Shoko Server when the files were first added (e.g. because of a corrupt file, encountering an unsupported new codec, etc.), then reading it later. This may cause episode/movie entries to be 'removed' and 'added' as new entries when that happens. Use at your own risk.",
       Default: ""
     },
     {
@@ -236,7 +236,7 @@ remove the library in Jellyfin, wait for the library to fully disappear from the
     },
     {
       Option: "Library Filtering",
-      Description: "Adjust how Shokofin filters out unrecognized media from your library. Set to Strict to hide all media not yet recognized by Shoko. Set to Lax to allow unrecognized media to appear in the library. Set to Auto to have Shokofin filter out unrecognized media only if no other providers are enabled for the library. Only applies to libraries not using the VFS as VFS manages libraries will always act as though Strict has been set.",
+      Description: "Adjust how Shokofin filters out unrecognized media from your library. Set to Strict to hide all media not yet recognized by Shoko Server. Set to Lax to allow unrecognized media to appear in the library. Set to Auto to have Shokofin filter out unrecognized media only if no other providers are enabled for the library. Only applies to libraries not using the VFS as VFS manages libraries will always act as though Strict has been set.",
       Default: "Auto"
     },
   ]}
