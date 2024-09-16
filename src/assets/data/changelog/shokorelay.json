@@ -2,6 +2,18 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.9",
+      "versionURL": "129",
+      "date": "Sep 16th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.9",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Minor refactors and readme fixes"
+        }
+      ]
+    },
+    {
       "version": "1.2.8",
       "versionURL": "128",
       "date": "Sep 7th, 2024",
