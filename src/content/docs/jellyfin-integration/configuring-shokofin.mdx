@@ -20,7 +20,7 @@ Shokofin's plugin settings and provide the private host, username, and password 
 <EasyTable
   columns={[
     { name: 'Option', header: 'Option', width: '20%'},
-    { name: 'Description', header: 'Description' }
+    { name: 'Description', header: 'Description' },
   ]}
   data={[
     {
@@ -34,12 +34,12 @@ Shokofin's plugin settings and provide the private host, username, and password 
     {
       Option: "Username",
       Description: "The username to your administrator account for Shoko Server."
-    }
+    },
     ,
     {
       Option: "Password",
       Description: "The password to your administrator account for Shoko Server."
-    }
+    },
   ]}
 />
 
@@ -65,7 +65,7 @@ provider.
   columns={[
     { name: 'Option', header: 'Option', width: '20%'},
     { name: 'Description', header: 'Description' },
-    { name: 'Default', header: 'Default'}
+    { name: 'Default', header: 'Default'},
   ]}
   data={[
     {
@@ -117,7 +117,7 @@ provider.
       Option: "Add Third Party IDs",
       Description: "Enable which third party IDs to provide for other plugins to consume with supported media items.",
       Default: "&#x2713;"
-    }
+    },
   ]}
 />
 
@@ -131,7 +131,7 @@ and create it once again following the instructions at [Creating a Shoko Library
   columns={[
     { name: 'Option', header: 'Option', width: '20%'},
     { name: 'Description', header: 'Description' },
-    { name: 'Default', header: 'Default'}
+    { name: 'Default', header: 'Default'},
   ]}
   data={[
     {
@@ -206,7 +206,7 @@ remove the library in Jellyfin, wait for the library to fully disappear from the
   columns={[
     { name: 'Option', header: 'Option', width: '20%'},
     { name: 'Description', header: 'Description' },
-    { name: 'Default', header: 'Default'}
+    { name: 'Default', header: 'Default'},
   ]}
   data={[
     {
@@ -256,7 +256,7 @@ SignalR is a feature that allows for real-time communication with your running S
 <EasyTable
   columns={[
     { name: 'Option', header: 'Option', width: '20%'},
-    { name: 'Description', header: 'Description' }
+    { name: 'Description', header: 'Description' },
   ]}
   data={[
     {
@@ -272,7 +272,7 @@ SignalR is a feature that allows for real-time communication with your running S
   columns={[
     { name: 'Option', header: 'Option', width: '20%'},
     { name: 'Description', header: 'Description' },
-    { name: 'Default', header: 'Default'}
+    { name: 'Default', header: 'Default'},
   ]}
   data={[
     {
@@ -315,12 +315,12 @@ Configure watch-state synchronization for each Jellyfin user. By default, all sy
 <EasyTable
   columns={[
     { name: 'Option', header: 'Option', width: '20%'},
-    { name: 'Description', header: 'Description' }
+    { name: 'Description', header: 'Description' },
   ]}
   data={[
     {
       Option: "Enable synchronization features",
-      Description: "Enable syncing certain data between Jellyfin and Shoko Server. The specific behavior on what gets synced and when can be configured using the remaining options in this section."
+      Description: "Enable syncing certain data between Jellyfin and Shoko Server. The specific behavior on what gets synced and when can be configured using the remaining options in this section. Leaving this setting unchecked will disable synchronization entirely, regardless of other synchronization settings."
     },
     {
       Option: "Sync watch-state on import or refresh",
@@ -413,7 +413,7 @@ in mixed metadata and other strange behavior.
 Real time monitoring can be enabled if you desire, which will let Jellyfin listen to file system events for new and
 modified files. This option will not do anything however if your file system does not support these events, and is
 especially common with network mounts like NFS or SMB shares. As an alternative, Shokofin provides a feature called
-SignalR in it's plugin settings which will allow Shokofin to maintain a constant connection to Shoko Server to recieve
+SignalR in it's plugin settings which will allow Shokofin to maintain a constant connection to Shoko Server to receive
 and trigger updates for new and updated files/metadata. More information on configuring this feature can be found in the
 [SignalR section](#SignalR) of this page.
 
