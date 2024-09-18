@@ -236,7 +236,7 @@ remove the library in Jellyfin, wait for the library to fully disappear from the
     },
     {
       Option: "Virtual File System (**VFS**)",
-      Description: "",
+      Description: "This feature allows you to disregard the underlying disk file structure while automagically meeting Jellyfin's requirements for file organization. It also ensures that no unrecognized files appear in your library and allows us to fully leverage Jellyfin's native features better than we otherwise could. This enables us to effortlessly support trailers, special features, and theme videos for series, seasons and movies, as well as merge partial episodes into a single entry. All this is possible because we disregard the underlying disk file structure to create our own using symbolic links.\nRefer to our [Recommendations and Limitations](/jellyfin-integration/recommendations-and-limitations/#TODO) page for additional information on what to expect whether you choose to use this feature or not.",
       Default: "&#x2713;"
     },
     {
@@ -328,19 +328,19 @@ Configure watch-state synchronization for each Jellyfin user. By default, all sy
     },
     {
       Option: "Sync watch-state after playback",
-      Description: "When you finish watching a movie, episode, or other media item, sync it's watch-state with Shoko Server."
+      Description: "Sync watch-state with Shoko Server when you finish watching a movie, episode, or other video."
     },
     {
       Option: "Sync watch-state events during playback",
-      Description: "Sync partial watch-state on play/pause/stop/resume events during media playback to Shoko Server."
+      Description: "Sync partial watch-state to Shoko Server on play/pause/stop/resume events during media playback."
     },
     {
       Option: "Sync watch-state live during playback",
-      Description: "Sync partial watch-state at a set interval during media playback to Shoko Server."
+      Description: "Sync partial watch-state to Shoko Server at a regular interval during media playback."
     },
     {
       Option: "Lazy sync watch-state events with shoko",
-      Description: "Wait 10 seconds before syncing any of the above configured watch-state events to Shoko Server. This will prevent accidental clicks and/or previews from marking a file as watched in Shoko Server, and will also keep them more in sync with Jellyfin since it's closer to how Jellyfin handles the watch-state internally."
+      Description: "Wait about 10 seconds before syncing any of the above configured watch-state events to Shoko Server. This will prevent accidental clicks and/or previews from marking a file as watched in Shoko Server, and will also keep them more in sync with Jellyfin since it's closer to how Jellyfin handles the watch-state internally."
     },
     {
       Option: "Sync watch-state for restricted videos",
@@ -415,7 +415,7 @@ modified files. This option will not do anything however if your file system doe
 especially common with network mounts like NFS or SMB shares. As an alternative, Shokofin provides a feature called
 SignalR in it's plugin settings which will allow Shokofin to maintain a constant connection to Shoko Server to receive
 and trigger updates for new and updated files/metadata. More information on configuring this feature can be found in the
-[SignalR section](#SignalR) of this page.
+[SignalR](#signalr) section of this page.
 
 ### Metadata Downloaders
 ![Shokofin - Library Settings - Metadata Downloaders](/src/assets/img/shokofin/Shokofin-Library-Metadata-Downloaders.png)
@@ -429,49 +429,51 @@ media incorrectly or just clashing in general with how your collection is organi
 
 
 :::danger[Important]
-    **DO NOT** enable metadata saving using Nfo files with libraries managed by Shoko, and if any are present among
-    your media library, **DELETE THEM NOW**. The reasoning behind this is that Jellyfin prioritizes metadata from Nfo
-    files above any other metadata provider. This results in weird or broken behavior since Shokofin is unable to
-    override metadata that's sourced from an Nfo.
-    
-    Either find any files in your library that have the `.nfo` extension using your file explorer and delete them, or
-    run the following command in a terminal according to your operating system. Be sure to substitute the path with the
-    location of your library.
+**DO NOT** enable metadata saving using Nfo files with libraries managed by Shoko, and if any are present among
+your media library, **DELETE THEM NOW**. The reasoning behind this is that Jellyfin prioritizes metadata from Nfo
+files above any other metadata provider. This results in weird or broken behavior since Shokofin is unable to
+override metadata that's sourced from an Nfo.
 
-    ###### Windows (Powershell):
-    
-    ```powershell
-    Get-ChildItem -Path 'C:\path\to\library\' '*.nfo' | Remove-Item
-    ```
+Either find any files in your library that have the `.nfo` extension using your file explorer and delete them, or
+run the following command in a terminal according to your operating system. Be sure to substitute the path with the
+location of your library.
 
-    ###### Linux:
-    
-    ```sh
-    find /path/to/library/ -name "*.nfo" -type f -delete
-    ```
+###### Windows (Powershell):
+
+```powershell
+Get-ChildItem -Path 'C:\path\to\library\' '*.nfo' | Remove-Item
+```
+
+###### Linux:
+
+```sh
+find /path/to/library/ -name "*.nfo" -type f -delete
+```
 :::
+
 
 ### Image Fetchers
 ![Shokofin - Library Settings - Image Fetchers](/src/assets/img/shokofin/Shokofin-Library-Image-Fetchers.png)
 
 Shoko should be enabled and set as the top-most image fetcher for all library types and categories. Any additional
-metadata providers may be enabled, but can have mixed results where incorrect images are fetched. Ones that are
-known to work without issue alongside Shokofin are the Embedded Image Extractor and Screen Grabber providers.
+metadata providers may be enabled, but can have mixed results where incorrect images are fetched. One that is
+known to work without issue alongside Shokofin is the Screen Grabber provider.
 
 ### Saving Artwork Into Media Folders
 ![Shokofin - Library Settings - Saving Artwork](/src/assets/img/shokofin/Shokofin-Library-Saving-Artwork.png)
 
-When using the VFS feature provided by Shokofin, it is recommended to leave this option disabled as the artwork would
-end up saved into the symlinked file structure that Shokofin creates within the data directories of Jellyfin. For non
-VFS managed libraries, this is not an issue and can be set according to personal preference.
+When using the [VFS](#media-folder-settings) feature provided by Shokofin, it is recommended to leave this option 
+disabled as the artwork would end up saved into the symlinked file structure that Shokofin creates within the data 
+directories of Jellyfin. For non-VFS managed libraries, this is not an issue and can be set according to personal 
+preference.
 
 ### Merge Series Across Folders
 ![Shokofin - Library Settings - Merge Series](/src/assets/img/shokofin/Shokofin-Library-Merge-Series.png)
 
-If you are using the VFS feature provided by Shokofin, this only needs to be enabled if multiple folders were added to
-the library earlier on in the configuration. For non-VFS managed libraries, it is recommended to enable this no matter
-what. Enabling lets Shokofin properly group your media into series that reflect your Shoko library without being limited
-by Jellyfin and the media's underlying folder structure.
+If you are using the [VFS](#media-folder-settings) feature provided by Shokofin, this setting will not change any 
+behavior. For non-VFS managed libraries, it is recommended to enable this no matter what. Enabling lets Shokofin 
+properly group your media into series that reflect your Shoko library without being limited by Jellyfin and the media's 
+underlying folder structure.
 
 ## Wrapping Up
 
