@@ -261,7 +261,7 @@ SignalR is a feature that allows for real-time communication with your running S
   data={[
     {
       Option: "Status",
-      Description: "Shows the current status of the SignalR connection. Will display if SignalR is disabled or enabled and if SignalR is currently connected or in the process of reconnecting. SignalR can also be manually connected or disconnected using the button below this indicator."
+      Description: "Shows the current status of the SignalR connection. Will display if SignalR is disabled or enabled and if SignalR is currently connected or in the process of reconnecting to your running Shoko Server. SignalR can also be manually connected or disconnected using the button below this indicator."
     },
   ]}
 />
@@ -282,12 +282,12 @@ SignalR is a feature that allows for real-time communication with your running S
     },
     {
       Option: "Auto Reconnect Intervals",
-      Description: "A comma separated list of intervals given in seconds to try to reconnect to your running Shoko Server if Shokofin ever gets disconnected.",
+      Description: "A comma separated list of intervals given in seconds to try to reconnect to your running Shoko Server if Shokofin ever gets disconnected. The provided list will have duplicates removed and will be performed in sorted order starting from the shortest time span when reconnecting. Once the longest interval has been reached and fails to reconnect, Shokofin will stop attempting to reconnect and leave SignalR disconnected until otherwise reconnected.",
       Default: "0, 2, 10, 30, 60, 120, 300"
     },
     {
-      Option: "SignalR Event Sources",
-      Description: "",
+      Option: "Event Sources",
+      Description: "Choose which event sources to react to for metadata events.",
       Default: "Shoko, AniDB, TMDB"
     },
     {
@@ -297,12 +297,12 @@ SignalR is a feature that allows for real-time communication with your running S
     },
     {
       Option: "File Events",
-      Description: "Have Shokofin listen for file events from Shoko Server when new media gets added or moved around in the file system and trigger library updates accordingly. Especially useful if your Jellyfin library is using a network share for it's media location where native file events may not be available for Jellyfin's real time monitoring to function.",
+      Description: "Have Shokofin listen for file events from Shoko Server when new media gets added or moved around in the file system and trigger library updates accordingly. Especially useful if your Jellyfin library is using a network share for it's media location where native file events may not be available for Jellyfin's real time monitoring to function. Can be used as a complete replacement for Jellyfin's built-in real time monitoring or used alongside it.",
       Default: ""
     },
     {
-      Option: "Metadata Update Events",
-      Description: "Have Shokofin listen for metadata update events from Shoko Server when metadata gets updated and trigger library updates accordingly. Can be useful when media was missing episode titles or other info initially but was added at a later time.",
+      Option: "Metadata Events",
+      Description: "Have Shokofin listen for metadata update events from Shoko Server when metadata gets added, updated, or removed and trigger library updates accordingly. Can be useful when media was missing episode titles or other info initially but was added or updated at a later time.",
       Default: ""
     },
   ]}
