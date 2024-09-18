@@ -392,6 +392,8 @@ folder `/mnt/anime`, as long as both directories contain the same things, Shokof
 Pointing Jellyfin to further nested folders seen within Shoko's import folder will also work, such as `/mnt/anime/shows`
 and `/mnt/anime/movies` given that both `C:\ShokoImport\shows` and `C:\ShokoImport\movies` also exist.
 
+If you intend to have multiple Shokofin managed libraries to separate movies from shows, be sure that the folders specified for each library are different from each other due to how Jellyfin keeps track of metadata internally. You can also work around this using multiple volume/bind mounts or with a symbolic link. You can read more about this in the [Recommendations and Limitations](/jellyfin-integration/recommendations-and-limitations/#TODO) section of our docs.
+
 ### Language and Country
 ![Shokofin - Library Settings - Language and Country](/src/assets/img/shokofin/Shokofin-Library-Lang-and-Country.png)
 
