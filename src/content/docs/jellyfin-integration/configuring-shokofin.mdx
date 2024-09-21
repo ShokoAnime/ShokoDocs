@@ -47,14 +47,6 @@ After you've established a connection to a running instance of **Shoko Server**,
 settings detailed below and adjust Shokofin to your liking. If the defaults work just fine, go ahead and skip to
 [Creating a Shoko Library.](#creating-a-shoko-library)
 
-:::caution[Notice]
-  If you are running **Jellyfin** on **Windows**, some additional setup is required to ensure the
-  [Virtual File System (VFS)](#media-folder-settings) feature can function. The VFS is an important quality of life 
-  feature and is normally enabled by default. More info on what the VFS is, how to make sure it works on Windows, and
-  what it means for you if you choose not to use it is detailed in our
-  [Recommendations and Limitations](/jellyfin-integration/recommendations-and-limitations/#TODO) section.
-:::
-
 ## Configuring the Plugin Settings
 
 The following will detail what each setting does and common use cases where necessary. Do note that certain options when
@@ -62,6 +54,16 @@ changed will require a library recreation for existing libraries that use Shokof
 where appropriate. Additional information on the subject can be found in the
 [Recommendations and Limitations](/jellyfin-integration/recommendations-and-limitations/#TODO) section of the docs for
 Shokofin.
+
+:::caution[Attention Windows Users]
+  If you are running **Jellyfin** on **Windows**, some additional setup is required to ensure the
+  [Virtual File System (VFS)](#media-folder-settings) feature can function. The VFS is an important quality of life 
+  feature and is normally enabled by default. More info on what the VFS is and what it means for you if you choose not
+  to use it is detailed in our
+  [Recommendations and Limitations](/jellyfin-integration/recommendations-and-limitations/#TODO) section. Or you can
+  jump straight to [Microsoft's guide]() to enable developer mode which will allow Shokofin to create symbolic links on 
+  Windows and allows the VFS to function. Restarting Jellyfin is required once developer mode has been enabled.
+:::
 
 ### Metadata Settings
 
@@ -434,7 +436,7 @@ When using Shokofin, it is recommended to not enable any other metadata provider
 metadata along with a slew of other problems from occurring. This is due to other metadata providers identifying the
 media incorrectly or just clashing in general with how your collection is organized.
 
-### Automatically Refresh Metadata From the Internet
+### Automatically Refresh Metadata
 ![Shokofin - Library Settings - Automatically Refresh](/src/assets/img/shokofin/Shokofin-Library-Automatically-Refresh.png)
 
 Setting the library to automatically refresh can be configured if you would like. This feature may be unnecessary if you
