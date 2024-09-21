@@ -47,6 +47,8 @@ After you've established a connection to a running instance of **Shoko Server**,
 settings detailed below and adjust Shokofin to your liking. If the defaults work just fine, go ahead and skip to
 [Creating a Shoko Library.](#creating-a-shoko-library)
 
+
+
 ## Configuring the Plugin Settings
 
 The following will detail what each setting does and common use cases where necessary. Do note that certain options when
@@ -425,6 +427,12 @@ and trigger updates for new and updated files/metadata. More information on conf
 When using Shokofin, it is recommended to not enable any other metadata providers for all library types to prevent mixed 
 metadata along with a slew of other problems from occurring. This is due to other metadata providers identifying the
 media incorrectly or just clashing in general with how your collection is organized.
+
+### Automatically Refresh Metadata From the Internet
+![Shokofin - Library Settings - Automatically Refresh](/src/assets/img/shokofin/Shokofin-Library-Automatically-Refresh.png)
+
+Setting the library to automatically refresh can be configured if you would like. This feature may be unnecessary if you
+utilize [SignalR](#signalr) to have Shokofin refresh metadata on-demand as new metadata is found.
 
 ### Metadata Savers
 ![Shokofin - Library Settings - Metadata Savers](/src/assets/img/shokofin/Shokofin-Library-Metadata-Savers.png)
