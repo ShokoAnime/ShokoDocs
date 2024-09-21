@@ -65,6 +65,12 @@ Shokofin.
   Windows and allows the VFS to function. Restarting Jellyfin is required once developer mode has been enabled.
 :::
 
+:::note[Advanced Options]
+  Shokofin provides some advanced options that are normally hidden. They can be made accessible in the plugin settings
+  by clicking the Shoko Server version number under the Connection Settings section 7 times. Advanced options will be
+  indicated using the **⚠** symbol in the sections below.
+:::
+
 ### Metadata Settings
 
 The following settings will allow you to customize what information Shokofin will pull in as metadata for your media
@@ -73,6 +79,7 @@ provider.
 
 <EasyTable
   columns={[
+    { name: 'Advanced', header: '⚠'},
     { name: 'Option', header: 'Option', width: '20%'},
     { name: 'Description', header: 'Description' },
     { name: 'Default', header: 'Default'},
@@ -84,41 +91,49 @@ provider.
       Default: "&#x2713;"
     },
     {
+      Advanced: "**⚠**",
       Option: "Allow any title in selected language",
       Description: "Allows for alternative titles to be utilized if an official title is not present in the given language. Only applies to AniDB title selectors when using a title override that follows language settings.",
       Default: ""
     },
     {
+      Advanced: "**⚠**",
       Option: "Cleanup AniDB overviews",
       Description: "Prettifies AniDB descriptions to markdown supported by Jellyfin.",
       Default: "&#x2713;"
     },
     {
+      Advanced: "**⚠**",
       Option: "Ignore unverified tags",
       Description: "Don't use any user-submitted tags that have not been verified by AniDB.",
       Default: "&#x2713;"
     },
     {
+      Advanced: "**⚠**",
       Option: "Override main/alternate title",
       Description: "Enable to override and prioritize where titles are sourced from between Shoko Server and available sources.",
       Default: ""
     },
     {
+      Advanced: "**⚠**",
       Option: "Override description source",
       Description: "Enable to override and prioritize where series and episode descriptions are sourced from based on the library's configured language between Shoko Server and available sources.",
       Default: ""
     },
     {
+      Advanced: "**⚠**",
       Option: "Override tag/genre sources",
       Description: "Enable to override which kinds of tags/genres to use along with their weights and specificity.",
       Default: ""
     },
     {
+      Advanced: "**⚠**",
       Option: "Override content rating sources",
       Description: "Enable to override and prioritize which sources to use when determining media content ratings (TV-G, TV-PG, TV-MA, XXX).",
       Default: ""
     },
     {
+      Advanced: "**⚠**",
       Option: "Override production location sources",
       Description: "Enable to override and prioritize which sources to use when providing info about the media's production location.",
       Default: ""
@@ -139,6 +154,7 @@ and create it once again following the instructions at [Creating a Shoko Library
 
 <EasyTable
   columns={[
+    { name: 'Advanced', header: '⚠'},
     { name: 'Option', header: 'Option', width: '20%'},
     { name: 'Description', header: 'Description' },
     { name: 'Default', header: 'Default'},
@@ -155,11 +171,18 @@ and create it once again following the instructions at [Creating a Shoko Library
       Default: ""
     },
     {
+      Advanced: "**⚠**",
+      Option: "Season ordering",
+      Description: "Choose the behavior of how seasons are ordered. You can choose between letting Shoko Server decide, order by release date, or order chronologically using AniDB relations.",
+      Default: "Let Shoko decide"
+    },
+    {
       Option: "Separate movies from shows",
       Description: "Enable this to filter out anything that is not a show from a Jellyfin Shows library. Also separates movies from displaying alongside shows within a native Jellyfin collection and places each type under their respective headings.",
       Default: ""
     },
     {
+      Advanced: "**⚠**",
       Option: "Filter movie libraries",
       Description: "Enable this to filter out anything that is not a movie from a Jellyfin Movies library.",
       Default: "&#x2713;"
@@ -175,11 +198,13 @@ and create it once again following the instructions at [Creating a Shoko Library
       Default: "Do not create collections"
     },
     {
+      Advanced: "**⚠**",
       Option: "Require two entries for a collection",
       Description: "If collection creation is enabled, only create a collection when the collection will contain at least two items.",
       Default: "&#x2713;"
     },
     {
+      Advanced: "**⚠**",
       Option: "Force movie special features",
       Description: "Append all specials that belong to an AniDB movie series as special features for the movie(s). By default only some specials will be automatically recognized as special features, but by enabling this option you will force all specials to be used as special features. This setting applies to movie series across all library types, and will break movie series that contain specials in a show type library.",
       Default: ""
@@ -214,12 +239,14 @@ remove the library in Jellyfin, wait for the library to fully disappear from the
 
 <EasyTable
   columns={[
+    { name: 'Advanced', header: '⚠'},
     { name: 'Option', header: 'Option', width: '20%'},
     { name: 'Description', header: 'Description' },
-    { name: 'Default', header: 'Default'},
+    { name: 'Default', header: 'Default', width: '15%'},
   ]}
   data={[
     {
+      Advanced: "**⚠**",
       Option: "Ignored folder names",
       Description: "A comma separated list of folder names to ignore during a library scan. Useful for skipping folders generated by a NAS or other pieces of software that access the file system where media resides. Only applicable to libraries not managed by the VFS as files not recognized by Shoko Server are already ignored.",
       Default: ".streams, @recently-snapshot"
@@ -280,6 +307,7 @@ SignalR is a feature that allows for real-time communication with your running S
 
 <EasyTable
   columns={[
+    { name: 'Advanced', header: '⚠'},
     { name: 'Option', header: 'Option', width: '20%'},
     { name: 'Description', header: 'Description' },
     { name: 'Default', header: 'Default'},
@@ -291,11 +319,13 @@ SignalR is a feature that allows for real-time communication with your running S
       Default: ""
     },
     {
+      Advanced: "**⚠**",
       Option: "Auto Reconnect Intervals",
       Description: "A comma separated list of intervals given in seconds to try to reconnect to your running Shoko Server if Shokofin ever gets disconnected. The provided list will have duplicates removed and will be performed in sorted order starting from the shortest time span when reconnecting. Once the longest interval has been reached and fails to reconnect, Shokofin will stop attempting to reconnect and leave SignalR disconnected until otherwise reconnected.",
       Default: "0, 2, 10, 30, 60, 120, 300"
     },
     {
+      Advanced: "**⚠**",
       Option: "Event Sources",
       Description: "Choose which event sources to react to for metadata events.",
       Default: "Shoko, AniDB, TMDB"
