@@ -2,6 +2,42 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.10",
+      "versionURL": "1210",
+      "date": "Sep 26th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.10",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Several minor refactors and readme fixes"
+        },
+        {
+          "type": "added",
+          "text": "Added several summary sanitizer additions"
+        },
+        {
+          "type": "added",
+          "text": "Added an agent setting for TMDB season posters"
+        },
+        {
+          "type": "added",
+          "text": "Added logging for episodes which have TMDB grouping and the type of added images"
+        },
+        {
+          "type": "added",
+          "text": "Added expanded TMDB Match documentation (mainly for alternate episode ordering)"
+        },
+        {
+          "type": "added",
+          "text": "Added a check for redundant movie descriptors during ambiguous episode title replacement"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed some TMDB fallback behaviours being disabled when using SingleSeasonOrdering"
+        }
+      ]
+    },
+    {
       "version": "1.2.9",
       "versionURL": "129",
       "date": "Sep 16th, 2024",
