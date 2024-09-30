@@ -20,6 +20,10 @@ install and configure Shoko Server.
 Make sure Plex Media Server is stopped before attempting to install the Agents and Scanners. Otherwise, a restart may be necessary to make the agents and scanners work and appear in your Library settings.
 :::
 
+:::caution[Nvidia Shield Compatibility]
+As detailed [here](https://forums.plex.tv/t/important-information-for-users-running-plex-media-server-on-nvidia-shield-devices/883484), these plugins will not function when running Plex Media Server v1.41.0 or newer on an Nvidia Shield device. It is possible to sideload an older PMS build to continue to use third-party plugins, but that will not be covered here.
+:::
+
 ### Shoko Relay or Shoko Metadata?
 
 Shoko Relay began as a fork/PR of Shoko Metadata, intended to introduce features that were absent in the original. Over
@@ -389,7 +393,7 @@ These additional options are detailed below.
 
 <EasyTable
   columns={[
-    { name: 'Option', header: 'Option' },
+    { name: 'Option', header: 'Option', width: '12em' },
     { name: 'Description', header: 'Description' }
   ]}
   data={[
@@ -403,7 +407,7 @@ These additional options are detailed below.
     },
     {
       Option: "SingleSeasonOrdering",
-      Description: "Episodes are no longer separated by seasons when matched with TMDB. All normal episodes are put into Season 1, and specials into Season 0"
+      Description: "Episodes are no longer separated by seasons when matched with TMDB. All normal episodes are put into Season 1, specials into Season 0, and with Relay others into Negative Seasons."
     }
   ]}
 />

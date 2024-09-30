@@ -2,6 +2,18 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.11",
+      "versionURL": "1211",
+      "date": "Sep 29th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.11",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed the agent's \"Add all posters and backdrops\" option not functioning"
+        }
+      ]
+    },
+    {
       "version": "1.2.10",
       "versionURL": "1210",
       "date": "Sep 26th, 2024",
