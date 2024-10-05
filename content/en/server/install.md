@@ -274,6 +274,44 @@ AVDump3 might crash since we are unable to modify the shared IPC memory size thr
 container format Synology uses, so if you do use this method to install the server then you have been
 warned.
 
+#### TrueNAS Scale
+
+**Install Shoko as a Custom App:**
+
+1. Navigate to **Apps -> Discover Apps -> Custom App**.
+2. **Application Name:** Choose any name you'd like.
+3. **Container Images:**
+   - **Image Repository:** `shokoanime/server`
+   - **Image Tag:** `latest`
+4. **Container Environment Variables:**
+   - **Environment Variable Name:** `PUID` | **Environment Variable Value:** `568`
+   - **Environment Variable Name:** `PGID` | **Environment Variable Value:** `568`
+   - This sets the Shoko user to run as the `Apps` built-in user. Ensure this user has access to your media folder.
+5. **Port Forwarding:**
+   - **Container Port:** `8111`
+   - **Node Port:** {Any free port}
+6. **Storage:**
+   - [Optional] **Host Path:** Path to store your Shoko config → **Mount Path:** `/home/shoko/.shoko`
+     - This mounts the Shoko container's home folder to a persistent host path.
+   - [Required] **Host Path:** {Your media folder} → **Mount Path:** {Your desired container media folder}.
+     - This allows the Shoko server to access your media.
+7. **Portal Configuration:**
+   - **Enable WebUiPortal:** Checked
+   - **Port:** {Node Port from step 5}
+   - This lets you click on the App's Web Portal to access the Shoko Web UI and is optional.
+8. **Configure Container User and Group ID:**
+   - Leave this alone to run as root, or configure it to run with a user that has access to modify permissions.
+   - The Docker startup script attempts to create a Shoko user and will fail to start if it can't.
+9. Hit **Save** and wait for the container to change to Running status.
+10. Click **Web Portal** under Application Info to begin the setup.
+
+#### Troubleshooting
+
+- **Application is stuck in Deploying state:**
+  - Navigate to **Workloads -> View Logs** to see what went wrong.
+- **Shoko server does not see my media folder:**
+  - Check the permissions on your media folder and ensure the user specified in the Container Environment Variables has access.
+
 ## Next Step
 
 Once the server is installed, follow the instructions on the [First Run Setup](/server/setup) page to configure your
