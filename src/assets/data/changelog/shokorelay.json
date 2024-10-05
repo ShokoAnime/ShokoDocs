@@ -2,6 +2,82 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.13",
+      "versionURL": "1213",
+      "date": "Sep 30th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.13",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed a preferred episode title override and episode title fallback variable assignment"
+        },
+        {
+          "type": "changed",
+          "text": "Changed the final episode title fallback behaviour to be less redundant and compressed the series_titles dict creation"
+        }
+      ]
+    },
+    {
+      "version": "1.2.12",
+      "versionURL": "1212",
+      "date": "Sep 30th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.12",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Changed \"Add all posters and backdrops\" behaviour to account for another API v3 change"
+        }
+      ]
+    },
+    {
+      "version": "1.2.11",
+      "versionURL": "1211",
+      "date": "Sep 29th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.11",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed the agent's \"Add all posters and backdrops\" option not functioning"
+        }
+      ]
+    },
+    {
+      "version": "1.2.10",
+      "versionURL": "1210",
+      "date": "Sep 26th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.10",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Several minor refactors and readme fixes"
+        },
+        {
+          "type": "added",
+          "text": "Added several summary sanitizer additions"
+        },
+        {
+          "type": "added",
+          "text": "Added an agent setting for TMDB season posters"
+        },
+        {
+          "type": "added",
+          "text": "Added logging for episodes which have TMDB grouping and the type of added images"
+        },
+        {
+          "type": "added",
+          "text": "Added expanded TMDB Match documentation (mainly for alternate episode ordering)"
+        },
+        {
+          "type": "added",
+          "text": "Added a check for redundant movie descriptors during ambiguous episode title replacement"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed some TMDB fallback behaviours being disabled when using SingleSeasonOrdering"
+        }
+      ]
+    },
+    {
       "version": "1.2.9",
       "versionURL": "129",
       "date": "Sep 16th, 2024",
