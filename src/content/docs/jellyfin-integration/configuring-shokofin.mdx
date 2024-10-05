@@ -52,17 +52,17 @@ settings detailed below and adjust Shokofin to your liking. If the defaults work
 The following will detail what each setting does and common use cases where necessary. Do note that certain options when
 changed will require a library recreation for existing libraries that use Shokofin as a provider and will be indicated
 where appropriate. Additional information on the subject can be found in the
-[Recommendations and Limitations](/jellyfin-integration/recommendations-and-limitations/#TODO) section of the docs for
+[Recommendations](/jellyfin-integration/recommendations/#library-re-creation-is-your-friend) section of the docs for
 Shokofin.
 
 :::caution[Attention Windows Users]
   If you are running **Jellyfin** on **Windows**, some additional setup is required to ensure the
   [Virtual File System (VFS)](#media-folder-settings) feature can function. The VFS is an important quality of life 
   feature and is normally enabled by default. More info on what the VFS is and what it means for you if you choose not
-  to use it is detailed in our
-  [Recommendations and Limitations](/jellyfin-integration/recommendations-and-limitations/#TODO) section. Or you can
-  jump straight to [Microsoft's guide]() to enable developer mode which will allow Shokofin to create symbolic links on 
-  Windows and allows the VFS to function. Restarting Jellyfin is required once developer mode has been enabled.
+  to use it is detailed in our [Recommendations](/jellyfin-integration/recommendations/#symbolic-links-on-windows)
+  section. Or you can jump straight to [Microsoft's guide](https://learn.microsoft.com/en-us/windows/apps/get-started/developer-mode-features-and-debugging#use-regedit-to-enable-your-device)
+  to enable developer mode which will allow Shokofin to create symbolic links on Windows and allows the VFS to
+  function. Restarting Jellyfin is required once developer mode has been enabled.
 :::
 
 :::note[Advanced Options]
@@ -273,7 +273,7 @@ remove the library in Jellyfin, wait for the library to fully disappear from the
     },
     {
       Option: "Virtual File System (**VFS**)",
-      Description: "This feature allows you to disregard the underlying disk file structure while automagically meeting Jellyfin's requirements for file organization. It also ensures that no unrecognized files appear in your library and allows us to fully leverage Jellyfin's native features better than we otherwise could. This enables us to effortlessly support trailers, special features, and theme videos for series, seasons and movies, as well as merge partial episodes into a single entry. All this is possible because we disregard the underlying disk file structure to create our own using symbolic links.\nRefer to our [Recommendations and Limitations](/jellyfin-integration/recommendations-and-limitations/#TODO) page for additional information on what to expect whether you choose to use this feature or not.",
+      Description: "This feature allows you to disregard the underlying disk file structure while automagically meeting Jellyfin's requirements for file organization. It also ensures that no unrecognized files appear in your library and allows us to fully leverage Jellyfin's native features better than we otherwise could. This enables us to effortlessly support trailers, special features, and theme videos for series, seasons and movies, as well as merge partial episodes into a single entry. All this is possible because we disregard the underlying disk file structure to create our own using symbolic links.\nRefer to our [Recommendations](/jellyfin-integration/recommendations/#virtual-file-system-vfs) page for additional information on what to expect whether you choose to use this feature or not.",
       Default: "&#x2713;"
     },
     {
@@ -402,7 +402,7 @@ Configure watch-state synchronization for each Jellyfin user. By default, all sy
 
 Before creating a library, be sure the plugin is configured to your liking as certain options may require creating a
 library from scratch when changed due to how Jellyfin works internally. More information on the subject can be found in
-the [Recommendations and Limitations](/jellyfin-integration/recommendations-and-limitations/#TODO) section of the docs
+the [Recommendations](/jellyfin-integration/recommendations/#library-re-creation-is-your-friend) section of the docs
 for Shokofin. Creating a new library rather than enabling Shokofin on an existing library is required due to the nature
 of how Jellyfin and Shokofin work together.
 
@@ -432,7 +432,7 @@ folder `/mnt/anime`, as long as both directories contain the same things, Shokof
 Pointing Jellyfin to further nested folders seen within Shoko's import folder will also work, such as `/mnt/anime/shows`
 and `/mnt/anime/movies` given that both `C:\ShokoImport\shows` and `C:\ShokoImport\movies` also exist.
 
-If you intend to have multiple Shokofin managed libraries to separate movies from shows, be sure that the folders specified for each library are different from each other due to how Jellyfin keeps track of metadata internally. You can also work around this using multiple volume/bind mounts or with a symbolic link. You can read more about this in the [Recommendations and Limitations](/jellyfin-integration/recommendations-and-limitations/#TODO) section of our docs.
+If you intend to have multiple Shokofin managed libraries to separate movies from shows, be sure that the folders specified for each library are different from each other due to how Jellyfin keeps track of metadata internally. You can also work around this using multiple volume/bind mounts or with a symbolic link. You can read more about this in the [Recommendations](/jellyfin-integration/recommendations/#reusing-folders-across-libraries) section of our docs.
 
 ### Language and Country
 ![Shokofin - Library Settings - Language and Country](/src/assets/img/shokofin/Shokofin-Library-Lang-and-Country.png)
@@ -528,5 +528,5 @@ underlying folder structure.
 Once you've confirmed the creation of your library after all that configuration, your library should be well on it's way
 with pulling in metadata and getting your library ready for use. This may be a time consuming process, so feel free to
 read through the [Shokofin FAQs](/faq#shokofin) or the
-[Recommendations and Limitations](/jellyfin-integration/recommendations-and-limitations/) of Shokofin for any other
+[Recommendations](/jellyfin-integration/recommendations/) of Shokofin for any other
 expectations and useful knowledge when it comes to the plugin.
