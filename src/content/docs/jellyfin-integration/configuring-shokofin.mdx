@@ -67,7 +67,7 @@ Shokofin.
 
 :::note[Advanced Options]
   Shokofin provides some advanced options that are normally hidden. They can be made accessible in the plugin settings
-  by clicking the Shoko Server version number under the Connection Settings section 7 times. Advanced options will be
+  by clicking the Shoko Server version number under the Connection Settings section 7 times to enable **Advanced Mode**. Advanced options will be
   indicated using the **⚠** symbol in the sections below.
 :::
 
@@ -276,9 +276,6 @@ Configure the behavior for how your media will be grouped and displayed within a
 will require you to remove the library in Jellyfin, wait for the library to fully disappear from the Jellyfin homepage,
 and create it once again following the instructions at [Creating a Shoko Library.](#creating-a-shoko-library)
 
-Configure the behavior for how your media will be treated by Shokofin. Any changes to these settings will require you to 
-remove the library in Jellyfin, wait for the library to fully disappear from the Jellyfin homepage, and create it once again following the instructions at [Creating a Shoko Library.](#creating-a-shoko-library)
-
 ##### Basic Settings
 
 <EasyTable
@@ -390,7 +387,7 @@ remove the library in Jellyfin, wait for the library to fully disappear from the
 
 ### VFS
 
-The Virtual File System (**VFS**) is ...
+The Virtual File System (VFS) allows you to disregard the underlying disk file structure, automatically meeting Jellyfin's system requirements for file organization through the use of symbolic links. This setup ensures that no unrecognized files appear in your library and allows you to fully leverage Jellyfin's native features effortlessly. While this approach is relatively new and still undergoing testing, it is stable enough for daily use. We encourage adopting this system and reporting any issues you encounter to help improve it further. Below are some settings you can use to tweak the VFS's behavior to your liking.
 
 ##### Basic Settings
 
@@ -520,7 +517,7 @@ SignalR is a feature that allows for real-time communication with your running S
 
 <EasyTable
   columns={[
-    { name: 'Option', header: 'Option', width: '20%'},
+    { name: 'Option', header: 'Option', width: '10%'},
     { name: 'Description', header: 'Description' },
   ]}
   data={[
@@ -586,7 +583,7 @@ SignalR is a feature that allows for real-time communication with your running S
 
 ### Misc
 
-Does not show up unless advanced mode is enabled.
+The following section is for any additional settings not covered by the other sections and does not show up unless Advanced Mode is enabled.
 
 ##### Miscellaneous Settings
 
