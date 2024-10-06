@@ -142,7 +142,7 @@ provider.
     { name: 'Advanced', header: '⚠'},
     { name: 'Option', header: 'Option', width: '20%'},
     { name: 'Description', header: 'Description' },
-    { name: 'Default', header: 'Default', width: '10%'},
+    { name: 'Default', header: 'Default', width: '20%'},
   ]}
   data={[
     {
@@ -154,49 +154,49 @@ provider.
     {
       Advanced: "**⚠**",
       Option: "Tag Sources",
-      Description: "",
-      Default: ""
+      Description: "Select which types of tag categories you want to use ranging from setting to themes to technical aspects.",
+      Default: "All except Ungrouped and Unsorted"
     },
     {
       Advanced: "**⚠**",
       Option: "Tag Inclusion Filters",
-      Description: "",
-      Default: ""
+      Description: "Filter which kind of tags to include ranging from spoilers to tag relationships." ,
+      Default: "All except Spoilers"
     },
     {
       Advanced: "**⚠**",
       Option: "Minimum Weight for Tags",
-      Description: "",
-      Default: "Disabled"
+      Description: "Choose the minimum weight a tag must have to included, not including weightless tags.",
+      Default: "All Allowed"
     },
     {
       Advanced: "**⚠**",
       Option: "Maximum Tag Depth",
-      Description: "",
+      Description: "The maximum relative depth of a tag to be included based on it's source category.",
       Default: "0"
     },
     {
       Advanced: "**⚠**",
       Option: "Genre Sources",
-      Description: "",
-      Default: ""
+      Description: "Select which types of genre categories you want to use ranging from elements to source material to target audience.",
+      Default: "General Elements, Source Material, Target Audience"
     },
     {
       Advanced: "**⚠**",
       Option: "Genre Inclusion Filters",
-      Description: "",
-      Default: ""
+      Description: "Filter which kind of genres to include ranging from spoilers to tag relationships.",
+      Default: "All except Spoilers"
     },
     {
       Advanced: "**⚠**",
       Option: "Minimum Weight for Genres",
-      Description: "",
+      Description: "Choose the minimum weight a genre must have to be included, not including weightless tags.",
       Default: "2 Stars"
     },
     {
       Advanced: "**⚠**",
       Option: "Maximum Genre Depth",
-      Description: "",
+      Description: "The maximum relative depth of a genre to be included based on it's source category.",
       Default: "1"
     },
   ]}
@@ -434,25 +434,25 @@ The Virtual File System (VFS) allows you to disregard the underlying disk file s
     { name: 'Advanced', header: '⚠'},
     { name: 'Option', header: 'Option', width: '20%'},
     { name: 'Description', header: 'Description' },
-    { name: 'Default', header: 'Default'},
+    { name: 'Default', header: 'Default', width: '15%'},
   ]}
   data={[
     {
       Advanced: "**⚠**",
       Option: "Resolve Links Before VFS",
-      Description: "",
+      Description: "If a library contains symbolic links to media, it will follow them until a final 'real' file is found and use the path of said file for the VFS.",
       Default: ""
     },
     {
       Advanced: "**⚠**",
       Option: "Physically Attach VFS to Libraries",
-      Description: "",
+      Description: "Makes the VFS file structure that Shokofin automatically created show up as a library folder. This allows reusing the same media folder across multiple libraries without needing other workarounds. Useful for separating movies and series into separate libraries while still using the same media folder for both.",
       Default: ""
     },
     {
       Advanced: "**⚠**",
       Option: "VFS Location",
-      Description: "",
+      Description: "Change the location that Shokofin will place the VFS structure it generates on your system. Changing this will cause your library to 'remove' and 're-add' itself because of the path changes. You will need to manually move your VFS root if you plan to keep it when toggling this setting, or you can get rid of it by running the scheduled task to remove it. Trickplay files will need to be regenerated if you change this setting. **You have been warned.**",
       Default: "Jellyfin Data Directory"
     },
   ]}
@@ -466,7 +466,7 @@ Configure watch-state synchronization for each Jellyfin user. By default, all sy
 
 <EasyTable
   columns={[
-    { name: 'Option', header: 'Option', width: '20%'},
+    { name: 'Option', header: 'Option', width: '25%'},
     { name: 'Description', header: 'Description' },
   ]}
   data={[
