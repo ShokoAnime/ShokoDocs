@@ -71,11 +71,13 @@ Shokofin.
   indicated using the **⚠** symbol in the sections below.
 :::
 
-### Metadata Settings
+### Metadata
 
 The following settings will allow you to customize what information Shokofin will pull in as metadata for your media
 entries. Any changes to these settings will require you to replace all metadata for libraries that use the plugin as a
 provider.
+
+##### Title Settings
 
 <EasyTable
   columns={[
@@ -86,58 +88,180 @@ provider.
   ]}
   data={[
     {
-      Option: "Add prefix to episodes",
-      Description: "Add the type and number to the title of non-standard episodes such as specials. (e.g. S1, O1)",
+      Option: "Main Title Source",
+      Description: "Enable and order available sources in the priority you want used for the main title of your series.",
+      Default: "Shoko"
+    },
+    {
+      Option: "Alternate/Original Title Source",
+      Description: "Enable and order available sources in the priority you want used for the alternative title of your series.",
+      Default: "None"
+    },
+    {
+      Option: "Add Prefix to Episodes",
+      Description: "Adds the type and number to the title of non-standard episodes such as specials. (e.g. S1, O1)",
       Default: "&#x2713;"
     },
     {
       Advanced: "**⚠**",
-      Option: "Allow any title in selected language",
+      Option: "Allow Any Title in Selected Language",
       Description: "Allows for alternative titles to be utilized if an official title is not present in the given language. Only applies to AniDB title selectors when using a title override that follows language settings.",
       Default: ""
     },
+  ]}
+/>
+
+##### Description Settings
+
+<EasyTable
+  columns={[
+    { name: 'Advanced', header: '⚠'},
+    { name: 'Option', header: 'Option', width: '20%'},
+    { name: 'Description', header: 'Description' },
+    { name: 'Default', header: 'Default'},
+  ]}
+  data={[
     {
       Advanced: "**⚠**",
-      Option: "Cleanup AniDB overviews",
+      Option: "Cleanup AniDB Overviews",
       Description: "Prettifies AniDB descriptions to markdown supported by Jellyfin.",
       Default: "&#x2713;"
     },
     {
+      Option: "Description Source",
+      Description: "Enable and order available sources in the priority you want used for the descriptions of your series.",
+      Default: "Shoko"
+    },
+  ]}
+/>
+
+##### Tag & Genre Settings
+
+<EasyTable
+  columns={[
+    { name: 'Advanced', header: '⚠'},
+    { name: 'Option', header: 'Option', width: '20%'},
+    { name: 'Description', header: 'Description' },
+    { name: 'Default', header: 'Default', width: '10%'},
+  ]}
+  data={[
+    {
       Advanced: "**⚠**",
-      Option: "Ignore unverified tags",
+      Option: "Ignore Unverified Tags",
       Description: "Don't use any user-submitted tags that have not been verified by AniDB.",
       Default: "&#x2713;"
     },
     {
       Advanced: "**⚠**",
-      Option: "Override main/alternate title",
-      Description: "Enable to override and prioritize where titles are sourced from between Shoko Server and available sources.",
+      Option: "Tag Sources",
+      Description: "",
       Default: ""
     },
     {
       Advanced: "**⚠**",
-      Option: "Override description source",
-      Description: "Enable to override and prioritize where series and episode descriptions are sourced from based on the library's configured language between Shoko Server and available sources.",
+      Option: "Tag Inclusion Filters",
+      Description: "",
       Default: ""
     },
     {
       Advanced: "**⚠**",
-      Option: "Override tag/genre sources",
-      Description: "Enable to override which kinds of tags/genres to use along with their weights and specificity.",
+      Option: "Minimum Weight for Tags",
+      Description: "",
+      Default: "Disabled"
+    },
+    {
+      Advanced: "**⚠**",
+      Option: "Maximum Tag Depth",
+      Description: "",
+      Default: "0"
+    },
+    {
+      Advanced: "**⚠**",
+      Option: "Genre Sources",
+      Description: "",
       Default: ""
     },
     {
       Advanced: "**⚠**",
-      Option: "Override content rating sources",
-      Description: "Enable to override and prioritize which sources to use when determining media content ratings (TV-G, TV-PG, TV-MA, XXX).",
+      Option: "Genre Inclusion Filters",
+      Description: "",
       Default: ""
     },
     {
       Advanced: "**⚠**",
-      Option: "Override production location sources",
-      Description: "Enable to override and prioritize which sources to use when providing info about the media's production location.",
+      Option: "Minimum Weight for Genres",
+      Description: "",
+      Default: "2 Stars"
+    },
+    {
+      Advanced: "**⚠**",
+      Option: "Maximum Genre Depth",
+      Description: "",
+      Default: "1"
+    },
+  ]}
+/>
+
+
+##### Image Settings
+
+<EasyTable
+  columns={[
+    { name: 'Advanced', header: '⚠'},
+    { name: 'Option', header: 'Option', width: '20%'},
+    { name: 'Description', header: 'Description' },
+    { name: 'Default', header: 'Default'},
+  ]}
+  data={[
+    {
+      Option: "Add Language Code",
+      Description: "Adds the language code to any image metadata provided which Jellyfin can use to prioritize images based on a library's configured language. If a library has no language set, Jellyfin will prioritize the English labeled images.",
       Default: ""
     },
+    {
+      Advanced: "**⚠**",
+      Option: "Respect Preferred Image",
+      Description: "Respect the preferred image flag sent from Shoko Server when selecting the correct image to use for the library. Setting this will also set the language code to the preferred language code for the library if 'Add language code' is enabled, thus ensuring it is always selected for the library.",
+      Default: "&#x2713;"
+    },
+  ]}
+/>
+
+##### Miscellaneous Settings
+
+<EasyTable
+  columns={[
+    { name: 'Advanced', header: '⚠'},
+    { name: 'Option', header: 'Option', width: '20%'},
+    { name: 'Description', header: 'Description' },
+    { name: 'Default', header: 'Default'},
+  ]}
+  data={[
+    {
+      Advanced: "**⚠**",
+      Option: "Content Rating Sources",
+      Description: "Enable and order available sources in the priority you want used for the media content ratings (TV-G, TV-PG, TV-MA, XXX) of your series.",
+      Default: "TMDB, AniDB"
+    },
+    {
+      Advanced: "**⚠**",
+      Option: "Production Location Sources",
+      Description: "Enable and order available sources in the priority you want used for the production locations of your series.",
+      Default: "AniDB, TMDB"
+    },
+  ]}
+/>
+
+##### Third Party Integration
+
+<EasyTable
+  columns={[
+    { name: 'Advanced', header: '⚠'},
+    { name: 'Option', header: 'Option', width: '20%'},
+    { name: 'Description', header: 'Description' },
+    { name: 'Default', header: 'Default'},
+  ]}
+  data={[
     {
       Option: "Add Third Party IDs",
       Description: "Enable which third party IDs to provide for other plugins to consume with supported media items.",
@@ -146,11 +270,16 @@ provider.
   ]}
 />
 
-### Library Settings
+### Library
 
 Configure the behavior for how your media will be grouped and displayed within a library. Any changes to these settings
 will require you to remove the library in Jellyfin, wait for the library to fully disappear from the Jellyfin homepage,
 and create it once again following the instructions at [Creating a Shoko Library.](#creating-a-shoko-library)
+
+Configure the behavior for how your media will be treated by Shokofin. Any changes to these settings will require you to 
+remove the library in Jellyfin, wait for the library to fully disappear from the Jellyfin homepage, and create it once again following the instructions at [Creating a Shoko Library.](#creating-a-shoko-library)
+
+##### Basic Settings
 
 <EasyTable
   columns={[
@@ -161,67 +290,41 @@ and create it once again following the instructions at [Creating a Shoko Library
   ]}
   data={[
     {
-      Option: "Automatically merge multiple versions of videos",
+      Option: "Automatically Merge Multiple Versions of Videos",
       Description: "Enable to allow Shokofin to merge alternate versions of the same media into a single displayed entry.",
       Default: "&#x2713;"
     },
     {
-      Option: "Use Shoko groups for shows",
+      Option: "Use Shoko Groups for Shows",
       Description: "Enable this to have Shokofin group your media the same way that can be seen in Shoko Server. This requires grouping to be setup and configured within Shoko Server itself for this setting to work.",
       Default: ""
     },
     {
       Advanced: "**⚠**",
-      Option: "Season ordering",
+      Option: "Season Ordering",
       Description: "Choose the behavior of how seasons are ordered. You can choose between letting Shoko Server decide, order by release date, or order chronologically using AniDB relations.",
       Default: "Let Shoko decide"
     },
     {
-      Option: "Separate movies from shows",
+      Option: "Separate Movies From Shows",
       Description: "Enable this to filter out anything that is not a show from a Jellyfin Shows library. Also separates movies from displaying alongside shows within a native Jellyfin collection and places each type under their respective headings.",
       Default: ""
     },
     {
       Advanced: "**⚠**",
-      Option: "Filter movie libraries",
+      Option: "Filter Movie Libraries",
       Description: "Enable this to filter out anything that is not a movie from a Jellyfin Movies library.",
       Default: "&#x2713;"
     },
     {
-      Option: "Specials placement within seasons",
+      Option: "Specials Placement Within Seasons",
       Description: "Change this to adjust where specials are placed in their respective season or filter them out entirely.",
       Default: "Always place specials after the normal episodes"
     },
     {
-      Option: "Collections",
-      Description: "Configure how native Jellyfin collections should be created if at all based on Shoko Server provided metadata.",
-      Default: "Do not create collections"
-    },
-    {
       Advanced: "**⚠**",
-      Option: "Require two entries for a collection",
-      Description: "If collection creation is enabled, only create a collection when the collection will contain at least two items.",
-      Default: "&#x2713;"
-    },
-    {
-      Advanced: "**⚠**",
-      Option: "Force movie special features",
+      Option: "Force Movie Special Features",
       Description: "Append all specials that belong to an AniDB movie series as special features for the movie(s). By default only some specials will be automatically recognized as special features, but by enabling this option you will force all specials to be used as special features. This setting applies to movie series across all library types, and will break movie series that contain specials in a show type library.",
-      Default: ""
-    },
-    {
-      Option: "Add trailers",
-      Description: "Makes trailers appear as a native feature that Jellyfin can use. This setting is only applicable when using a [VFS](#media-folder-settings) managed library.",
-      Default: "&#x2713;"
-    },
-    {
-      Option: "Add credits as theme videos",
-      Description: "Make OPs/EDs appear as a native theme video that Jellyfin can use. This setting is only applicable when using a [VFS](#media-folder-settings) managed library.",
-      Default: "&#x2713;"
-    },
-    {
-      Option: "Add credits as special features",
-      Description: "Make OPs/EDs show up as native special features within Jellyfin. This setting is only applicable when using a [VFS](#media-folder-settings) managed library.",
       Default: ""
     },
     {
@@ -232,54 +335,179 @@ and create it once again following the instructions at [Creating a Shoko Library
   ]}
 />
 
-### Media Folder Settings
-
-Configure the behavior for how your media will be treated by Shokofin. Any changes to these settings will require you to 
-remove the library in Jellyfin, wait for the library to fully disappear from the Jellyfin homepage, and create it once again following the instructions at [Creating a Shoko Library.](#creating-a-shoko-library)
+##### Collection Settings
 
 <EasyTable
   columns={[
     { name: 'Advanced', header: '⚠'},
     { name: 'Option', header: 'Option', width: '20%'},
     { name: 'Description', header: 'Description' },
-    { name: 'Default', header: 'Default', width: '15%'},
+    { name: 'Default', header: 'Default'},
   ]}
   data={[
     {
+      Option: "Collections",
+      Description: "Configure how native Jellyfin collections should be created if at all based on Shoko Server provided metadata.",
+      Default: "Do not create collections"
+    },
+    {
       Advanced: "**⚠**",
-      Option: "Ignored folder names",
-      Description: "A comma separated list of folder names to ignore during a library scan. Useful for skipping folders generated by a NAS or other pieces of software that access the file system where media resides. Only applicable to libraries not managed by the VFS as files not recognized by Shoko Server are already ignored.",
-      Default: ".streams, @recently-snapshot"
+      Option: "Require Two Entries for a Collection",
+      Description: "If collection creation is enabled, only create a collection when the collection will contain at least two items.",
+      Default: "&#x2713;"
     },
+  ]}
+/>
+
+
+##### New/Existing Library Settings
+
+<EasyTable
+  columns={[
+    { name: 'Advanced', header: '⚠'},
+    { name: 'Option', header: 'Option', width: '20%'},
+    { name: 'Description', header: 'Description' },
+    { name: 'Default', header: 'Default'},
+  ]}
+  data={[
     {
-      Option: "Add Release Group to VFS entries",
-      Description: "Will add full or short release group names to all automatically linked files in the VFS. 'No Group' will be used if the file is not associated with a release group in Shoko Server. \n**Warning:** The release group in the file name may change if the release group info is incomplete, unavailable, or otherwise updated in Shoko Server at a later date. This may cause episode/movie entries to be 'removed' and 'added' as new entries when that happens.  Use at your own risk.",
-      Default: ""
-    },
-    {
-      Option: "Add Resolution to VFS entries",
-      Description: "Will add the resolution of the media to all automatically linked files in the VFS if available. \n**Warning:** Though rare, we may fail to read the media info in Shoko Server when the files were first added (e.g. because of a corrupt file, encountering an unsupported new codec, etc.), then reading it later. This may cause episode/movie entries to be 'removed' and 'added' as new entries when that happens. Use at your own risk.",
-      Default: ""
-    },
-    {
-      Option: "Configure settings for:",
-      Description: "Applicable to the remaining settings in this section. Swap between configuring the defaults of newly created libraries or for any existing libraries.",
+      Option: "Import Folder Mapping",
+      Description: "Only displays when an existing library is being configured. Displays the identified import folder name that the library is mapped to inside Shoko Server. A deletion button will be displayed as a way to remove the mapping configuration and allow Shokofin to remap the folder on the next library scan.",
       Default: "N/A"
     },
     {
-      Option: "Mapped Import Folder:",
-      Description: "Only displays when a specific library is being configured. Displays the identified import folder name and ID that the library is mapped to inside Shoko Server. If the library is not mapped to an import folder in Shoko Server, a deletion button will be displayed as a way to remove the mapping configuration and allow Shokofin to remap the folder on the next library scan.",
-      Default: "N/A"
-    },
-    {
-      Option: "Virtual File System (**VFS**)",
+      Option: "Use the Virtual File System (**VFS**)",
       Description: "This feature allows you to disregard the underlying disk file structure while automagically meeting Jellyfin's requirements for file organization. It also ensures that no unrecognized files appear in your library and allows us to fully leverage Jellyfin's native features better than we otherwise could. This enables us to effortlessly support trailers, special features, and theme videos for series, seasons and movies, as well as merge partial episodes into a single entry. All this is possible because we disregard the underlying disk file structure to create our own using symbolic links.\nRefer to our [Recommendations](/jellyfin-integration/recommendations/#virtual-file-system-vfs) page for additional information on what to expect whether you choose to use this feature or not.",
       Default: "&#x2713;"
     },
     {
-      Option: "Library Filtering",
+      Option: "Legacy Library Filtering",
       Description: "Adjust how Shokofin filters out unrecognized media from your library. Set to Strict to hide all media not yet recognized by Shoko Server. Set to Lax to allow unrecognized media to appear in the library. Set to Auto to have Shokofin filter out unrecognized media only if no other providers are enabled for the library. Only applies to libraries not using the VFS. VFS managed libraries will always act as though Strict has been set.",
       Default: "Auto"
+    },
+  ]}
+/>
+
+### VFS
+
+The Virtual File System (**VFS**) is ...
+
+##### Basic Settings
+
+<EasyTable
+  columns={[
+    { name: 'Advanced', header: '⚠'},
+    { name: 'Option', header: 'Option', width: '20%'},
+    { name: 'Description', header: 'Description' },
+    { name: 'Default', header: 'Default'},
+  ]}
+  data={[
+    {
+      Option: "Add Trailers",
+      Description: "Makes trailers appear as a native feature that Jellyfin can use. This setting is only applicable when using a [VFS](#media-folder-settings) managed library.",
+      Default: "&#x2713;"
+    },
+    {
+      Option: "Add Credits as Theme Videos",
+      Description: "Make OPs/EDs appear as a native theme video that Jellyfin can use. This setting is only applicable when using a [VFS](#media-folder-settings) managed library.",
+      Default: "&#x2713;"
+    },
+    {
+      Option: "Add Credits as Special Features",
+      Description: "Make OPs/EDs show up as native special features within Jellyfin. This setting is only applicable when using a [VFS](#media-folder-settings) managed library.",
+      Default: ""
+    },
+    {
+      Option: "Add Release Group to Path",
+      Description: "Will add full or short release group names to all automatically linked files in the VFS. 'No Group' will be used if the file is not associated with a release group in Shoko Server. \n**Warning:** The release group in the file name may change if the release group info is incomplete, unavailable, or otherwise updated in Shoko Server at a later date. This may cause episode/movie entries to be 'removed' and 'added' as new entries when that happens.  Use at your own risk.",
+      Default: ""
+    },
+    {
+      Option: "Add Resolution to Path",
+      Description: "Will add the resolution of the media to all automatically linked files in the VFS if available. \n**Warning:** Though rare, we may fail to read the media info in Shoko Server when the files were first added (e.g. because of a corrupt file, encountering an unsupported new codec, etc.), then reading it later. This may cause episode/movie entries to be 'removed' and 'added' as new entries when that happens. Use at your own risk.",
+      Default: ""
+    },
+  ]}
+/>
+
+##### VFS Location Settings
+
+<EasyTable
+  columns={[
+    { name: 'Advanced', header: '⚠'},
+    { name: 'Option', header: 'Option', width: '20%'},
+    { name: 'Description', header: 'Description' },
+    { name: 'Default', header: 'Default'},
+  ]}
+  data={[
+    {
+      Advanced: "**⚠**",
+      Option: "Resolve Links Before VFS",
+      Description: "",
+      Default: ""
+    },
+    {
+      Advanced: "**⚠**",
+      Option: "Physically Attach VFS to Libraries",
+      Description: "",
+      Default: ""
+    },
+    {
+      Advanced: "**⚠**",
+      Option: "VFS Location",
+      Description: "",
+      Default: "Jellyfin Data Directory"
+    },
+  ]}
+/>
+
+### Users
+
+Configure watch-state synchronization for each Jellyfin user. By default, all synchronization features are disabled and must be configured and linked to a user in Shoko Server if desired.
+
+##### User Settings
+
+<EasyTable
+  columns={[
+    { name: 'Option', header: 'Option', width: '20%'},
+    { name: 'Description', header: 'Description' },
+  ]}
+  data={[
+    {
+      Option: "Enable Synchronization Features",
+      Description: "Enable syncing certain data between Jellyfin and Shoko Server. The specific behavior on what gets synced and when can be configured using the remaining options in this section. Leaving this setting unchecked will disable synchronization entirely, regardless of other synchronization settings."
+    },
+    {
+      Option: "Sync Watch-State on Import or Refresh",
+      Description: "When media gets scanned into your library or when a library's metadata gets refreshed, sync watch-state between Jellyfin and Shoko Server."
+    },
+    {
+      Option: "Sync Watch-State After Playback",
+      Description: "Sync watch-state with Shoko Server when you finish watching a movie, episode, or other video."
+    },
+    {
+      Option: "Sync Watch-State Events During Playback",
+      Description: "Sync partial watch-state to Shoko Server on play/pause/stop/resume events during media playback."
+    },
+    {
+      Option: "Sync Watch-State Live During Playback",
+      Description: "Sync partial watch-state to Shoko Server at a regular interval during media playback."
+    },
+    {
+      Option: "Lazy Sync Watch-State Events With Shoko",
+      Description: "Wait about 10 seconds before syncing any of the above configured watch-state events to Shoko Server. This will prevent accidental clicks and/or previews from marking a file as watched in Shoko Server, and will also keep them more in sync with Jellyfin since it's closer to how Jellyfin handles the watch-state internally."
+    },
+    {
+      Option: "Sync Watch-State for Restricted Videos",
+      Description: "Allow syncing watch-state for hentai and adult content to Shoko Server."
+    },
+    {
+      Option: "Username",
+      Description: "The user in Shoko Server to sync the above watch-state events to."
+    },
+    {
+      Option: "Password",
+      Description: "The password for the specified Shoko Server account."
     },
   ]}
 />
@@ -288,7 +516,7 @@ remove the library in Jellyfin, wait for the library to fully disappear from the
 
 SignalR is a feature that allows for real-time communication with your running Shoko Server so that Shokofin has the ability to react to certain types of events such as file events and refresh events. This means that when Shoko Server identifies new media or updates metadata for your media, Shokofin can immediately import new or update existing media in your library.
 
-##### SignalR Connection
+##### Connection Status
 
 <EasyTable
   columns={[
@@ -314,7 +542,7 @@ SignalR is a feature that allows for real-time communication with your running S
   ]}
   data={[
     {
-      Option: "Auto Connect On Start",
+      Option: "Auto Connect on Start",
       Description: "Attempt to connect to your running Shoko Server when Jellyfin starts up.",
       Default: ""
     },
@@ -330,15 +558,23 @@ SignalR is a feature that allows for real-time communication with your running S
       Description: "Choose which event sources to react to for metadata events.",
       Default: "Shoko, AniDB, TMDB"
     },
-    {
-      Option: "Configure settings for:",
-      Description: "Applicable to the remaining settings in this section. Swap between configuring the defaults of newly created libraries or for any existing libraries.",
-      Default: "N/A"
-    },
+  ]}
+/>
+
+##### New/Existing Library Settings
+
+<EasyTable
+  columns={[
+    { name: 'Advanced', header: '⚠'},
+    { name: 'Option', header: 'Option', width: '20%'},
+    { name: 'Description', header: 'Description' },
+    { name: 'Default', header: 'Default'},
+  ]}
+  data={[
     {
       Option: "File Events",
       Description: "Have Shokofin listen for file events from Shoko Server when new media gets added or moved around in the file system and trigger library updates accordingly. Especially useful if your Jellyfin library is using a network share for it's media location where native file events may not be available for Jellyfin's real time monitoring to function. Can be used as a complete replacement for Jellyfin's built-in real time monitoring or used alongside it.",
-      Default: ""
+      Default: "&#x2713;"
     },
     {
       Option: "Metadata Events",
@@ -348,51 +584,31 @@ SignalR is a feature that allows for real-time communication with your running S
   ]}
 />
 
-### User Settings
+### Misc
 
-Configure watch-state synchronization for each Jellyfin user. By default, all synchronization features are disabled and must be configured and linked to a user in Shoko Server if desired.
+Does not show up unless advanced mode is enabled.
+
+##### Miscellaneous Settings
 
 <EasyTable
   columns={[
+    { name: 'Advanced', header: '⚠'},
     { name: 'Option', header: 'Option', width: '20%'},
     { name: 'Description', header: 'Description' },
+    { name: 'Default', header: 'Default'},
   ]}
   data={[
     {
-      Option: "Enable synchronization features",
-      Description: "Enable syncing certain data between Jellyfin and Shoko Server. The specific behavior on what gets synced and when can be configured using the remaining options in this section. Leaving this setting unchecked will disable synchronization entirely, regardless of other synchronization settings."
+      Advanced: "**⚠**",
+      Option: "Show in Menu",
+      Description: "Creates a shortcut to the Shokofin plugin settings in the Jellyfin dashboard's sidebar.",
+      Default: ""
     },
     {
-      Option: "Sync watch-state on import or refresh",
-      Description: "When media gets scanned into your library or when a library's metadata gets refreshed, sync watch-state between Jellyfin and Shoko Server."
-    },
-    {
-      Option: "Sync watch-state after playback",
-      Description: "Sync watch-state with Shoko Server when you finish watching a movie, episode, or other video."
-    },
-    {
-      Option: "Sync watch-state events during playback",
-      Description: "Sync partial watch-state to Shoko Server on play/pause/stop/resume events during media playback."
-    },
-    {
-      Option: "Sync watch-state live during playback",
-      Description: "Sync partial watch-state to Shoko Server at a regular interval during media playback."
-    },
-    {
-      Option: "Lazy sync watch-state events with shoko",
-      Description: "Wait about 10 seconds before syncing any of the above configured watch-state events to Shoko Server. This will prevent accidental clicks and/or previews from marking a file as watched in Shoko Server, and will also keep them more in sync with Jellyfin since it's closer to how Jellyfin handles the watch-state internally."
-    },
-    {
-      Option: "Sync watch-state for restricted videos",
-      Description: "Allow syncing watch-state for hentai and adult content to Shoko Server."
-    },
-    {
-      Option: "Username",
-      Description: "The user in Shoko Server to sync the above watch-state events to."
-    },
-    {
-      Option: "Password",
-      Description: "The password for the specified Shoko Server account."
+      Advanced: "**⚠**",
+      Option: "Ignored Folder Names",
+      Description: "A comma separated list of folder names to ignore during a library scan. Useful for skipping folders generated by a NAS or other pieces of software that access the file system where media resides. Only applicable to libraries not managed by the VFS as files not recognized by Shoko Server are already ignored.",
+      Default: ".streams, @recently-snapshot"
     },
   ]}
 />
