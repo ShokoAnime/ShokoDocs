@@ -1,34 +1,109 @@
-# Overview
+# Shoko Docs - Resource Center for the Shoko Suite
 
-This repository is for [Shoko Docs](https://docs.shokoanime.com), our public knowledge base for all things related to
-Shoko. We highly encourage our users to submit pull requests (PRs) to help improve Shoko Docs and even allow third-party
-developers to utilize Shoko Docs for their Shoko-related applications.
+This repository contains the source code for the Shoko Docs Resource Center, which provides comprehensive documentation
+and resources for the Shoko suite of programs and plugins.
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Adding New Content](#adding-new-content)
+    - [Documentation Pages](#adding-new-documentation-pages)
+    - [Editing Existing Documentation](#editing-existing-documentation)
+    - [Your Program or Plugin](#your-program-or-plugin)
+- [Built With](#built-with)
+- [Contact](#contact)
+
+## Overview
+
+The Shoko Docs Resource Center serves as a central hub for documentation about the Shoko suite of programs and plugins.
+It provides detailed guides, API references, and tutorials for users and developers working with Shoko-related projects.
+
+## Installation
+
+To set up the development environment for the Shoko Docs:
+
+```bash
+# Clone the repository
+git clone https://github.com/ShokoAnime/shoko-docs.git
+
+# Navigate to the project directory
+cd shoko-docs
+
+# Install dependencies
+pnpm install
+```
+
+## Usage
+
+The project includes the following npm scripts:
+
+```json
+"scripts": {
+"docs:dev": "vitepress dev docs",
+"docs:build": "vitepress build docs",
+"docs:preview": "vitepress preview docs"
+}
+```
+
+To start the development server:
+
+```bash
+pnpm docs:dev
+```
+
+After starting the development server, you can access the documentation site locally at http://localhost:5173. Make
+changes to the content and see them reflected in real-time.
+
+To build the documentation site for production:
+
+```bash
+pnpm docs:build
+```
+
+To preview the production build:
+
+```bash
+pnpm docs:preview
+```
+
+## Adding New Content
+
+We welcome contributions to improve and expand the Shoko documentation. Here's how you can add new content:
+
+### Adding New Documentation Pages
+
+Documentation pages are written in Markdown format and are located in the docs directory. To add a new page:
+
+- Create a new .md file in the appropriate subdirectory of the docs folder
+- Use existing documentation pages as a reference for structure and formatting
+- Write your content using Markdown syntax
+- Update the sidebar configuration in .vitepress/config.js if necessary
+- Submit a pull request with your new documentation page
+
+### Editing Existing Documentation
+
+If you find any errors or outdated information in the existing documentation, feel free to submit a pull request with
+the necessary changes. You can find the edit link for each page at the bottom of the page itself.
+
+### Your Program or Plugin
+
+If you have a program or plugin that integrates with Shoko and would like to add documentation for it:
+
+- Create a new directory in `docs` with the name of your program/plugin.
+- Structure it so that it follows the same structure as the rest of the documentation.
+- If applicable, provide screenshots, code snippets, and examples to make the documentation more informative.
+
 
 ## Built With
 
-Shoko Docs is built using [Starlight](https://starlight.astro.build/) and employs [PNPM](https://pnpm.io/) as its
-package manager. The majority of Shoko Docs' content is written in Markdown, leveraging an extension of Markdown known
-as [MDX](https://mdxjs.com/) to provide additional functionality.
+- [VitePress](https://vitepress.dev/)
+- [Vue.js](https://vuejs.org/)
+- [Markdown](https://www.markdownguide.org/)
 
-## Getting Started
+## Contact
 
-After forking the repository, ensure that you have PNPM installed. If not, please install it first. Once you have PNPM,
-you can proceed with installing the project's dependencies.
+The best way to get in touch with the Shoko team is via our Discord server.
 
-```
-$ pnpm install
-```
-
-Once all the required dependencies are installed, you can start the development server using the following command:
-
-```
-$ pnpm dev
-```
-
-Please refer to your terminal for the URL and additional information.
-
-## Need Help?
-
-If you encounter any issues or have questions, feel free to create an issue on GitHub. However, for a quicker response,
-we recommend joining our [Discord Server](https://discord.gg/vpeHDsg) where you can engage with the Shoko community and
-get assistance.
+Shoko Team - [Discord Server](https://discord.gg/vpeHDsg)

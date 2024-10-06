@@ -1,0 +1,681 @@
+{
+  "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
+  "releases": [
+    {
+      "version": "1.2.13",
+      "versionURL": "1213",
+      "date": "Sep 30th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.13",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed a preferred episode title override and episode title fallback variable assignment"
+        },
+        {
+          "type": "changed",
+          "text": "Changed the final episode title fallback behaviour to be less redundant and compressed the series_titles dict creation"
+        }
+      ]
+    },
+    {
+      "version": "1.2.12",
+      "versionURL": "1212",
+      "date": "Sep 30th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.12",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Changed \"Add all posters and backdrops\" behaviour to account for another API v3 change"
+        }
+      ]
+    },
+    {
+      "version": "1.2.11",
+      "versionURL": "1211",
+      "date": "Sep 29th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.11",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed the agent's \"Add all posters and backdrops\" option not functioning"
+        }
+      ]
+    },
+    {
+      "version": "1.2.10",
+      "versionURL": "1210",
+      "date": "Sep 26th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.10",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Several minor refactors and readme fixes"
+        },
+        {
+          "type": "added",
+          "text": "Added several summary sanitizer additions"
+        },
+        {
+          "type": "added",
+          "text": "Added an agent setting for TMDB season posters"
+        },
+        {
+          "type": "added",
+          "text": "Added logging for episodes which have TMDB grouping and the type of added images"
+        },
+        {
+          "type": "added",
+          "text": "Added expanded TMDB Match documentation (mainly for alternate episode ordering)"
+        },
+        {
+          "type": "added",
+          "text": "Added a check for redundant movie descriptors during ambiguous episode title replacement"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed some TMDB fallback behaviours being disabled when using SingleSeasonOrdering"
+        }
+      ]
+    },
+    {
+      "version": "1.2.9",
+      "versionURL": "129",
+      "date": "Sep 16th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.9",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Minor refactors and readme fixes"
+        }
+      ]
+    },
+    {
+      "version": "1.2.8",
+      "versionURL": "128",
+      "date": "Sep 7th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.8",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added a fallback name for cases where a seiyuu on AniDB has no character attached to it"
+        },
+        {
+          "type": "added",
+          "text": "Added further refinements to the summary sanitizer"
+        }
+      ]
+    },
+    {
+      "version": "1.2.7",
+      "versionURL": "127",
+      "date": "Sep 5th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.7",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added a fallback to AniDB episode numbering when multiple AniDB episode entries are linked to a single TMDB episode"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed the TMDB title check which wasn't fully implemented after switching from TheTVDB"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed rescan-recent.py not fully functioning after some recent APIv3 changes"
+        },
+        {
+          "type": "added",
+          "text": "Added logging for the TMDB type along with the ID"
+        },
+        {
+          "type": "added",
+          "text": "Added a note on combining episodes to the readme"
+        }
+      ]
+    },
+    {
+      "version": "1.2.6",
+      "versionURL": "126",
+      "date": "Sep 2nd, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.6",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added a fallback to TMDB when the AniDB description is rendered empty by the sanitizer"
+        },
+        {
+          "type": "added",
+          "text": "Added logging if there was a fallback attempt for the description"
+        },
+        {
+          "type": "changed",
+          "text": "Changed the AniDB link detection to catch more URL formats"
+        },
+        {
+          "type": "changed",
+          "text": "Changed the two optional line sanitizers to be more robust"
+        }
+      ]
+    },
+    {
+      "version": "1.2.5",
+      "versionURL": "125",
+      "date": "Aug 30th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.5",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added BBCode [i] tag removal to the summary sanitizer"
+        },
+        {
+          "type": "added",
+          "text": "Added double space removal to the summary sanitizer"
+        },
+        {
+          "type": "removed",
+          "text": "Removed season poster main series fallback due to priority issues"
+        }
+      ]
+    },
+    {
+      "version": "1.2.4",
+      "versionURL": "124",
+      "date": "Aug 30th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.4",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added support for TMDB season posters"
+        },
+        {
+          "type": "added",
+          "text": "Added \"written by\" lines to the summary sanitizer \"Misc. Lines\" option"
+        },
+        {
+          "type": "added",
+          "text": "Added readme additions pertaining to Plex plugin deprecation and Shoko creator images"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed summary sanitizer empty line removal not being the last step"
+        }
+      ]
+    },
+    {
+      "version": "1.2.3",
+      "versionURL": "123",
+      "date": "Aug 28th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.3",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added the agent option to add all posters and backdrops from Shoko instead of just the preferred one"
+        },
+        {
+          "type": "changed",
+          "text": "Changed the agent options formatting for readability as well as modifying some setting names"
+        }
+      ]
+    },
+    {
+      "version": "1.2.2",
+      "versionURL": "122",
+      "date": "Aug 25th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.2",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed an error in the agent when attempting to download theme music without a TMDB match"
+        },
+        {
+          "type": "changed",
+          "text": "Changed the summary options in the agent so that they are all in a single dropdown"
+        }
+      ]
+    },
+    {
+      "version": "1.2.1",
+      "versionURL": "121",
+      "date": "Aug 23rd, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.1",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Account for \"Poster ID\" recently being changed from string to int in APIv3"
+        }
+      ]
+    },
+    {
+      "version": "1.2.0",
+      "versionURL": "120",
+      "date": "Aug 17th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.0",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Changed all TvDB references/usage in the bundle to new TMDB alternatives"
+        },
+        {
+          "type": "changed",
+          "text": "Changed episode thumbnail links to use the default selection"
+        },
+        {
+          "type": "added",
+          "text": "Added TMDB descriptions for series and episodes if configured in Shoko"
+        },
+        {
+          "type": "added",
+          "text": "Added several logging improvements (mainly cast & crew image logs)"
+        },
+        {
+          "type": "added",
+          "text": "Added several readme additions including recommended settings for Shoko"
+        },
+        {
+          "type": "fixed",
+          "text": "Account for \"Fanarts\" recently being renamed to \"Backdrops\" in APIv3"
+        },
+        {
+          "type": "removed",
+          "text": "Removed support for banner images as they are unsupported by TMDB and almost completely deprecated in Plex"
+        }
+      ]
+    },
+    {
+      "version": "1.1.18",
+      "versionURL": "1118",
+      "date": "Jul 8th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.18",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed failed_list initialization placement in force-metadata.py (thanks dasco144)"
+        },
+        {
+          "type": "added",
+          "text": "Added the minimum required version of Shoko Server to the readme"
+        }
+      ]
+    },
+    {
+      "version": "1.1.17",
+      "versionURL": "1117",
+      "date": "Jun 6th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.17",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added the \"Suggestive Dialogue\" content descriptor (for \"Assumed Content Ratings\")"
+        },
+        {
+          "type": "added",
+          "text": "Added a TV-14 rating upgrade for anime with a 300 weight of the \"Sex\" tag (for \"Assumed Content Ratings\")"
+        }
+      ]
+    },
+    {
+      "version": "1.1.16",
+      "versionURL": "1116",
+      "date": "May 25th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.16",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added forced scanning of unrecognized files to rescan-recent.py"
+        },
+        {
+          "type": "added",
+          "text": "Added support for collection posters with the following file extensions: bmp / gif / jpe / tif / tiff / webp"
+        }
+      ]
+    },
+    {
+      "version": "1.1.15",
+      "versionURL": "1115",
+      "date": "May 24th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.15",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed \"collection-posters.py clean\" not sorting posters by creation date (missing key) which could potentially delete the wrong posters"
+        },
+        {
+          "type": "changed",
+          "text": "Changed Shoko API Device names to be more consistent"
+        },
+        {
+          "type": "changed",
+          "text": "Changed some log formatting for better readability"
+        }
+      ]
+    },
+    {
+      "version": "1.1.14",
+      "versionURL": "1114",
+      "date": "May 22nd, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.14",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added a check which ensures that a TvDB entry hasn't been deleted and display clear warnings in the logs if it has"
+        },
+        {
+          "type": "added",
+          "text": "Added \"Special\" to Ambiguous Titles (SingleEntryTitles) for replacement"
+        },
+        {
+          "type": "removed",
+          "text": "Removed \"86\" hard-coded search replacement as the bug was fixed in Shoko Server"
+        }
+      ]
+    },
+    {
+      "version": "1.1.13",
+      "versionURL": "1113",
+      "date": "May 18th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.13",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed the genre capitalization rules to capitalize the last word of all genres even if they are an article/conjunction/short preposition"
+        },
+        {
+          "type": "added",
+          "text": "Added an agent option for moving common series title prefixes like \"Gekijouban\", \"Eiga\" etc. to the end of the title"
+        }
+      ]
+    },
+    {
+      "version": "1.1.12",
+      "versionURL": "1112",
+      "date": "May 17th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.12",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Changed the config.py setting order to match shoko docs"
+        },
+        {
+          "type": "changed",
+          "text": "Reenable TvDB Episode Title + Summary Fallbacks with more robust error checking"
+        },
+        {
+          "type": "added",
+          "text": "Added a new fallback case for specials e.g. \"Episode S1\""
+        },
+        {
+          "type": "added",
+          "text": "Added a version indicator to the scanner logs"
+        },
+        {
+          "type": "added",
+          "text": "Added a note on SingleSeasonOrdering in the Scanner"
+        },
+        {
+          "type": "added",
+          "text": "Added tar.gz release assets for ease of installation on linux"
+        }
+      ]
+    },
+    {
+      "version": "1.1.11",
+      "versionURL": "1111",
+      "date": "May 16th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.11",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added Language codes or \"SHOKO\" to the agent logs after titles"
+        },
+        {
+          "type": "added",
+          "text": "Added Shoko IDs to the scanner Logs after titles"
+        },
+        {
+          "type": "added",
+          "text": "Added TvDB Titles and IDs to the scanner logs if SingleSeasonOrdering is disabled"
+        },
+        {
+          "type": "added",
+          "text": "Added Log Level to the scanner logs for better readability"
+        },
+        {
+          "type": "added",
+          "text": "Added an option to exclude the Plex admin account from watched state syncing in config.py"
+        },
+        {
+          "type": "added",
+          "text": "Specify which script some of the settings apply to in config.py"
+        }
+      ]
+    },
+    {
+      "version": "1.1.10",
+      "versionURL": "1110",
+      "date": "May 14th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.10",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed subdir_dirs variable assignment from v1.1.9 which was incorrect (resulting in improper subfolder grouping removal)"
+        }
+      ]
+    },
+    {
+      "version": "1.1.9",
+      "versionURL": "119",
+      "date": "May 14th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.9",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Don't use preferred titles for Ambiguous Title replacement since they may be a different language"
+        },
+        {
+          "type": "added",
+          "text": "Clarify how the Episode Title agent setting works regarding Ambiguous Titles"
+        },
+        {
+          "type": "added",
+          "text": "Clear several metadata fields when no results are available in Shoko"
+        },
+        {
+          "type": "removed",
+          "text": "Remove Shoko API Keys from Logs"
+        }
+      ]
+    },
+    {
+      "version": "1.1.8",
+      "versionURL": "118",
+      "date": "May 13th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.8",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added a requirements.txt for the scripts"
+        },
+        {
+          "type": "added",
+          "text": "Added an option to ignore air dates for negative seasons to workaround a playback order bug"
+        },
+        {
+          "type": "added",
+          "text": "Added an action for automatically creating a zipped release asset without anything appended to the folder name"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue where episode metadata would not fully parse with SingleSeasonOrdering enabled"
+        },
+        {
+          "type": "removed",
+          "text": "Removed IncludeSpecials and IncludeOther scanner options as they are niche and cause problems with automatic scanning"
+        }
+      ]
+    },
+    {
+      "version": "1.1.7",
+      "versionURL": "117",
+      "date": "May 7th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.7",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added help pages for each of the scripts with -h or --help arguments"
+        },
+        {
+          "type": "added",
+          "text": "Added version information to the agent logs and Info.plist"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed a potential file lock issue with FFplay and animethemes.py"
+        }
+      ]
+    },
+    {
+      "version": "1.1.6",
+      "versionURL": "116",
+      "date": "May 5th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.6",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added error clarification for invalid collection names when running collection-posters.py"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed the collection-posters.py script not fully functioning on Linux"
+        },
+        {
+          "type": "changed",
+          "text": "Changed all script shebangs from python to python3"
+        },
+        {
+          "type": "added",
+          "text": "Added a \"play\" argument to animethemes.py for playback of anime OP/ED without generating a Theme.mp3"
+        },
+        {
+          "type": "added",
+          "text": "Added updating of the original title field for all series when running forced-metadata.py"
+        }
+      ]
+    },
+    {
+      "version": "1.1.5",
+      "versionURL": "115",
+      "date": "May 1st, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.5",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added a new script: rescan-recent.py"
+        }
+      ]
+    },
+    {
+      "version": "1.1.4",
+      "versionURL": "114",
+      "date": "April 25th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.4",
+      "changes": [
+        {
+          "type": "removed",
+          "text": "Removed forced grouping removal for all files as it stopped the scanner's progress indicator from functioning during a full scan"
+        },
+        {
+          "type": "added",
+          "text": "Added a warning in the readme describing the circumstances in which Plex will group files together"
+        },
+        {
+          "type": "added",
+          "text": "Increased scanner log file size and rotation count"
+        }
+      ]
+    },
+    {
+      "version": "1.1.3",
+      "versionURL": "113",
+      "date": "April 23rd, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.3",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Disabled Plex scanner grouping to remove any chance of unwanted folder grouping or file mergers"
+        }
+      ]
+    },
+    {
+      "version": "1.1.2",
+      "versionURL": "112",
+      "date": "April 3rd, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.2",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added Shoko to Plex watched state syncing to watched-sync.py"
+        },
+        {
+          "type": "added",
+          "text": "Added a social media preview and readme header logo"
+        }
+      ]
+    },
+    {
+      "version": "1.1.1",
+      "versionURL": "111",
+      "date": "March 31st, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.1",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added Shoko's preferred title as an option for episode titles and as the initial fallback"
+        },
+        {
+          "type": "added",
+          "text": "Added Volume (number) to the final episode title fallback and excluded Episode/Volume 0"
+        }
+      ]
+    },
+    {
+      "version": "1.1.0",
+      "versionURL": "110",
+      "date": "March 28th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.1.0",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added an external configuration file for the automation scripts"
+        },
+        {
+          "type": "added",
+          "text": "Added optional X-Plex-Token authentication method for the automation scripts"
+        },
+        {
+          "type": "removed",
+          "text": "Removed the internal configuration options for each automation script"
+        }
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "versionURL": "101",
+      "date": "March 27th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.0.1",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixes an issue where Linux based Plex setups could potentially see extraneous errors spammed in the log file"
+        },
+        {
+          "type": "added",
+          "text": "Adds better compatibility to the four automation scripts when running them on a Linux based system"
+        },
+        {
+          "type": "added",
+          "text": "Adds some additional error handling to animethemes.py"
+        }
+      ]
+    }
+  ]
+}
