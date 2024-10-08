@@ -70,6 +70,6 @@
     height: 2rem;
 }
 
-.VPNavBarTitle * .title > span {
-    font-size: 1.5rem
+.VPNavBarTitle > a.title > span {
+    font-size: 1.5rem !important;
 }
