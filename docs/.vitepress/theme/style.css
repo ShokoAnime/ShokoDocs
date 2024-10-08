@@ -82,28 +82,32 @@ strong {
     mask-size: contain;
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
+    margin-top: -0.1em;
     margin-right: 0.5rem;
     vertical-align: middle;
 }
 
 .info > .custom-block-title::before {
-    -webkit-mask-image: url('/images/lightbulb.svg');
-    mask-image: url('/images/lightbulb.svg');
-
-}
-
-.tip > .custom-block-title::before {
-    -webkit-mask-image: url('/images/circle-help.svg');
-    mask-image: url('/images/circle-help.svg');
-
-}
-
-.warning > .custom-block-title::before {
     -webkit-mask-image: url('/images/info.svg');
     mask-image: url('/images/info.svg');
 }
 
+.tip > .custom-block-title::before {
+    -webkit-mask-image: url('/images/lightbulb.svg');
+    mask-image: url('/images/lightbulb.svg');
+}
+
+.warning > .custom-block-title::before {
+    -webkit-mask-image: url('/images/triangle-alert.svg');
+    mask-image: url('/images/triangle-alert.svg');
+}
+
 .danger > .custom-block-title::before {
-    -webkit-mask-image: url('/images/angry.svg');
-    mask-image: url('/images/angry.svg');
+    -webkit-mask-image: url('/images/octagon-alert.svg');
+    mask-image: url('/images/octagon-alert.svg');
+}
+
+.important > .custom-block-title::before {
+    -webkit-mask-image: url('/images/message-square-warning.svg');
+    mask-image: url('/images/message-square-warning.svg');
 }

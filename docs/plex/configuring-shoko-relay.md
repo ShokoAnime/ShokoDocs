@@ -88,7 +88,8 @@ the [Syncing Watched States](/plex/syncing-watched-states) page.
 3. Configure the Advanced Settings
     - In the Advanced tab, select: Scanner **Shoko Relay Scanner** and Agent **ShokoRelay**.
     - Enter your Shoko Server credentials which are the only required settings.
-      ![Shoko Relay - Inputting Server Information](/images/shoko-relay/Shoko-Relay-Inputting-Server-Info.jpg)
+    
+    ![Shoko Relay - Inputting Server Information](/images/shoko-relay/Shoko-Relay-Inputting-Server-Info.jpg)
 
    For more information on each of the required settings consult the table below:
 
@@ -136,10 +137,13 @@ help to pinpoint any issues:
 - Agent Logs: `\Plex Media Server\Logs\PMS Plugin Logs\com.plexapp.agents.shokorelay.log`
 - Scanner Logs: `\Plex Media Server\Logs\Shoko Relay Scanner.log`
 
-:::tip Important
+<div class="important custom-block">
+<p class="custom-block-title">Important</p>
+
 When encountering bad matches/metadata the first thing to check for is if TMDB match and episode mapping is correct in
 Shoko for the series in question.
-:::
+
+</div>
 
 :::warning Warning
 Under extremely specific circumstances Plex will automatically group files together without user intervention. This
@@ -203,7 +207,7 @@ appended to it as necessary). A list of the titles considered ambiguous by the a
 - TV Special
 - Web
 
-:::info
+:::info Note
 The appended titles will appear after an em dash (**—**) making it easy to search for anything affected by this.
 :::
 
@@ -234,10 +238,13 @@ correctly matched to TMDB in Shoko:
 - Fairy Tail (2014)
 - Fairy Tail (2018)
 
-:::tip Important
+<div class="important custom-block">
+<p class="custom-block-title">Important</p>
+
 Only do this when you are happy with the metadata for the series to be merged as you will be unable to correctly refresh
 it without splitting the series apart first.
-:::
+
+</div>
 
 ##### Alternate Episode Ordering
 
@@ -252,7 +259,7 @@ options (including TvDB's) in case you would like to use one of them instead.
 If you have 'Download Alternate Ordering' enabled under Shoko's 'TMDB Download Options' this can be achieved using
 Shoko's `/Tmdb/Show/{showID}/Ordering/SetPreferred` v3 API endpoint (WebUI support forthcoming).
 
-:::info
+:::info Note
 If you select an alternate order for a series TMDB season posters will no longer be automatically added to Plex as those
 are only for the default seasons.
 :::
@@ -281,6 +288,6 @@ general overview is listed in the table below:
 
 <EasyTable :columns="contentRatingsColumns" :data="contentRatingsData" />
 
-:::info
+:::info Note
 Many series are missing these tags on AniDB so adding them is encouraged to help improve everyone's metadata.
 :::
