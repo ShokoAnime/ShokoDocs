@@ -4,7 +4,7 @@ import lightbox from "vitepress-plugin-lightbox"
 export default defineConfig({
     title: "Shoko Docs",
     description: "Resource Center for  the Shoko Suite",
-    base: '/shokodocs/',
+    // base: '/shokodocs/',
     cleanUrls: true,
     lastUpdated: true,
     ignoreDeadLinks: true,
