@@ -1,0 +1,33 @@
+name: Page Request
+description: For requesting new pages or changes to existing pages.
+labels: [enhancement]
+body:
+  - type: input
+    id: page-name
+    attributes:
+      label: Page Name
+      description: Please input the name of the page you're requesting to be made or changed.
+      placeholder: 'Dashboard, Filter, Unrecognized Utility, etc.'
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe what you would like added/changed.
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples
+      description: If applicable, link to similar pages on Shoko Docs or elsewhere of the page you're requesting.
+    validations:
+      required: false
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context about the request here.
+    validations:
+      required: false

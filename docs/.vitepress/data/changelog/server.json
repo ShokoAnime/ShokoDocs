@@ -1,0 +1,2751 @@
+{
+  "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
+  "releases": [
+    {
+      "version": "5.0.0",
+      "versionURL": "500",
+      "date": "In Development",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "New queueing system, the queue processor."
+        },
+        {
+          "type": "added",
+          "text": "Proper support for linking TMDB Series and Movies."
+        },
+        {
+          "type": "added",
+          "text": "Rebuilt filter system."
+        },
+        {
+          "type": "added",
+          "text": "Brand new Web UI."
+        },
+        {
+          "type": "added",
+          "text": "Added SHOKO_HOME environment variable support."
+        },
+        {
+          "type": "added",
+          "text": "Mark episodes as hidden so they don\u0027t count against you."
+        },
+        {
+          "type": "added",
+          "text": "Added MEDIAINFO_PATH environment variable support."
+        },
+        {
+          "type": "added",
+          "text": "A ton of new API endpoints."
+        },
+        {
+          "type": "added",
+          "text": "Added missing relation, alternative version."
+        },
+        {
+          "type": "changed",
+          "text": "AvDump updated to AVDump 3."
+        },
+        {
+          "type": "changed",
+          "text": "Auto install AvDump 3 on Linux."
+        },
+        {
+          "type": "changed",
+          "text": "Migrate settings when new version is released."
+        },
+        {
+          "type": "changed",
+          "text": "Refined group creation/update logic in the v3 API."
+        },
+        {
+          "type": "changed",
+          "text": "Enabled image width/height customization via a feature flag in API."
+        },
+        {
+          "type": "changed",
+          "text": "Refined Shoko\u0027s watched series logic to avoid false status based solely on episode count match."
+        },
+        {
+          "type": "changed",
+          "text": "Refactor and unify various search methods used in the API."
+        },
+        {
+          "type": "changed",
+          "text": "Ensure the Main Series is always listed first in a group."
+        },
+        {
+          "type": "changed",
+          "text": "Rename All Groups action does not rename custom named groups."
+        },
+        {
+          "type": "changed",
+          "text": "Check for missing images only if \"Run Import on Start\" is enabled."
+        },
+        {
+          "type": "changed",
+          "text": "Only check and use the air date for normal episodes."
+        },
+        {
+          "type": "changed",
+          "text": "Eliminate language bias in main titles and treat any non-main/official titles as synonyms."
+        },
+        {
+          "type": "changed",
+          "text": "Properly handle HTTP 400 errors for Trakt authentication."
+        },
+        {
+          "type": "changed",
+          "text": "Update AniDB MyList syncing to allow generic files."
+        },
+        {
+          "type": "changed",
+          "text": "Improved Shoko Server startup speed."
+        },
+        {
+          "type": "changed",
+          "text": "Validate group main series when previous main series entry has changed."
+        },
+        {
+          "type": "changed",
+          "text": "Don't require a script for WebAOM Renamer if Renaming isn't enabled."
+        },
+        {
+          "type": "changed",
+          "text": "Don't create empty series when attempting to manually link a series."
+        },
+        {
+          "type": "changed",
+          "text": "Allow unsetting all libraries in plex."
+        },
+        {
+          "type": "changed",
+          "text": "Reschedule Jobs on Login or Ban Failure."
+        },
+        {
+          "type": "changed",
+          "text": "Retry UDP command when session is invalid."
+        },
+        {
+          "type": "changed",
+          "text": "Adjust anidb ping frequency and logout period."
+        },
+        {
+          "type": "changed",
+          "text": "Update MediaInfo to 24.06"
+        },
+        {
+          "type": "fixed",
+          "text": "Preferred Episode Naming not respecting selected languages."
+        },
+        {
+          "type": "fixed",
+          "text": "Filesystem Watcher crashing during startup."
+        },
+        {
+          "type": "fixed",
+          "text": "Group details not automatically updating when switching the default series for unnamed groups."
+        },
+        {
+          "type": "fixed",
+          "text": "Removal of empty groups when the last series is moved out."
+        },
+        {
+          "type": "fixed",
+          "text": "Resolved 403 and 404 errors during image download."
+        },
+        {
+          "type": "fixed",
+          "text": "Series air date issues due to missing AniDB data."
+        },
+        {
+          "type": "fixed",
+          "text": "Updating Watched State when marking as deleted."
+        },
+        {
+          "type": "fixed",
+          "text": "Multiple hashing related issues leading to incomplete hashing due to external events."
+        },
+        {
+          "type": "fixed",
+          "text": "Newly imported episodes showing as duplicates."
+        },
+        {
+          "type": "fixed",
+          "text": "SQL Server port issues."
+        },
+        {
+          "type": "fixed",
+          "text": "Potential nullable reference in mediainfo."
+        },
+        {
+          "type": "fixed",
+          "text": "Database locking and then not unlocking."
+        },
+        {
+          "type": "fixed",
+          "text": "Handle malformed file chapter timestamps."
+        },
+        {
+          "type": "fixed",
+          "text": "Handle series updating when AniDB episode is removed."
+        },
+        {
+          "type": "fixed",
+          "text": "Incorrect missing episodes stats"
+        },
+        {
+          "type": "fixed",
+          "text": "VOBSUB not being renamed and skipped."
+        },
+        {
+          "type": "fixed",
+          "text": "TraktTV episode matching."
+        },
+        {
+          "type": "fixed",
+          "text": "Shoko creating series for related anime not in your collection."
+        },
+        {
+          "type": "fixed",
+          "text": "Don't attempt to rename if import folder is."
+        },
+        {
+          "type": "fixed",
+          "text": "Allow file relocation without rename."
+        },
+        {
+          "type": "fixed",
+          "text": "Group filter watch states not corresponding to actual watch states."
+        },
+        {
+          "type": "fixed",
+          "text": "Delete All in Recreate All Groups not working properly."
+        },
+        {
+          "type": "fixed",
+          "text": "Import directory being deleted."
+        },
+        {
+          "type": "removed",
+          "text": "TVDB Linking."
+        },
+        {
+          "type": "removed",
+          "text": "AVDUMP_MONO env var from Dockerfiles as its no longer needed."
+        }
+      ]
+    },
+    {
+      "version": "4.2.2",
+      "versionURL": "422",
+      "date": "April 2nd, 2023",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix AniDB languages not being updated properly."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix the display of normal and special episode counts in Shoko Desktop."
+        }
+      ]
+    },
+    {
+      "version": "4.2.1",
+      "versionURL": "421",
+      "date": "March 30th, 2023",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix up the series episode endpoint."
+        }
+      ]
+    },
+    {
+      "version": "4.2.0",
+      "versionURL": "420",
+      "date": "March 29th, 2023",
+      "link": "https://shokoanime.com/blog/shoko-version-4-2-0-released/",
+      "changes": [
+        {
+          "type": "added",
+          "text": "GitHub Releases now contain zip files and an installer for the stable versions ."
+        },
+        {
+          "type": "added",
+          "text": "Basic ARM64 support."
+        },
+        {
+          "type": "added",
+          "text": "New plugin events and SignalR events."
+        },
+        {
+          "type": "added",
+          "text": "Added additional endpoints to the v3 REST API."
+        },
+        {
+          "type": "changed",
+          "text": "Moved to .NET 6."
+        },
+        {
+          "type": "changed",
+          "text": "Significant speed improvements during the import process."
+        },
+        {
+          "type": "changed",
+          "text": "General speed improvements."
+        },
+        {
+          "type": "changed",
+          "text": "A rewritten AniDB provider — now more modern, more efficient, and less error prone."
+        },
+        {
+          "type": "changed",
+          "text": "Improved Filesystem Watcher"
+        },
+        {
+          "type": "changed",
+          "text": "Improved Support for Crossover Episodes"
+        },
+        {
+          "type": "changed",
+          "text": "Improved Stability with MediaInfo"
+        },
+        {
+          "type": "changed",
+          "text": "Stop Shoko from automatically relinking user removed TvDB links when automatic linking is enabled."
+        },
+        {
+          "type": "changed",
+          "text": "Startup refactor."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed cache-control headers for web ui."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed dozens of locking issues."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed scrobbling watch states using Shokofin."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed setting linux permissions during rename/move."
+        },
+        {
+          "type": "fixed",
+          "text": "Make the unrecognized tab in Shoko Desktop show files that are incompletely imported."
+        },
+        {
+          "type": "fixed",
+          "text": "External sub files rename and move with the associated video file when running the renamer."
+        },
+        {
+          "type": "fixed",
+          "text": "Dozens of minor fixes to improve overall stability."
+        }
+      ]
+    },
+    {
+      "version": "4.1.2",
+      "versionURL": "412",
+      "date": "June 27th, 2022",
+      "link": "https://shokoanime.com/blog/shoko-version-4-1-2-released/",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added new endpoints to the v3 REST API."
+        },
+        {
+          "type": "added",
+          "text": "Added anime staff data."
+        },
+        {
+          "type": "added",
+          "text": "Scrobble to Trakt when using the v3 REST API."
+        },
+        {
+          "type": "added",
+          "text": "Added file, episode, and series events for plugins."
+        },
+        {
+          "type": "changed",
+          "text": "Update the tag filter system."
+        },
+        {
+          "type": "changed",
+          "text": "Do not err when moving a file to the same location, but err when moving to the location of another file."
+        },
+        {
+          "type": "changed",
+          "text": "Allow the renamers to run on all files, even unrecognised files."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed non-fuzzy series search in the v3 REST API."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed path conversion from windows to linux in file path search in the v3 REST API."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed model bindings in plex hook."
+        },
+        {
+          "type": "fixed",
+          "text": "Do not escape \"`\" for mediainfo."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix watch state not importing properly."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix descriptions in Swagger not showing up."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix the \u0027Orignal Work\u0027 tag in tag filters."
+        },
+        {
+          "type": "fixed",
+          "text": "Hopefully fixed newer MariaDB compatibility."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix TvDB episode entries to also respect user-overrides in the v3 REST API."
+        },
+        {
+          "type": "removed",
+          "text": "Removed Google Analytics as it was causing issues."
+        }
+      ]
+    },
+    {
+      "version": "4.1.1",
+      "versionURL": "411",
+      "date": "August 29th, 2021",
+      "link": "https://shokoanime.com/blog/shoko-version-4-1-1-released/",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Try Escaping Some Characters for MediaInfo."
+        },
+        {
+          "type": "changed",
+          "text": "Add a better unrecognized file message to the Group Aware Sorter."
+        },
+        {
+          "type": "changed",
+          "text": "Implement a sink for the Filesystem Watcher to allow Pausing."
+        },
+        {
+          "type": "fixed",
+          "text": "Plex unlinking doesn\u0027t work."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix external subtitle renaming."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix Fallback for Moving."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix infinite recursion in CanAccessFile."
+        },
+        {
+          "type": "removed",
+          "text": "Remove Cloud settings."
+        }
+      ]
+    },
+    {
+      "version": "4.1.0",
+      "versionURL": "410",
+      "date": "February 1st, 2021",
+      "link": "https://shokoanime.com/blog/shoko-version-4-1-0-released/",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Refactored Plugin system."
+        },
+        {
+          "type": "changed",
+          "text": "Refactored Renamer system."
+        },
+        {
+          "type": "changed",
+          "text": "Cleanup when TvDB links are generated."
+        },
+        {
+          "type": "changed",
+          "text": "Improve the Title Matching for TvDB Matches."
+        },
+        {
+          "type": "changed",
+          "text": "Improve the Matching for long running, still airing series."
+        }
+      ]
+    },
+    {
+      "version": "4.0.1",
+      "versionURL": "401",
+      "date": "August 29th, 2020",
+      "link": "https://shokoanime.com/blog/shoko-version-4-0-1-released/",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed Import Folder Name for Plugin API."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix TvDB thumbs in APIv3."
+        }
+      ]
+    },
+    {
+      "version": "4.0.0",
+      "versionURL": "400",
+      "date": "August 21st, 2020",
+      "link": "https://shokoanime.com/blog/shoko-version-4-0-0-released/",
+      "changes": [
+        {
+          "type": "added",
+          "issue": "823",
+          "text": "Added a BUNCH of API v3 Endpoints"
+        },
+        {
+          "type": "added",
+          "text": "Added plugin API"
+        },
+        {
+          "type": "added",
+          "text": "Added support for renamer plugins"
+        },
+        {
+          "type": "added",
+          "text": "Added tray icon on Windows"
+        },
+        {
+          "type": "added",
+          "text": "Added setting for deleting duplicates on import"
+        },
+        {
+          "type": "added",
+          "text": "Added setting for renaming and then moving files instead of move and rename"
+        },
+        {
+          "type": "added",
+          "text": "Added support for having the same folder as both drop source and destination"
+        },
+        {
+          "type": "changed",
+          "text": "Converted to .NET Core"
+        },
+        {
+          "type": "changed",
+          "text": "Made Shoko into a service on Windows"
+        },
+        {
+          "type": "changed",
+          "text": "Changed WebUI folder location"
+        },
+        {
+          "type": "changed",
+          "text": "Better external subtitle handling"
+        },
+        {
+          "type": "changed",
+          "text": "Mediainfo stability improvements"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed missing episode stats"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed a problem with Shoko fetching Plex servers on every request"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed codec display on Desktop"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed trakt search"
+        }
+      ]
+    },
+    {
+      "version": "3.9.7",
+      "versionURL": "397",
+      "date": "April 30th, 2020",
+      "link": "https://shokoanime.com/blog/shoko-version-3-9-7-released/",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add \"Has Trakt Link\" Group Filter Condition."
+        },
+        {
+          "type": "changed",
+          "text": "Update TVDB API URL to current working one."
+        },
+        {
+          "type": "changed",
+          "text": "Update TvDBSharper."
+        },
+        {
+          "type": "changed",
+          "text": "Save settings on update."
+        },
+        {
+          "type": "changed",
+          "text": "Clean titles when searching TvDB for auto-linking."
+        },
+        {
+          "type": "changed",
+          "text": "Better Sorting for New Series Window Search."
+        },
+        {
+          "type": "changed",
+          "text": "Change default AniDB MyList type to HDD."
+        },
+        {
+          "type": "changed",
+          "text": "Migration to AniDB.net."
+        },
+        {
+          "type": "changed",
+          "text": "Add a setting for max episode name length in legacy renamer."
+        },
+        {
+          "type": "changed",
+          "text": "Don\u0027t do TvDB things if disabled."
+        },
+        {
+          "type": "changed",
+          "text": "Improve Episode Creation Logic."
+        },
+        {
+          "type": "fixed",
+          "issue": "814",
+          "text": "Fix slow episode imports in large series"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue with LatestEpisodeAirDate formatting causing issues with SQL Server."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixes an issue where users were unable to add additional renaming scripts if previous script ID was 0."
+        },
+        {
+          "type": "fixed",
+          "text": "Delete backup file to trigger rebuild."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix null pointer when searching."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix downloading AniDB Title Cache."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix sentry logging."
+        },
+        {
+          "type": "removed",
+          "text": "Remove Thumbnails for TvDB FanArt"
+        }
+      ]
+    },
+    {
+      "version": "3.9.6",
+      "versionURL": "396",
+      "date": "November 27, 2019",
+      "link": "https://shokoanime.com/blog/shoko-version-3-9-6-released/",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add docker multi-stage."
+        },
+        {
+          "type": "added",
+          "text": " Add logging for HTTP Ban and a warning for when a ban or no data occurred during anime data update."
+        },
+        {
+          "type": "changed",
+          "text": "Move community sites to HTTPS."
+        },
+        {
+          "type": "changed",
+          "text": "Only Regenerate Titles for Series We Have."
+        },
+        {
+          "type": "changed",
+          "text": "Don\u0027t regen titles on startup."
+        },
+        {
+          "type": "changed",
+          "text": "Improve Search Functions."
+        },
+        {
+          "type": "changed",
+          "text": "Ignore Locale decimal symbol."
+        },
+        {
+          "type": "changed",
+          "text": "Disable calls to WebCache while."
+        },
+        {
+          "type": "fixed",
+          "issue": "793",
+          "text": "Crashing while hashing since 3.9.5."
+        },
+        {
+          "type": "fixed",
+          "issue": "799",
+          "text": "SignalR crash fix."
+        },
+        {
+          "type": "fixed",
+          "issue": "805",
+          "text": "Shoko Server 3.9.5 crashing on start."
+        },
+        {
+          "type": "fixed",
+          "issue": "808",
+          "text": "TvDB Image Issues."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix Episodes with No Titles at Startup (using cache only)."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix the hard crash when files are touched while scanning."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix Filesystem Opening error."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix Linux MediaInfo."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix a TvDB Linking error."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix matching error when AniDB has a series marked as a movie and TvDB has it marked as a series."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix Copy Pasta error related to MediaInfo parsing."
+        },
+        {
+          "type": "fixed",
+          "text": "URL decode the search string."
+        },
+        {
+          "type": "fixed",
+          "text": "URL Decode a search parameter before passing it on."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix an i18n issue."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix Mini Calendar."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix Trakt \u0026 token persistence."
+        }
+      ]
+    },
+    {
+      "version": "3.9.5",
+      "versionURL": "395",
+      "date": "July 21, 2019",
+      "link": "https://shokoanime.com/blog/shoko-version-3-9-5-released/",
+      "changes": [
+        {
+          "type": "added",
+          "text": "API - Added support for marking episode as watched based on file."
+        },
+        {
+          "type": "changed",
+          "text": "Download new anime data first"
+        },
+        {
+          "type": "changed",
+          "text": " Add logging for HTTP Ban and a warning for when a ban or no data occurred during anime data update."
+        },
+        {
+          "type": "changed",
+          "text": "Give the error when File cannot be accessed "
+        },
+        {
+          "type": "changed",
+          "text": "Speed up empty dir removal"
+        },
+        {
+          "type": "changed",
+          "text": " Update plex webhook with better parsing, not being dependant on the title."
+        },
+        {
+          "type": "changed",
+          "text": "Make webui serve index.html on unknown urls."
+        },
+        {
+          "type": "changed",
+          "text": "Download new AVDump"
+        },
+        {
+          "type": "changed",
+          "text": "Speed up deletion of files in batches."
+        },
+        {
+          "type": "changed",
+          "text": "Migrated to ASP.NET Core from Nancy."
+        },
+        {
+          "type": "fixed",
+          "issue": "770",
+          "text": "AniDB Mylist watched type reset after re-importing files."
+        },
+        {
+          "type": "fixed",
+          "issue": "783",
+          "text": "/Stream/ endpoint is broken."
+        },
+        {
+          "type": "fixed",
+          "issue": "786",
+          "text": "/api/file/offset broken."
+        },
+        {
+          "type": "fixed",
+          "issue": "787",
+          "text": "/Stream/ byterange is broken."
+        },
+        {
+          "type": "fixed",
+          "text": " Fix a code error in plexhelper."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix small logic error on file renaming."
+        },
+        {
+          "type": "fixed",
+          "text": " Fix initial population of Group Filters "
+        },
+        {
+          "type": "fixed",
+          "text": " Fix Initial User Creation when password is specified "
+        },
+        {
+          "type": "fixed",
+          "text": " Fix HTTP logging on release versions."
+        },
+        {
+          "type": "fixed",
+          "text": "API - Fix Images for AniDB Posters."
+        },
+        {
+          "type": "fixed",
+          "text": "API - Fix Search by filename in Unrecognized Utility for Desktop "
+        },
+        {
+          "type": "fixed",
+          "text": "fix GetEpisodesRecentlyAddedSummary to return the defined number of shows with recently added episodes."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix a stack overflow when changing an import folder via API."
+        },
+        {
+          "type": "fixed",
+          "text": " Fix Import Folder Saving and Properly Refactor Out the Logic "
+        },
+        {
+          "type": "fixed",
+          "text": "Fix GetFilesByGroupAndResolution by URL Decoding the Release Group and properly handling raw-Files."
+        },
+        {
+          "type": "fixed",
+          "text": "Properly handle manually linked files while deleting a release."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix log location and setting settings from Desktop."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix linking 1 file to x episodes."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix Recently Added Series."
+        }
+      ]
+    },
+    {
+      "version": "3.9.4",
+      "versionURL": "394",
+      "date": "December 31, 2018",
+      "link": "https://shokoanime.com/blog/shoko-version-3-9-4-released/",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add basic Analytics API."
+        },
+        {
+          "type": "changed",
+          "text": "Handle File in Use better for systems without locking (due to filesystems or scripts)."
+        },
+        {
+          "type": "changed",
+          "text": "Improve Permission Checking for drop folders"
+        },
+        {
+          "type": "changed",
+          "text": "Improvements to first time setup process"
+        },
+        {
+          "type": "changed",
+          "text": "Properly get ALL updated anime when too many have updated"
+        },
+        {
+          "type": "fixed",
+          "text": "Fix MovieDB image getting"
+        },
+        {
+          "type": "fixed",
+          "text": "Fix Plex Linking"
+        },
+        {
+          "type": "fixed",
+          "text": "Fix an error with Year calculation in some cases"
+        },
+        {
+          "type": "fixed",
+          "text": "Fix rare issues preventing startup"
+        }
+      ]
+    },
+    {
+      "version": "3.9.3",
+      "versionURL": "393",
+      "date": "August 20, 2018",
+      "link": "https://shokoanime.com/blog/shoko-version-3-9-3-released/",
+      "changes": [
+        {
+          "type": "changed",
+          "issue": "749",
+          "text": "Error with creating ssl/tls secure channel."
+        },
+        {
+          "type": "changed",
+          "text": "Sort File for episodes by File Quality Preferences in Desktop."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix Adding Files to MyList with Manually Linked Files."
+        },
+        {
+          "type": "fixed",
+          "text": "Hopefully fix rare error with Downloading Release Group type."
+        },
+        {
+          "type": "fixed",
+          "text": "Delete Episode and Override Links when Deleting TvDB Links."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix some logic errors and state when adding Manually Linked files."
+        }
+      ]
+    },
+    {
+      "version": "3.9.2",
+      "versionURL": "392",
+      "date": "July 30, 2018",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Redo Search in API to Return More Useful Results"
+        }
+      ]
+    },
+    {
+      "version": "3.9.1",
+      "versionURL": "391",
+      "date": "July 30, 2018",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "CommandRequest query optimisations."
+        },
+        {
+          "type": "changed",
+          "text": "Fixed ban timer, ban time now extends on subsequent bans."
+        },
+        {
+          "type": "changed",
+          "text": "Revert mono to 5.4 to resolve problems with web-api connections/commands."
+        },
+        {
+          "type": "changed",
+          "text": "Additional work on the new TVDB linking system."
+        },
+        {
+          "type": "changed",
+          "text": "Hide Setup tab and make the Settings tab the default tab."
+        },
+        {
+          "type": "changed",
+          "text": "Delete and Recreate All Tag Filters on Recreate All Groups."
+        },
+        {
+          "type": "fixed",
+          "text": "When MyList ID is missing add file first then update the state."
+        },
+        {
+          "type": "fixed",
+          "text": "Automatically create and initialize SQLite DB on first run."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix an issue when attempting to link your Plex account."
+        },
+        {
+          "type": "fixed",
+          "text": "Null Check some things in File Quality Filter."
+        },
+        {
+          "type": "fixed",
+          "text": "Add a flag to AddFileToMyList, so we can skip reading."
+        },
+        {
+          "type": "fixed",
+          "text": "Parse MyList ID from adding files."
+        },
+        {
+          "type": "fixed",
+          "text": "When adding files to MyList, send the watched state if we have one."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix an error when attempting to manually link a series."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix an issue when attempting to access a file that\u0027s already in use."
+        }
+      ]
+    },
+    {
+      "version": "3.9.0",
+      "versionURL": "390",
+      "date": "June 21th, 2018",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add Storage state \"remote storage\" to AniDB storage state list. Added Environment variable configuration on first run."
+        },
+        {
+          "type": "added",
+          "text": "Added Environment variable configuration on first run."
+        },
+        {
+          "type": "changed",
+          "text": "Separate AniDB ban types to be both HTTP and UDP instead of a singular ban."
+        },
+        {
+          "type": "changed",
+          "text": "Additional improvements to AniDB Image rate limiting."
+        },
+        {
+          "type": "changed",
+          "text": "General improvements made to the AniDB MyList updating process."
+        },
+        {
+          "type": "changed",
+          "text": "Shoko will now ignore the Recycle Bin when scanning import folders."
+        },
+        {
+          "type": "changed",
+          "text": "Improve Year filter logic."
+        },
+        {
+          "type": "changed",
+          "text": "Use environment for program data location allowing for non-standard setups to work better."
+        },
+        {
+          "type": "changed",
+          "text": "Updated logging during startup."
+        },
+        {
+          "type": "changed",
+          "text": "Move Docker install to be able to launch as non-root user."
+        },
+        {
+          "type": "changed",
+          "text": "Completely rework the Plex workflow so that authentication and updating is a lot nicer."
+        },
+        {
+          "type": "changed",
+          "text": "Redid TvDB Linking system and made major improvements to TVDB system."
+        },
+        {
+          "type": "changed",
+          "text": "Use Mono 5.12 on Docker."
+        },
+        {
+          "type": "fixed",
+          "text": "Allow \"Unknown\" storage state in AniDB."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue with pre-populated usernames causing issues when switching languages in Shoko and creating a new database."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue where Cloud Accounts could not be added or managed."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issues when attempting to update AniDB MyList."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issues with Renamer failing to move all files."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix updating watch status on AniDB MyList."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue where user added series community links were removed when adding additional ones."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue where episode data was not being updated for currently airing series."
+        },
+        {
+          "type": "fixed",
+          "text": "Prevent clearing command queues freezing the UI."
+        },
+        {
+          "type": "fixed",
+          "text": "Ignore Recycle Bin during import scanning."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix various issues when using OneDrive as a provider."
+        },
+        {
+          "type": "fixed",
+          "text": "Support new Trakt authentication."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix an issue when quotes are used or present during file renaming."
+        },
+        {
+          "type": "removed",
+          "text": "Removed MAL access and syncing."
+        }
+      ]
+    },
+    {
+      "version": "3.8.3",
+      "versionURL": "383",
+      "date": "February 4, 2018",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add option to manually input Image Folder location."
+        },
+        {
+          "type": "added",
+          "text": "Add AniDB resource links."
+        },
+        {
+          "type": "changed",
+          "text": "Move AniDB Image Downloading to General Queue and add rate limiter."
+        },
+        {
+          "type": "changed",
+          "text": "Update Plex linking allowing users to link to their accounts and select the library."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix default AniDB MyList option for new databases that caused MyList entries to be removed if a physical file was not hashed."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix Legacy Renamer issue where leading zero was left off on episodes 1-9 when including episode number in filename."
+        },
+        {
+          "type": "fixed",
+          "text": "Instead of crashing, return 404 when an invalid series is queried by the API."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix API issue where anime movies would not return TvDB info."
+        }
+      ]
+    },
+    {
+      "version": "3.8.2",
+      "versionURL": "382",
+      "date": "December 24, 2017",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Merge Linux branch into Master branch."
+        },
+        {
+          "type": "added",
+          "text": "Added support for WebUI First Run wizard."
+        },
+        {
+          "type": "changed",
+          "text": "Better handling of FileNotFoundExceptions when deleting files."
+        },
+        {
+          "type": "changed",
+          "text": "Update hasher, adding x64 versions of MD5, MD4 and SHA1."
+        },
+        {
+          "type": "changed",
+          "text": "Properly use old method of TvDB matching for specials."
+        },
+        {
+          "type": "changed",
+          "text": "Improvements made to the AniDB Login Popup making it less annoying."
+        },
+        {
+          "type": "changed",
+          "text": "Cleanup and Separate TvDB commands."
+        },
+        {
+          "type": "changed",
+          "text": "Better TvDB handling when updating a series."
+        },
+        {
+          "type": "changed",
+          "text": "Docker now ships with latest version of WebUI."
+        },
+        {
+          "type": "changed",
+          "text": "Add progress to DBRegen for CrossRef_Anime_Staff and AnimeCharacter during database updating."
+        },
+        {
+          "type": "changed",
+          "text": "Speed up Unrecognized Files list population."
+        },
+        {
+          "type": "changed",
+          "text": "Stop the command, AniDB Update Anime from running and ignoring other AniDB commands resulting in a temporary ban."
+        },
+        {
+          "type": "changed",
+          "text": "Make sure watch states are updated on new files."
+        },
+        {
+          "type": "changed",
+          "text": "Provide better database messages when updating."
+        },
+        {
+          "type": "fixed",
+          "issue": "692",
+          "text": "Unable to fully sync to Trakt."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue with incorrect command queue states."
+        },
+        {
+          "type": "fixed",
+          "text": "Remove empty directories when deleting a file."
+        },
+        {
+          "type": "fixed",
+          "text": "Cleanup and fix Plex thumbs."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed error in GetGroupVideoQuality."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue in CreateSeriesForAnime when user attempts to create a new series."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue with the General Queue not receiving all commands."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue with Tag Filtering not working properly."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue when attempting to load an updated MyList."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed Delete All function in Desktop File Summaries."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue where the Delete All function did not work with some groups."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue where episodes did not update properly with latest AniDB info."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue with Group Filters where Exclude All was not being respected."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an SQL Server error where only 200 characters was allowed for AniDB_Character.CharName."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed path error on Linux for AnimeCharacter and AnimeStaff."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed MySQL error with text fields not being able to have a default value."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed timeout errors when deleting files when using SQL Server."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed Season Filters."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed a null pointer issue when upgrading from 3.7."
+        },
+        {
+          "type": "fixed",
+          "text": "Check and remove duplicate tags and fix invalid seasons during startup."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue when attempting to remove a file record when the queue is full."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed a null pointer issue with PopulateInitialData."
+        },
+        {
+          "type": "removed",
+          "text": "Remove the \u0027Login Failed!\u0027 message box."
+        }
+      ]
+    },
+    {
+      "version": "3.8.1",
+      "versionURL": "381",
+      "date": "October 1, 2017",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add RescanUnlinkedFiles to API."
+        },
+        {
+          "type": "added",
+          "text": "Limit AniDB image download rate."
+        },
+        {
+          "type": "changed",
+          "text": "Improve AniDB-TvDB series matching by auto-linking series if air-date is a match."
+        },
+        {
+          "type": "changed",
+          "text": "Remove and Recreate permission inheritance in installer."
+        },
+        {
+          "type": "changed",
+          "text": "Show user an error when AVDump fails."
+        },
+        {
+          "type": "changed",
+          "text": "Log instances where Shoko was unable to create AniDB_Anime."
+        },
+        {
+          "type": "changed",
+          "text": "Better logging when importing fails."
+        },
+        {
+          "type": "changed",
+          "text": "Better logging when AniDB does not return a valid date on watched items."
+        },
+        {
+          "type": "changed",
+          "text": "Better handling of Duplicate Files."
+        },
+        {
+          "type": "fixed",
+          "text": "Error when rescanning all unknown items."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed AniDB login window generating two stacked instances or hiding behind main window."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed Duplicate entry for key UIX_CrossRef_File_Episode_Hash_Episode."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed EpisodeName null value error for Shoko.Models.Server.TvDB_Episode."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed System.NullReferenceException in TVDBHelper.GetEpisodes."
+        },
+        {
+          "type": "fixed",
+          "text": "Invalid Duplicate records when renaming."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed command queues crashing when attempting to pause large queues."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed MediaInfoLib and UNC path issue."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed rare instance of TvDB linking failing to add when manually linking a series."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue where group filter conditions could not be deleted."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an issue with loading series via Shoko on Plex."
+        },
+        {
+          "type": "fixed",
+          "text": "Improve startup and fix Group Filters\u0027 creation on fresh DB."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed AniDB storage state updating."
+        }
+      ]
+    },
+    {
+      "version": "3.8.0.0",
+      "versionURL": "3800",
+      "date": "September 3rd, 2017",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Option to delete lower quality releases on import of new release."
+        },
+        {
+          "type": "added",
+          "text": "Plex webhooks to sync watch states across both servers."
+        },
+        {
+          "type": "added",
+          "text": "Give out all images in api."
+        },
+        {
+          "type": "added",
+          "text": "Right-click to open webui in windows taskbar."
+        },
+        {
+          "type": "added",
+          "text": "API Endpoint for Update Images Action."
+        },
+        {
+          "type": "added",
+          "text": "Plex webhook completion including V1 implementation."
+        },
+        {
+          "type": "added",
+          "text": "Add support for chapter detection."
+        },
+        {
+          "type": "added",
+          "text": "Add some quote checking for file moving."
+        },
+        {
+          "type": "added",
+          "text": "Add support for day of the week airing (Uses TvDB data) and episode rating from TvDB."
+        },
+        {
+          "type": "changed",
+          "text": "Stop file from being \"hashed\" when it is moved from the drop folder to the destination folder."
+        },
+        {
+          "type": "changed",
+          "text": "If the hasher is aborted due to file access timeout, don\u0027t add it to the database."
+        },
+        {
+          "type": "changed",
+          "text": "Anidb http do not cache banned response."
+        },
+        {
+          "type": "changed",
+          "text": "Switch To TVDB APIV2."
+        },
+        {
+          "type": "changed",
+          "text": "Check for blocked DLL files."
+        },
+        {
+          "type": "changed",
+          "text": "Implement fail-safe for when files are added with no series/episode info."
+        },
+        {
+          "type": "changed",
+          "text": "Move All Network Serving to Nancy."
+        },
+        {
+          "type": "changed",
+          "text": "Change processfile log level to trace."
+        },
+        {
+          "type": "changed",
+          "text": "Improve some series finding logic for groups."
+        },
+        {
+          "type": "changed",
+          "text": "Updated MediaInfo to 0.7.92.1."
+        },
+        {
+          "type": "changed",
+          "text": "Clean up log spamming on start up and importing."
+        },
+        {
+          "type": "changed",
+          "text": "Cleanup and better handling of corrupt records and migration in import."
+        },
+        {
+          "type": "changed",
+          "text": "Improve Trakt Linking from TvDB."
+        },
+        {
+          "type": "changed",
+          "text": "Make the Link File Command work better with multiple files."
+        },
+        {
+          "type": "changed",
+          "text": "Refactor the WPF UI/UX into it\u0027s own project."
+        },
+        {
+          "type": "changed",
+          "text": "Improve Speed of retrieving multiple files."
+        },
+        {
+          "type": "changed",
+          "text": "Make the File Details obey the new quality preferences."
+        },
+        {
+          "type": "changed",
+          "text": "Improve Auto Link Logic, add setting to disable auto linking."
+        },
+        {
+          "type": "changed",
+          "text": "Pause the hasher queue when \u0027syncing hashes\u0027 is running."
+        },
+        {
+          "type": "changed",
+          "text": "Refactor out the rest of the server side queue states to commons."
+        },
+        {
+          "type": "changed",
+          "text": "Better handling of deletion for duplicate files."
+        },
+        {
+          "type": "changed",
+          "text": "Pause the hasher when running an integrity check."
+        },
+        {
+          "type": "changed",
+          "text": "Proper setting up config via API."
+        },
+        {
+          "type": "changed",
+          "text": "Make filename show in queue state for File Info."
+        },
+        {
+          "type": "changed",
+          "text": "Improve Group Filter Saving and Loading."
+        },
+        {
+          "type": "changed",
+          "text": "Remap Duplicate Files on rename."
+        },
+        {
+          "type": "changed",
+          "text": "Auto retry and reauth on unauthorized for TvDB."
+        },
+        {
+          "type": "changed",
+          "text": "Add a warning when no TvDB results are found for a series."
+        },
+        {
+          "type": "changed",
+          "text": "Move TvDB xrefs and images to cache."
+        },
+        {
+          "type": "changed",
+          "text": "Never decrease MAL watched episode count if user has set that in settings."
+        },
+        {
+          "type": "changed",
+          "text": "Give VideoLocal DbRegen proper progress."
+        },
+        {
+          "type": "changed",
+          "text": "Improve AVDump auto downloading."
+        },
+        {
+          "type": "changed",
+          "text": "Move AVDump to Server and Auto-download."
+        },
+        {
+          "type": "changed",
+          "text": "Properly save AniDB things with \" \u0027 \" instead of \" ` \"."
+        },
+        {
+          "type": "changed",
+          "text": "Remove Trakt Images and validate MovieDB images."
+        },
+        {
+          "type": "changed",
+          "text": "Make plex sync more obvious in the case where it doesn\u0027t do anything it warns the user."
+        },
+        {
+          "type": "changed",
+          "text": "Add more error handling to file serving."
+        },
+        {
+          "type": "changed",
+          "text": "Don\u0027t use cached plex contracts."
+        },
+        {
+          "type": "fixed",
+          "text": "Series selection for renaming adds some files twice #445."
+        },
+        {
+          "type": "fixed",
+          "text": "SQLite error, if server is killed while creating the database."
+        },
+        {
+          "type": "fixed",
+          "text": "Delay no longer counted as part of rate limit."
+        },
+        {
+          "type": "fixed",
+          "text": "Large files won\u0027t stream without chunked encoding."
+        },
+        {
+          "type": "fixed",
+          "text": "TvDB link doesn\u0027t work in a corner case."
+        },
+        {
+          "type": "fixed",
+          "text": "Faulty or incomplete links being pulled from webcache."
+        },
+        {
+          "type": "fixed",
+          "text": "Hasher Long filename fix."
+        },
+        {
+          "type": "fixed",
+          "text": "Detect empty setting pushed through API."
+        },
+        {
+          "type": "fixed",
+          "text": "Ability to update file states."
+        },
+        {
+          "type": "fixed",
+          "text": "API returns image links with hardcoded port."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed MySQL throwing a duplicate column error due to a typo in my plex setup."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed TvDBSeries deserializing as TvDBEpisode."
+        },
+        {
+          "type": "fixed",
+          "text": "Prevent AnimeGroupID with Value 0 from being used."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed nancy causing shoko not to start on subsiquent startups."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed copy error."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed another copy error."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed query in getLastSeason for TvDB."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed for SolutionDir having a space in it."
+        },
+        {
+          "type": "fixed",
+          "text": "Improve Setting sanity checking. Fix an inverted logic."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed TvDB linking for R-18."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed colliding references with EnumerableExtensions."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed an error in the renamer."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed File Rename Utility and Import Folder Icons."
+        },
+        {
+          "type": "fixed",
+          "text": "Stop server from autostarting with SQLite on first run."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed File Details throwing an error. Fix Remove Missing File."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed SQL statements for MySQL and SQLite."
+        },
+        {
+          "type": "fixed",
+          "text": "Server setting can be null."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed a bunch of edge cases with importing duplicate files."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed MediaInfo, fix API giving 404 messages and reduce TvDBApi Log spam."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed a few bugs with TvDB linking and updating."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed TvDB link messages."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed startup caching. Clean up. Throw exceptions to actually halt startup."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed episode contracts not updating when linking TvDB series."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed clearing the command queue while paused locking up everything."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed a logic error in image downloading."
+        },
+        {
+          "type": "removed",
+          "text": "Remove WCF."
+        },
+        {
+          "type": "removed",
+          "text": "Remove 32 bit preference for Shoko.UI."
+        }
+      ]
+    },
+    {
+      "version": "3.7.0.6",
+      "versionURL": "3706",
+      "date": "February 10th, 2017",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed bitmap index out of range."
+        }
+      ]
+    },
+    {
+      "version": "3.7.0.5",
+      "versionURL": "3705",
+      "date": "February 7th, 2017",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Add catching to parts in RegenerateDB so that the server can at least start."
+        },
+        {
+          "type": "changed",
+          "text": "Update \"GetByFilename\" to refer to VideoLocalPlace."
+        },
+        {
+          "type": "changed",
+          "text": "Apply DatabaseFixes.FixEmptyVideoInfos to SQL server and SQLite."
+        },
+        {
+          "type": "fixed",
+          "text": "Renamer intermittently removes extension."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix System.ArgumentNullException in UpdateStatsByAnimeID."
+        },
+        {
+          "type": "fixed",
+          "text": "Anidb http rate limit fix.\n"
+        }
+      ]
+    },
+    {
+      "version": "3.7.0.4",
+      "versionURL": "3704",
+      "date": "January 28th, 2017",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add some further API endpoints."
+        },
+        {
+          "type": "added",
+          "text": "APIv2 Season for Episode. Add convenient helper method for future use."
+        },
+        {
+          "type": "added",
+          "text": "APIv2 Season for Series."
+        },
+        {
+          "type": "added",
+          "text": "/api/webui/theme."
+        },
+        {
+          "type": "added",
+          "text": "Add more sanity checking to file operations on Local File Systems."
+        },
+        {
+          "type": "changed",
+          "text": "Code cleanup in AniDB HTTP API, try to load from cache first if not forced to update."
+        },
+        {
+          "type": "changed",
+          "text": "Start changes to allow for file operation retrying."
+        },
+        {
+          "type": "changed",
+          "text": "Make Trakt Link Always Update when TvDB does."
+        },
+        {
+          "type": "changed",
+          "text": "Also check that fanarts and banners are not empty."
+        },
+        {
+          "type": "changed",
+          "text": "Delete old votes on updating votes from api."
+        },
+        {
+          "type": "fixed",
+          "text": "Version check uses cached versions.xml."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix a weird nullable int issue in plex/kodi serving."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix an error that caused invalid url replacing."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix persisting changes to removing files."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix possible Invalid Operation Exception in Contract Generation."
+        },
+        {
+          "type": "fixed",
+          "text": "Make User Votes update internally properly."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix stream playback."
+        },
+        {
+          "type": "fixed",
+          "text": "Version Check Issue."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix user votes updating internally, they weren\u0027t updating contracts, since they didn\u0027t need to before."
+        }
+      ]
+    },
+    {
+      "version": "3.7.0.3",
+      "versionURL": "3703",
+      "date": "January 7th, 2017",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added ability to revoke apikeys when changing password for account."
+        },
+        {
+          "type": "added",
+          "text": "Added RestartAsAdmin function for migration and new setups."
+        },
+        {
+          "type": "added",
+          "text": "Added new permissions check for programdata directory on startup."
+        },
+        {
+          "type": "changed",
+          "text": "Don\u0027t rename if destination exists!"
+        },
+        {
+          "type": "changed",
+          "text": "Clean up duplicate records of video local places on remove missing files."
+        },
+        {
+          "type": "fixed",
+          "issue": "512",
+          "text": "Trakt broken in Beta 3.7.0.903"
+        },
+        {
+          "type": "fixed",
+          "issue": "544",
+          "text": "Deleting Multiple Files."
+        },
+        {
+          "type": "fixed",
+          "text": "Additional null reference error handling."
+        }
+      ]
+    },
+    {
+      "version": "3.7.0.1",
+      "versionURL": "3701",
+      "date": "December 29th, 2016",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add button to launch WebUI."
+        },
+        {
+          "type": "changed",
+          "text": "Fixes to migration and added more logging."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix NullPointer."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix NullPointer and hopefully fix setting folder permissions."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed uninstall warning message."
+        },
+        {
+          "type": "changed",
+          "text": "Improve Recently Added Episodes to take hidden tags into account when totaling."
+        }
+      ]
+    },
+    {
+      "version": "3.7.0.0",
+      "versionURL": "3700",
+      "date": "December 26th, 2016",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Utility to hash reconciliation."
+        },
+        {
+          "type": "added",
+          "text": "Log rotator."
+        },
+        {
+          "type": "added",
+          "text": "Nancy support added."
+        },
+        {
+          "type": "added",
+          "text": "Cloud Support."
+        },
+        {
+          "type": "added",
+          "text": "Add Update Images Button."
+        },
+        {
+          "type": "added",
+          "text": "Added Trakt scrobble to legacy WCF."
+        },
+        {
+          "type": "added",
+          "text": "Migrate Shoko Server files to ProgramData."
+        },
+        {
+          "type": "added",
+          "text": "Added destination size check if needed."
+        },
+        {
+          "type": "added",
+          "text": "AniDB dynamic rate limiter."
+        },
+        {
+          "type": "added",
+          "text": "Added Media WebCache Support."
+        },
+        {
+          "type": "added",
+          "text": "Nancy GZip support."
+        },
+        {
+          "type": "changed",
+          "text": "Timer to regenerate filter caches for changing filters"
+        },
+        {
+          "type": "changed",
+          "text": "Speed up Kodi serving"
+        },
+        {
+          "type": "changed",
+          "text": "Unrecognized files speed-up."
+        },
+        {
+          "type": "changed",
+          "text": "Update Images forces tvdb update in case of new images on server."
+        },
+        {
+          "type": "changed",
+          "text": "Additional check for user saving, make sure we hash password if needed."
+        },
+        {
+          "type": "changed",
+          "text": "Initial rework of updater supporting multiple channels."
+        },
+        {
+          "type": "fixed",
+          "text": "Clearing anidb queue causes ridiculous HDD usage"
+        },
+        {
+          "type": "fixed",
+          "text": "Shows with specials provide broken XML for episode lists for Kodi"
+        },
+        {
+          "type": "fixed",
+          "text": "Missing Info for Groups (again)"
+        },
+        {
+          "type": "fixed",
+          "text": "Performance improvements for AniDB_Anime cache initialisation"
+        },
+        {
+          "type": "fixed",
+          "text": "Images for Kodi are no longer randomized after the first generation"
+        },
+        {
+          "type": "fixed",
+          "text": "TVDb Link Missing Filter not updating"
+        },
+        {
+          "type": "fixed",
+          "text": "Drastically reduce the time it takes to regenerate Group Filter Tags"
+        },
+        {
+          "type": "fixed",
+          "text": "Removing missing files only works after JMMServer restart."
+        },
+        {
+          "type": "fixed",
+          "text": "Trakt not acting properly."
+        },
+        {
+          "type": "fixed",
+          "text": "Using Mapped drive or UNC path in import folder fails import."
+        },
+        {
+          "type": "fixed",
+          "text": "Renaming files produces path not found exception."
+        },
+        {
+          "type": "fixed",
+          "text": "CreateCharacters error during import."
+        },
+        {
+          "type": "fixed",
+          "text": "Certain Files Fail During Hashing."
+        },
+        {
+          "type": "fixed",
+          "text": "Crossref_AniDB_TvDBV2 has an error."
+        },
+        {
+          "type": "fixed",
+          "text": "Trakt not acting properly."
+        },
+        {
+          "type": "fixed",
+          "text": "JMMServerKodi/GetSupportImage broken."
+        },
+        {
+          "type": "fixed",
+          "text": "Yet Another Better http permission handler."
+        },
+        {
+          "type": "fixed",
+          "text": "Final nail to the hosting admin bugs."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed Bug Watch/Unwatch in sql."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix some cases where movies would get grouped even in exclusions."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed some Edge Cases Hashing problems."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix for case senstive bug related to newever versions of MySQL 5.5+."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix plex user error."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix, md5, sha and crc not calculated on edge cases."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed uninstall warning message."
+        }
+      ]
+    },
+    {
+      "version": "3.6.1.0",
+      "versionURL": "3610",
+      "date": "September 9th, 2016",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Performance improvements for AniDB_Anime cache initialisation."
+        },
+        {
+          "type": "changed",
+          "text": "Speed up Plex and Kodi directory loading."
+        },
+        {
+          "type": "fixed",
+          "text": "TVDb Link Missing Filter not updating."
+        }
+      ]
+    },
+    {
+      "version": "3.6.0.4",
+      "versionURL": "3604",
+      "date": "September 3rd, 2016",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Update MAL API to HTTPS."
+        },
+        {
+          "type": "fixed",
+          "text": "Increase Command Timeout in MySQL."
+        }
+      ]
+    },
+    {
+      "version": "3.6.0.3",
+      "versionURL": "3603",
+      "date": "September 3rd, 2016",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed updating of stats when new files are added."
+        },
+        {
+          "type": "fixed",
+          "text": "After upgrading, Server can not be accessed anymore."
+        },
+        {
+          "type": "fixed",
+          "text": "After upgrading server, DatabaseExtensions.InitDB Could not init database."
+        }
+      ]
+    },
+    {
+      "version": "3.6.0.2",
+      "versionURL": "3602",
+      "date": "September 2nd, 2016",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added Portuguese translation"
+        },
+        {
+          "type": "added",
+          "text": "Provide tag info to kodi for groups with multiple series"
+        },
+        {
+          "type": "added",
+          "text": "Last aired date"
+        },
+        {
+          "type": "added",
+          "text": "Added caching of collection for faster loading"
+        },
+        {
+          "type": "added",
+          "text": "Added ability to stream collection"
+        },
+        {
+          "type": "added",
+          "text": "Database backup when upgrading to new version"
+        },
+        {
+          "type": "changed",
+          "text": "Language Names Now Shown In Native Language"
+        },
+        {
+          "type": "changed",
+          "text": "All program icons have been refreshed."
+        },
+        {
+          "type": "changed",
+          "text": "Additional UI improvements have been made."
+        },
+        {
+          "type": "fixed",
+          "text": "Grave accent issue with community sites"
+        },
+        {
+          "type": "fixed",
+          "text": "Syntax fixes for the initial SQLite DB creation"
+        },
+        {
+          "type": "fixed",
+          "text": "Posters/Fanart/Banners No Longer Download From TvDB"
+        },
+        {
+          "type": "fixed",
+          "text": "Poster previews appear blank, even while a legitimate file exists"
+        },
+        {
+          "type": "fixed",
+          "text": "Blank Poster/Fanart"
+        },
+        {
+          "type": "fixed",
+          "text": "Images blank and no Image File can be found"
+        },
+        {
+          "type": "fixed",
+          "text": "Too long of a path, files not hashed"
+        },
+        {
+          "type": "fixed",
+          "text": "MAL watched states"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed uploading series rating to MAL"
+        }
+      ]
+    },
+    {
+      "version": "3.5.0.2",
+      "versionURL": "3502",
+      "date": "May 20th, 2016",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Missing language files added"
+        },
+        {
+          "type": "fixed",
+          "text": "JMM Server 3.5.0.1 does not start"
+        }
+      ]
+    },
+    {
+      "version": "3.5.0.1",
+      "versionURL": "3501",
+      "date": "May 18th, 2016",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add a way to reopen AniDB login details dialog"
+        },
+        {
+          "type": "added",
+          "text": "Allow Kodi and Plex to be disabled"
+        },
+        {
+          "type": "added",
+          "text": "Check for duplicate CrossRefs"
+        },
+        {
+          "type": "changed",
+          "text": "Hardcoded text has been replaced allowing JMM Server to support multiple languages."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed a bug where in some locales float values were parsed ~100 times larger"
+        },
+        {
+          "type": "fixed",
+          "text": "CrossRefs from WebCache with AnimeID"
+        }
+      ]
+    },
+    {
+      "version": "3.4.6.4",
+      "versionURL": "3464",
+      "date": "March 3rd, 2016",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Kodi support added"
+        },
+        {
+          "type": "added",
+          "text": "Additional options for the Remove Missing Files action"
+        },
+        {
+          "type": "fixed",
+          "text": "JMM hashing speed is very slow"
+        }
+      ]
+    },
+    {
+      "version": "3.4.6.2",
+      "versionURL": "3462",
+      "date": "November 9th, 2015",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added button to update all stats (watched states, missing file counts)"
+        },
+        {
+          "type": "changed",
+          "text": "Remove folders from drop sources when they are empty (don t have any files in them)"
+        },
+        {
+          "type": "changed",
+          "text": "Updating of stats are now queued rather than running as an invisible background process"
+        },
+        {
+          "type": "changed",
+          "text": "Handle Trakt seasons which don t have any episodes"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed updating of stats when new files are added"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed long standing issue of downloading group statuses for releases"
+        },
+        {
+          "type": "fixed",
+          "text": "Fix for excessive refreshing of Trakt tokens"
+        }
+      ]
+    },
+    {
+      "version": "3.4.5.3",
+      "versionURL": "3453",
+      "date": "November 2nd, 2015",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "All scheduled server updates now support additional options of 1 week and 1 month"
+        },
+        {
+          "type": "changed",
+          "text": "Renew Trakt token daily"
+        },
+        {
+          "type": "changed",
+          "text": "Handle a Trakt series not having any episodes"
+        },
+        {
+          "type": "fixed",
+          "text": "Fix JMM Server 100% CPU issue by deprecating the LogMessage database table"
+        },
+        {
+          "type": "fixed",
+          "text": "JMMServerPlex and Search command broken"
+        },
+        {
+          "type": "fixed",
+          "text": "Fix to handle syncing of Trakt collection for first time users"
+        },
+        {
+          "type": "removed",
+          "text": "Remove auto updates and instead just check for new version functionality"
+        }
+      ]
+    },
+    {
+      "version": "3.4.4.3",
+      "versionURL": "3443",
+      "date": "September 10th, 2015",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Update Trakt API to version 2.0"
+        },
+        {
+          "type": "changed",
+          "text": "Maintain watched date and collected date on Trakt to match JMM dates"
+        },
+        {
+          "type": "fixed",
+          "text": "Fix scheduled task which checks for JMM Server updates"
+        }
+      ]
+    },
+    {
+      "version": "3.4.3.1",
+      "versionURL": "3431",
+      "date": "May 4th, 2015",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Fixed unicode characters in hasher.dll pinvoke"
+        },
+        {
+          "type": "changed",
+          "text": "Huge speed improvements to file hasher"
+        },
+        {
+          "type": "changed",
+          "text": "Bug fixes to file hasher"
+        },
+        {
+          "type": "changed",
+          "text": "Speed improvements to importing/scanning files"
+        },
+        {
+          "type": "changed",
+          "text": "Speed improvements to multiple file operations e.g. deleting files"
+        },
+        {
+          "type": "changed",
+          "text": "Migrate from Categories to Tags - Mandatory AniDB Update"
+        },
+        {
+          "type": "changed",
+          "text": "UI config option local thumbnail loading and image loading enhancements"
+        }
+      ]
+    },
+    {
+      "version": "3.4.2.19",
+      "versionURL": "34219",
+      "date": "February 2nd, 2015",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Updated AniDB UDP API protocol version"
+        }
+      ]
+    },
+    {
+      "version": "3.4.2.14",
+      "versionURL": "34214",
+      "date": "January 29th, 2015",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Automatically check for updates every 6 hours"
+        },
+        {
+          "type": "changed",
+          "text": "Make sure TvDB links are removed from web cache when the user deletes them locally"
+        },
+        {
+          "type": "changed",
+          "text": "Add option in JMM Desktop to disable usage stats"
+        }
+      ]
+    },
+    {
+      "version": "3.4.2.13",
+      "versionURL": "34213",
+      "date": "January 22th, 2015",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Allow users to submit anonymous usage information from JMM Server"
+        }
+      ]
+    },
+    {
+      "version": "3.4.2.11",
+      "versionURL": "34211",
+      "date": "January 21th, 2015",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Cannot hash files or folders with Unicode characters (Linux/MySQL)"
+        },
+        {
+          "type": "fixed",
+          "text": "MySQL Case Sensitivity on systems that aren\u0027t windows"
+        },
+        {
+          "type": "changed",
+          "text": "Handle missing Trakt show information when the Cross Ref Info exists"
+        },
+        {
+          "type": "changed",
+          "text": "Remove calls to web cache to get Anime XML"
+        },
+        {
+          "type": "changed",
+          "text": "Fix sorting of file file summaries"
+        }
+      ]
+    },
+    {
+      "version": "3.4.2.10",
+      "versionURL": "34210",
+      "date": "January 14th, 2015",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Cannot hash files or folders with Unicode characters"
+        },
+        {
+          "type": "fixed",
+          "text": "Typo in the about page of JMM Server"
+        },
+        {
+          "type": "changed",
+          "text": "Add Anidb DeleteAction \"Mark external storage\""
+        },
+        {
+          "type": "fixed",
+          "text": "Group filter does not show all groups"
+        }
+      ]
+    },
+    {
+      "version": "3.4.2.9",
+      "versionURL": "3429",
+      "date": "December 30th, 2014",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix error in Trakt processing of results from web cache"
+        },
+        {
+          "type": "changed",
+          "text": "Don\u0027t add Trakt commands to the queue unless the user has enabled the appropriate settings"
+        },
+        {
+          "type": "fixed",
+          "text": "SQLite support was broken in 3.4.2.4"
+        },
+        {
+          "type": "changed",
+          "text": "Disable calculation of CRC32 when using the hasher dll"
+        }
+      ]
+    },
+    {
+      "version": "3.4.2.8",
+      "versionURL": "3428",
+      "date": "November 19th, 2014",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Added support for 32bit/64bit versions of Hasher and MediaInfo DLL\u0027s"
+        },
+        {
+          "type": "changed",
+          "text": "Extra logging for hasher versions and MediaInfo versions"
+        },
+        {
+          "type": "changed",
+          "text": "Extra information for logging of files being hashed"
+        },
+        {
+          "type": "changed",
+          "text": "Update Operating System detection"
+        }
+      ]
+    },
+    {
+      "version": "3.4.2.2",
+      "versionURL": "3422",
+      "date": "November 10th, 2014",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Continue Watching should only show one series from a group"
+        }
+      ]
+    },
+    {
+      "version": "3.4.2.1",
+      "versionURL": "3421",
+      "date": "November 5th, 2014",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Add ability to show messages from developer in JMM desktop and Server"
+        }
+      ]
+    },
+    {
+      "version": "3.4.2.0",
+      "versionURL": "3420",
+      "date": "October 29th, 2014",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "WebCache - Drop support for storing file hashes"
+        },
+        {
+          "type": "changed",
+          "text": "WebCache - Drop support for storing AniDB file info (rarely used)"
+        },
+        {
+          "type": "fixed",
+          "text": "Fix issues with accessing the MAL api."
+        }
+      ]
+    },
+    {
+      "version": "3.4.1.0",
+      "versionURL": "3410",
+      "date": "October 21th, 2014",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Reduce PING frequency to AniDB"
+        },
+        {
+          "type": "fixed",
+          "text": "Updated command gets stuck in a loop when the Web Cache has errors"
+        }
+      ]
+    },
+    {
+      "version": "3.3.32.5",
+      "versionURL": "33325",
+      "date": "October 20th, 2014",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Updated SQLite libraries to .NET 4.5"
+        },
+        {
+          "type": "changed",
+          "text": "Adding caching to group retrievals. (Group retrievals are blazing fast now)"
+        }
+      ]
+    }
+  ]
+}
