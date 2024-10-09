@@ -33,12 +33,13 @@ try any of the following:
 - **Bare Metal:** Use symbolic links pointing to the root of the media library as a way to have a different media folder
   path that still points to the same media files.
 - **Docker:** Use multiple docker volume mounts that mount the same folder to different destinations.
-- **All Setups:** Enable the options in Shokofin's plugin settings to enable the VFS and to Physically Attach VFS to
-  Libraries.
+- **All Setups:** Enable the options in Shokofin's plugin settings to enable the VFS for the libraries and enable the **Physically Attach VFS to Libraries** _advanced_ setting to have the plugin automatically do the work for you.
 
 This kind of configuration can be useful if you intend to have separate libraries for movies and series.
 
 ## Virtual File System (**VFS**)
+
+### Using the VFS
 
 The Virtual File System (VFS) allows you to disregard the underlying disk file structure, automatically meeting
 Jellyfin's system requirements for file organization through the use of symbolic links. This setup ensures that no
@@ -54,7 +55,7 @@ such as subtitles and extras in folders not linked by a Shoko ID; these files wi
 respective media items in the underlying library.
 :::
 
-### Symbolic Links on Windows
+#### Symbolic Links on Windows
 
 Symbolic links which are necessary for VFS functionality requires enabling developer mode in Windows. Perform the
 following to ensure the VFS can work properly:
@@ -75,13 +76,13 @@ To conditionally place media within a compatible `extras` or `backdrops` folder 
 structure using Shoko's groups too, but this is generally not advised since it can easily be messed up on Jellyfin's
 side if the groups change in Shoko.
 
-## Unrecognized Files
+#### Unrecognized Files
 
 Keep unrecognized files — files not recognized in **Shoko Server** — away from the folders provided to Jellyfin. They
 will not be handled by the plugin, and be either filtered out or clutter your library depending on the settings you've
 chosen. Some may desire
 
-## Jellyfin's File Structure Requirements
+#### Jellyfin's File Structure Requirements
 
 Jellyfin requires a specific file structure when not using the VFS:
 

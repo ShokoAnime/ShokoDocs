@@ -164,7 +164,7 @@ const thirdPartyIDSettingsData = [
     Advanced: "",
     Option: "Add Third Party IDs",
     Description: "Enable which third party IDs to provide for other plugins to consume with supported media items.",
-    Default: "✓"
+    Default: "AniDB"
   },
 ];
 
@@ -229,7 +229,7 @@ const additionalShokofinSettingsData = [
   {
     Advanced: "",
     Option: "Use the Virtual File System (VFS)",
-    Description: "This feature allows you to disregard the underlying disk file structure while automagically meeting Jellyfin's requirements for file organization. It also ensures that no unrecognized files appear in your library and allows us to fully leverage Jellyfin's native features better than we otherwise could. This enables us to effortlessly support trailers, special features, and theme videos for series, seasons and movies, as well as merge partial episodes into a single entry. All this is possible because we disregard the underlying disk file structure to create our own using symbolic links.\nRefer to our [Recommendations](/jellyfin-integration/recommendations/#virtual-file-system-vfs) page for additional information on what to expect whether you choose to use this feature or not.",
+    Description: "This feature allows you to disregard the underlying disk file structure while automagically meeting Jellyfin's requirements for file organization. It also ensures that no unrecognized files appear in your library and allows us to fully leverage Jellyfin's native features better than we otherwise could. This enables us to effortlessly support trailers, special features, and theme videos for series, seasons and movies, as well as merge partial episodes into a single entry. All this is possible because we disregard the underlying disk file structure to create our own using symbolic links.\nRefer to our [Recommendations](/jellyfin/recommendations/#virtual-file-system-vfs) page for additional information on what to expect whether you choose to use this feature or not.",
     Default: "✓"
   },
   {
@@ -250,7 +250,7 @@ const shokofinLibrarySettingsData = [
   {
     Advanced: "",
     Option: "Use the Virtual File System (**VFS**)",
-    Description: "This feature allows you to disregard the underlying disk file structure while automagically meeting Jellyfin's requirements for file organization. It also ensures that no unrecognized files appear in your library and allows us to fully leverage Jellyfin's native features better than we otherwise could. This enables us to effortlessly support trailers, special features, and theme videos for series, seasons and movies, as well as merge partial episodes into a single entry. All this is possible because we disregard the underlying disk file structure to create our own using symbolic links.\nRefer to our [Recommendations](/jellyfin-integration/recommendations/#virtual-file-system-vfs) page for additional information on what to expect whether you choose to use this feature or not.",
+    Description: "This feature allows you to disregard the underlying disk file structure while automagically meeting Jellyfin's requirements for file organization. It also ensures that no unrecognized files appear in your library and allows us to fully leverage Jellyfin's native features better than we otherwise could. This enables us to effortlessly support trailers, special features, and theme videos for series, seasons and movies, as well as merge partial episodes into a single entry. All this is possible because we disregard the underlying disk file structure to create our own using symbolic links.\nRefer to our [Recommendations](/jellyfin/recommendations/#virtual-file-system-vfs) page for additional information on what to expect whether you choose to use this feature or not.",
     Default: "&#x2713;"
   },
   {
@@ -265,19 +265,19 @@ const shokofinVFSSettingsData = [
   {
     Advanced: "",
     Option: "Add Trailers",
-    Description: "Makes trailers appear as a native feature that Jellyfin can use. This setting is only applicable when using a [VFS](#media-folder-settings) managed library.",
+    Description: "Makes trailers appear as a native feature that Jellyfin can use. This setting is only applicable when using a VFS managed library.",
     Default: "&#x2713;"
   },
   {
     Advanced: "",
     Option: "Add Credits as Theme Videos",
-    Description: "Make OPs/EDs appear as a native theme video that Jellyfin can use. This setting is only applicable when using a [VFS](#media-folder-settings) managed library.",
+    Description: "Make OPs/EDs appear as a native theme video that Jellyfin can use. This setting is only applicable when using a VFS managed library.",
     Default: "&#x2713;"
   },
   {
     Advanced: "",
     Option: "Add Credits as Special Features",
-    Description: "Make OPs/EDs show up as native special features within Jellyfin. This setting is only applicable when using a [VFS](#media-folder-settings) managed library.",
+    Description: "Make OPs/EDs show up as native special features within Jellyfin. This setting is only applicable when using a VFS managed library.",
     Default: ""
   },
   {
@@ -435,14 +435,14 @@ settings detailed below and adjust Shokofin to your liking. If the defaults work
 The following will detail what each setting does and common use cases where necessary. Do note that certain options when
 changed will require a library recreation for existing libraries that use Shokofin as a provider and will be indicated
 where appropriate. Additional information on the subject can be found in the
-[Recommendations](/jellyfin-integration/recommendations/#library-re-creation-is-your-friend) section of the docs for
+[Recommendations](/jellyfin/recommendations/#library-re-creation-is-your-friend) section of the docs for
 Shokofin.
 
 :::warning Attention Windows Users
 If you are running **Jellyfin** on **Windows**, some additional setup is required to ensure the
-[Virtual File System (VFS)](#media-folder-settings) feature can function. The VFS is an important quality of life
+[Virtual File System (VFS)](#vfs) feature can function. The VFS is an important quality of life
 feature and is normally enabled by default. More info on what the VFS is and what it means for you if you choose not
-to use it is detailed in our [Recommendations](/jellyfin-integration/recommendations/#symbolic-links-on-windows)
+to use it is detailed in our [Recommendations](/jellyfin/recommendations/#symbolic-links-on-windows)
 section. Or you can jump straight
 to [Microsoft's guide](https://learn.microsoft.com/en-us/windows/apps/get-started/developer-mode-features-and-debugging#use-regedit-to-enable-your-device)
 to enable developer mode which will allow Shokofin to create symbolic links on Windows and allows the VFS to
@@ -562,7 +562,7 @@ Advanced Mode is enabled.
 
 Before creating a library, be sure the plugin is configured to your liking as certain options may require creating a
 library from scratch when changed due to how Jellyfin works internally. More information on the subject can be found in
-the [Recommendations](/jellyfin-integration/recommendations/#library-re-creation-is-your-friend) section of the docs
+the [Recommendations](/jellyfin/recommendations/#library-re-creation-is-your-friend) section of the docs
 for Shokofin. Creating a new library rather than enabling Shokofin on an existing library is required due to the nature
 of how Jellyfin and Shokofin work together.
 
@@ -596,8 +596,8 @@ and `/mnt/anime/movies` given that both `C:\ShokoImport\shows` and `C:\ShokoImpo
 
 If you intend to have multiple Shokofin managed libraries to separate movies from shows, be sure that the folders
 specified for each library are different from each other due to how Jellyfin keeps track of metadata internally. You can
-also work around this using multiple volume/bind mounts or with a symbolic link. You can read more about this in
-the [Recommendations](/jellyfin-integration/recommendations/#reusing-folders-across-libraries) section of our docs.
+also work around this using multiple volume/bind mounts or with a symbolic link or by enabling the **Physically Attach VFS to Libraries** _advanced_ setting in the [VFS tab](#vfs) of the plugin settings. You can read more about this in
+the [Recommendations](/jellyfin/recommendations/#reusing-folders-across-libraries) section of our docs.
 
 ### Language and Country
 
@@ -647,10 +647,10 @@ utilize [SignalR](#signalr) to have Shokofin refresh metadata on-demand as new m
 ![Shokofin - Library Settings - Metadata Savers](/images/shokofin/Shokofin-Library-Metadata-Savers.png)
 
 :::danger Important
-**DO NOT** enable metadata saving using Nfo files with libraries managed by Shoko, and if any are present among
-your media library, **DELETE THEM NOW**. The reasoning behind this is that Jellyfin prioritizes metadata from Nfo
+**DO NOT** enable metadata saving using NFO files with libraries managed by Shoko, and if any are present among
+your media library, **DELETE THEM NOW**. The reasoning behind this is that Jellyfin prioritizes metadata from NFO
 files above any other metadata provider. This results in weird or broken behavior since Shokofin is unable to
-override metadata that's sourced from an Nfo.
+override metadata that's sourced from an NFO.
 
 Either find any files in your library that have the `.nfo` extension using your file explorer and delete them, or
 run the following command in a terminal according to your operating system. Be sure to substitute the path with the
@@ -675,14 +675,14 @@ find /path/to/library/ -name "*.nfo" -type f -delete
 
 Shoko should be enabled and set as the top-most image fetcher for all library types and categories. Any additional
 metadata providers may be enabled, but can have mixed results where incorrect images are fetched. One that is
-known to work without issue alongside Shokofin is the Screen Grabber provider.
+known to work without issue alongside Shokofin is the **Screen Grabber** fetcher.
 
 ### Saving Artwork Into Media Folders
 
 ![Shokofin - Library Settings - Saving Artwork](/images/shokofin/Shokofin-Library-Saving-Artwork.png)
 
-When using the [VFS](#media-folder-settings) feature provided by Shokofin, it is recommended to leave this option
-disabled as the artwork would end up saved into the symlinked file structure that Shokofin creates within the data
+When using the [VFS](#vfs) feature provided by Shokofin, it is recommended to leave this option
+disabled as the artwork would end up saved into the symbolic linked file structure that Shokofin creates within the data
 directories of Jellyfin. For non-VFS managed libraries, this is not an issue and can be set according to personal
 preference.
 
@@ -690,9 +690,9 @@ preference.
 
 ![Shokofin - Library Settings - Merge Series](/images/shokofin/Shokofin-Library-Merge-Series.png)
 
-If you are using the [VFS](#media-folder-settings) feature provided by Shokofin, this setting will not change any
+If you are using the [VFS](#vfs) feature provided by Shokofin, this setting will not change any
 behavior. For non-VFS managed libraries, it is recommended to enable this no matter what. Enabling lets Shokofin
-properly group your media into series that reflect your Shoko library without being limited by Jellyfin and the media's
+better group your media into series that reflect your Shoko library without being limited by Jellyfin and the media's
 underlying folder structure.
 
 ## Wrapping Up
@@ -700,5 +700,5 @@ underlying folder structure.
 Once you've confirmed the creation of your library after all that configuration, your library should be well on it's way
 with pulling in metadata and getting your library ready for use. This may be a time consuming process, so feel free to
 read through the [Shokofin FAQs](/faq#shokofin) or the
-[Recommendations](/jellyfin-integration/recommendations/) of Shokofin for any other
+[Recommendations](/jellyfin/recommendations/) of Shokofin for any other
 expectations and useful knowledge when it comes to the plugin.
