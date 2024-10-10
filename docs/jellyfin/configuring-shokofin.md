@@ -60,8 +60,8 @@ const titleSettingsData = [
 const descriptionSettingsData = [
   {
     Advanced: "⚠",
-    Option: "Cleanup AniDB Overviews",
-    Description: "Prettifies AniDB descriptions to markdown supported by Jellyfin.",
+    Option: "Cleanup AniDB Descriptions",
+    Description: "Prettifies AniDB descriptions and converts them to markdown supported by Jellyfin.",
     Default: "✓"
   },
   {
@@ -94,12 +94,12 @@ const tagGenreSettingsData = [
   {
     Advanced: "⚠",
     Option: "Minimum Weight for Tags",
-    Description: "Choose the minimum weight a tag must have to included, not including weightless tags.",
+    Description: "Choose the minimum weight a tag must have to be included, not including weightless tags.",
     Default: "All Allowed"
   },
   {
     Advanced: "⚠",
-    Option: "Maximum Tag Depth",
+    Option: "Maximum Depth for Tags",
     Description: "The maximum relative depth of a tag to be included based on it's source category.",
     Default: "0"
   },
@@ -123,7 +123,7 @@ const tagGenreSettingsData = [
   },
   {
     Advanced: "⚠",
-    Option: "Maximum Genre Depth",
+    Option: "Maximum Depth for Genres",
     Description: "The maximum relative depth of a genre to be included based on it's source category.",
     Default: "1"
   },
@@ -139,7 +139,7 @@ const imageSettingsData = [
   {
     Advanced: "⚠",
     Option: "Respect Preferred Image",
-    Description: "Respect the preferred image flag sent from Shoko Server when selecting the correct image to use for the library. Setting this will also set the language code to the preferred language code for the library if 'Add language code' is enabled, thus ensuring it is always selected for the library.",
+    Description: "Respect the preferred image flag sent from Shoko Server when selecting the correct image to use for the library. Setting this will also set the language code to the preferred language code for the library if 'Add Language Code' is enabled, thus ensuring it is always selected for the library.",
     Default: "✓"
   },
 ];
@@ -170,14 +170,14 @@ const thirdPartyIDSettingsData = [
 
 const shokofinSettingsData = [
   {
-    Advanced: "",
+    Advanced: "⚠",
     Option: "Automatically Merge Multiple Versions of Videos",
     Description: "Enable to allow Shokofin to merge alternate versions of the same media into a single displayed entry.",
     Default: "✓"
   },
   {
     Advanced: "",
-    Option: "Use Shoko Groups for Shows",
+    Option: "Use Groups for Shows",
     Description: "Enable this to have Shokofin group your media the same way that can be seen in Shoko Server. This requires grouping to be setup and configured within Shoko Server itself for this setting to work.",
     Default: ""
   },
@@ -189,21 +189,27 @@ const shokofinSettingsData = [
   },
   {
     Advanced: "",
-    Option: "Separate Movies From Shows",
-    Description: "Enable this to filter out anything that is not a show from a Jellyfin Shows library. Also separates movies from displaying alongside shows within a native Jellyfin collection and places each type under their respective headings.",
-    Default: ""
-  },
-  {
-    Advanced: "⚠",
-    Option: "Filter Movie Libraries",
-    Description: "Enable this to filter out anything that is not a movie from a Jellyfin Movies library.",
-    Default: "✓"
-  },
-  {
-    Advanced: "",
     Option: "Specials Placement Within Seasons",
     Description: "Change this to adjust where specials are placed in their respective season or filter them out entirely.",
     Default: "Always place specials after the normal episodes"
+  },
+  {
+    Advanced: "",
+    Option: "Separate Movies From Shows",
+    Description: "Enable this to filter out movies from a Jellyfin Shows library. Also separates movies from displaying alongside shows within a native Jellyfin collection and places each type under their respective headings.",
+    Default: ""
+  },
+  {
+    Advanced: "",
+    Option: "Add Missing Episodes/Seasons",
+    Description: "Add episode/season entries for media that is not currently present in your local collection. Display settings for each Jellyfin user will have to be adjusted to show missing episode information to make use of this feature.",
+    Default: "✓"
+  },
+  {
+    Advanced: "⚠",
+    Option: "Disable Movie Library Filtering",
+    Description: "By default we filter out anything that is not a movie in Jellyfin Movie libraries. Enable this if you want everything to show up as movies in your Jellyfin Movie libraries instead.",
+    Default: "✓"
   },
   {
     Advanced: "⚠",
@@ -211,32 +217,20 @@ const shokofinSettingsData = [
     Description: "Append all specials that belong to an AniDB movie series as special features for the movie(s). By default only some specials will be automatically recognized as special features, but by enabling this option you will force all specials to be used as special features. This setting applies to movie series across all library types, and will break movie series that contain specials in a show type library.",
     Default: ""
   },
-  {
-    Advanced: "",
-    Option: "Add Missing Episodes/Seasons",
-    Description: "Add episode/season entries for media that is not currently present in your local collection. Display settings for each Jellyfin user will have to be adjusted to show missing episode information to make use of this feature, otherwise 'empty' seasons will appear within a series if the episodes are not available locally.",
-    Default: "✓"
-  },
 ];
 
-const additionalShokofinSettingsData = [
+const shokofinCollectionSettingsData = [
   {
     Advanced: "",
-    Option: "Import Folder Mapping",
-    Description: "Only displays when an existing library is being configured. Displays the identified import folder name that the library is mapped to inside Shoko Server. A deletion button will be displayed as a way to remove the mapping configuration and allow Shokofin to remap the folder on the next library scan.",
-    Default: "N/A"
+    Option: "Collections",
+    Description: "Configure how native Jellyfin collections should be created if at all based on Shoko Server provided metadata.",
+    Default: "Do not create collections"
   },
   {
-    Advanced: "",
-    Option: "Use the Virtual File System (VFS)",
-    Description: "This feature allows you to disregard the underlying disk file structure while automagically meeting Jellyfin's requirements for file organization. It also ensures that no unrecognized files appear in your library and allows us to fully leverage Jellyfin's native features better than we otherwise could. This enables us to effortlessly support trailers, special features, and theme videos for series, seasons and movies, as well as merge partial episodes into a single entry. All this is possible because we disregard the underlying disk file structure to create our own using symbolic links.\nRefer to our [Recommendations](/jellyfin/recommendations/#virtual-file-system-vfs) page for additional information on what to expect whether you choose to use this feature or not.",
+    Advanced: "⚠",
+    Option: "Require Two Entries for a Collection",
+    Description: "If collection creation is enabled, only create a collection when the collection will contain at least two items.",
     Default: "✓"
-  },
-  {
-    Advanced: "",
-    Option: "Legacy Library Filtering",
-    Description: "Adjust how Shokofin filters out unrecognized media from your library. Set to Strict to hide all media not yet recognized by Shoko Server. Set to Lax to allow unrecognized media to appear in the library. Set to Auto to have Shokofin filter out unrecognized media only if no other providers are enabled for the library. Only applies to libraries not using the VFS. VFS managed libraries will always act as though Strict has been set.",
-    Default: "Auto"
   },
 ];
 
@@ -251,13 +245,13 @@ const shokofinLibrarySettingsData = [
     Advanced: "",
     Option: "Use the Virtual File System (**VFS**)",
     Description: "This feature allows you to disregard the underlying disk file structure while automagically meeting Jellyfin's requirements for file organization. It also ensures that no unrecognized files appear in your library and allows us to fully leverage Jellyfin's native features better than we otherwise could. This enables us to effortlessly support trailers, special features, and theme videos for series, seasons and movies, as well as merge partial episodes into a single entry. All this is possible because we disregard the underlying disk file structure to create our own using symbolic links.\nRefer to our [Recommendations](/jellyfin/recommendations/#virtual-file-system-vfs) page for additional information on what to expect whether you choose to use this feature or not.",
-    Default: "&#x2713;"
+    Default: "✓"
   },
   {
     Advanced: "",
     Option: "Legacy Library Filtering",
     Description: "Adjust how Shokofin filters out unrecognized media from your library. Set to Strict to hide all media not yet recognized by Shoko Server. Set to Lax to allow unrecognized media to appear in the library. Set to Auto to have Shokofin filter out unrecognized media only if no other providers are enabled for the library. Only applies to libraries not using the VFS. VFS managed libraries will always act as though Strict has been set.",
-    Default: "Auto"
+    Default: "Strict"
   },
 ];
 
@@ -265,31 +259,31 @@ const shokofinVFSSettingsData = [
   {
     Advanced: "",
     Option: "Add Trailers",
-    Description: "Makes trailers appear as a native feature that Jellyfin can use. This setting is only applicable when using a VFS managed library.",
-    Default: "&#x2713;"
+    Description: "Makes trailers appear as a native feature that Jellyfin can use.",
+    Default: "✓"
   },
   {
     Advanced: "",
     Option: "Add Credits as Theme Videos",
-    Description: "Make OPs/EDs appear as a native theme video that Jellyfin can use. This setting is only applicable when using a VFS managed library.",
-    Default: "&#x2713;"
+    Description: "Make OPs/EDs appear as a native theme video that Jellyfin can use.",
+    Default: "✓"
   },
   {
     Advanced: "",
     Option: "Add Credits as Special Features",
-    Description: "Make OPs/EDs show up as native special features within Jellyfin. This setting is only applicable when using a VFS managed library.",
+    Description: "Make OPs/EDs show up as native special features within Jellyfin.",
     Default: ""
   },
   {
     Advanced: "",
     Option: "Add Release Group to Path",
-    Description: "Will add full or short release group names to all automatically linked files in the VFS. 'No Group' will be used if the file is not associated with a release group in Shoko Server. \n\n**Warning:** The release group in the file name may change if the release group info is incomplete, unavailable, or otherwise updated in Shoko Server at a later date. This may cause episode/movie entries to be 'removed' and 'added' as new entries when that happens. Use at your own risk.",
+    Description: "Will add full or short release group names to all automatically linked files in the VFS. 'No Group' will be used if the file is not associated with a release group in Shoko Server. \n\n**Warning:** The release group in the file name may change if the release group info is incomplete, unavailable, or otherwise updated in Shoko Server at a later date. This may cause episode/movie entries to be 'removed' and 'added' as new entries when that happens. **Use at your own risk.**",
     Default: ""
   },
   {
     Advanced: "",
     Option: "Add Resolution to Path",
-    Description: "Will add the resolution of the media to all automatically linked files in the VFS if available. \n\n**Warning:** Though rare, we may fail to read the media info in Shoko Server when the files were first added (e.g. because of a corrupt file, encountering an unsupported new codec, etc.), then reading it later. This may cause episode/movie entries to be 'removed' and 'added' as new entries when that happens. Use at your own risk.",
+    Description: "Will add the resolution of the media to all automatically linked files in the VFS if available. \n\n**Warning:** Though rare, we may fail to read the media info in Shoko Server when the files were first added (e.g. because of a corrupt file, encountering an unsupported new codec, etc.), then reading it later. This may cause episode/movie entries to be 'removed' and 'added' as new entries when that happens. **Use at your own risk.**",
     Default: ""
   },
 ];
@@ -303,14 +297,14 @@ const advancedShokofinVFSSettingsData = [
   },
   {
     Advanced: "⚠",
-    Option: "Physically Attach VFS to Libraries",
-    Description: "Makes the VFS file structure that Shokofin automatically created show up as a library folder. This allows reusing the same media folder across multiple libraries without needing other workarounds. Useful for separating movies and series into separate libraries while still using the same media folder for both.",
+    Option: "Attach VFS to Libraries",
+    Description: "Makes the VFS file structure that Shokofin automatically created show up as a library folder. This allows reusing the same media folder(s) across multiple libraries without needing other workarounds. Useful for separating movies and series into separate libraries while still using the same media folder for both.",
     Default: ""
   },
   {
     Advanced: "⚠",
     Option: "VFS Location",
-    Description: "Change the location that Shokofin will place the VFS structure it generates on your system. Changing this will cause your library to 'remove' and 're-add' itself because of the path changes. You will need to manually move your VFS root if you plan to keep it when toggling this setting, or you can get rid of it by running the scheduled task to remove it. Trickplay files will need to be regenerated if you change this setting.\n**You have been warned.**",
+    Description: "Change the location that Shokofin will place the VFS structure it generates on your system. Changing this will cause your library to 'remove' and 're-add' itself because of the path changes. You will need to manually move your VFS root if you plan to keep it when toggling this setting. Trick-play files will need to be backed-up beforehand and moved back the next library scan if you want to avoid regenerating them after you change this setting. \n**You have been warned.**",
     Default: "Jellyfin Data Directory"
   },
 ];
@@ -342,7 +336,7 @@ const shokofinSyncSettingsData = [
   },
   {
     Option: "Sync Watch-State for Restricted Videos",
-    Description: "Allow syncing watch-state for hentai and adult content to Shoko Server."
+    Description: "Allow syncing watch-state for adult content to Shoko Server."
   },
   {
     Option: "Username",
@@ -356,7 +350,7 @@ const shokofinSyncSettingsData = [
 
 const shokofinSignalRStatusData = [
   {
-    Option: "Status",
+    Option: "Connection Status",
     Description: "Shows the current status of the SignalR connection. Will display if SignalR is disabled or enabled and if SignalR is currently connected or in the process of reconnecting to your running Shoko Server. SignalR can also be manually connected or disconnected using the button below this indicator."
   },
 ];
@@ -387,7 +381,7 @@ const shokofinEventSettingsData = [
     Advanced: "",
     Option: "File Events",
     Description: "Have Shokofin listen for file events from Shoko Server when new media gets added or moved around in the file system and trigger library updates accordingly. Especially useful if your Jellyfin library is using a network share for it's media location where native file events may not be available for Jellyfin's real time monitoring to function. Can be used as a complete replacement for Jellyfin's built-in real time monitoring or used alongside it.",
-    Default: "&#x2713;"
+    Default: "✓"
   },
   {
     Advanced: "",
@@ -498,7 +492,7 @@ and create it once again following the instructions at [Creating a Shoko Library
 
 ##### Collection Settings
 
-<EasyTable :columns="containerColumns" :data="additionalShokofinSettingsData" />
+<EasyTable :columns="containerColumns" :data="shokofinCollectionSettingsData" />
 
 ##### New/Existing Library Settings
 
@@ -512,6 +506,9 @@ unrecognized files appear in your library and allows you to fully leverage Jelly
 While this approach is relatively new and still undergoing testing, it is stable enough for daily use. We encourage
 adopting this system and reporting any issues you encounter to help improve it further. Below are some settings you can
 use to tweak the VFS's behavior to your liking.
+
+Refer to our [Recommendations](/jellyfin/recommendations/#virtual-file-system-vfs) page for additional information on
+what to expect whether you choose to use this feature or not.
 
 ##### Basic Settings
 
