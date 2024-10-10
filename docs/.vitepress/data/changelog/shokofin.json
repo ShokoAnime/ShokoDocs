@@ -2,6 +2,470 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "4.2.0",
+      "versionURL": "420",
+      "date": "October 10th, 2024",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v4.2.0",
+      "changes": [
+        {
+          "type": "added",
+          "text": "The settings page have been visually overhauled. The whole page has been rewritten to support a tab based view. Some settings have been marked as advanced and hidden until the new advanced mode is enabled. And the ground work for future utilities has been laid down. Refer to the newly updated documentation for more information about the new settings and the advanced mode. "
+        },
+        {
+          "type": "added",
+          "text": "Added support for logos for daily (and next stable) Shoko Server users."
+        },
+        {
+          "type": "added",
+          "text": "Added support for image language codes."
+        },
+        {
+          "type": "added",
+          "text": "Added new advanced options to allow changing where the VFS live. You can place them in the Jellyfin data directory (the default), the Jellyfin cache directory, or any other custom directory."
+        },
+        {
+          "type": "added",
+          "text": "Add an advanced option to physically attach the VFS to libraries."
+        },
+        {
+          "type": "added",
+          "text": "Added a new advanced option to resolve any symbolic links to their real target before generating the symbolic links to place to the VFS, effectively skipping the additionally needed lookup steps later when Jellyfin accesses the symbolic link placed in the VFS."
+        },
+        {
+          "type": "added",
+          "text": "Implemented episode/movie merging upon refresh."
+        },
+        {
+          "type": "added",
+          "text": "Added Shoko preferred descriptions for daily (and next stable) Shoko Server users."
+        },
+        {
+          "type": "added",
+          "text": "Added a VFS preview endpoint for debugging purposes."
+        },
+        {
+          "type": "fixed",
+          "text": "Append base path to image URLs."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix models for latest daily server and current stable server."
+        },
+        {
+          "type": "fixed",
+          "text": "Remove all unused tvdb fields."
+        },
+        {
+          "type": "fixed",
+          "text": "Expect the unexpected."
+        },
+        {
+          "type": "fixed",
+          "text": "Add missing query parameter in series file endpoint."
+        },
+        {
+          "type": "fixed",
+          "text": "Sanitize collection overviews."
+        },
+        {
+          "type": "fixed",
+          "text": "Add back and fix image is available check."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix specials placement by air date."
+        },
+        {
+          "type": "fixed",
+          "text": "Check if plugin is enabled for item before looking up id during watch data syncing."
+        },
+        {
+          "type": "fixed",
+          "text": "Sanitize release groups in VFS file names."
+        },
+        {
+          "type": "fixed",
+          "text": "Attach VFS children to first available media folder."
+        },
+        {
+          "type": "fixed",
+          "text": "Enable schedule tasks."
+        },
+        {
+          "type": "fixed",
+          "text": "Only add extras for movies if the movie will exist."
+        },
+        {
+          "type": "fixed",
+          "text": "Stop skipping cache for import folder."
+        },
+        {
+          "type": "fixed",
+          "text": "Properly generate VFS for movie libraries."
+        },
+        {
+          "type": "fixed",
+          "text": "Attach import folder relative path during events."
+        },
+        {
+          "type": "fixed",
+          "text": "Better error handling during VFS generation."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed paths used in event dispatcher."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix-up faulty config on start-up and save."
+        },
+        {
+          "type": "fixed",
+          "text": "Correct episode ordering before creating specials anchors."
+        },
+        {
+          "type": "fixed",
+          "text": "Don't try to remove VFS root for media folders."
+        },
+        {
+          "type": "fixed",
+          "text": "Start uglifying the year regex for season merging."
+        },
+        {
+          "type": "changed",
+          "text": "Add 'manners movie' as extras."
+        },
+        {
+          "type": "changed",
+          "text": "Merge paths for special and other type episodes."
+        },
+        {
+          "type": "changed",
+          "text": "Always split & merge entries."
+        },
+        {
+          "type": "changed",
+          "text": "Mark chronological season ordering as experimental (again) and advanced."
+        },
+        {
+          "type": "changed",
+          "text": "Promote auto merge version from the experimental section."
+        },
+        {
+          "type": "changed",
+          "text": "Modernize scheduled tasks and hide some behind the new advanced mode. "
+        },
+        {
+          "type": "changed",
+          "text": "Tweaked log level of some tasks."
+        },
+        {
+          "type": "changed",
+          "text": "Fixed error message."
+        },
+        {
+          "type": "changed",
+          "text": "Add path and/or other details when throwing."
+        },
+        {
+          "type": "changed",
+          "text": "Overhaul the merge versions manager."
+        },
+        {
+          "type": "changed",
+          "text": "Generate all configurations first."
+        },
+        {
+          "type": "changed",
+          "text": "Enable file events by default."
+        },
+        {
+          "type": "changed",
+          "text": "Log library id in import folder iteration step during VFS generation."
+        },
+        {
+          "type": "changed",
+          "text": "Pass country code to content rating utility and rename misleading method names."
+        },
+        {
+          "type": "changed",
+          "text": "Remove `*Override` settings."
+        },
+        {
+          "type": "changed",
+          "text": "Get movie images using episode id."
+        },
+        {
+          "type": "changed",
+          "text": "Allow VFS to auto-select thread count based on cpu if setting is set to 0."
+        }
+      ]
+    },
+    {
+      "version": "4.1.1",
+      "versionURL": "411",
+      "date": "July 16th, 2024",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v4.1.1",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Add catch in try get method."
+        },
+        {
+          "type": "fixed",
+          "text": "Add episode user data migration task."
+        },
+        {
+          "type": "fixed",
+          "text": "Improve logic in the episode user data migration task."
+        }
+      ]
+    },
+    {
+      "version": "4.1.0",
+      "versionURL": "410",
+      "date": "July 14th, 2024",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v4.1.0",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix mapping for series id on episode model."
+        },
+        {
+          "type": "changed",
+          "text": "Update exception message."
+        },
+        {
+          "type": "fixed",
+          "text": "Populate all lookup tables before returning."
+        },
+        {
+          "type": "changed",
+          "text": "Add another extra type conditional."
+        },
+        {
+          "type": "added",
+          "text": "Allow disabling the filter for movie libraries."
+        },
+        {
+          "type": "fixed",
+          "text": "Change custom id format."
+        },
+        {
+          "type": "fixed",
+          "text": "Change the direct access on ProviderIds."
+        },
+        {
+          "type": "fixed",
+          "text": "Add fallback if lookup fails."
+        }
+      ]
+    },
+    {
+      "version": "4.0.1",
+      "versionURL": "401",
+      "date": "July 7th, 2024",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v4.0.1",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Sort specials season first."
+        }
+      ]
+    },
+    {
+      "version": "4.0.0",
+      "versionURL": "400",
+      "date": "July 4th, 2024",
+      "link": "https://shokoanime.com/blog/shokofin-4-0-0-released/",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added support for Jellyfin 10.9."
+        },
+        {
+          "type": "changed",
+          "text": "Overhauled the settings. Please reconfigure your settings again after the upgrade, because they will have been partially reset."
+        },
+        {
+          "type": "changed",
+          "text": "Use relative based episode numbering."
+        },
+        {
+          "type": "changed",
+          "text": "Removed search results since we as a plugin don't need them."
+        },
+        {
+          "type": "changed",
+          "text": "Removed support for setting TvDB identifiers on entities."
+        },
+        {
+          "type": "added",
+          "text": "Added the Virtual File System (VFS), a new feature responsible for making sure your library is always compatible with Jellyfin's structure. Including better — more integrated and less hacky — support for special features, trailers, and theme videos, both for shows, seasons and movies! And, it's configurable to boot."
+        },
+        {
+          "type": "added",
+          "text": "Better collection support for movies and shows."
+        },
+        {
+          "type": "added",
+          "text": "SignalR events for real-time metadata and file updates from Shoko to Jellyfin."
+        },
+        {
+          "type": "added",
+          "text": "Lazy sync for live-session watch scrobbling, to prevent accidental clicks from affecting your watch history."
+        },
+        {
+          "type": "added",
+          "text": "Add a setting for the \"Add missing metadata\" feature that was previously always enabled, and improve the logic."
+        },
+        {
+          "type": "added",
+          "text": "Added trailers, theme videos and special features metadata providers for the VFS."
+        },
+        {
+          "type": "added",
+          "text": "Added content ratings and production locations using AniDB, with the ability to override a rating per series using custom tags in Shoko Server."
+        },
+        {
+          "type": "added",
+          "text": "Added the ability to override the perceived series type in Jellyfin using custom tags in Shoko Server."
+        },
+        {
+          "type": "added",
+          "text": "EXPERIMENTAL: The season merging option have now been implemented. The feature is still experimental though, so use at your own risk."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed error while iterating media folder list."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed strict filtering for directories."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed series images not loading and pseudo random image order for series."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed user sync and log when the file doesn't exist instead of throwing."
+        },
+        {
+          "type": "fixed",
+          "text": "Simplify user data sync logic."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed log messages for user data sync manager."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed Shoko redirects for groups and series for the new Shoko Web UI."
+        },
+        {
+          "type": "fixed",
+          "text": "Don't use negative season numbers."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed status for not-yet-ended shows."
+        },
+        {
+          "type": "fixed",
+          "text": "Catch directory not existing."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed image display issues for clients that need to use the public host url. "
+        },
+        {
+          "type": "fixed",
+          "text": "Update merge all episodes to use the correct configuration value to check if it should split the existing merged episodes before merging."
+        },
+        {
+          "type": "fixed",
+          "text": "Use password type for password field in the connection settings section in the plugin settings."
+        },
+        {
+          "type": "fixed",
+          "text": "Clear all caches after a library scan is complete."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed ignored sub-title removal."
+        },
+        {
+          "type": "fixed",
+          "text": "Only merge with entries in the same media folder."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed chronological season ordering."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed ending date for shows with unaired seasons in them."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed incompatibly with stable Shoko Server."
+        },
+        {
+          "type": "changed",
+          "text": "Remove unneeded stored offset."
+        },
+        {
+          "type": "changed",
+          "text": "Use english title for episode title if we're using the main title."
+        },
+        {
+          "type": "changed",
+          "text": "Fix casing for scheduled task names."
+        },
+        {
+          "type": "changed",
+          "text": "Add more ignored sub-titles."
+        },
+        {
+          "type": "changed",
+          "text": "Refactored internals to better align with the Jellyfin structure and less align with the Shoko structure."
+        },
+        {
+          "type": "changed",
+          "text": "Better caching of data internally."
+        },
+        {
+          "type": "changed",
+          "text": "Flatten namespaces and enable nullable on all files."
+        },
+        {
+          "type": "changed",
+          "text": "QoL development improvements."
+        },
+        {
+          "type": "changed",
+          "text": "Updated logo."
+        },
+        {
+          "type": "changed",
+          "text": "Added discord notifications for development builds. Join our discord to get more frequent updates for what changes, when it changes! 😉"
+        },
+        {
+          "type": "changed",
+          "text": "Added changelog to GH pre-releases."
+        },
+        {
+          "type": "changed",
+          "text": "Added changelog to development manifest releases."
+        },
+        {
+          "type": "changed",
+          "text": "Added issue templates to the repository."
+        }
+      ]
+    },
+    {
       "version": "3.0.1",
       "versionURL": "301",
       "date": "April 20th, 2023",
