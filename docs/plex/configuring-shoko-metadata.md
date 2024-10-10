@@ -54,7 +54,8 @@ the [Configuring Shoko Relay](/plex/configuring-shoko-relay) page.
       **.
     - If you are adding a movie library instead, choose: Scanner **Shoko Movie Scanner** and Agent **ShokoMovies**.
     - Enter your Shoko Server credentials which are the only required settings.
-    - ![Shoko Metadata - Inputting Server Information](/images/shoko-metadata/Shoko-Metadata-Inputting-Server-Info.jpg)
+    
+    ![Shoko Metadata - Inputting Server Information](/images/shoko-metadata/Shoko-Metadata-Inputting-Server-Info.jpg)
 
    For more information on each of the required settings consult the table below:
 

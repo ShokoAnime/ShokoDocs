@@ -46,6 +46,12 @@
     font-weight: 500;
 }
 
+.important.custom-block {
+    background-color: rgb(137, 87, 229, .05);
+    border-color: rgb(137, 87, 229);
+    font-weight: 500;
+}
+
 .vp-doc th, .vp-doc td {
     border: none;
 }

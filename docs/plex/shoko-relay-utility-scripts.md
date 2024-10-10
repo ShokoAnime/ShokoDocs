@@ -254,7 +254,6 @@ seasons and add original titles in Plex. Append the argument "full" `force-metad
 time-consuming full metadata clean up.
 
 :::warning
-
 In "full" mode you must wait until the Plex activity queue is fully completed before advancing to the next step (with
 the enter key) or this will not function correctly.
 
@@ -263,7 +262,7 @@ the enter key) or this will not function correctly.
 
 - This may take a significant amount of time to complete with a large library so it is recommended to run the first step
   overnight.
-  :::
+:::
 
 ### Rescan-Recent
 

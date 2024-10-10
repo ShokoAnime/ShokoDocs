@@ -93,7 +93,7 @@ Jellyfin requires a specific file structure when not using the VFS:
 
 Any changes to file structure may require a full metadata refresh for Jellyfin to reflect your metadata properly.
 
-:::info Note
+:::info
 Shokofin leverages AniDB as the primary source for metadata. Using Shoko's groups feature allows grouping multiple AniDB
 entries under a single show in Jellyfin, though not all configurations are compatible. Refer to the structure
 recommendations above.

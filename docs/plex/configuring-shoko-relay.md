@@ -88,7 +88,8 @@ the [Syncing Watched States](/plex/syncing-watched-states) page.
 3. Configure the Advanced Settings
     - In the Advanced tab, select: Scanner **Shoko Relay Scanner** and Agent **ShokoRelay**.
     - Enter your Shoko Server credentials which are the only required settings.
-      ![Shoko Relay - Inputting Server Information](/images/shoko-relay/Shoko-Relay-Inputting-Server-Info.jpg)
+    
+    ![Shoko Relay - Inputting Server Information](/images/shoko-relay/Shoko-Relay-Inputting-Server-Info.jpg)
 
    For more information on each of the required settings consult the table below:
 
@@ -136,12 +137,12 @@ help to pinpoint any issues:
 - Agent Logs: `\Plex Media Server\Logs\PMS Plugin Logs\com.plexapp.agents.shokorelay.log`
 - Scanner Logs: `\Plex Media Server\Logs\Shoko Relay Scanner.log`
 
-:::tip Important
+:::important
 When encountering bad matches/metadata the first thing to check for is if TMDB match and episode mapping is correct in
 Shoko for the series in question.
 :::
 
-:::warning Warning
+:::warning
 Under extremely specific circumstances Plex will automatically group files together without user intervention. This
 occurs when storing all of the files from multiple AniDB entries in a single folder (located in the root directory of
 the Plex library) with no other subfolders present inside of it. To resolve this simply create an empty subfolder in any
@@ -234,7 +235,7 @@ correctly matched to TMDB in Shoko:
 - Fairy Tail (2014)
 - Fairy Tail (2018)
 
-:::tip Important
+:::important
 Only do this when you are happy with the metadata for the series to be merged as you will be unable to correctly refresh
 it without splitting the series apart first.
 :::

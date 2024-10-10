@@ -29,7 +29,7 @@ entries and will only sync the first match.
     - It will redirect you and have you log into your Plex account.
     - If successful, you'll see the following message.
 
-![Shoko - Plex Synced](/images/shoko-relay/Shoko-Relay-Plex-Synced.jpg)
+    ![Shoko - Plex Synced](/images/shoko-relay/Shoko-Relay-Plex-Synced.jpg)
 
 2. Select Your Plex Server and Libraries
     - Return to **Settings** > **Integrations** in the Shoko Server WebUI.
@@ -85,7 +85,7 @@ Configuration instructions are available on the [Shoko Relay Utility Scripts](/p
 `config.py` has been properly filled out the [Watched-Sync](/plex/shoko-relay-utility-scripts/#watched-sync) script can be
 run on demand.
 
-:::info Using a Scheduler
+:::tip Using a Scheduler
 Using Task Scheduler on Windows, Cron on Linux, or any other automation equivalent to run the `watched-sync.py` script
 on a schedule allows this method to be "Set and Forget".
 :::

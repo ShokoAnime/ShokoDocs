@@ -36,13 +36,12 @@ and running. If you haven't done so, [Download Shoko Server](https://shokoanime.
 website and use the [Installing Shoko Server](/getting-started/installing-shoko-server) guide to properly
 install and configure Shoko Server.
 
-:::info
+:::important
 Make sure Plex Media Server is stopped before attempting to install the Agents and Scanners. Otherwise, a restart may be
-necessary to make the agents and scanners work and appear in your Library settings.
+necessary to make them work and appear in your Library settings.
 :::
 
-:::warning Nvidia Shield Compatibility
-
+:::danger Nvidia Shield Compatibility
 detailed [here](https://forums.plex.tv/t/important-information-for-users-running-plex-media-server-on-nvidia-shield-devices/883484),
 these plugins will not function when running Plex Media Server v1.41.0 or newer on an Nvidia Shield device. It is
 possible to sideload an older PMS build to continue to use third-party plugins, but that will not be covered here.
@@ -64,7 +63,7 @@ suits your needs.
 Installing on Windows is pretty straightforward and requires minimal editing on your part. If you run into any issues,
 retrace your steps and if you're still stuck, feel free to ask for help on our Discord server.
 
-:::info VSCode
+:::tip VSCode
 We recommend doing the edits listed below in [VSCode](https://code.visualstudio.com/) or similar as Python is
 space-sensitive and extra or missing spaces can break the file.
 :::
@@ -210,7 +209,7 @@ Below are the three most common installation methods, and what you need to do fo
 rest
 of the guide.
 
-:::warning Custom installs
+:::warning Custom Installations
 If you installed Plex using another method, then please assign the variable to your own, and make sure to use the
 correct user when executing the
 steps listed below.
@@ -241,7 +240,7 @@ export PLEX_HOME="/var/snap/plexmediaserver/common/Library/Application Support/P
 
 #### Docker (plexinc/pms-docker)
 
-:::warning
+:::warning Variable Selection
 This section assumes you're using the official docker image (plexinc/pms-docker). If you're using any other image,
 (e.g. linuxserver/plex), then either make sure or tweak the above variable to lead to your **Plex Media Server**
 directory. If the above variable is not set correctly, then the guide will fail at the first step.
