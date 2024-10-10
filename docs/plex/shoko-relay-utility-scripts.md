@@ -130,7 +130,7 @@ user (as long as the `config.py` file is kept in the same folder).
 For ease of use, adding the Scripts folder to the **[PATH](https://en.wikipedia.org/wiki/PATH_(variable))** is also
 recommended.
 
-:::info Note
+:::info
 In depth information about each script and its functionality can be found in the Shoko
 Relay [Readme](https://github.com/natyusha/ShokoRelay.bundle?tab=readme-ov-file#scripts). These scripts also function
 with Shoko Metadata.
@@ -180,7 +180,7 @@ section.
 Once the configuration has been completed simply run the scripts from a terminal. Arguments and example commands for
 each script will be listed below.
 
-:::tip Tip
+:::tip
 Append `-h` or `--help` as an argument when running the scripts to access their help pages and avoid having to consult
 the readme for all of the commands.
 :::
@@ -206,7 +206,7 @@ Append the argument "batch" `animethemes.py batch` when running the script on mu
 
 ###### Example Commands:
 
-:::info Note
+:::info
 Using bash / cmd respectively and assuming that both the script and FFmpeg can be called directly from PATH.
 :::
 
@@ -253,7 +253,7 @@ Run in a terminal `force-metadata.py` to remove empty collections, normalize col
 seasons and add original titles in Plex. Append the argument "full" `force-metadata.py full` if you want to do a
 time-consuming full metadata clean up.
 
-:::warning Warning
+:::warning
 In "full" mode you must wait until the Plex activity queue is fully completed before advancing to the next step (with
 the enter key) or this will not function correctly.
 

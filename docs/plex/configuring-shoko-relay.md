@@ -137,15 +137,12 @@ help to pinpoint any issues:
 - Agent Logs: `\Plex Media Server\Logs\PMS Plugin Logs\com.plexapp.agents.shokorelay.log`
 - Scanner Logs: `\Plex Media Server\Logs\Shoko Relay Scanner.log`
 
-<div class="important custom-block">
-<p class="custom-block-title">Important</p>
-
+:::important
 When encountering bad matches/metadata the first thing to check for is if TMDB match and episode mapping is correct in
 Shoko for the series in question.
+:::
 
-</div>
-
-:::warning Warning
+:::warning
 Under extremely specific circumstances Plex will automatically group files together without user intervention. This
 occurs when storing all of the files from multiple AniDB entries in a single folder (located in the root directory of
 the Plex library) with no other subfolders present inside of it. To resolve this simply create an empty subfolder in any
@@ -207,7 +204,7 @@ appended to it as necessary). A list of the titles considered ambiguous by the a
 - TV Special
 - Web
 
-:::info Note
+:::info
 The appended titles will appear after an em dash (**—**) making it easy to search for anything affected by this.
 :::
 
@@ -238,13 +235,10 @@ correctly matched to TMDB in Shoko:
 - Fairy Tail (2014)
 - Fairy Tail (2018)
 
-<div class="important custom-block">
-<p class="custom-block-title">Important</p>
-
+:::important
 Only do this when you are happy with the metadata for the series to be merged as you will be unable to correctly refresh
 it without splitting the series apart first.
-
-</div>
+:::
 
 ##### Alternate Episode Ordering
 
@@ -259,7 +253,7 @@ options (including TvDB's) in case you would like to use one of them instead.
 If you have 'Download Alternate Ordering' enabled under Shoko's 'TMDB Download Options' this can be achieved using
 Shoko's `/Tmdb/Show/{showID}/Ordering/SetPreferred` v3 API endpoint (WebUI support forthcoming).
 
-:::info Note
+:::info
 If you select an alternate order for a series TMDB season posters will no longer be automatically added to Plex as those
 are only for the default seasons.
 :::
@@ -288,6 +282,6 @@ general overview is listed in the table below:
 
 <EasyTable :columns="contentRatingsColumns" :data="contentRatingsData" />
 
-:::info Note
+:::info
 Many series are missing these tags on AniDB so adding them is encouraged to help improve everyone's metadata.
 :::

@@ -36,13 +36,10 @@ and running. If you haven't done so, [Download Shoko Server](https://shokoanime.
 website and use the [Installing Shoko Server](/getting-started/installing-shoko-server) guide to properly
 install and configure Shoko Server.
 
-<div class="important custom-block">
-<p class="custom-block-title">Important</p>
-
+:::important
 Make sure Plex Media Server is stopped before attempting to install the Agents and Scanners. Otherwise, a restart may be
 necessary to make them work and appear in your Library settings.
-
-</div>
+:::
 
 :::danger Nvidia Shield Compatibility
 detailed [here](https://forums.plex.tv/t/important-information-for-users-running-plex-media-server-on-nvidia-shield-devices/883484),

@@ -1,5 +1,7 @@
 import { defineConfig } from 'vitepress';
 import lightbox from 'vitepress-plugin-lightbox';
+import container from 'markdown-it-container';
+import taskLists from 'markdown-it-task-lists';
 
 export default defineConfig({
   title: 'Shoko Docs',
@@ -141,7 +143,25 @@ export default defineConfig({
       {
         config: (md) => {
           md.use(lightbox, {});
+          md.use(taskLists);
+          md.use(container, 'important', {
+            render(tokens, idx) {
+              const token = tokens[idx];
+              const title = token.info.trim().slice('important'.length).trim();
+              if (token.nesting === 1) {
+                return `<div class="important custom-block"><p class="custom-block-title">${title ? title : 'Important'}</p>\n`;
+              } else {
+                return '</div>\n';
+              }
+            },
+          });
         },
-      }
-  ,
+        container: {
+          tipLabel: 'Tip',
+          warningLabel: 'Warning',
+          dangerLabel: 'Danger',
+          infoLabel: 'Note',
+          detailsLabel: 'Details',
+        },
+      },
 });
