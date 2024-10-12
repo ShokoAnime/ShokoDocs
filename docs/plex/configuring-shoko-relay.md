@@ -74,10 +74,10 @@ const contentRatingsData = [
 If you chose Shoko Metadata as your Plex Agent/Scanner combo you can skip this page and move directly to
 the [Syncing Watched States](/plex/syncing-watched-states) page.
 
-#### Creating A Shoko Relay Library
+### Creating A Shoko Relay Library
 
 1. Add a Plex Library
-    - While Shoko Server is running, open Plex and create a new 'TV Shows' library.
+    - While Shoko Server is running, open Plex and create a new "TV Shows" library.
     - Ensure that you have completed the **required edits** mentioned on
       the [Installing Agents & Scanners](/plex/installing-agents-scanners) page.
 
@@ -149,19 +149,19 @@ the Plex library) with no other subfolders present inside of it. To resolve this
 directory affected by this or separate the files from each AniDB series into their own folders/subfolders.
 :::
 
-### Handling 'Stuck' Metadata
+### Handling "Stuck" Metadata
 
 In cases where metadata (generally posters) won't update there is a quick 3 step process to fix it:
 
-1. Navigate to the series > More '...' Button > Unmatch
-2. Settings > Manage > Troubleshooting > Clean Bundles + Optimize Database
-3. Navigate back to the series > More '...' Button > Match > Select top result
+1. Navigate to the series → More "..." Button → Unmatch
+2. Settings → Manage → Troubleshooting → Clean Bundles + Optimize Database
+3. Navigate back to the series → More "..." Button → Match → Select top result
 
 If this somehow still fails then a full [Plex Dance](https://forums.plex.tv/t/the-plex-dance/197064) is likely required.
 
 ### Cast & Crew Limitations
 
-If 'staff listings' are enabled in the settings the following custom agent limitations apply:
+If "staff listings" are enabled in the settings the following custom agent limitations apply:
 
 - All Cast & Crew members are listed under the cast section only
 - Directors, Producers and Writers will be empty when attempting to filter for them in Plex
@@ -247,11 +247,23 @@ ordering, stream site listings or even manga story arcs. If you used Shoko while
 that series in your Plex library are grouping differently than they used to be. Using Bleach as an example you can see
 that [TMDB](https://www.themoviedb.org/tv/30984-bleach/seasons) doesn't split the original run into seasons
 while [TvDB](https://thetvdb.com/series/bleach#seasons) does. Fortunately,
-TMDB's '[Episode Groups](https://www.themoviedb.org/tv/30984-bleach/episode_groups)' page provides alternate ordering
-options (including TvDB's) in case you would like to use one of them instead.
+TMDB's [Episode Groups](https://www.themoviedb.org/tv/30984-bleach/episode_groups) page provides alternate ordering
+options (often including TvDB's) in case you would like to use one of them instead.
 
-If you have 'Download Alternate Ordering' enabled under Shoko's 'TMDB Download Options' this can be achieved using
-Shoko's `/Tmdb/Show/{showID}/Ordering/SetPreferred` v3 API endpoint (WebUI support forthcoming).
+If you have "Download Alternate Ordering" enabled under Shoko's "TMDB Download Options" this can be achieved using
+Shoko's `/Tmdb/Show/{showID}/Ordering/SetPreferred` v3 API endpoint which is available via [/swagger/](https://docs.shokoanime.com/faq#general)
+(Shoko's public API).
+
+Once you have authenticated with swagger, you can navigate to the previously mentioned endpoint. Using Bleach as an example once
+again, you would enter `30984` (Bleach's TMDB ID) into the `showID` box. Then you would the set the 16 character `AlternateOrderingID`
+in the request body to one of the ones available [here](https://www.themoviedb.org/tv/30984-bleach/episode_groups)
+(both IDs are available from the URL on TMDB). Lastly, click "Execute" and the order will be applied.
+
+```json
+{
+  "AlternateOrderingID": "663fb548c10d4be3e80b2f6d"
+}
+```
 
 :::info
 If you select an alternate order for a series TMDB season posters will no longer be automatically added to Plex as those
@@ -273,7 +285,7 @@ to. By setting this value in the Agent settings you can filter out tags below a 
 
 ### Assumed Content Ratings
 
-If 'assumed content ratings' are enabled in the agent settings the [target audience](https://anidb.net/tag/2606/animetb)
+If "assumed content ratings" are enabled in the agent settings the [target audience](https://anidb.net/tag/2606/animetb)
 and [content indicator](https://anidb.net/tag/2604/animetb) tags from AniDB will be used to roughly match
 the [TV Parental Guidelines](http://www.tvguidelines.org/resources/TheRatings.pdf) system. The target audience tags will
 conservatively set the initial rating anywhere from TV-Y to TV-14, then the content indicators will be appended. If the
