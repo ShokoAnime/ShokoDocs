@@ -114,7 +114,7 @@ specify otherwise.
 :::
 
 Please note, this is not a dump of the data on AniDB. These are files created and used by Shoko that is checked against
-AniDB's data. [Click Here](https://shokoanime.com/files/shoko-server/other/Anime_HTTP.zip) to download the XML Cache and
+AniDB's data. [Click Here](https://files.shokoanime.com/files/shoko-server/other/Anime_HTTP.zip) to download the XML Cache and
 follow the instructions below to utilize it.
 
 #### XML Cache Location
