@@ -97,7 +97,7 @@ services:
 shoko_server:
 shm_size: 256m
 container_name: ${userInput.value.container}
-image: shokoanime/server:latest
+image: ghcr.io/shokoanime/server:latest
 restart: always
 environment:
   - "PUID=${userInput.value.puid}"
