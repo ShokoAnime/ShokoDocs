@@ -142,7 +142,7 @@ For more information on AniDB bans and how to minimize them, check the
 
 ## Shoko Metadata / Shoko Relay
 
-:::details I'm Missing Posters/Information In Plex When Using ShokoMetadata?">
+:::details I'm Missing Posters/Information In Plex When Using ShokoMetadata?
 This can happen when a problem occurs while scanning files and downloading the respective metadata.
 
 To fix this, please follow these steps:
@@ -184,7 +184,7 @@ Here is an example of how you would name a file for Jujutsu Kaisen (2023).
 
 ## Shokofin
 
-:::details I changed a setting for Shokofin, but my library is not showing the new changes.">
+:::details I changed a setting for Shokofin, but my library is not showing the new changes.
 Some changes to the plugin settings may require you to do a full metadata refresh or to even recreate the library. In
 general if metadata feels like it's missing or should be updated, run a full metadata refresh or recreate the library if
 that didn't help. See the following pages for more information on 
@@ -192,7 +192,7 @@ that didn't help. See the following pages for more information on
 [library re-creation](/jellyfin/recommendations/#library-re-creation-is-your-friend).
 :::
 
-:::details Why are my series not being grouped according to my collections in Shoko?">
+:::details Why are my series not being grouped according to my collections in Shoko?
 First, make sure that "Use Shoko groups for shows" is enabled in the plugin settings. If you are not using the VFS, you
 will need to make sure your files are organized in a way that Jellyfin prefers in an AniDB-compatible way as mentioned
 in the Shokofin Recommendations page [here](/jellyfin/recommendations/#jellyfins-file-structure-requirements). 
@@ -201,7 +201,7 @@ creation can be found in the [Shokofin Recommendations](/jellyfin/recommendation
 page.
 :::
 
-:::details Why are some of my shows getting incorrect metadata?">
+:::details Why are some of my shows getting incorrect metadata?
 Make sure that you are only using Shoko as the metadata provider for your your library. The recommended way to setup a
 library using Shokofin can be found in [Configuring Shokofin](/jellyfin/configuring-shokofin/#creating-a-shoko-library). 
 Using multiple metadata providers can cause issues since Jellyfin will mix metadata it finds from all the providers in 
