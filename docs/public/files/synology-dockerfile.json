@@ -23,11 +23,11 @@
     },
     {
       "key" : "DOTNET_VERSION",
-      "value" : "5.0.2"
+      "value" : "8.0.10"
     },
     {
       "key" : "ASPNET_VERSION",
-      "value" : "5.0.2"
+      "value" : "8.0.10"
     },
     {
       "key" : "PUID",
@@ -36,10 +36,6 @@
     {
       "key" : "PGID",
       "value" : "100"
-    },
-    {
-      "key" : "AVDUMP_MONO",
-      "value" : "false"
     },
     {
       "key" : "LANG",
