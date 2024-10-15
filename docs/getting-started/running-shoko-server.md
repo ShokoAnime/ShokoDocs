@@ -14,7 +14,7 @@ users will need to execute a command to start the container. While the exact com
 setup, it should resemble something like this:
 
 ```sh [Example Command]
-docker run -d --name shokoserver --restart always -p 8111:8111 -v "$HOME/.shoko:/home/shoko/.shoko" -v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import" -e PUID=$UID -e PGID=$GID shokoanime/server:latest
+docker run -d --name shokoserver --restart always -p 8111:8111 -v "$HOME/.shoko:/home/shoko/.shoko" -v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import" -e PUID=$UID -e PGID=$GID ghcr.io/shokoanime/server:latest
 ```
 
 With Shoko Server running, open your browser and navigate to http://localhost:8111/ to access the Web UI. If Shoko
