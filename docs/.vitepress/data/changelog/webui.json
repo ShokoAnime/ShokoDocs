@@ -2,9 +2,37 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/",
   "releases": [
     {
+      "version": "2.1.1",
+      "versionURL": "211",
+      "date": "October 18th, 2024",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix loading indicators in settings and \"Add empty series\" modal"
+        },
+        {
+          "type": "fixed",
+          "text": "Fix type in collection display settings"
+        },
+        {
+          "type": "fixed",
+          "text": "Fix all scrollbars in Firefox"
+        },
+        {
+          "type": "fixed",
+          "text": "Fix step count in \"AVDump Series Select\" modal"
+        },
+        {
+          "type": "added",
+          "text": "Live filtering inside filter presets and groups"
+        }
+      ]
+    },
+    {
       "version": "2.1.0",
       "versionURL": "210",
-      "date": "In Development",
+      "date": "October 12th, 2024",
       "link": "NA",
       "changes": [
         {
