@@ -135,7 +135,7 @@ Follow these steps to set up a Shoko server using a custom app:
 1. Navigate to **Apps -> Discover Apps -> Custom App**.
 2. Set the **Application Name** to your preference.
 3. Configure **Container Images**:
-	- Image Repository: `shokoanime/server`
+	- Image Repository: `ghcr.io/shokoanime/server`
 	- Image Tag: `latest`
 4. Set **Container Environment Variables**:
 	- These settings ensure Shoko runs as the built-in `Apps` user. Verify this user has access to your media folder.
