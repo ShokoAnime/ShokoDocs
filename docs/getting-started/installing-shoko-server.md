@@ -21,6 +21,11 @@ const containerData = [
     value: '568',
     description: 'Group ID for the Shoko server',
   },
+  {
+    name: 'TZ',
+    value: 'Etc/UTC',
+    description: 'Timezone for the container see: [List of tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)',
+  },
 ];
 </script>
 
