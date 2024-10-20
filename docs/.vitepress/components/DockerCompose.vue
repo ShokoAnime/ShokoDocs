@@ -106,7 +106,7 @@ environment:
 ports:
   - "${userInput.value.port}:8111"
 volumes:
-  ${userInput.value.volumes.map((volume) => `- "${volume}"`).join("\n      ")}`;
+  ${userInput.value.volumes.map((volume) => `- "${volume}"`).join("\n  ")}`;
     });
 
     return {
