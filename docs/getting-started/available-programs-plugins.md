@@ -97,7 +97,7 @@ const discontinuedData = [
     name: 'My Anime 3',
     dev: 'Shoko Team',
     platform: 'MediaPortal',
-    discontinuedReason: ''
+    discontinuedReason: 'Discontinued due to lack of interest in supporting MediaPortal'
   }
 ];
 </script>
