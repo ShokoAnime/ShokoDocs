@@ -2,6 +2,26 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.14",
+      "versionURL": "1214",
+      "date": "Oct 20th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.14",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added attribution images and links to the agent"
+        },
+        {
+          "type": "added",
+          "text": "Added details on alternate episode ordering to the readme"
+        },
+        {
+          "type": "changed",
+          "text": "Minor formatting changes for script output and agent options"
+        }
+      ]
+    },
+    {
       "version": "1.2.13",
       "versionURL": "1213",
       "date": "Sep 30th, 2024",
