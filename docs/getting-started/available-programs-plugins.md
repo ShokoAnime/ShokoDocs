@@ -70,13 +70,6 @@ const pluginsData = [
     dev: 'BigRetroMike',
     platform: 'Kodi',
     status: 'Active',
-  },
-  {
-    name: '[My Anime 3](https://shokoanime.com/downloads/media-player-plugins/my-anime-3)',
-    dev: 'Shoko Team',
-    platform: 'MediaPortal',
-    status: 'Maintenance Mode',
-    link: 'https://shokoanime.com/downloads'
   }
 ];
 
@@ -99,6 +92,12 @@ const discontinuedData = [
     dev: 'MaxPiva',
     platform: 'Plex (Plugin)',
     discontinuedReason: 'Discontinued in favor of ShokoMetadata.'
+  },
+  {
+    name: 'My Anime 3',
+    dev: 'Shoko Team',
+    platform: 'MediaPortal',
+    discontinuedReason: 'Discontinued due to lack of interest in supporting MediaPortal'
   }
 ];
 </script>
