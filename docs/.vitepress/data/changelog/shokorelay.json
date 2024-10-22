@@ -2,6 +2,30 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.15",
+      "versionURL": "1215",
+      "date": "Oct 22nd, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.15",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added TMDB episode group support"
+        },
+        {
+          "type": "added",
+          "text": "Added an option to prefer TMDB episode titles and summaries for grouped episodes"
+        },
+        {
+          "type": "added",
+          "text": "Added logging for multi episode files and TMDB episode groups"
+        },
+        {
+          "type": "changed",
+          "text": "Improved scanning speed for large series by omitting repeated API calls"
+        }
+      ]
+    },
+    {
       "version": "1.2.14",
       "versionURL": "1214",
       "date": "Oct 20th, 2024",
