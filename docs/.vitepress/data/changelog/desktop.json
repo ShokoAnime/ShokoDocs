@@ -3,9 +3,9 @@
   "releases": [
     {
       "version": "4.3.0",
-      "versionURL": "423",
-      "date": "In Development",
-      "link": "NA",
+      "versionURL": "430",
+      "date": "October 12th, 2024",
+      "link": "https://shokoanime.com/blog/shoko-version-5-0-0-released",
       "changes": [
         {
           "type": "changed",

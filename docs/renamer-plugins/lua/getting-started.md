@@ -17,13 +17,13 @@ For support/questions join the [Shoko Discord server](https://discord.gg/shokoan
 1. Download the [the release appropriate for your Shoko Server version.](https://github.com/Mik1ll/LuaRenamer/releases)
     * The [latest release](https://github.com/Mik1ll/LuaRenamer/releases/latest) should be compatible with current Stable.
     * Pre-releases will be compatible with Shoko Daily depending on the Abstractions Version, check release notes and [Shoko Server tags](https://github.com/ShokoAnime/ShokoServer/tags) for compatibility.
-2. Unzip the folder into the Shoko plugin directory:
+2. Unzip the folder into the Shoko plugin directory, create the folder if it does not exist.
     * (Windows) `C:\ProgramData\ShokoServer\plugins`
     * (Docker) wherever the container location `/home/shoko/.shoko/Shoko.CLI/plugins` is mounted.
 3. Restart Shoko Server.
 4. (Recommended) Install [VS Code](https://code.visualstudio.com/download) and [the Lua extension](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) to edit your script.
 5. Follow instructions in the next section to add a script.
-6. 
+
 ## Usage
 
 ### With Shoko Desktop

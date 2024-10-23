@@ -221,3 +221,22 @@ for a variable. In the template provided above, variables like **panel-backgroun
 **panel-background-transparent** utilize this method to apply opacity.
 
 The [following site](https://davidwalsh.name/hex-opacity) provides a comprehensive list of values and their corresponding HEX codes you can use.
+
+## Sharing Your Theme
+
+If you’ve made a theme and want to share it, you can submit it to the Shoko Website by following these simple steps:
+
+1. Fork the [Shoko Website repository](https://github.com/ShokoAnime/ShokoSite) by clicking the **Fork** button at the top right.
+2. Add your theme files, place both the JSON and CSS files for your theme in the `public/themes` folder.
+3. Create a theme info file: 
+   - Go to the `app/content/downloads/webui-themes` folder.
+   - Copy an existing `.mdx` file, rename it to match your theme’s name, and update the information inside to describe your theme.
+4. Add images for your theme. put the theme images in the `/images/downloads/webui-themes/` folder. Name the images the same as your theme and make sure to blur any posters shown in them.
+5. Submit your changes: Create a pull request with your changes and wait for it to be reviewed and merged.
+
+That’s it! Your theme will be available once the pull request is approved.
+
+:::info Getting Help
+If you're having issues with uploading your theme, feel free to ask for help in the [Shoko Discord server](https://discord.gg/shokoanime) 
+and we can help you get your theme uploaded and shared with the community.
+:::
