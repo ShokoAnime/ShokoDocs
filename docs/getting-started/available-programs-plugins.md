@@ -48,7 +48,7 @@ const pluginsData = [
     status: 'Active',
   },
   {
-    name: '[ShokoRelay](https://shokoanime.com/downloads/media-player-plugins/shokorelay)',
+    name: '[Shoko Relay](https://shokoanime.com/downloads/media-player-plugins/shokorelay)',
     dev: 'natyusha',
     platform: 'Plex',
     status: 'Active',

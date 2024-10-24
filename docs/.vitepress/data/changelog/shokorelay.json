@@ -2,6 +2,30 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.16",
+      "versionURL": "1216",
+      "date": "Oct 23nd, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.16",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Skip multi episode files when mapping to a duplicate TMDB season/episode"
+        },
+        {
+          "type": "added",
+          "text": "Added logging for when an episode mapping is skipped"
+        },
+        {
+          "type": "added",
+          "text": "Minor summary sanitizer tweak"
+        },
+        {
+          "type": "removed",
+          "text": "Removed separators in the scanner logs for grouped episodes"
+        }
+      ]
+    },
+    {
       "version": "1.2.15",
       "versionURL": "1215",
       "date": "Oct 22nd, 2024",

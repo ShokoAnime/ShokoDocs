@@ -37,7 +37,7 @@ const projectsData = [
     'Additional Notes': 'No active work at the moment, but ongoing refactoring and improvements are always welcome.'
   },
   {
-    Project: '[ShokoRelay](https://github.com/natyusha/ShokoRelay.bundle)',
+    Project: '[Shoko Relay](https://github.com/natyusha/ShokoRelay.bundle)',
     Language: 'Python',
     'Maintainer(s)': 'Natyusha',
     'Additional Notes': 'No active work at the moment, but ongoing refactoring and improvements are always welcome.'
