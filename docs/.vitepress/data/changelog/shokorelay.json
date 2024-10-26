@@ -2,6 +2,18 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.17",
+      "versionURL": "1217",
+      "date": "Oct 25th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.17",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added an argument to the watched-sync.py script to allow automation of the import command"
+        }
+      ]
+    },
+    {
       "version": "1.2.16",
       "versionURL": "1216",
       "date": "Oct 23rd, 2024",
