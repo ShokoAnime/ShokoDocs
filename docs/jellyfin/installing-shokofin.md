@@ -37,13 +37,18 @@ const compatibilityTableData = [
     ShokoServer: '`4.2.2`'
   },
   {
-    Shokofin: '`4.2.0` &mdash; `4.x.x`',
+    Shokofin: '`4.2.0` &mdash; `4.2.2`',
     Jellyfin: '`10.9`',
     ShokoServer: '`4.2.2` &mdash; `5.0.0`'
   },
   {
+    Shokofin: '`5.x.x`',
+    Jellyfin: '`10.10`',
+    ShokoServer: '`5.0.0`'
+  },
+  {
     Shokofin: '`dev`',
-    Jellyfin: '`10.9`',
+    Jellyfin: '`10.10`',
     ShokoServer: '`daily`'
   }
 ];
@@ -76,13 +81,13 @@ install the correct version for your setup to guarantee functionality.
 ### Official Repository
 
 1. Navigate to the **Dashboard**
-2. Expand the **Plugins** section in the side-bar.
-3. Click on **Repositories** in the newly expanded section in the sidebar.
-4. Add new repository by clicking on the **plus** icon **(+)** and enter the following details;
+2. Under the **Plugins** section in the side-bar, go to **Catalog**.
+3. At the top of the catalog page, click the **⚙ Gear** icon that's next to the help button.
+4. Add new repository by clicking on the **+ Plus** icon and enter the following details;
     - **Repository Name:** `Shokofin Stable`
     - **Repository URL:** `https://raw.githubusercontent.com/ShokoAnime/Shokofin/metadata/stable/manifest.json`
-5. Click on **Catalog** in the expanded section below Plugins in the sidebar.
-6. Scroll down until you find **Shoko** under the **Metadata** section, and click it.
+5. Click on **Catalog** under the **Plugins** section in the sidebar.
+6. Scroll down until you find **Shoko** under the **Metadata** section and click it.
 7. Click the blue **Install** button. You will get a pop-up warning you about using untrusted plugins. Click Ok.
 8. Restart Jellyfin to apply the changes.
 
