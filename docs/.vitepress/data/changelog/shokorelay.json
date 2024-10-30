@@ -2,6 +2,30 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.18",
+      "versionURL": "1218",
+      "date": "Oct 30th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.18",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Don't exclude multi episode files of differing types when a ThemeSong is involved"
+        },
+        {
+          "type": "added",
+          "text": "Added logging for the state of the SingleSeasonOrdering option in the agent and scanner"
+        },
+        {
+          "type": "added",
+          "text": "Added logging for the episode types or season/episode numbers when the scanner skips an episode mapping"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed missing image_add index in the agent and started it at 1 instead of 0"
+        }
+      ]
+    },
+    {
       "version": "1.2.17",
       "versionURL": "1217",
       "date": "Oct 25th, 2024",
