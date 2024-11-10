@@ -2,6 +2,78 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/",
   "releases": [
     {
+      "version": "2.1.2",
+      "versionURL": "212",
+      "date": "November 10th, 2024",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Option to disable rename in Renamer"
+        },
+        {
+          "type": "added",
+          "text": "Button to filter missing episodes to series user stats panel"
+        },
+        {
+          "type": "added",
+          "text": "Show toast when AVDump fails"
+        },
+        {
+          "type": "added",
+          "text": "Air status filter for episodes"
+        },
+        {
+          "type": "changed",
+          "text": "Label for \"Related Anime\" setting"
+        },
+        {
+          "type": "fixed",
+          "text": "Series images page bugs"
+        },
+        {
+          "type": "fixed",
+          "text": "Sorting and searching in file utilities"
+        },
+        {
+          "type": "fixed",
+          "text": "Spinners and toasts in manual link page"
+        },
+        {
+          "type": "fixed",
+          "text": "Renamer config not saving when ID and Name are different"
+        },
+        {
+          "type": "fixed",
+          "text": "Missing space in text in user management settings"
+        },
+        {
+          "type": "fixed",
+          "text": "Regex for cleaning up sources in descriptions"
+        },
+        {
+          "type": "fixed",
+          "text": "Renamer mover/rename options reverting to off on refresh"
+        },
+        {
+          "type": "fixed",
+          "text": "Tooltip for edit group button"
+        },
+        {
+          "type": "added",
+          "text": "New match ratings to metadata linking"
+        },
+        {
+          "type": "removed",
+          "text": "\"My List Stats\" update frequency setting"
+        },
+        {
+          "type": "removed",
+          "text": "Banners from series images page"
+        }
+      ]
+    },
+    {
       "version": "2.1.1",
       "versionURL": "211",
       "date": "October 18th, 2024",
