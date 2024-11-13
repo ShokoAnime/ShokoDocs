@@ -299,7 +299,7 @@ const advancedShokofinVFSSettingsData = [
     Advanced: "⚠",
     Option: "Attach VFS to Libraries",
     Description: "Makes the VFS file structure that Shokofin automatically created show up as a library folder. This allows reusing the same media folder(s) across multiple libraries without needing other workarounds. Useful for separating movies and series into separate libraries while still using the same media folder for both.",
-    Default: ""
+    Default: "✓"
   },
   {
     Advanced: "⚠",
