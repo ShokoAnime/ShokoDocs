@@ -208,7 +208,7 @@ To run Shoko Server as a background service:
 
   [Service]
   Type=simple
-  User=username
+  User=1000
   ExecStart=/path/to/ShokoServer/publish/Shoko.CLI
   WorkingDirectory=/path/to/ShokoServer/publish
   Restart=always
@@ -216,7 +216,7 @@ To run Shoko Server as a background service:
   [Install]
   WantedBy=multi-user.target
   ```
-- Replace `/path/to/ShokoServer` with the actual path to your Shoko Server directory, and `username` with the username you wish to use to run the service.
+- Replace `/path/to/ShokoServer` with the actual path to your Shoko Server directory. `User=1000` will run the service as the default non-root Ubuntu user. Adjust this value if a different user is required.
 
 - Reload systemd and enable the service:
   ```bash
