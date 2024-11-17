@@ -182,9 +182,9 @@ You may encounter the following issues when setting up Shoko Server with TrueNAS
 ## Bare Metal (Ubuntu)
 
 :::danger 
-This option is **not recommended** as it does not provide automatic updates. Manual updates must be performed whenever a new version is released.
+This option is **not recommended** because it requires manual updates whenever a new version is released, as automatic updates are not available. 
 
-A higher-than-basic grasp of Linux is required to understand and follow these steps and troubleshoot any issues that may arise.
+Additionally, a strong understanding of Linux is needed to follow these steps and troubleshoot any issues that may occur. Please note that we are unable to provide direct support for installations performed using this method.
 :::
 
 #### Prerequisites
