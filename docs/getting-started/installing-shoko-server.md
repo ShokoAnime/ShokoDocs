@@ -133,6 +133,52 @@ AVDump3 may crash due to the inability to modify the shm_size in the proprietary
 As a result, we do not recommend running daily server on Synology NAS at this time.
 :::
 
+## TrueNAS Scale
+
+Follow these steps to set up a Shoko server using a custom app:
+
+1. Navigate to **Apps -> Discover Apps -> Custom App**.
+2. Set the **Application Name** to your preference.
+3. Configure **Container Images**:
+	- Image Repository: `ghcr.io/shokoanime/server`
+	- Image Tag: `latest`
+4. Set **Container Environment Variables**:
+	- These settings ensure Shoko runs as the built-in `Apps` user. Verify this user has access to your media folder.
+	  <EasyTable :columns="containerColumns" :data="containerData" />
+5. Configure **Port Forwarding**:
+	- Container Port: `8111`
+	- Node Port: Choose any available port
+ 	- Extra for Truenas EE: 
+	 	- Container Port: `4556`
+		- Host Port: `4556`
+	 	- Protocol: `udp` 
+6. Set up **Storage**:
+	- **Optional**: Mount Shoko config -> If not mounted the DB will be lost on container restart
+		- Host Path: Path to store Shoko config
+		- Mount Path: `/home/shoko/.shoko`
+	- **Required**: Mount media folder
+		- Host Path: Your media folder location
+		- Mount Path: Desired container media folder path
+7. Portal Configuration (**Optional**):
+	- Enable WebUiPortal: Checked
+	- Port: Use the Node Port from step 5. This allows access to the Shoko Web UI via the App's Web Portal.
+8. Container User and Group ID:
+	- If desired, leave as default to run as root.
+	- Configure to run with a user that has permission to modify files. Note: The Docker startup script will attempt to
+	  create a Shoko user and may fail to start if unsuccessful.
+9. Click **Save** and wait for the container status to change to "Running".
+10. Access the setup page by clicking **Web Portal** under Application Info.
+
+### Common Issues
+
+You may encounter the following issues when setting up Shoko Server with TrueNAS Scale:
+
+- Application is stuck in Deploying state:
+	- Navigate to **Workloads -> View Logs** to see what went wrong.
+- Shoko server does not see my media folder:
+	- Check the permissions on your media folder and ensure the user specified in the Container Environment Variables has
+	  access.
+
 ## Bare Metal (Ubuntu)
 
 :::danger 
@@ -235,53 +281,6 @@ When you first navigate to `http://localhost:8111`, you may see a message statin
 - Click on the **Install Shoko Server UI** button to proceed with the installation.
 - Once installed, you will be able to access and use the Shoko Server UI for managing your library.
 :::
-
-
-## TrueNAS Scale
-
-Follow these steps to set up a Shoko server using a custom app:
-
-1. Navigate to **Apps -> Discover Apps -> Custom App**.
-2. Set the **Application Name** to your preference.
-3. Configure **Container Images**:
-	- Image Repository: `ghcr.io/shokoanime/server`
-	- Image Tag: `latest`
-4. Set **Container Environment Variables**:
-	- These settings ensure Shoko runs as the built-in `Apps` user. Verify this user has access to your media folder.
-	  <EasyTable :columns="containerColumns" :data="containerData" />
-5. Configure **Port Forwarding**:
-	- Container Port: `8111`
-	- Node Port: Choose any available port
- 	- Extra for Truenas EE: 
-	 	- Container Port: `4556`
-		- Host Port: `4556`
-	 	- Protocol: `udp` 
-6. Set up **Storage**:
-	- **Optional**: Mount Shoko config -> If not mounted the DB will be lost on container restart
-		- Host Path: Path to store Shoko config
-		- Mount Path: `/home/shoko/.shoko`
-	- **Required**: Mount media folder
-		- Host Path: Your media folder location
-		- Mount Path: Desired container media folder path
-7. Portal Configuration (**Optional**):
-	- Enable WebUiPortal: Checked
-	- Port: Use the Node Port from step 5. This allows access to the Shoko Web UI via the App's Web Portal.
-8. Container User and Group ID:
-	- If desired, leave as default to run as root.
-	- Configure to run with a user that has permission to modify files. Note: The Docker startup script will attempt to
-	  create a Shoko user and may fail to start if unsuccessful.
-9. Click **Save** and wait for the container status to change to "Running".
-10. Access the setup page by clicking **Web Portal** under Application Info.
-
-### Common Issues
-
-You may encounter the following issues when setting up Shoko Server with TrueNAS Scale:
-
-- Application is stuck in Deploying state:
-	- Navigate to **Workloads -> View Logs** to see what went wrong.
-- Shoko server does not see my media folder:
-	- Check the permissions on your media folder and ensure the user specified in the Container Environment Variables has
-	  access.
 
 
 
