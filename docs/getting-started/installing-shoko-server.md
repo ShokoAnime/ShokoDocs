@@ -179,5 +179,108 @@ You may encounter the following issues when setting up Shoko Server with TrueNAS
 	- Check the permissions on your media folder and ensure the user specified in the Container Environment Variables has
 	  access.
 
+## Bare Metal (Ubuntu)
+
+:::danger 
+This option is **not recommended** because it requires manual updates whenever a new version is released, as automatic updates are not available. 
+
+Additionally, a strong understanding of Linux is needed to follow these steps and troubleshoot any issues that may occur. Please note that we are unable to provide direct support for installations performed using this method.
+:::
+
+#### Prerequisites
+- **Ubuntu 18.04** or later.
+
+#### 1. Update Your System
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+#### 2. Install Required Dependencies
+```bash
+sudo apt install -y mediainfo librhash-dev
+```
+
+#### 3. Install .NET SDK and Runtime
+- Add the Microsoft package repository
+  ```bash
+  wget https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+  sudo dpkg -i packages-microsoft-prod.deb
+  sudo apt-get update
+  ```
+- Install the .NET runtime and SDK:
+  ```bash
+  sudo apt-get install -y dotnet-sdk-8.0 aspnetcore-runtime-8.0
+  ```
+
+#### 4. Download Shoko Server
+Download the latest release from the [Shoko Server Releases](https://github.com/ShokoAnime/ShokoServer/releases) page or use `wget`:
+```bash
+wget $(curl -s https://api.github.com/repos/ShokoAnime/ShokoServer/releases/latest | jq -r '.assets[] | select(.name | test("Shoko.CLI_Framework_any-x64.zip")) | .browser_download_url')
+```
+
+#### 5. Extract the Downloaded Archive
+```bash
+unzip Shoko.CLI_Framework_any-x64.zip -d ShokoServer
+cd ShokoServer
+```
+
+#### 6. Make the Shoko.CLI Executable
+```bash
+chmod +x Shoko.CLI
+```
+
+#### 7. Run Shoko Server
+```bash
+./Shoko.CLI
+```
+
+#### 8. Access the Web Interface
+Open your browser and navigate to:
+```
+http://localhost:8111
+```
+
+#### (Optional) Run Shoko Server as a Service
+To run Shoko Server as a background service:
+
+- Create a systemd service file with the following structure:
+  ```bash
+  sudo nano /etc/systemd/system/shokoserver.service
+  ```
+  ```ini
+  [Unit]
+  Description=Shoko Server
+  After=network.target
+
+  [Service]
+  Type=simple
+  User=1000
+  ExecStart=/path/to/ShokoServer/publish/Shoko.CLI
+  WorkingDirectory=/path/to/ShokoServer/publish
+  Restart=always
+
+  [Install]
+  WantedBy=multi-user.target
+  ```
+- Replace `/path/to/ShokoServer` with the actual path to your Shoko Server directory. `User=1000` will run the service as the default non-root Ubuntu user. Adjust this value if a different user is required.
+
+- Reload systemd and enable the service:
+  ```bash
+  sudo systemctl daemon-reload
+  sudo systemctl enable shokoserver
+  sudo systemctl start shokoserver
+  ```
+- Check the status to ensure it’s running:
+  ```bash
+  sudo systemctl status shokoserver
+  ```
+
+:::tip
+When you first navigate to `http://localhost:8111`, you may see a message stating that "The Shoko Server UI is not installed."
+
+- Click on the **Install Shoko Server UI** button to proceed with the installation.
+- Once installed, you will be able to access and use the Shoko Server UI for managing your library.
+:::
+
 
 
