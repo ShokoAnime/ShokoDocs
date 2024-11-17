@@ -169,12 +169,12 @@ sudo apt install -y mediainfo librhash-dev
 #### 4. Download Shoko Server
 Download the latest release from the [Shoko Server Releases](https://github.com/ShokoAnime/ShokoServer/releases) page or use `wget`:
 ```bash
-wget $(curl -s https://api.github.com/repos/ShokoAnime/ShokoServer/releases/latest | jq -r '.assets[] | select(.name | test("Shoko.CLI_Standalone_linux-x64.zip")) | .browser_download_url')
+wget $(curl -s https://api.github.com/repos/ShokoAnime/ShokoServer/releases/latest | jq -r '.assets[] | select(.name | test("Shoko.CLI_Framework_any-x64.zip")) | .browser_download_url')
 ```
 
 #### 5. Extract the Downloaded Archive
 ```bash
-unzip Shoko.CLI_Standalone_linux-x64.zip -d ShokoServer
+unzip Shoko.CLI_Framework_any-x64.zip -d ShokoServer
 cd ShokoServer
 ```
 
