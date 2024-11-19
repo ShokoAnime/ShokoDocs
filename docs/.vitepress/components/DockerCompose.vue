@@ -94,19 +94,19 @@ export default {
       return `
 version: "3"
 services:
-shoko_server:
-shm_size: 256m
-container_name: ${userInput.value.container}
-image: ghcr.io/shokoanime/server:latest
-restart: always
-environment:
-  - "PUID=${userInput.value.puid}"
-  - "PGID=${userInput.value.pgid}"
-  - "TZ=${userInput.value.tz}"
-ports:
-  - "${userInput.value.port}:8111"
-volumes:
-  ${userInput.value.volumes.map((volume) => `- "${volume}"`).join("\n  ")}`;
+  shoko_server:
+    shm_size: 256m
+    container_name: ${userInput.value.container}
+    image: ghcr.io/shokoanime/server:latest
+    restart: always
+    environment:
+      - "PUID=${userInput.value.puid}"
+      - "PGID=${userInput.value.pgid}"
+      - "TZ=${userInput.value.tz}"
+    ports:
+      - "${userInput.value.port}:8111"
+    volumes:
+      ${userInput.value.volumes.map((volume) => `- "${volume}"`).join("\n      ")}`;
     });
 
     return {
