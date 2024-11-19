@@ -12,15 +12,15 @@ const additionalOptionsColumns = [
 const additionalOptionsData = [
   {
     Option: 'IncludeSpecials *Metadata Only*',
-    Description: 'Files marked as specials in Shoko will be shown in the series as part of Season 0.'
+    description: 'Files marked as specials in Shoko will be shown in the series as part of Season 0.'
   },
   {
     Option: 'IncludeOther *Metadata Only*',
-    Description: 'Files marked as other in Shoko will be shown in the series as part of Season 0.'
+    description: 'Files marked as other in Shoko will be shown in the series as part of Season 0.'
   },
   {
     Option: 'SingleSeasonOrdering',
-    Description: 'Episodes are no longer separated by seasons when matched with TMDB. All normal episodes are put into Season 1, specials into Season 0, and with Relay others into Negative Seasons.'
+    description: 'Episodes are no longer separated by seasons when matched with TMDB. All normal episodes are put into Season 1, specials into Season 0, and with Relay others into Negative Seasons.'
   }
 ];
 </script>
@@ -36,13 +36,8 @@ and running. If you haven't done so, [Download Shoko Server](https://shokoanime.
 website and use the [Installing Shoko Server](/getting-started/installing-shoko-server) guide to properly
 install and configure Shoko Server.
 
-:::important
-Make sure Plex Media Server is stopped before attempting to install the Agents and Scanners. Otherwise, a restart may be
-necessary to make them work and appear in your Library settings.
-:::
-
 :::danger Nvidia Shield Compatibility
-detailed [here](https://forums.plex.tv/t/important-information-for-users-running-plex-media-server-on-nvidia-shield-devices/883484),
+Detailed [here](https://forums.plex.tv/t/important-information-for-users-running-plex-media-server-on-nvidia-shield-devices/883484),
 these plugins will not function when running Plex Media Server v1.41.0 or newer on an Nvidia Shield device. It is
 possible to sideload an older PMS build to continue to use third-party plugins, but that will not be covered here.
 :::
@@ -57,6 +52,11 @@ to decide which plugin you'd like to use.
 
 Both plugins are outstanding for media playback; the decision essentially comes down to identifying which plugin best
 suits your needs.
+
+:::important
+Make sure Plex Media Server is stopped before attempting to install the Agents and Scanners. Otherwise, a restart may be
+necessary to make them work and appear in your Library settings.
+:::
 
 ## Windows
 

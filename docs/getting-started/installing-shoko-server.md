@@ -1,6 +1,6 @@
 ---
 title: Installing Shoko Server
-Description: Instructions on how to install Shoko Server.
+description: Instructions on how to install Shoko Server.
 ---
 
 <script setup>
