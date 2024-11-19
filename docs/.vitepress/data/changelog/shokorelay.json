@@ -2,6 +2,26 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.19",
+      "versionURL": "1219",
+      "date": "Nov 19th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.19",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added Short/Short Movie/Special/Movie to the list of allowed TMDB episode title overrides"
+        },
+        {
+          "type": "changed",
+          "text": "Allow leading zeroes in the episode numbers for TMDB episode title overrides"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed the \"import\" argument in rescan-recent.py on linux"
+        }
+      ]
+    },
+    {
       "version": "1.2.18",
       "versionURL": "1218",
       "date": "Oct 30th, 2024",
