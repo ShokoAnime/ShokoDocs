@@ -167,7 +167,7 @@ export default defineConfig({
   transformHead({ pageData }) {
     const title = pageData.frontmatter.title || 'Shoko';
     const description = pageData.frontmatter.description || 'Anime Management System';
-    const ogImageUrl = `/images/og.svg?title=${encodeURIComponent(title,)}&description=${encodeURIComponent(description)}`;
+    const ogImageUrl = `/images/og.png?title=${encodeURIComponent(title,)}&description=${encodeURIComponent(description)}`;
     const url = `https://docs.shokoanime.com/${pageData.relativePath.replace(/\.md$/, '',)}`;
 
     return [
