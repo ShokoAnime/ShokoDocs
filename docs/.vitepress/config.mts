@@ -164,4 +164,21 @@ export default defineConfig({
           detailsLabel: 'Details',
         },
       },
+  transformHead({ pageData }) {
+    const title = pageData.frontmatter.title || 'Shoko';
+    const description = pageData.frontmatter.description || 'Anime Management System';
+    const ogImageUrl = `/images/og.svg?title=${encodeURIComponent(title,)}&description=${encodeURIComponent(description)}`;
+    const url = `https://docs.shokoanime.com/${pageData.relativePath.replace(/\.md$/, '',)}`;
+
+    return [
+      ['meta', { name: 'og:title', content: title }],
+      ['meta', { name: 'og:description', content: description }],
+      ['meta', { name: 'og:image', content: ogImageUrl }],
+      ['meta', { name: 'og:url', content: url }],
+      ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+      ['meta', { name: 'twitter:title', content: title }],
+      ['meta', { name: 'twitter:description', content: description }],
+      ['meta', { name: 'twitter:image', content: ogImageUrl }],
+    ];
+  },
 });

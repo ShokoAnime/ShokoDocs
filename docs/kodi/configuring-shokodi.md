@@ -31,19 +31,19 @@ for the required information
 :data="[
 {
 Option: 'IP Address',
-Description: 'The IP address for the computer Shoko Server is on.'
+description: 'The IP address for the computer Shoko Server is on.'
 },
 {
 Option: 'Port',
-Description: 'The port Shoko Server is using.'
+description: 'The port Shoko Server is using.'
 },
 {
 Option: 'Username',
-Description: 'Your Shoko username.'
+description: 'Your Shoko username.'
 },
 {
 Option: 'Password',
-Description: 'Your Shoko password.'
+description: 'Your Shoko password.'
 }
 ]"
 />
@@ -62,11 +62,11 @@ The Main Menu section will display the listed options on Shokodi's main menu if 
 :data="[
 {
 Option: 'Show Search',
-Description: 'Will show the search option on the menu.'
+description: 'Will show the search option on the menu.'
 },
 {
 Option: 'Show Unsorted',
-Description: 'Will show the unsorted files option on the menu that lists all unrecognized files.'
+description: 'Will show the unsorted files option on the menu that lists all unrecognized files.'
 }
 ]"
 />
@@ -87,23 +87,23 @@ most significant impact are discussed. The remaining settings should be self-exp
 :data="[
 {
 Option: 'Use Server Title',
-Description: 'When toggled, will use the settings as defined in Shoko Server.'
+description: 'When toggled, will use the settings as defined in Shoko Server.'
 },
 {
 Option: 'Language',
-Description: 'The language to show titles in, only available when Use Server Title is not toggled.'
+description: 'The language to show titles in, only available when Use Server Title is not toggled.'
 },
 {
 Option: 'Title Type',
-Description: 'Determines the source for the title shown, only available when Use Server Title is not toggled.'
+description: 'Determines the source for the title shown, only available when Use Server Title is not toggled.'
 },
 {
 Option: 'Fix Desynced Watched Status in Kodi Database',
-Description: 'When ran, will update the Kodi database with watched state info from Shoko.'
+description: 'When ran, will update the Kodi database with watched state info from Shoko.'
 },
 {
 Option: 'Fix Desynced Images in Kodi Database',
-Description: 'When ran, will forcefully update all series images to match what Shoko has.'
+description: 'When ran, will forcefully update all series images to match what Shoko has.'
 }
 ]"
 />
@@ -124,7 +124,7 @@ self-explanatory, we will focus on explaining the filter setting.
 :data="[
 {
 Option: 'Filter Tags To',
-Description: 'Will either show toggled tag filter items, or hide them. In the above example, only Shorten Tag List will be active.'
+description: 'Will either show toggled tag filter items, or hide them. In the above example, only Shorten Tag List will be active.'
 }
 ]"
 />
@@ -159,11 +159,11 @@ However, there are two settings related to Seiyuu that are worth mentioning.
 :data="[
 {
 Option: 'Disable Kodi\'s Internal Cast Menu',
-Description: 'If enabled, will not display the episode cast information.'
+description: 'If enabled, will not display the episode cast information.'
 },
 {
 Option: 'Use Seiyuu Picture For Case Data',
-Description: 'If enabled, will use the Seiyuu images downloaded by Shoko.'
+description: 'If enabled, will use the Seiyuu images downloaded by Shoko.'
 }
 ]"
 />

@@ -12,11 +12,11 @@ const renamerColumns = [
 const renamerData = [
   {
     Renamer: "WebAOM",
-    Description: "Default renamer built into Shoko."
+    description: "Default renamer built into Shoko."
   },
   {
     Renamer: "Lua Renamer",
-    Description: "Uses the Lua scripting language to create custom renaming scripts."
+    description: "Uses the Lua scripting language to create custom renaming scripts."
   }
 ];
 </script>

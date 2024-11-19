@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" fill="none">
+
+    <!-- Background -->
+    <image href="/images/og-background.jpg"
+           x="-400" y="-100"
+           width="1920" height="1080"
+           preserveAspectRatio="xMidYMid slice"/>
+
+    <!-- Overlay -->
+    <rect x="0" y="0" width="1200" height="630" fill="#1b1b1f" opacity="0.9"/>
+
+    <!-- Icon as an External Image -->
+    <image href="/images/logo.svg" x="50" y="50" width="117" height="100"/>
+
+    <!-- Text Group -->
+    <g font-family="Arial, sans-serif" fill="#FFFFFF">
+        <!-- Top Left Text -->
+        <text x="200" y="90" font-size="48" font-weight="bold">Shoko</text>
+        <text x="200" y="140" font-size="32" fill="#AAAAAA">Anime Management System</text>
+
+        <!-- Title -->
+        <text x="50" y="300" font-size="56" font-weight="bold">{{title}}</text>
+
+        <!-- Description -->
+        <text x="50" y="370" font-size="24" fill="#CCCCCC">{{description}}</text>
+
+        <!-- URL -->
+        <text x="50" y="580" font-size="20" fill="#AAAAAA">{{url}}</text>
+    </g>
+</svg>
