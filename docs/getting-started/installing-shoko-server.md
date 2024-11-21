@@ -148,10 +148,10 @@ Follow these steps to set up a Shoko server using a custom app:
 5. Configure **Port Forwarding**:
 	- Container Port: `8111`
 	- Node Port: Choose any available port
- 	- Extra for Truenas EE: 
+ 	- Extra for Truenas EE:
 	 	- Container Port: `4556`
 		- Host Port: `4556`
-	 	- Protocol: `udp` 
+	 	- Protocol: `udp`
 6. Set up **Storage**:
 	- **Optional**: Mount Shoko config -> If not mounted the DB will be lost on container restart
 		- Host Path: Path to store Shoko config
@@ -181,8 +181,8 @@ You may encounter the following issues when setting up Shoko Server with TrueNAS
 
 ## Bare Metal (Ubuntu)
 
-:::danger 
-This option is **not recommended** because it requires manual updates whenever a new version is released, as automatic updates are not available. 
+:::danger
+This option is **not recommended** because it requires manual updates whenever a new version is released, as automatic updates are not available.
 
 Additionally, a strong understanding of Linux is needed to follow these steps and troubleshoot any issues that may occur. Please note that we are unable to provide direct support for installations performed using this method.
 :::

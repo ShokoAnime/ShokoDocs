@@ -12,23 +12,23 @@ const displayOptionsColumns = [
 const displayOptionsData = [
     {
       Name: 'Combine Continue Watching & Next Up',
-      description: 'As the name suggests, enabling this setting will combine these two sections. Leaving a modified Continue Watching widget that display both sets of information.'
+      Description: 'As the name suggests, enabling this setting will combine these two sections. Leaving a modified Continue Watching widget that display both sets of information.'
     },
     {
       Name: 'Hide R18 Content',
-      description: 'Checked by default, when unchecked, series with the R18 tag will show in every widget where applicable.'
+      Description: 'Checked by default, when unchecked, series with the R18 tag will show in every widget where applicable.'
     },
     {
       Name: 'Shoko News Posts',
-      description: 'Allows you to define how many news posts from the Shoko site to show, feel free to set it to 100.'
+      Description: 'Allows you to define how many news posts from the Shoko site to show, feel free to set it to 100.'
     },
     {
       Name: 'Recently Imported Episodes',
-      description: 'This setting lets you define how many episodes are displayed in the Recently Imported widget. There is a maximum limit of 100 episodes, and if you set it to anything higher, it will default to 100.'
+      Description: 'This setting lets you define how many episodes are displayed in the Recently Imported widget. There is a maximum limit of 100 episodes, and if you set it to anything higher, it will default to 100.'
     },
     {
       Name: 'Recently Imported Series',
-      description: 'This setting lets you define how many series are displayed in the Recently Imported widget. There is a maximum limit of 100 episodes, and if you set it to anything higher, it will default to 100.'
+      Description: 'This setting lets you define how many series are displayed in the Recently Imported widget. There is a maximum limit of 100 episodes, and if you set it to anything higher, it will default to 100.'
     }
 ];
 
@@ -64,19 +64,19 @@ const importFolderColumns = [
 const importFolderData = [
     {
       Name: 'Name',
-      description: 'The name assigned to the import folder used for visual purposes only.'
+      Description: 'The name assigned to the import folder used for visual purposes only.'
     },
     {
       Name: 'Location',
-      description: 'The actual location of the import folder, relative to where Shoko is installed.'
+      Description: 'The actual location of the import folder, relative to where Shoko is installed.'
     },
     {
       Name: 'Drop Type',
-      description: 'This setting tells Shoko how to handle this folder when processing your files. \n The **Source** option instructs Shoko to grab files from this folder and move them to another import folder marked as Destination.  \n The **Both** option allows Shoko to perform the moving actions without actually relocating the files, which enables renaming on import or applying any custom renamer settings.  \n Finally, The **None** option tells Shoko not to perform any actions on the folder, which is typically paired with Watch For New Files set to Yes.'
+      Description: 'This setting tells Shoko how to handle this folder when processing your files. \n The **Source** option instructs Shoko to grab files from this folder and move them to another import folder marked as Destination.  \n The **Both** option allows Shoko to perform the moving actions without actually relocating the files, which enables renaming on import or applying any custom renamer settings.  \n Finally, The **None** option tells Shoko not to perform any actions on the folder, which is typically paired with Watch For New Files set to Yes.'
     },
     {
       Name: 'Watch For New Files',
-      description: 'A true/false setting which tells Shoko to monitor the import folder for new files. If set to **no**, you\'ll have to use the **Import Files** action to update your collection.'
+      Description: 'A true/false setting which tells Shoko to monitor the import folder for new files. If set to **no**, you\'ll have to use the **Import Files** action to update your collection.'
     }
 ];
 </script>

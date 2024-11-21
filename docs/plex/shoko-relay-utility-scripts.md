@@ -56,39 +56,39 @@ const plexConfigColumns = [
 const plexConfigTableData = [
   {
     Option: 'Username',
-    description: 'The username for the **admin account** of your Plex server.',
+    Description: 'The username for the **admin account** of your Plex server.',
   },
   {
     Option: 'Password',
-    description: 'The password for the **admin account** of your Plex server. Skip this setting if two-factor authentication is in use.',
+    Description: 'The password for the **admin account** of your Plex server. Skip this setting if two-factor authentication is in use.',
   },
   {
     Option: 'ServerName',
-    description: 'The name of your Plex server.',
+    Description: 'The name of your Plex server.',
   },
   {
     Option: 'LibraryNames',
-    description: `The names of any libraries which you want the scripts to interact with. **Must be formatted as a Python list** e.g. \`'LibraryNames': ['Anime Shows', 'Anime Movies'],\``,
+    Description: `The names of any libraries which you want the scripts to interact with. **Must be formatted as a Python list** e.g. \`'LibraryNames': ['Anime Shows', 'Anime Movies'],\``,
   },
   {
     Option: 'ExtraUsers (Optional)',
-    description: `The usernames of any managed or home users to sync watched states for (watched-sync.py) **Must be formatted as a Python list**  e.g. \`'ExtraUsers': ['Family'],\``,
+    Description: `The usernames of any managed or home users to sync watched states for (watched-sync.py) **Must be formatted as a Python list**  e.g. \`'ExtraUsers': ['Family'],\``,
   },
   {
     Option: 'DataFolder (Optional)',
-    description: `The Location of your Plex [data folder](https://support.plex.tv/articles/202915258-where-is-the-plex-media-server-data-directory-located/) (collection-posters.py clean). **Requires double backslashes on windows** e.g. \`'DataFolder': '%LOCALAPPDATA%\\\\Plex Media Server',\``,
+    Description: `The Location of your Plex [data folder](https://support.plex.tv/articles/202915258-where-is-the-plex-media-server-data-directory-located/) (collection-posters.py clean). **Requires double backslashes on windows** e.g. \`'DataFolder': '%LOCALAPPDATA%\\\\Plex Media Server',\``,
   },
   {
     Option: 'PostersFolder (Optional)',
-    description: `The folder containing any custom collection posters (collection-posters.py). **Requires double backslashes on windows** e.g. \`'PostersFolder': 'M:\\\\Anime\\\\Posters',\``,
+    Description: `The folder containing any custom collection posters (collection-posters.py). **Requires double backslashes on windows** e.g. \`'PostersFolder': 'M:\\\\Anime\\\\Posters',\``,
   },
   {
     Option: 'SyncAdmin',
-    description: 'Whether the watched states of the Admin account should be synced (watched-sync.py)',
+    Description: 'Whether the watched states of the Admin account should be synced (watched-sync.py)',
   },
   {
     Option: 'X-Plex-Token (2FA)',
-    description: 'An alternate Plex authentication method for those using two-factor authentication. More info on obtaining a token [here](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/).',
+    Description: 'An alternate Plex authentication method for those using two-factor authentication. More info on obtaining a token [here](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/).',
   },
 ];
 
@@ -100,19 +100,19 @@ const shokoConfigColumns = [
 const shokoConfigTableData = [
   {
     Option: 'Hostname',
-    description: 'The IP address for the computer where Shoko Server is located.'
+    Description: 'The IP address for the computer where Shoko Server is located.'
   },
   {
     Option: 'Port',
-    description: 'The port Shoko Server uses, by default its **8111**'
+    Description: 'The port Shoko Server uses, by default its **8111**'
   },
   {
     Option: 'Username',
-    description: 'The username for the **local account** you created during the **First Run** setup in Shoko Server.'
+    Description: 'The username for the **local account** you created during the **First Run** setup in Shoko Server.'
   },
   {
     Option: 'Password',
-    description: 'The password for the **local account** you created during the **First Run** setup in Shoko Server.'
+    Description: 'The password for the **local account** you created during the **First Run** setup in Shoko Server.'
   }
 ];
 
@@ -124,15 +124,15 @@ const animeThemesConfigColumns = [
 const animeThemesConfigTableData = [
   {
     Option: 'FFplay_Enabled',
-    description: 'Whether the AnimeThemes script will playback the song after downloading or not.'
+    Description: 'Whether the AnimeThemes script will playback the song after downloading or not.'
   },
   {
     Option: 'FFplay_Volume',
-    description: 'The volume of the audio playback if it is enabled.'
+    Description: 'The volume of the audio playback if it is enabled.'
   },
   {
     Option: 'BatchOverwrite',
-    description: 'Whether the batch argument will overwrite **Theme.mp3** files or not.'
+    Description: 'Whether the batch argument will overwrite **Theme.mp3** files or not.'
   }
 ];
 
