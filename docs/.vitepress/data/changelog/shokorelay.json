@@ -2,6 +2,18 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.20",
+      "versionURL": "1220",
+      "date": "Nov 21st, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.20",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added a check in the scanner for episodes/relations marked as hidden"
+        }
+      ]
+    },
+    {
       "version": "1.2.19",
       "versionURL": "1219",
       "date": "Nov 19th, 2024",
