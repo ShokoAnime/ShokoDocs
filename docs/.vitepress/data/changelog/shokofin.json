@@ -2,6 +2,66 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "5.0.0",
+      "versionURL": "500",
+      "date": "October 27th, 2024",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v5.0.0",
+      "changes": [
+        {
+          "type": "removed",
+          "text": "Removed TvDB usage throughout the plugin, except for the TvDB IDs."
+        },
+        {
+          "type": "removed",
+          "text": "Removed the episode namespace migration scheduled task since the method we used to get all user data for a user is removed in 10.10. Let this be your warning to migrate your user data before updating to 10.10 if needed."
+        },
+        {
+          "type": "changed",
+          "text": "Enabled 'Attach VFS to Libraries' (an advanced setting) by default for new installs."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed the usage of user data for Jellyfin 10.10."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed the usage of SetProviderId for Jellyfin 10.10."
+        },
+        {
+          "type": "fixed",
+          "text": "Simplify multi resolver code now that Jellyfin 10.10 is out."
+        },
+        {
+          "type": "added",
+          "text": "Added support for Jellyfin 10.10."
+        },
+        {
+          "type": "removed",
+          "text": "Dropped support for Shoko Server below version 5.0.0."
+        },
+        {
+          "type": "removed",
+          "text": "Dropped support for Jellyfin 10.9."
+        }
+      ]
+    },
+    {
+      "version": "4.2.2",
+      "versionURL": "422",
+      "date": "October 27th, 2024",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v4.2.2",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Don't skip valid metadata update events."
+        },
+        {
+          "type": "fixed",
+          "text": "Don't attempt to iterate directories in the VFS if it doesn't exist."
+        }
+      ]
+    },
+    {
       "version": "4.2.1",
       "versionURL": "421",
       "date": "October 22nd, 2024",
