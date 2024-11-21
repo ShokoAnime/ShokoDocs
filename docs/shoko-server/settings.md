@@ -12,27 +12,27 @@ const importOptionsColumns = [
 const importOptionsData = [
     {
       Option: 'Import on Start',
-      description: 'When enabled, Shoko will start importing files when the program is first launched.'
+      Description: 'When enabled, Shoko will start importing files when the program is first launched.'
     },
     {
       Option: 'Rename on Import',
-      description: 'When enabled and there is a renamer configured, Shoko will rename imported files.'
+      Description: 'When enabled and there is a renamer configured, Shoko will rename imported files.'
     },
     {
       Option: 'Move on Import',
-      description: 'When enabled and when there is both a source and destination import folder. Shoko will move files to the destination import folder'
+      Description: 'When enabled and when there is both a source and destination import folder. Shoko will move files to the destination import folder'
     },
     {
       Option: 'Move After Rename',
-      description: 'When enabled and when there is a renamer configured and there is both a source and destination import folder, Shoko will rename the file first and then move it.'
+      Description: 'When enabled and when there is a renamer configured and there is both a source and destination import folder, Shoko will rename the file first and then move it.'
     },
     {
       Option: 'Set File as Watched if Episode is Watched',
-      description: 'When MyList functionality is enabled, an episode marked as watched on AniDB will have the file marked as watched when imported.'
+      Description: 'When MyList functionality is enabled, an episode marked as watched on AniDB will have the file marked as watched when imported.'
     },
     {
       Option: 'Video Extensions',
-      description: 'All the formats Shoko will import within the set import folders.'
+      Description: 'All the formats Shoko will import within the set import folders.'
     }
 ];
 </script>

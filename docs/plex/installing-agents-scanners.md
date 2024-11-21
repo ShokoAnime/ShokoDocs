@@ -12,15 +12,15 @@ const additionalOptionsColumns = [
 const additionalOptionsData = [
   {
     Option: 'IncludeSpecials *Metadata Only*',
-    description: 'Files marked as specials in Shoko will be shown in the series as part of Season 0.'
+    Description: 'Files marked as specials in Shoko will be shown in the series as part of Season 0.'
   },
   {
     Option: 'IncludeOther *Metadata Only*',
-    description: 'Files marked as other in Shoko will be shown in the series as part of Season 0.'
+    Description: 'Files marked as other in Shoko will be shown in the series as part of Season 0.'
   },
   {
     Option: 'SingleSeasonOrdering',
-    description: 'Episodes are no longer separated by seasons when matched with TMDB. All normal episodes are put into Season 1, specials into Season 0, and with Relay others into Negative Seasons.'
+    Description: 'Episodes are no longer separated by seasons when matched with TMDB. All normal episodes are put into Season 1, specials into Season 0, and with Relay others into Negative Seasons.'
   }
 ];
 </script>

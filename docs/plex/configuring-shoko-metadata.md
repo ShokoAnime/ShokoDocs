@@ -12,23 +12,23 @@ const serverConfigColumns = [
 const serverConfigTableData = [
   {
     Option: 'Username',
-    description: 'The username for the **local account** you created during the **First Run** setup in Shoko Server.'
+    Description: 'The username for the **local account** you created during the **First Run** setup in Shoko Server.'
   },
   {
     Option: 'Password',
-    description: 'The password for the **local account** you created during the **First Run** setup in Shoko Server.'
+    Description: 'The password for the **local account** you created during the **First Run** setup in Shoko Server.'
   },
   {
     Option: 'Server IP',
-    description: 'The IP address for the computer where Shoko Server is located. This can be left blank unless Shoko Server is running on a different computer.'
+    Description: 'The IP address for the computer where Shoko Server is located. This can be left blank unless Shoko Server is running on a different computer.'
   },
   {
     Option: 'Port',
-    description: 'The port Shoko Server uses, by default it iss **8111**'
+    Description: 'The port Shoko Server uses, by default it iss **8111**'
   },
   {
     Option: 'Use Single Season Ordering',
-    description: 'If you set **SingleSeasonOrdering** to True during the install process, make sure you check this box.'
+    Description: 'If you set **SingleSeasonOrdering** to True during the install process, make sure you check this box.'
   }
 ];
 </script>

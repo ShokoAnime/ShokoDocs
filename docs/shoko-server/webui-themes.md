@@ -28,31 +28,31 @@ const jsonThemeColumns = [
 const jsonThemeData = [
    {
       Key: 'name',
-      description: 'The name of your theme'
+      Description: 'The name of your theme'
     },
     {
       Key: 'version',
-      description: 'The version string, preferred format is X.X.X to keep it simple.'
+      Description: 'The version string, preferred format is X.X.X to keep it simple.'
     },
     {
       Key: 'author',
-      description: 'Author of the theme.'
+      Description: 'Author of the theme.'
     },
     {
       Key: 'description',
-      description: 'Description of the theme.'
+      Description: 'Description of the theme.'
     },
     {
       Key: 'tags',
-      description: 'List of tags for the theme. A single tag for the type (dark, light, OMLED) and colors (red, blue, green).'
+      Description: 'List of tags for the theme. A single tag for the type (dark, light, OMLED) and colors (red, blue, green).'
     },
     {
       Key: 'cssUrl',
-      description: 'URL to where the CSS file is hosted.'
+      Description: 'URL to where the CSS file is hosted.'
     },
     {
       Key: 'updateUrl',
-      description: 'URL to where this file is located. Used for installing and auto-updates.'
+      Description: 'URL to where this file is located. Used for installing and auto-updates.'
     },
 ];
 
