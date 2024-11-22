@@ -138,6 +138,7 @@ Follow these steps to set up a Shoko server using a custom app:
 	- Repository: `ghcr.io/shokoanime/server`
 	- Tag: `latest`
 4. Set **Container Configuration**:
+   	- Timezone: set to your local timezone
 	- Environment Variables: 	
 	  <EasyTable :columns="containerColumns" :data="containerData" />
    	  (These settings ensure Shoko runs as the built-in `Apps` user. Verify this user has access to your media folder.)
