@@ -159,7 +159,7 @@ Follow these steps to set up a Shoko server using a custom app:
    	- Use Node IP: `checked`
 	- Port: Use the Node Port from step 5. This allows access to the Shoko Web UI via the App's Web Portal.
  	- Path: `/`
-8. **Storage Coonfiguration**:
+8. **Storage Configuration**:
 	- **Optional**: Mount Shoko config -> If not mounted the DB will be lost on container restart
 		- Host Path: Path to store Shoko config
 		- Mount Path: `/home/shoko/.shoko`
