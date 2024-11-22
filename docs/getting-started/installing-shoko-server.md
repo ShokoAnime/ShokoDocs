@@ -167,8 +167,8 @@ Follow these steps to set up a Shoko server using a custom app:
 		- Host Path: Your media folder location
 		- Mount Path: Desired container media folder path
 
-10. Click **Save** and wait for the container status to change to "Running".
-11. Access the setup page by clicking **Web UI** under Application Info.
+9. Click **Save** and wait for the container status to change to "Running".
+10. Access the setup page by clicking **Web UI** under Application Info.
 
 ### Common Issues
 
