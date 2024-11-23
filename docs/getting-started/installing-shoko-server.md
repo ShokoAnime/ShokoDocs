@@ -20,12 +20,7 @@ const containerData = [
     name: 'PGID',
     value: '568',
     description: 'Group ID for the Shoko server',
-  },
-  {
-    name: 'TZ',
-    value: 'Etc/UTC',
-    description: 'Timezone for the container see: [List of tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)',
-  },
+  }
 ];
 </script>
 
@@ -139,35 +134,41 @@ Follow these steps to set up a Shoko server using a custom app:
 
 1. Navigate to **Apps -> Discover Apps -> Custom App**.
 2. Set the **Application Name** to your preference.
-3. Configure **Container Images**:
-	- Image Repository: `ghcr.io/shokoanime/server`
-	- Image Tag: `latest`
-4. Set **Container Environment Variables**:
-	- These settings ensure Shoko runs as the built-in `Apps` user. Verify this user has access to your media folder.
+3. Configure **Image Configuration**:
+	- Repository: `ghcr.io/shokoanime/server`
+	- Tag: `latest`
+4. Set **Container Configuration**:
+   	- Timezone: set to your local timezone
+	- Environment Variables: 	
 	  <EasyTable :columns="containerColumns" :data="containerData" />
-5. Configure **Port Forwarding**:
+   	  (These settings ensure Shoko runs as the built-in `Apps` user. Verify this user has access to your media folder.)
+   	- Restart Policy: `Unless Stopped - Restarts the container irrespective of the exit code but stops restarting when the service is stopped or removed.`
+6. Configure **Network Configuration**:
+	- Add a new port
 	- Container Port: `8111`
-	- Node Port: Choose any available port
+ 	- Host Port: `8111`	
+ 	- Protocol: `TCP`
  	- Extra for Truenas EE:
 	 	- Container Port: `4556`
 		- Host Port: `4556`
 	 	- Protocol: `udp`
-6. Set up **Storage**:
+7. Portal Configuration (**Optional**):
+	- Add a portal
+ 	- Name: `Web UI`
+  	- Protocl: `HTTP`
+   	- Use Node IP: `checked`
+	- Port: Use the Node Port from step 5. This allows access to the Shoko Web UI via the App's Web Portal.
+ 	- Path: `/`
+8. **Storage Configuration**:
 	- **Optional**: Mount Shoko config -> If not mounted the DB will be lost on container restart
 		- Host Path: Path to store Shoko config
 		- Mount Path: `/home/shoko/.shoko`
 	- **Required**: Mount media folder
 		- Host Path: Your media folder location
 		- Mount Path: Desired container media folder path
-7. Portal Configuration (**Optional**):
-	- Enable WebUiPortal: Checked
-	- Port: Use the Node Port from step 5. This allows access to the Shoko Web UI via the App's Web Portal.
-8. Container User and Group ID:
-	- If desired, leave as default to run as root.
-	- Configure to run with a user that has permission to modify files. Note: The Docker startup script will attempt to
-	  create a Shoko user and may fail to start if unsuccessful.
+
 9. Click **Save** and wait for the container status to change to "Running".
-10. Access the setup page by clicking **Web Portal** under Application Info.
+10. Access the setup page by clicking **Web UI** under Application Info.
 
 ### Common Issues
 
