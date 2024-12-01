@@ -30,9 +30,15 @@
                 Delete
               </button>
               <input
-                  class="docker-input-input"
-                  :value="volume"
-                  @input="updateVolume(index, $event.target.value)"
+                  class="docker-input-input docker-input-input-outside"
+                  :value="volume[0]"
+                  @input="updateVolume(index, 0, $event.target.value)"
+              />
+              <input
+                  :disabled="index === 0"
+                  class="docker-input-input docker-input-input-inside"
+                  :value="volume[1]"
+                  @input="updateVolume(index, 1, $event.target.value)"
               />
             </div>
           </div>
@@ -69,7 +75,10 @@ export default {
       pgid: "$GID",
       tz: "Etc/UTC",
       port: "8111",
-      volumes: ["./shoko-config:/home/shoko/.shoko"],
+      volumes: [
+        ["./shoko-config", "/home/shoko/.shoko"],
+        ["<edit this path before use>", "/mnt/anime"]
+      ],
     };
 
     const userInput = ref({...initialUserInput});
@@ -78,12 +87,12 @@ export default {
       userInput.value[key] = value;
     };
 
-    const updateVolume = (index, value) => {
-      userInput.value.volumes[index] = value;
+    const updateVolume = (index, position, value) => {
+      userInput.value.volumes[index][position] = value;
     };
 
     const addVolume = () => {
-      userInput.value.volumes.push("");
+      userInput.value.volumes.push(["", ""]);
     };
 
     const removeVolume = (index) => {
@@ -106,7 +115,7 @@ services:
     ports:
       - "${userInput.value.port}:8111"
     volumes:
-      ${userInput.value.volumes.map((volume) => `- "${volume}"`).join("\n      ")}`;
+      ${userInput.value.volumes.filter((volume) => volume[0] && volume[1]).map((volume) => `- "${volume.join(":")}"`).join("\n      ")}`;
     });
 
     return {
