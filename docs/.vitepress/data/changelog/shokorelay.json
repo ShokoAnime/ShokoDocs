@@ -2,6 +2,22 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.21",
+      "versionURL": "1221",
+      "date": "Dec 5th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.21",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed custom user tags causing the agent to fail by excluding them from tag operations"
+        },
+        {
+          "type": "changed",
+          "text": "Minor log formatting changes"
+        }
+      ]
+    },
+    {
       "version": "1.2.20",
       "versionURL": "1220",
       "date": "Nov 21st, 2024",
