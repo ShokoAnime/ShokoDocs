@@ -2,6 +2,50 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/",
   "releases": [
     {
+      "version": "2.1.3",
+      "versionURL": "213",
+      "date": "December 09th, 2024",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Trakt page link in series overview"
+        },
+        {
+          "type": "added",
+          "text": "Button to copy ED2K hash to clipboard"
+        },
+        {
+          "type": "added",
+          "text": "New TMDB actions (supported only on server version 5.0.0.76 and above)"
+        },
+        {
+          "type": "changed",
+          "text": "Label ED2K hashes as \"ED2K\" instead of \"Hash\""
+        },
+        {
+          "type": "fixed",
+          "text": "Text alignment issues in TMDB linking page"
+        },
+        {
+          "type": "fixed",
+          "text": "Back button behaviour in series page"
+        },
+        {
+          "type": "fixed",
+          "text": "Navigation upon saving TMDB links"
+        },
+        {
+          "type": "fixed",
+          "text": "Show unaired episodes in TMDB linking page"
+        },
+        {
+          "type": "removed",
+          "text": "\"Sync MyList\" frequency setting"
+        }
+      ]
+    },
+    {
       "version": "2.1.2",
       "versionURL": "212",
       "date": "November 10th, 2024",
