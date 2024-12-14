@@ -226,6 +226,15 @@ With `SingleSeasonOrdering` disabled in the Scanner and Agent the following will
 - Combining multiple Shoko series into a single Plex entry
 - Alternate episode ordering for seasons
 
+##### Curated TMDB Mappings
+
+For users who are new to Shoko or don't have any TMDB links, two .csv files are available below which have been
+manually checked for accuracy. Either of these files can be imported using Shoko's `/Tmdb/Import` v3 API endpoint in
+[/swagger/](https://docs.shokoanime.com/faq#general) (Shoko's public API) to bypass fully auto-linking an unlinked library.
+
+- [Shoko: AniDB → TMDB Mappings](https://gist.github.com/natyusha/129848213161c57101c9f39ed3f263ed)
+- [Shoko: AniDB → TMDB Mappings (Comments)](https://gist.github.com/natyusha/b46aeaf2f5f6e5a9333d6f501be6c9ee)
+
 ##### Combining Series
 
 This allows shows which are separated on AniDB to be combined into a single entry inside Plex. To Achieve this simply
@@ -256,8 +265,7 @@ TMDB's [Episode Groups](https://www.themoviedb.org/tv/30984-bleach/episode_group
 options (often including TvDB's) in case you would like to use one of them instead.
 
 If you have "Download Alternate Ordering" enabled under Shoko's "TMDB Download Options" this can be achieved using
-Shoko's `/Tmdb/Show/{showID}/Ordering/SetPreferred` v3 API endpoint which is available via [/swagger/](https://docs.shokoanime.com/faq#general)
-(Shoko's public API).
+Shoko's `/Tmdb/Show/{showID}/Ordering/SetPreferred` v3 API endpoint which is available via [/swagger/](https://docs.shokoanime.com/faq#general).
 
 Once you have authenticated with swagger, you can navigate to the previously mentioned endpoint. Using Bleach as an example once
 again, you would enter `30984` (Bleach's TMDB ID) into the `showID` box. Then you would the set the 16 character `AlternateOrderingID`
