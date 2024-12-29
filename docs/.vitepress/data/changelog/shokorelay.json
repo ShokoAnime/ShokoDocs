@@ -2,6 +2,18 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.22",
+      "versionURL": "1222",
+      "date": "Dec 29th, 2024",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.22",
+      "changes": [
+        {
+          "type": "removed",
+          "text": "Removed HAMA and Lambda from the agent's contributes_to/accepts_from list as they could cause unforeseen issues under certain configurations (the use-case is also too niche to justify an inclusion by default)"
+        }
+      ]
+    },
+    {
       "version": "1.2.21",
       "versionURL": "1221",
       "date": "Dec 5th, 2024",
