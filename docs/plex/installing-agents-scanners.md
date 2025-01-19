@@ -102,18 +102,17 @@ recognized.
       ```cmd
       %LOCALAPPDATA%\Plex Media Server\Scanners\Series
       ```
-2. Open the **Shoko Relay Scanner.py** File
+2. Open the **Shoko Relay Scanner.cfg** File
 3. Configure the Series Scanner
     - Make adjustments to the Prefs section to align it with your Shoko configuration.
     - For most users, you'll only need to update the username and password fields:
-      ```py
-      Prefs = {
-          'Hostname': '127.0.0.1',
-          'Port': 8111,
-          'Username': 'username',
-          'Password': 'password',
-          'SingleSeasonOrdering': False
-      }
+      ```ini
+      [Prefs]
+      Hostname=127.0.0.1
+      Port=8111
+      Username=Default
+      Password=
+      SingleSeasonOrdering=False
       ```
 
 Please see the [Series Scanner Advanced Settings](#series-scanner-advanced-settings) section for more information on
@@ -281,21 +280,20 @@ recognized.
 
 #### Editing Shoko Relay Scanner
 
-1. Open the **Shoko Relay Scanner.py** File
+1. Open the **Shoko Relay Scanner.cfg** File
       ```sh
-      ${EDITOR:-nano} "${PLEX_HOME}/Scanners/Series/Shoko Relay Scanner.py"
+      ${EDITOR:-nano} "${PLEX_HOME}/Scanners/Series/Shoko Relay Scanner.cfg"
       ```
 2. Configure the Series Scanner
     - Make adjustments to the Prefs section to align it with your Shoko configuration.
     - For most users, you'll only need to update the username and password fields:
-      ```py
-      Prefs = {
-          'Hostname': '127.0.0.1',
-          'Port': 8111,
-          'Username': 'username',
-          'Password': 'password',
-          'SingleSeasonOrdering': False
-      }
+      ```ini
+      [Prefs]
+      Hostname=127.0.0.1
+      Port=8111
+      Username=Default
+      Password=
+      SingleSeasonOrdering=False
       ```
 
 Please see the [Series Scanner Advanced Settings](#series-scanner-advanced-settings) section for more information on

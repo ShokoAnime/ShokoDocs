@@ -54,8 +54,9 @@ need to run the "Sync Plex Watch Status" action manually.
 
 :::warning Episode Type & Manually Marked Issues
 Currently this only works with regular Episodes. Special, Other, ThemeSong, Trailer, Parody, and Movie Type episodes can
-not be detected and won't update their status. It should also be noted that Plex webhooks do not function with things
-that are manually marked as watched in Plex's UI.
+not be detected and won't update their status. When utilizing TMDB episode ordering; seasons > 1 that don't use absolute 
+numbering will not work correctly either. It should also be noted that Plex webhooks do not function with things that are
+manually marked as watched in Plex's UI.
 
 To resolve the aforementioned issues, you will need to run the "Sync Plex Watch Status" action, mark things as watched
 by hand in Shoko's WebUI, or use a utility script.
