@@ -2,6 +2,370 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "5.1.0",
+      "versionURL": "510",
+      "date": "In Development",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "breaking",
+          "text": "Removed ALL TvDB support from server except the TvDB IDs stored on the TMDB show/episode models and the exposed TvDB IDs sourced from said models in the APIv3."
+        },
+        {
+          "type": "breaking",
+          "text": "Soft deprecated TvDB support in APIv1, so we won't make Shoko Desktop throw any weird errors."
+        },
+        {
+          "type": "breaking",
+          "text": "Replaced the TvDB usage in APIv2 with TMDB or removed it outright, except the TvDB IDs."
+        },
+        {
+          "type": "breaking",
+          "text": "Removed all TvDB endpoints and models in APIv3 except for the TvDB IDs exposed in the Shoko series/episode models sourced from the TMDB data."
+        },
+        {
+          "type": "breaking",
+          "text": "Simplified IImageMetadata in plugin abstraction."
+        },
+        {
+          "type": "breaking",
+          "text": "Convert episode images from a list to the images DTO model in APIv3."
+        },
+        {
+          "type": "breaking",
+          "text": "Refactored TMDB APIv3 endpoints in one or more breaking ways. See the individual commits for more details."
+        },
+        {
+          "type": "added",
+          "text": "Added 'fake' TMDB season cross-references inferred from the linked episodes."
+        },
+        {
+          "type": "added",
+          "text": "Added the images linked to the seasons to the Shoko series entry, because apparently there isn't a 100% overlap between the show images and season images."
+        },
+        {
+          "type": "added",
+          "text": "Added genres to TMDB remote searches."
+        },
+        {
+          "type": "added",
+          "text": "Added new filter expressions."
+        },
+        {
+          "type": "added",
+          "text": "Added a new generated playlist service to generate m3u8 playlists for media player consumption."
+        },
+        {
+          "type": "added",
+          "text": "Added new file endpoints in APIv3."
+        },
+        {
+          "type": "added",
+          "text": "Added duplicates management and missing episodes endpoints, and move around existing release management endpoints in APIv3."
+        },
+        {
+          "type": "added",
+          "text": "Added a 'log sql in console' debug setting."
+        },
+        {
+          "type": "added",
+          "text": "Added actions to purge all movie collections & show alternate orderings."
+        },
+        {
+          "type": "added",
+          "text": "Added hidden flag for TMDB episodes."
+        },
+        {
+          "type": "added",
+          "text": "Added direct virtual getters to get to the TMDB entities through the plugin abstraction."
+        },
+        {
+          "type": "added",
+          "text": "Added action to search for TMDB matches for all unlinked AniDB anime."
+        },
+        {
+          "type": "added",
+          "text": "Added UpdateTraktShowJob & Trakt series sync/refresh endpoints in APIv3."
+        },
+        {
+          "type": "added",
+          "text": "Added an action to purge all AniDB↔TMDB links and optionally reset the auto linking state."
+        },
+        {
+          "type": "changed",
+          "text": "Tweaked default AniDB settings."
+        },
+        {
+          "type": "changed",
+          "text": "Improved TMDB linking logic to be more through."
+        },
+        {
+          "type": "changed",
+          "text": "Store TMDB keywords and production countries."
+        },
+        {
+          "type": "changed",
+          "text": "Only check if a zip is attached to the release when checking for new Web UI releases."
+        },
+        {
+          "type": "changed",
+          "text": "Make AniDB rate limiting configurable and non-blocking, among other improvements to the provider such as fixing some incorrectly assumed AniDB UDP bans."
+        },
+        {
+          "type": "changed",
+          "text": "Modified the trakt provider to use TMDB IDs for the search. And removed the stored TvDB IDs from the Trakt Show model, and added TMDB IDs to the model instead. The Trakt support may still need an overhaul though, but this is a start at least."
+        },
+        {
+          "type": "changed",
+          "text": "Moved the code to check the validity of the trakt token to a job that runs every 12h instead of spamming the log every few minutes."
+        },
+        {
+          "type": "changed",
+          "text": "Exposed if a Shoko episode is hidden in the plugin abstraction."
+        },
+        {
+          "type": "changed",
+          "text": "Reimplemented anime↔character/creator mappings for AniDB internally, and made them show up properly in APIv3."
+        },
+        {
+          "type": "changed",
+          "text": "Added indexes for all TMDB tables, and cached more core TMDB tables."
+        },
+        {
+          "type": "changed",
+          "text": "Exposed community rating on images if available in APIv3."
+        },
+        {
+          "type": "changed",
+          "text": "Improved TMDB cross-reference import endpoint. Made it remove existing cross-references for the episodes not in the import file by default, but allow the user to disable this behavior at import time if needed. Allowed optionally not downloading the missing movies/shows if the respective query parameter is set to false."
+        },
+        {
+          "type": "changed",
+          "text": "Improved concurrency when scheduling jobs."
+        },
+        {
+          "type": "changed",
+          "text": "Made it possible to search for only restricted episodes/series in the APIv3 dashboard endpoints, and also made it possible to return a list of episodes for a given time-frame, and not just the `x` number of next days from today."
+        },
+        {
+          "type": "changed",
+          "text": "More query options for the random image metadata endpoint in APIv3."
+        },
+        {
+          "type": "changed",
+          "text": "Exposed created/updated timestamps for episode/group in APIv3."
+        },
+        {
+          "type": "changed",
+          "text": "Exposed main AniDB anime ID for Shoko group in APIv3."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed width/height for IImageMetadata implementation on images served in APIv3."
+        },
+        {
+          "type": "fixed",
+          "text": "Hide files in \"import limbo\" from the unrecognized files option again, but this time properly add new include options to the monolithic file endpoint to include them separately. They're hidden/excluded by default but can be included if needed."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed match field of search result in internal search utility."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed serialization error in SyncTraktEpisodeHistoryJob."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed default sort of files in APIv3."
+        },
+        {
+          "type": "fixed",
+          "text": "Ensured only 1 cross-reference per company exist."
+        },
+        {
+          "type": "fixed",
+          "text": "Removed stall entry during relocation."
+        },
+        {
+          "type": "fixed",
+          "text": "Always remove files from the file watcher exception list after they have been moved."
+        },
+        {
+          "type": "fixed",
+          "text": "Don't send cross-references for non-existing files in APIv3."
+        },
+        {
+          "type": "fixed",
+          "text": "Get top level groups for groups matching the filter."
+        },
+        {
+          "type": "fixed",
+          "text": "Search all group names."
+        },
+        {
+          "type": "fixed",
+          "text": "Don't drop cross-references if we're unable to get the anime id and instead allow the missing id to be later retrieved."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed casing for AniDB episode UDP command."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed relation depth comparison in GetAniDBAnimeJob."
+        },
+        {
+          "type": "fixed",
+          "text": "Use correct IDs for custom tag endpoints in APIv3."
+        },
+        {
+          "type": "fixed",
+          "text": "Don't dispose the AniDB connection at first time setup."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed restricted tags not getting saved."
+        },
+        {
+          "type": "fixed",
+          "text": "Avoid the logout timer trying to acquire the lock twice."
+        },
+        {
+          "type": "fixed",
+          "text": "More accurate release date selection logic for TMDB movies."
+        },
+        {
+          "type": "fixed",
+          "text": "Also resolve Shoko series links for alternate TMDB seasons."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed default settings for default renamer config."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed TMDB cross-reference import endpoint in APIv3."
+        },
+        {
+          "type": "fixed",
+          "text": "Check the max image limits properly for TMDB."
+        },
+        {
+          "type": "fixed",
+          "text": "Only add the same tag once in case we're using a newer tag."
+        },
+        {
+          "type": "fixed",
+          "text": "Strip the ' (voice)' appearing at the end of each character name, because we only have voice-actors for anime, and no live-action actors."
+        },
+        {
+          "type": "fixed",
+          "text": "Get all relations in APIv3 and plugin abstraction."
+        },
+        {
+          "type": "fixed",
+          "text": "Extend ProductionCountries column length for MySQL/MariaDB & MS SQL Server."
+        },
+        {
+          "type": "fixed",
+          "text": "Remove cross-references for missing TMDB episodes."
+        },
+        {
+          "type": "fixed",
+          "text": "Added a database migration and endpoint to download missing TMDB people."
+        },
+        {
+          "type": "fixed",
+          "text": "Update datetime to datetime2 for MS SQL Server."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed setting/viewing preferred episode images."
+        },
+        {
+          "type": "fixed",
+          "text": "Removed bogus '$' in TMDB role details in APIv3."
+        },
+        {
+          "type": "fixed",
+          "text": "Only schedule AniDB images if the entry's image path is not empty."
+        },
+        {
+          "type": "fixed",
+          "text": "Small fixes in APIv2."
+        },
+        {
+          "type": "fixed",
+          "text": "Return plex IsAuthenticated false if token is missing."
+        },
+        {
+          "type": "fixed",
+          "text": "Ensured requests wait for TMDB metadata lock."
+        },
+        {
+          "type": "fixed",
+          "text": "Remove creator if it's not found on AniDB and also reschedule any related anime to be downloaded again."
+        },
+        {
+          "type": "fixed",
+          "text": "Lock while getting TMDB config and add fallback for when we're unable to get the config in some scenarios."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix NRE when looking up images for TMDB shows."
+        },
+        {
+          "type": "fixed",
+          "text": "Lock when updating movie collection."
+        },
+        {
+          "type": "fixed",
+          "text": "Save staff cross-references for new relations."
+        },
+        {
+          "type": "fixed",
+          "text": "Ignore places virtual field on import folder when serializing it."
+        },
+        {
+          "type": "fixed",
+          "text": "Only use cross-references with files for file summaries."
+        },
+        {
+          "type": "fixed",
+          "text": "URL decode renamer config names to allow '/'."
+        },
+        {
+          "type": "fixed",
+          "text": "Always force MyList sync when ran as an action."
+        },
+        {
+          "type": "fixed",
+          "text": "Check for error code 330 in case the user's MyList is empty."
+        },
+        {
+          "type": "fixed",
+          "text": "Delete any and all preferred image overrides set to an image that is being disabled."
+        },
+        {
+          "type": "fixed",
+          "text": "Set all fields when converting the current TMDB image to IImageMetadata."
+        },
+        {
+          "type": "fixed",
+          "text": "Added missing MediaInfo codec ID mapping for 'V_AV1' → 'AV1'."
+        },
+        {
+          "type": "removed",
+          "text": "Remove unused AniDB settings."
+        },
+        {
+          "type": "removed",
+          "text": "Removed old deprecated and unused endpoints in APIv3."
+        }
+      ]
+    },
+    {
       "version": "5.0.0",
       "versionURL": "500",
       "date": "October 12th, 2024",
