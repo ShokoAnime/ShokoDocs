@@ -2,6 +2,38 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/",
   "releases": [
     {
+      "version": "2.1.4",
+      "versionURL": "214",
+      "date": "In Development",
+      "link": "NA",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Trakt series actions"
+        },
+        {
+          "type": "added",
+          "text": "Remember calendar tab in dashboard"
+        },
+        {
+          "type": "fixed",
+          "text": "Issues with renamer config names containing `/`"
+        },
+        {
+          "type": "fixed",
+          "text": "Plex login status message"
+        },
+        {
+          "type": "changed",
+          "text": "Links in collection stats panel in dashboard"
+        },
+        {
+          "type": "changed",
+          "text": "Allow manual linking un-aired episodes"
+        }
+      ]
+    },
+    {
       "version": "2.1.3",
       "versionURL": "213",
       "date": "December 09th, 2024",
