@@ -4,37 +4,9 @@
     {
       "version": "5.1.0",
       "versionURL": "510",
-      "date": "In Development",
-      "link": "NA",
+      "date": "Janurary 19th, 2025",
+      "link": "https://shokoanime.com/blog/shoko-version-5-1-0-released",
       "changes": [
-        {
-          "type": "breaking",
-          "text": "Removed ALL TvDB support from server except the TvDB IDs stored on the TMDB show/episode models and the exposed TvDB IDs sourced from said models in the APIv3."
-        },
-        {
-          "type": "breaking",
-          "text": "Soft deprecated TvDB support in APIv1, so we won't make Shoko Desktop throw any weird errors."
-        },
-        {
-          "type": "breaking",
-          "text": "Replaced the TvDB usage in APIv2 with TMDB or removed it outright, except the TvDB IDs."
-        },
-        {
-          "type": "breaking",
-          "text": "Removed all TvDB endpoints and models in APIv3 except for the TvDB IDs exposed in the Shoko series/episode models sourced from the TMDB data."
-        },
-        {
-          "type": "breaking",
-          "text": "Simplified IImageMetadata in plugin abstraction."
-        },
-        {
-          "type": "breaking",
-          "text": "Convert episode images from a list to the images DTO model in APIv3."
-        },
-        {
-          "type": "breaking",
-          "text": "Refactored TMDB APIv3 endpoints in one or more breaking ways. See the individual commits for more details."
-        },
         {
           "type": "added",
           "text": "Added 'fake' TMDB season cross-references inferred from the linked episodes."
@@ -90,6 +62,34 @@
         {
           "type": "added",
           "text": "Added an action to purge all AniDB↔TMDB links and optionally reset the auto linking state."
+        },
+                {
+          "type": "breaking",
+          "text": "Removed ALL TvDB support from server except the TvDB IDs stored on the TMDB show/episode models and the exposed TvDB IDs sourced from said models in the APIv3."
+        },
+        {
+          "type": "breaking",
+          "text": "Soft deprecated TvDB support in APIv1, so we won't make Shoko Desktop throw any weird errors."
+        },
+        {
+          "type": "breaking",
+          "text": "Replaced the TvDB usage in APIv2 with TMDB or removed it outright, except the TvDB IDs."
+        },
+        {
+          "type": "breaking",
+          "text": "Removed all TvDB endpoints and models in APIv3 except for the TvDB IDs exposed in the Shoko series/episode models sourced from the TMDB data."
+        },
+        {
+          "type": "breaking",
+          "text": "Simplified IImageMetadata in plugin abstraction."
+        },
+        {
+          "type": "breaking",
+          "text": "Convert episode images from a list to the images DTO model in APIv3."
+        },
+        {
+          "type": "breaking",
+          "text": "Refactored TMDB APIv3 endpoints in one or more breaking ways. See the individual commits for more details."
         },
         {
           "type": "changed",
