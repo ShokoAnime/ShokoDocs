@@ -16,6 +16,10 @@
           "text": "Remember calendar tab in dashboard"
         },
         {
+          "type": "added",
+          "text": "Document titles"
+        },
+        {
           "type": "fixed",
           "text": "Issues with renamer config names containing `/`"
         },
