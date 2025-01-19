@@ -4,7 +4,6 @@
       <div class="release-header">
         <div>
           <h2 style="width: 0;" :id="`version-${release.version}`">
-            <!-- Hidden text for accessibility or SEO -->
             <span style="display: none;">Ver {{ release.version }}</span>
             <span style="display: none;"> - </span>
             <span style="display: none;">{{ release.date }}</span>
@@ -12,9 +11,7 @@
           <span class="release-version">Version {{ release.version }}</span>
         </div>
 
-        <!-- Conditional class for release date -->
         <span :class="release.date !== 'In Development' ? 'release-date' : 'release-dev'">
-          <!-- Strong tag if 'In Development', otherwise show date normally -->
           <template v-if="release.date === 'In Development'">
             <strong>In Development</strong>
           </template>
@@ -22,32 +19,34 @@
             {{ release.date }}
           </template>
 
-          <!-- Show link if available -->
           <span v-if="release.link !== 'NA'"> |
             <a :href="release.link" target="_blank" rel="noopener noreferrer nofollow">View Release Notes</a>
           </span>
         </span>
       </div>
 
-      <!-- Changes grouped by type -->
-      <div v-for="(changes, type) in release.groupedChanges" :key="type" :class="['change-group', type]">
+      <!-- Changes grouped by type and sorted by priority -->
+      <div
+        v-for="type in sortedChangeTypes(release.groupedChanges)"
+        :key="type"
+        :class="['change-group', type]"
+      >
         <div class="change-group-header">
           <h3>{{ capitalizeType(type) }}</h3>
           <span class="change-group-count">
-            {{ changes.length }} {{ changes.length === 1 ? 'Entry' : 'Entries' }}
+            {{ release.groupedChanges[type].length }} {{ release.groupedChanges[type].length === 1 ? 'Entry' : 'Entries' }}
           </span>
         </div>
         <ul>
-          <li v-for="change in changes" :key="change.text">{{ change.text }}</li>
+          <li v-for="change in release.groupedChanges[type]" :key="change.text">{{ change.text }}</li>
         </ul>
       </div>
     </div>
   </div>
 </template>
 
-
 <script>
-import {computed} from 'vue'
+import { computed } from 'vue'
 import server from '../data/changelog/server.json'
 import desktop from '../data/changelog/desktop.json'
 import myanime3 from '../data/changelog/myanime3.json'
@@ -62,6 +61,11 @@ export default {
     filename: {
       type: String,
       required: true
+    },
+    displayOrder: {
+      type: Array,
+      default: () => ['breaking', 'added', 'changed', 'fixed', 'removed'],
+      validator: (value) => Array.isArray(value) && value.length > 0
     }
   },
   setup(props) {
@@ -97,6 +101,12 @@ export default {
       }))
     })
 
+    // Function to sort change types based on displayOrder prop
+    const sortedChangeTypes = (groupedChanges) => {
+      const availableTypes = Object.keys(groupedChanges)
+      return props.displayOrder.filter(type => availableTypes.includes(type))
+    }
+
     const capitalizeType = (type) => {
       return type.charAt(0).toUpperCase() + type.slice(1)
     }
@@ -105,7 +115,8 @@ export default {
       changelogData,
       githubLink,
       releases,
-      capitalizeType
+      capitalizeType,
+      sortedChangeTypes
     }
   }
 }
