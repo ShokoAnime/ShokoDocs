@@ -16,7 +16,7 @@
         <span :class="release.date !== 'In Development' ? 'release-date' : 'release-dev'">
           <!-- Strong tag if 'In Development', otherwise show date normally -->
           <template v-if="release.date === 'In Development'">
-            <strong>{{ release.date }}</strong>
+            <strong>In Development</strong>
           </template>
           <template v-else>
             {{ release.date }}
@@ -188,6 +188,10 @@ export default {
 
 .change-group.added li::marker {
   color: #23AFD0;
+}
+
+.change-group.breaking li::marker {
+  color: #e17509;
 }
 
 .change-group.changed li::marker {
