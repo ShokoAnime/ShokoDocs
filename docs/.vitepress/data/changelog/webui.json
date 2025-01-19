@@ -2,9 +2,9 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer-WebUI/",
   "releases": [
     {
-      "version": "2.1.4",
-      "versionURL": "214",
-      "date": "In Development",
+      "version": "2.2.0",
+      "versionURL": "220",
+      "date": "January 19th, 2025",
       "link": "NA",
       "changes": [
         {
@@ -16,12 +16,20 @@
           "text": "Remember calendar tab in dashboard"
         },
         {
+          "type": "added",
+          "text": "Document titles"
+        },
+        {
           "type": "fixed",
           "text": "Issues with renamer config names containing `/`"
         },
         {
           "type": "fixed",
           "text": "Plex login status message"
+        },
+        {
+          "type": "changed",
+          "text": "Update to React 19"
         },
         {
           "type": "changed",
