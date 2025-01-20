@@ -115,7 +115,7 @@ services:
     ports:
       - "${userInput.value.port}:8111"
     volumes:
-      ${userInput.value.volumes.filter((volume) => volume[0] && volume[1]).map((volume) => `- \""${volume.join(":")}\""`).join("\n      ")}`;
+      ${userInput.value.volumes.filter((volume) => volume[0] && volume[1]).map((volume) => `- \"${volume.join(":")}\"`).join("\n      ")}`;
     });
 
     return {
