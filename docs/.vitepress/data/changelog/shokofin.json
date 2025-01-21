@@ -2,6 +2,18 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "5.0.1",
+      "versionURL": "501",
+      "date": "January 21st, 2025",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v5.0.1",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed CreatorRoleType to be compatible with both Shoko Server 5.0.0 and 5.1.0."
+        }
+      ]
+    },
+    {
       "version": "5.0.0",
       "versionURL": "500",
       "date": "October 27th, 2024",
