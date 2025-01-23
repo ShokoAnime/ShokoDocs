@@ -78,7 +78,7 @@ process and ensures the theme is correctly installed.
 
 ## Downloading & Installing Themes
 
-Web UI Themes are available from our website and can be downloaded from the [Web UI Themes](https://shokoanime.com/themes)
+Web UI Themes are available from our website and can be downloaded from the [Web UI Themes](https://shokoanime.com/downloads/webui-themes)
 page. Please note, themes downloaded from the Shoko website are only the JSON file with the CSS file being downloaded
 when the theme is installed.
 
