@@ -191,7 +191,7 @@ accesses the Plex API. The affected season names and their intended names are li
 When a series starts with a common title prefix it will optionally be moved to the end of the title (for improved
 alphabetical sorting). A list of the prefixes considered common by the agent are as follows:
 
-- Gekijouban
+- Gekijouban (plus several variants)
 - Eiga
 - OVA
 
@@ -218,11 +218,11 @@ The appended titles will appear after an em dash (**—**) making it easy to sea
 If you have TMDB auto links enabled in Shoko you will have access to several features not available otherwise:
 
 - Plex's default theme song support (using the TvDB ID)
-- Season support for long running anime (including posters)
 - Fallback for series/episode descriptions and titles (if AniDB is missing that information)
 
 With `SingleSeasonOrdering` disabled in the Scanner and Agent the following will also be supported:
 
+- Season support for long running anime (including posters)
 - Combining multiple Shoko series into a single Plex entry
 - Alternate episode ordering for seasons
 
