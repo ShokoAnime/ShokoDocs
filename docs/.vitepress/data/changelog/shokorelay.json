@@ -2,6 +2,34 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.25",
+      "versionURL": "1225",
+      "date": "Jan 27th, 2025",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.25",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added several Gekijouban variants to common title prefixes"
+        },
+        {
+          "type": "added",
+          "text": "Added additional slug formats to animethemes.py so users can specify the version of a song"
+        },
+        {
+          "type": "added",
+          "text": "Added playback support for local theme files to animethemes.py"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed a rare case where the ending would be chosen over the opening when no slug was used with animethemes.py"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed the agent preferences referencing the wrong location for the scanner configuration"
+        }
+      ]
+    },
+    {
       "version": "1.2.24",
       "versionURL": "1224",
       "date": "Jan 12th, 2025",
