@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { createContentLoader } from "vitepress";
+import sharp from "sharp";
 
 // Colors
 const COLORS = {
@@ -24,13 +25,67 @@ const FONT_FACE = {
   SECONDARY: "Roboto",
 };
 
-// Image paths
+// Image paths relative to project root
 const IMAGES = {
-  BACKGROUND: "../open-graph-background.png",
-  LOGO: "../logo.png",
+  BACKGROUND: path.resolve(process.cwd(), "docs/public/images/open-graph-background.png"),
+  LOGO: path.resolve(process.cwd(), "docs/public/images/logo.png"),
 };
 
-function buildOgImage({ title, summary, pageUrl }) {
+// Function to convert image to base64
+async function imageToBase64(imagePath) {
+  try {
+    const imageBuffer = await fs.promises.readFile(imagePath);
+    return `data:image/png;base64,${imageBuffer.toString('base64')}`;
+  } catch (error) {
+    console.error(`Error loading image ${imagePath}:`, error);
+    return null;
+  }
+}
+
+// Text wrapping function
+function wrapText(text, maxWidth, fontSize) {
+  const avgCharWidth = fontSize * 0.6;
+  const charsPerLine = Math.floor(maxWidth / avgCharWidth);
+  const words = text.split(' ');
+  const lines = [];
+  let currentLine = words[0];
+
+  for (let i = 1; i < words.length; i++) {
+    if (currentLine.length + words[i].length + 1 <= charsPerLine) {
+      currentLine += ' ' + words[i];
+    } else {
+      lines.push(currentLine);
+      currentLine = words[i];
+    }
+  }
+  lines.push(currentLine);
+
+  return lines;
+}
+
+async function buildOgImage({ title, summary, pageUrl }) {
+  // Load images as base64
+  const backgroundBase64 = await imageToBase64(IMAGES.BACKGROUND);
+  const logoBase64 = await imageToBase64(IMAGES.LOGO);
+
+  if (!backgroundBase64 || !logoBase64) {
+    throw new Error('Failed to load required images');
+  }
+
+  // Calculate wrapped text
+  const titleLines = wrapText(title, 1000, parseInt(FONT_SIZE.TITLE));
+  const summaryLines = wrapText(summary, 1100, parseInt(FONT_SIZE.SUMMARY));
+
+  // Generate title tspans with 1.5 line height
+  const titleTspans = titleLines.map((line, index) =>
+    `<tspan x="50" dy="${index === 0 ? '0' : '1.5em'}">${line}</tspan>`
+  ).join('');
+
+  // Generate summary tspans with 1.5 line height
+  const summaryTspans = summaryLines.map((line, index) =>
+    `<tspan x="50" dy="${index === 0 ? '0' : '1.5em'}">${line}</tspan>`
+  ).join('');
+
   return `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
       <defs>
@@ -40,7 +95,7 @@ function buildOgImage({ title, summary, pageUrl }) {
       </defs>
       
       <image 
-        href="${IMAGES.BACKGROUND}" 
+        href="${backgroundBase64}" 
         width="1200" 
         height="630" 
         clip-path="url(#clip)"
@@ -55,7 +110,7 @@ function buildOgImage({ title, summary, pageUrl }) {
       
       <g>
         <image 
-          href="${IMAGES.LOGO}" 
+          href="${logoBase64}" 
           x="50" 
           y="55" 
           width="117" 
@@ -83,14 +138,16 @@ function buildOgImage({ title, summary, pageUrl }) {
           font-family="${FONT_FACE.PRIMARY}"
           font-weight="bold" 
           fill="${COLORS.TEXT_PRIMARY}"
-        >${title}</text>
+        >${titleTspans}</text>
+        
         <text 
           x="50" 
           y="400" 
           font-size="${FONT_SIZE.SUMMARY}"
           font-family="${FONT_FACE.SECONDARY}"
           fill="${COLORS.TEXT_PRIMARY}"
-        >${summary}</text>
+        >${summaryTspans}</text>
+        
         <text 
           x="50" 
           y="550" 
@@ -101,6 +158,18 @@ function buildOgImage({ title, summary, pageUrl }) {
       </g>
     </svg>
   `;
+}
+
+async function convertSvgToPng(svgBuffer, outputPath) {
+  try {
+    await sharp(Buffer.from(svgBuffer))
+      .png()
+      .toFile(outputPath);
+    return true;
+  } catch (error) {
+    console.error('Error converting SVG to PNG:', error);
+    return false;
+  }
 }
 
 export const generateOgImages = async (config) => {
@@ -119,7 +188,7 @@ export const generateOgImages = async (config) => {
       try {
         const relativePath = file.url.replace(/^\//, "") + ".md";
 
-        const svg = buildOgImage({
+        const svg = await buildOgImage({
           title: file.frontmatter?.title || "Shoko",
           summary: file.frontmatter?.description || "",
           pageUrl: `https://docs.shokoanime.com${file.url}`,
@@ -131,8 +200,11 @@ export const generateOgImages = async (config) => {
           .replace(/\s+/g, "-")
           .toLowerCase();
 
-        fs.writeFileSync(path.join(outputDir, `${filename}.svg`), svg);
-        console.log(`Generated OG image for ${filename}`);
+        // Convert directly to PNG without saving SVG
+        const pngPath = path.join(outputDir, `${filename}.png`);
+        await convertSvgToPng(svg, pngPath);
+
+        console.log(`Generated PNG OG image for ${filename}`);
       } catch (fileError) {
         console.error(`Error processing file ${file.url}:`, fileError);
       }
