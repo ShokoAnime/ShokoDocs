@@ -2,18 +2,22 @@
   <div class="easy-table-wrapper">
     <table class="easy-table">
       <thead>
-      <tr>
-        <th v-for="column in visibleColumns" :key="column.name" :style="{ width: column.width }">
-          {{ column.header || column.name }}
-        </th>
-      </tr>
+        <tr>
+          <th
+            v-for="column in visibleColumns"
+            :key="column.name"
+            :style="{ width: column.width }"
+          >
+            {{ column.header || column.name }}
+          </th>
+        </tr>
       </thead>
       <tbody>
-      <tr v-for="(row, rowIndex) in data" :key="rowIndex">
-        <td v-for="column in visibleColumns" :key="column.name">
-          <span v-html="renderCellContent(row[column.name])"></span>
-        </td>
-      </tr>
+        <tr v-for="(row, rowIndex) in data" :key="rowIndex">
+          <td v-for="column in visibleColumns" :key="column.name">
+            <span v-html="renderCellContent(row[column.name])"></span>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -23,29 +27,29 @@
 import { marked } from "marked";
 
 export default {
-  name: 'EasyTable',
+  name: "EasyTable",
   props: {
     columns: {
       type: Array,
-      required: true
+      required: true,
     },
     data: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     visibleColumns() {
-      return this.columns.filter(column =>
-          this.data.some(row => column.name in row)
+      return this.columns.filter((column) =>
+        this.data.some((row) => column.name in row),
       );
-    }
+    },
   },
   methods: {
     renderCellContent(content) {
-      if (content === undefined) return '';
+      if (content === undefined) return "";
 
-      if (typeof content === 'object' && content !== null) {
+      if (typeof content === "object" && content !== null) {
         if (content.link && content.title) {
           return `<a href="${content.link}">${content.title}</a>`;
         }
@@ -54,15 +58,15 @@ export default {
         return `<pre><code>${jsonString}</code></pre>`;
       }
 
-      if (typeof content === 'string') {
-        if (content.startsWith('http')) {
+      if (typeof content === "string") {
+        if (content.startsWith("http")) {
           return `<a href="${content}">Link</a>`;
         }
         return marked.parse(content);
       }
       return content;
     },
-  }
+  },
 };
 </script>
 

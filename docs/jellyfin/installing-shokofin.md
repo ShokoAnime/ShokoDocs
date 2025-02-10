@@ -94,8 +94,8 @@ install the correct version for your setup to guarantee functionality.
 2. Under the **Plugins** section in the side-bar, go to **Catalog**.
 3. At the top of the catalog page, click the **⚙ Gear** icon that's next to the help button.
 4. Add new repository by clicking on the **+ Plus** icon and enter the following details;
-    - **Repository Name:** `Shokofin Stable`
-    - **Repository URL:** `https://raw.githubusercontent.com/ShokoAnime/Shokofin/metadata/stable/manifest.json`
+   - **Repository Name:** `Shokofin Stable`
+   - **Repository URL:** `https://raw.githubusercontent.com/ShokoAnime/Shokofin/metadata/stable/manifest.json`
 5. Click on **Catalog** under the **Plugins** section in the sidebar.
 6. Scroll down until you find **Shoko** under the **Metadata** section and click it.
 7. Click the blue **Install** button. You will get a pop-up warning you about using untrusted plugins. Click Ok.
@@ -116,7 +116,6 @@ To install the **development** builds, use the following repository URL instead:
    [this page](https://jellyfin.org/docs/general/administration/configuration.html) for where to find your Jellyfin
    install.
 3. Start or restart your server to apply the changes.
-
 
 ## Next Steps
 

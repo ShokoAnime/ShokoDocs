@@ -119,7 +119,7 @@ If you prefer to use the Synology Docker Application, follow these steps:
 
 1. Open Docker from the Application Menu and navigate to the Containers tab.
 2. Download the [Synology Container File](/files/synology-dockerfile.json).
-3. Replace the ``PUID``, ``PGID``, and ``/path/to/anime`` in the file with your specific values.
+3. Replace the `PUID`, `PGID`, and `/path/to/anime` in the file with your specific values.
 4. Once you've made these changes, go to Settings, select Import, and choose the file you've just modified.
 5. Name the container ShokoServer, then apply the settings.
 
@@ -135,50 +135,51 @@ Follow these steps to set up a Shoko server using a custom app:
 1. Navigate to **Apps -> Discover Apps -> Custom App**.
 2. Set the **Application Name** to your preference.
 3. Configure **Image Configuration**:
-	- Repository: `ghcr.io/shokoanime/server`
-	- Tag: `latest`
+   - Repository: `ghcr.io/shokoanime/server`
+   - Tag: `latest`
 4. Set **Container Configuration**:
-   	- Timezone: set to your local timezone
-	- Environment Variables: 	
-	  <EasyTable :columns="containerColumns" :data="containerData" />
-   	  (These settings ensure Shoko runs as the built-in `Apps` user. Verify this user has access to your media folder.)
-   	- Restart Policy: `Unless Stopped - Restarts the container irrespective of the exit code but stops restarting when the service is stopped or removed.`
-6. Configure **Network Configuration**:
-	- Add a new port
-	- Container Port: `8111`
- 	- Host Port: `8111`	
- 	- Protocol: `TCP`
- 	- Extra for Truenas EE:
-	 	- Container Port: `4556`
-		- Host Port: `4556`
-	 	- Protocol: `udp`
-7. Portal Configuration (**Optional**):
-	- Add a portal
- 	- Name: `Web UI`
-  	- Protocl: `HTTP`
-   	- Use Node IP: `checked`
-	- Port: Use the Node Port from step 5. This allows access to the Shoko Web UI via the App's Web Portal.
- 	- Path: `/`
-8. **Storage Configuration**:
-	- **Optional**: Mount Shoko config -> If not mounted the DB will be lost on container restart
-		- Host Path: Path to store Shoko config
-		- Mount Path: `/home/shoko/.shoko`
-	- **Required**: Mount media folder
-		- Host Path: Your media folder location
-		- Mount Path: Desired container media folder path
+   - Timezone: set to your local timezone
+   - Environment Variables:
+     <EasyTable :columns="containerColumns" :data="containerData" />
+     (These settings ensure Shoko runs as the built-in `Apps` user. Verify this user has access to your media folder.)
+   - Restart Policy: `Unless Stopped - Restarts the container irrespective of the exit code but stops restarting when the service is stopped or removed.`
+5. Configure **Network Configuration**:
+   - Add a new port
+   - Container Port: `8111`
+   - Host Port: `8111`
+   - Protocol: `TCP`
+   - Extra for Truenas EE:
+     - Container Port: `4556`
+     - Host Port: `4556`
+     - Protocol: `udp`
+6. Portal Configuration (**Optional**):
+   - Add a portal
+   - Name: `Web UI`
+   - Protocl: `HTTP`
+   - Use Node IP: `checked`
+   - Port: Use the Node Port from step 5. This allows access to the Shoko Web UI via the App's Web Portal.
+   - Path: `/`
+7. **Storage Configuration**:
 
-9. Click **Save** and wait for the container status to change to "Running".
-10. Access the setup page by clicking **Web UI** under Application Info.
+   - **Optional**: Mount Shoko config -> If not mounted the DB will be lost on container restart
+     - Host Path: Path to store Shoko config
+     - Mount Path: `/home/shoko/.shoko`
+   - **Required**: Mount media folder
+     - Host Path: Your media folder location
+     - Mount Path: Desired container media folder path
+
+8. Click **Save** and wait for the container status to change to "Running".
+9. Access the setup page by clicking **Web UI** under Application Info.
 
 ### Common Issues
 
 You may encounter the following issues when setting up Shoko Server with TrueNAS Scale:
 
 - Application is stuck in Deploying state:
-	- Navigate to **Workloads -> View Logs** to see what went wrong.
+  - Navigate to **Workloads -> View Logs** to see what went wrong.
 - Shoko server does not see my media folder:
-	- Check the permissions on your media folder and ensure the user specified in the Container Environment Variables has
-	  access.
+  - Check the permissions on your media folder and ensure the user specified in the Container Environment Variables has
+    access.
 
 ## Bare Metal (Ubuntu)
 
@@ -189,19 +190,23 @@ Additionally, a strong understanding of Linux is needed to follow these steps an
 :::
 
 #### Prerequisites
+
 - **Ubuntu 18.04** or later.
 
 #### 1. Update Your System
+
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
 
 #### 2. Install Required Dependencies
+
 ```bash
 sudo apt install -y mediainfo librhash-dev
 ```
 
 #### 3. Install .NET SDK and Runtime
+
 - Add the Microsoft package repository
   ```bash
   wget https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
@@ -214,40 +219,50 @@ sudo apt install -y mediainfo librhash-dev
   ```
 
 #### 4. Download Shoko Server
+
 Download the latest release from the [Shoko Server Releases](https://github.com/ShokoAnime/ShokoServer/releases) page or use `wget`:
+
 ```bash
 wget $(curl -s https://api.github.com/repos/ShokoAnime/ShokoServer/releases/latest | jq -r '.assets[] | select(.name | test("Shoko.CLI_Framework_any-x64.zip")) | .browser_download_url')
 ```
 
 #### 5. Extract the Downloaded Archive
+
 ```bash
 unzip Shoko.CLI_Framework_any-x64.zip -d ShokoServer
 cd ShokoServer
 ```
 
 #### 6. Make the Shoko.CLI Executable
+
 ```bash
 chmod +x Shoko.CLI
 ```
 
 #### 7. Run Shoko Server
+
 ```bash
 ./Shoko.CLI
 ```
 
 #### 8. Access the Web Interface
+
 Open your browser and navigate to:
+
 ```
 http://localhost:8111
 ```
 
 #### (Optional) Run Shoko Server as a Service
+
 To run Shoko Server as a background service:
 
 - Create a systemd service file with the following structure:
+
   ```bash
   sudo nano /etc/systemd/system/shokoserver.service
   ```
+
   ```ini
   [Unit]
   Description=Shoko Server
@@ -263,6 +278,7 @@ To run Shoko Server as a background service:
   [Install]
   WantedBy=multi-user.target
   ```
+
 - Replace `/path/to/ShokoServer` with the actual path to your Shoko Server directory. `User=1000` will run the service as the default non-root Ubuntu user. Adjust this value if a different user is required.
 
 - Reload systemd and enable the service:
@@ -281,7 +297,4 @@ When you first navigate to `http://localhost:8111`, you may see a message statin
 
 - Click on the **Install Shoko Server UI** button to proceed with the installation.
 - Once installed, you will be able to access and use the Shoko Server UI for managing your library.
-:::
-
-
-
+  :::

@@ -231,7 +231,7 @@
           "type": "changed",
           "text": "Redesigned the First Run setup."
         },
-          {
+        {
           "type": "changed",
           "text": "Users can now upload a custom avatar."
         }

@@ -1,11 +1,11 @@
 ---
-title: Shoko Server Changelog
-description: Changelog for Shoko Server.
+title: Shokofin Changelog
+description: Changelog for Shokofin, Shoko plugin to bring your anime collection to Jellyfin.
 ---
 
 # Shoko Shokofin Changelog
 
-Below is the changelog for Shokofin. 
+Below is the changelog for Shokofin.
 
 When available, you can click on **Release Notes** to be redirected to the
 corresponding blog post, which provides detailed information about the key changes in that version. Please note that

@@ -63,7 +63,7 @@
           "type": "added",
           "text": "Added an action to purge all AniDB↔TMDB links and optionally reset the auto linking state."
         },
-                {
+        {
           "type": "breaking",
           "text": "Removed ALL TvDB support from server except the TvDB IDs stored on the TMDB show/episode models and the exposed TvDB IDs sourced from said models in the APIv3."
         },

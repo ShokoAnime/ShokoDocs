@@ -1,11 +1,11 @@
 ---
-title: Shoko Server Changelog
-description: Changelog for Shoko Server.
+title: Shoko Desktop Changelog
+description: Changelog for Shoko Desktop, A Windows client for managing your anime collection with Shoko Server.
 ---
 
 # Shoko Desktop Changelog
 
-Below is the changelog for Shoko Desktop. 
+Below is the changelog for Shoko Desktop.
 
 When available, you can click on **Release Notes** to be redirected to the
 corresponding blog post, which provides detailed information about the key changes in that version. Please note that

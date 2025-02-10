@@ -15,11 +15,11 @@ For support/questions join the [Shoko Discord server](https://discord.gg/shokoan
 ## Installation
 
 1. Download the [the release appropriate for your Shoko Server version.](https://github.com/Mik1ll/LuaRenamer/releases)
-    * The [latest release](https://github.com/Mik1ll/LuaRenamer/releases/latest) should be compatible with current Stable.
-    * Pre-releases will be compatible with Shoko Daily depending on the Abstractions Version, check release notes and [Shoko Server tags](https://github.com/ShokoAnime/ShokoServer/tags) for compatibility.
+   - The [latest release](https://github.com/Mik1ll/LuaRenamer/releases/latest) should be compatible with current Stable.
+   - Pre-releases will be compatible with Shoko Daily depending on the Abstractions Version, check release notes and [Shoko Server tags](https://github.com/ShokoAnime/ShokoServer/tags) for compatibility.
 2. Unzip the folder into the Shoko plugin directory, create the folder if it does not exist.
-    * (Windows) `C:\ProgramData\ShokoServer\plugins`
-    * (Docker) wherever the container location `/home/shoko/.shoko/Shoko.CLI/plugins` is mounted.
+   - (Windows) `C:\ProgramData\ShokoServer\plugins`
+   - (Docker) wherever the container location `/home/shoko/.shoko/Shoko.CLI/plugins` is mounted.
 3. Restart Shoko Server.
 4. (Recommended) Install [VS Code](https://code.visualstudio.com/download) and [the Lua extension](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) to edit your script.
 5. Follow instructions in the next section to add a script.
@@ -34,7 +34,7 @@ For support/questions join the [Shoko Discord server](https://discord.gg/shokoan
 4. Create a new renamer config, enter a name and select LuaRenamer from the select box. If LuaRenamer is not visible, the renamer failed to load, check the server logs.
 5. Add the files (button next to the config cog wheel) you wish to rename. The rename/move preview will automatically populate with changes you make.
 6. The Move checkbox chooses whether the files are renamed and moved or only renamed.
-7. The config can be set to be the Default, which is used when Rename On Import and Move On Import are set in the Import Settings. 
+7. The config can be set to be the Default, which is used when Rename On Import and Move On Import are set in the Import Settings.
 8. Once you are happy with the preview you can save the config and click Rename Files to rename/move+rename the previewed files.
 
 ### Renaming on Import

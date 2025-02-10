@@ -1,81 +1,76 @@
-@import 'non.geist';
-
-:root {
-    --vp-font-family-base: 'Geist Variable'
-}
-
 /* Extend content area's width. */
 .content-container {
-    max-width: 850px !important;
+  max-width: 850px !important;
 }
 
 /* Round images within content area. */
 .content-container * img {
-    border-radius: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 /* Add a bottom border to the page title. */
 .content-container * h1 {
-    border-bottom: 1px solid var(--vp-c-divider);
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--vp-c-divider);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 /* Restyle the custom blocks. */
 .info.custom-block {
-    background-color: rgba(101, 117, 133, .05);
-    border-color: rgba(101, 117, 133, 1);
-    font-weight: 500;
+  background-color: rgba(101, 117, 133, 0.05);
+  border-color: rgba(101, 117, 133, 1);
+  font-weight: 500;
 }
 
 .warning.custom-block {
-    background-color: rgb(255, 206, 100, .05);;
-    border-color: rgb(255, 206, 100);
-    font-weight: 500;
+  background-color: rgb(255, 206, 100, 0.05);
+  border-color: rgb(255, 206, 100);
+  font-weight: 500;
 }
 
 .tip.custom-block {
-    background-color: rgba(100, 108, 255, .05);
-    border-color: rgba(100, 108, 255, 1);
-    font-weight: 500;
+  background-color: rgba(100, 108, 255, 0.05);
+  border-color: rgba(100, 108, 255, 1);
+  font-weight: 500;
 }
 
 .danger.custom-block {
-    background-color: rgb(255, 100, 100, .05);
-    border-color: rgb(255, 100, 100);
-    font-weight: 500;
+  background-color: rgb(255, 100, 100, 0.05);
+  border-color: rgb(255, 100, 100);
+  font-weight: 500;
 }
 
 .important.custom-block {
-    background-color: rgb(137, 87, 229, .05);
-    border-color: rgb(137, 87, 229);
-    font-weight: 500;
+  background-color: rgb(137, 87, 229, 0.05);
+  border-color: rgb(137, 87, 229);
+  font-weight: 500;
 }
 
-.vp-doc th, .vp-doc td {
-    border: none;
+.vp-doc th,
+.vp-doc td {
+  border: none;
 }
 
 .vp-doc td * p {
-    margin: 0;
+  margin: 0;
 }
 
 /* Move Search & On This Page */
 @media (min-width: 1024px) {
-    .VPNavBarSearch {
-        margin-left: 1.625rem
-    }
+  .VPNavBarSearch {
+    margin-left: 1.625rem;
+  }
 
-    .VPLocalNavOutlineDropdown {
-        margin-left: 1.625rem
-    }
+  .VPLocalNavOutlineDropdown {
+    margin-left: 1.625rem;
+  }
 }
 
 /* Make Logo & Title bigger */
 .VPNavBarTitle * .VPImage.logo {
-    height: 2rem;
+  height: 2rem;
 }
 
 .VPNavBarTitle > a.title > span {
-    font-size: 1.5rem !important;
+  font-size: 1.5rem !important;
 }

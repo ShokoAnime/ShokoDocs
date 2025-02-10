@@ -38,14 +38,15 @@ try any of the following:
 This kind of configuration can be useful if you intend to have separate libraries for movies and series.
 
 ### Library File Dates
-Sometimes problems may arise from using the `Use date scanned into the library` as the date for newly added files. 
-This setting can cause issues with sorting and organizing your media, as the date Jellyfin uses may not accurately 
-reflect the actual creation or modification date of the files. Additionally, this date setting affects the season 
+
+Sometimes problems may arise from using the `Use date scanned into the library` as the date for newly added files.
+This setting can cause issues with sorting and organizing your media, as the date Jellyfin uses may not accurately
+reflect the actual creation or modification date of the files. Additionally, this date setting affects the season
 and show/series added dates, which can further complicate media organization.
 
 To avoid these issues, it's recommended to change the setting in `Dashboard -> Libraries -> Display -> Date added 
-behavior for new content` to `Use file creation date`. This ensures that the date used by Jellyfin for sorting and 
-organizing your media reflects the actual creation date of the files, providing a more accurate and consistent experience 
+behavior for new content` to `Use file creation date`. This ensures that the date used by Jellyfin for sorting and
+organizing your media reflects the actual creation date of the files, providing a more accurate and consistent experience
 across individual files, seasons, and entire series.
 
 ## Virtual File System (**VFS**)

@@ -9,9 +9,9 @@ and resources for the Shoko suite of programs and plugins.
 - [Installation](#installation)
 - [Usage](#usage)
 - [Adding New Content](#adding-new-content)
-    - [Documentation Pages](#adding-new-documentation-pages)
-    - [Editing Existing Documentation](#editing-existing-documentation)
-    - [Your Program or Plugin](#your-program-or-plugin)
+  - [Documentation Pages](#adding-new-documentation-pages)
+  - [Editing Existing Documentation](#editing-existing-documentation)
+  - [Your Program or Plugin](#your-program-or-plugin)
 - [Built With](#built-with)
 - [Contact](#contact)
 
@@ -94,7 +94,6 @@ If you have a program or plugin that integrates with Shoko and would like to add
 - Create a new directory in `docs` with the name of your program/plugin.
 - Structure it so that it follows the same structure as the rest of the documentation.
 - If applicable, provide screenshots, code snippets, and examples to make the documentation more informative.
-
 
 ## Built With
 

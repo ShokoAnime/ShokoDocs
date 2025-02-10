@@ -120,7 +120,8 @@ While we use HEX values in the example below and in the default Shoko theme, you
 :::
 
 :::details Theme JSON Example
- ```json
+
+```json
 {
   "name": "Theme Name",
   "version": "1.0.0",
@@ -136,39 +137,40 @@ While we use HEX values in the example below and in the default Shoko theme, you
 :::
 
 :::details Theme CSS Example
+
 ```css
 & {
-  --button-danger: #FF5252;
-  --button-danger-border: #0B0E17;
+  --button-danger: #ff5252;
+  --button-danger-border: #0b0e17;
   --button-danger-hover: #fa7676;
   --button-danger-text: #010f1c;
-  --button-primary: #3B82F6;
-  --button-primary-border: #0B0E17;
+  --button-primary: #3b82f6;
+  --button-primary-border: #0b0e17;
   --button-primary-hover: #64b3ff;
   --button-primary-text: #010f1c;
   --button-secondary: #313946;
-  --button-secondary-border: #0B0E17;
+  --button-secondary-border: #0b0e17;
   --button-secondary-hover: #404a59;
   --button-secondary-text: #cfd8e3;
-  --header-background: #191F2C;
+  --header-background: #191f2c;
   --header-icon: #cfd8e3;
-  --header-icon-primary: #3B82F6;
+  --header-icon-primary: #3b82f6;
   --header-text: #cfd8e3;
-  --header-text-important: #06C270;
-  --header-user-background: #3B82F6;
+  --header-text-important: #06c270;
+  --header-user-background: #3b82f6;
   --header-user-text: #010f1c;
-  --panel-background: #191F2C;
-  --panel-background-alt: #171C28;
+  --panel-background: #191f2c;
+  --panel-background-alt: #171c28;
   --panel-background-selected-row: #243148;
   --panel-background-overlay: #212f3de5;
   --panel-background-poster-overlay: #212f3de5;
-  --panel-background-transparent: #191F2Ca6;
-  --panel-border: #0B0E17;
+  --panel-background-transparent: #191f2ca6;
+  --panel-border: #0b0e17;
   --panel-icon: #cfd8e3;
-  --panel-icon-action: #3B82F6;
-  --panel-icon-danger: #FF5252;
-  --panel-icon-important: #06C270;
-  --panel-icon-warning: #F1C40F;
+  --panel-icon-action: #3b82f6;
+  --panel-icon-danger: #ff5252;
+  --panel-icon-important: #06c270;
+  --panel-icon-warning: #f1c40f;
   --panel-input: #121823;
   --panel-menu-item-background: #0f355a;
   --panel-menu-item-background-hover: #283e61;
@@ -176,28 +178,28 @@ While we use HEX values in the example below and in the default Shoko theme, you
   --panel-table-header: #0d141f;
   --panel-tags: #3f4762;
   --panel-text: #cfd8e3;
-  --panel-text-danger: #FF5252;
-  --panel-text-important: #06C270;
-  --panel-text-other: #AC72F5;
-  --panel-text-primary: #3B82F6;
-  --panel-text-warning: #F1C40F;
+  --panel-text-danger: #ff5252;
+  --panel-text-important: #06c270;
+  --panel-text-other: #ac72f5;
+  --panel-text-primary: #3b82f6;
+  --panel-text-warning: #f1c40f;
   --panel-toggle-background: #0f355a;
   --panel-toggle-background-alt: #6e8aa61a;
   --panel-toggle-background-hover: #283e61;
   --panel-toggle-text: #a9d5ff;
   --panel-toggle-text-alt: #cfd8e3;
-  --slider-background: #0B0E17;
-  --slider-background-alt: #171C28;
-  --slider-color: #3B82F6;
-  --slider-color-alt: #3B82F6;
+  --slider-background: #0b0e17;
+  --slider-background-alt: #171c28;
+  --slider-color: #3b82f6;
+  --slider-color-alt: #3b82f6;
   --topnav-background: #101723;
-  --topnav-border: #0B0E17;
+  --topnav-border: #0b0e17;
   --topnav-icon: #cfd8e3;
-  --topnav-icon-important: #06C270;
+  --topnav-icon-important: #06c270;
   --topnav-icon-primary: #cfd8e3;
-  --topnav-icon-warning: #F1C40F;
+  --topnav-icon-warning: #f1c40f;
   --topnav-text: #cfd8e3;
-  --topnav-text-primary: #3B82F6;
+  --topnav-text-primary: #3b82f6;
   --logo-outline: #000;
   --logo-skin: #fdf5e8;
   --logo-face-shadow: #fe514d;
@@ -212,6 +214,7 @@ While we use HEX values in the example below and in the default Shoko theme, you
   --logo-hair-gradient3: #79f0f8;
 }
 ```
+
 :::
 
 ### Transparency With Hex Colors
@@ -228,7 +231,7 @@ If you’ve made a theme and want to share it, you can submit it to the Shoko We
 
 1. Fork the [Shoko Website repository](https://github.com/ShokoAnime/ShokoSite) by clicking the **Fork** button at the top right.
 2. Add your theme files, place both the JSON and CSS files for your theme in the `public/themes` folder.
-3. Create a theme info file: 
+3. Create a theme info file:
    - Go to the `app/content/downloads/webui-themes` folder.
    - Copy an existing `.mdx` file, rename it to match your theme’s name, and update the information inside to describe your theme.
 4. Add images for your theme. put the theme images in the `/images/downloads/webui-themes/` folder. Name the images the same as your theme and make sure to blur any posters shown in them.
@@ -237,6 +240,6 @@ If you’ve made a theme and want to share it, you can submit it to the Shoko We
 That’s it! Your theme will be available once the pull request is approved.
 
 :::info Getting Help
-If you're having issues with uploading your theme, feel free to ask for help in the [Shoko Discord server](https://discord.gg/shokoanime) 
+If you're having issues with uploading your theme, feel free to ask for help in the [Shoko Discord server](https://discord.gg/shokoanime)
 and we can help you get your theme uploaded and shared with the community.
 :::

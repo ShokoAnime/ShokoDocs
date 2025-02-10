@@ -576,7 +576,7 @@ The "Shows" type is best for most use cases, as Shokofin will still display anim
 configured to separate movies from shows. If you configured Shokofin to separate movies, you will need to create a
 "Movies" library as well as a "Shows" library.
 
-Setting the type to "Mixed Movies and Shows" *will* work, but is not recommended due to quirks within Jellyfin, and with
+Setting the type to "Mixed Movies and Shows" _will_ work, but is not recommended due to quirks within Jellyfin, and with
 how Shokofin works as a plugin. Any other library type is otherwise unsupported.
 
 ### Folders
@@ -664,6 +664,7 @@ Get-ChildItem -Path 'C:\path\to\library\' '*.nfo' | Remove-Item
 ```sh
 find /path/to/library/ -name "*.nfo" -type f -delete
 ```
+
 :::
 
 ### Image Fetchers
