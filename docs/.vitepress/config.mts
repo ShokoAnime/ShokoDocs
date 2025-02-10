@@ -331,7 +331,7 @@ export default defineConfig({
       .replace(/\s+/g, '-')
       .toLowerCase();
 
-    const ogImageUrl = `images/og-images/${filename}.svg`;
+    const ogImageUrl = `/images/og-images/${filename}.svg`;
     const url = `https://docs.shokoanime.com/${pageData.relativePath.replace(/\.md$/, '')}`;
 
     return [
