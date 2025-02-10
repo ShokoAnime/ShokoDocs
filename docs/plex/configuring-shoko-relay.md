@@ -77,54 +77,58 @@ the [Syncing Watched States](/plex/syncing-watched-states) page.
 ### Creating A Shoko Relay Library
 
 1. Add a Plex Library
-    - While Shoko Server is running, open Plex and create a new "TV Shows" library.
-    - Ensure that you have completed the **required edits** mentioned on
-      the [Installing Agents & Scanners](/plex/installing-agents-scanners) page.
+
+   - While Shoko Server is running, open Plex and create a new "TV Shows" library.
+   - Ensure that you have completed the **required edits** mentioned on
+     the [Installing Agents & Scanners](/plex/installing-agents-scanners) page.
 
 2. Add a Folder to Your Library
-    - When prompted to add folders to your library, browse to your anime collection.
-    - Even though Shoko will provide the metadata, Plex still needs to know where the physical files are located.
+
+   - When prompted to add folders to your library, browse to your anime collection.
+   - Even though Shoko will provide the metadata, Plex still needs to know where the physical files are located.
 
 3. Configure the Advanced Settings
-    - In the Advanced tab, select: Scanner **Shoko Relay Scanner** and Agent **ShokoRelay**.
-    - Enter your Shoko Server credentials which are the only required settings.
-    
-    ![Shoko Relay - Inputting Server Information](/images/shoko-relay/Shoko-Relay-Inputting-Server-Info.jpg)
+
+   - In the Advanced tab, select: Scanner **Shoko Relay Scanner** and Agent **ShokoRelay**.
+   - Enter your Shoko Server credentials which are the only required settings.
+
+   ![Shoko Relay - Inputting Server Information](/images/shoko-relay/Shoko-Relay-Inputting-Server-Info.jpg)
 
    For more information on each of the required settings consult the table below:
 
    <EasyTable :columns="serverSettingsColumns" :data="serverSettingsData" />
 
 4. Change Recommended Options
-    - Changing the following options at the bottom of Advanced Settings page is also recommended:
+
+   - Changing the following options at the bottom of Advanced Settings page is also recommended:
 
    <EasyTable :columns="recommendedOptionsColumns" :data="recommendedOptionsData" />
 
 5. Add the Library
-    - Once you've reviewed and configured the remaining options, click the **Add Library** button.
-    - After adding the library, initiate a scan within Plex and wait for Plex to add your collection.
+   - Once you've reviewed and configured the remaining options, click the **Add Library** button.
+   - After adding the library, initiate a scan within Plex and wait for Plex to add your collection.
 6. Allow Local Metadata
-    - In Plex Navigate to: `Settings > Agents (Legacy) > Shows > ShokoRelay`
-    - Move the following entry to the top of the list and enable it:
-    - [x] Local Media Assets (TV)
+   - In Plex Navigate to: `Settings > Agents (Legacy) > Shows > ShokoRelay`
+   - Move the following entry to the top of the list and enable it:
+   - [x] Local Media Assets (TV)
 
 ### Recommended Shoko Server Configuration
 
 Enable the following options in Shoko to ensure that Plex has at least one source of metadata for everything:
 
 - `Settings > AniDB > Download Options`
-    - [x] Character Images
-    - [x] Creator Images
+  - [x] Character Images
+  - [x] Creator Images
 - `Settings > Metadata Sites > TMDB Options`
-    - [x] Auto Link
-    - [x] Auto Link Restricted
+  - [x] Auto Link
+  - [x] Auto Link Restricted
 - `Settings > Metadata Sites > TMDB Download Options`
-    - [x] Download Alternate Ordering
-    - [x] Download Backdrops
-    - [x] Download Posters
+  - [x] Download Alternate Ordering
+  - [x] Download Backdrops
+  - [x] Download Posters
 - `Settings > Collection > Relation Options`
-    - [x] Auto Group Series
-    - [x] Determine Main Series Using Relation Weighing
+  - [x] Auto Group Series
+  - [x] Determine Main Series Using Relation Weighing
 
 ## Additional Information
 
@@ -151,8 +155,8 @@ To resolve this there are several different approaches:
 
 1. Nest the entire library within a new folder so folders affected by this are no longer in the root directory
 2. Separate the files from each AniDB series into their own separate folders or subfolders
-4. Create an empty subfolder in any directory affected by this
-:::
+3. Create an empty subfolder in any directory affected by this
+   :::
 
 ### Handling "Stuck" Metadata
 

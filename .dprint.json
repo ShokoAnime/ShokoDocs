@@ -1,22 +1,24 @@
 {
-  "lineWidth": 120,
-  "typescript": {
-    "exportDeclaration.sortNamedExports": "caseSensitive",
-    "importDeclaration.sortNamedImports": "caseSensitive",
-    "jsx.multiLineParens": "prefer",
-    "jsx.quoteStyle": "preferDouble",
-    "module.sortExportDeclarations": "maintain",
-    "module.sortImportDeclarations": "maintain",
-    "quoteProps": "asNeeded",
-    "quoteStyle": "alwaysSingle",
-    "semiColons": "always",
-    "typeLiteral.separatorKind.singleLine": "comma"
-  },
-  "includes": [
-    "src/**"
-  ],
-  "plugins": [
-    "https://plugins.dprint.dev/typescript-0.90.5.wasm",
-    "https://plugins.dprint.dev/markdown-0.17.2.wasm"
-  ]
+  "plugins": ["https://plugins.dprint.dev/g-plane/markup_fmt-v0.18.0.wasm"],
+  "includes": ["**/*.vue"],
+  "markup": {
+    "associations": ["**/*.vue"],
+    "printWidth": 120,
+    "useTabs": false,
+    "indentWidth": 2,
+    "lineBreak": "lf",
+    "quotes": "double",
+    "formatComments": false,
+    "scriptIndent": false,
+    "styleIndent": false,
+    "closingBracketSameLine": false,
+    "closingTagLineBreakForEmpty": "fit",
+    "preferAttrsSingleLine": false,
+    "whitespaceSensitivity": "css",
+    "doctypeKeywordCase": "upper",
+    "strictSvelteAttr": false,
+    "scriptFormatter": "dprint",
+    "ignoreCommentDirective": "markup-fmt-ignore",
+    "ignoreFileCommentDirective": "dprint-ignore-file"
+  }
 }

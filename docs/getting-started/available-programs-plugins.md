@@ -74,9 +74,9 @@ const pluginsData = [
 ];
 
 const discontinuedColumns = [
-  { name: 'name', header: 'Name' },
-  { name: 'dev', header: 'Dev' },
-  { name: 'platform', header: 'Platform' },
+  { name: 'name', header: 'Name', width: '20%' },
+  { name: 'dev', header: 'Dev', width: '15%' },
+  { name: 'platform', header: 'Platform', width: '15%'  },
   { name: 'discontinuedReason', header: 'Discontinued Reason' },
 ];
 

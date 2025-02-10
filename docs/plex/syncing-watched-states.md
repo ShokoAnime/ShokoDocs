@@ -21,30 +21,33 @@ entries and will only sync the first match.
 :::
 
 1. Authenticate Plex
-    - Navigating to **Settings** > **Integrations** in the Shoko Server WebUI.
-    - In the **Plex Options** section at the bottom click **Authenticate**.
+
+   - Navigating to **Settings** > **Integrations** in the Shoko Server WebUI.
+   - In the **Plex Options** section at the bottom click **Authenticate**.
 
    ![Shoko - Plex Authentication](/images/shoko-relay/Shoko-Relay-Plex-Auth.jpg)
-2.
-    - It will redirect you and have you log into your Plex account.
-    - If successful, you'll see the following message.
 
-    ![Shoko - Plex Synced](/images/shoko-relay/Shoko-Relay-Plex-Synced.jpg)
+2. - It will redirect you and have you log into your Plex account.
+   - If successful, you'll see the following message.
 
-2. Select Your Plex Server and Libraries
-    - Return to **Settings** > **Integrations** in the Shoko Server WebUI.
-    - The Server dropdown in the Plex section should now be available.
-    - Select your Plex Server and then any Libraries you would like to sync.
-    - Hit Save.
+   ![Shoko - Plex Synced](/images/shoko-relay/Shoko-Relay-Plex-Synced.jpg)
 
-3. Configure Plex Home Users
-    - Navigating to **Settings** > **User Management** in the Shoko Server WebUI.
-    - Enter any usernames you would like to sync into the "Plex Users" field, comma separated.
-    - This is essential for those who don't use their Plex server's admin account for all their viewing.
+3. Select Your Plex Server and Libraries
 
-4. Run the Action
-    - Click the Actions button in the WebUI navigation bar.
-    - Go to the Plex Section and click the **Sync Plex Watch Status** entry.
+   - Return to **Settings** > **Integrations** in the Shoko Server WebUI.
+   - The Server dropdown in the Plex section should now be available.
+   - Select your Plex Server and then any Libraries you would like to sync.
+   - Hit Save.
+
+4. Configure Plex Home Users
+
+   - Navigating to **Settings** > **User Management** in the Shoko Server WebUI.
+   - Enter any usernames you would like to sync into the "Plex Users" field, comma separated.
+   - This is essential for those who don't use their Plex server's admin account for all their viewing.
+
+5. Run the Action
+   - Click the Actions button in the WebUI navigation bar.
+   - Go to the Plex Section and click the **Sync Plex Watch Status** entry.
 
 ## Using Webhooks (Plex Pass)
 
@@ -54,7 +57,7 @@ need to run the "Sync Plex Watch Status" action manually.
 
 :::warning Episode Type & Manually Marked Issues
 Currently this only works with regular Episodes. Special, Other, ThemeSong, Trailer, Parody, and Movie Type episodes can
-not be detected and won't update their status. When utilizing TMDB episode ordering; seasons > 1 that don't use absolute 
+not be detected and won't update their status. When utilizing TMDB episode ordering; seasons > 1 that don't use absolute
 numbering will not work correctly either. It should also be noted that Plex webhooks do not function with things that are
 manually marked as watched in Plex's UI.
 
@@ -63,19 +66,21 @@ by hand in Shoko's WebUI, or use a utility script.
 :::
 
 1. Navigate to the Plex Server Settings
-    - To set up a Webhook, open your Plex WebUI and go to Settings (wrench icon).
-    - Under your username in the left menu, Select **Webhooks**.
+
+   - To set up a Webhook, open your Plex WebUI and go to Settings (wrench icon).
+   - Under your username in the left menu, Select **Webhooks**.
 
 2. Add the Webhook
-    - Click the button to add a Webhook and enter your Shoko Server URL:
-      ```
-      http://<shoko-server-ip>:8111/plex
-      ```
-    - Replace `<shoko-server-ip>` accordingly.
+
+   - Click the button to add a Webhook and enter your Shoko Server URL:
+     ```
+     http://<shoko-server-ip>:8111/plex
+     ```
+   - Replace `<shoko-server-ip>` accordingly.
 
 3. Save Your Changes
-    - Now when playing an episode (with everything set up correctly), you should see scrobble events in your Shoko
-      Server log.
+   - Now when playing an episode (with everything set up correctly), you should see scrobble events in your Shoko
+     Server log.
 
 ## Using a Utility Script (Advanced)
 

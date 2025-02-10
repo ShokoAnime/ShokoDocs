@@ -190,7 +190,6 @@ same information below.
 
 <EasyTable :columns="aniDBData.columns" :data="aniDBData.data" />
 
-
 ## Trakt
 
 <EasyTable :columns="traktData.columns" :data="traktData.data" />

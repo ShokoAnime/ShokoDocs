@@ -1,8 +1,8 @@
 <!-- .vitepress/theme/NotFound.vue -->
 <script setup>
-import {useData} from 'vitepress'
+import { useData } from "vitepress";
 
-const {site} = useData()
+const { site } = useData();
 </script>
 
 <template>
@@ -12,15 +12,20 @@ const {site} = useData()
         <h1>Lost in Space</h1>
         <p class="tagline">Nothing to see here, literally</p>
         <p>
-          It appears that the page you were trying to access has either been moved or the URL is incorrect.
-          Here are some steps to help you find what you were looking for:
+          It appears that the page you were trying to access has either been
+          moved or the URL is incorrect. Here are some steps to help you find
+          what you were looking for:
         </p>
         <ul>
           <li>Check the URL for any malformed parts.</li>
-          <li>Use the search function located above or press <code>CTRL+K</code> for Windows or <code>CMD+K</code> for
-            MAC.
+          <li>
+            Use the search function located above or press
+            <code>CTRL+K</code> for Windows or <code>CMD+K</code> for MAC.
           </li>
-          <li>Since your time is valuable, hop on Discord blame <strong>Elemental Crisis</strong>.</li>
+          <li>
+            Since your time is valuable, hop on Discord blame
+            <strong>Elemental Crisis</strong>.
+          </li>
         </ul>
         <a :href="site.base" class="home-link">→ Return to home</a>
       </div>
@@ -73,10 +78,11 @@ h1 {
 .tagline {
   font-size: 1.5rem;
   margin-bottom: 3rem;
-  opacity: .75;
+  opacity: 0.75;
 }
 
-p, ul {
+p,
+ul {
   font-size: 1rem;
   margin-bottom: 1rem;
 }
@@ -97,7 +103,9 @@ code {
   border: 1px solid var(--vp-c-bg);
   border-radius: 12px;
   background-color: var(--vp-c-bg);
-  transition: border-color 0.25s, background-color 0.25s;
+  transition:
+    border-color 0.25s,
+    background-color 0.25s;
   padding: 1rem;
   width: auto;
   text-decoration: none;

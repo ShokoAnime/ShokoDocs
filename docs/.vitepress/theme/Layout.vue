@@ -3,7 +3,7 @@ import DefaultTheme from "vitepress/theme";
 import { onMounted } from "vue";
 import { useRouter } from "vitepress";
 import mediumZoom from "medium-zoom";
-import NotFound from '../components/NotFound.vue'
+import NotFound from "../components/NotFound.vue";
 
 const { Layout } = DefaultTheme;
 const router = useRouter();

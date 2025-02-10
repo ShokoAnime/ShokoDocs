@@ -43,7 +43,7 @@ snippet from Shoko showing we enforce their specified rate limit.
 
 > You should not request more than one page every two seconds.
 >
->[AniDB Wiki - HTTP API](https://wiki.anidb.net/HTTP_API_Definition#Flooding_and_Caching)
+> [AniDB Wiki - HTTP API](https://wiki.anidb.net/HTTP_API_Definition#Flooding_and_Caching)
 
 Code in Shoko to enforce this.
 
@@ -64,7 +64,7 @@ public class HttpRateLimiter : AniDBRateLimiter
 > A Client MUST NOT send more than 0.5 packets per second (that's one packet every two seconds, not two packets a second!)
 > The server will start to enforce the limit after the first 5 packets have been received.
 >
->Long Term:
+> Long Term:
 > A Client MUST NOT send more than one packet every four seconds over an extended amount of time.
 > An extended amount of time is not defined. Use common sense.
 >

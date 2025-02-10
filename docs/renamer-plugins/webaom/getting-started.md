@@ -10,5 +10,6 @@ The WebAOM renamer is the default renamer that ships with Shoko. It re-implement
 the original.
 
 Limitations:
-* This renamer is only fitting for basic renaming logic.
-* File moving is not customizable beyond the group-aware sorting option.
+
+- This renamer is only fitting for basic renaming logic.
+- File moving is not customizable beyond the group-aware sorting option.

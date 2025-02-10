@@ -200,7 +200,6 @@ members will need to manually sync their watch states via the **Sync Plex Watch 
 
 ![Shoko Server - Settings - User Management](/images/shoko-server/shoko-server-settings-users.jpg)
 
-
 This section allows you to manage your Shoko users. While Shoko does not provide a full-fledged user management system,
 it does offer basic functionality for multiple Shoko accounts. This can be useful with certain third-party plugins
 and metadata sites to track separate watch states.

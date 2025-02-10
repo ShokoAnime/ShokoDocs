@@ -129,7 +129,6 @@ more folders, make sure to do so before moving on to the next steps.
 You can use an IP Address in place of a hostname when setting up an import folder.
 :::
 
-
 ## Data Collection
 
 ![Shoko Server - First Run - Start Server](/images/shoko-server/shoko-server-first-run-data-collection.jpg)

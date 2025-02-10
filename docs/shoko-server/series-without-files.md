@@ -14,4 +14,3 @@ upon discovery.
 
 To remove an empty series, click on it and then select the **Delete** button in the utility's navigation bar. Please be
 aware that currently, images downloaded for the empty series will not be deleted.
-

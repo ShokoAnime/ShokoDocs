@@ -17,9 +17,9 @@ information.
 Renamer configurations can be accessed by clicking on the cog wheel on the right side of the rename utility.  
 Three subsections are expanded:
 
-* **Renamer Selection:** set the default config and manage configs.
-* **Renamer Config:** renamer plugin specific settings.
-* **Script:** an additional renamer plugin setting with a larger text area.
+- **Renamer Selection:** set the default config and manage configs.
+- **Renamer Config:** renamer plugin specific settings.
+- **Script:** an additional renamer plugin setting with a larger text area.
 
 ![Shoko Server - Renamer Config](/images/shoko-server/shoko-server-renamer-config.png)
 

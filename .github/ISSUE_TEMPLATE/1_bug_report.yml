@@ -7,7 +7,7 @@ body:
     attributes:
       label: Browser
       description: Please specify the browser you're using.
-      placeholder: 'e.g. Chrome, Firefox, Safari'
+      placeholder: "e.g. Chrome, Firefox, Safari"
     validations:
       required: true
   - type: input
@@ -15,7 +15,7 @@ body:
     attributes:
       label: Device
       description: Please specify the device you are using.
-      placeholder: 'e.g. Phone, Tablet, Laptop, Desktop'
+      placeholder: "e.g. Phone, Tablet, Laptop, Desktop"
     validations:
       required: true
   - type: textarea

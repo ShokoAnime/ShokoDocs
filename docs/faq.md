@@ -168,17 +168,17 @@ We recommend not nesting related series and instead keeping your folder structur
 similar to how AniDB names the series. Here is an example of folder structure and naming for one of the more
 problematic series.
 
-  ```txt
-  - Jujutsu Kaisen (2023)
-  - Jujutsu Kaisen
-  - Jujutsu Kaisen 0
-  ```
+```txt
+- Jujutsu Kaisen (2023)
+- Jujutsu Kaisen
+- Jujutsu Kaisen 0
+```
 
 Here is an example of how you would name a file for Jujutsu Kaisen (2023).
 
-  ```txt
-  Jujutsu Kaisen (2023) - 01.mkv
-  ```
+```txt
+Jujutsu Kaisen (2023) - 01.mkv
+```
 
 :::
 
@@ -187,27 +187,27 @@ Here is an example of how you would name a file for Jujutsu Kaisen (2023).
 :::details I changed a setting for Shokofin, but my library is not showing the new changes.
 Some changes to the plugin settings may require you to do a full metadata refresh or to even recreate the library. In
 general if metadata feels like it's missing or should be updated, run a full metadata refresh or recreate the library if
-that didn't help. See the following pages for more information on 
-[metadata refreshes](/jellyfin/recommendations/#refreshing-metadata) and 
+that didn't help. See the following pages for more information on
+[metadata refreshes](/jellyfin/recommendations/#refreshing-metadata) and
 [library re-creation](/jellyfin/recommendations/#library-re-creation-is-your-friend).
 :::
 
 :::details Why are my series not being grouped according to my collections in Shoko?
 First, make sure that "Use Shoko groups for shows" is enabled in the plugin settings. If you are not using the VFS, you
 will need to make sure your files are organized in a way that Jellyfin prefers in an AniDB-compatible way as mentioned
-in the Shokofin Recommendations page [here](/jellyfin/recommendations/#jellyfins-file-structure-requirements). 
-Whether you are using the VFS feature or not, a library re-creation can fix any grouping issues. More info on library 
-creation can be found in the [Shokofin Recommendations](/jellyfin/recommendations/#library-re-creation-is-your-friend) 
+in the Shokofin Recommendations page [here](/jellyfin/recommendations/#jellyfins-file-structure-requirements).
+Whether you are using the VFS feature or not, a library re-creation can fix any grouping issues. More info on library
+creation can be found in the [Shokofin Recommendations](/jellyfin/recommendations/#library-re-creation-is-your-friend)
 page.
 :::
 
 :::details Why are some of my shows getting incorrect metadata?
 Make sure that you are only using Shoko as the metadata provider for your your library. The recommended way to setup a
-library using Shokofin can be found in [Configuring Shokofin](/jellyfin/configuring-shokofin/#creating-a-shoko-library). 
-Using multiple metadata providers can cause issues since Jellyfin will mix metadata it finds from all the providers in 
-order of priority set which might not always apply the correct metadata. Refreshing all metadata or even re-creating 
-the library can fix incorrect metadata so long as Shoko Server has identified everything properly in the first place 
-and if Shoko is set as the only provider for the library. See the following pages for more information on 
-[metadata refreshes](/jellyfin/recommendations/#refreshing-metadata) and 
+library using Shokofin can be found in [Configuring Shokofin](/jellyfin/configuring-shokofin/#creating-a-shoko-library).
+Using multiple metadata providers can cause issues since Jellyfin will mix metadata it finds from all the providers in
+order of priority set which might not always apply the correct metadata. Refreshing all metadata or even re-creating
+the library can fix incorrect metadata so long as Shoko Server has identified everything properly in the first place
+and if Shoko is set as the only provider for the library. See the following pages for more information on
+[metadata refreshes](/jellyfin/recommendations/#refreshing-metadata) and
 [library re-creation](/jellyfin/recommendations/#library-re-creation-is-your-friend).
 :::

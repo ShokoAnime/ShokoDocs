@@ -8,25 +8,25 @@
     <!-- Feature Cards -->
     <div class="feature-wrapper">
       <a
-          v-for="(feature, index) in features"
-          :key="index"
-          :href="feature.link"
-          class="feature-card"
+        v-for="(feature, index) in features"
+        :key="index"
+        :href="feature.link"
+        class="feature-card"
       >
         <div class="feature-inner">
           <!-- Handle Lucide Icon -->
           <component
-              v-if="isLucideIcon(feature.icon)"
-              :is="feature.icon"
-              class="text-xl feature-icon"
+            v-if="isLucideIcon(feature.icon)"
+            :is="feature.icon"
+            class="text-xl feature-icon"
           />
 
           <!-- Handle External SVG Files -->
           <img
-              v-else-if="isSvgFile(feature.icon)"
-              :src="feature.icon"
-              alt="feature-icon"
-              class="feature-svg"
+            v-else-if="isSvgFile(feature.icon)"
+            :src="feature.icon"
+            alt="feature-icon"
+            class="feature-svg"
           />
 
           <div class="feature-title">
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import {Palette, FilePenLine, CircleHelp} from 'lucide-vue-next';
+import { Palette, FilePenLine, CircleHelp } from "lucide-vue-next";
 
 export default {
   components: {
@@ -54,22 +54,22 @@ export default {
     features: {
       type: Array,
       required: true,
-      default: () => []
+      default: () => [],
     },
     groupTitle: {
       type: String,
-      default: ''
-    }
+      default: "",
+    },
   },
   methods: {
     isLucideIcon(icon) {
-      return typeof icon === 'string' && /^[A-Z]/.test(icon);
+      return typeof icon === "string" && /^[A-Z]/.test(icon);
     },
     isSvgFile(icon) {
-      return typeof icon === 'string' && /\.svg$/i.test(icon);
-    }
-  }
-}
+      return typeof icon === "string" && /\.svg$/i.test(icon);
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -108,7 +108,9 @@ export default {
   border: 1px solid var(--vp-c-bg-soft);
   border-radius: 12px;
   background-color: var(--vp-c-bg-soft);
-  transition: border-color 0.25s, background-color 0.25s;
+  transition:
+    border-color 0.25s,
+    background-color 0.25s;
   padding: 1.5rem;
   width: calc(100% / 3 - 15px);
   text-decoration: none;

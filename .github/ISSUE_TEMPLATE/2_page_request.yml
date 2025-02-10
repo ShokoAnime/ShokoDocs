@@ -7,7 +7,7 @@ body:
     attributes:
       label: Page Name
       description: Please input the name of the page you're requesting to be made or changed.
-      placeholder: 'Dashboard, Filter, Unrecognized Utility, etc.'
+      placeholder: "Dashboard, Filter, Unrecognized Utility, etc."
     validations:
       required: true
   - type: textarea

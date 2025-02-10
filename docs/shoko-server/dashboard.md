@@ -81,7 +81,6 @@ const importFolderData = [
 ];
 </script>
 
-
 # Dashboard
 
 The Web UI Dashboard is designed to give you a general overview of your collection, featuring multiple widgets that
