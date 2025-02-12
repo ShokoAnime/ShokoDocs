@@ -1,6 +1,6 @@
 ---
-title: Getting Started
-description: Using the WebAOM renamer
+title: Getting Started | WebAOM Renamer
+description: Information on how to use the WebAOM renamer.
 ---
 
 # Getting Started

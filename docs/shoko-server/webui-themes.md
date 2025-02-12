@@ -1,6 +1,6 @@
 ---
 title: Web UI Themes
-description: Overview of the how themes work in Shoko.
+description: Information on how to create, use and share custom themes for Shoko's Web UI.
 ---
 
 <script setup>

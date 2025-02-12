@@ -1,6 +1,6 @@
 ---
 title: Available Programs & Plugins
-description: A list of all available Programs and Plugins that use Shoko.
+description: A list of all available Programs and Plugins for use with Shoko.
 ---
 
 <script setup>

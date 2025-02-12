@@ -1,6 +1,6 @@
 ---
 title: Logs
-description: Overview of the Logs section in the WebUI.
+description: An overview of the Logs section in Shoko's Web UI.
 ---
 
 # Logs

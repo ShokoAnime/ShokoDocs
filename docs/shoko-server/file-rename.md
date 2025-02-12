@@ -1,6 +1,6 @@
 ---
 title: File Rename
-description: Overview of the File Rename utility in the Web UI.
+description: An overview of the File Rename utility in Shoko's Web UI.
 ---
 
 # File Rename

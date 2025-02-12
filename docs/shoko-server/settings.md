@@ -1,6 +1,6 @@
 ---
 title: Settings
-description: Overview of the Settings in the WebUI.
+description: An overview of the Settings available in Shoko's Web UI.
 ---
 
 <script setup>

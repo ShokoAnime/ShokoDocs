@@ -1,6 +1,6 @@
 ---
-title: Script Authoring
-description: Notes on writing or editing lua scripts
+title: Script Authoring | Lua Renamer
+description: Notes on writing or editing lua scripts for Shoko.
 ---
 
 # Script Authoring

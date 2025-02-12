@@ -1,6 +1,6 @@
 ---
 title: Understanding AniDB Bans
-description: Learn how to minimize your chances of receiving an AniDB Ban.
+description: Information on how to minimize your chances of receiving an AniDB Ban.
 ---
 
 <script setup>

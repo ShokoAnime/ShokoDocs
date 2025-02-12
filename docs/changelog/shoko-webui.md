@@ -1,6 +1,6 @@
 ---
 title: Shoko Web UI Changelog
-description: Changelog for the Shoko Web UI, A web browser client for managing your anime collection with Shoko Server.
+description: Changelog for the Shoko Web UI, a web client for managing your anime collection with Shoko Server.
 ---
 
 # Shoko Web UI Changelog

@@ -1,5 +1,6 @@
 ---
 title: Frequently Asked Questions
+description: A list of some of the most commonly asked questions about Shoko.
 ---
 
 <script setup>

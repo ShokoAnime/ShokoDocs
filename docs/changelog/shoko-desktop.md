@@ -1,6 +1,6 @@
 ---
 title: Shoko Desktop Changelog
-description: Changelog for Shoko Desktop, A Windows client for managing your anime collection with Shoko Server.
+description: Changelog for Shoko Desktop, a Windows client for managing your anime collection with Shoko Server.
 ---
 
 # Shoko Desktop Changelog

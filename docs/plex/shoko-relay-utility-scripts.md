@@ -1,5 +1,5 @@
 ---
-title: Shoko Relay Utility Scripts
+title: Shoko Relay Utility Scripts | Plex
 description: Information on how to use the Shoko Relay utility scripts.
 ---
 

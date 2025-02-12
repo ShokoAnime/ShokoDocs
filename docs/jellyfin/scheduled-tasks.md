@@ -1,5 +1,5 @@
 ---
-title: Scheduled Tasks
+title: Scheduled Tasks | Jellyfin
 description: Learn about the scheduled tasks provided by Shokofin.
 ---
 

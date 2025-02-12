@@ -1,6 +1,6 @@
 ---
 title: Shokofin Changelog
-description: Changelog for Shokofin, Shoko plugin to bring your anime collection to Jellyfin.
+description: Changelog for Shokofin, a Shoko plugin for bringing your anime collection to Jellyfin.
 ---
 
 # Shoko Shokofin Changelog

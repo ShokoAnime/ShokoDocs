@@ -1,5 +1,5 @@
 ---
-title: Configuring Shokofin
+title: Configuring Shokofin | Jellyfin
 description: Information on how to configure Shokofin to fit your setup.
 ---
 

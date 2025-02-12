@@ -1,5 +1,5 @@
 ---
-title: Configuring Shokodi
+title: Configuring Shokodi | Kodi
 description: Information on how to configure Shokodi, a Kodi plugin.
 ---
 

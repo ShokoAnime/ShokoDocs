@@ -1,6 +1,6 @@
 ---
 title: Shoko Relay Changelog
-description: Changelog for Shoko Relay, Shoko plugin to bring your anime collection to Plex.
+description: Changelog for Shoko Relay, a Shoko plugin for bringing your anime collection to Plex.
 ---
 
 # Shoko Relay Changelog

@@ -1,6 +1,6 @@
 ---
-title: Configuring Shoko Relay
-description: Information on how to install and configure Shoko Relay (Plex).
+title: Configuring Shoko Relay | Plex
+description: Information on how to install and configure Shoko Relay for Plex.
 ---
 
 <script setup>

@@ -1,9 +1,9 @@
 ---
-title: Renaming
-description: Using the WebAOM renamer for renaming files
+title: Renaming Files | WebAOM Renamer
+description: Information on how to use the WebAOM renamer for renaming files.
 ---
 
-# Renaming
+# Renaming Files
 
 See [the WebAOM renaming section on the AniDB wiki](https://wiki.anidb.net/WebAOM#Move/rename_system), this page will
 mainly highlight the differences from the WebAOM renamer as described there.

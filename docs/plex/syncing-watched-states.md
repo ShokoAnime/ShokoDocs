@@ -1,5 +1,5 @@
 ---
-title: Syncing Watched States
+title: Syncing Watched States | Plex
 description: Information on how to sync watched states from Plex to Shoko.
 sidebar:
   order: 5

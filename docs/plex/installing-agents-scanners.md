@@ -1,6 +1,6 @@
 ---
-title: Installing Agents & Scanners
-description: Information on how to install and configure Shoko Metadata & Shoko Relay.
+title: Installing Agents & Scanners | Plex
+description: Information on how to install and configure Shoko Metadata & Shoko Relay for Plex.
 ---
 
 <script setup>

@@ -1,6 +1,6 @@
 ---
-title: Getting Started
-description: How to set up and use Lua Renamer
+title: Getting Started | Lua Renamer
+description: Information on how to set up and use Lua Renamer.
 ---
 
 # Getting Started

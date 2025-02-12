@@ -1,6 +1,6 @@
 ---
 title: Dashboard
-description: Overview of the Dashboard in the WebUI.
+description: An overview of the Dashboard in Shoko's Web UI.
 ---
 
 <script setup>
