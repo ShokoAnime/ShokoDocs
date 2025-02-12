@@ -1,6 +1,6 @@
 ---
 title: Actions
-description: Overview of the Actions in the WebUI.
+description: An overview of the Actions available in Shoko's WebUI.
 ---
 
 <script setup>

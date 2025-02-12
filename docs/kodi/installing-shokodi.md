@@ -1,5 +1,5 @@
 ---
-title: Installing Shokodi
+title: Installing Shokodi | Kodi
 description: Information on how to install Shokodi, a Kodi plugin.
 ---
 

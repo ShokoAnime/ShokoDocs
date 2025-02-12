@@ -1,6 +1,6 @@
 ---
 title: Shoko Server Changelog
-description: Changelog for Shoko Server, your personal automated anime collection management system.
+description: Changelog for Shoko Server, a automated anime collection management system.
 ---
 
 # Shoko Server Changelog

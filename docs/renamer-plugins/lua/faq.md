@@ -1,6 +1,6 @@
 ---
-title: Frequently Asked Questions
-description: Common questions and usage scenarios
+title: Frequently Asked Questions | Lua Renamer
+description: Common questions and usage scenarios for Lua Renamer.
 ---
 
 # Frequently Asked Questions

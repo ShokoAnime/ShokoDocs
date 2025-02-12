@@ -1,6 +1,6 @@
 ---
 title: My Anime 3 Changelog
-description: Changelog for My Anime 3, Shoko plugin to bring your anime collection to MediaPortal.
+description: Changelog for My Anime 3, a Shoko plugin for bringing your anime collection to MediaPortal.
 ---
 
 # My Anime 3 Changelog

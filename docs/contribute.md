@@ -1,6 +1,6 @@
 ---
 title: Contribute to Shoko
-description: Help Make Shoko even better!
+description: Help make Shoko even better!
 ---
 
 <script setup>

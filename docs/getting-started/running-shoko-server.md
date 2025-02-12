@@ -1,6 +1,6 @@
 ---
 title: Running Shoko Server
-description: Instructions on how to setup Shoko Server after installing.
+description: Information on how to setup Shoko Server after it has been installed.
 editLink: true
 ---
 

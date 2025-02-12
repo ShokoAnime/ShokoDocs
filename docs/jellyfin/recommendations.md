@@ -1,6 +1,6 @@
 ---
-title: Recommendations
-description: Learn how to optimize your Shokofin setup for the best experience.
+title: Recommendations | Jellyfin
+description: Information on how to optimize your Shokofin setup for the best experience.
 ---
 
 # Recommendations

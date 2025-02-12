@@ -1,6 +1,6 @@
 ---
 title: File Search
-description: Overview of the File Search utility in the Web UI.
+description: An overview of the File Search utility in Shoko's Web UI.
 ---
 
 # File Search

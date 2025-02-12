@@ -1,6 +1,6 @@
 ---
 title: Series Without Files
-description: Overview of the Series Without Files utility in the Web UI.
+description: An overview of the Series Without Files utility in Shoko's Web UI.
 ---
 
 # Series Without Files

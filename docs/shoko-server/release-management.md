@@ -1,6 +1,6 @@
 ---
 title: Release Management
-description: Overview of the Release Management utility in the Web UI.
+description: An overview of the Release Management utility in Shoko's Web UI.
 ---
 
 # Release Management

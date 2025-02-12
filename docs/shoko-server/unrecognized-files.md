@@ -1,6 +1,6 @@
 ---
 title: Unrecognized Files
-description: Learn how to minimize your chances of receiving an AniDB Ban.
+description: Information on how to utilize the Unrecognized Files Utility in Shoko's Web UI via AVDump, manual linking or ignoring.
 ---
 
 # Unrecognized Files

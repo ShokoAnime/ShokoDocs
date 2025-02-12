@@ -1,6 +1,6 @@
 ---
-title: Configuring Shoko Metadata
-description: Information on how to configure Shoko Metadata (Plex).
+title: Configuring Shoko Metadata | Plex
+description: Information on how to configure Shoko Metadata for Plex.
 ---
 
 <script setup>

@@ -1,6 +1,6 @@
 ---
 title: Available Renamers
-description: A list of available renamer for use with Shoko.
+description: A list of the available renamers for use with Shoko.
 ---
 
 <script setup>

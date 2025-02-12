@@ -1,6 +1,6 @@
 ---
-title: Installing Shokofin
-description: Information on how to install and configure Shokofin (Jellyfin)
+title: Installing Shokofin | Jellyfin
+description: Information on how to install and configure Shokofin for Jellyfin.
 ---
 
 <script setup>

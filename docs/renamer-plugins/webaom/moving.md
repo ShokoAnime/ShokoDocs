@@ -1,9 +1,9 @@
 ---
-title: Moving
-description: Using the WebAOM renamer for moving files
+title: Moving Files | WebAOM Renamer
+description: Information on how to use the WebAOM renamer for moving files.
 ---
 
-# Moving
+# Moving Files
 
 The WebAOM renamer is capable of moving files to a new location based on the anime metadata provided by Shoko using
 one of two methods: without group aware sorting and with group aware sorting.

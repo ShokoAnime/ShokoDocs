@@ -1,6 +1,6 @@
 ---
 title: Shoko Metadata Changelog
-description: Changelog for Shoko Metadata, Shoko plugin to bring your anime collection to Plex.
+description: Changelog for Shoko Metadata, a Shoko plugin for bringing your anime collection to Plex.
 ---
 
 # Shoko Metadata Changelog
