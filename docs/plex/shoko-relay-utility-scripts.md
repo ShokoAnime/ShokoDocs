@@ -269,7 +269,7 @@ the readme for all of the commands.
 - Preview the 9th Opening of Bleach
   - `cd "/PathToBleach"; animethemes.py op9 play`
   - `cd /d "X:\PathToBleach" && animethemes.py op9 play`
-    :::
+:::
 
 ### Collection-Posters
 
@@ -298,7 +298,7 @@ the readme for all of the commands.
   - The accepted file extensions are: bmp / gif / jpe / jpeg / jpg / png / tbn / tif / tiff / webp
 - Append the argument "clean" `collection-posters.py clean` if you want to remove old collection posters instead.
   - This works by deleting everything but the newest custom poster for all collections.
-    :::
+:::
 
 ### Force-Metadata
 
@@ -339,7 +339,7 @@ the readme for all of the commands.
 - Negative seasons like "Season -1" which contain Credits, Trailers, Parodies etc. will have their names updated to reflect their contents.
 - The "Sort Title" for all collections will be set to match the current title to avoid Plex's custom sorting rules e.g. ignoring "The" or "A"
 - All Smart Collections are ignored as they are not managed by Shoko Relay
-  :::
+:::
 
 ### Rescan-Recent
 
@@ -363,7 +363,7 @@ the readme for all of the commands.
 - Change the number of recently added series (from 1-99) to rescan with an argument when 5 isn't enough:
   - `rescan-recent.py 20` would rescan the 20 most recently added series
 - Append the argument "import" `rescan-recent.py import` if you want to force shoko to import unrecognized files instead.
-  :::
+:::
 
 ### Watched-Sync
 
@@ -401,4 +401,4 @@ the readme for all of the commands.
 **Behaviour:**
 
 - Due to the potential for losing a huge amount of data removing watch states has been omitted from this script.
-  :::
+:::
