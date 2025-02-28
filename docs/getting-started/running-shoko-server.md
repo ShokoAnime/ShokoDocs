@@ -116,10 +116,6 @@ You can use both Import Folder Types simultaneously, enabling Shoko to monitor y
 move files upon detecting any changes.
 :::
 
-:::tip Custom Icon Example
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus ac libero ultrices tincidunt. Nullam nec
-:::
-
 To create a new import folder, select **Add Import Folder**. Enter your preferred name for the folder and specify its
 location by choosing from the available options or entering it manually. Next, select the **Import Folder Type** that
 best suits your needs for this folder. Once done, click the **Save** button to finalize its addition. If you need to add
