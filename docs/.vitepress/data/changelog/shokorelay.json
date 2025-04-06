@@ -2,6 +2,38 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.27",
+      "versionURL": "1227",
+      "date": "Apr 6th, 2025",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.27",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added the ability to clear Plex's watched states via \"watched-sync.py purge\""
+        }
+      ]
+    },
+    {
+      "version": "1.2.26",
+      "versionURL": "1226",
+      "date": "Mar 23rd, 2025",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.26",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed common title prefix modifications conflicting with \"force-metadata.py full\""
+        },
+        {
+          "type": "added",
+          "text": "Added an argument to trigger Shoko's \"Remove Missing Files\" action via \"rescan-recent.py remove\""
+        },
+        {
+          "type": "added",
+          "text": "Added some minor readme/Info.plist additions, clarifications and corrections"
+        }
+      ]
+    },
+    {
       "version": "1.2.25",
       "versionURL": "1225",
       "date": "Jan 27th, 2025",

@@ -48,7 +48,7 @@ const pluginsData = [
     status: 'Active',
   },
   {
-    name: '[Shoko Relay](https://shokoanime.com/downloads/media-player-plugins/shokorelay)',
+    name: '[Shoko Relay](https://shokoanime.com/downloads/media-player-plugins/shoko-relay)',
     dev: 'natyusha',
     platform: 'Plex',
     status: 'Active',
@@ -60,7 +60,7 @@ const pluginsData = [
     status: 'Active',
   },
   {
-    name: '[Shokofin](https://shokoanime.com/downloads/media-player-plugins/shokodi)',
+    name: '[Shokodi](https://shokoanime.com/downloads/media-player-plugins/shokodi)',
     dev: 'Da3dsoul',
     platform: 'Kodi',
     status: 'Active',
