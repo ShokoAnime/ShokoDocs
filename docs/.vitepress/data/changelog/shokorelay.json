@@ -2,6 +2,38 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.28",
+      "versionURL": "1228",
+      "date": "May 21st 2025",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.28",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Changed the \"full\" argument to \"dance\" in the force metadada script via \"force-metadata.py -d\" to better represent what it does"
+        },
+        {
+          "type": "added",
+          "text": "Added title based filtering for the force metadata script via \"force-metadata.py -t 'TITLE'\" allowing a \"Plex Dance\" on a subset of series"
+        },
+        {
+          "type": "added",
+          "text": "Added y/n confirmation to the \"-d / --dance\" flag in the force metadata script (it can be bypassed via the \"-f / --force\" flag)"
+        },
+        {
+          "type": "added",
+          "text": "Added the ability to sync user ratings (votes) to and from shoko/anidb via via \"watched-sync.py -v\" (supports the purge argument)"
+        },
+        {
+          "type": "added",
+          "text": "Added a new agent option to select from AniDB, TMDB or Nothing for series/episode critic ratings"
+        },
+        {
+          "type": "added",
+          "text": "Added common.py to the Scripts folder and consolidated duplicate code to it"
+        }
+      ]
+    },
+    {
       "version": "1.2.27",
       "versionURL": "1227",
       "date": "Apr 6th, 2025",
