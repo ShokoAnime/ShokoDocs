@@ -401,7 +401,7 @@ the readme for all of the commands.
 - Append the "votes" flag (-v or --votes) to add user ratings/votes to all operations.
 
 > :pencil2: **Note**  
-> there is currently no way to completely remove votes from Shoko via the api or webui
+> There is currently no way to completely remove votes from Shoko via the v3 API.
 
 - There are two alternate modes for this script which will ask for (Y/N) confirmation for each configured Plex user.
   - Append the argument "import" `watched-sync.py import` if you want to sync watched states (and votes if enabled) from Shoko to Plex.
