@@ -21,7 +21,7 @@
         },
         {
           "type": "added",
-          "text": "Added the ability to sync user ratings (votes) to and from shoko/anidb via via \"watched-sync.py -v\" (supports the purge argument)"
+          "text": "Added the ability to sync user ratings (votes) to and from shoko/anidb via \"watched-sync.py -v\" (supports the purge argument)"
         },
         {
           "type": "added",

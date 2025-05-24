@@ -50,7 +50,7 @@ hero:
         link: 'renamer-plugins/available-renamers'
     },
     { 
-        title: 'Frequency Asked Questions', 
+        title: 'Frequently Asked Questions', 
         info: 'We\'ve complied a list of the most common questions and answers.', 
         icon: 'CircleHelp',
         link: 'faq'

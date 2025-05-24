@@ -156,7 +156,7 @@ To resolve this there are several different approaches:
 1. Nest the entire library within a new folder so folders affected by this are no longer in the root directory
 2. Separate the files from each AniDB series into their own separate folders or subfolders
 3. Create an empty subfolder in any directory affected by this
-   :::
+:::
 
 ### Handling "Stuck" Metadata
 
