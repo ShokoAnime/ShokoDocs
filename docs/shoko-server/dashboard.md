@@ -41,7 +41,7 @@ const jobNameColumns = [
 const jobNameData = [
     {
       'Job Name': 'HashFileJob',
-      'Default': '1',
+      'Default': '2',
       'Description': 'Determines how many workers are allocated to hashing files'
     },
     {
