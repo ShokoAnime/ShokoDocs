@@ -2,6 +2,22 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.29",
+      "versionURL": "1229",
+      "date": "Jun 1st 2025",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.29",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed the watched sync script not working in the default range mode"
+        },
+        {
+          "type": "added",
+          "text": "Added some badges to the readme"
+        }
+      ]
+    },
+    {
       "version": "1.2.28",
       "versionURL": "1228",
       "date": "May 21st 2025",

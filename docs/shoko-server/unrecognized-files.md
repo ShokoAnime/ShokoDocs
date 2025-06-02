@@ -13,13 +13,19 @@ this section. This is the starting point for handling unrecognized files.
 
 ![Shoko Server - Unrecognized Files - Unrecognized Section](/images/shoko-server/shoko-server-unrecognized-files-unrecognized.jpg)
 
-You have multiple options on how to handle the file(s) allowing Shoko to recognize, process, and add it to
+You have multiple options on how to handle the file(s) allowing Shoko to recognize, process, and add them to
 your collection, if desired. This is done by preforming one of the following tasks, dumping the file(s) via
 AVDump, manually linking the file(s), or marking the file(s) as ignored.
 
 ### AVDump
 
 ![Shoko Server - Unrecognized Files - AvDump](/images/shoko-server/shoko-server-unrecognized-files-avdump.jpg)
+
+:::danger Do Not AVDump Private or Modified Files
+When AVDumping files and adding them to AniDB you must ensure that they follow AniDB's
+"[What is accepted?](https://wiki.anidb.net/Content:Files#What_is_accepted?)" guidelines. This generally means that the files must be
+published and widely available on the internet, with no modifications made to them post download.
+:::
 
 The recommended way to handle unrecognized files is to dump them to AniDB using **AVDump** which is already
 installed as part of the Shoko install process. We'll assume you've already configured your AVDump key, if not,
