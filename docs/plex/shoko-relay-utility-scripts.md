@@ -367,6 +367,7 @@ the readme for all of the commands.
 - Change the number of recently added series (from 1-99) to rescan with an argument when 5 isn't enough:
   - `rescan-recent.py 20` would rescan the 20 most recently added series
 - Append the argument "import" `rescan-recent.py import` if you want to force shoko to import unrecognized files instead.
+- Append the argument "remove" `rescan-recent.py remove` if you want to force Shoko to remove missing files incl. MyList.
 :::
 
 ### Watched-Sync
