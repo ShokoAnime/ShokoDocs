@@ -14,21 +14,19 @@ For support/questions join the [Shoko Discord server](https://discord.gg/shokoan
 
 ## Installation
 
-1. Download the [the release appropriate for your Shoko Server version.](https://github.com/Mik1ll/LuaRenamer/releases)
-   - The [latest release](https://github.com/Mik1ll/LuaRenamer/releases/latest) should be compatible with current Stable.
-   - Pre-releases will be compatible with Shoko Daily depending on the Abstractions Version, check release notes and [Shoko Server tags](https://github.com/ShokoAnime/ShokoServer/tags) for compatibility.
-2. Unzip the folder into the Shoko plugin directory, create the folder if it does not exist.
-   - (Windows) `C:\ProgramData\ShokoServer\plugins`
-   - (Docker) wherever the container location `/home/shoko/.shoko/Shoko.CLI/plugins` is mounted.
+1. Download the [the release appropriate for your Shoko Server version](https://github.com/Mik1ll/LuaRenamer/releases).
+    - The [latest release](https://github.com/Mik1ll/LuaRenamer/releases/latest) should be compatible with current Stable.
+    - Pre-releases will be compatible with Shoko Daily depending on the Abstractions Version, check release notes and [Shoko Server tags](https://github.com/ShokoAnime/ShokoServer/tags) for compatibility.
+2. Extract and place the LuaRenamer directory into the Shoko plugins directory:
+    - (Windows) `C:\ProgramData\ShokoServer\plugins`
+    - (Docker) Wherever the container location `/home/shoko/.shoko/Shoko.CLI/plugins` is mounted.
 3. Restart Shoko Server.
 4. (Recommended) Install [VS Code](https://code.visualstudio.com/download) and [the Lua extension](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) to edit your script.
 5. Follow instructions in the next section to add a script.
 
 ## Usage
 
-### With Shoko Desktop
-
-1. Open the Server WebUI (port 8111 by default) and log in
+1. Open the Server WebUI (port 8111 by default) and log in.
 2. Navigate to Utilities/File Rename.
 3. Click the cog wheel icon to open the renamer config panel.
 4. Create a new renamer config, enter a name and select LuaRenamer from the select box. If LuaRenamer is not visible, the renamer failed to load, check the server logs.
