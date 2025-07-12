@@ -27,13 +27,13 @@ hero:
     },
     { 
         title: 'Jellyfin Integration', 
-        info: 'Learn how to integrate Shoko with Plex using Shokofin.', 
+        info: 'Learn how to integrate Shoko with Jellyfin using Shokofin.', 
         icon: 'images/jellyfin.svg',
         link: 'jellyfin/installing-shokofin'
     },
     { 
         title: 'Kodi Integration', 
-        info: 'Learn how to integrate Shoko with Plex using Shokodi', 
+        info: 'Learn how to integrate Shoko with Kodi using Shokodi', 
         icon: 'images/kodi.svg',
         link: 'kodi/installing-shokodi'
     },
