@@ -130,43 +130,26 @@ As a result, we do not recommend running daily server on Synology NAS at this ti
 
 ## TrueNAS Scale
 
+Note: [Shoko](https://apps.truenas.com/catalog/shoko-server/) was added to [the community app repo on the 8th of July 2025](https://github.com/truenas/apps/commit/9f0f3c720f46f02dea6b6894d03cb7958623c787)
 Follow these steps to set up a Shoko server using a custom app:
 
-1. Navigate to **Apps -> Discover Apps -> Custom App**.
-2. Set the **Application Name** to your preference.
-3. Configure **Image Configuration**:
-   - Repository: `ghcr.io/shokoanime/server`
-   - Tag: `latest`
+1. Navigate to **Apps -> Discover Apps**.
+2. Search for Shoko in the search bar.
+3. Set the **Application Name** to your preference.
 4. Set **Container Configuration**:
    - Timezone: set to your local timezone
-   - Environment Variables:
-     <EasyTable :columns="containerColumns" :data="containerData" />
-     (These settings ensure Shoko runs as the built-in `Apps` user. Verify this user has access to your media folder.)
    - Restart Policy: `Unless Stopped - Restarts the container irrespective of the exit code but stops restarting when the service is stopped or removed.`
 5. Configure **Network Configuration**:
-   - Add a new port
-   - Container Port: `8111`
-   - Host Port: `8111`
-   - Protocol: `TCP`
-   - Extra for Truenas EE:
-     - Container Port: `4556`
-     - Host Port: `4556`
-     - Protocol: `udp`
-6. Portal Configuration (**Optional**):
-   - Add a portal
-   - Name: `Web UI`
-   - Protocl: `HTTP`
-   - Use Node IP: `checked`
-   - Port: Use the Node Port from step 5. This allows access to the Shoko Web UI via the App's Web Portal.
-   - Path: `/`
+   - Change the port number to `8111` if you want. (all Shoko docs will mention this port value)
 7. **Storage Configuration**:
 
-   - **Optional**: Mount Shoko config -> If not mounted the DB will be lost on container restart
-     - Host Path: Path to store Shoko config
-     - Mount Path: `/home/shoko/.shoko`
-   - **Required**: Mount media folder
-     - Host Path: Your media folder location
-     - Mount Path: Desired container media folder path
+   - **Optional**: Set the Config Storage Type to Host Path and point the Host Path to an location you control! 
+     (if you don't do this, it will by default install the database, configs and all image files on your boot drive and not your array!)
+
+   - **Required**: Mount media folder by adding an additional storage.
+     - Mount Path: Desired container media folder path (the path Shoko will read the Host path as)
+     - Host Path: Your media folder location (an folder you have your anime or "anime" at.)
+Note you can add as many of these media folders as you want and you can name the Mount Path whatever you want!
 
 8. Click **Save** and wait for the container status to change to "Running".
 9. Access the setup page by clicking **Web UI** under Application Info.
@@ -179,7 +162,7 @@ You may encounter the following issues when setting up Shoko Server with TrueNAS
   - Navigate to **Workloads -> View Logs** to see what went wrong.
 - Shoko server does not see my media folder:
   - Check the permissions on your media folder and ensure the user specified in the Container Environment Variables has
-    access.
+    access. (by default User and Group ID 568 should be fine)
 
 ## Bare Metal (Ubuntu)
 
