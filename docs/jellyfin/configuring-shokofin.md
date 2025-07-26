@@ -33,21 +33,21 @@ const connectingData = [
 const titleSettingsData = [
   {
     Advanced: "",
+    Option: "Add Prefix to Episodes",
+    Description: "Adds the type and number to the title of non-standard episodes such as specials. (e.g. S1, O1)",
+    Default: "✓"
+  },
+  {
+    Advanced: "",
     Option: "Main Title Source",
     Description: "Enable and order available sources in the priority you want used for the main title of your series.",
     Default: "Shoko"
   },
   {
     Advanced: "",
-    Option: "Alternate/Original Title Source",
-    Description: "Enable and order available sources in the priority you want used for the alternative title of your series.",
+    Option: "Alternate/Original Title Source(s)",
+    Description: "Enable and order available sources in the priority you want used for the alternative title of your series. More than one alternative title can be added up to a max of five.",
     Default: "None"
-  },
-  {
-    Advanced: "",
-    Option: "Add Prefix to Episodes",
-    Description: "Adds the type and number to the title of non-standard episodes such as specials. (e.g. S1, O1)",
-    Default: "✓"
   },
   {
     Advanced: "⚠",
@@ -59,10 +59,10 @@ const titleSettingsData = [
 
 const descriptionSettingsData = [
   {
-    Advanced: "⚠",
-    Option: "Cleanup AniDB Descriptions",
-    Description: "Prettifies AniDB descriptions and converts them to markdown supported by Jellyfin.",
-    Default: "✓"
+    Advanced: "",
+    Option: "AniDB Description Conversion Mode",
+    Description: "Determines how the plugin prettifies AniDB descriptions for Jellyfin. Choose to convert descriptions to markdown, plain text, or leave unformatted.",
+    Default: "Markdown"
   },
   {
     Advanced: "",
@@ -83,7 +83,7 @@ const tagGenreSettingsData = [
     Advanced: "⚠",
     Option: "Tag Sources",
     Description: "Select which types of tag categories you want to use ranging from setting to themes to technical aspects.",
-    Default: "All except Ungrouped and Unsorted"
+    Default: "All except Ungrouped, Unsorted, TheMovieDb Genres, and First Yearly Season"
   },
   {
     Advanced: "⚠",
@@ -105,6 +105,12 @@ const tagGenreSettingsData = [
   },
   {
     Advanced: "⚠",
+    Option: "Exclude List for Tags",
+    Description: "A comma separated list of tags to exclude from the displayed tags.",
+    Default: "18 restricted"
+  },
+  {
+    Advanced: "⚠",
     Option: "Genre Sources",
     Description: "Select which types of genre categories you want to use ranging from elements to source material to target audience.",
     Default: "General Elements, Source Material, Target Audience"
@@ -119,7 +125,7 @@ const tagGenreSettingsData = [
     Advanced: "⚠",
     Option: "Minimum Weight for Genres",
     Description: "Choose the minimum weight a genre must have to be included, not including weightless tags.",
-    Default: "2 Stars"
+    Default: "2.0"
   },
   {
     Advanced: "⚠",
@@ -127,35 +133,53 @@ const tagGenreSettingsData = [
     Description: "The maximum relative depth of a genre to be included based on it's source category.",
     Default: "1"
   },
+  {
+    Advanced: "⚠",
+    Option: "Exclude List for Genres",
+    Description: "A comma separated list of genres to exclude from the displayed tags.",
+    Default: "18 restricted"
+  },
 ];
 
 const imageSettingsData = [
   {
     Advanced: "",
-    Option: "Add Language Code",
+    Option: "Add Language Code for Shows/Movies",
     Description: "Adds the language code to any image metadata provided which Jellyfin can use to prioritize images based on a library's configured language. If a library has no language set, Jellyfin will prioritize the English labeled images.",
+    Default: ""
+  },
+  {
+    Advanced: "",
+    Option: "Add Community Rating for Shows/Movies",
+    Description: "Adds the community rating to any image metadata provided which Jellyfin can use to prioritize images based on a library's configured language.",
     Default: ""
   },
   {
     Advanced: "⚠",
     Option: "Respect Preferred Image",
-    Description: "Respect the preferred image flag sent from Shoko Server when selecting the correct image to use for the library. Setting this will also set the language code to the preferred language code for the library if 'Add Language Code' is enabled, thus ensuring it is always selected for the library.",
-    Default: "✓"
+    Description: "Respect the preferred image flag sent from Shoko Server when selecting the correct image to use for the library and structure type. Setting this will also set the language code to the preferred language code for the library if 'Add Language Code' is enabled, thus ensuring it is always selected for the library.",
+    Default: "All ✓"
   },
 ];
 
-const contentRatingLocationSettingsData = [
+const miscSettingsData = [
+  {
+    Advanced: "⚠",
+    Option: "Only Animation Studios",
+    Description: "Only select studios responsible for animation when providing studios. Only applies to studios sourced from AniDB.",
+    Default: ""
+  },
   {
     Advanced: "⚠",
     Option: "Content Rating Sources",
     Description: "Enable and order available sources in the priority you want used for the media content ratings (TV-G, TV-PG, TV-MA, XXX) of your series.",
-    Default: "TMDB, AniDB"
+    Default: "TheMovieDb, AniDB"
   },
   {
     Advanced: "⚠",
     Option: "Production Location Sources",
     Description: "Enable and order available sources in the priority you want used for the production locations of your series.",
-    Default: "AniDB, TMDB"
+    Default: "AniDB, TheMovieDb"
   },
 ];
 
@@ -170,28 +194,22 @@ const thirdPartyIDSettingsData = [
 
 const shokofinSettingsData = [
   {
-    Advanced: "⚠",
-    Option: "Automatically Merge Multiple Versions of Videos",
-    Description: "Enable to allow Shokofin to merge alternate versions of the same media into a single displayed entry.",
-    Default: "✓"
-  },
-  {
     Advanced: "",
-    Option: "Use Groups for Shows",
-    Description: "Enable this to have Shokofin group your media the same way that can be seen in Shoko Server. This requires grouping to be setup and configured within Shoko Server itself for this setting to work.",
-    Default: ""
+    Option: "Default Library Structure Mode",
+    Description: "Determines which library structure to use by default for shows and movies in all plugin managed libraries. You can override the structure on a per Shoko series basis over in the Series settings tab.",
+    Default: "AniDB Anime Structure"
   },
   {
     Advanced: "⚠",
-    Option: "Season Ordering",
-    Description: "Choose the behavior of how seasons are ordered. You can choose between letting Shoko Server decide, order by release date, or order chronologically using AniDB relations.",
+    Option: "Default Shoko Group Structure Season Ordering",
+    Description: "Choose the behavior of how seasons are ordered. You can choose between letting Shoko Server decide, order by release date, or order chronologically using AniDB relations. You can override the ordering on a per Shoko series basis over in the Series settings tab.",
     Default: "Let Shoko decide"
   },
   {
     Advanced: "",
-    Option: "Specials Placement Within Seasons",
+    Option: "Default Specials Placement Within Seasons",
     Description: "Change this to adjust where specials are placed in their respective season or filter them out entirely.",
-    Default: "Always place specials after the normal episodes"
+    Default: "Exclude specials from the seasons"
   },
   {
     Advanced: "",
@@ -209,7 +227,7 @@ const shokofinSettingsData = [
     Advanced: "⚠",
     Option: "Disable Movie Library Filtering",
     Description: "By default we filter out anything that is not a movie in Jellyfin Movie libraries. Enable this if you want everything to show up as movies in your Jellyfin Movie libraries instead.",
-    Default: "✓"
+    Default: ""
   },
   {
     Advanced: "⚠",
@@ -237,21 +255,57 @@ const shokofinCollectionSettingsData = [
 const shokofinLibrarySettingsData = [
   {
     Advanced: "",
-    Option: "Import Folder Mapping",
-    Description: "Only displays when an existing library is being configured. Displays the identified import folder name that the library is mapped to inside Shoko Server. A deletion button will be displayed as a way to remove the mapping configuration and allow Shokofin to remap the folder on the next library scan.",
-    Default: "N/A"
+    Option: "Default Library Operation Mode",
+    Description: "Determines how the plugin should operate on new libraries. This lets you choose to have the plugin manage how the library is presented to Jellyfin using the Virtual File System (VFS) mode, or to leave that responsibility up to you using the legacy filtering modes. \nRefer to our [Recommendations](/jellyfin/recommendations/#virtual-file-system-vfs) page for additional information on what to expect whether you choose to use the VFS mode or not.",
+    Default: "Virtual File System (VFS)"
   },
   {
     Advanced: "",
-    Option: "Use the Virtual File System (**VFS**)",
-    Description: "This feature allows you to disregard the underlying disk file structure while automagically meeting Jellyfin's requirements for file organization. It also ensures that no unrecognized files appear in your library and allows us to fully leverage Jellyfin's native features better than we otherwise could. This enables us to effortlessly support trailers, special features, and theme videos for series, seasons and movies, as well as merge partial episodes into a single entry. All this is possible because we disregard the underlying disk file structure to create our own using symbolic links.\nRefer to our [Recommendations](/jellyfin/recommendations/#virtual-file-system-vfs) page for additional information on what to expect whether you choose to use this feature or not.",
+    Option: "Managed Folder Mapping",
+    Description: "Only displays when an existing library is being configured. Displays the identified managed folder name that the library is mapped to inside Shoko Server. A deletion button will be displayed as a way to remove the mapping configuration and allow Shokofin to remap the folder on the next library scan.",
+    Default: "N/A"
+  },
+];
+
+const shokofinMultipleVersionSettingsData = [
+  {
+    Advanced: "⚠",
+    Option: "Automatically Merge Multiple Versions",
+    Description: "Enable to allow Shokofin to merge multiple versions of the same media into a single displayed entry.",
     Default: "✓"
   },
   {
-    Advanced: "",
-    Option: "Legacy Library Filtering",
-    Description: "Adjust how Shokofin filters out unrecognized media from your library. Set to Strict to hide all media not yet recognized by Shoko Server. Set to Lax to allow unrecognized media to appear in the library. Set to Auto to have Shokofin filter out unrecognized media only if no other providers are enabled for the library. Only applies to libraries not using the VFS. VFS managed libraries will always act as though Strict has been set.",
-    Default: "Strict"
+    Advanced: "⚠",
+    Option: "Multiple Versions Sort Selectors",
+    Description: "Choose how to sort multiple versions in priority order.",
+    Default: "Newly Imported First"
+  },
+];
+
+const shokofinSeasonMergingSettingsData = [
+  {
+    Advanced: "⚠",
+    Option: "Enable Season Merging",
+    Description: "Globally enable season merging. This will blur the boundaries between AniDB anime further by merging entries which could have just been a single anime entry based on name matching and a configurable merge window, and/or custom per Shoko series merge overrides.",
+    Default: ""
+  },
+  {
+    Advanced: "⚠",
+    Option: "Default Merge Behavior",
+    Description: "Determines the default merge behavior when no override is set for a Shoko series.",
+    Default: "Use Auto Merging"
+  },
+  {
+    Advanced: "⚠",
+    Option: "Series Types",
+    Description: "Series types to attempt to automatically merge unless an override is in use. Will respect custom series type overrides.",
+    Default: "TV Series, TV Special, Web, OVA"
+  },
+  {
+    Advanced: "⚠",
+    Option: "Merge Window (days)",
+    Description: "Number of days to check between the start of each season, inclusive. Set to 0 to allow merging regardless of release dates.",
+    Default: "185"
   },
 ];
 
@@ -474,7 +528,7 @@ provider.
 
 ##### Miscellaneous Settings
 
-<EasyTable :columns="containerColumns" :data="contentRatingLocationSettingsData" />
+<EasyTable :columns="containerColumns" :data="miscSettingsData" />
 
 ##### Third Party Integration
 
@@ -497,6 +551,14 @@ and create it once again following the instructions at [Creating a Shoko Library
 ##### New/Existing Library Settings
 
 <EasyTable :columns="containerColumns" :data="shokofinLibrarySettingsData" />
+
+##### Multiple Version Settings
+
+<EasyTable :columns="containerColumns" :data="shokofinMultipleVersionSettingsData" />
+
+##### Season Merging Settings
+
+<EasyTable :columns="containerColumns" :data="shokofinSeasonMergingSettingsData" />
 
 ### VFS
 
