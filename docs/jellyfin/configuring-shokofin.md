@@ -774,8 +774,8 @@ utilize [SignalR](#signalr) to have Shokofin refresh metadata on-demand as new m
 If you are **NOT** using the [VFS](#vfs), **DO NOT** enable metadata saving using NFO files with libraries managed by Shoko, and if any are present among
 your media library, **DELETE THEM NOW**. The reasoning behind this is that Jellyfin prioritizes metadata from NFO
 files above any other metadata provider. This results in weird or broken behavior since Shokofin is unable to
-override metadata that's sourced from an NFO. Enabling this option when using the [VFS](#vfs) will do nothing as
-Shokofin will actively remove them. 
+override metadata that's sourced from an NFO. Enabling this option when using the VFS will do nothing as
+Shokofin will actively remove them from the VFS while leaving any NFO files untouched in the actual media folders.
 
 Either find any files in your library that have the `.nfo` extension using your file explorer and delete them, or
 run the following command in a terminal according to your operating system. Be sure to substitute the path with the
