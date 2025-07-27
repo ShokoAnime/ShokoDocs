@@ -364,7 +364,7 @@ const advancedShokofinVFSSettingsData = [
   {
     Advanced: "⚠",
     Option: "VFS Location",
-    Description: "Change the location that Shokofin will place the VFS structure it generates on your system. Changing this will cause your library to 'remove' and 're-add' itself because of the path changes. You will need to manually move your VFS root if you plan to keep it when toggling this setting. Trick-play files will need to be backed-up beforehand and moved back the next library scan if you want to avoid regenerating them after you change this setting. \n**You have been warned.**",
+    Description: "Change the location that Shokofin will place the VFS structure it generates on your system. Changing this will cause your library to 'remove' and 're-add' itself because of the path changes. You will need to manually move your VFS root if you plan to keep it when toggling this setting. **You have been warned.**",
     Default: "Jellyfin Data Directory"
   },
 ];
@@ -418,19 +418,19 @@ const shokofinSeriesSettingsData = [
   {
     Advanced: "",
     Option: "Library Structure Mode",
-    Description: "See the respective setting [here](/jellyfin/configuring-shokofin#basic-settings).",
+    Description: "See the respective setting [here](#basic-settings).",
     Default: "Follow Global Settings"
   },
   {
     Advanced: "⚠",
     Option: "Shoko Group Structure Season Ordering",
-    Description: "See the respective setting [here](/jellyfin/configuring-shokofin#basic-settings).",
+    Description: "See the respective setting [here](#basic-settings).",
     Default: "Follow Global Settings"
   },
   {
     Advanced: "",
     Option: "Specials Placement Within Seasons",
-    Description: "See the respective setting [here](/jellyfin/configuring-shokofin#basic-settings).",
+    Description: "See the respective setting [here](#basic-settings).",
     Default: "Follow Global Settings"
   },
   {
@@ -687,7 +687,7 @@ Advanced Mode is enabled.
 
 Before creating a library, be sure the plugin is configured to your liking as certain options may require creating a
 library from scratch when changed due to how Jellyfin works internally. More information on the subject can be found in
-the [Recommendations](/jellyfin/recommendations/#library-re-creation-is-your-friend) section of the docs
+the [Recommendations](#library-re-creation-is-your-friend) section of the docs
 for Shokofin. Creating a new library rather than enabling Shokofin on an existing library is required due to the nature
 of how Jellyfin and Shokofin work together.
 
@@ -719,10 +719,9 @@ folder `/mnt/anime`, as long as both directories contain the same things, Shokof
 Pointing Jellyfin to further nested folders seen within Shoko's import folder will also work, such as `/mnt/anime/shows`
 and `/mnt/anime/movies` given that both `C:\ShokoImport\shows` and `C:\ShokoImport\movies` also exist.
 
-If you intend to have multiple Shokofin managed libraries to separate movies from shows, be sure that the folders
-specified for each library are different from each other due to how Jellyfin keeps track of metadata internally. You can
-also work around this using multiple volume/bind mounts or with a symbolic link or by enabling the **Physically Attach VFS to Libraries** _advanced_ setting in the [VFS tab](#vfs) of the plugin settings. You can read more about this in
-the [Recommendations](/jellyfin/recommendations/#reusing-folders-across-libraries) section of our docs.
+If you intend to have multiple Shokofin managed libraries to separate movies from shows or reuse media folders across
+multiple libraries, follow the [Recommendations](/jellyfin/recommendations/#reusing-folders-across-libraries) section of
+our docs.
 
 ### Language and Country
 
@@ -732,7 +731,9 @@ With Shokofin, setting the preferred download language will not do anything unle
 the plugin's [Metadata Settings.](#metadata-settings) If a relevant override is set that makes use of the library's
 language preferences, this is the value that will be used for determining the overridden metadata.
 
-Country is not used by Shokofin at this time and can be left unset.
+Country is utilized by Shokofin for TheMovieDb content ratings if configured as a source under
+[Miscellaneous Settings](#miscellaneous-settings). If a country is not set or the
+country's rating system is not available in Shoko Server for a series, a content rating may not be provided.
 
 ### Embedded Info
 
@@ -745,9 +746,7 @@ in mixed metadata and other strange behavior.
 
 ![Shokofin - Library Settings - Real Time Monitoring](/images/shokofin/Shokofin-Library-Real-Time-Monitoring.png)
 
-Real time monitoring can be enabled if you desire, which will let Jellyfin listen to file system events for new and
-modified files. This option will not do anything however if your file system does not support these events, and is
-especially common with network mounts like NFS or SMB shares. As an alternative, Shokofin provides a feature called
+Real time monitoring can be enabled if you desire. Additionally, Shokofin provides a feature called
 SignalR in it's plugin settings which will allow Shokofin to maintain a constant connection to Shoko Server to receive
 and trigger updates for new and updated files/metadata. More information on configuring this feature can be found in the
 [SignalR](#signalr) section of this page.
@@ -772,10 +771,11 @@ utilize [SignalR](#signalr) to have Shokofin refresh metadata on-demand as new m
 ![Shokofin - Library Settings - Metadata Savers](/images/shokofin/Shokofin-Library-Metadata-Savers.png)
 
 :::danger Important
-**DO NOT** enable metadata saving using NFO files with libraries managed by Shoko, and if any are present among
+If you are **NOT** using the [VFS](#vfs), **DO NOT** enable metadata saving using NFO files with libraries managed by Shoko, and if any are present among
 your media library, **DELETE THEM NOW**. The reasoning behind this is that Jellyfin prioritizes metadata from NFO
 files above any other metadata provider. This results in weird or broken behavior since Shokofin is unable to
-override metadata that's sourced from an NFO.
+override metadata that's sourced from an NFO. Enabling this option when using the [VFS](#vfs) will do nothing as
+Shokofin will actively remove them. 
 
 Either find any files in your library that have the `.nfo` extension using your file explorer and delete them, or
 run the following command in a terminal according to your operating system. Be sure to substitute the path with the
@@ -806,6 +806,15 @@ known to work without issue alongside Shokofin is the **Screen Grabber** fetcher
 ### Saving Artwork Into Media Folders
 
 ![Shokofin - Library Settings - Saving Artwork](/images/shokofin/Shokofin-Library-Saving-Artwork.png)
+
+When using the [VFS](#vfs) feature provided by Shokofin, it is recommended to leave this option
+disabled as the artwork would end up saved into the symbolic linked file structure that Shokofin creates within the data
+directories of Jellyfin. For non-VFS managed libraries, this is not an issue and can be set according to personal
+preference.
+
+### Saving Trickplay Images Next to Media
+
+![Shokofin - Library Settings - Saving Trickplay](/images/shokofin/Shokofin-Library-Saving-Trickplay.png)
 
 When using the [VFS](#vfs) feature provided by Shokofin, it is recommended to leave this option
 disabled as the artwork would end up saved into the symbolic linked file structure that Shokofin creates within the data
