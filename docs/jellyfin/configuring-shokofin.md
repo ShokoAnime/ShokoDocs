@@ -297,7 +297,7 @@ const shokofinSeasonMergingSettingsData = [
   },
   {
     Advanced: "⚠",
-    Option: "Series Types",
+    Option: "Series Types to Merge",
     Description: "Series types to attempt to automatically merge unless an override is in use. Will respect custom series type overrides.",
     Default: "TV Series, TV Special, Web, OVA"
   },
