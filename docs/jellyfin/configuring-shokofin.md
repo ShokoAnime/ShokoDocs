@@ -291,9 +291,9 @@ const shokofinSeasonMergingSettingsData = [
   },
   {
     Advanced: "⚠",
-    Option: "Default Merge Behavior",
+    Option: "Default Season Merging Behavior",
     Description: "Determines the default merge behavior when no override is set for a Shoko series.",
-    Default: "Use Auto Merging"
+    Default: "Use Automatic Merging"
   },
   {
     Advanced: "⚠",
@@ -331,7 +331,7 @@ const shokofinVFSSettingsData = [
   {
     Advanced: "",
     Option: "Add Release Group to Path",
-    Description: "Will add full or short release group names to all automatically linked files in the VFS. 'No Group' will be used if the file is not associated with a release group in Shoko Server. \n\n**Warning:** The release group in the file name may change if the release group info is incomplete, unavailable, or otherwise updated in Shoko Server at a later date. This may cause episode/movie entries to be 'removed' and 'added' as new entries when that happens. **Use at your own risk.**",
+    Description: "Will add release group names to all automatically linked files in the VFS. 'No Group' will be used if the file is not associated with a release group in Shoko Server. \n\n**Warning:** The release group in the file name may change if the release group info is incomplete, unavailable, or otherwise updated in Shoko Server at a later date. This may cause episode/movie entries to be 'removed' and 'added' as new entries when that happens. **Use at your own risk.**",
     Default: ""
   },
   {
@@ -354,6 +354,12 @@ const advancedShokofinVFSSettingsData = [
     Option: "Attach VFS to Libraries",
     Description: "Makes the VFS file structure that Shokofin automatically created show up as a library folder. This allows reusing the same media folder(s) across multiple libraries without needing other workarounds. Useful for separating movies and series into separate libraries while still using the same media folder for both.",
     Default: "✓"
+  },
+  {
+    Advanced: "⚠",
+    Option: "Iterative File Checks",
+    Description: "Skips the file search pre-generation step for library scans and instead performs file existence checks during the generation phase. This can be useful if iterating the file system is expensive, such as when using network mapped libraries.",
+    Default: ""
   },
   {
     Advanced: "⚠",
@@ -402,6 +408,51 @@ const shokofinSyncSettingsData = [
   },
 ];
 
+const shokofinSeriesSettingsData = [
+  {
+    Advanced: "",
+    Option: "Series Type",
+    Description: "Override the series type for the selected series. Useful if you want to opt into specific features based on series type or to configure how the series is treated by the automatic season merging logic.",
+    Default: "Use Original Type"
+  },
+  {
+    Advanced: "",
+    Option: "Library Structure Mode",
+    Description: "See the respective setting [here](/jellyfin/configuring-shokofin#basic-settings).",
+    Default: "Follow Global Settings"
+  },
+  {
+    Advanced: "⚠",
+    Option: "Shoko Group Structure Season Ordering",
+    Description: "See the respective setting [here](/jellyfin/configuring-shokofin#basic-settings).",
+    Default: "Follow Global Settings"
+  },
+  {
+    Advanced: "",
+    Option: "Specials Placement Within Seasons",
+    Description: "See the respective setting [here](/jellyfin/configuring-shokofin#basic-settings).",
+    Default: "Follow Global Settings"
+  },
+  {
+    Advanced: "⚠",
+    Option: "Season Merging Behavior",
+    Description: "Determines how the merging should be handled for the series. Requires the global series merging feature to be enabled for this to take effect.",
+    Default: "Follow Global Settings"
+  },
+  {
+    Advanced: "",
+    Option: "Episode Conversion Mode",
+    Description: "Determines if episodes should be converted to a different episode type.",
+    Default: "No Conversion"
+  },
+  {
+    Advanced: "",
+    Option: "Order episodes by airdate",
+    Description: "Order episodes by their airdate instead of by their original episode number. \n\n**Warning:** Only applied to AniDB Anime Structure and Shoko Group Structure. ",
+    Default: ""
+  },
+]
+
 const shokofinSignalRStatusData = [
   {
     Option: "Connection Status",
@@ -418,8 +469,8 @@ const shokofinSignalRSettingsData = [
   },
   {
     Advanced: "⚠",
-    Option: "Auto Reconnect Intervals",
-    Description: "A comma separated list of intervals given in seconds to try to reconnect to your running Shoko Server if Shokofin ever gets disconnected. The provided list will have duplicates removed and will be performed in sorted order starting from the shortest time span when reconnecting. Once the longest interval has been reached and fails to reconnect, Shokofin will stop attempting to reconnect and leave SignalR disconnected until otherwise reconnected.",
+    Option: "Auto Reconnect Intervals (seconds)",
+    Description: "A comma separated list of intervals given in seconds to try to reconnect to your running Shoko Server if Shokofin ever gets disconnected. The provided list will have duplicates removed and will be performed in sorted order starting from the shortest time span when reconnecting. Once the longest interval has been reached and fails to reconnect, Shokofin will keep attempting to reconnect at the longest interval until reconnected.",
     Default: "0, 2, 10, 30, 60, 120, 300"
   },
   {
@@ -450,6 +501,12 @@ const miscShokofinSettings = [
     Advanced: "⚠",
     Option: "Show in Menu",
     Description: "Creates a shortcut to the Shokofin plugin settings in the Jellyfin dashboard's sidebar.",
+    Default: ""
+  },
+  {
+    Advanced: "⚠",
+    Option: "Usage Tracker Stall Time (seconds)",
+    Description: "For debugging purposes. Do not change unless advised.",
     Default: ""
   },
   {
@@ -588,6 +645,15 @@ must be configured and linked to a user in Shoko Server if desired.
 ##### User Settings
 
 <EasyTable :columns="containerColumns" :data="shokofinSyncSettingsData" />
+
+### Series
+
+Override Shokofin's global configuration or customize additional behavior on a per series basis with the
+series settings. A series can be configured by searching or selecting a series from the provided dropdown.
+
+##### Series Settings
+
+<EasyTable :columns="containerColumns" :data="shokofinSeriesSettingsData" />
 
 ### SignalR
 
