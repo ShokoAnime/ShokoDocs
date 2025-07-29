@@ -291,15 +291,15 @@ const shokofinSeasonMergingSettingsData = [
   },
   {
     Advanced: "⚠",
-    Option: "Default Season Merging Behavior",
-    Description: "Determines the default merge behavior when no override is set for a Shoko series.",
-    Default: "Use Automatic Merging"
+    Option: "Automatically Merge Seasons",
+    Description: "Seasons will automatically be merged according to the criteria you set in the remaining settings unless overridden for the individual series. If disabled, merging will only happen when an override is set for the series in the Series settings tab.",
+    Default: "✓"
   },
   {
     Advanced: "⚠",
     Option: "Series Types to Merge",
     Description: "Series types to attempt to automatically merge unless an override is in use. Will respect custom series type overrides.",
-    Default: "TV Series, TV Special, Web, OVA"
+    Default: "TV Series, TV Special, Web First Release / Original Net Animation (ONA), Original Video Animation (OVA)"
   },
   {
     Advanced: "⚠",
@@ -437,7 +437,7 @@ const shokofinSeriesSettingsData = [
     Advanced: "⚠",
     Option: "Season Merging Behavior",
     Description: "Determines how the merging should be handled for the series. Requires the global series merging feature to be enabled for this to take effect.",
-    Default: "Follow Global Settings"
+    Default: "None Selected"
   },
   {
     Advanced: "",
