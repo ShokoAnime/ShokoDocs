@@ -2,6 +2,70 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.31",
+      "versionURL": "1231",
+      "date": "Aug 12th 2025",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.31",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Changed collection-posters.py to allow poster cleaning and application at the same time"
+        },
+        {
+          "type": "changed",
+          "text": "Changed the timeout from 30 to 60 seconds for python Plex API commands"
+        },
+        {
+          "type": "changed",
+          "text": "Changed and unified nested/escaped quote styling across all utility scripts"
+        },
+        {
+          "type": "added",
+          "text": "Added logging for series that timeout when running force-metadata.py"
+        }
+      ]
+    },
+    {
+      "version": "1.2.30",
+      "versionURL": "1230",
+      "date": "Jul 28th 2025",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.30",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added much faster vote syncing/importing to watched-sync.py with the help of new Shoko APIv3 endpoints"
+        },
+        {
+          "type": "added",
+          "text": "Added a list of collections with only a single item in them after running force-metadata.py (across the configured Plex libraries)"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed force-metadata.py displaying the text \"Operation Aborted!\" in a few cases where nothing was actually aborted"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed the animethemes.py script sub processes failing to run on linux/macos"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed the watched-sync.py script failing on linux/macos due to nested single quotes"
+        },
+        {
+          "type": "changed",
+          "text": "Changed collections-posters.py to use the \"-c\" flag instead of the positional argument \"clean\""
+        },
+        {
+          "type": "changed",
+          "text": "Changed watched-sync.py to use filenames instead of series titles to match the series when importing/syncing votes"
+        },
+        {
+          "type": "changed",
+          "text": "Changed the Plex agent to only apply single entry title rules to the first AniDB episode to avoid extremely rare false positives"
+        }
+      ]
+    },
+    {
       "version": "1.2.29",
       "versionURL": "1229",
       "date": "Jun 1st 2025",
