@@ -2,6 +2,26 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.32",
+      "versionURL": "1232",
+      "date": "Aug 26th 2025",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.32",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed an issue found by a-bates where titles with the year appended in parenthesis could sort incorrectly outside of collections"
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed cases where a title that underwent common prefix modification could repeat itself (pre modification) in the sort title"
+        },
+        {
+          "type": "changed",
+          "text": "Changed sort title formatting to place original titles after an en dash (–) instead of in brackets"
+        }
+      ]
+    },
+    {
       "version": "1.2.31",
       "versionURL": "1231",
       "date": "Aug 12th 2025",
