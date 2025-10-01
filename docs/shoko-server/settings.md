@@ -194,7 +194,8 @@ this is a one-way process and we do not pull watch states from Trakt into Shoko.
 
 You can link Shoko to Plex to track watch states including episode progression for display within Shoko. Once linked,
 select your Plex server and then from the populated list, select the plex library. Users who are **not Plex Pass**
-members will need to manually sync their watch states via the **Sync Plex Watch Status** action.
+members will need to manually sync their watch states via the **Sync Plex Watch Status** action or use a
+[Utility Script](/plex/syncing-watched-states#using-a-utility-script-advanced).
 
 ## User Management
 

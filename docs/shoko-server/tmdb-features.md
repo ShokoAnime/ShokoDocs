@@ -5,7 +5,8 @@ description: An overview of various TMDB related things in Shoko's Web UI.
 
 # TMDB Features
 
-There are several features which are only available when a series in Shoko has a TMDB link. They will be detailed below along with instructions for importing curated links.
+There are several features which are only available when a series in Shoko has a TMDB link.
+They will be detailed below along with instructions for importing curated links.
 
 ## Curated TMDB Mappings
 
@@ -20,7 +21,8 @@ Either of these files can be imported using Shoko's `/Tmdb/Import` v3 API endpoi
 
 ## Managing TMDB Links
 
-To manage TMDB links simply navigate to a series in your Shoko collection then look for the **Edit**, **Remove** or **Add** Link buttons in the **Metadata Sites** panel of the **Overview** tab (bottom left in the image below).
+To manage TMDB links simply navigate to a series in your Shoko collection then look for the **Edit**, **Remove** or **Add** Link buttons.
+These buttons are located in the **Metadata Sites** panel of the **Overview** tab (shown in the image below).
 
 ![Shoko Server - Metadata Sites - Panel](/images/shoko-server/shoko-server-metadata-sites-panel.jpg)
 
@@ -28,10 +30,9 @@ Adding a link will take you to the **Metadata Linking** page for the series wher
 
 ![Shoko Server - Metadata Linking - Page - Unlinked](/images/shoko-server/shoko-server-matadata-linking-page-unlinked.jpg)
 
-Editing a link will take you to the same page where individual episode links can be managed.
+Editing or saving a link will allow you to manage individual episode assignments.
 
 ![Shoko Server - Metadata Linking - Page - Linked](/images/shoko-server/shoko-server-matadata-linking-page-linked.jpg)
-
 
 ## Alternate Episode Ordering
 
