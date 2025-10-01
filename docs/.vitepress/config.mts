@@ -120,12 +120,16 @@ export default defineConfig({
             collapsed: true,
             items: [
               {
-                text: 'Understanding AniDB Ban',
-                link: '/shoko-server/understanding-anidb-ban',
+                text: 'Understanding AniDB Bans',
+                link: '/shoko-server/understanding-anidb-bans',
               },
               {
                 text: 'WebUI Themes',
                 link: '/shoko-server/webui-themes',
+              },
+              {
+                text: 'TMDB Features',
+                link: '/shoko-server/tmdb-features',
               },
             ],
           },

@@ -138,7 +138,7 @@ will be executed successfully since each API handles different sets of data. As 
 idling even when there are pending commands awaiting processing.
 
 For more information on AniDB bans and how to minimize them, check the
-[Understanding AniDB Bans](/shoko-server/understanding-anidb-ban) page.
+[Understanding AniDB Bans](/shoko-server/understanding-anidb-bans) page.
 :::
 
 ## Shoko Metadata / Shoko Relay
