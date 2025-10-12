@@ -51,3 +51,11 @@ If a series meets the above requirements simply navigate to it and click **Edit 
 and click Save.
 
 ![Shoko Server - Metadata Linking - Page - Ordering](/images/shoko-server/shoko-server-matadata-linking-page-ordering.jpg)
+
+## Additional Image Support
+
+Without TMDB links Shoko only supports a single poster per series. To enable additional posters, backdrops and logos make sure to enable them in
+Shoko's [TMDB Options](/shoko-server/settings#tmdb-options). Once enabled, the default image (for each of the aforementioned types) can be managed
+in the **Selected Image Info** panel of the **Images** tab on a series page. Simply select the desired image and then click the **Set As Preferred** button.
+
+![Shoko Server - Selected Image Info - Panel](/images/shoko-server/shoko-server-selected-image-info-panel.jpg)

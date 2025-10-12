@@ -234,11 +234,13 @@ With `SingleSeasonOrdering` disabled in the Scanner and Agent the following will
 
 ##### Curated TMDB Mappings
 
-If you don't have any TMDB links in Shoko it is recommended that you start off with a curated list before auto linking. [Info Here](/shoko-server/tmdb-features#alternate-episode-ordering)
+If you don't have any TMDB links in Shoko it is recommended that you start off with a curated list before auto linking.
+[Info Here](/shoko-server/tmdb-features#curated-tmdb-mappings)
 
 ##### Alternate TMDB Episode Ordering
 
-If you aren't happy with TMDB's default episode/season structure for a series you can change it to an alternate or even make your own. [Info Here](/shoko-server/tmdb-features#curated-tmdb-mappings)
+If you aren't happy with TMDB's default episode/season structure for a series you can change it to an alternate or even make your own.
+[Info Here](/shoko-server/tmdb-features#alternate-episode-ordering)
 
 :::info
 If you select an alternate order for a series TMDB season posters will no longer be automatically added to Plex as those
