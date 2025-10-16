@@ -71,11 +71,14 @@ concern. However, if you encounter issues or are unsure, please refer to your NA
 for confirmation.
 
 It's important to note that Docker Compose is the **recommended method** for installing Shoko with Docker as it
-simplifies service management. We've provided a sample docker-compose.yml file below to streamline the configuration
-process. This file consolidates all the settings, making them easy to edit.
+simplifies service management. We've provided a pre-configured sample `docker-compose.yml` file in the **Docker Compose
+Builder** below to streamline the configuration process. Simply adjust the fields in the configuration to suit your
+setup.
 
-If you need to adjust the configuration to suit your setup, feel free to use the **Docker Compose Builder** below to
-modify the values according to your preferences. Otherwise, simply copy the generated config.
+:::warning
+It is important to set the **PUID** and **PGID** to the correct user/group Shoko Server should run as, so make sure to
+replace them with values appropriate for your setup!
+:::
 
 ### Docker Compose Builder
 
@@ -143,7 +146,7 @@ Follow these steps to set up a Shoko server using a custom app:
    - Change the port number to `8111` if you want. (all Shoko docs will mention this port value)
 7. **Storage Configuration**:
 
-   - **Optional**: Set the Config Storage Type to Host Path and point the Host Path to an location you control! 
+   - **Optional**: Set the Config Storage Type to Host Path and point the Host Path to an location you control!
      (if you don't do this, it will by default install the database, configs and all image files on your boot drive and not your array!)
 
    - **Required**: Mount media folder by adding an additional storage.
