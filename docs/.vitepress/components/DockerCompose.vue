@@ -80,8 +80,8 @@ export default {
   setup() {
     const fieldLabels = {
       container: "Container Name",
-      puid: "Public User ID (PUID)",
-      pgid: "Public Group ID (PGID)",
+      puid: "User ID (PUID)",
+      pgid: "Group ID (PGID)",
       tz: "Time Zone (TZ)",
       port: "Port",
       volumes: "Volumes",
