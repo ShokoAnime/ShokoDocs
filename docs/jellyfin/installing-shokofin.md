@@ -47,13 +47,18 @@ const compatibilityTableData = [
     ShokoServer: '`5.0.0`'
   },
   {
-    Shokofin: '`5.0.1` &mdash; `5.0.3`',
+    Shokofin: '`5.0.1` &mdash; `5.0.4`',
     Jellyfin: '`10.10`',
     ShokoServer: '`5.0.0` &mdash; `5.1.0`'
   },
   {
+    Shokofin: '`5.0.5`',
+    Jellyfin: '`10.11`',
+    ShokoServer: '`5.1.0`'
+  },
+  {
     Shokofin: '`dev`',
-    Jellyfin: '`10.10`',
+    Jellyfin: '`10.11`',
     ShokoServer: '`daily`'
   }
 ];
