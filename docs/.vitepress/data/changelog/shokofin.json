@@ -2,6 +2,79 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "5.0.5",
+      "versionURL": "505",
+      "date": "October 20th, 2025",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v5.0.5",
+      "changes": [
+
+        {
+          "type": "added",
+          "text": "Added support for Jellyfin 10.11."
+        },
+        {
+          "type": "removed",
+          "text": "Dropped support for Shoko Server below version 5.1.0."
+        },
+        {
+          "type": "removed",
+          "text": "Dropped support for Jellyfin 10.10."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix locking on self in plugin base class."
+        }
+      ]
+    },
+    {
+      "version": "5.0.4",
+      "versionURL": "504",
+      "date": "July 24th, 2025",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v5.0.4",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "In some cases, the media folders can be empty or otherwise unavailable (e.g. a local drive on windows is not mounted yet, a network share on windows is temporarily unavailable, a (network?) mount on linux was not mounted correctly, etc.), so skip the generation of the VFS if we detect any of the media folders attached to the library is in a faulted state, to prevent the generation removing all (or some) the symbolic links — effectively deleting the whole (or parts of) the VFS."
+        },
+        {
+          "type": "fixed",
+          "text": "When attempting to move a subtitle file, check if it's a symbolic link and abort if the link target doesn't exist, or create a copy to use if it exists but is pointing to the wrong place."
+        }
+      ]
+    },
+    {
+      "version": "5.0.3",
+      "versionURL": "503",
+      "date": "May 3rd, 2025",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v5.0.3",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Check all ≥101 (up from ≥100) locations for a match before deciding on a mapping between the media folder and import folder, instead of picking the first found match. This will help in cases where some files have multiple locations with the same file name but different relative paths."
+        },
+        {
+          "type": "fixed",
+          "text": "Add back proper per-library media folder config removal."
+        },
+        {
+          "type": "fixed",
+          "text": "Split the library exists check and library id is valid check into two, because the library id may be null if the virtual folder is in a bad state in core Jellyfin, but the library may still exist in the UI."
+        }
+      ]
+    },
+    {
+      "version": "5.0.2",
+      "versionURL": "502",
+      "date": "January 21st, 2025",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v5.0.2",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Suppress roles without a proper staff member name available."
+        }
+      ]
+    },
+    {
       "version": "5.0.1",
       "versionURL": "501",
       "date": "January 21st, 2025",
