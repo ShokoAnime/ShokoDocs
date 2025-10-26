@@ -26,11 +26,17 @@ These buttons are located in the **Metadata Sites** panel of the **Overview** ta
 
 ![Shoko Server - Metadata Sites - Panel](/images/shoko-server/shoko-server-metadata-sites-panel.jpg)
 
-Adding a link will take you to the **Metadata Linking** page for the series where a matching series or movie can be selected.
+Adding a link will take you to the **Metadata Linking** page for the series where a matching TMDB **TV** or **Movie** entry can be selected.
 
 ![Shoko Server - Metadata Linking - Page - Unlinked](/images/shoko-server/shoko-server-matadata-linking-page-unlinked.jpg)
 
 Editing or saving a link will allow you to manage individual episode assignments.
+
+:::info Mutli-Entry Series
+It should noted that some AniDB series will require multiple TMDB links to complete all of their metadata. Using
+[Heaven's Feel](https://anidb.net/anime/10755) as an example it can be observed that the page includes what TMDB considers
+to be three separate movies. So each of those links would have to be added and attached to their respective "episode".
+:::
 
 ![Shoko Server - Metadata Linking - Page - Linked](/images/shoko-server/shoko-server-matadata-linking-page-linked.jpg)
 
@@ -47,7 +53,8 @@ In order to select an alternate ordering for a series a few prerequisites must b
 - **Download Alternate Ordering** must be enabled under Shoko's **TMDB Download Options**
 
 :::warning Stable Users
-For those still using Shoko Server v5.1.0 the UI referenced below will not be accessible. Instructions for applying alternate episode ordering through the API will be provided at the end of this section instead.
+For those still using Shoko Server v5.1.0 the UI referenced below will not be accessible. Instructions which use the API
+will be provided at the end of this section instead.
 :::
 
 If a series meets the above requirements simply navigate to it and click **Edit Link** (pencil next to the TMDB link) and then
@@ -58,10 +65,10 @@ and click Save.
 
 ### Stable Version Instructions
 
-Navigate to Shoko's `/Tmdb/Show/{showID}/Ordering/SetPreferred` v3 API endpoint which is available via [/swagger/](https://docs.shokoanime.com/faq#general).
-Once you have authenticated, you can navigate to the previously mentioned endpoint. Using Bleach as an example once again, you would enter `30984` (Bleach's TMDB ID) into the `showID` box.
-Then you would the set the 16 character `AlternateOrderingID` in the request body to one of the ones available [here](https://www.themoviedb.org/tv/30984-bleach/episode_groups)
-(both IDs are available from the URL on TMDB). Lastly, click "Execute" and the order will be applied.
+Navigate to Shoko's `/Tmdb/Show/{showID}/Ordering/SetPreferred` v3 API endpoint which is available via [/swagger/](https://docs.shokoanime.com/faq#general)
+and authenticate. Using Bleach as an example once again, you would enter `30984` (Bleach's TMDB ID) into the `showID` box. Then you would set
+the 16 character `AlternateOrderingID` in the request body to one of the ones available [here](https://www.themoviedb.org/tv/30984-bleach/episode_groups)
+(both IDs are available from the URL on TMDB). Lastly, click **Execute** and the ordering will be applied.
 
 
 ```json
