@@ -2,12 +2,23 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "5.0.6",
+      "versionURL": "506",
+      "date": "October 28th, 2025",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v5.0.6",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed Direct Play issues with symbolic links in the VFS in Jellyfin 10.11.1."
+        }
+      ]
+    },
+    {
       "version": "5.0.5",
       "versionURL": "505",
       "date": "October 20th, 2025",
       "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v5.0.5",
       "changes": [
-
         {
           "type": "added",
           "text": "Added support for Jellyfin 10.11."
