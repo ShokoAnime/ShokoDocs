@@ -13,6 +13,12 @@ They will be detailed below along with instructions for importing curated links.
 For users who are new to Shoko or don't have any TMDB links, two .csv files are available below which have been
 manually checked for accuracy.
 
+:::warning Stable Users
+For those still using Shoko Server v5.1.0 the most up to date files which are listed below will not import correctly.
+[Here](https://gist.github.com/natyusha/129848213161c57101c9f39ed3f263ed/65351313e7990c339c8813e956e8364fd24197d9)
+is a link to an older .csv which will still import.
+:::
+
 Either of these files can be imported using Shoko's `/Tmdb/Import` v3 API endpoint in
 [/swagger/](/faq#general) (Shoko's public API) to bypass fully auto-linking an unlinked library.
 
