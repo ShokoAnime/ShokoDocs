@@ -45,7 +45,7 @@ Some AniDB series will require multiple TMDB links to complete all of their meta
 as an example, it can be observed that the AniDB entry includes what TMDB considers to be three separate movies.
 So each of those entries would have to be added and attached to their respective "episode" using the **Add Link** button.
 
-![Shoko Server - Metadata Linking - Page - Multi-Series](/images/shoko-server/shoko-server-matadata-linking-page-linked.jpg)
+![Shoko Server - Metadata Linking - Page - Multi-Series](/images/shoko-server/shoko-server-matadata-linking-page-multi-series.jpg)
 
 ### Multi-Entry Episodes
 TMDB's [bible](https://www.themoviedb.org/bible/tv/59f743289251416e71000037#5b71c6b4c3a3684161000001) contains the unfortunate rule that anime with multiple "segments" or "stories" in a single episode must be split into separate entries.
@@ -53,7 +53,7 @@ This causes some series to have significantly inflated episode counts on TMDB (f
 Using the original [Urusei Yatsura](https://anidb.net/anime/377) as an example, note that the first 23 episodes are split into two parts each on TMDB. This requires manually adding
 each part by clicking the **Add Link** button next to the AniDB episode title and then selecting the individual parts of the episode as listed on TMDB.
 
-![Shoko Server - Metadata Linking - Page - Multi-Episode](/images/shoko-server/shoko-server-matadata-linking-page-linked.jpg)
+![Shoko Server - Metadata Linking - Page - Multi-Episode](/images/shoko-server/shoko-server-matadata-linking-page-multi-episode.jpg)
 
 ## Alternate Episode Ordering
 
