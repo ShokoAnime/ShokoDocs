@@ -38,18 +38,27 @@ Adding a link will take you to the **Metadata Linking** page for the series wher
 
 Editing or saving a link will allow you to manage individual episode assignments.
 
-:::info Mutli-Entry Series
-It should noted that some AniDB series will require multiple TMDB links to complete all of their metadata. Using
-[Heaven's Feel](https://anidb.net/anime/10755) as an example it can be observed that the page includes what TMDB considers
-to be three separate movies. So each of those links would have to be added and attached to their respective "episode".
-:::
-
 ![Shoko Server - Metadata Linking - Page - Linked](/images/shoko-server/shoko-server-matadata-linking-page-linked.jpg)
+
+### Mutli-Entry Series
+Some AniDB series will require multiple TMDB links to complete all of their metadata. Using [Fate/Stay Night: Heaven's Feel](https://anidb.net/anime/10755)
+as an example, it can be observed that the AniDB entry includes what TMDB considers to be three separate movies.
+So each of those entries would have to be added and attached to their respective "episode" using the **Add Link** button.
+
+![Shoko Server - Metadata Linking - Page - Multi-Series](/images/shoko-server/shoko-server-matadata-linking-page-linked.jpg)
+
+### Multi-Entry Episodes
+TMDB's [bible](https://www.themoviedb.org/bible/tv/59f743289251416e71000037#5b71c6b4c3a3684161000001) contains the unfortunate rule that anime with multiple "segments" or "stories" in a single episode must be split into separate entries.
+This causes some series to have significantly inflated episode counts on TMDB (fortunately this rule doesn't seem to be strictly enforced).
+Using the original [Urusei Yatsura](https://anidb.net/anime/377) as an example, note that the first 23 episodes are split into two parts each on TMDB. This requires manually adding
+each part by clicking the **Add Link** button next to the AniDB episode title and then selecting the individual parts of the episode as listed on TMDB.
+
+![Shoko Server - Metadata Linking - Page - Multi-Episode](/images/shoko-server/shoko-server-matadata-linking-page-linked.jpg)
 
 ## Alternate Episode Ordering
 
 It is quite common for anime to have multiple ways of grouping the episodes into seasons. This includes: DVD/BD
-ordering, stream site listings or even manga story arcs. Using Bleach as an example you can see that [TMDB](https://www.themoviedb.org/tv/30984-bleach/seasons) doesn't split
+ordering, stream site listings or even manga story arcs. Using [Bleach](https://anidb.net/anime/2369) as an example you can see that [TMDB](https://www.themoviedb.org/tv/30984-bleach/seasons) doesn't split
 the original run into seasons while many people may expect it to. Fortunately, TMDB's [Episode Groups](https://www.themoviedb.org/tv/30984-bleach/episode_groups) page provides several
 alternate ordering options in case you would like to use one of those instead.
 
@@ -86,7 +95,12 @@ the 16 character `AlternateOrderingID` in the request body to one of the ones av
 ## Additional Image Support
 
 Without TMDB links Shoko only supports a single poster per series. To enable additional posters, backdrops and logos make sure to enable them in
-Shoko's [TMDB Options](/shoko-server/settings#tmdb-options). Once enabled, the default image (for each of the aforementioned types) can be managed
-in the **Selected Image Info** panel of the **Images** tab on a series page. Simply select the desired image and then click the **Set As Preferred** button.
+Shoko's [TMDB Options](/shoko-server/settings#tmdb-options). Once enabled, the default image (for each of the aforementioned types) can be managed in the **Selected Image Info**
+panel of the **Images** tab on a series page. Simply select the desired image and then click the **Set As Preferred** button.
+
+:::info Episode Thumbnails
+Individual episodes will also have images attached to them when a TMDB link is present (with movie links using the backdrop as a fallback)
+but they cannot be customised from the WebUI at this time
+:::
 
 ![Shoko Server - Selected Image Info - Panel](/images/shoko-server/shoko-server-selected-image-info-panel.jpg)
