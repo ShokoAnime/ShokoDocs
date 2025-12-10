@@ -100,7 +100,7 @@ panel of the **Images** tab on a series page. Simply select the desired image an
 
 :::info Episode Thumbnails
 Individual episodes will also have images attached to them when a TMDB link is present (with movie links using the backdrop as a fallback)
-but they cannot be customised from the WebUI at this time
+but they cannot be customised from the WebUI at this time.
 :::
 
 ![Shoko Server - Selected Image Info - Panel](/images/shoko-server/shoko-server-selected-image-info-panel.jpg)

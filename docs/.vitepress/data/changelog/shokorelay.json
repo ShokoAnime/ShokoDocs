@@ -2,6 +2,26 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.34",
+      "versionURL": "1234",
+      "date": "Dec 10th 2025",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.34",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added support for blacklisting AniDB tags in the agent preferences"
+        },
+        {
+          "type": "added",
+          "text": "Added backwards compatibility for \"rescan-recent import\" on older versions of the v3 API"
+        },
+        {
+          "type": "changed",
+          "text": "Changed the agent language preferences to handle extraneous commas"
+        }
+      ]
+    },
+    {
       "version": "1.2.33",
       "versionURL": "1233",
       "date": "Oct 16th 2025",
