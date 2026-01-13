@@ -2,6 +2,18 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "6.0.0",
+      "versionURL": "600",
+      "date": "January 13th, 2026",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v6.0.0",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "To be added at a later date."
+        }
+      ]
+    },
+    {
       "version": "5.0.6",
       "versionURL": "506",
       "date": "October 28th, 2025",
