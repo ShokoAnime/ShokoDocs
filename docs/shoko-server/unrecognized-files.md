@@ -13,32 +13,9 @@ this section. This is the starting point for handling unrecognized files.
 
 ![Shoko Server - Unrecognized Files - Unrecognized Section](/images/shoko-server/shoko-server-unrecognized-files-unrecognized.jpg)
 
-You have multiple options on how to handle the file(s) allowing Shoko to recognize, process, and add them to
-your collection, if desired. This is done by preforming one of the following tasks, dumping the file(s) via
-AVDump, manually linking the file(s), or marking the file(s) as ignored.
-
-### AVDump
-
-![Shoko Server - Unrecognized Files - AvDump](/images/shoko-server/shoko-server-unrecognized-files-avdump.jpg)
-
-:::danger Do Not AVDump Private or Modified Files
-When AVDumping files and adding them to AniDB you must ensure that they follow AniDB's
-"[What is accepted?](https://wiki.anidb.net/Content:Files#What_is_accepted?)" guidelines. This generally means that the files must be
-published and widely available on the internet, with no modifications made to them post download.
-:::
-
-The recommended way to handle unrecognized files is to dump them to AniDB using **AVDump** which is already
-installed as part of the Shoko install process. We'll assume you've already configured your AVDump key, if not,
-refer to the [AniDB](/shoko-server/settings/#anidb) section on the **Settings** page.
-
-After selecting your files, clicking **AVDump Files** will guide you through the process, providing instructions for
-each step. For files that have not been dumped, indicated by the white file icon, Shoko will start dumping them in
-the background as you follow the prompts in the modal.
-
-Undumped files will always take priority when selected alongside dumped files. You won't be able to click
-the **Rescan Button** until all files have been dumped. If you don't want to wait, clicking outside the modal
-will close it and continue the dump process. You can then come back later, select the files, and click the
-**Finish AVDump** button to resume.
+You have multiple options for how to handle the file(s) allowing Shoko to recognize, process, and add them to your
+collection, if desired. This is done by preforming one of the following tasks, manually linking the file(s), dumping
+the file(s) via AVDump, or marking the file(s) as ignored.
 
 ### Manual Linking
 
@@ -68,6 +45,38 @@ necessary.
 Once you're finished, click the blue **Save** button to prompt Shoko to start processing the relevant tasks it would
 have executed if the file had been automatically linked.
 
+### AVDump
+
+![Shoko Server - Unrecognized Files - AvDump](/images/shoko-server/shoko-server-unrecognized-files-avdump.jpg)
+
+:::danger Do Not AVDump Private or Modified Files
+When AVDumping files and adding them to AniDB you must ensure that they follow AniDB's
+"[What is accepted?](https://wiki.anidb.net/Content:Files#What_is_accepted?)" guidelines. This generally means that the
+files must be published and widely available on the internet, with no modifications made to them post download.
+
+---
+
+If you have unrecognized files, and are _**absolutely certain**_ that they meet AniDB's aforementioned guidelines for
+"[What is accepted?](https://wiki.anidb.net/Content:Files#What_is_accepted?)", you may AVDump them and add them to
+AniDB. Otherwise, you should [Manually Link](/shoko-server/unrecognized-files#manual-linking) them instead.
+
+Once the unrecognized files have been determined to be acceptable, the recommended way to handle them is to dump them to
+AniDB using **AVDump** (which is already installed as part of the Shoko install process). We'll assume you've already
+configured your AVDump key, if not, refer to the [AniDB](/shoko-server/settings/#anidb) section on the **Settings**
+page.
+
+---
+
+After selecting your files, clicking **AVDump Files** will guide you through the process, providing instructions for
+each step. For files that have not been dumped (indicated by the white file icon), Shoko will start dumping them in
+the background as you follow the prompts in the modal.
+
+Undumped files will always take priority when selected alongside dumped files. You won't be able to click
+the **Rescan Button** until all files have been dumped. If you don't want to wait, clicking outside the modal
+will close it and continue the dump process. You can then come back later, select the files, and click the
+**Finish AVDump** button to resume.
+:::
+
 ### Ignored Files
 
 ![Shoko Server - Unrecognized Files - Ignored](/images/shoko-server/shoko-server-unrecognized-files-ignored.jpg)
@@ -86,7 +95,9 @@ prompt. However, if you've made a mistake, you can restore them, as explained in
 
 ## Manually Linked
 
-The Manually Linked tab provides a list of all files, grouped by series that have been manually linked.
+The Manually Linked tab provides a list of all files, grouped by series that have been manually linked. If you need to
+remove a manual link this can done by selecting a series in the left pane, then selecting an episode in the right pane
+and clicking the **Unlink** button.
 
 ## Ignored
 
