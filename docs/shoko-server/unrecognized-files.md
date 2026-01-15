@@ -1,80 +1,102 @@
 ---
 title: Unrecognized Files
-description: Information on how to utilize the Unrecognized Files Utility in Shoko's Web UI via AVDump, manual linking or ignoring.
+description: Information on how to utilize the Unrecognized Files Utility in Shoko's Web UI via manual linking, AVDump or ignoring.
 ---
 
 # Unrecognized Files
 
 The Unrecognized utility is designed to help you manage files that Shoko was unable to automatically process. When
-Shoko is unable to match a file's hash against AniDB's database, the file is marked as unrecognized and appears in
+Shoko is unable to match a file's hash against AniDB's database, the file is marked as unrecognized and will appear in
 this section. This is the starting point for handling unrecognized files.
 
 ## Unrecognized
 
 ![Shoko Server - Unrecognized Files - Unrecognized Section](/images/shoko-server/shoko-server-unrecognized-files-unrecognized.jpg)
 
-You have multiple options for how to handle the file(s) allowing Shoko to recognize, process, and add them to your
-collection, if desired. This is done by preforming one of the following tasks, manually linking the file(s), dumping
-the file(s) via AVDump, or marking the file(s) as ignored.
+You have multiple options for handling unrecognized files. They will allow Shoko to recognize, process, and add them to
+your collection. This is done by performing one of the following tasks: manually linking the files, dumping the files
+via AVDump, or marking the files as ignored.
 
 ### Manual Linking
 
 ![Shoko Server - Unrecognized Files - Manual Link](/images/shoko-server/shoko-server-unrecognized-files-manual-link-01.jpg)
 
-There are instances when you may not be able to dump files due to various reasons. In such situations, you can
-create **Manual Links** for each file, linking them to their respective episodes. Manual links function exactly like
-automatically generated links, as they retrieve the same information from AniDB and metadata sources for both
-the linked episode and the series it belongs to.
+There are many instances where you will not be able to dump files to AniDB due to them
+[not being eligible](https://wiki.anidb.net/Content:Files#What_is_accepted?). In these cases, you can create **Manual
+Links** for each file by linking them to their respective episodes. Manual links function exactly like their
+automatically generated counterparts and will retrieve the same metadata from AniDB (and TMDB if it is enabled) for the
+linked episode and the series it belongs to.
 
-After selecting the files you'd like to manually link, click on the blue **Manual link** button to access the series
-and file/episode linking panel. Shoko will attempt to populate the series list with shows based on the filenames in
-the Selected Files column. However, if the series you're trying to link is not listed, you can use the search input
-to type in the series name or AniDB ID.
+After selecting the files you'd like to manually link (which are part of the same series), click on the **Manual link**
+button to access the series and file/episode linking panel. This panel (which is shown in the above screenshot) will
+attempt to populate the series list with shows based on the filenames in the **Selected Files** column. However, if the
+series you're trying to link is not listed, you can use the search box to type in the series name or AniDB ID.
 
 :::tip
 Shoko will only display the type and number of episodes if it already possesses the series data. It's entirely normal
-for this information to be missing during the process.
+for this information to be missing during the linking process.
 :::
 
-Once a series is selected, Shoko will attempt to automatically match the file with its respective episode.
-While it will inform you of its successes or failures, we **highly recommend** always double-checking the matched
-episodes. In cases where you have **one file for multiple episodes**, select the file and then click the **Duplicate
-Entry** button to create a linked virtual file and then select the additional episode, repeating this process as
-necessary.
+Once a series is selected, Shoko will attempt to automatically match the file with its respective episode. While it
+will inform you of its successes or failures, we _**highly recommend**_ always double-checking the matched episodes. For
+cases where you have _**one file for multiple episodes**_: select the file and then click the **Duplicate Entry**
+button, this will create a linked virtual file. Then you can select the additional episode, repeating this process as necessary.
 
-Once you're finished, click the blue **Save** button to prompt Shoko to start processing the relevant tasks it would
-have executed if the file had been automatically linked.
+Once you're finished, click the **Save** button to prompt Shoko to start processing the relevant tasks it would have
+executed if the file had been automatically linked.
 
 ### AVDump
 
 ![Shoko Server - Unrecognized Files - AvDump](/images/shoko-server/shoko-server-unrecognized-files-avdump.jpg)
 
-:::danger Do Not AVDump Private or Modified Files
+:::danger Do Not AVDump Private, Modified or Corrupted Files
 When AVDumping files and adding them to AniDB you must ensure that they follow AniDB's
-"[What is accepted?](https://wiki.anidb.net/Content:Files#What_is_accepted?)" guidelines. This generally means that the
-files must be published and widely available on the internet, with no modifications made to them post download.
+"[What is accepted?](https://wiki.anidb.net/Content:Files#What_is_accepted?)" guidelines. Failure to comply may result
+in a permanent Ban from AniDB.
+
+Specifically, the files must _**NOT**_ fall under the following 3 categories:
+
+1. **Private** / **Personal**: A file that has not been publicly released on the internet.
+    - This includes reencodes of existing releases or self made rips
+2. **Corrupted**: A damaged or altered file that can't be properly opened, read, or used.
+    - At a minimum test files for integrity before dumping them
+3. **Remuxed**: A file where the audio, video, or subtitle streams have been multiplexed or modifed.
+    - Files which have had the language tags changed for any tracks fall under this category
+
+If you have unrecognized files, and are _**absolutely certain**_ that they meet AniDB's aforementioned guidelines, you
+may AVDump them and add them to AniDB. Otherwise, you should
+[Manually Link](/shoko-server/unrecognized-files#manual-linking) them instead.
 
 ---
-
-If you have unrecognized files, and are _**absolutely certain**_ that they meet AniDB's aforementioned guidelines for
-"[What is accepted?](https://wiki.anidb.net/Content:Files#What_is_accepted?)", you may AVDump them and add them to
-AniDB. Otherwise, you should [Manually Link](/shoko-server/unrecognized-files#manual-linking) them instead.
 
 Once the unrecognized files have been determined to be acceptable, the recommended way to handle them is to dump them to
-AniDB using **AVDump** (which is already installed as part of the Shoko install process). We'll assume you've already
-configured your AVDump key, if not, refer to the [AniDB](/shoko-server/settings/#anidb) section on the **Settings**
-page.
-
----
+AniDB using **AVDump** (which is included as part Shoko's installation process). We'll assume you've already configured
+your AVDump key, if not, refer to the [AniDB](/shoko-server/settings/#anidb) section on the **Settings** page.
 
 After selecting your files, clicking **AVDump Files** will guide you through the process, providing instructions for
-each step. For files that have not been dumped (indicated by the white file icon), Shoko will start dumping them in
-the background as you follow the prompts in the modal.
+each step. For files that have not been dumped (indicated by the file icon), Shoko will start dumping them in the
+background as you follow the prompts in the modal.
 
 Undumped files will always take priority when selected alongside dumped files. You won't be able to click
 the **Rescan Button** until all files have been dumped. If you don't want to wait, clicking outside the modal
 will close it and continue the dump process. You can then come back later, select the files, and click the
 **Finish AVDump** button to resume.
+
+---
+
+Note that you must manually fill out the following fields on AniDB itself as detailed under
+[Content:Files](https://wiki.anidb.net/Content:Files#Release_information):
+
+[Group](https://wiki.anidb.net/Content:Files#Group) /
+[CRC/Hash Status](https://wiki.anidb.net/Content:Files#CRC/hash_status) /
+[Quality](https://wiki.anidb.net/Content:Files#Quality_for_non-subtitle_files) /
+[Source](https://wiki.anidb.net/Content:Files#Source) /
+[Release Date](https://wiki.anidb.net/Content:Files#Release_date)
+
+The Episode Number and [Version](https://wiki.anidb.net/Content:Files#Version) also need to be double checked for accuracy, as they may fail to autofill (depending on the filename).
+
+All other fields will be automatically populated once your AVDump clears the queue. Exceptions exist for things
+such as hardsubbed videos or incorrectly tagged audio/subtitle tracks.
 :::
 
 ### Ignored Files
