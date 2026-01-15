@@ -64,7 +64,7 @@ daily buiild of either can click on the link next to the version number to see h
 since they lasted updated.
 
 :::warning Switching Channels
-While you are more than welcome to switch both Server and Web Ui channels, you can only switch back to stable when a
+While you are more than welcome to switch both Server and Web UI channels, you can only switch back to stable when a
 new version of **Shoko Server** is released. Keep in mind dailies are meant for testing new features and can break
 your collection so unless you absolutely need to, which you probably don't, stick to Stable.
 :::
@@ -111,9 +111,11 @@ files in your collection, and what data you want Shoko to send to AniDB.
 ### Login Options
 
 These settings are what Shoko will use to connect to AniDB to download and upload data. Generally you won't be
-changing your AnIDB login credentials or port, but if you do, make sure to click the **Test** button after to verify
+changing your AniDB login credentials or port, but if you do, make sure to click the **Test** button after to verify
 Shoko was able to log in with the new information. If you are dumping files using AVDump, make sure to input your
-AVDUmp key, which you can get from your [user account](https://anidb.net/user/setting) on AniDB.
+**AVDump Key**, which can be found in the account tab of your [AniDB Profile](https://anidb.net/user/setting). If the
+key (which is labelled as "UDP API Key") is blank, simply enter one the same way you would for password creation and
+click save.
 
 ### Download Options
 
