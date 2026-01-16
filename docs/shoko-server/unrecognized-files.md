@@ -42,8 +42,8 @@ will inform you of its successes or failures, we _**highly recommend**_ always d
 cases where you have _**one file for multiple episodes**_: select the file and then click the **Duplicate Entry**
 button, this will create a linked virtual file. Then you can select the additional episode, repeating this process as necessary.
 
-Once you're finished, click the **Save** button to prompt Shoko to start processing the relevant tasks it would have
-executed if the file had been automatically linked.
+Once you're finished, click the **Save** button to prompt Shoko to start processing the relevant tasks. If you need to
+remove a manual link see the [Manually Linked](/shoko-server/unrecognized-files#manually-linked) section below.
 
 ### AVDump
 
@@ -52,7 +52,9 @@ executed if the file had been automatically linked.
 :::danger Do Not AVDump Private, Modified or Corrupted Files
 When AVDumping files and adding them to AniDB you must ensure that they follow AniDB's
 "[What is accepted?](https://wiki.anidb.net/Content:Files#What_is_accepted?)" guidelines. Failure to comply may result
-in a permanent Ban from AniDB.
+in a permanent ban from AniDB.
+
+---
 
 Specifically, the files must _**NOT**_ fall under the following 3 categories:
 
@@ -93,7 +95,8 @@ Note that you must manually fill out the following fields on AniDB itself as det
 [Source](https://wiki.anidb.net/Content:Files#Source) /
 [Release Date](https://wiki.anidb.net/Content:Files#Release_date)
 
-The Episode Number and [Version](https://wiki.anidb.net/Content:Files#Version) also need to be double checked for accuracy, as they may fail to autofill (depending on the filename).
+The Episode Number and [Version](https://wiki.anidb.net/Content:Files#Version) also need to be double checked for
+accuracy, as they may fail to autofill (depending on the filename).
 
 All other fields will be automatically populated once your AVDump clears the queue. Exceptions exist for things
 such as hardsubbed videos or incorrectly tagged audio/subtitle tracks.
@@ -110,10 +113,7 @@ future import runs.
 
 After selecting the files you wish to mark as ignored, click the **Ignore** button on the utility navbar. There
 won't be a confirmation message, as Shoko will internally mark the files as ignored. If you've made a mistake,
-you can restore them, as explained in the Ignored section below.
-
-To mark selected files as ignored, simply click the **Ignore** button. This process does not provide a confirmation
-prompt. However, if you've made a mistake, you can restore them, as explained in the Ignored section below.
+you can restore them, as explained in the [Ignored](/shoko-server/unrecognized-files#ignored) section below.
 
 ## Manually Linked
 
