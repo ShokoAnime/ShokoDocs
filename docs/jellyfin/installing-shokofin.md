@@ -100,6 +100,22 @@ install the correct version for your setup to guarantee functionality.
 
 ### Official Repository
 
+#### Jellyfin 10.11
+
+1. Navigate to the **Dashboard**.
+2. Under the **Plugins** section in the side-bar, go to **Plugins**.
+3. At the top of the plugins page, click the **Manage Repositories** button.
+4. Add a new repository by clicking on the  **+ New Repository** button and enter the following details;
+   * **Repository Name:** `Shokofin Stable`
+   * **Repository URL:** `https://raw.githubusercontent.com/ShokoAnime/Shokofin/metadata/stable/manifest.json`
+5. Click **Add** to save the link, and navigate back to the catalogue by pressing the **←** in the top left corner.
+6. Filter the list to **All** or **Available** plugins, then refresh the browser page to reload the plugin list.
+7. Find and install **Shoko** from the list, optionally by filtering the list by the **Anime** category, and click it.
+8. Click the **Install** button. You will get a pop-up warning you about using untrusted plugins. Click **Ok**.
+9. **Restart Jellyfin** to apply the changes.
+
+#### Jellyfin 10.10
+
 1. Navigate to the **Dashboard**.
 2. Under the **Plugins** section in the side-bar, go to **Catalog**.
 3. At the top of the catalog page, click the **⚙ Gear** icon that's next to the help button.
