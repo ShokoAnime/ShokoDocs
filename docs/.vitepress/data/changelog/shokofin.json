@@ -2,6 +2,22 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "6.0.1",
+      "versionURL": "601",
+      "date": "January 17th, 2026",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v6.0.1",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Inform library monitor before generating VFS."
+        },
+        {
+          "type": "added",
+          "text": "Added support for Jellyfin 10.10 (again)."
+        }
+      ]
+    },
+    {
       "version": "6.0.0",
       "versionURL": "600",
       "date": "January 13th, 2026",
