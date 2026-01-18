@@ -35,6 +35,14 @@
               >
                 Delete
               </button>
+              <button
+                v-else
+                class="docker-input-button"
+                type="button"
+                disabled
+              >
+                Delete
+              </button>
               <input
                 class="docker-input-input docker-input-input-outside"
                 :value="volume[0]"
@@ -53,6 +61,7 @@
       </div>
     </div>
     <!-- Updated code output section with syntax highlighting -->
+    <h4><pre>docker-compose.yml</pre></h4>
     <div class="code-output">
       <pre v-html="highlightedCode" class="docker-output-codeblock"></pre>
     </div>
@@ -70,23 +79,23 @@ hljs.registerLanguage('yaml', yaml);
 export default {
   setup() {
     const fieldLabels = {
-      container: "Container",
-      puid: "PUID",
-      pgid: "PGID",
-      tz: "Time Zone",
+      container: "Container Name",
+      puid: "User ID (PUID)",
+      pgid: "Group ID (PGID)",
+      tz: "Time Zone (TZ)",
       port: "Port",
       volumes: "Volumes",
     };
 
     const initialUserInput = {
       container: "shoko_server",
-      puid: "$UID",
-      pgid: "$GID",
+      puid: "1000",
+      pgid: "100",
       tz: "Etc/UTC",
       port: "8111",
       volumes: [
         ["./shoko-config", "/home/shoko/.shoko"],
-        ["<edit this path before use>", "/mnt/anime"],
+        ["<edit path before use>", "/mnt/anime"],
       ],
     };
 
@@ -172,6 +181,12 @@ services:
   border-radius: 0.5rem;
 }
 
+.docker-input-input-outside, .docker-input-input-inside {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
 .docker-input-volume-wrapper {
   display: flex;
   flex-direction: column;
@@ -187,7 +202,7 @@ services:
   display: flex;
   align-items: end;
   justify-content: space-between;
-  margin: 0.5rem 0 0.5rem auto;
+  margin: 0.5rem 0 0.5rem 0;
   gap: 0.5rem;
 }
 
@@ -195,6 +210,9 @@ services:
   background-color: var(--vp-sidebar-bg-color);
   padding: 1rem;
   border-radius: 0.5rem;
+}
+.docker-input-button:disabled {
+  opacity: 0.65;
 }
 
 .docker-input-hr {

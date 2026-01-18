@@ -2,6 +2,142 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "6.0.2",
+      "versionURL": "602",
+      "date": "January 18th, 2026",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v6.0.2",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Add back behavior to mock the mtime of symlinks for 10.10."
+        },
+        {
+          "type": "fixed",
+          "text": "Only set the created date on episodes/movies in 10.11+."
+        },
+        {
+          "type": "fixed",
+          "text": "Simplify multi-series file checks."
+        },
+        {
+          "type": "fixed",
+          "text": "Only emit media folder removed events when library config. is still available."
+        }
+      ]
+    },
+    {
+      "version": "6.0.1",
+      "versionURL": "601",
+      "date": "January 17th, 2026",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v6.0.1",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Inform library monitor before generating VFS."
+        },
+        {
+          "type": "added",
+          "text": "Added support for Jellyfin 10.10 (again)."
+        }
+      ]
+    },
+    {
+      "version": "6.0.0",
+      "versionURL": "600",
+      "date": "January 13th, 2026",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v6.0.0",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "To be added at a later date."
+        }
+      ]
+    },
+    {
+      "version": "5.0.6",
+      "versionURL": "506",
+      "date": "October 28th, 2025",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v5.0.6",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fixed Direct Play issues with symbolic links in the VFS in Jellyfin 10.11.1."
+        }
+      ]
+    },
+    {
+      "version": "5.0.5",
+      "versionURL": "505",
+      "date": "October 20th, 2025",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v5.0.5",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added support for Jellyfin 10.11."
+        },
+        {
+          "type": "removed",
+          "text": "Dropped support for Shoko Server below version 5.1.0."
+        },
+        {
+          "type": "removed",
+          "text": "Dropped support for Jellyfin 10.10."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix locking on self in plugin base class."
+        }
+      ]
+    },
+    {
+      "version": "5.0.4",
+      "versionURL": "504",
+      "date": "July 24th, 2025",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v5.0.4",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "In some cases, the media folders can be empty or otherwise unavailable (e.g. a local drive on windows is not mounted yet, a network share on windows is temporarily unavailable, a (network?) mount on linux was not mounted correctly, etc.), so skip the generation of the VFS if we detect any of the media folders attached to the library is in a faulted state, to prevent the generation removing all (or some) the symbolic links — effectively deleting the whole (or parts of) the VFS."
+        },
+        {
+          "type": "fixed",
+          "text": "When attempting to move a subtitle file, check if it's a symbolic link and abort if the link target doesn't exist, or create a copy to use if it exists but is pointing to the wrong place."
+        }
+      ]
+    },
+    {
+      "version": "5.0.3",
+      "versionURL": "503",
+      "date": "May 3rd, 2025",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v5.0.3",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Check all ≥101 (up from ≥100) locations for a match before deciding on a mapping between the media folder and import folder, instead of picking the first found match. This will help in cases where some files have multiple locations with the same file name but different relative paths."
+        },
+        {
+          "type": "fixed",
+          "text": "Add back proper per-library media folder config removal."
+        },
+        {
+          "type": "fixed",
+          "text": "Split the library exists check and library id is valid check into two, because the library id may be null if the virtual folder is in a bad state in core Jellyfin, but the library may still exist in the UI."
+        }
+      ]
+    },
+    {
+      "version": "5.0.2",
+      "versionURL": "502",
+      "date": "January 21st, 2025",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v5.0.2",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Suppress roles without a proper staff member name available."
+        }
+      ]
+    },
+    {
       "version": "5.0.1",
       "versionURL": "501",
       "date": "January 21st, 2025",

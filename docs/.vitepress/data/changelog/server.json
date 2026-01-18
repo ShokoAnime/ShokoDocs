@@ -2,6 +2,252 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "5.2.0",
+      "versionURL": "520",
+      "date": "Janurary 10th, 2026",
+      "link": "https://shokoanime.com/blog/shoko-version-5-2-0-released",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Added optional Size property to tags in APIv3."
+        },
+        {
+          "type": "added",
+          "text": "Added location details to Web UI file summary endpoint in APIv3."
+        },
+        {
+          "type": "added",
+          "text": "Added AniDB ban status endpoint to APIv3."
+        },
+        {
+          "type": "added",
+          "text": "Added AniDB character & creator filters to the filtering system."
+        },
+        {
+          "type": "added",
+          "text": "Enable TMDB auto linking by default for new instances"
+        },
+        {
+          "type": "added",
+          "text": "New setting to override database connection string in server settings"
+        },
+        {
+          "type": "added",
+          "text": "Add APIv3 endpoint to relocate files given series id"
+        },
+        {
+          "type": "added",
+          "text": "Added preferred TMDb episode and season images to the database"
+        },
+        {
+          "type": "added",
+          "text": "Add parameter to APIv3 filter endpoints to include empty groups (and now default false)"
+        },
+        {
+          "type": "added",
+          "text": "Rename server setting ServerPort to Web.Port"
+        },
+        {
+          "type": "added",
+          "text": "Add image added/updated/removed events for shoko series/episode"
+        },
+
+        {
+          "type": "changed",
+          "text": "Return import folder ID instead of name in Web UI file summary endpoint in APIv3."
+        },
+        {
+          "type": "changed",
+          "text": "Only rename/move files if some of the anime data changed."
+        },
+        {
+          "type": "changed",
+          "text": "Enabled TMDb auto linking by default for new instances."
+        },
+        {
+          "type": "changed",
+          "text": "Bumped plugin abstraction version before next stable release."
+        },
+        {
+          "type": "changed",
+          "text": "Move existing series relocation logic to RelocationService."
+        },
+        {
+          "type": "changed",
+          "text": "Schedule anime updates for files with missing data during import."
+        },
+        {
+          "type": "changed",
+          "text": "Adjust Trakt token tasks for upcoming Trakt change in March 25 2025."
+        },
+        {
+          "type": "changed",
+          "text": "Remove auto linking from missing links stat on dashboard. Changed missing TMDb/Trakt link expressions to be the opposite of the 'has TMDb/Trakt link' expressions. Added new 'has TMDb/Trakt auto linking disabled' expressions for filtering."
+        },
+        {
+          "type": "changed",
+          "text": "Make cast, crew, studios & characters accessible to plugins."
+        },
+        {
+          "type": "changed",
+          "text": "Un-async AniDB and use a lock which supports recursion."
+        },
+        {
+          "type": "changed",
+          "text": "Allow -1 as a vote value to signal AniDB to remove the vote."
+        },
+        {
+          "type": "changed",
+          "text": "Change mysql and sqlserver tmdb keyword to text equivalent."
+        },
+        {
+          "type": "changed",
+          "text": "Update PlexHelper, invalidate token on UnprocessableEntity HTTP code."
+        },
+        {
+          "type": "changed",
+          "text": "Increase SignalR timeout."
+        },
+        {
+          "type": "changed",
+          "text": "Emit events when images get added, updated, or removed on entities."
+        },
+        {
+          "type": "changed",
+          "text": "Added SeriesVoted event for plugin developers."
+        },
+        {
+          "type": "changed",
+          "text": "Update folder watcher to not trigger on excluded files."
+        },
+
+        {
+          "type": "fixed",
+          "text": "Handle errors thrown by the TMDB library in a more graceful manner."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed existential check in TMDb show ordering endpoint."
+        },
+        {
+          "type": "fixed",
+          "text": "Added missing attribute on ordering type for TMDb shows."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed MediaInfo failing to run on paths longer than 256 characters on Windows."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed the language source order reverting back to default on every server start."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed version check for daily server installs."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed removing outdated images during a TMDb image update."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed failure to save data in MySQL caused by incorrect encoding."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed TMDB movie collection search in APIv3."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixed swagger definitions for file stream endpoints in APIv3."
+        },
+        {
+          "type": "fixed",
+          "text": "Cleanup stalled relations and similar entries when refreshing AniDB anime."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix AniDB keepalive PING interfering with requests."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix TMDB ordering."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix APIv3 scrobble LastWatched value."
+        },
+        {
+          "type": "fixed",
+          "text": "Resolve symlinks before hashing when needed."
+        },
+        {
+          "type": "fixed",
+          "text": "Add missing music video anime type."
+        },
+        {
+          "type": "fixed",
+          "text": "Language mapping and parsing fixes."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixes for new Trakt collection limits."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix Plex linking."
+        },
+        {
+          "type": "fixed",
+          "text": "Fixes for new Trakt collection limits on jobs."
+        },
+        {
+          "type": "fixed",
+          "text": "Case sensitive SQL updates."
+        },
+        {
+          "type": "fixed",
+          "text": "Update case sensitive SQL entries."
+        },
+        {
+          "type": "fixed",
+          "text": "WebAOM %epn and %epr values were reversed."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix MSSQL migration problem introduced previously."
+        },
+        {
+          "type": "fixed",
+          "text": "Remove MinLength and MaxLength from TmdbBulkSearchBody."
+        },
+        {
+          "type": "fixed",
+          "text": "Remove heading for unpopulated column from TMDB export."
+        },
+        {
+          "type": "fixed",
+          "text": "Rename TMDB_Show_Network tables."
+        },
+        {
+          "type": "fixed",
+          "text": "Rename TMDB_Show_Network in SQLite using a two-step process."
+        },
+        {
+          "type": "fixed",
+          "text": "Update SQLServer migration numbers."
+        },
+        {
+          "type": "fixed",
+          "text": "Update SQLServer migration."
+        },
+        {
+          "type": "fixed",
+          "text": "Replace external FTP artifact upload with SFTP."
+        }
+      ]
+    },
+    {
       "version": "5.1.0",
       "versionURL": "510",
       "date": "Janurary 19th, 2025",

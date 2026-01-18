@@ -27,7 +27,7 @@ const preTableData = [
     AnimeThemes: '❌',
     CollectionPosters: '✔️',
     ForceMetadata: '✔️',
-    RescanRecent: '❌',
+    RescanRecent: '✔️',
     WatchedSync: '✔️'
   },
   {
@@ -296,8 +296,9 @@ the readme for all of the commands.
   - Any Posters in the "PostersFolder" must have the same name as their respective collection in Plex.
   - The following characters must be stripped from the filenames: \ / : \* ? " < > |
   - The accepted file extensions are: bmp / gif / jpe / jpeg / jpg / png / tbn / tif / tiff / webp
-- Append the argument "clean" `collection-posters.py clean` if you want to remove old collection posters instead.
+- Append the "clean" flag (-c or --clean) if you want to remove old collection posters too.
   - This works by deleting everything but the newest custom poster for all collections.
+- Append the "skip" flag (-s or --skip) if you want to skip poster application.
 :::
 
 ### Force-Metadata
@@ -342,6 +343,7 @@ the readme for all of the commands.
 - The "Original Title" for all series will be set using info Shoko Relay added to the "Sort Title" (if available).
 - Negative seasons like "Season -1" which contain Credits, Trailers, Parodies etc. will have their names updated to reflect their contents.
 - The "Sort Title" for all collections will be set to match the current title to avoid Plex's custom sorting rules e.g. ignoring "The" or "A"
+- Collections with only a single entry will be listed to inform the user that an old series may need to be refreshed
 - All Smart Collections are ignored as they are not managed by Shoko Relay
 :::
 
@@ -349,12 +351,11 @@ the readme for all of the commands.
 
 - This is mostly used for quickly adding currently airing series to Plex that were unrecognized when initially imported into Shoko.
 - Once the files are recognized running this script will trigger a rescan in Plex for any series that they are attached to.
-- This requires Plex's partial scanning (or an alternative) to be enabled.
 
 :::details Additional Information
 **Requirements:**
 
-- Python 3.7+, Requests Library (pip install requests), Plex, Shoko Server
+- Python 3.7+, Python-PlexAPI (pip install plexapi), Requests Library (pip install requests), Plex, Shoko Server
 
 **Preferences:**
 

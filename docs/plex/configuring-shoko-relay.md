@@ -74,21 +74,23 @@ const contentRatingsData = [
 If you chose Shoko Metadata as your Plex Agent/Scanner combo you can skip this page and move directly to
 the [Syncing Watched States](/plex/syncing-watched-states) page.
 
+:::warning Enabling Legacy Agents
+If you are running Plex Media Server v1.43.0.10346 or newer you must navigate to `Settings > Library` and
+ensure that "Show legacy agents during library setup" is enabled.
+:::
+
 ### Creating A Shoko Relay Library
 
 1. Add a Plex Library
-
    - While Shoko Server is running, open Plex and create a new "TV Shows" library.
    - Ensure that you have completed the **required edits** mentioned on
      the [Installing Agents & Scanners](/plex/installing-agents-scanners) page.
 
 2. Add a Folder to Your Library
-
    - When prompted to add folders to your library, browse to your anime collection.
    - Even though Shoko will provide the metadata, Plex still needs to know where the physical files are located.
 
 3. Configure the Advanced Settings
-
    - In the Advanced tab, select: Scanner **Shoko Relay Scanner** and Agent **ShokoRelay**.
    - Enter your Shoko Server credentials which are the only required settings.
 
@@ -99,7 +101,6 @@ the [Syncing Watched States](/plex/syncing-watched-states) page.
    <EasyTable :columns="serverSettingsColumns" :data="serverSettingsData" />
 
 4. Change Recommended Options
-
    - Changing the following options at the bottom of Advanced Settings page is also recommended:
 
    <EasyTable :columns="recommendedOptionsColumns" :data="recommendedOptionsData" />
@@ -180,7 +181,8 @@ If "staff listings" are enabled in the settings the following custom agent limit
 ### Automatic Season Naming Limitations
 
 Due to custom agent limitations certain season names which contain special files will not name themselves correctly.
-These can be renamed manually or with the included [force-metadata.py](/plex/shoko-relay-utility-scripts#force-metadata) script that
+These can be renamed manually or with the included [force-metadata.py](/plex/shoko-relay-utility-scripts#force-metadata)
+script that
 accesses the Plex API. The affected season names and their intended names are listed below:
 
 - Season -1 → Credits **OR** [Unknown Season] → Credits
@@ -234,12 +236,18 @@ With `SingleSeasonOrdering` disabled in the Scanner and Agent the following will
 
 ##### Curated TMDB Mappings
 
-For users who are new to Shoko or don't have any TMDB links, two .csv files are available below which have been
-manually checked for accuracy. Either of these files can be imported using Shoko's `/Tmdb/Import` v3 API endpoint in
-[/swagger/](https://docs.shokoanime.com/faq#general) (Shoko's public API) to bypass fully auto-linking an unlinked library.
+If you don't have any TMDB links in Shoko it is recommended that you start off with a curated list before auto linking.
+[Info Here](/shoko-server/tmdb-features#curated-tmdb-mappings)
 
-- [Shoko: AniDB → TMDB Mappings](https://gist.github.com/natyusha/129848213161c57101c9f39ed3f263ed)
-- [Shoko: AniDB → TMDB Mappings (Comments)](https://gist.github.com/natyusha/b46aeaf2f5f6e5a9333d6f501be6c9ee)
+##### Alternate TMDB Episode Ordering
+
+If you aren't happy with TMDB's default episode/season structure for a series you can change it to an alternate or even
+make your own. [Info Here](/shoko-server/tmdb-features#alternate-episode-ordering)
+
+:::info
+If you select an alternate order for a series TMDB season posters will no longer be automatically added to Plex as those
+are only for the default seasons.
+:::
 
 ##### Combining Series
 
@@ -258,27 +266,6 @@ correctly matched to TMDB in Shoko:
 :::important
 Only do this when you are happy with the metadata for the series to be merged as you will be unable to correctly refresh
 it without splitting the series apart first.
-:::
-
-##### Alternate Episode Ordering
-
-It is quite common for anime to have multiple ways of grouping the episodes into seasons. This includes: DVD/BD
-ordering, stream site listings or even manga story arcs. Using Bleach as an example you can see that [TMDB](https://www.themoviedb.org/tv/30984-bleach/seasons) doesn't split
-the original run into seasons while many people may expect it to. Fortunately, TMDB's [Episode Groups](https://www.themoviedb.org/tv/30984-bleach/episode_groups) page provides several
-alternate ordering options in case you would like to use one of those instead.
-
-In order to select an alternate ordering for a series a few prerequisites must be met:
-- The series must have a TMDB link
-- TMDB's Episode Groups page for the series must have at least one entry
-- "Download Alternate Ordering" must be enabled under Shoko's "TMDB Download Options"
-
-If a series meets the above requirements simply navigate to it and click "Edit Link" (pencil next to the TMDB link) and then
-"Open Settings" (gear next to the TMDB title). From the now open "TMDB Show Settings" modal simply select the desired ordering
-and click Save.
-
-:::info
-If you select an alternate order for a series TMDB season posters will no longer be automatically added to Plex as those
-are only for the default seasons.
 :::
 
 ### Combining Episodes
