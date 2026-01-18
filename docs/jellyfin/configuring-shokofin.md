@@ -39,18 +39,24 @@ const titleSettingsData = [
   },
   {
     Advanced: "",
+    Option: "Remove Duplicate Titles",
+    Description: "Filters out duplacate titles when using multiple title sources sources.",
+    Default: ""
+  },
+  {
+    Advanced: "",
     Option: "Main Title Source",
-    Description: "Enable and order available sources in the priority you want used for the main title of your series.",
+    Description: "Enable and order available sources in order of priority for the main title of your series.",
     Default: "Shoko"
   },
   {
     Advanced: "",
     Option: "Alternate/Original Title Source(s)",
-    Description: "Enable and order available sources in the priority you want used for the alternative title of your series. More than one alternative title can be added up to a max of five.",
+    Description: "Enable and order available sources in order of priority for the alternative title of your series. More than one alternative title can be added up to a max of five.",
     Default: "None"
   },
   {
-    Advanced: "⚠",
+    Advanced: "",
     Option: "Allow Any Title in Selected Language",
     Description: "Allows for alternative titles to be utilized if an official title is not present in the given language. Only applies to AniDB title selectors when using a title override that follows language settings.",
     Default: ""
@@ -63,6 +69,12 @@ const descriptionSettingsData = [
     Option: "AniDB Description Conversion Mode",
     Description: "Determines how the plugin prettifies AniDB descriptions for Jellyfin. Choose to convert descriptions to markdown, plain text, or leave unformatted.",
     Default: "Markdown"
+  },
+  {
+    Advanced: "",
+    Option: "Add Notes",
+    Description: "Determines if any notes included in the AniDB summary should be appended to the description.",
+    Default: "✓"
   },
   {
     Advanced: "",
@@ -144,25 +156,49 @@ const tagGenreSettingsData = [
 const imageSettingsData = [
   {
     Advanced: "",
-    Option: "Add Language Code for Shows/Movies",
-    Description: "Adds the language code to any image metadata provided which Jellyfin can use to prioritize images based on a library's configured language. If a library has no language set, Jellyfin will prioritize the English labeled images.",
+    Option: "Respect Preferred Image in Automatic Image Search",
+    Description: "Respect the preferred image flag sent from Shoko Server when selecting images to use.",
+    Default: "✓"
+  },
+  {
+    Advanced: "",
+    Option: "Use Community Rating in Automatic Image Search",
+    Description: "Use community ratings for prioritizing which images to use.",
     Default: ""
   },
   {
     Advanced: "",
-    Option: "Add Community Rating for Shows/Movies",
-    Description: "Adds the community rating to any image metadata provided which Jellyfin can use to prioritize images based on a library's configured language.",
+    Option: "Set Image Dimensions in Automatic Image Search",
+    Description: "Set the dimensions of images in automatic image searches. This will allow Jellyfin to select the 'best' image to use based on the image dimensions, if a minimum dimension is specified in the settings for the library.",
     Default: ""
   },
   {
-    Advanced: "⚠",
-    Option: "Respect Preferred Image",
-    Description: "Respect the preferred image flag sent from Shoko Server when selecting the correct image to use for the library and structure type. Setting this will also set the language code to the preferred language code for the library if 'Add Language Code' is enabled, thus ensuring it is always selected for the library.",
-    Default: "All ✓"
+    Advanced: "",
+    Option: "Only Allow Posters By Language",
+    Description: "Filter posters to allow only the specified languages in order of priority. If none are selected, then all images will be allowed regardless of language.",
+    Default: "No language / Text-less images"
+  },
+  {
+    Advanced: "",
+    Option: "Only Allow Logos By Language",
+    Description: "Filter logos to allow only the specified languages in order of priority. If none are selected, then all images will be allowed regardless of language.",
+    Default: "None"
+  },
+  {
+    Advanced: "",
+    Option: "Only Allow Backdrops/Banners/Thumbnails By Language",
+    Description: "Filter backdrops, banners, and thumbnails to allow only the specified languages in order of priority. If none are selected, then all images will be allowed regardless of language.",
+    Default: "None"
   },
 ];
 
 const miscSettingsData = [
+  {
+    Advanced: "",
+    Option: "Add Third Party IDs",
+    Description: "Enable which third party IDs to provide for other plugins to consume with supported media items.",
+    Default: "AniDB"
+  },
   {
     Advanced: "⚠",
     Option: "Only Animation Studios",
@@ -180,15 +216,6 @@ const miscSettingsData = [
     Option: "Production Location Sources",
     Description: "Enable and order available sources in the priority you want used for the production locations of your series.",
     Default: "AniDB, TheMovieDb"
-  },
-];
-
-const thirdPartyIDSettingsData = [
-  {
-    Advanced: "",
-    Option: "Add Third Party IDs",
-    Description: "Enable which third party IDs to provide for other plugins to consume with supported media items.",
-    Default: "AniDB"
   },
 ];
 
@@ -225,12 +252,6 @@ const shokofinSettingsData = [
   },
   {
     Advanced: "⚠",
-    Option: "Disable Movie Library Filtering",
-    Description: "By default we filter out anything that is not a movie in Jellyfin Movie libraries. Enable this if you want everything to show up as movies in your Jellyfin Movie libraries instead.",
-    Default: ""
-  },
-  {
-    Advanced: "⚠",
     Option: "Force Movie Special Features",
     Description: "Append all specials that belong to an AniDB movie series as special features for the movie(s). By default only some specials will be automatically recognized as special features, but by enabling this option you will force all specials to be used as special features. This setting applies to movie series across all library types, and will break movie series that contain specials in a show type library.",
     Default: ""
@@ -244,25 +265,19 @@ const shokofinCollectionSettingsData = [
     Description: "Configure how native Jellyfin collections should be created if at all based on Shoko Server provided metadata.",
     Default: "Do not create collections"
   },
-  {
-    Advanced: "⚠",
-    Option: "Require Two Entries for a Collection",
-    Description: "If collection creation is enabled, only create a collection when the collection will contain at least two items.",
-    Default: "✓"
-  },
 ];
 
 const shokofinLibrarySettingsData = [
   {
     Advanced: "",
-    Option: "Default Library Operation Mode",
+    Option: "(Default) Library Operation Mode",
     Description: "Determines how the plugin should operate on new libraries. This lets you choose to have the plugin manage how the library is presented to Jellyfin using the Virtual File System (VFS) mode, or to leave that responsibility up to you using the legacy filtering modes. \nRefer to our [Recommendations](/jellyfin/recommendations/#virtual-file-system-vfs) page for additional information on what to expect whether you choose to use the VFS mode or not.",
     Default: "Virtual File System (VFS)"
   },
   {
     Advanced: "",
     Option: "Managed Folder Mapping",
-    Description: "Only displays when an existing library is being configured. Displays the identified managed folder name that the library is mapped to inside Shoko Server. A deletion button will be displayed as a way to remove the mapping configuration and allow Shokofin to remap the folder on the next library scan.",
+    Description: "Only displays when an existing library is being configured. Displays the managed folder and the import folder it is mapped to inside Shoko Server. A magnifying glass icon is displayed to refresh the mapping between the media folder and import folder in case either have changed. A folder icon with a slash through it will be displayed which will mark a folder to be completely ignored by the Shokofin plugin. Lastly, a minus icon is displayed to remove a folder from the plugins mappings. Removing mappings will clear out VFS links and entries on the next scan.",
     Default: "N/A"
   },
 ];
@@ -437,7 +452,7 @@ const shokofinSeriesSettingsData = [
     Advanced: "⚠",
     Option: "Season Merging Behavior",
     Description: "Determines how the merging should be handled for the series. Requires the global series merging feature to be enabled for this to take effect.",
-    Default: "None Selected"
+    Default: "None"
   },
   {
     Advanced: "",
@@ -447,7 +462,7 @@ const shokofinSeriesSettingsData = [
   },
   {
     Advanced: "",
-    Option: "Order episodes by airdate",
+    Option: "Order Episodes by Airdate",
     Description: "Order episodes by their airdate instead of by their original episode number. \n\n**Warning:** Only applied to AniDB Anime Structure and Shoko Group Structure. ",
     Default: ""
   },
@@ -587,10 +602,6 @@ provider.
 
 <EasyTable :columns="containerColumns" :data="miscSettingsData" />
 
-##### Third Party Integration
-
-<EasyTable :columns="containerColumns" :data="thirdPartyIDSettingsData" />
-
 ### Library
 
 Configure the behavior for how your media will be grouped and displayed within a library. Any changes to these settings
@@ -605,7 +616,7 @@ and create it once again following the instructions at [Creating a Shoko Library
 
 <EasyTable :columns="containerColumns" :data="shokofinCollectionSettingsData" />
 
-##### New/Existing Library Settings
+##### Library Settings
 
 <EasyTable :columns="containerColumns" :data="shokofinLibrarySettingsData" />
 
@@ -712,7 +723,10 @@ how Shokofin works as a plugin. Any other library type is otherwise unsupported.
 ![Shokofin - Library Settings - Folders](/images/shokofin/Shokofin-Library-Folders.png)
 
 When specifying the media library's file path, be aware that any path you give must point to a directory with the same
-contents that Shoko Server sees in it's configured import folder(s).
+contents that Shoko Server sees in it's configured import folder(s). If using the VFS, Shokofin will automatically add
+the VFS path here. You do not have to add the VFS path yourself. When adding the VFS path, Shokofin will remove the path
+to the actual media to simplify having to filter it out during scans. Configuring the media path can still be done
+directly in Shokofin's [Managed Folder Mapping](#library-settings) for the library.
 
 For example, if Shoko Server knows the import folder for your collection as `C:\ShokoImport\`, and Jellyfin is given a
 folder `/mnt/anime`, as long as both directories contain the same things, Shokofin will be able to identify your media.
