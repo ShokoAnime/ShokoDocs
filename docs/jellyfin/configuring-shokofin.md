@@ -84,6 +84,45 @@ const descriptionSettingsData = [
   },
 ];
 
+const imageSettingsData = [
+  {
+    Advanced: "",
+    Option: "Respect Preferred Image in Automatic Image Search",
+    Description: "Respect the preferred image flag sent from Shoko Server when selecting images to use.",
+    Default: "✓"
+  },
+  {
+    Advanced: "",
+    Option: "Use Community Rating in Automatic Image Search",
+    Description: "Use community ratings for prioritizing which images to use.",
+    Default: ""
+  },
+  {
+    Advanced: "",
+    Option: "Set Image Dimensions in Automatic Image Search",
+    Description: "Set the dimensions of images in automatic image searches. This will allow Jellyfin to select the 'best' image to use based on the image dimensions, if a minimum dimension is specified in the settings for the library.",
+    Default: ""
+  },
+  {
+    Advanced: "",
+    Option: "Only Allow Posters By Language",
+    Description: "Filter posters to allow only the specified languages in order of priority. If none are selected, then all images will be allowed regardless of language.",
+    Default: "No language / Text-less images"
+  },
+  {
+    Advanced: "",
+    Option: "Only Allow Logos By Language",
+    Description: "Filter logos to allow only the specified languages in order of priority. If none are selected, then all images will be allowed regardless of language.",
+    Default: "None"
+  },
+  {
+    Advanced: "",
+    Option: "Only Allow Backdrops/Banners/Thumbnails By Language",
+    Description: "Filter backdrops, banners, and thumbnails to allow only the specified languages in order of priority. If none are selected, then all images will be allowed regardless of language.",
+    Default: "None"
+  },
+];
+
 const tagGenreSettingsData = [
   {
     Advanced: "⚠",
@@ -153,52 +192,7 @@ const tagGenreSettingsData = [
   },
 ];
 
-const imageSettingsData = [
-  {
-    Advanced: "",
-    Option: "Respect Preferred Image in Automatic Image Search",
-    Description: "Respect the preferred image flag sent from Shoko Server when selecting images to use.",
-    Default: "✓"
-  },
-  {
-    Advanced: "",
-    Option: "Use Community Rating in Automatic Image Search",
-    Description: "Use community ratings for prioritizing which images to use.",
-    Default: ""
-  },
-  {
-    Advanced: "",
-    Option: "Set Image Dimensions in Automatic Image Search",
-    Description: "Set the dimensions of images in automatic image searches. This will allow Jellyfin to select the 'best' image to use based on the image dimensions, if a minimum dimension is specified in the settings for the library.",
-    Default: ""
-  },
-  {
-    Advanced: "",
-    Option: "Only Allow Posters By Language",
-    Description: "Filter posters to allow only the specified languages in order of priority. If none are selected, then all images will be allowed regardless of language.",
-    Default: "No language / Text-less images"
-  },
-  {
-    Advanced: "",
-    Option: "Only Allow Logos By Language",
-    Description: "Filter logos to allow only the specified languages in order of priority. If none are selected, then all images will be allowed regardless of language.",
-    Default: "None"
-  },
-  {
-    Advanced: "",
-    Option: "Only Allow Backdrops/Banners/Thumbnails By Language",
-    Description: "Filter backdrops, banners, and thumbnails to allow only the specified languages in order of priority. If none are selected, then all images will be allowed regardless of language.",
-    Default: "None"
-  },
-];
-
 const miscSettingsData = [
-  {
-    Advanced: "",
-    Option: "Add Third Party IDs",
-    Description: "Enable which third party IDs to provide for other plugins to consume with supported media items.",
-    Default: "AniDB"
-  },
   {
     Advanced: "⚠",
     Option: "Only Animation Studios",
@@ -216,6 +210,12 @@ const miscSettingsData = [
     Option: "Production Location Sources",
     Description: "Enable and order available sources in the priority you want used for the production locations of your series.",
     Default: "AniDB, TheMovieDb"
+  },
+  {
+    Advanced: "",
+    Option: "Add Third Party IDs",
+    Description: "Enable which third party IDs to provide for other plugins to consume with supported media items.",
+    Default: "AniDB"
   },
 ];
 
@@ -259,6 +259,12 @@ const shokofinSettingsData = [
 ];
 
 const shokofinCollectionSettingsData = [
+  {
+    Advanced: "⚠",
+    Option: "Automatically Reconstruct Collections",
+    Description: "Automatically reconstruct collections after a library scan.",
+    Default: "✓"
+  },
   {
     Advanced: "",
     Option: "Collections",
@@ -357,23 +363,11 @@ const shokofinVFSSettingsData = [
   },
 ];
 
-const advancedShokofinVFSSettingsData = [
+const advancedShokofinVFSGenerationSettingsData = [
   {
     Advanced: "⚠",
     Option: "Resolve Links Before VFS",
     Description: "If a library contains symbolic links to media, it will follow them until a final 'real' file is found and use the path of said file for the VFS.",
-    Default: ""
-  },
-  {
-    Advanced: "⚠",
-    Option: "Attach VFS to Libraries",
-    Description: "Makes the VFS file structure that Shokofin automatically created show up as a library folder. This allows reusing the same media folder(s) across multiple libraries without needing other workarounds. Useful for separating movies and series into separate libraries while still using the same media folder for both.",
-    Default: "✓"
-  },
-  {
-    Advanced: "⚠",
-    Option: "Iterative File Checks",
-    Description: "Skips the file search pre-generation step for library scans and instead performs file existence checks during the generation phase. This can be useful if iterating the file system is expensive, such as when using network mapped libraries.",
     Default: ""
   },
   {
@@ -520,12 +514,6 @@ const miscShokofinSettings = [
   },
   {
     Advanced: "⚠",
-    Option: "Usage Tracker Stall Time (seconds)",
-    Description: "For debugging purposes. Do not change unless advised.",
-    Default: ""
-  },
-  {
-    Advanced: "⚠",
     Option: "Ignored Folder Names",
     Description: "A comma separated list of folder names to ignore during a library scan. Useful for skipping folders generated by a NAS or other pieces of software that access the file system where media resides. Only applicable to libraries not managed by the VFS as files not recognized by Shoko Server are already ignored.",
     Default: ".streams, @recently-snapshot"
@@ -590,13 +578,13 @@ provider.
 
 <EasyTable :columns="containerColumns" :data="descriptionSettingsData" />
 
-##### Tag & Genre Settings
-
-<EasyTable :columns="containerColumns" :data="tagGenreSettingsData" />
-
 ##### Image Settings
 
 <EasyTable :columns="containerColumns" :data="imageSettingsData" />
+
+##### Tag & Genre Settings
+
+<EasyTable :columns="containerColumns" :data="tagGenreSettingsData" />
 
 ##### Miscellaneous Settings
 
@@ -644,9 +632,9 @@ what to expect whether you choose to use this feature or not.
 
 <EasyTable :columns="containerColumns" :data="shokofinVFSSettingsData" />
 
-##### VFS Location Settings
+##### Generation Settings
 
-<EasyTable :columns="containerColumns" :data="advancedShokofinVFSSettingsData" />
+<EasyTable :columns="containerColumns" :data="advancedShokofinVFSGenerationSettingsData" />
 
 ### Users
 
@@ -821,19 +809,17 @@ known to work without issue alongside Shokofin is the **Screen Grabber** fetcher
 
 ![Shokofin - Library Settings - Saving Artwork](/images/shokofin/Shokofin-Library-Saving-Artwork.png)
 
-When using the [VFS](#vfs) feature provided by Shokofin, it is recommended to leave this option
-disabled as the artwork would end up saved into the symbolic linked file structure that Shokofin creates within the data
-directories of Jellyfin. For non-VFS managed libraries, this is not an issue and can be set according to personal
-preference.
+When using the [VFS](#vfs) feature provided by Shokofin, it is recommended to leave this option disabled as the artwork
+would end up saved into the symbolic linked file structure that Shokofin creates within the data directories of
+Jellyfin. For non-VFS managed libraries, this is not an issue and can be set according to personal preference.
 
 ### Saving Trickplay Images Next to Media
 
 ![Shokofin - Library Settings - Saving Trickplay](/images/shokofin/Shokofin-Library-Saving-Trickplay.png)
 
-When using the [VFS](#vfs) feature provided by Shokofin, it is recommended to leave this option
-disabled as the artwork would end up saved into the symbolic linked file structure that Shokofin creates within the data
-directories of Jellyfin. For non-VFS managed libraries, this is not an issue and can be set according to personal
-preference.
+When using the [VFS](#vfs) feature provided by Shokofin, any trickplay files will be moved next to the actual media and
+symlinked back to the VFS if the media folder is writable. It is recommended to enable this setting to avoid having
+to regenerate trickplay in the event the library has to be recreated.
 
 ### Merge Series Across Folders
 

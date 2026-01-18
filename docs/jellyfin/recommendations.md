@@ -61,6 +61,9 @@ unrecognized files appear in your library and allows you to fully leverage Jelly
 While this approach is relatively new and still undergoing testing, it is stable enough for daily use. We encourage
 adopting this system and reporting any issues you encounter to help improve it further.
 
+When using the VFS, Shokofin will also automatically symlink and manage external subtitles, audio files, and trickplay
+if present next to the media.
+
 :::warning
 The VFS is automatically managed by the plugin and the folders and links it creates on the filesystem should not be
 manually altered. Changes in Shoko, such as adjustments to groupings or episode relocations, can trigger automatic
