@@ -20,9 +20,12 @@ library re-creation instead such as anything that alters specials placement.
 ### Library Re-creation is your friend
 
 If something doesn't work as expected, the cleanest (but not necessarily the best) solution is to delete your existing
-library and create a new one. The watch data stored in Jellyfin is stored separate from the library structure and will
-survive the recreation. Though do note that some issues can be fixed simply by doing a full refresh on the entry or
-library, so you should try that first to see if it resolves the problem.
+library and create a new one. The watch data stored in Jellyfin is stored separate from the library structure and should
+survive the recreation, however it is recommended to enable [watch data syncing](/jellyfin/configuring-shokofin#users)
+for your Jellyfin users to corresponding accounts within Shoko Server to be safe. If watch data syncing was recently
+enabled, you will have to run **Sync User Data** in the **Scheduled Tasks** section of the Dashboard to ensure Shoko has
+the data. Though do note that some issues can be fixed simply by doing a full refresh on the entry or library, so you
+should try that first to see if it resolves the problem.
 
 ### Reusing Folders Across Libraries
 
@@ -30,10 +33,9 @@ With how Jellyfin stores metadata about library media folders, reusing the same 
 be problematic. To ensure that Jellyfin works properly if you want to reuse the same folder across libraries, you can
 try any of the following:
 
-- **Bare Metal:** Use symbolic links pointing to the root of the media library as a way to have a different media folder
-  path that still points to the same media files.
+- **All Setups:** To have the plugin automatically do the work for you, enable the VFS for your libraries and enable the **Physically Attach VFS to Libraries** _advanced_ setting in Shokofin's plugin settings. If this is a new Shokofin install, all of these options are enabled by default if possible.
+- **Bare Metal:** Use symbolic links pointing to the root of the media library as a way to have a different media folder path that still points to the same media files.
 - **Docker:** Use multiple docker volume mounts that mount the same folder to different destinations.
-- **All Setups:** Enable the options in Shokofin's plugin settings to enable the VFS for the libraries and enable the **Physically Attach VFS to Libraries** _advanced_ setting to have the plugin automatically do the work for you.
 
 This kind of configuration can be useful if you intend to have separate libraries for movies and series.
 
@@ -59,6 +61,9 @@ unrecognized files appear in your library and allows you to fully leverage Jelly
 While this approach is relatively new and still undergoing testing, it is stable enough for daily use. We encourage
 adopting this system and reporting any issues you encounter to help improve it further.
 
+When using the VFS, Shokofin will also automatically symlink and manage external subtitles, audio files, and trickplay
+if present next to the media.
+
 :::warning
 The VFS is automatically managed by the plugin and the folders and links it creates on the filesystem should not be
 manually altered. Changes in Shoko, such as adjustments to groupings or episode relocations, can trigger automatic
@@ -77,7 +82,7 @@ following to ensure the VFS can work properly:
 3. Go into the Shokofin plugin settings and ensure that the Virtual File System (VFS) is enabled to make use of the
    feature.
 
-### Not Using the VFS
+### Not Using the VFS (Legacy Filtering)
 
 It is best to adhere to an AniDB-compatible file structure, with the exception of the extras being placed in an `extras`
 folder, and OPs/EDs being placed in a `backdrops` folder for native Jellyfin integration. An AniDB-compatible file
@@ -92,7 +97,9 @@ side if the groups change in Shoko.
 
 Keep unrecognized files — files not recognized in **Shoko Server** — away from the folders provided to Jellyfin. They
 will not be handled by the plugin, and be either filtered out or clutter your library depending on the settings you've
-chosen. Some may desire
+chosen. If you desire to have unrecognized files show up still in a Shokofin managed library, you can set the
+[Library Operation Mode](/jellyfin/configuring-shokofin#new-existing-library-settings) to **Legacy Filtering (Lax)**,
+and follow Jellyfin's File Structure requirements.
 
 #### Jellyfin's File Structure Requirements
 
