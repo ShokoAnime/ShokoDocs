@@ -2,6 +2,30 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "6.0.2",
+      "versionURL": "602",
+      "date": "January 18th, 2026",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v6.0.2",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Add back behavior to mock the mtime of symlinks for 10.10."
+        },
+        {
+          "type": "fixed",
+          "text": "Only set the created date on episodes/movies in 10.11+."
+        },
+        {
+          "type": "fixed",
+          "text": "Simplify multi-series file checks."
+        },
+        {
+          "type": "fixed",
+          "text": "Only emit media folder removed events when library config. is still available."
+        }
+      ]
+    },
+    {
       "version": "6.0.1",
       "versionURL": "601",
       "date": "January 17th, 2026",
