@@ -2,9 +2,33 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "5.2.2",
+      "versionURL": "522",
+      "date": "January 19th, 2026",
+      "link": "https://github.com/ShokoAnime/ShokoServer/releases/tag/v5.2.2",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Use language code & country code to get title language for TMDb."
+        }
+      ]
+    },
+    {
+      "version": "5.2.1",
+      "versionURL": "521",
+      "date": "January 11th, 2026",
+      "link": "https://github.com/ShokoAnime/ShokoServer/releases/tag/v5.2.1",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add Tags and Custom Tags to ISeries abstraction."
+        }
+      ]
+    },
+    {
       "version": "5.2.0",
       "versionURL": "520",
-      "date": "Janurary 10th, 2026",
+      "date": "January 10th, 2026",
       "link": "https://shokoanime.com/blog/shoko-version-5-2-0-released",
       "changes": [
         {
