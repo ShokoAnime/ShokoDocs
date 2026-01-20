@@ -2,6 +2,18 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "5.2.3",
+      "versionURL": "523",
+      "date": "January 19th, 2026",
+      "link": "https://github.com/ShokoAnime/ShokoServer/releases/tag/v5.2.3",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Include country code when checking preferred languages to download for TMDb titles and overviews."
+        }
+      ]
+    },
+    {
       "version": "5.2.2",
       "versionURL": "522",
       "date": "January 19th, 2026",
