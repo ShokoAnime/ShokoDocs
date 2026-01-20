@@ -13,12 +13,6 @@ They will be detailed below along with instructions for importing curated links.
 For users who are new to Shoko or don't have any TMDB links, two .csv files are available below which have been
 manually checked for accuracy.
 
-:::warning Stable Users
-For those still using Shoko Server v5.1.0 the most up to date files which are listed below will not import correctly.
-[Here](https://gist.github.com/natyusha/129848213161c57101c9f39ed3f263ed/65351313e7990c339c8813e956e8364fd24197d9)
-is a link to an older .csv which will still import.
-:::
-
 Either of these files can be imported using Shoko's `/Tmdb/Import` v3 API endpoint in
 [/swagger/](/faq#general) (Shoko's public API) to bypass fully auto-linking an unlinked library.
 
@@ -67,30 +61,11 @@ In order to select an alternate ordering for a series a few prerequisites must b
 - TMDB's Episode Groups page for the series must have at least one entry
 - **Download Alternate Ordering** must be enabled under Shoko's **TMDB Download Options**
 
-:::warning Stable Users
-For those still using Shoko Server v5.1.0 the UI referenced below will not be accessible. Instructions which use the API
-will be provided at the end of this section instead.
-:::
-
 If a series meets the above requirements simply navigate to it and click **Edit Link** (pencil next to the TMDB link) and then
 **Open Settings** (gear next to the TMDB title). From the now open **TMDB Show Settings** modal simply select the desired ordering
 and click Save.
 
 ![Shoko Server - Metadata Linking - Page - Ordering](/images/shoko-server/shoko-server-matadata-linking-page-ordering.jpg)
-
-### Stable Version Instructions
-
-Navigate to Shoko's `/Tmdb/Show/{showID}/Ordering/SetPreferred` v3 API endpoint which is available via [/swagger/](https://docs.shokoanime.com/faq#general)
-and authenticate. Using Bleach as an example once again, you would enter `30984` (Bleach's TMDB ID) into the `showID` box. Then you would set
-the 16 character `AlternateOrderingID` in the request body to one of the ones available [here](https://www.themoviedb.org/tv/30984-bleach/episode_groups)
-(both IDs are available from the URL on TMDB). Lastly, click **Execute** and the ordering will be applied.
-
-
-```json
-{
-  "AlternateOrderingID": "663fb548c10d4be3e80b2f6d"
-}
-```
 
 ## Additional Image Support
 

@@ -182,8 +182,7 @@ If "staff listings" are enabled in the settings the following custom agent limit
 
 Due to custom agent limitations certain season names which contain special files will not name themselves correctly.
 These can be renamed manually or with the included [force-metadata.py](/plex/shoko-relay-utility-scripts#force-metadata)
-script that
-accesses the Plex API. The affected season names and their intended names are listed below:
+script that accesses the Plex API. The affected season names and their intended names are listed below:
 
 - Season -1 → Credits **OR** [Unknown Season] → Credits
 - Season -2 → Trailers
