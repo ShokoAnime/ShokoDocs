@@ -2,6 +2,18 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "5.2.4",
+      "versionURL": "524",
+      "date": "January 20th, 2026",
+      "link": "https://github.com/ShokoAnime/ShokoServer/releases/tag/v5.2.4",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Always keep preferred TMDb images."
+        }
+      ]
+    },
+    {
       "version": "5.2.3",
       "versionURL": "523",
       "date": "January 19th, 2026",
