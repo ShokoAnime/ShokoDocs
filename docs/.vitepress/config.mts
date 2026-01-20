@@ -78,16 +78,8 @@ export default defineConfig({
             link: '/shoko-server/dashboard',
           },
           {
-            text: 'Logs',
-            link: '/shoko-server/logs',
-          },
-          {
-            text: 'Actions',
-            link: '/shoko-server/actions',
-          },
-          {
-            text: 'Settings',
-            link: '/shoko-server/settings',
+            text: 'Collection',
+            link: '/shoko-server/collection',
           },
           {
             text: 'Utilities',
@@ -114,6 +106,18 @@ export default defineConfig({
                 link: '/shoko-server/file-rename',
               },
             ],
+          },
+          {
+            text: 'Logs',
+            link: '/shoko-server/logs',
+          },
+          {
+            text: 'Actions',
+            link: '/shoko-server/actions',
+          },
+          {
+            text: 'Settings',
+            link: '/shoko-server/settings',
           },
           {
             text: 'Misc',
