@@ -283,7 +283,7 @@ const shokofinLibrarySettingsData = [
   {
     Advanced: "",
     Option: "Managed Folder Mapping",
-    Description: "Only displays when an existing library is being configured. Displays the managed folder and the import folder it is mapped to inside Shoko Server. A magnifying glass icon is displayed to refresh the mapping between the media folder and import folder in case either have changed. A folder icon with a slash through it will be displayed which will mark a folder to be completely ignored by the Shokofin plugin. Lastly, a minus icon is displayed to remove a folder from the plugins mappings. Removing mappings will clear out VFS links and entries on the next scan.",
+    Description: "Only displays when an existing library is being configured. Displays the media folder and the import folder it is mapped to inside Shoko Server. A magnifying glass icon is displayed to refresh the mapping between the media folder and import folder in case either have changed. A folder icon with a slash through it will be displayed which will mark a folder to be completely ignored by the Shokofin plugin. Lastly, a minus icon is displayed to remove a folder from the plugins mappings. Removing mappings will clear out VFS links and entries on the next scan.",
     Default: "N/A"
   },
 ];
