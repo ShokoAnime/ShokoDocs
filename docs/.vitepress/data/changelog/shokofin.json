@@ -2,6 +2,22 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "6.0.3",
+      "versionURL": "603",
+      "date": "January 31st, 2026",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v6.0.3",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Always append notes to overview if enabled."
+        },
+        {
+          "type": "changed",
+          "text": "Tweak build numbers to be unique per target ABI."
+        }
+      ]
+    },
+    {
       "version": "6.0.2",
       "versionURL": "602",
       "date": "January 18th, 2026",
