@@ -2,6 +2,54 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "5.3.0",
+      "versionURL": "530",
+      "date": "February 1st, 2026",
+      "link": "https://github.com/ShokoAnime/ShokoServer/releases/tag/v5.3.0",
+      "changes": [
+        {
+          "type": "added",
+          "text": "Add action to get watch states from Trakt."
+        },
+        {
+          "type": "added",
+          "text": "Added some basic minimum server version handling when looking for Web UI updates."
+        },
+        {
+          "type": "added",
+          "text": "Allow using a GitHub token from the environment in which the application is running when interacting with the GitHub APIs."
+        },
+        {
+          "type": "fixed",
+          "text": "Also check VideoLocal for used release groups."
+        },
+        {
+          "type": "fixed",
+          "text": "Correct equals check for filter expression."
+        },
+        {
+          "type": "fixed",
+          "text": "Apply band-aid for tmdb roles until root cause has been found."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix faulty escape sequence in default script for WebAOM Renamer."
+        },
+        {
+          "type": "fixed",
+          "text": "Set ServerStarting to true before web hosting starts."
+        },
+        {
+          "type": "changed",
+          "text": "Trakt Rewrite: Gutted out the old Trakt linking system to instead use TMDb IDs for sync/history. Removed support for Trakt collections and scrobble."
+        },
+        {
+          "type": "changed",
+          "text": "Remove obsolete and already defunct PurgeAllOfTvDB action."
+        }
+      ]
+    },
+    {
       "version": "5.2.4",
       "versionURL": "524",
       "date": "January 20th, 2026",
