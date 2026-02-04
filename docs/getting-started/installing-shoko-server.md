@@ -286,8 +286,8 @@ chmod +x Shoko.CLI
   ```
 
 :::tip
-When you first navigate to `http://localhost:8111`, you may see a message stating that "The Shoko Server UI is not installed."
+When you first navigate to `http://localhost:8111`, you may see a message stating that "The Shoko Web UI is not installed."
 
-#### 6. Click on the **Install Shoko Server UI** button to proceed with the installation.
-#### 7. Once installed, you will be able to access and use the Shoko Server UI for managing your library.
+#### 6. Click on the **Install Shoko Web UI** button to proceed with the installation.
+#### 7. Once installed, you will be able to access and use the Shoko Web UI for managing your library.
 :::
