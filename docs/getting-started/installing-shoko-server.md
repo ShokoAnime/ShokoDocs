@@ -219,7 +219,7 @@ unzip Shoko.CLI_Framework_any-x64.zip -d ShokoServer
 cd ShokoServer
 ```
 
-#### 6. Make the Shoko.CLI Executable
+#### 6. Make `Shoko.CLI` Executable
 
 ```bash
 chmod +x Shoko.CLI
