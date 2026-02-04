@@ -267,7 +267,7 @@ To run Shoko Server as a background service:
 
 #### 2. Replace `/path/to/ShokoServer` with the actual path to your Shoko Server directory. `User=1000` will run the service as the default non-root Ubuntu user. Adjust this value if a different user is required.
 
-#### 3. Go to the Shoko Directory and inside /publish, make the Shoko.CLI Executable
+#### 3. Go to the Shoko Directory and inside /publish, make `Shoko.CLI` executable
 
 ```bash
 cd /ShokoServer/net8.0/linux-x64/publish/Shoko.CLI
