@@ -243,7 +243,7 @@ http://localhost:8111
 
 To run Shoko Server as a background service:
 
-- Create a systemd service file with the following structure:
+#### 1. Create a systemd service file with the following structure:
 
   ```bash
   sudo nano /etc/systemd/system/shokoserver.service
@@ -265,15 +265,22 @@ To run Shoko Server as a background service:
   WantedBy=multi-user.target
   ```
 
-- Replace `/path/to/ShokoServer` with the actual path to your Shoko Server directory. `User=1000` will run the service as the default non-root Ubuntu user. Adjust this value if a different user is required.
+#### 2. Replace `/path/to/ShokoServer` with the actual path to your Shoko Server directory. `User=1000` will run the service as the default non-root Ubuntu user. Adjust this value if a different user is required.
 
-- Reload systemd and enable the service:
+#### 4. Go to the Shoko Directory and inside /publish, make the Shoko.CLI Executable
+
+```bash
+cd /ShokoServer/net8.0/linux-x64/publish/shoko.CLI
+chmod +x Shoko.CLI
+```
+
+#### 5. Reload systemd and enable the service:
   ```bash
   sudo systemctl daemon-reload
   sudo systemctl enable shokoserver
   sudo systemctl start shokoserver
   ```
-- Check the status to ensure it’s running:
+#### 6. Check the status to ensure it’s running:
   ```bash
   sudo systemctl status shokoserver
   ```
@@ -281,6 +288,6 @@ To run Shoko Server as a background service:
 :::tip
 When you first navigate to `http://localhost:8111`, you may see a message stating that "The Shoko Server UI is not installed."
 
-- Click on the **Install Shoko Server UI** button to proceed with the installation.
-- Once installed, you will be able to access and use the Shoko Server UI for managing your library.
-  :::
+#### 7. Click on the **Install Shoko Server UI** button to proceed with the installation.
+#### 8. Once installed, you will be able to access and use the Shoko Server UI for managing your library.
+:::
