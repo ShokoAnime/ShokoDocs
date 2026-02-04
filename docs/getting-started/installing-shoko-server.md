@@ -265,7 +265,11 @@ To run Shoko Server as a background service:
   WantedBy=multi-user.target
   ```
 
-#### 2. Replace `/path/to/ShokoServer` with the actual path to your Shoko Server directory. `User=1000` will run the service as the default non-root Ubuntu user. Adjust this value if a different user is required.
+#### 2. Replace `/path/to/ShokoServer` with the actual path to your Shoko Server directory.
+
+:::tip
+`User=1000` will run the service as the default non-root Ubuntu user. Adjust this UID if a different user is required.
+:::
 
 #### 3. Go to the Shoko Directory and inside /publish, make `Shoko.CLI` executable
 
@@ -284,10 +288,6 @@ chmod +x Shoko.CLI
   ```bash
   sudo systemctl status shokoserver
   ```
-
-:::tip
-When you first navigate to `http://localhost:8111`, you may see a message stating that "The Shoko Web UI is not installed."
-
-#### 6. Click on the **Install Shoko Web UI** button to proceed with the installation.
-#### 7. Once installed, you will be able to access and use the Shoko Web UI for managing your library.
-:::
+#### 6. When you first navigate to `http://localhost:8111`, you may see a message stating that "The Shoko Web UI is not installed."
+#### 7. Click on the **Install Shoko Web UI** button to proceed with the installation.
+#### 8. Once installed, you will be able to access and use the Shoko Web UI for managing your library.
