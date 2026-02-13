@@ -2,6 +2,38 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "5.3.1",
+      "versionURL": "531",
+      "date": "February 13th, 2026",
+      "link": "https://github.com/ShokoAnime/ShokoServer/releases/tag/v5.3.1",
+      "changes": [
+        {
+          "type": "changed",
+          "text": "Align episode type in APIv3 closer to the plugin abstraction."
+        },
+        {
+          "type": "fixed",
+          "text": "Better handling of Web UI version search."
+        },
+        {
+          "type": "fixed",
+          "text": "Move language preference handling from setters to SettingsProvider."
+        },
+        {
+          "type": "fixed",
+          "text": "Use Shoko series preferred overview for group descriptions instead of the AniDB anime description."
+        },
+        {
+          "type": "fixed",
+          "text": "Only update TMDB shows/movies if we have a Shoko Series linked to them."
+        },
+        {
+          "type": "fixed",
+          "text": "Skip updating TMDB show with id 0."
+        }
+      ]
+    },
+    {
       "version": "5.3.0",
       "versionURL": "530",
       "date": "February 1st, 2026",
