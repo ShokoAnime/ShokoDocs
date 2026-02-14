@@ -121,11 +121,25 @@ Episodes with a type other than "Episode" are hidden by default. So if you can't
 change the default type filter from "Episodes" to "All" in the **Search & Filter** panel.
 :::
 
+#### Credits
+
+The Credits tab displays all of the characters and staff that are associated with the current series. There is also a
+sidebar with some basic filtering options as well as a quick action for force refreshing the AniDB data.
+
 #### Images
 
 The Images tab displays all of the posters, backdrops and logos which a series contains and is only relevant if a
 series has a TMDB link. More information is available in the
 [Additional Image Support](/shoko-server/tmdb-features#additional-image-support) section of the TMDB Features page.
+
+#### Tags
+
+The Tags tab displays all of the tags that are associated with the current series. There is also a sidebar with some
+basic filtering options as well as a quick action for force refreshing the AniDB data.
+
+#### Files
+
+The Files tab displays all of the files that are associated with the current series as well as a display for any files that may be missing (from regular episodes). There is also a sidebar containing an overview of said files.
 
 ### Edit Series
 

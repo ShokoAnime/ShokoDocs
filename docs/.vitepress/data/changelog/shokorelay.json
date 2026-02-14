@@ -2,6 +2,22 @@
   "githubLink": "https://github.com/natyusha/ShokoRelay.bundle",
   "releases": [
     {
+      "version": "1.2.35",
+      "versionURL": "1235",
+      "date": "Feb 13th 2026",
+      "link": "https://github.com/natyusha/ShokoRelay.bundle/releases/tag/v1.2.35",
+      "changes": [
+        {
+          "type": "added",
+          "text": "force-metadata.py: allow adding clear logos via plex api"
+        },
+        {
+          "type": "changed",
+          "text": "Episode mapping: Normal -> Episode / ThemeSong -> Credits"
+        }
+      ]
+    },
+    {
       "version": "1.2.34",
       "versionURL": "1234",
       "date": "Dec 10th 2025",
