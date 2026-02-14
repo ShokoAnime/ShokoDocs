@@ -2,6 +2,26 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "6.0.4",
+      "versionURL": "604",
+      "date": "February 14th, 2026",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v6.0.4",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Reduce strain on upstream when creating TMDb show structure."
+        },
+        {
+          "type": "fixed",
+          "text": "Align episode type in APIv3 closer to the plugin abstraction."
+        },
+        {
+          "type": "changed",
+          "text": "Add more logging when filtering virtual folders."
+        }
+      ]
+    },
+    {
       "version": "6.0.3",
       "versionURL": "603",
       "date": "January 31st, 2026",
