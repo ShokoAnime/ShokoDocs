@@ -24,8 +24,7 @@ Server is running on a different computer, replace localhost with the IP address
 While it is possible to access Shoko over the internet, we strongly advise against it. Shoko Server was not originally
 designed with this feature in mind and could expose you to potential security risks. Although we are working on
 making this feature safer, we recommend avoiding it for now. If you need to access Shoko outside of your local
-network, consider using a VPN or setting up a reverse proxy with a service like
-[NGINX](https://www.nginx.com/).
+network, consider using a VPN.
 :::
 
 If you successfully connected to your running instance of Shoko Server and the Web UI was installed correctly, you
