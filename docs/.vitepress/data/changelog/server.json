@@ -2,6 +2,62 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "5.3.2",
+      "versionURL": "532",
+      "date": "March 22th, 2026",
+      "link": "https://github.com/ShokoAnime/ShokoServer/releases/tag/v5.3.2",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Fix resume in APIv2, adjust scrobble endpoint to take multiple input types and give better messages, and better guard against invalid positions."
+        },
+        {
+          "type": "fixed",
+          "text": "Only check culture info when necessary."
+        },
+        {
+          "type": "fixed",
+          "text": "Only run rename all groups once if multiple language settings changed."
+        },
+        {
+          "type": "fixed",
+          "text": "Use swagger prefix for swagger ui."
+        },
+        {
+          "type": "fixed",
+          "text": "Add missing auth on some APIv3 endpoints."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix default title/overview for tmdb entities in APIv3."
+        },
+        {
+          "type": "fixed",
+          "text": "Fix default check to use correct language."
+        },
+        {
+          "type": "fixed",
+          "text": "Only run one image validation job at a time."
+        },
+        {
+          "type": "fixed",
+          "text": "Add missing 8mm/16mm/35mm film reel as release sources."
+        },
+        {
+          "type": "fixed",
+          "text": "Set concurrency to 2 for hash jobs and media info probe jobs by default."
+        },
+        {
+          "type": "fixed",
+          "text": "Correct parameter order in /Series/AniDB/Search endpoint."
+        },
+        {
+          "type": "fixed",
+          "text": "Force use UTF-8 when reading MediaInfo."
+        }
+      ]
+    },
+    {
       "version": "5.3.1",
       "versionURL": "531",
       "date": "February 13th, 2026",
