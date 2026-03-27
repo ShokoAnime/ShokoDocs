@@ -2,6 +2,18 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "5.3.3",
+      "versionURL": "533",
+      "date": "March 27th, 2026",
+      "link": "https://github.com/ShokoAnime/ShokoServer/releases/tag/v5.3.3",
+      "changes": [
+        {
+          "type": "fixed",
+          "text": "Properly reset play resume position when watched through APIv3."
+        }
+      ]
+    },
+    {
       "version": "5.3.2",
       "versionURL": "532",
       "date": "March 22th, 2026",
