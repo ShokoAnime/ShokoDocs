@@ -125,6 +125,9 @@ services:
     container_name: ${userInput.value.container}
     image: ghcr.io/shokoanime/server:latest
     restart: always
+    cap_add:
+      # Required for .NET crash dump generation (segfault diagnosis)
+      - SYS_PTRACE
     environment:
       - "PUID=${userInput.value.puid}"
       - "PGID=${userInput.value.pgid}"
