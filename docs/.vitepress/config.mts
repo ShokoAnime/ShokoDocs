@@ -135,6 +135,10 @@ export default defineConfig({
                 text: 'TMDB Features',
                 link: '/shoko-server/tmdb-features',
               },
+              {
+                text: 'Database Conversion',
+                link: '/shoko-server/database-conversion',
+              },
             ],
           },
         ],
