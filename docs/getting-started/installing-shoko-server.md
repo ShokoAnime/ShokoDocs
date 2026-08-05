@@ -151,8 +151,11 @@ Follow these steps to set up a Shoko server using a custom app:
 
    - **Required**: Mount media folder by adding an additional storage.
      - Mount Path: Desired container media folder path (the path Shoko will read the Host path as)
+     - Host Path Configuration: Enable ACL
      - Host Path: Your media folder location (an folder you have your anime or "anime" at.)
 Note you can add as many of these media folders as you want and you can name the Mount Path whatever you want!
+     - ACL Entries: Add one entry for Users and one for Groups. Both IDs should be the same used by Apps (usually **568**). Give them **Modify Access**.
+     - ACL Options: Enabling Force Flag applies ACL even if the path has existing data.
 
 8. Click **Save** and wait for the container status to change to "Running".
 9. Access the setup page by clicking **Web UI** under Application Info.
