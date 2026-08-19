@@ -73,7 +73,7 @@ const compatibilityTableData = [
   },
   {
     Shokofin: '`dev`',
-    Jellyfin: '`10.10` &mdash; `10.11`',
+    Jellyfin: '`10.10` &mdash; `12`',
     ShokoServer: '`daily`'
   }
 ];
@@ -105,7 +105,7 @@ install the correct version for your setup to guarantee functionality.
 
 ### Official Repository
 
-#### Jellyfin 10.11
+#### Jellyfin 10.11 & 12
 
 1. Navigate to the **Dashboard**.
 2. Under the **Plugins** section in the side-bar, go to **Plugins**.
