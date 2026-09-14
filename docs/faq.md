@@ -125,6 +125,34 @@ The directory for Linux/macOS might differ, if you changed it on the Docker comm
 [installation](/getting-started/installing-shoko-server).
 :::
 
+:::details I've Forgotten My Password — How Do I Reset It?
+A forgotten password can be reset with a small file, without any direct database access. This works the same for the
+CLI, Docker, and the Windows Tray Service.
+
+1. Create a file named **password-reset.json** in your Shoko data folder (the folder containing
+   `server-settings.json`) with the following content, replacing the values as needed:
+
+   ```json
+   { "username": "Default", "password": "NewPassword12" }
+   ```
+
+   The username is not case-sensitive.
+
+2. Start the server. It will reset the password for that user, invalidate all of that user's existing API tokens
+   (signed-in devices will need to sign in again), delete the file, and exit.
+
+3. Start the server again. It boots normally and you can sign in with the new password.
+
+If the server exits without resetting anything, the username didn't match any user — the file is kept, so you can
+correct it and restart to try again. If the server starts normally and ignores the file, the file could not be read
+(invalid JSON, missing username, or empty password); nothing was changed and your server stays online.
+
+> [!WARNING]
+> The new password is stored in plain text in the file until a successful reset deletes it. If the reset fails,
+> delete the file yourself when you're done. Anyone with write access to your data folder can use this method, so
+> don't expose that folder beyond what you need.
+:::
+
 :::details I've Been Banned From AniDB?
 The message you're encountering indicates a **temporary ban** due to excessive connection attempts. AniDB imposes such
 bans when it suspects data leeching through numerous rapid connection attempts. In reality, this doesn't imply any
