@@ -44,8 +44,8 @@ You'll need to create an account to use Shoko. This account allows Shoko to mana
 sites, enabling synchronization of watch states and collection status.
 
 There are no specific password requirements for your local account. However, we strongly recommend saving your login
-information, as we currently do not offer an easy way to reset your password. If you do forget it, refer to
-the [Frequently Asked Questions](/faq) page for instructions on how to reset it.
+information. If you do forget your password, refer to the [Frequently Asked Questions](/faq) page for instructions on
+how to reset it with a `password-reset.json` file.
 
 ## AniDB Account
 
