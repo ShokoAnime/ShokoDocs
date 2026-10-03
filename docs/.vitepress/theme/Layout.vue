@@ -9,9 +9,11 @@ const { Layout } = DefaultTheme;
 const router = useRouter();
 const { theme, page } = useData();
 
-// Daily builds link back to the same page on the stable site.
+// Daily builds link back to the same page on the stable site, if it exists there.
+const stablePath = computed(() => page.value.relativePath.replace(/\.md$/, ""));
+const hasStablePage = computed(() => !theme.value.stablePages || theme.value.stablePages.includes(stablePath.value));
 const stablePageUrl = computed(() => {
-  const path = page.value.relativePath.replace(/(^|\/)index\.md$/, "$1").replace(/\.md$/, "");
+  const path = stablePath.value.replace(/(^|\/)index$/, "$1");
   return `${theme.value.stableUrl}/${path}`;
 });
 
@@ -36,7 +38,10 @@ router.onAfterRouteChanged = setupMediumZoom;
         <p class="custom-block-title">Daily documentation</p>
         <p>
           This page documents daily builds of Shoko and may describe features that aren't in the stable release.
-          <a :href="stablePageUrl" target="_self">View this page in the stable docs</a>.
+          <template v-if="hasStablePage">
+            <a :href="stablePageUrl" target="_self">View this page in the stable docs</a>.
+          </template>
+          <template v-else>This page doesn't exist in the stable docs yet.</template>
         </p>
       </div>
     </template>
