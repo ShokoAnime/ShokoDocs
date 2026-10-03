@@ -43,6 +43,7 @@ The project includes the following npm scripts:
 ```json
 "scripts": {
 "docs:dev": "vitepress dev docs",
+"docs:dev:daily": "DOCS_BASE=/daily/ DOCS_BRANCH=daily vitepress dev docs",
 "docs:build": "vitepress build docs",
 "docs:build:daily": "DOCS_BASE=/daily/ DOCS_BRANCH=daily vitepress build docs",
 "docs:preview": "vitepress preview docs"
@@ -86,7 +87,8 @@ Every push to either branch rebuilds and redeploys both versions.
   `daily` so the two don't drift.
 - When a new stable Shoko Server version is released, `daily` is merged into `master`.
 
-To preview the daily build locally, run `pnpm docs:build:daily` followed by `pnpm docs:preview`.
+To work on the daily version locally, run `pnpm docs:dev:daily` and open http://localhost:5173/daily/. To preview a
+production build of it, run `pnpm docs:build:daily` followed by `pnpm docs:preview`.
 
 ## Adding New Content
 

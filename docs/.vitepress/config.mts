@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import container from 'markdown-it-container';
 import taskLists from 'markdown-it-task-lists';
 import { defineConfig } from 'vitepress';
@@ -12,6 +13,17 @@ const SITE_URL = 'https://docs.shokoanime.com';
 const base = process.env.DOCS_BASE ?? '/';
 const branch = process.env.DOCS_BRANCH ?? 'master';
 const isDaily = base !== '/';
+
+// Pages that exist in the stable build, so daily pages can tell whether a stable counterpart exists.
+// CI points DOCS_STABLE_DIST at the stable build output; without it every daily page assumes one exists.
+function listStablePages(): string[] | undefined {
+  const dir = process.env.DOCS_STABLE_DIST;
+  if (!isDaily || !dir || !fs.existsSync(dir)) return undefined;
+  return (fs.readdirSync(dir, { recursive: true }) as string[])
+    .map((file) => file.replace(/\\/g, '/'))
+    .filter((file) => file.endsWith('.html') && !file.startsWith('daily/'))
+    .map((file) => file.replace(/\.html$/, ''));
+}
 
 export default defineConfig({
   base,
@@ -37,6 +49,9 @@ export default defineConfig({
     ...(isDaily ? [['meta', { name: 'robots', content: 'noindex' }] as [string, Record<string, string>]] : []),
   ],
   themeConfig: {
+    isDaily,
+    stableUrl: SITE_URL,
+    stablePages: listStablePages(),
     logo: '/images/logo.svg',
     outline: [2, 3],
     editLink: {
@@ -49,6 +64,13 @@ export default defineConfig({
       {
         text: 'Home',
         link: '/',
+      },
+      {
+        text: isDaily ? 'Daily' : 'Stable',
+        items: [
+          { text: 'Stable', link: `${SITE_URL}/`, target: '_self' },
+          { text: 'Daily', link: `${SITE_URL}/daily/`, target: '_self' },
+        ],
       },
       {
         text: 'Latest News',

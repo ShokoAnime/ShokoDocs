@@ -59,6 +59,8 @@ jobs:
           pnpm docs:build
       - name: Build daily
         working-directory: daily
+        env:
+          DOCS_STABLE_DIST: ${{ github.workspace }}/stable/docs/.vitepress/dist
         run: |
           pnpm install --frozen-lockfile
           pnpm docs:build:daily
