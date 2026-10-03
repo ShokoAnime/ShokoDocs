@@ -42,6 +42,16 @@ async function imageToBase64(imagePath) {
   }
 }
 
+// Escape text for use inside SVG, otherwise characters like & break the image
+function escapeXml(text) {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
 // Text wrapping function
 function wrapText(text, maxWidth, fontSize) {
   const avgCharWidth = fontSize * 0.6;
@@ -78,12 +88,12 @@ async function buildOgImage({ title, summary, pageUrl }) {
 
   // Generate title tspans with 1.5 line height
   const titleTspans = titleLines.map((line, index) =>
-    `<tspan x="50" dy="${index === 0 ? '0' : '1.5em'}">${line}</tspan>`
+    `<tspan x="50" dy="${index === 0 ? '0' : '1.5em'}">${escapeXml(line)}</tspan>`
   ).join('');
 
   // Generate summary tspans with 1.5 line height
   const summaryTspans = summaryLines.map((line, index) =>
-    `<tspan x="50" dy="${index === 0 ? '0' : '1.5em'}">${line}</tspan>`
+    `<tspan x="50" dy="${index === 0 ? '0' : '1.5em'}">${escapeXml(line)}</tspan>`
   ).join('');
 
   return `
@@ -154,7 +164,7 @@ async function buildOgImage({ title, summary, pageUrl }) {
           font-size="${FONT_SIZE.URL}"
           font-family="${FONT_FACE.SECONDARY}"
           fill="${COLORS.TEXT_SECONDARY}"
-        >${pageUrl}</text>
+        >${escapeXml(pageUrl)}</text>
       </g>
     </svg>
   `;
@@ -187,7 +197,8 @@ export const generateOgImages = async (config) => {
 
     for (const file of files) {
       try {
-        const relativePath = file.url.replace(/^\//, "") + ".md";
+        // The home page URL is "/", which has no file name of its own; VitePress names it index.md
+        const relativePath = (file.url.endsWith("/") ? file.url + "index" : file.url).replace(/^\//, "") + ".md";
 
         const svg = await buildOgImage({
           title: file.frontmatter?.title || "Shoko",
