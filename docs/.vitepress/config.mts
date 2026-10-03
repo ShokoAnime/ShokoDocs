@@ -37,6 +37,8 @@ export default defineConfig({
     ...(isDaily ? [['meta', { name: 'robots', content: 'noindex' }] as [string, Record<string, string>]] : []),
   ],
   themeConfig: {
+    isDaily,
+    stableUrl: SITE_URL,
     logo: '/images/logo.svg',
     outline: [2, 3],
     editLink: {
@@ -49,6 +51,13 @@ export default defineConfig({
       {
         text: 'Home',
         link: '/',
+      },
+      {
+        text: isDaily ? 'Daily' : 'Stable',
+        items: [
+          { text: 'Stable', link: `${SITE_URL}/`, target: '_self' },
+          { text: 'Daily', link: `${SITE_URL}/daily/`, target: '_self' },
+        ],
       },
       {
         text: 'Latest News',
