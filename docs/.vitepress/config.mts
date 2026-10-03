@@ -7,8 +7,14 @@ import { generateOgImages } from '../scripts/generateOgImages';
 // @ts-ignore
 import { GitChangelog, GitChangelogMarkdownSection } from '@nolebase/vitepress-plugin-git-changelog/vite';
 
+// The stable site is served from the domain root, the daily build from a sub-path (e.g. DOCS_BASE=/daily/).
+const SITE_URL = 'https://docs.shokoanime.com';
+const base = process.env.DOCS_BASE ?? '/';
+const branch = process.env.DOCS_BRANCH ?? 'master';
+const isDaily = base !== '/';
 
 export default defineConfig({
+  base,
   vite: {
     plugins: [
       GitChangelog({
@@ -26,12 +32,15 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   ignoreDeadLinks: true,
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  head: [
+    ['link', { rel: 'icon', href: `${base}favicon.ico` }],
+    ...(isDaily ? [['meta', { name: 'robots', content: 'noindex' }] as [string, Record<string, string>]] : []),
+  ],
   themeConfig: {
     logo: '/images/logo.svg',
     outline: [2, 3],
     editLink: {
-      pattern: 'https://github.com/ShokoAnime/ShokoDocs/edit/master/docs/:path',
+      pattern: `https://github.com/ShokoAnime/ShokoDocs/edit/${branch}/docs/:path`,
     },
     search: {
       provider: 'local',
@@ -339,8 +348,8 @@ export default defineConfig({
       .replace(/\s+/g, '-')
       .toLowerCase();
 
-    const ogImageUrl = `/images/og-images/${filename}.png`;
-    const url = `https://docs.shokoanime.com/${pageData.relativePath.replace(/\.md$/, '')}`;
+    const ogImageUrl = `${SITE_URL}${base}images/og-images/${filename}.png`;
+    const url = `${SITE_URL}${base}${pageData.relativePath.replace(/\.md$/, '')}`;
 
     return [
       ['meta', { property: 'og:title', content: pageData.frontmatter.title || 'Shoko' }],

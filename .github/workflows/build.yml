@@ -4,7 +4,7 @@ name: Deploy VitePress site to Pages
 
 on:
   push:
-    branches: [master]
+    branches: [master, daily]
 
   workflow_dispatch:
 
@@ -25,26 +25,49 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      # Stable docs (master) are served from the site root, daily docs from /daily/.
+      # Both builds run on every push to either branch, so the deployed site always has both.
+      - name: Checkout stable
         uses: actions/checkout@v4
         with:
+          ref: master
+          path: stable
+          fetch-depth: 0
+      - name: Checkout daily
+        uses: actions/checkout@v4
+        with:
+          ref: daily
+          path: daily
           fetch-depth: 0
       - uses: pnpm/action-setup@v3
+        with:
+          package_json_file: stable/package.json
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: pnpm
+          cache-dependency-path: |
+            stable/pnpm-lock.yaml
+            daily/pnpm-lock.yaml
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      - name: Install dependencies
-        run: pnpm install
-      - name: Build with VitePress
-        run: pnpm docs:build
+      - name: Build stable
+        working-directory: stable
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm docs:build
+      - name: Build daily
+        working-directory: daily
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm docs:build:daily
+      - name: Combine builds
+        run: cp -r daily/docs/.vitepress/dist stable/docs/.vitepress/dist/daily
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/.vitepress/dist
+          path: stable/docs/.vitepress/dist
 
   # Deployment job
   deploy:

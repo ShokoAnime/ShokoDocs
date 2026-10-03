@@ -8,6 +8,7 @@ and resources for the Shoko suite of programs and plugins.
 - [Overview](#overview)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Stable and Daily Docs](#stable-and-daily-docs)
 - [Adding New Content](#adding-new-content)
   - [Documentation Pages](#adding-new-documentation-pages)
   - [Editing Existing Documentation](#editing-existing-documentation)
@@ -43,6 +44,7 @@ The project includes the following npm scripts:
 "scripts": {
 "docs:dev": "vitepress dev docs",
 "docs:build": "vitepress build docs",
+"docs:build:daily": "DOCS_BASE=/daily/ DOCS_BRANCH=daily vitepress build docs",
 "docs:preview": "vitepress preview docs"
 }
 ```
@@ -67,6 +69,24 @@ To preview the production build:
 ```bash
 pnpm docs:preview
 ```
+
+## Stable and Daily Docs
+
+The site is published in two versions, each built from its own branch:
+
+| Version | Branch   | URL                                  | Documents                          |
+| ------- | -------- | ------------------------------------ | ---------------------------------- |
+| Stable  | `master` | https://docs.shokoanime.com/         | The latest stable Shoko Server     |
+| Daily   | `daily`  | https://docs.shokoanime.com/daily/   | Unreleased features in daily builds |
+
+Every push to either branch rebuilds and redeploys both versions.
+
+- Changes that only apply to unreleased features go to `daily`.
+- Fixes that apply to both versions (typos, corrections, new guides) go to `master`, and `master` is then merged into
+  `daily` so the two don't drift.
+- When a new stable Shoko Server version is released, `daily` is merged into `master`.
+
+To preview the daily build locally, run `pnpm docs:build:daily` followed by `pnpm docs:preview`.
 
 ## Adding New Content
 
