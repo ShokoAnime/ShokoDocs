@@ -15,19 +15,19 @@ const projectsData = [
   {
     Project: '[Shoko Server](https://github.com/ShokoAnime/ShokoServer)',
     Language: 'C# / .NET',
-    'Maintainer(s)': 'Da3dsoul',
+    'Maintainer(s)': 'Da3dsoul / Revam',
     'Additional Notes': 'Tons of small tasks to help get you familiar with the codebase.'
   },
   {
     Project: '[Shoko Web UI](https://github.com/ShokoAnime/Shoko-WebUI)',
-    Language: 'JS / React',
-    'Maintainer(s)': 'Avael / Mohan226 / Elemental Crisis',
+    Language: 'TS / React',
+    'Maintainer(s)': 'Avael / Mohan226',
     'Additional Notes': 'Bug fixes and minor enhancements to help get you familiar with the codebase.'
   },
   {
     Project: '[ShokoDocs](https://github.com/ShokoAnime/ShokoDocs)',
     Language: 'Markdown',
-    'Maintainer(s)': 'Elemental Crisis',
+    'Maintainer(s)': 'Avael',
     'Additional Notes': 'Updating and adding new pages.'
   },
   {
@@ -37,7 +37,13 @@ const projectsData = [
     'Additional Notes': 'No active work at the moment, but ongoing refactoring and improvements are always welcome.'
   },
   {
-    Project: '[Shoko Relay](https://github.com/natyusha/ShokoRelay.bundle)',
+    Project: '[Shoko Relay (plugin)](https://github.com/natyusha/ShokoRelay) (New)',
+    Language: 'C#',
+    'Maintainer(s)': 'Natyusha',
+    'Additional Notes': 'No active work at the moment, but ongoing refactoring and improvements are always welcome.'
+  },
+  {
+    Project: '[Shoko Relay (bundle)](https://github.com/natyusha/ShokoRelay.bundle) (Legacy)',
     Language: 'Python',
     'Maintainer(s)': 'Natyusha',
     'Additional Notes': 'No active work at the moment, but ongoing refactoring and improvements are always welcome.'
@@ -50,15 +56,15 @@ const projectsData = [
   },
   {
     Project: '[Shokodi](https://github.com/ShokoAnime/Shokodi)',
-    Language: 'C#',
+    Language: 'Python',
     'Maintainer(s)': 'Da3dsoul',
     'Additional Notes': 'No active work at the moment, but ongoing refactoring and improvements are always welcome.'
   },
   {
-    Project: '[My Anime 3](https://github.com/ShokoAnime/MyAnime3)',
+    Project: '[LuaRenamer](https://github.com/Mik1ll/LuaRenamer)',
     Language: 'C#',
-    'Maintainer(s)': 'Da3dsoul',
-    'Additional Notes': 'Major refactor & possible rebuild for MediaPortal 2.'
+    'Maintainer(s)': 'Mikill',
+    'Additional Notes': 'No active work at the moment, but ongoing refactoring and improvements are always welcome.'
   }
 ];
 </script>
