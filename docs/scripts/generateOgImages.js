@@ -176,6 +176,7 @@ export const generateOgImages = async (config) => {
   try {
     // Get the output directory from VitePress config
     const outDir = config?.outDir;
+    const base = config?.site?.base ?? "/";
     const outputDir = path.join(outDir, "images/og-images");
 
     if (!fs.existsSync(outputDir)) {
@@ -191,7 +192,7 @@ export const generateOgImages = async (config) => {
         const svg = await buildOgImage({
           title: file.frontmatter?.title || "Shoko",
           summary: file.frontmatter?.description || "",
-          pageUrl: `https://docs.shokoanime.com${file.url}`,
+          pageUrl: `https://docs.shokoanime.com${base.replace(/\/$/, "")}${file.url}`,
         });
 
         const filename = relativePath
