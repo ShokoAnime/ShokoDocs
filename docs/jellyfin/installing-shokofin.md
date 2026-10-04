@@ -73,11 +73,23 @@ const compatibilityTableData = [
   },
   {
     Shokofin: '`dev`',
-    Jellyfin: '`10.10` &mdash; `12`',
-    ShokoServer: '`daily`'
+    Jellyfin: '`10.10.7`+, `10.11.11`+, `12`',
+    ShokoServer: '`5.3.3`, `daily`'
   }
 ];
 </script>
+
+:::warning Warning
+**Never run a stable Shokofin release with a Shoko Server development build.** That combination is not supported,
+**ever**, and breaks in different ways as server development moves on.
+
+Shokofin development builds are the exception in the other direction: until Shoko Server `6.0.0` is released, they
+support both the latest stable Shoko Server and its development builds. After that, support for the older stable
+server may be dropped.
+
+The next stable Shokofin release will **probably** not be out until **near** or **after** the next stable Shoko
+Server release.
+:::
 
 # Installing Shokofin
 
