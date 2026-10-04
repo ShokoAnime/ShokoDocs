@@ -79,18 +79,6 @@ const compatibilityTableData = [
 ];
 </script>
 
-:::warning Warning
-**Never run a stable Shokofin release with a Shoko Server development build.** That combination is not supported,
-**ever**, and breaks in different ways as server development moves on.
-
-Shokofin development builds are the exception in the other direction: until Shoko Server `6.0.0` is released, they
-support both the latest stable Shoko Server and its development builds. After that, support for the older stable
-server may be dropped.
-
-The next stable Shokofin release will **probably** not be out until **near** or **after** the next stable Shoko
-Server release.
-:::
-
 # Installing Shokofin
 
 **Shokofin** is a plugin for **Jellyfin** that works in tandem with **Shoko Server** to provide metadata tailored to
@@ -114,6 +102,18 @@ Below lists the corresponding versions of Jellyfin and Shoko Server that are com
 install the correct version for your setup to guarantee functionality.
 
 <EasyTable :columns="containerColumns" :data="compatibilityTableData" />
+
+:::warning Warning
+**Never run a stable Shokofin release with a Shoko Server development build.** That combination is not supported,
+**ever**, and breaks in different ways as server development moves on.
+
+Shokofin development builds are the exception in the other direction: until Shoko Server `6.0.0` is released, they
+support both the latest stable Shoko Server and its development builds. After that, support for the older stable
+server may be dropped.
+
+The next stable Shokofin release will **probably** not be out until **near** or **after** the next stable Shoko
+Server release.
+:::
 
 ### Official Repository
 
