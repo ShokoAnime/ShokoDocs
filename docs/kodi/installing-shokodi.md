@@ -29,8 +29,9 @@ Since this is not an official Kodi plugin, follow these steps to add the Shokodi
 
 ![Kodi - System Settings](/images/shokodi/kodi-system-settings.jpg)
 
-First, download the .zip file containing the Shokodi repository from insert link. Then, launch Kodi and navigate to
-the **Systems Section** located in the **Settings Menu**. Once there, select **Add-Ons**.
+First, download the .zip file containing the Shokodi repository from the
+[Shokodi](https://shokoanime.com/downloads/media-player-plugins/shokodi) download page. Then, launch Kodi and
+navigate to the **Systems Section** located in the **Settings Menu**. Once there, select **Add-Ons**.
 
 ![Kodi - Add-On Settings](/images/shokodi/kodi-addon-options.jpg)
 

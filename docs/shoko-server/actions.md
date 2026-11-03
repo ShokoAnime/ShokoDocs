@@ -1,6 +1,6 @@
 ---
 title: Actions
-description: An overview of the Actions available in Shoko's WebUI.
+description: An overview of the quick actions in Shoko's Web UI, and where to run the same work on a schedule.
 ---
 
 <script setup>
@@ -14,12 +14,8 @@ const createTableData = (data) => ({
 
 const importData = createTableData([
   {
-    Name: 'Action',
-    Description: 'The name assigned to the import folder used for visual purposes only.'
-  },
-  {
     Name: 'Run Import',
-    Description: 'Scans for new files in Shoko folders, computes their hashes, and searches AniDB and TvDB for metadata and images.'
+    Description: 'This checks for new files, hashes them etc, scans Drop Folders, checks and scans for community site links (tmdb, etc), and downloads missing images.'
   },
   {
     Name: 'Remove Missing Files',
@@ -31,15 +27,11 @@ const importData = createTableData([
   },
   {
     Name: 'Import New Files',
-    Description: 'Scans import folders and imports only the new files identified within the import folder.'
+    Description: 'Queues a task to import only new files found in the managed folders.'
   }
 ]);
 
 const aniDBData = createTableData([
-  {
-    Name: 'Action',
-    Description: 'The name assigned to the import folder used for visual purposes only.'
-  },
   {
     Name: 'Download Missing AniDB Data',
     Description: 'Downloads XML data from AniDB forcefully. Use this only if the XML has been edited, deleted, or if Shoko has unexpectedly closed or crashed.'
@@ -47,10 +39,6 @@ const aniDBData = createTableData([
   {
     Name: 'Sync AniDB Votes',
     Description: 'Sync Series & Episode Votes from Shoko to AniDB.'
-  },
-  {
-    Name: 'Sync AniDB MyList',
-    Description: 'Syncs all Series & Episode watch state data from Shoko to AniDB. THIS IS A ONE-WAY ACTION AND WILL OVERWRITE ALL ANIDB DATA!'
   },
   {
     Name: 'Add All Manual Links To MyList',
@@ -63,55 +51,57 @@ const aniDBData = createTableData([
   {
     Name: 'Update AniDB Calendar',
     Description: 'Updates the \'Upcoming Anime\' calendar in Shoko with the most recent information from AniDB.'
-  }
-]);
-
-const traktData = createTableData([
-  {
-    Name: 'Action',
-    Description: 'The name assigned to the import folder used for visual purposes only.'
   },
   {
-    Name: 'Sync Trakt Collection',
-    Description: 'Sync watch states from Shoko to Trakt. THIS IS A ONE-WAY ACTION AND WILL OVERWRITE ALL TRAKT DATA!'
+    Name: 'Get AniDB Notifications',
+    Description: 'Fetch unread notifications and messages from AniDB.'
   },
   {
-    Name: 'Update All Trakt Info',
-    Description: 'Sync all info for Series from Trakt to Shoko.'
-  }
-]);
-
-const tvDBData = createTableData([
-  {
-    Name: 'Action',
-    Description: 'The name assigned to the import folder used for visual purposes only.'
+    Name: 'Process Moved Files',
+    Description: 'Process file moved messages from AniDB. This will force an update on the affected files.'
   },
   {
-    Name: 'Regenerate TvDB Links',
-    Description: 'Recreates all episode matches for TvDB. This action is generally not required unless specifically instructed by a member of the Shoko team or mentioned in the release notes.'
-  },
-  {
-    Name: 'Update All TvDB Info',
-    Description: 'Update all Series information with the latest data from TvDB.'
+    Name: 'OVERWRITE AniDB MyList',
+    Description: 'Syncs all Series & Episode watch state data from Shoko to AniDB. THIS IS A ONE-WAY ACTION AND WILL OVERWRITE ALL ANIDB DATA!'
   }
 ]);
 
 const tmdbData = createTableData([
   {
-    Name: 'Action',
-    Description: 'The name assigned to the import folder used for visual purposes only.'
+    Name: 'Search for TMDB Matches',
+    Description: 'Scan for TMDB matches for all unlinked AniDB anime.'
   },
   {
-    Name: 'Update All MovieDB Info',
-    Description: 'Updates information for all movie-related entries in your collection.'
+    Name: 'Update All TMDB Shows',
+    Description: 'Updates all TMDB Shows in the local database.'
+  },
+  {
+    Name: 'Delete Unused TMDB Shows',
+    Description: 'Deletes all unused TMDB Shows that are not linked to any AniDB anime.'
+  },
+  {
+    Name: 'Update All TMDB Movies',
+    Description: 'Updates all TMDB Movies in the local database.'
+  },
+  {
+    Name: 'Delete Unused TMDB Movies',
+    Description: 'Deletes all unused TMDB Movies that are not linked to any AniDB anime.'
+  },
+  {
+    Name: 'Download Missing TMDB People',
+    Description: 'Downloads any TMDB People missing in the local database.'
+  },
+  {
+    Name: 'Delete All TMDB Movie Collections',
+    Description: 'Deletes all TMDB Movie Collections stored in the local database, and removes any images associated with them.'
+  },
+  {
+    Name: 'Delete All TMDB Show Alternate Orderings',
+    Description: 'Deletes all TMDB Show Alternate Orderings stored in the local database.'
   }
 ]);
 
 const shokoData = createTableData([
-  {
-    Name: 'Action',
-    Description: 'The name assigned to the import folder used for visual purposes only.'
-  },
   {
     Name: 'AVDump Mismatched Files',
     Description: 'Scans the library, detects files without a hash match in AniDB, and runs AVDump on them.'
@@ -144,12 +134,8 @@ const shokoData = createTableData([
 
 const imagesData = createTableData([
   {
-    Name: 'Action',
-    Description: 'The name assigned to the import folder used for visual purposes only.'
-  },
-  {
     Name: 'Update All Images',
-    Description: 'Updates and downloads all missing images from AniDB and TvDB.'
+    Description: 'Updates and downloads all missing images from AniDB and TMDB.'
   },
   {
     Name: 'Validate All Images',
@@ -159,26 +145,28 @@ const imagesData = createTableData([
 
 const plexData = createTableData([
   {
-    Name: 'Action',
-    Description: 'The name assigned to the import folder used for visual purposes only.'
-  },
-  {
     Name: 'Sync Plex Watch Status',
     Description: 'Synchronizes watch states with Plex.'
+  },
+  {
+    Name: 'Force Unlink Plex',
+    Description: 'Invalidates the Plex token forcefully.'
   }
 ]);
 </script>
 
 # Actions
 
-Actions are tasks, or groups of tasks, that perform different functionalities based on the nature of the action itself.
-Many actions are tailored for troubleshooting, aiming to address unique situations where errors occurred during the
-import process or where an issue arose during the metadata download process, leading to missing or corrupted data.
-Additionally, for every part of the automation process that can be disabled, there is a corresponding action that
-can be run to preform that specific part.
+Quick actions are one-off tasks you queue from the Web UI's top bar. Many of them are for troubleshooting: they redo a
+part of the import or the metadata download that went wrong, or that left something missing. For every part of the
+automation that can be switched off, there's an action that does that part on demand.
 
-Actions are straightforward, with their functions detailed below each action name. For reference, we've included the
-same information below.
+Open them with the **Actions** button in the top bar. Picking a group lists its actions, and each one tells you what it
+does above the button that queues it. The work itself runs through the queue, so you can follow it on the
+[Dashboard](/shoko-server/dashboard) or in the [Logs](/shoko-server/logs).
+
+To have Shoko run this kind of work on its own instead, on triggers you choose, see
+[Scheduled Actions](/shoko-server/settings/scheduled-actions).
 
 ![Shoko Server - Actions](/images/shoko-server/shoko-server-actions.jpg)
 
@@ -189,14 +177,6 @@ same information below.
 ## AniDB
 
 <EasyTable :columns="aniDBData.columns" :data="aniDBData.data" />
-
-## Trakt
-
-<EasyTable :columns="traktData.columns" :data="traktData.data" />
-
-## TvDB
-
-<EasyTable :columns="tvDBData.columns" :data="tvDBData.data" />
 
 ## TMDB
 

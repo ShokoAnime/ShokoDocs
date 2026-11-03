@@ -15,7 +15,7 @@ const programsData = [
   {
     name: '[Shoko Server](https://shokoanime.com/downloads/shoko-server)',
     dev: 'Shoko Team',
-    platform: 'Win / Linux / Arm64',
+    platform: 'Windows (amd64) / Linux (amd64/aarch64)',
     status: 'Active',
   },
   {
@@ -23,13 +23,6 @@ const programsData = [
     dev: 'Shoko Team',
     platform: 'Browser',
     status: 'Active',
-  },
-  {
-    name: '[Shoko Desktop](https://shokoanime.com/downloads/legacy-apps/shoko-desktop)',
-    dev: 'Shoko Team',
-    platform: 'Windows',
-    status: 'Maintenance Mode',
-    link: 'https://shokoanime.com/downloads'
   }
 ];
 
@@ -55,13 +48,13 @@ const pluginsData = [
   },
   {
     name: '[Shokofin](https://shokoanime.com/downloads/media-player-plugins/shokofin)',
-    dev: 'Revam',
+    dev: 'revam',
     platform: 'Jellyfin',
     status: 'Active',
   },
   {
     name: '[Shokodi](https://shokoanime.com/downloads/media-player-plugins/shokodi)',
-    dev: 'Da3dsoul',
+    dev: 'da3dsoul',
     platform: 'Kodi',
     status: 'Active',
   },
@@ -94,10 +87,16 @@ const discontinuedData = [
     discontinuedReason: 'Discontinued in favor of ShokoMetadata.'
   },
   {
-    name: 'My Anime 3',
+    name: '[My Anime 3](https://shokoanime.com/downloads/legacy-apps/my-anime-3)',
     dev: 'Shoko Team',
     platform: 'MediaPortal',
     discontinuedReason: 'Discontinued due to lack of interest in supporting MediaPortal'
+  },
+  {
+    name: '[Shoko Desktop](https://shokoanime.com/downloads/legacy-apps/shoko-desktop)',
+    dev: 'Shoko Team',
+    platform: 'Windows',
+    discontinuedReason: 'Support dropped in Shoko Server 6.0. Shoko Server 5.3.3 is the last release it somewhat works with.'
   }
 ];
 </script>
@@ -119,7 +118,12 @@ longer compatible with Shoko Server. Information on why they have been discontin
 
 <EasyTable :columns="programsColumns" :data="programsData" />
 
-## Media Player Plugins
+## Media Server/Player Plugins
+
+These plugins are installed in the media server or player you watch with (such as Jellyfin, Plex or Kodi) and connect
+to Shoko Server.
+They're not the same as Shoko Server plugins, which are installed into Shoko Server itself under **Settings** →
+**Plugin Management** in the Web UI.
 
 <EasyTable :columns="pluginsColumns" :data="pluginsData" />
 
