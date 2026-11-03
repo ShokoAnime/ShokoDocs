@@ -91,7 +91,7 @@ old and unlikely to be updated soon. However, there are some steps you can take 
 ### Exclusively Utilize Shoko
 
 Shoko is designed to be the only anime-related tool you need, reducing the need for supplementary tools like
-HAMA or AniDB media player plugins. When used alongside Shoko, these tools can expedite the occurrence of
+HAMA or AniDB media server/player plugins. When used alongside Shoko, these tools can expedite the occurrence of
 your next ban.
 
 ### Adjust Your AniDB Settings

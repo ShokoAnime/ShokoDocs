@@ -204,7 +204,7 @@ sudo apt install -y mediainfo librhash-dev
   ```
 - Install the .NET runtime and SDK:
   ```bash
-  sudo apt-get install -y dotnet-sdk-8.0 aspnetcore-runtime-8.0
+  sudo apt-get install -y dotnet-sdk-10.0 aspnetcore-runtime-10.0
   ```
 
 #### 4. Download Shoko Server

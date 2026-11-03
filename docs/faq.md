@@ -62,8 +62,12 @@ that during the hashing process, RAM usage can increase significantly. Users wit
 may experience slowdowns and delays in processes.
 :::
 
-:::details What About Shoko Desktop on Linux/MacOS?
-There are no plans to add Linux or MacOS support to **Shoko Desktop** as it is being phased out.
+:::details What Happened to Shoko Desktop?
+**Shoko Desktop** is no longer supported. Shoko Server 6.0 dropped it, and Shoko Server 5.3.3 is the last release it
+somewhat works with. There are no plans to bring it back, and none to add Linux or macOS support to it.
+
+Use the [Web UI](/shoko-server/dashboard) to manage your collection, and one of the
+[media server/player plugins](/getting-started/available-programs-plugins#media-server-player-plugins) for watching it.
 :::
 
 :::details Does Shoko Support Adult Content?
@@ -78,7 +82,7 @@ No, Shoko does not support streaming directly from websites such as Crunchy Roll
 :::
 
 :::details Does Shoko Allow Me to Stream my Collection?
-While it's not possible to directly view and play your collection, you can utilize one of our media player plugins.
+While it's not possible to directly view and play your collection, you can utilize one of our media server/player plugins.
 These plugins make your collection both viewable and playable in the specified media player.
 :::
 
@@ -213,30 +217,62 @@ Jujutsu Kaisen (2023) - 01.mkv
 
 ## Shokofin
 
-:::details I changed a setting for Shokofin, but my library is not showing the new changes.
-Some changes to the plugin settings may require you to do a full metadata refresh or to even recreate the library. In
-general if metadata feels like it's missing or should be updated, run a full metadata refresh or recreate the library if
-that didn't help. See the following pages for more information on
-[metadata refreshes](/jellyfin/recommendations/#refreshing-metadata) and
-[library re-creation](/jellyfin/recommendations/#library-re-creation-is-your-friend).
+:::details I created a library with Shokofin, but it's empty.
+Run **Dashboard** → **Libraries** → **Scan All Libraries** in Jellyfin. A new library using the Virtual File System (VFS)
+only gets set up after a full library scan, and on Jellyfin 10.11 and later that scan doesn't start on its own when you
+create or edit a library. Refreshing only the one library isn't enough. When the scan finishes, Shokofin starts a second
+scan by itself, which fills the library. See
+[The new library is empty](/jellyfin/troubleshooting#the-new-library-is-empty) if it's still empty after that.
 :::
 
-:::details Why are my series not being grouped according to my collections in Shoko?
-First, make sure that "Use Shoko groups for shows" is enabled in the plugin settings. If you are not using the VFS, you
-will need to make sure your files are organized in a way that Jellyfin prefers in an AniDB-compatible way as mentioned
-in the Shokofin Recommendations page [here](/jellyfin/recommendations/#jellyfins-file-structure-requirements).
-Whether you are using the VFS feature or not, a library re-creation can fix any grouping issues. More info on library
-creation can be found in the [Shokofin Recommendations](/jellyfin/recommendations/#library-re-creation-is-your-friend)
-page.
+:::details I changed a setting for Shokofin, but my library is not showing the new changes.
+Existing items keep their old metadata until they're refreshed. Settings that only change metadata (titles,
+descriptions, tags, images, ratings) need a metadata refresh with **Replace all metadata** selected. Settings that change
+how shows, seasons and movies are built need the library to be re-created. The
+[Change Impact](/jellyfin/configuring-shokofin#change-impact) table lists which is which, and
+[Re-create a Library Safely](/jellyfin/how-to/re-create-a-library-safely) shows how to re-create a library without losing watch
+state.
+:::
+
+:::details Why are my series not being grouped according to my groups in Shoko?
+Shokofin only uses your Shoko groups when the series use the **Shoko Group Structure**. Set
+**Library** → **Basic Settings** → **Default Library Structure Mode** to **Shoko Group Structure** in the Shokofin
+settings, or set **Library Structure Mode** for individual series on the **Series** tab. Then
+[re-create the library](/jellyfin/how-to/re-create-a-library-safely).
+
+If the grouping is still wrong, fix the group itself in the Shoko Web UI. See
+[Library Structures & Seasons](/jellyfin/concepts/library-structures-and-seasons#shoko-group-structure) and
+[One Show for a Whole Franchise](/jellyfin/how-to/one-show-for-a-whole-franchise).
 :::
 
 :::details Why are some of my shows getting incorrect metadata?
-Make sure that you are only using Shoko as the metadata provider for your your library. The recommended way to setup a
-library using Shokofin can be found in [Configuring Shokofin](/jellyfin/configuring-shokofin/#creating-a-shoko-library).
-Using multiple metadata providers can cause issues since Jellyfin will mix metadata it finds from all the providers in
-order of priority set which might not always apply the correct metadata. Refreshing all metadata or even re-creating
-the library can fix incorrect metadata so long as Shoko Server has identified everything properly in the first place
-and if Shoko is set as the only provider for the library. See the following pages for more information on
-[metadata refreshes](/jellyfin/recommendations/#refreshing-metadata) and
-[library re-creation](/jellyfin/recommendations/#library-re-creation-is-your-friend).
+Make sure Shoko is the only metadata downloader enabled for the library. Jellyfin mixes metadata from every enabled
+provider, and other providers often identify anime incorrectly. The recommended library setup is described in the
+[Quick Start](/jellyfin/quick-start#creating-a-library).
+
+After fixing the library options, refresh the library with **Replace all metadata** selected. If the data is wrong in
+Shoko itself (for example a wrong TMDB link), fix it there first. See
+[Metadata is wrong or mixed](/jellyfin/troubleshooting#metadata-is-wrong-or-mixed).
+:::
+
+:::details Images disappeared or Shokofin stopped working after updating Shoko Server
+Your Shokofin and Shoko Server versions most likely don't match. Check the compatibility table on
+[Installing Shokofin](/jellyfin/installing-shokofin) and install the matching version. A stable Shokofin release never works
+with a Shoko Server development build. Until Shoko Server `6.0.0` is released, Shokofin development builds work with
+both the latest stable Shoko Server and its development builds. Afterwards,
+refresh the library with **Replace existing images** enabled. See
+[Images are missing after updating Shoko Server](/jellyfin/troubleshooting#images-are-missing-after-updating-shoko-server).
+:::
+
+:::details My series settings came back after reinstalling the plugin
+That's expected. The settings on Shokofin's **Series** tab, such as the library structure or season merging for a
+series, are saved as custom tags on the series in Shoko Server, not in Jellyfin. They survive reinstalling Shokofin or
+Jellyfin, and apply to every Jellyfin server connected to the same Shoko Server. Change or reset them from the **Series**
+tab. See [Per-Series Settings](/jellyfin/concepts/library-structures-and-seasons#per-series-settings).
+:::
+
+:::details Do Jellyfin clients need access to Shoko Server?
+No. Only the Jellyfin server talks to Shoko Server, and images are passed through Jellyfin. The **Public Host URL**
+setting is optional and only used for the links to Shoko shown on item pages in Jellyfin. See
+[Docker & Reverse Proxies](/jellyfin/how-to/docker-and-reverse-proxies).
 :::

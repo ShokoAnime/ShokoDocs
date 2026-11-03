@@ -73,7 +73,7 @@ may AVDump them and add them to AniDB. Otherwise, you should
 
 Once the unrecognized files have been determined to be acceptable, the recommended way to handle them is to dump them to
 AniDB using **AVDump** (which is included as part Shoko's installation process). We'll assume you've already configured
-your AVDump key, if not, refer to the [AniDB](/shoko-server/settings/#anidb) section on the **Settings** page.
+your AVDump key, if not, refer to the [AniDB settings](/shoko-server/settings/anidb#login-options).
 
 After selecting your files, clicking **AVDump Files** will guide you through the process, providing instructions for
 each step. For files that have not been dumped (indicated by the file icon), Shoko will start dumping them in the

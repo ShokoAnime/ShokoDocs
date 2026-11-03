@@ -95,33 +95,44 @@ the process, which should only take a few minutes.
 If you encounter an error during this process, try starting the server again. If the error persists, we recommend
 joining our Discord server for assistance in resolving the issue.
 
-## Import Folders
+## Managed Folders
 
 ![Shoko Server - First Run - Start Server](/images/shoko-server/shoko-server-first-run-import-folders.jpg)
 
-Import folders are the physical locations where your files are stored, and they are critical for Shoko's functionality.
+:::info Import Folders
+Shoko Server 5.x calls managed folders **import folders**, and uses **Add Import Folder** and **Import Folder Type** in
+place of **Add Folder** and **Drop Type**. They work the same way.
+:::
+
+Managed folders are the physical locations where your files are stored, and they are critical for Shoko's functionality.
 These locations must be consistently accessible and remain online to prevent Shoko from mistakenly removing files from
 your collection. While you can use removable or cloud-based media, Shoko is not optimized for these storage types.
 Operations like automatic imports or file checks might inadvertently remove items from your collection due to the
 nature of these storage solutions.
 
-When setting up an import folder, you have two options. The first option, **Watch For New Files**, instructs Shoko to
+When setting up a managed folder, you have two options. The first option, **Watch For New Files**, instructs Shoko to
 monitor the folder for any new files or changes, automatically importing any newly detected files. The second option
 involves using **Drop Folders** to move files from a **Drop Source** to a **Drop Destination**, helping with file
 management and organization.
 
 :::tip Best of Both Worlds
-You can use both Import Folder Types simultaneously, enabling Shoko to monitor your drop source and automatically
+You can use both options simultaneously, enabling Shoko to monitor your drop source and automatically
 move files upon detecting any changes.
 :::
 
-To create a new import folder, select **Add Import Folder**. Enter your preferred name for the folder and specify its
-location by choosing from the available options or entering it manually. Next, select the **Import Folder Type** that
-best suits your needs for this folder. Once done, click the **Save** button to finalize its addition. If you need to add
-more folders, make sure to do so before moving on to the next steps.
+:::info Watching doesn't work everywhere
+**Watch For New Files** depends on change notifications from the operating system, which often don't arrive for
+network shares or some Docker setups. In that case, have your tools notify Shoko through its API instead. See
+[Detecting New Files](/shoko-server/settings/import#detecting-new-files).
+:::
+
+To create a new managed folder, select **Add Folder**. Enter your preferred name for the folder and specify its
+location by choosing from the available options or entering it manually. Next, select the **Drop Type** and whether to
+**Watch For New Files** for this folder. Once done, click the **Save** button to finalize its addition. If you need to
+add more folders, make sure to do so before moving on to the next steps.
 
 :::info IP Addresses Allowed
-You can use an IP Address in place of a hostname when setting up an import folder.
+You can use an IP Address in place of a hostname when setting up a managed folder.
 :::
 
 ## Data Collection

@@ -1,0 +1,6 @@
+{
+  "abstractions": "6.0.0-alpha.124",
+  "targets": "0.7.2",
+  "analyzers": "0.2.0",
+  "queueProcessor": "6.0.0-alpha.15"
+}

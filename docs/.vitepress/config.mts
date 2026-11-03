@@ -95,6 +95,10 @@ export default defineConfig({
             link: '/getting-started/running-shoko-server',
           },
           {
+            text: 'Upgrading to Shoko 6',
+            link: '/getting-started/upgrading-to-shoko-6',
+          },
+          {
             text: 'Available Programs & Plugins',
             link: '/getting-started/available-programs-plugins',
           },
@@ -148,7 +152,21 @@ export default defineConfig({
           },
           {
             text: 'Settings',
-            link: '/shoko-server/settings',
+            collapsed: true,
+            link: '/shoko-server/settings/',
+            items: [
+              { text: 'General', link: '/shoko-server/settings/general' },
+              { text: 'Import', link: '/shoko-server/settings/import' },
+              { text: 'Hashing & Release', link: '/shoko-server/settings/hashing-and-release' },
+              { text: 'AniDB', link: '/shoko-server/settings/anidb' },
+              { text: 'Metadata', link: '/shoko-server/settings/metadata' },
+              { text: 'Collection', link: '/shoko-server/settings/collection' },
+              { text: 'Integrations', link: '/shoko-server/settings/integrations' },
+              { text: 'Scheduled Actions', link: '/shoko-server/settings/scheduled-actions' },
+              { text: 'Plugin Management', link: '/shoko-server/settings/plugin-management' },
+              { text: 'User Management', link: '/shoko-server/settings/user-management' },
+              { text: 'API Keys', link: '/shoko-server/settings/api-keys' },
+            ],
           },
           {
             text: 'Misc',
@@ -163,8 +181,16 @@ export default defineConfig({
                 link: '/shoko-server/webui-themes',
               },
               {
-                text: 'TMDB Features',
-                link: '/shoko-server/tmdb-features',
+                text: 'Metadata Links',
+                link: '/shoko-server/metadata-links',
+              },
+              {
+                text: 'Metadata Features',
+                link: '/shoko-server/metadata-features',
+              },
+              {
+                text: 'Networking & Reverse Proxies',
+                link: '/shoko-server/networking',
               },
             ],
           },
@@ -201,20 +227,62 @@ export default defineConfig({
         collapsed: true,
         items: [
           {
-            text: 'Installing Shokofin',
-            link: '/jellyfin/installing-shokofin',
+            text: 'Get Started',
+            collapsed: false,
+            items: [
+              { text: 'Installing Shokofin', link: '/jellyfin/installing-shokofin' },
+              { text: 'Quick Start', link: '/jellyfin/quick-start' },
+            ],
           },
           {
-            text: 'Configuring Shokofin',
-            link: '/jellyfin/configuring-shokofin',
+            text: 'How-To Guides',
+            collapsed: false,
+            items: [
+              { text: 'Docker & Reverse Proxies', link: '/jellyfin/how-to/docker-and-reverse-proxies' },
+              { text: 'Re-create a Library Safely', link: '/jellyfin/how-to/re-create-a-library-safely' },
+              { text: 'One Show for a Whole Franchise', link: '/jellyfin/how-to/one-show-for-a-whole-franchise' },
+              { text: 'Use TMDB Seasons', link: '/jellyfin/how-to/use-tmdb-seasons' },
+              { text: 'Separate Shows and Movies', link: '/jellyfin/how-to/separate-shows-and-movies' },
+              { text: 'Titles & Artwork in Your Language', link: '/jellyfin/how-to/titles-and-artwork-in-your-language' },
+              { text: 'Sync Watch State', link: '/jellyfin/how-to/sync-watch-state' },
+              { text: 'New Episodes Automatically', link: '/jellyfin/how-to/new-episodes-automatically' },
+              { text: 'Place Specials & Extras', link: '/jellyfin/how-to/place-specials-and-extras' },
+              { text: 'Hide Episodes', link: '/jellyfin/how-to/hide-episodes' },
+              { text: 'Include or Exclude Folders', link: '/jellyfin/how-to/include-or-exclude-folders' },
+              { text: 'Choose the Default Version', link: '/jellyfin/how-to/choose-the-default-version' },
+              { text: 'Ratings & Parental Controls', link: '/jellyfin/how-to/ratings-and-parental-controls' },
+            ],
           },
           {
-            text: 'Recommendations',
-            link: '/jellyfin/recommendations',
+            text: 'Understanding Shokofin',
+            collapsed: true,
+            items: [
+              { text: 'The Virtual File System', link: '/jellyfin/concepts/virtual-file-system' },
+              { text: 'Media Folder Mapping', link: '/jellyfin/concepts/media-folder-mapping' },
+              { text: 'Library Structures & Seasons', link: '/jellyfin/concepts/library-structures-and-seasons' },
+              { text: 'Episode Types, Specials & Extras', link: '/jellyfin/concepts/episode-types-specials-and-extras' },
+              { text: 'Titles, Descriptions & Images', link: '/jellyfin/concepts/titles-descriptions-and-images' },
+              { text: 'Tags, Genres & Content Ratings', link: '/jellyfin/concepts/tags-genres-and-content-ratings' },
+              { text: 'Watch State Sync', link: '/jellyfin/concepts/watch-state-sync' },
+              { text: 'Real-Time Updates (SignalR)', link: '/jellyfin/concepts/real-time-updates' },
+              { text: 'Collections, Playlists & Versions', link: '/jellyfin/concepts/collections-playlists-and-versions' },
+            ],
           },
           {
-            text: 'Scheduled Tasks',
-            link: '/jellyfin/scheduled-tasks',
+            text: 'Reference',
+            collapsed: false,
+            items: [
+              { text: 'Settings Reference', link: '/jellyfin/configuring-shokofin' },
+              { text: 'Scheduled Tasks', link: '/jellyfin/scheduled-tasks' },
+            ],
+          },
+          {
+            text: 'Help',
+            collapsed: false,
+            items: [
+              { text: 'Troubleshooting', link: '/jellyfin/troubleshooting' },
+              { text: 'Best Practices', link: '/jellyfin/recommendations' },
+            ],
           },
         ],
       },
@@ -230,6 +298,26 @@ export default defineConfig({
             text: 'Configuring Shokodi',
             link: '/kodi/configuring-shokodi',
           },
+        ],
+      },
+
+      {
+        text: 'Writing Plugins',
+        collapsed: true,
+        link: '/writing-plugins/',
+        items: [
+          { text: 'Your First Plugin', link: '/writing-plugins/getting-started' },
+          { text: 'The Plugin Lifecycle', link: '/writing-plugins/plugin-lifecycle' },
+          { text: 'Configuration & Secrets', link: '/writing-plugins/configuration' },
+          { text: 'Form UI', link: '/writing-plugins/form-ui' },
+          { text: 'Extension Points', link: '/writing-plugins/extension-points' },
+          { text: 'Serving a Metadata Source', link: '/writing-plugins/metadata-sources' },
+          { text: 'Actions & Background Work', link: '/writing-plugins/actions-and-jobs' },
+          { text: 'Web APIs & Events', link: '/writing-plugins/web-apis-and-events' },
+          { text: 'Storing Data', link: '/writing-plugins/storing-data' },
+          { text: 'Publishing a Plugin', link: '/writing-plugins/publishing' },
+          { text: 'Troubleshooting', link: '/writing-plugins/troubleshooting' },
+          { text: 'Migrating from 5.x', link: '/writing-plugins/migrating-from-5x' },
         ],
       },
 
@@ -334,7 +422,10 @@ export default defineConfig({
     ],
   },
   markdown: {
-    theme: 'github-dark-high-contrast',
+    theme: {
+      light: 'github-light-high-contrast',
+      dark: 'github-dark-high-contrast',
+    },
     config: (md) => {
       md.use(lightbox, {});
       md.use(taskLists);
@@ -377,7 +468,7 @@ export default defineConfig({
       ['meta', { property: 'og:title', content: pageData.frontmatter.title || 'Shoko' }],
       ['meta', { property: 'og:description', content: pageData.frontmatter.description || 'Documentation' }],
       ['meta', { property: 'og:image', content: ogImageUrl }],
-      ['meta', { property: 'og:url', content: url }],
+      ...(url ? [['meta', { property: 'og:url', content: url }]] : []),
       ['meta', { property: 'twitter:card', content: 'summary_large_image' }],
       ['meta', { property: 'twitter:title', content: pageData.frontmatter.title || 'Shoko' }],
       ['meta', { property: 'twitter:description', content: pageData.frontmatter.description || 'Documentation' }],

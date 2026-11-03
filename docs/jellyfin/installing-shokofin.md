@@ -73,8 +73,8 @@ const compatibilityTableData = [
   },
   {
     Shokofin: '`dev`',
-    Jellyfin: '`10.10` &mdash; `12`',
-    ShokoServer: '`daily`'
+    Jellyfin: '`10.10.7`+, `10.11.11`+, `12`+',
+    ShokoServer: '`5.3.3`, `daily`'
   }
 ];
 </script>
@@ -103,9 +103,26 @@ install the correct version for your setup to guarantee functionality.
 
 <EasyTable :columns="containerColumns" :data="compatibilityTableData" />
 
+Each release ships one build per supported Jellyfin version. When you install from the repository, Jellyfin only offers
+the build that matches your server, so you don't have to pick one yourself. Development builds require at least
+Jellyfin `10.10.7` or `10.11.11` on those release lines.
+
+:::danger Never run stable Shokofin with a Shoko Server development build
+A stable Shokofin release only works with the stable Shoko Server versions listed above. Running it against a Shoko
+Server development build is not supported, **ever**: things break in different ways as server development moves on,
+and we can't help with that setup.
+
+Shokofin development builds are the exception in the other direction: until Shoko Server `6.0.0` is released, they
+support both the latest stable Shoko Server and its development builds. After that, support for the older stable server
+may be dropped.
+
+The next stable Shokofin release will **probably** not be out until **near** or **after** the next stable Shoko Server
+release.
+:::
+
 ### Official Repository
 
-#### Jellyfin 10.11 & 12
+#### Jellyfin 10.11 and 12
 
 1. Navigate to the **Dashboard**.
 2. Under the **Plugins** section in the side-bar, go to **Plugins**.
@@ -149,7 +166,8 @@ If you want to help test and/or improve the plugin, you can install the **develo
 
 1. Download the `shoko_*.zip` file from
    the [latest release from GitHub](https://github.com/ShokoAnime/shokofin/releases/latest).
-2. Extract the contained `*.dll`s and `meta.json`, place the files in a folder named `Shokofin`, and copy this folder to
+   Pick the zip built for your Jellyfin version; its name ends with that version, e.g. `shoko_<version>_for_10.11…zip`.
+2. Extract the contained `*.dll`s and `meta.json`, place the files in a folder named `Shoko`, and copy this folder to
    the `plugins` folder inside the Jellyfin data directory. Refer to the "Data Directory" section on
    [this page](https://jellyfin.org/docs/general/administration/configuration.html) for where to find your Jellyfin
    install.
@@ -157,6 +175,5 @@ If you want to help test and/or improve the plugin, you can install the **develo
 
 ## Next Steps
 
-Congratulations! If everything went well, Shokofin should now be installed. Proceed to the next page for instructions on
-how to connect Shokofin to your Shoko Server instance along with any other configuration steps needed to properly setup
-Shokofin for recognizing your anime library.
+Congratulations! If everything went well, Shokofin should now be installed. Continue with the
+[Quick Start](/jellyfin/quick-start) to connect Shokofin to your Shoko Server and create your first library.

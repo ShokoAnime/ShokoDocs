@@ -40,3 +40,11 @@ duplicates across an entire series, you can use the **Quick Select** option. Thi
 by group, allowing you to select which files to delete by group. Once you select which group(s) to delete, click
 the **Confirm** button to apply your changes. As with the episode management, the group marked to be deleted will
 immediately be deleted from your system.
+
+:::info Using Shokofin
+If Shokofin is set to **Add Release Group to Path** or **Add Resolution to Path**, changing a file's release group or
+media info in Shoko (for example after running **Update Missing AniDB Release Groups**) renames that file's entry in
+Shokofin's [Virtual File System](/jellyfin/concepts/virtual-file-system). Jellyfin then treats it as a removed and a newly
+added item. Removing or keeping versions here also changes which versions Shokofin can
+[merge into one entry](/jellyfin/how-to/choose-the-default-version).
+:::

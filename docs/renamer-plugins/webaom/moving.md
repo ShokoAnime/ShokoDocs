@@ -23,7 +23,7 @@ When determining the destination of a new file:
      - The file path exists
      - There is enough disk space to accomodate the file
    - The subfolder is set to the Shoko preferred language anime title.
-     - If the anime title has illegal characters, they will be replaced with unicode alternatives. See: [the ReplaceInvalidFolderNameCharacters function](https://github.com/ShokoAnime/ShokoServer/blob/master/Shoko.Server/Utilities/Utils.cs).
+     - If the anime title has illegal characters, they will be replaced with unicode alternatives.
 
 ## Group Aware Sorting
 
@@ -37,4 +37,4 @@ When group aware sorting is enabled, anime will be moved into subfolders dependi
 - The subfolder is chosen:
   - If a file is part of a anime that is grouped with other anime series, it will be moved to `Group Name / Anime Title / Filename`.
   - Otherwise, it will be moved to `Anime Title / Filename`.
-  - If the anime title has illegal characters, they will be replaced with unicode alternatives. See: [the ReplaceInvalidFolderNameCharacters function](https://github.com/ShokoAnime/ShokoServer/blob/master/Shoko.Server/Utilities/Utils.cs).
+  - If the anime title has illegal characters, they will be replaced with unicode alternatives.

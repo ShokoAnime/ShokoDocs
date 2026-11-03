@@ -42,13 +42,14 @@
 </template>
 
 <script>
-import { Palette, FilePenLine, CircleHelp } from "lucide-vue-next";
+import { CircleHelp, FilePenLine, Palette, Puzzle } from "lucide-vue-next";
 
 export default {
   components: {
-    Palette,
-    FilePenLine,
     CircleHelp,
+    FilePenLine,
+    Palette,
+    Puzzle,
   },
   props: {
     features: {
