@@ -44,8 +44,17 @@ sub-folder are used.
 ### Example: One Jellyfin Folder Covering Two Managed Folders
 
 If Shoko has two managed folders, `/mnt/anime/airing` and `/mnt/anime/finished`, and your Jellyfin library uses the
-parent folder `/media/anime`, the folder can only map to **one** of them, whichever has more matches in the sample.
-Files from the other managed folder never show up.
+parent folder `/media/anime`, the folder maps to **neither**. A sampled file's path below the Jellyfin folder is
+`airing/Shingeki no Kyojin/Episode 01.mkv`, while Shoko knows that file as `Shingeki no Kyojin/Episode 01.mkv` inside
+the `airing` managed folder: the segment naming the managed folder is in one path and not the other, so no sample
+matches and the folder is left unmapped. The log says so — *"Failed to find a match for media folder at
+/media/anime"*.
+
+An unmapped folder is one Shokofin takes no part in. A VFS library builds nothing for it, and a library using legacy
+filtering leaves its files to Jellyfin's own identification, with no Shoko metadata and no filtering.
+
+That's the direction that matters: a Jellyfin folder may sit at a managed folder's root, or below it, but never above
+it.
 
 :::tip Keep it one-to-one
 Add each of Shoko's managed folders to Jellyfin as its own media folder, or as a sub-folder of one. Don't use a Jellyfin

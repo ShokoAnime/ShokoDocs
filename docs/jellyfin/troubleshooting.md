@@ -69,9 +69,10 @@ Failed to find a match for media folder at {Path} after {Amount} attempts in {Ti
 1. **The folder contents don't match.** The files and sub-folders inside the Jellyfin media folder must be the same
    files, in the same relative locations, as inside the Shoko managed folder (or a sub-folder of it). A different mount
    root is fine, for example `/data/anime` in Jellyfin and `D:\Anime` in Shoko.
-2. **One media folder covers several managed folders.** A Jellyfin media folder can only map to a single managed
-   folder. If you point Jellyfin at a parent folder that contains two Shoko managed folders, only one of them is used.
-   Add each managed folder as its own media folder instead.
+2. **One media folder covers several managed folders.** A Jellyfin media folder maps to a single managed folder, at
+   its root or below it. Point Jellyfin at a parent folder holding two Shoko managed folders and it maps to neither,
+   because each sampled path then carries a folder name that Shoko's own path for the file doesn't have. Add each
+   managed folder as its own media folder instead.
 3. **None of the sampled files are recognized by Shoko.** A folder with only unrecognized files can't be matched.
 4. **The folder has a `.shoko-ignore` file** or was marked as ignored, so it's never mapped on purpose.
 
