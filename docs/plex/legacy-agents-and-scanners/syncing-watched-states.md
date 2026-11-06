@@ -1,19 +1,19 @@
 ---
-title: Syncing Watched States | Plex
+title: Syncing Watched States (Legacy) | Plex
 description: Information on how to sync watched states from Plex to Shoko.
 sidebar:
   order: 5
 ---
 
-# Syncing Watched States
+# Syncing Watched States (Legacy)
 
-Both Shoko Metadata and Shoko Relay are capable of syncing watched states from Plex to Shoko using a variety of methods
+Both Shoko Metadata and ShokoRelay.bundle are capable of syncing watched states from Plex to Shoko using a variety of methods
 which will be detailed below.
 
 ## Using the "Sync Plex Watch Status" Action
 
 Before you continue, make sure that you have a populated Library in Plex which utilizes
-a [Shoko Agent/Scanner](/plex/installing-agents-scanners) combo.
+a [Legacy Shoko Agent/Scanner](/plex/legacy-agents-and-scanners/installing-agents-scanners) combo.
 
 :::warning Multi Episode Files Compatibility
 Currently the "Sync Plex Watch Status" action doesn't fully sync files which are mapped to multiple AniDB episode
@@ -21,26 +21,22 @@ entries and will only sync the first match.
 :::
 
 1. Authenticate Plex
-
    - Navigating to **Settings** > **Integrations** in the Shoko Server WebUI.
    - In the **Plex Options** section at the bottom click **Authenticate**.
 
    ![Shoko - Plex Authentication](/images/shoko-relay/Shoko-Relay-Plex-Auth.jpg)
-
    - It will redirect you and have you log into your Plex account.
    - If successful, you'll see the following message.
 
    ![Shoko - Plex Synced](/images/shoko-relay/Shoko-Relay-Plex-Synced.jpg)
 
 2. Select Your Plex Server and Libraries
-
    - Return to **Settings** > **Integrations** in the Shoko Server WebUI.
    - The Server dropdown in the Plex section should now be available.
    - Select your Plex Server and then any Libraries you would like to sync.
    - Hit Save.
 
 3. Configure Plex Home Users
-
    - Navigating to **Settings** > **User Management** in the Shoko Server WebUI.
    - Enter any usernames you would like to sync into the "Plex Users" field, comma separated.
    - This is essential for those who don't use their Plex server's admin account for all their viewing.
@@ -66,12 +62,10 @@ by hand in Shoko's WebUI, or use a utility script.
 :::
 
 1. Navigate to the Plex Server Settings
-
    - To set up a Webhook, open your Plex WebUI and go to Settings (wrench icon).
    - Under your username in the left menu, Select **Webhooks**.
 
 2. Add the Webhook
-
    - Click the button to add a Webhook and enter your Shoko Server URL:
      ```
      http://<shoko-server-ip>:8111/plex
@@ -87,8 +81,8 @@ by hand in Shoko's WebUI, or use a utility script.
 Syncing via utility script is the most robust method as it works with any episode type and can be filtered with a time
 range to significantly speed up the process. As a caveat, it also requires the most effort and knowledge to set up.
 
-Configuration instructions are available on the [Shoko Relay Utility Scripts](/plex/shoko-relay-utility-scripts) page. Once
-`config.py` has been properly filled out the [Watched-Sync](/plex/shoko-relay-utility-scripts/#watched-sync) script can be
+Configuration instructions are available on the [ShokoRelay.bundle Utility Scripts](/plex/legacy-agents-and-scanners/shoko-relay-utility-scripts) page. Once
+`config.py` has been properly filled out the [Watched-Sync](/plex/legacy-agents-and-scanners/shoko-relay-utility-scripts#watched-sync) script can be
 run on demand.
 
 :::tip Using a Scheduler

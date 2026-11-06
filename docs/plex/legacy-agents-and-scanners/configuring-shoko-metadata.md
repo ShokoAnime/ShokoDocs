@@ -1,5 +1,5 @@
 ---
-title: Configuring Shoko Metadata | Plex
+title: Configuring Shoko Metadata (Legacy) | Plex
 description: Information on how to configure Shoko Metadata for Plex.
 ---
 
@@ -35,8 +35,8 @@ const serverConfigTableData = [
 
 # Configuring Shoko Metadata
 
-If you chose Shoko Relay as your Agent/Scanner combo you can skip this page and move directly to
-the [Configuring Shoko Relay](/plex/configuring-shoko-relay) page.
+If you chose ShokoRelay.bundle as your legacy Agent/Scanner combo you can skip this page and move directly to
+the [Configuring Shoko Relay](/plex/legacy-agents-and-scanners/configuring-shoko-relay-legacy) page.
 
 :::warning Enabling Legacy Agents
 If you are running Plex Media Server v1.43.0.10346 or newer you must navigate to `Settings > Library` and
@@ -48,7 +48,7 @@ ensure that "Show legacy agents during library setup" is enabled.
 1. Add a Plex Library
    - While Shoko Server is running, open Plex and create a new TV Shows or Movies library.
    - Ensure that you have completed the **required edits** mentioned on
-     the [Installing Agents & Scanners](/plex/installing-agents-scanners) page.
+     the [Installing Agents & Scanners](/plex/legacy-agents-and-scanners/installing-agents-scanners) page.
 
 2. Add a Folder to Your Library
    - When prompted to add folders to your library, browse to your anime collection.

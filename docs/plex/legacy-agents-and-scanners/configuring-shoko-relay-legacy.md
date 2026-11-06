@@ -1,6 +1,6 @@
 ---
-title: Configuring Shoko Relay | Plex
-description: Information on how to install and configure Shoko Relay for Plex.
+title: Configuring ShokoRelay.bundle (Legacy) | Plex
+description: Legacy information for how to install and configure ShokoRelay.bundle for Plex.
 ---
 
 <script setup>
@@ -69,22 +69,22 @@ const contentRatingsData = [
 ];
 </script>
 
-# Configuring Shoko Relay
+# Configuring ShokoRelay.bundle (Legacy)
 
-If you chose Shoko Metadata as your Plex Agent/Scanner combo you can skip this page and move directly to
-the [Syncing Watched States](/plex/syncing-watched-states) page.
+If you chose Shoko Metadata as your legacy Plex Agent/Scanner combo you can skip this page and move directly to
+the [Syncing Watched States](/plex/legacy-agents-and-scanners/syncing-watched-states) page.
 
 :::warning Enabling Legacy Agents
 If you are running Plex Media Server v1.43.0.10346 or newer you must navigate to `Settings > Library` and
 ensure that "Show legacy agents during library setup" is enabled.
 :::
 
-### Creating A Shoko Relay Library
+### Creating A ShokoRelay.bundle Library
 
 1. Add a Plex Library
    - While Shoko Server is running, open Plex and create a new "TV Shows" library.
    - Ensure that you have completed the **required edits** mentioned on
-     the [Installing Agents & Scanners](/plex/installing-agents-scanners) page.
+     the [Installing Agents & Scanners](/plex/legacy-agents-and-scanners/installing-agents-scanners) page.
 
 2. Add a Folder to Your Library
    - When prompted to add folders to your library, browse to your anime collection.
@@ -157,7 +157,7 @@ To resolve this there are several different approaches:
 1. Nest the entire library within a new folder so folders affected by this are no longer in the root directory
 2. Separate the files from each AniDB series into their own separate folders or subfolders
 3. Create an empty subfolder in any directory affected by this
-:::
+   :::
 
 ### Handling "Stuck" Metadata
 
@@ -181,7 +181,7 @@ If "staff listings" are enabled in the settings the following custom agent limit
 ### Automatic Season Naming Limitations
 
 Due to custom agent limitations certain season names which contain special files will not name themselves correctly.
-These can be renamed manually or with the included [force-metadata.py](/plex/shoko-relay-utility-scripts#force-metadata)
+These can be renamed manually or with the included [force-metadata.py](/plex/legacy-agents-and-scanners/shoko-relay-utility-scripts#force-metadata)
 script that accesses the Plex API. The affected season names and their intended names are listed below:
 
 - Season -1 → Credits **OR** [Unknown Season] → Credits

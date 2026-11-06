@@ -1,6 +1,6 @@
 ---
-title: Installing Agents & Scanners | Plex
-description: Information on how to install and configure Shoko Metadata & Shoko Relay for Plex.
+title: Installing Agents & Scanners (Legacy) | Plex
+description: Archived instructions for installing the legacy Shoko Metadata and ShokoRelay.bundle Plex agents and scanners.
 ---
 
 <script setup>
@@ -25,13 +25,13 @@ const additionalOptionsData = [
 ];
 </script>
 
-# Installing Agents & Scanners
+# Installing Agents & Scanners (Legacy)
 
-Both Shoko Metadata and Shoko Relay do not come with an installer. Please follow the manual installation instructions
+Both Shoko Metadata and ShokoRelay.bundle do not come with an installer. Please follow the manual installation instructions
 below. This guide assumes you've installed Plex into the **default install directory**, so make adjustments as
 needed to fit your installation.
 
-Shoko Metadata and Shoko Relay are not stand-alone plugins; they depend on having Shoko Server installed, configured,
+Shoko Metadata and ShokoRelay.bundle are not stand-alone plugins; they depend on having Shoko Server installed, configured,
 and running. If you haven't done so, [Download Shoko Server](https://shokoanime.com/downloads/) from our main
 website and use the [Installing Shoko Server](/getting-started/installing-shoko-server) guide to properly
 install and configure Shoko Server.
@@ -42,11 +42,11 @@ these plugins will not function when running Plex Media Server v1.41.0 or newer 
 possible to sideload an older PMS build to continue to use third-party plugins, but that will not be covered here.
 :::
 
-### Shoko Relay or Shoko Metadata?
+### ShokoRelay.bundle or Shoko Metadata?
 
-Shoko Relay began as a fork/PR of Shoko Metadata, intended to introduce features that were absent in the original. Over
+ShokoRelay.bundle began as a fork/PR of Shoko Metadata, intended to introduce features that were absent in the original. Over
 time, as more adjustments were made, it developed its own unique set of functionalities. This development was due to
-differing opinions on what the plugin should include, leading to the creation of Shoko Relay. You can read a list of
+differing opinions on what the plugin should include, leading to the creation of ShokoRelay.bundle. You can read a list of
 the [Changes from Shoko Metadata](https://github.com/natyusha/ShokoRelay.bundle?tab=readme-ov-file#changes-from-shoko-metadata)
 to decide which plugin you'd like to use.
 
@@ -68,7 +68,7 @@ We recommend doing the edits listed below in [VSCode](https://code.visualstudio.
 space-sensitive and extra or missing spaces can break the file.
 :::
 
-### Shoko Relay
+### ShokoRelay.bundle
 
 Before you continue, make sure that you have Shoko Server installed and running with your anime collection fully
 recognized.
@@ -76,9 +76,7 @@ recognized.
 #### Install
 
 1. Download and Extract the Plugin
-   - Download
-     the [Shoko Relay](https://github.com/natyusha/ShokoRelay.bundle/releases/latest/download/ShokoRelay.bundle.zip)
-     bundle.
+   - Download [ShokoRelay.bundle](https://github.com/natyusha/ShokoRelay.bundle/releases/latest/download/ShokoRelay.bundle.zip).
    - Extract the `.zip` file. You should have a folder named `ShokoRelay.bundle` after extraction.
 2. Move the Plugin Folder
    - Move the `ShokoRelay.bundle` folder to the following directory:
@@ -86,7 +84,7 @@ recognized.
      %LOCALAPPDATA%\Plex Media Server\Plug-ins
      ```
 3. Install the Series Scanner
-   - Note that Shoko Relay does not include a movie scanner (movies will work with it).
+   - Note that ShokoRelay.bundle does not include a movie scanner (movies will work with it).
    - Navigate to the following directory:
      ```cmd
      %LOCALAPPDATA%\Plex Media Server\Plug-ins\ShokoRelay.bundle\Contents
@@ -96,7 +94,7 @@ recognized.
      %LOCALAPPDATA%\Plex Media Server
      ```
 
-#### Editing Shoko Relay Scanner
+#### Editing ShokoRelay.bundle Scanner
 
 1. Navigate to the Plex Series Scanners Directory:
    ```cmd
@@ -252,7 +250,7 @@ docker exec -it <container name> /bin/sh
 export PLEX_HOME="/config/Library/Application Support/Plex Media Server"
 ```
 
-### Shoko Relay
+### ShokoRelay.bundle
 
 Before you continue, make sure that you have Shoko Server installed and running with your anime collection fully
 recognized.
@@ -278,7 +276,7 @@ recognized.
      cp -R ShokoRelay.bundle/Contents/Scanners ../
      ```
 
-#### Editing Shoko Relay Scanner
+#### Editing ShokoRelay.bundle Scanner
 
 1. Open the **Shoko Relay Scanner.cfg** File
    ```sh

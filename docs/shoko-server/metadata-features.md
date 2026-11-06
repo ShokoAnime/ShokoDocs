@@ -80,6 +80,6 @@ Shokofin follows the alternate ordering selected for a series, so pick it before
 ### Plex (Shoko Relay)
 
 With a TMDB link, Shoko Relay adds Plex theme songs, falls back to TMDB titles and descriptions where AniDB has none,
-and adds backdrops and extra posters. With single season ordering disabled, it also supports seasons for long-running
+and adds backdrops and extra posters. With TMDB episode ordering enabled, it also supports seasons for long-running
 anime, combining several Shoko series into one Plex entry, and alternate episode orderings. See
-[TMDB Matching](/plex/configuring-shoko-relay#tmdb-matching) for details.
+[TMDB Matching](/plex/additional-information#tmdb-matching) for details.

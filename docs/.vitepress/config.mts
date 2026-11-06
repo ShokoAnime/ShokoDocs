@@ -201,24 +201,26 @@ export default defineConfig({
         collapsed: true,
         items: [
           {
-            text: 'Installing Agents & Scanners',
-            link: '/plex/installing-agents-scanners',
+            text: 'Shoko Relay',
+            collapsed: false,
+            items: [
+              { text: 'Installing Shoko Relay', link: '/plex/installing-shoko-relay' },
+              { text: 'Controlling Shoko Relay', link: '/plex/controlling-shoko-relay' },
+              { text: 'AnimeThemes Integration', link: '/plex/animethemes-integration' },
+              { text: 'Additional Information', link: '/plex/additional-information' },
+              { text: 'Controller API', link: '/plex/shoko-relay-api' },
+            ],
           },
           {
-            text: 'Configuring Shoko Metadata',
-            link: '/plex/configuring-shoko-metadata',
-          },
-          {
-            text: 'Configuring Shoko Relay',
-            link: '/plex/configuring-shoko-relay',
-          },
-          {
-            text: 'Shoko Relay Utility Scripts',
-            link: '/plex/shoko-relay-utility-scripts',
-          },
-          {
-            text: 'Syncing Watched States',
-            link: '/plex/syncing-watched-states',
+            text: 'Legacy Agents & Scanners',
+            collapsed: true,
+            items: [
+              { text: 'Installation', link: '/plex/legacy-agents-and-scanners/installing-agents-scanners' },
+              { text: 'Configuring Shoko Metadata', link: '/plex/legacy-agents-and-scanners/configuring-shoko-metadata' },
+              { text: 'Configuring ShokoRelay.bundle', link: '/plex/legacy-agents-and-scanners/configuring-shoko-relay-legacy' },
+              { text: 'Legacy Utility Scripts', link: '/plex/legacy-agents-and-scanners/shoko-relay-utility-scripts' },
+              { text: 'Syncing Watched States', link: '/plex/legacy-agents-and-scanners/syncing-watched-states' },
+            ],
           },
         ],
       },

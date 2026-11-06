@@ -20,7 +20,7 @@ delete the account you're logged in with.
 
 :::tip Accounts for Media Server/Player Plugins
 Plugins that sync watch states, such as [Shokofin](/jellyfin/how-to/sync-watch-state), link each media player user to a
-Shoko account; for Plex, see [Syncing Watched States](/plex/syncing-watched-states). Give each person their own account
+Shoko account; for Plex, see [Syncing Watched States (Legacy)](/plex/legacy-agents-and-scanners/syncing-watched-states). Give each person their own account
 so they have their own watch state. These accounts don't need **Administrator**.
 :::
 
@@ -33,7 +33,7 @@ so they have their own watch state. These accounts don't need **Administrator**.
 | **Display Name** | The account's username. |
 | **Administrator** | Gives the account access to settings and other admin-only features. |
 | **AniDB User** | Marks this as the account whose watch states are synced with AniDB. Don't enable it for more than one user, since multiple AniDB accounts aren't supported. |
-| **Plex Users** | The Plex usernames whose watch states belong to this account, for [syncing watched states](/plex/syncing-watched-states). |
+| **Plex Users** | The Plex usernames whose watch states belong to this account, for [syncing watched states (legacy)](/plex/legacy-agents-and-scanners/syncing-watched-states). |
 
 Click **Save** to apply changes to the selected user.
 

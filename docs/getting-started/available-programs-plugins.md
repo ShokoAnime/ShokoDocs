@@ -47,6 +47,12 @@ const pluginsData = [
     status: 'Active',
   },
   {
+    name: '[ShokoRelay.bundle](https://shokoanime.com/downloads/media-player-plugins/shoko-relay-legacy)',
+    dev: 'natyusha',
+    platform: 'Plex',
+    status: 'Active',
+  },
+  {
     name: '[Shokofin](https://shokoanime.com/downloads/media-player-plugins/shokofin)',
     dev: 'revam',
     platform: 'Jellyfin',

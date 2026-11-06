@@ -21,9 +21,9 @@ hero:
     :features="[
     { 
         title: 'Plex Integration', 
-        info: 'Learn how to integrate Shoko with Plex using Shoko Relay or Shoko Metadata.', 
+        info: 'Connect Plex to Shoko with the Shoko Relay metadata provider.',
         icon: 'images/plex.svg',
-        link: 'plex/installing-agents-scanners'
+        link: 'plex/installing-shoko-relay'
     },
     { 
         title: 'Jellyfin Integration', 

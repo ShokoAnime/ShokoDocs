@@ -1,6 +1,6 @@
 ---
-title: Shoko Relay Utility Scripts | Plex
-description: Information on how to use the Shoko Relay utility scripts.
+title: ShokoRelay.bundle Utility Scripts (Legacy) | Plex
+description: Archived instructions for utility scripts distributed with ShokoRelay.bundle.
 ---
 
 <script setup>
@@ -138,9 +138,9 @@ const animeThemesConfigTableData = [
 
 </script>
 
-# Shoko Relay Utility Scripts
+# ShokoRelay.bundle Utility Scripts (Legacy)
 
-Shoko Relay includes several utility / automation scripts which can help to quickly add full length theme songs,
+ShokoRelay.bundle includes several utility / automation scripts which can help to quickly add full length theme songs,
 automatic collection posters, correct negative season numbers, synced watched states, and more.
 
 The scripts require basic knowledge of running Python and other simple commands in a terminal. They are located in the
@@ -279,7 +279,7 @@ the readme for all of the commands.
 :::details Additional Information
 **Requirements:**
 
-- Python 3.7+, Python-PlexAPI (pip install plexapi), Requests Library (pip install requests), Plex, Shoko Relay, Shoko Server
+- Python 3.7+, Python-PlexAPI (pip install plexapi), Requests Library (pip install requests), Plex, ShokoRelay.bundle, Shoko Server
 
 **Preferences:**
 
@@ -310,7 +310,7 @@ the readme for all of the commands.
 :::details Additional Information
 **Requirements:**
 
-- Python 3.7+, Python-PlexAPI (pip install plexapi), Plex, Shoko Relay, Shoko Server
+- Python 3.7+, Python-PlexAPI (pip install plexapi), Plex, ShokoRelay.bundle, Shoko Server
 
 **Preferences:**
 
@@ -340,11 +340,11 @@ the readme for all of the commands.
 - If the main title of an anime was changed on AniDB or overridden in Shoko after it was first scanned into Plex it might fail to match using this method.
   - In these cases the original title will be output to the console for the user to fix with a Plex dance or manual match.
 - Video preview thumbnails and watched states are maintained with this script (unless an anime encounters the above naming issue).
-- The "Original Title" for all series will be set using info Shoko Relay added to the "Sort Title" (if available).
+- The "Original Title" for all series will be set using info ShokoRelay.bundle added to the "Sort Title" (if available).
 - Negative seasons like "Season -1" which contain Credits, Trailers, Parodies etc. will have their names updated to reflect their contents.
 - The "Sort Title" for all collections will be set to match the current title to avoid Plex's custom sorting rules e.g. ignoring "The" or "A"
 - Collections with only a single entry will be listed to inform the user that an old series may need to be refreshed
-- All Smart Collections are ignored as they are not managed by Shoko Relay
+- All Smart Collections are ignored as they are not managed by ShokoRelay.bundle
 :::
 
 ### Rescan-Recent
@@ -381,7 +381,7 @@ the readme for all of the commands.
 :::details Additional Information
 **Requirements:**
 
-- Python 3.7+, Python-PlexAPI (pip install plexapi), Requests Library (pip install requests), Plex, Shoko Relay, Shoko Server
+- Python 3.7+, Python-PlexAPI (pip install plexapi), Requests Library (pip install requests), Plex, ShokoRelay.bundle, Shoko Server
 
 **Preferences:**
 
