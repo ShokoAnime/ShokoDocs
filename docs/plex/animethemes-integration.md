@@ -3,11 +3,11 @@ title: AnimeThemes Integration | Plex
 description: Use Shoko Relay to map AnimeThemes WebM videos, generate Theme.mp3 files, and play local themes.
 ---
 
-## AnimeThemes Integration
+# AnimeThemes Integration
 
 Shoko Relay includes full [AnimeThemes](https://animethemes.moe/) integration. This allows those who are fans of anime openings and endings to have automatic OP/ED metadata for the majority of their collection.
 
-### Themes as Video Extras
+## Themes as Video Extras
 
 The plugin will look for '.webm' theme files in a folder called `!AnimeThemes` (or the configured `AnimeThemes Root Path`) which is located in the root of your anime library (this works for any "destination" type folder managed by Shoko). These files must have the same name as they do on the AnimeThemes website and then a mapping must be generated for them, in what is essentially a 3 step process. Simply navigate to the "AnimeThemes: VFS" section of the dashboard page to get started.
 
@@ -25,7 +25,7 @@ The plugin will look for '.webm' theme files in a folder called `!AnimeThemes` (
 By default, the plugin appends metadata attributes to the filename, such as `[SPOIL, SUBS]`. If you prefer a cleaner look, you can disable this by unchecking `Advanced Settings > Append AnimeThemes Tags` in the dashboard's Provider Settings. Note that a fresh "Generate" run is required to rename existing links after changing this setting.
 :::
 
-### Themes as Series BGM
+## Themes as Series BGM
 
 There is also support for generating `Theme.mp3` files as local metadata. This will add them to the VFS automatically and can be run for either a single series or as a batch operation. This process requires Shoko Relay to have access to [FFmpeg/FFprobe](https://ffmpeg.org/download.html). Place system appropriate binaries in one of the following locations: Shoko Server's `Utilities` folder in a subfolder named `FFmpeg` (case sensitive), the ShokoRelay plugin folder, or the system PATH. This is required due to AnimeThemes not providing the '.mp3' files that Plex requires for this feature (they use '.ogg').
 
@@ -42,11 +42,11 @@ There is also support for generating `Theme.mp3` files as local metadata. This w
   - Generally this means entering a `1`
 - _Theme.mp3 generation can be run per folder from the [VFS Browser](/plex/additional-information#vfs-browser) page (uses the default settings)_
 
-#### Miniplayer
+### Miniplayer
 
 There is a mini media player included on the dashboard which will play downloaded themes if enabled. You can set it to looped playback or even have it shuffle through all of your Theme.mp3 files if desired. The progress bar is fully functional and you can pause playback by middle clicking it.
 
-### AnimeThemes Player
+## AnimeThemes Player
 
 Shoko Relay includes a browser based video player designed specifically for local AnimeThemes playback. It can be accessed via the `Open Video Player` icon (clapboard) within the "AnimeThemes: VFS" section of the dashboard, as an embed in Shoko's WebUI under `Settings > Plugins > Shoko Relay > AnimeThemes Player`, or via a dedicated URL: `http(s)://{ShokoHost}:{ShokoPort}/api/plugin/ShokoRelay/player`.
 
@@ -56,6 +56,6 @@ There is an included tree view which allows you to browse your themes by `Group 
 There is a help button in the top right of the video player which will show a full list of keybinds and filters.
 :::
 
-#### Favourites
+### Favourites
 
 You can mark any theme as a favourite by clicking the heart icon `❤` next to its name in the tree view. Once marked as a favourite the icon for a given item will change to be red in colour and it will be persisted to a settings file based on its AnimeThemes VideoID. To quickly view only your marked themes, type `favs` into the search bar. This keyword can be combined with other search terms as well as tags (e.g., `+nc favs gundam`) to find specific favourites.

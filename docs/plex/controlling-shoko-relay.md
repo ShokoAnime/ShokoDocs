@@ -9,13 +9,13 @@ After [installing Shoko Relay](/plex/installing-shoko-relay), use the plugin das
 
 ## Automation Controls
 
-#### Force Partial Scans
+### Force Partial Scans
 
 - When `Force Partial Scans` is enabled Plex's HTTP API will be used to scan folders modified by the VFS watcher
 - On certain setups this is much more reliable than Plex's default "Scan my library automatically" or "Run a partial scan when changes are detected" implementation
 - _Requires Plex authentication **and** should not be used if Plex's auto scanning is enabled_
 
-#### Auto Scrobble
+### Auto Scrobble
 
 - When `Auto Scrobble` is enabled Plex's [webhook](https://support.plex.tv/articles/115002267687-webhooks/) will be used to forward scrobble events to shoko
 - This can be enabled in the Plex Web/Desktop App under `Settings > Webhooks`
