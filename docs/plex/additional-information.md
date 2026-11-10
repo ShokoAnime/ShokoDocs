@@ -254,7 +254,7 @@ Custom episode assignments allow series to be mapped to specific seasons and epi
 
 It is highly recommended to use this feature for series like "Akahori Gedou Hour Rabuge" where every episode is a crossover.
 
-An example `anidb_vfs_overrides.csv` is available [here](https://gist.github.com/natyusha/a9ad00a5c16276cfbe2553346c745f1c).
+An example `anidb_vfs_overrides.csv` is available [here](https://raw.githubusercontent.com/natyusha/ShokoRelay/master/Data/anidb_vfs_overrides.csv).
 
 :::tip
 If you want all Shoko series which share a TMDB series link to be merged automatically this can be achieved by enabling `Advanced Settings > Auto Merge TMDB Series`. This will automatically disable AniDB numbering for the affected series regardless of the configured `TMDB Episode Numbering` setting.

@@ -15,7 +15,7 @@ The plugin will look for '.webm' theme files in a folder called `!AnimeThemes` (
    - There is a torrent available with over 19000+ themes and a button on the dashboard for downloading themes from the current season
    - An endpoint (`/animethemes/webm/download`) is also available to help download things not available in the current torrent
 2. Generate a mapping for the videos by clicking the `Build Mapping File` button:
-   - If you have the torrent click the `Import Curated Mapping File` button to download the [current torrent mapping](https://gist.github.com/natyusha/bb33a3b3bc95bc7a3869633e23d522bb)
+   - If you have the torrent click the `Import Curated Mapping File` button to download the [current torrent mapping](https://raw.githubusercontent.com/natyusha/ShokoRelay/master/Data/anidb_animethemes_xrefs.csv)
      - This will overwrite any existing mappings if they exist
    - Mapping the torrent takes ~8 hours (due to rate limits) and generated mappings will be appended to it
 3. Apply the mapping to the VFS by clicking the `Generate` button
