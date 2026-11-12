@@ -37,7 +37,7 @@ Installation can be completed via Shoko's WebUI (Recommended) or Manually. Both 
   - Click `Install`
 - **Manual**
   - Navigate to Shoko Server's `plugins` directory and create a new subfolder called `ShokoRelay`
-  - Extract [the latest pre-release](https://github.com/natyusha/ShokoRelay/releases) into the `plugins/ShokoRelay` directory
+  - Extract [the latest release](https://github.com/natyusha/ShokoRelay/releases/latest) into the `plugins/ShokoRelay` directory
   - It may be necessary to create the `plugins` (all lowercase) folder in Shoko's root first
 - Restart Shoko Server after finishing either of the above installation methods
 
