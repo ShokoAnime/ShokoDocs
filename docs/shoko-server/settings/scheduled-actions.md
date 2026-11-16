@@ -61,7 +61,7 @@ Add one with the **Add Trigger…** dropdown, which offers six kinds:
 | **Weekly** | At a time of day, on the days of the week you pick |
 | **Monthly** | At a time of day, on the days of the month you pick — counted from the start of the month, or from its end, where the last day is `-1` |
 | **At start-up** | Each time the server starts |
-| **When the queue is cleared** | Each time the queue finishes emptying |
+| **When the queue is cleared** | Each time the queue is cleared, for example with **Clear All** on the dashboard. Not when it simply runs out of tasks |
 
 An action can carry several triggers at once, each edited in its own block and removed with its own button. With none
 left, the modal says *"No triggers. It only runs manually."* Times are in the **server's** time zone, not your
@@ -99,5 +99,5 @@ grouped under the plugin's name.
 :::warning Destructive Actions Mean It
 The actions under **Destructive** remove stored data — metadata links, orderings, collections, unused releases. They ask
 before they run and say what they'll take with them. Read that prompt rather than clicking through it, and take a
-[backup](/faq) first if you're unsure.
+[backup](/shoko-server/how-to/back-up-and-restore-shoko-server) first if you're unsure.
 :::

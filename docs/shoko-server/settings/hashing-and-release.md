@@ -21,9 +21,12 @@ Release providers find release information (such as the release group, source an
 can come from Shoko Server itself or from [plugins](/shoko-server/settings/plugin-management). Tick a provider to enable
 it and drag providers to set their priority.
 
-- **Auto-Linking Release Providers** are used when Shoko identifies files on its own.
-- **Manual Linking Release Providers** are offered when you link files by hand in the Web UI, for example from
-  [Unrecognized Files](/shoko-server/unrecognized-files).
+- **Auto-Linking Release Providers** are used when Shoko identifies files on its own. A provider that can only answer
+  searches you start, such as the Offline Importer while it has no auto-match rules, is passed by here even when it's
+  ticked.
+- **Manual Linking Release Providers** are asked about each unrecognized file when you open **Link With Providers** to
+  link files by hand, for example from [Unrecognized Files](/shoko-server/unrecognized-files#manual-linking). Shoko asks
+  them in order, from the top.
 
 ## Release Management
 

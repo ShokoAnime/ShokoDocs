@@ -5,7 +5,9 @@ description: Information on how to use the WebAOM renamer.
 
 # Getting Started
 
-The WebAOM renamer is the default renamer that ships with Shoko. It re-implements the scripting language used in
+The WebAOM renamer is the default renamer. It comes as a plugin bundled with Shoko, enabled by default, and like any
+other plugin it can be disabled under [Plugin Management](/shoko-server/settings/plugin-management). It re-implements
+the scripting language used in
 [WebAOM](https://wiki.anidb.net/WebAOM). There may be discrepancies between the results of this renamer and
 the original.
 

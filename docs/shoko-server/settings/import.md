@@ -14,8 +14,7 @@ renamed and moved, and which folders Shoko manages.
 
 | Option | What it does | Default |
 | --- | --- | --- |
-| **Import on start** | Starts importing files when Shoko Server starts. | Off |
-| **Rename on import** | Renames imported files using your configured renamer. | Off |
+| **Rename on import** | Renames imported files using your default relocation preset. | Off |
 | **Move on import** | Moves imported files from a drop source to a drop destination managed folder. | Off |
 | **Allow relocation inside destination on import** | Also renames or moves files that are already inside a destination managed folder. | On |
 | **Delete duplicates on import** | Deletes duplicate files automatically when they're imported. | Off |
@@ -23,15 +22,17 @@ renamed and moved, and which folders Shoko manages.
 | **Video Extensions** | The file extensions Shoko imports. | MKV, AVI, MP4, MOV, OGM, WMV, MPG, MPEG, MK3D and M4V |
 
 :::info Renaming and Moving
-Files are only renamed or moved automatically when they're in a managed folder with the **Source** drop type, or
+Shoko only renames or moves a file that's in a managed folder with the **Source** or **Both** drop type, or
 **Destination** when **Allow relocation inside destination on import** is on. Files in a folder with the **None** drop
-type are left where they are.
+type are left where they are. See [Renaming & Moving Files](/shoko-server/concepts/renaming-and-moving-files).
 :::
 
 ## Managed Folders
 
-Managed folders are the folders Shoko imports files from (called import folders on Shoko Server 5.x). Each folder shows
-its location, type and size, with buttons to **Rescan** or **Edit** it. **Add Folder** adds a new one.
+Managed folders are the folders Shoko imports files from (formerly called import folders). Each folder shows its
+location, type and size, with buttons to **Rescan Folder** or **Edit Folder**. **Add Folder** adds a new one. A folder
+you add here isn't scanned by itself: click **Rescan Folder** once it's added. See [Managed Folders & Drop
+Folders](/shoko-server/concepts/managed-folders-and-drop-folders) for how Shoko uses them.
 
 The folder dialog has these fields:
 
@@ -49,15 +50,21 @@ optimized for removable or cloud-based storage.
 
 **Delete** in the edit dialog asks what happened to the files:
 
-- **The files only moved** keeps all file records, for example when a drive or path changed. Add the new location as a
-  managed folder afterwards, and run **Remove Missing Files** from **Actions** once everything is imported again.
-- **The files are gone for good** removes the files' records, including episode matches, watched state and resume
-  positions. **Also remove these files from your AniDB MyList** removes them there too.
+- **The files only moved** keeps every file record, for example when a drive or path changed. Add the new location as
+  a managed folder afterwards, and once everything is imported again, run **Remove Missing Files (Keep in MyList)**
+  from **Actions** to clear out the records whose files are still missing. If only the folder's path changed, editing
+  its **Location** is simpler and safer: see
+  [Move Your Library to a New Drive or Path](/shoko-server/how-to/move-your-library-to-a-new-drive-or-path).
+- **The files are gone for good**: Shoko drops its record of each file: its resume positions, its own watched date and
+  its import date. Its episode links and the episodes' watched state stay, so if a file comes back it's linked again.
+  Files that also live in another managed folder are kept. With **Also remove these files from your AniDB MyList**
+  ticked, Shoko also updates each file in your AniDB MyList as your **Delete Action** setting says (by default it marks
+  the file Unknown).
 
 ## Detecting New Files
 
-Shoko Server can find out about a file you've added to a managed folder in two ways. Either it **watches** the folder,
-or something **notifies** it.
+Besides scanning, Shoko Server can find out about a file you've added to a managed folder in two ways. Either it
+**watches** the folder, or something **notifies** it.
 
 ### Watching a Managed Folder
 
@@ -82,8 +89,7 @@ Anything that knows when a file was added, such as the script or tool you use to
 to look at that path through the API. This needs an API key from an administrator account; create one under
 **API Keys**.
 
-On Shoko Server v6, send the absolute path of the new file, as Shoko Server sees it (inside its container, if it runs in
-Docker):
+Send the absolute path of the new file, as Shoko Server sees it (inside its container, if it runs in Docker):
 
 ```sh
 curl -X POST "http://<shoko-server>:8111/api/v3/ManagedFolder/NotifyChangeDetected" \
@@ -99,6 +105,4 @@ Instead of the `apikey` header, you can also pass the key as a query parameter, 
 call a URL: `http://<shoko-server>:8111/api/v3/ManagedFolder/NotifyChangeDetected?apikey=<your-api-key>`. Keep in mind
 that URLs, including the key, can end up in logs.
 
-Shoko Server 5.x doesn't have these endpoints. There, trigger a scan instead: `GET /api/v3/Action/ImportNewFiles` looks
-for new files in all import folders, and `GET /api/v3/ImportFolder/{folderID}/Scan` checks every file in one folder.
-Browse all endpoints at [/swagger/](/faq#general).
+Browse all endpoints at [Swagger](/api/use-the-api-with-swagger).

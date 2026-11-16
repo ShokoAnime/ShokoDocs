@@ -33,7 +33,7 @@ services:
   shoko:
     container_name: shoko
     image: ghcr.io/shokoanime/server:latest
-    restart: always
+    restart: unless-stopped
     environment:
       - PUID=1000
       - PGID=1000
@@ -47,7 +47,7 @@ services:
   jellyfin:
     container_name: jellyfin
     image: jellyfin/jellyfin:latest
-    restart: always
+    restart: unless-stopped
     ports:
       - "8096:8096"
     volumes:

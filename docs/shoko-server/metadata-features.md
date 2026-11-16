@@ -36,10 +36,9 @@ is left out of that source's episode lists by default, so it doesn't show up in 
 source, such as Shokofin's TMDB Shows & Movies Structure. Hiding the linked AniDB episode doesn't hide the source's
 episode, and vice versa.
 
-This isn't in the Web UI yet. Use Shoko's API through [/swagger/](/faq#general) instead:
+This isn't in the Web UI yet. Use Shoko's API through [Swagger](/api/use-the-api-with-swagger) instead:
 
-1. Open `http://<shoko-server>:8111/swagger/` and click **Authorize**. Enter an API key in the `apikey` field; you can
-   create one under **Settings** → **API Keys** → **Generate API Key**.
+1. Open Swagger and sign in with an API key from an admin account.
 2. Find the episode's full ID, which looks like `tmdb://episode/123` or `anidb://episode/456`.
 3. Hide it with `POST /api/v3/Metadata/Episode/Hidden` and the body
    `{ "EpisodeID": "tmdb://episode/123", "Value": true }`. Send `false` to unhide it again.

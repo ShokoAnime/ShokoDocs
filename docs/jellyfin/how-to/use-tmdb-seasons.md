@@ -30,8 +30,9 @@ Starlight Academy: Graduation/          Starlight Academy: Graduation/   (TMDB m
 
 ### Link the Series to TMDB
 
-1. Check that automatic linking is on: **Settings** → **TMDB** → **TMDB Options** → **Auto Link** (and
-   **Auto Link Restricted** if you have restricted titles). Both are on by default.
+1. Check that automatic linking is on: **Settings** → **Metadata**, open TMDB, then **Auto Link** (and
+   **Auto Link Restricted** if you have restricted titles) under its
+   [auto-linking options](/shoko-server/settings/metadata#auto-linking). Both are on by default.
 2. For series that aren't linked yet, run **Actions** → **Search for TMDB Matches**, or open a series and click
    **Edit Series** → **Update Actions** → **Auto-Search TMDB Match**.
 3. Open each series you want to switch in **Collection**. On the **Overview** tab, the **Metadata Sites** panel shows the

@@ -1,6 +1,6 @@
 ---
 title: AniDB Settings
-description: "AniDB settings in the Shoko Web UI: login, downloads, MyList and update frequencies."
+description: "AniDB settings in the Shoko Web UI: login, downloads, MyList and moved files."
 ---
 
 # AniDB
@@ -8,7 +8,7 @@ description: "AniDB settings in the Shoko Web UI: login, downloads, MyList and u
 ![Shoko Server - Settings - AniDB](/images/shoko-server/shoko-server-settings-anidb.jpg)
 
 The **AniDB** tab contains your AniDB login, what Shoko downloads from AniDB for your collection, how Shoko works with
-your AniDB MyList, and how often AniDB data is updated.
+your AniDB MyList, and how it handles files moved on AniDB.
 
 ## Login Options
 
@@ -25,16 +25,17 @@ need changing.
 | Option | What it does | Default |
 | --- | --- | --- |
 | **Character Images** | Downloads character images. | On |
-| **Creator Images** | Downloads images of staff and studios. | On |
+| **Creator Images** | Downloads images of staff and studios, and looks up the details of each new staff member and studio on AniDB. | On |
 | **Always Download Related Anime** | Downloads information about related anime, even if they aren't in your collection. | Off |
 | **Related Depth** | How many relation steps away related anime are downloaded, from 0 to 5. Applies when **Always Download Related Anime** or [Auto Group Series](/shoko-server/settings/collection#relation-options) is on. | 1 |
 
 :::info Relation Depth
-When importing a dozen or so new series, we recommend keeping **Related Depth** at **1** to avoid temporary bans from
-AniDB. See [Understanding AniDB Bans](/shoko-server/understanding-anidb-bans).
+Every related anime is another AniDB request, so we recommend keeping **Related Depth** at **1** to avoid temporary
+bans from AniDB. See [Understanding AniDB Bans](/shoko-server/understanding-anidb-bans) and
+[Import a Large Collection](/shoko-server/how-to/import-a-large-collection).
 :::
 
-## Mylist Options
+## MyList Options
 
 | Option | What it does | Default |
 | --- | --- | --- |
@@ -46,6 +47,10 @@ AniDB. See [Understanding AniDB Bans](/shoko-server/understanding-anidb-bans).
 
 ## Update Options
 
-These settings control how often Shoko exchanges data with AniDB: **Calendar**, **Anime Information**, **Files With
-Missing Info** and **Notifications**. **Handle Moved Files** processes AniDB notifications about moved files. We
-recommend keeping the defaults unless you run into temporary AniDB bans or want more frequent updates.
+| Option | What it does | Default |
+| --- | --- | --- |
+| **Handle Moved Files** | Processes AniDB's messages about moved files and updates the affected files. | Off |
+
+How often Shoko updates its AniDB data, such as the calendar, anime information, files with missing information and
+notifications, is set by the triggers of the AniDB actions under
+[Scheduled Actions](/shoko-server/settings/scheduled-actions).

@@ -29,8 +29,9 @@ The sort order can only use information Shoko has about each file, so make sure 
 1. In the Shoko Web UI, open **Settings** → **Hashing & Release** and check that the release providers you want are
    enabled and ordered under **Release Provider Options**.
 2. For files that are missing their release group, run **Actions** → **AniDB** → **Update Missing AniDB Release Groups**.
-3. Files you linked by hand have no release info yet. Add it under **Utilities** → **Unrecognized Files** → **Link With
-   Providers**, where you can pick the release group.
+3. Files you linked by hand only have the release info you gave them. To add some, find the file under **Utilities** →
+   **File Search**, select it and click **Edit Link**. Then use **Edit Release Info**, where you can pick the release
+   group. See [Manual Linking](/shoko-server/unrecognized-files#manual-linking).
 
 ## In Shokofin
 

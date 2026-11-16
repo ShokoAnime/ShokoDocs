@@ -33,10 +33,12 @@ knowing what you had, and deciding whether your images are worth a copy.
    for renamers that are loaded during the first start, so a renaming plugin updated at that point keeps its
    presets. The way to have them ready is to find where each plugin publishes its manifest, so you can add that as
    a repository and install from it at the stop — see
-   [Plugin Management](/shoko-server/settings/plugin-management#repositories). Failing that, have the 6.0 builds
+   [Plugin Management](/shoko-server/settings/plugin-management#repositories). While the start is stopped, the Web UI
+   only shows a status page, so you do this through the API, as [Recover from a Failed Start](/shoko-server/how-to/recover-from-a-failed-start#fix-a-failed-plugin) describes. Failing
+   that, have the 6.0 builds
    themselves at hand before you begin.
 4. **Check the clients you use.** Shoko Desktop is gone: 6.0 dropped the API it spoke, and 5.3.3 is the last server
-   it works with — see [the FAQ](/faq). For everything else, check the install guide of the
+   it works with — see [the FAQ](/faq#shoko-desktop). For everything else, check the install guide of the
    [media server/player plugin](/getting-started/available-programs-plugins#media-server-player-plugins) you use for the build that goes with a 6.x server.
 
 ## What the First Start Will Do
@@ -52,13 +54,15 @@ done.
    touched, and a plugin built for 5.x is refused — *"This plugin uses the deprecated Shoko.Plugin.Abstractions
    namespace and is incompatible with this version of Shoko Server."* An enabled plugin that can't load holds the
    start right there. The server itself is up and answering, so it's yours to deal with: replace the plugin with its
-   6.0 build, or disable or uninstall it. Nothing below has happened yet, so nothing is half-done.
+   6.0 build, or disable or uninstall it, through the API as [Recover from a Failed Start](/shoko-server/how-to/recover-from-a-failed-start#fix-a-failed-plugin) describes. Nothing below
+   has happened yet, so nothing is half-done.
 
    **Then restart the server.** The start doesn't pick itself back up once the plugins are sorted out. On the next
    start they load, and it carries on into the database.
 3. **Your database is backed up, then upgraded.** You'll see *"Database changes detected. Database backup in
-   progress..."*, and the copy is named after your database schema and the version it came from, next to your data —
-   or in the backup directory, if you've set one. Any plugin databases are copied alongside it. The schema is then
+   progress..."*, and the copy is named after your database schema and the version it came from, in the `DatabaseBackup`
+   folder inside your data folder (see
+   [Back Up and Restore Shoko Server](/shoko-server/how-to/back-up-and-restore-shoko-server)). Any plugin databases are copied alongside it. The schema is then
    brought up to 6.0's, step by step, with the data fixes that belong to those steps — among them moving your cached
    images into their new layout — and a SQLite database is compacted afterwards when there's enough to reclaim.
 
@@ -85,7 +89,7 @@ can stop looking for.
 
 | What you see | What it is | What to do |
 | --- | --- | --- |
-| The server never finishes starting, and a plugin is listed as incompatible: *"This plugin uses the deprecated Shoko.Plugin.Abstractions namespace and is incompatible with this version of Shoko Server."* | A 5.x plugin is still installed and enabled | Replace it with its 6.0 build, or disable or uninstall it, and restart. The server is reachable while it waits there, so you don't have to stop it to get at your plugins |
+| The server never finishes starting, and a plugin is listed as incompatible: *"This plugin uses the deprecated Shoko.Plugin.Abstractions namespace and is incompatible with this version of Shoko Server."* | A 5.x plugin is still installed and enabled | Replace it with its 6.0 build, or disable or uninstall it, and restart. The server is reachable while it waits there, so you don't have to stop it to get at your plugins: see [Recover from a Failed Start](/shoko-server/how-to/recover-from-a-failed-start#fix-a-failed-plugin) |
 | *"The Database Version is bigger than the supported version by Shoko Server"* | 5.3.3 was started again against a database 6.0 already migrated | Restore the database backup and the `settings-server.v11.*.json` copy taken during the upgrade, or go back to 6.0 |
 | The startup message hasn't changed in a long while | A backup or a migration step is still running, on a database that may be large | Let it finish, and read the log if you want to see where it is. Restarting part way only makes it start the step again |
 | Your renamer preset or script is missing | Its renamer wasn't loaded when the migration ran, usually because the plugin hadn't been updated yet | It's kept as a file under `failed_migrations` beside your data. Install the plugin's 6.0 build and restart: the preset is imported then, under its original name |
