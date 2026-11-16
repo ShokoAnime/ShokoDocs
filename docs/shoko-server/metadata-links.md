@@ -5,17 +5,18 @@ description: Linking your AniDB series to the series, movies and episodes of a m
 
 # Metadata Links
 
-A metadata source adds to what Shoko knows about a series once the two are linked: extra titles and descriptions,
-more artwork, and the source's own seasons and episode numbering. Most links are made for you by the source's
-auto-linker, which you pick under [Metadata settings](/shoko-server/settings/metadata#auto-linking). This page covers
-the ones you make, check or move yourself.
+A metadata source adds to what Shoko knows about a series once the two are linked: extra titles and descriptions, more
+artwork, and the source's own seasons and episode numbering. Most links are made for you by the source's auto-linker,
+which you pick under [Metadata settings](/shoko-server/settings/metadata#auto-linking). This page covers the ones you
+make, check or move yourself. See [Metadata Sources](/shoko-server/concepts/metadata-sources) for how links work, and
+[Fix a Wrong Metadata Link](/shoko-server/how-to/fix-a-wrong-metadata-link) when an auto-link picked the wrong entry.
 
 Everything here works the same for every source. The examples use TMDB because it's the source most collections have
 links for.
 
 ## Managing Links
 
-Go to a series in your collection and look for the **Edit**, **Remove** or **Add Link** buttons in the
+Go to a series in your collection and look for the **Edit Link**, **Remove Link** or **Add link** buttons in the
 **Metadata Sites** panel of the **Overview** tab.
 
 ![Shoko Server - Metadata Sites - Panel](/images/shoko-server/shoko-server-metadata-sites-panel.jpg)
@@ -44,7 +45,7 @@ A source can also split a single AniDB episode into several of its own. TMDB's
 rule that anime with several "segments" or "stories" in one episode must be split into separate entries, which
 inflates the episode count of some series — fortunately it doesn't seem to be strictly enforced. In the original
 [Urusei Yatsura](https://anidb.net/anime/377), the first 23 episodes are each split in two on TMDB. Add each part by
-clicking **Add Link** next to the AniDB episode title and selecting the individual parts as the source lists them.
+clicking **Add link** next to the AniDB episode title and selecting the individual parts as the source lists them.
 
 ![Shoko Server - Metadata Linking - Page - Multi-Episode](/images/shoko-server/shoko-server-matadata-linking-page-multi-episode.jpg)
 

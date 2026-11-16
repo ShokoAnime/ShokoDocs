@@ -12,7 +12,7 @@ const renamerColumns = [
 const renamerData = [
   {
     Renamer: "WebAOM",
-    Description: "Default renamer built into Shoko."
+    Description: "Default renamer, bundled with Shoko."
   },
   {
     Renamer: "Lua Renamer",
@@ -24,9 +24,9 @@ const renamerData = [
 # Available Renamers
 
 Renaming is handled by plugins, so which renamers you can pick from in the
-[File Rename](/shoko-server/file-rename) utility depends on which plugins you have installed. WebAOM is built into
-Shoko and always there; everything else comes from a plugin you add under
-[Plugin Management](/shoko-server/settings/plugin-management), and anyone can write one.
+[File Rename](/shoko-server/file-rename) utility depends on which plugins you have installed. WebAOM comes as a plugin
+bundled with Shoko, enabled by default, and can be disabled like any other; everything else comes from a plugin you add
+under [Plugin Management](/shoko-server/settings/plugin-management), and anyone can write one.
 
 These are the renamers documented here:
 

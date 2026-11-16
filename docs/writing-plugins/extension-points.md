@@ -88,7 +88,10 @@ with each other:
 
 - **Release providers** start **disabled**, unless the provider is called `AniDB`. Enable yours under **Settings** →
   [**Hashing & Release**](/shoko-server/settings/hashing-and-release#release-provider-options) → **Auto-Linking Release
-  Providers**, and drag it into the priority order you want.
+  Providers**, and drag it into the priority order you want. Enabled or not, a provider whose `IsConfigured` is `false`
+  is asked by no search, and one that gives a `CannotAutoMatchReason` is passed by in the server's own searches (new
+  files and the queue) while a person linking files by hand still asks it. Both reasons show in the provider's
+  availability.
 - **Hash providers** have no enable switch of their own. A provider runs when a hash type is pointed at it, under
   **Settings** → [**Hashing & Release**](/shoko-server/settings/hashing-and-release#hashing-options) → **Hashing
   Providers**, using the gear icon. A hash type stays with the first provider that has it, so taking one over means

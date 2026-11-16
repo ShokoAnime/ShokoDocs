@@ -199,6 +199,9 @@ returns `null`, as the feed's `<name>:connected` message — and nothing at all 
 
 Feed names are first-come, first-served across the whole server, so prefix yours with the plugin's name.
 
+For the server's own feeds and what they send, and for the log stream and startup feed next to the aggregate hub, see
+[SignalR Hubs](/api/signalr-hubs).
+
 ### A Hub of Your Own
 
 A feed only pushes. When clients need to **call into** your plugin over SignalR, map a hub from

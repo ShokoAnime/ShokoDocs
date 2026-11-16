@@ -23,7 +23,8 @@ recommend updating both to reduce potential problems. The **Web UI Channel** can
 :::warning Switching Channels
 While you are more than welcome to switch channels, you can only switch back to stable when a new version of
 **Shoko Server** is released. Keep in mind dailies are meant for testing new features and can break your collection,
-so unless you absolutely need to, stick to Stable.
+so unless you absolutely need to, stick to Stable. If a Web UI update leaves you without a working Web UI, see
+[Revert the Web UI to a Stable Version](/shoko-server/how-to/revert-the-web-ui-to-a-stable-version).
 :::
 
 ## Theme Options

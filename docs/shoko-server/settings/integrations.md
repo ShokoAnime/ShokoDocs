@@ -5,8 +5,7 @@ description: "Integrations settings in the Shoko Web UI: linking Shoko Server to
 
 # Integrations
 
-The **Integrations** tab connects Shoko to other services that scrobble your media. Trakt support was removed in Shoko
-Server v6.
+The **Integrations** tab connects Shoko to other services that scrobble your media.
 
 ## Plex Options (Legacy)
 

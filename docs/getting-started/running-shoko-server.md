@@ -14,7 +14,7 @@ users will need to execute a command to start the container. While the exact com
 setup, it should resemble something like this:
 
 ```sh [Example Command]
-docker run -d --name shokoserver --restart always -p 8111:8111 -v "$HOME/.shoko:/home/shoko/.shoko" -v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import" -e PUID=$UID -e PGID=$GID ghcr.io/shokoanime/server:latest
+docker run -d --name shokoserver --restart unless-stopped -p 8111:8111 -v "$HOME/.shoko:/home/shoko/.shoko" -v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import" -e PUID=$UID -e PGID=$GID ghcr.io/shokoanime/server:latest
 ```
 
 With Shoko Server running, open your browser and navigate to http://localhost:8111/ to access the Web UI. If Shoko
@@ -44,8 +44,9 @@ You'll need to create an account to use Shoko. This account allows Shoko to mana
 sites, enabling synchronization of watch states and collection status.
 
 There are no specific password requirements for your local account. However, we strongly recommend saving your login
-information. If you do forget your password, refer to the [Frequently Asked Questions](/faq) page for instructions on
-how to reset it with a `password-reset.json` file.
+information. If you do forget your password, refer to the
+[Frequently Asked Questions](/faq#reset-your-password) page for instructions on how to reset it with a
+`password-reset.json` file.
 
 ## AniDB Account
 
@@ -79,10 +80,12 @@ Shoko uses multiple metadata sites to gather information and images for the seri
 options are mostly self-explanatory, we recommend taking a few minutes to review and configure them according to
 your preferences.
 
-:::tip Relation Depth
-This setting determines how deep Shoko should go for related series when gathering information for a single
-series in your collection. If you're importing a **large collection**, we recommend setting this value to **1**
-to avoid temporary bans from AniDB.
+:::tip Related Depth
+**Related Depth** on the **AniDB** tab decides how far Shoko follows an anime's relations (sequels, prequels, side
+stories and so on) when it fetches related anime. It only applies while **Always Download Related Anime** or
+**Settings** → **Collection** → **Auto Group Series** is on, and every level means more requests to AniDB. If you're
+importing a **large collection**, keep it at its default of **1**. See
+[Import a Large Collection](/shoko-server/how-to/import-a-large-collection).
 :::
 
 ## Start Shoko Server
@@ -92,8 +95,9 @@ to avoid temporary bans from AniDB.
 With the initial configuration complete, it's time to start Shoko Server. Click the **Start Server** button to begin
 the process, which should only take a few minutes.
 
-If you encounter an error during this process, try starting the server again. If the error persists, we recommend
-joining our Discord server for assistance in resolving the issue.
+If the start fails, the status line shows why, and the wizard can't go on. Fix the cause, then restart Shoko Server.
+See [Setup Mode & Failure Mode](/shoko-server/concepts/setup-mode-and-failure-mode) for what to look at. If you're
+stuck, we recommend joining our Discord server for assistance in resolving the issue.
 
 ## Managed Folders
 
@@ -152,6 +156,9 @@ Rest assured, we don't collect any personal information that could identify you.
 in your collection or what you watch. Our focus is solely on enhancing Shoko's performance, using non-personal,
 aggregate data to guide our improvements. Your privacy is important to us, and we stick to collecting only what we
 need to make Shoko work better for you.
+
+To turn error reports off, or send them to a Sentry-compatible server of your own, see
+[Set Up Error Reporting & Telemetry](/shoko-server/how-to/set-up-error-reporting-and-telemetry).
 
 :::info Additional Information on Data Collection
 If you have any questions or need further clarification regarding our data collection practices, please feel free

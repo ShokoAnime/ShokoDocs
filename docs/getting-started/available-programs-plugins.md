@@ -102,7 +102,7 @@ const discontinuedData = [
     name: '[Shoko Desktop](https://shokoanime.com/downloads/legacy-apps/shoko-desktop)',
     dev: 'Shoko Team',
     platform: 'Windows',
-    discontinuedReason: 'Support dropped in Shoko Server 6.0. Shoko Server 5.3.3 is the last release it somewhat works with.'
+    discontinuedReason: 'Support dropped in Shoko Server 6.0, which removed the API it relied on (APIv1): none of that API required signing in, so anyone who could reach the server could use it. The legacy code only it used went with it. Shoko Server 5.3.3 is the last release it somewhat works with.'
   }
 ];
 </script>

@@ -66,7 +66,7 @@ view switcher, and the **Display Settings**.
 #### Filter Presets
 
 Displays a modal containing a list of filters which are built-in to Shoko. There is currently no way to modify them
-without utilising [/swagger/](/faq#general).
+without utilising [Swagger](/api/use-the-api-with-swagger).
 
 #### Filter
 
@@ -118,7 +118,8 @@ button. This will open a modal (shown above) which contains several options acro
 
 #### Managing Groups
 
-Groups decide which series belong together. Media server/player plugins use them too: Shoko Relay turns them into collections
+Groups decide which series belong together (see [Groups & Series](/shoko-server/concepts/groups-and-series) for how
+Shoko forms them). Media server/player plugins use them too: Shoko Relay turns them into collections
 in Plex, and with Shokofin's Shoko Group Structure, a group becomes one show in Jellyfin and its series become that
 show's seasons.
 
@@ -146,8 +147,9 @@ names are lost. Avoid it once you've arranged your groups manually.
 Groups can contain other groups, for example a group per franchise that holds a group for the TV series and a group for
 the movies. Media server/player plugins can use this: Shokofin turns the groups above your groups into collections in Jellyfin.
 
-The Web UI can't create or edit nested groups yet. Use the API through [/swagger/](/faq#general) instead, with an API key
-from an administrator account (**Settings** → **API Keys**).
+The Web UI can't create or edit nested groups yet. Use the API through
+[Swagger](/api/use-the-api-with-swagger) instead, with an API key from an administrator account
+(**Settings** → **API Keys**).
 
 You'll need the IDs of the groups and series involved. Open a group or series in the Web UI and take the number from the
 address bar, for example `123` in `/webui/collection/group/123` or `/webui/collection/series/123`.
@@ -217,7 +219,7 @@ episodes of a series. See [Hidden Episodes](/jellyfin/concepts/episode-types-spe
 :::
 
 :::tip
-Episodes with a type other than "Episode" are hidden by default. So if you can't find see your files here be sure to
+Episodes with a type other than "Episode" are hidden by default. So if you can't find your files here be sure to
 change the default type filter from "Episodes" to "All" in the **Search & Filter** panel.
 :::
 

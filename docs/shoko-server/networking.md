@@ -17,7 +17,7 @@ of your local network, consider using a VPN.
 ## Ports and Who Connects
 
 Shoko Server listens on port `8111` by default. The port can't be changed in the Web UI; change it in the server's
-settings file, or on Shoko Server v6 with the `SHOKO_PORT` environment variable.
+settings file, or with the `SHOKO_PORT` environment variable.
 
 | Program | Connects to Shoko Server from | Notes |
 | --- | --- | --- |
@@ -28,6 +28,49 @@ settings file, or on Shoko Server v6 with the `SHOKO_PORT` environment variable.
 These connections all go *to* Shoko Server: Shoko Server doesn't need to reach Jellyfin for Shokofin to work, so only
 port `8111` (or your proxy) has to be reachable from the machine running Jellyfin. Shoko Server's own integrations, such
 as AniDB and TMDB, connect out to the internet separately.
+
+## Check That Shoko Can Reach AniDB
+
+Shoko looks up files through AniDB's UDP API, at `api.anidb.net` on UDP port `9000`. Some routers, firewalls, VPNs and
+container networks let normal web traffic through but drop UDP. Shoko then can't log in to AniDB or identify files,
+even with the right credentials. A UDP ping from the machine running Shoko Server, or from inside its container, shows
+whether AniDB can be reached. It should answer `300 PONG`.
+
+::: code-group
+
+```sh [Linux / macOS]
+echo "PING" | nc -w1 -u api.anidb.net 9000
+```
+
+```sh [Docker]
+# Open a shell in the container (use the name of yours, e.g. shokoserver)
+docker exec -it <container name> sh
+
+# Inside the container: install netcat once, then ping
+apt update && apt install -y netcat-traditional
+echo "PING" | nc -w1 -u api.anidb.net 9000
+```
+
+```powershell [Windows (PowerShell)]
+$udpClient = New-Object System.Net.Sockets.UdpClient
+$udpClient.Connect("api.anidb.net", 9000)
+$bytes = [System.Text.Encoding]::ASCII.GetBytes("PING")
+[void]$udpClient.Send($bytes, $bytes.Length)
+$udpClient.Client.ReceiveTimeout = 3000
+$endpoint = New-Object System.Net.IPEndPoint([System.Net.IPAddress]::Any, 0)
+$response = [System.Text.Encoding]::ASCII.GetString($udpClient.Receive([ref]$endpoint))
+Write-Output $response
+$udpClient.Close()
+```
+
+:::
+
+If `nc` isn't found on Linux, install `netcat-traditional` (or your distribution's netcat). The Windows check has to run
+in PowerShell, not Command Prompt.
+
+No answer, or a timeout, means the packets don't get through: allow outgoing UDP to port `9000` in your firewall,
+router or VPN, or for Docker, check the container's network. An answer means the connection is fine, and a problem
+with AniDB is more likely a ban; see [Understanding AniDB Bans](/shoko-server/understanding-anidb-bans).
 
 ## Reverse Proxies
 
@@ -48,9 +91,8 @@ Programs that connect to Shoko Server, such as Shokofin's **Private Host URL**, 
 
 ### Trusting Your Proxy
 
-Shoko Server 6.0 can take the client's address, the scheme and the host of a request from the `X-Forwarded-For`,
-`X-Forwarded-Proto` and `X-Forwarded-Host` headers your proxy sets — but only from proxies you list. Earlier versions
-ignored those headers altogether.
+Shoko Server can take the client's address, the scheme and the host of a request from the `X-Forwarded-For`,
+`X-Forwarded-Proto` and `X-Forwarded-Host` headers your proxy sets, but only from proxies you list.
 
 List them under `Web.TrustedProxies` in the settings file, as IP addresses or CIDR ranges:
 
@@ -112,7 +154,8 @@ shoko.example.com {
 ## SignalR
 
 SignalR is how Shoko Server pushes live events, such as newly identified files, moved files and metadata updates, to the
-Web UI and to Shokofin. It is served under `/signalr/` and requires an authenticated user or API key.
+Web UI and to Shokofin. It is served under `/signalr/`, and apart from the startup feed it requires an authenticated
+user or API key. [SignalR Hubs](/api/signalr-hubs) describes each hub and the messages it sends.
 
 A SignalR client tries WebSockets first, then falls back to Server-Sent Events and finally long polling. Everything
 works without WebSockets, but less efficiently, so make sure your proxy forwards them.
@@ -131,3 +174,4 @@ the examples above.
 - [Running Shoko Server](/getting-started/running-shoko-server)
 - [Docker & Reverse Proxies for Shokofin](/jellyfin/how-to/docker-and-reverse-proxies)
 - [Real-Time Updates (SignalR) in Shokofin](/jellyfin/concepts/real-time-updates)
+- [SignalR Hubs](/api/signalr-hubs)

@@ -23,21 +23,29 @@ const osLocationData = [
 
 # Understanding AniDB Bans
 
-An AniDB ban is a common occurrence during the Shoko importing process for many users, usually triggered by excessive
-connection attempts or large importing sessions, though it doesn't imply any wrongdoing on your part. You simply need
-to wait for the ban to lift, which can range from 15 minutes to 24 hours, depending on severity.
+Many people get a temporary AniDB ban at some point, usually during a large import or after too many requests in a
+short time. It doesn't mean you did anything wrong. You only need to wait for it to lift, which takes anywhere from 15
+minutes to 24 hours.
 
-AniDB's API imposes two distinct types of bans, namely **HTTP** and **UDP**. In case a user receives a temporary ban
-for one
-of these, Shoko will automatically cease sending data associated with the banned API. However, it will continue to
-utilize the other API whenever feasible. It's important to note that this doesn't guarantee that all your commands
-will be executed successfully since each API handles different sets of data. As a result, you may notice your queue
-idling even when there are pending commands awaiting processing.
+AniDB has two APIs, **HTTP** and **UDP**, and bans them separately. While one is banned, Shoko stops sending it
+requests and keeps using the other. The top bar shows **AniDB UDP Ban Detected!** or **AniDB HTTP Ban Detected!**;
+click it to see when Shoko checks again.
+
+- A **UDP ban** holds file lookups, MyList updates and staff details.
+- An **HTTP ban** holds fetching anime, but a series can still be created when Shoko has a cached copy of the anime
+  (see [Utilize the XML Cache](#utilize-the-xml-cache)).
+
+The tasks that need the banned API wait in the [queue](/shoko-server/concepts/the-queue), so the queue can sit idle
+with tasks left until the ban is over.
+
+Not every UDP problem is a ban. If Shoko can't log in to AniDB or never identifies a file and no ban is shown, the
+UDP packets may not get through at all; see
+[Check That Shoko Can Reach AniDB](/shoko-server/networking#check-that-shoko-can-reach-anidb).
 
 ## Rate Limit & Enforcement
 
-AniDB provides access to two different APIs, an HTTP API and a UDP API. Below are the official rate limits and the code
-snippet from Shoko showing we enforce their specified rate limit.
+AniDB provides access to two different APIs, an HTTP API and a UDP API. Below are the official rate limits and how
+Shoko keeps to them.
 
 ### HTTP API
 
@@ -45,18 +53,20 @@ snippet from Shoko showing we enforce their specified rate limit.
 >
 > [AniDB Wiki - HTTP API](https://wiki.anidb.net/HTTP_API_Definition#Flooding_and_Caching)
 
-Code in Shoko to enforce this.
+Shoko sends one HTTP request at a time, at least two seconds apart. Once it has been busy for about ten seconds, it
+waits six seconds between requests, and it goes back to two seconds after two minutes without a request. The HTTP API
+is mainly used to fetch the information of an anime and its episodes.
 
-```c#
-//ShokoServer/Shoko.Server/Providers/AniDB/HTTP/HttpRateLimiter.cs
-public class HttpRateLimiter : AniDBRateLimiter
-{
-    protected override int ShortDelay { get; init; } = 2000;
-    protected override int LongDelay { get; init; } = 4000;
-    protected override long shortPeriod { get; init; } = 1000000;
-    protected override long resetPeriod { get; init; } = 1800000;
-}
-```
+Shoko also doesn't fetch the same anime again too soon. Once it has fetched an anime, it uses what it has for the next
+24 hours, even when you ask for an update, **Update AniDB Info - Force** included. Only **Refresh Anime Airing Soon**
+fetches the anime about to air an episode past that wait. The wait is a setting, **Minimum Hours To Redownload Anime
+Info** (`AniDb.MinimumHoursToRedownloadAnimeInfo` in `settings-server.json`, from 0 to 48 hours), not shown in the Web
+UI.
+
+<!-- TODO: once the Web UI can run executable actions, mention the "Update AniDB Info - Force" action: it skips the wait and ignores HTTP bans too (it asks for confirmation and can extend a ban), so warn about that. -->
+
+AniDB caches its own answers too: what the HTTP API sends can be up to about 4 hours old. So a change made on AniDB can
+take a few hours to reach Shoko, even right after the wait is over.
 
 ### UDP API
 
@@ -70,58 +80,60 @@ public class HttpRateLimiter : AniDBRateLimiter
 >
 > [AniDB Wiki - UDP API](https://wiki.anidb.net/UDP_API_Definition#Flood_Protection)
 
-Code in Shoko to enforce this.
-
-```c#
-//ShokoServer/Shoko.Server/Providers/AniDB/UDP/UDPRateLimiter.cs
-public class UDPRateLimiter : AniDBRateLimiter
-{
-    protected override int ShortDelay { get; init; } = 2000;
-    protected override int LongDelay { get; init; } = 4000;
-    protected override long shortPeriod { get; init; } = 3600000;
-    protected override long resetPeriod { get; init; } = 1800000;
-}
-```
+Shoko paces the UDP API the same way, counted separately from the HTTP API: two seconds between packets at first, six
+seconds once it has been busy for about ten seconds, and back to two seconds after two minutes without a packet. The
+UDP API is used to look up your files, update your MyList and fetch the details of staff and release groups.
 
 ## Mitigating AniDB Bans
 
-Unfortunately, there's no surefire way to completely avoid bans when using AniDB, as their anti-leech system is quite
-old and unlikely to be updated soon. However, there are some steps you can take to reduce the chances of getting banned:
+There's no sure way to avoid bans completely: AniDB's anti-leech system is old and unlikely to change soon. These
+steps lower the chances. If bans keep getting in your way, ask on our [Discord server](https://discord.gg/vpeHDsg) for
+help with your setup.
 
 ### Exclusively Utilize Shoko
 
-Shoko is designed to be the only anime-related tool you need, reducing the need for supplementary tools like
-HAMA or AniDB media server/player plugins. When used alongside Shoko, these tools can expedite the occurrence of
-your next ban.
+Shoko is meant to be the only tool that talks to AniDB for your collection, so you don't need tools like HAMA or
+AniDB plugins for your media server or player. Used alongside Shoko, they can bring on your next ban sooner.
 
 ### Adjust Your AniDB Settings
 
-Be mindful of the amount of data you request. In the Settings section, you'll find options in the AniDB section
-to select specific information for download. Customize these settings to only fetch the data that's important to you.
-If you typically download content that has already finished airing, you can also consider spacing out your updates,
-such as once a week, to lower the risk of bans.
+Be mindful of the amount of data you request. The [Download Options](/shoko-server/settings/anidb#download-options)
+under **Settings** → **AniDB** decide what Shoko fetches from AniDB besides the anime itself. Customize them to only
+fetch the data that's important to you. How often Shoko updates its AniDB data is up to the triggers of the AniDB
+[scheduled actions](/shoko-server/settings/scheduled-actions). If your collection is mostly anime that has finished
+airing, you can space those out, such as once a week, to lower the risk of bans. For a first import, see
+[Import a Large Collection](/shoko-server/how-to/import-a-large-collection).
+
+### Identify Files Another Way
+
+Every new file costs one AniDB UDP request to look up, so a big import keeps the UDP API busy for hours or days. A
+release provider from a plugin that identifies files without asking AniDB takes most of that load off: placed above
+AniDB under [Auto-Linking Release Providers](/shoko-server/settings/hashing-and-release#release-provider-options), it
+answers for the files it knows, and AniDB is only asked about the rest. The UDP API is then left mostly to MyList
+updates and the files nothing else knows. See [Release
+Providers](/shoko-server/concepts/recognized-and-unrecognized-files#release-providers).
 
 ### Utilize the XML Cache
 
-When starting an import or handling a large number of series or episodes, it's a good idea to use a cache of XML
-files available for download from the provided link. These files, placed in the XML cache directory, contain series
-and episode information from AniDB. They allow Shoko to continue functioning smoothly, even in case of a ban. If
-these cached files are recent enough, Shoko may not have to request updated information from AniDB unless you
-specify otherwise.
+Before a large import, you can put a cache of XML files in Shoko's XML cache folder. The files hold the information
+of many anime and their episodes from AniDB. Shoko reads them when it can't reach AniDB's HTTP API, for example during an HTTP
+ban, so series can still be created while you're banned. Outside a ban, Shoko still asks AniDB for every anime it
+doesn't have yet, so the cache doesn't save requests.
 
 :::info XML Cache Count
 <XMLCacheInfo/>
 :::
 
-Please note, this is not a dump of the data on AniDB. These are files created and used by Shoko that is checked against
-AniDB's data. [Click Here](https://files.shokoanime.com/files/shoko-server/other/Anime_HTTP.zip) to download the XML Cache and
-follow the instructions below to utilize it.
+This isn't a dump of AniDB's data: these are files Shoko created and uses, checked against AniDB's data.
+[Download the XML cache](https://files.shokoanime.com/files/shoko-server/other/Anime_HTTP.zip) and follow the
+instructions below to use it.
 
 #### XML Cache Location
 
 <EasyTable :columns="osLocationColumns" :data="osLocationData" />
 
-Unzip **Anime_HTTP.zip** and extract it into the directory listed above, depending on your platform. If prompted to
-overwrite existing files, select yes and wait for it to be finished. Then proceed with importing your files.
+Extract **Anime_HTTP.zip** into the folder listed above for your platform. If you're asked whether to overwrite
+existing files, choose yes and wait for it to finish. Then import your files.
 
-For newer series, we recommend using the **Update AniDB Info** action for said series to pull the latest data.
+For newer series, use **Update AniDB Info** on the series (**Edit Series** → **Update Actions**) to get the latest
+data from AniDB, once the [wait between fetches](#http-api) is over.

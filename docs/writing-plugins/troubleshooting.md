@@ -35,7 +35,8 @@ plugin that isn't installed or enabled. The entry stays in the list and explains
 
 While it's enabled it fails the start as well, the same as any failed plugin, until it's disabled, replaced or
 uninstalled — or until an older installed version can load in its place. The plugin and package routes answer during a
-failed start, so all three can be done from the Web UI or the API without a working server.
+failed start, so all three can be done through the API (for example from `/swagger/`) without a working server.
+The Web UI only shows its status page until a start succeeds.
 
 A plugin carried over from a 5.x server is the common case, since plugins were copied in by hand before the package
 manager existed. Its reason says what to do about it:

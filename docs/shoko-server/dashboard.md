@@ -31,54 +31,6 @@ const displayOptionsData = [
       Description: 'This setting lets you define how many series are displayed in the Recently Imported widget. There is a maximum limit of 100 episodes, and if you set it to anything higher, it will default to 100.'
     }
 ];
-
-const jobNameColumns = [
-    { name: 'Job Name', header: 'Job Name' },
-    { name: 'Default', header: 'Default' },
-    { name: 'Description', header: 'Description' }
-];
-
-const jobNameData = [
-    {
-      'Job Name': 'HashFileJob',
-      'Default': '2',
-      'Description': 'Determines how many workers are allocated to hashing files'
-    },
-    {
-      'Job Name': 'UpdateTmdbShowJob',
-      'Default': '1',
-      'Description': 'Determines how many workers are allocated to running TMDB series tasks.'
-    },
-    {
-      'Job Name': 'UpdateTmdbMovieJob',
-      'Default': '1',
-      'Description': 'Determines how many workers are allocated to running TMDB movie tasks.'
-    }
-];
-
-const importFolderColumns = [
-    { name: 'Name', header: 'Name', width: '15%' },
-    { name: 'Description', header: 'Description' }
-];
-
-const importFolderData = [
-    {
-      Name: 'Name',
-      Description: 'The name assigned to the import folder used for visual purposes only.'
-    },
-    {
-      Name: 'Location',
-      Description: 'The actual location of the import folder, relative to where Shoko is installed.'
-    },
-    {
-      Name: 'Drop Type',
-      Description: 'This setting tells Shoko how to handle this folder when processing your files. \n The **Source** option instructs Shoko to grab files from this folder and move them to another import folder marked as Destination.  \n The **Both** option allows Shoko to perform the moving actions without actually relocating the files, which enables renaming on import or applying any custom renamer settings.  \n Finally, The **None** option tells Shoko not to perform any actions on the folder, which is typically paired with Watch For New Files set to Yes.'
-    },
-    {
-      Name: 'Watch For New Files',
-      Description: 'A true/false setting which tells Shoko to monitor the import folder for new files. If set to **no**, you\'ll have to use the **Import Files** action to update your collection.'
-    }
-];
 </script>
 
 # Dashboard
@@ -111,51 +63,26 @@ The second section **Display Options** has various widget-related settings which
 
 ![Shoko Server - Dashboard - Queue Processor](/images/shoko-server/shoko-server-dashboard-queue.jpg)
 
-The Queue Processor optimizes task management for your collection by intelligently allocating tasks across a dynamic
-pool of workers, enhancing efficiency and throughput.
+The Queue Processor panel shows Shoko's queue: the background tasks it's running and the ones waiting their turn. The
+title shows how many workers are busy out of how many can run at once, and how many tasks are in the queue, with
+**Paused** added while the queue is paused. Running tasks are listed first, with the time they started, then the
+waiting ones, each with details such as the file or the provider it's for. **Pause All** (or **Resume All**) and
+**Clear All** in the panel header pause, resume or empty the queue.
 
-### Task Prioritization
-
-A key feature of the Queue Processor is its ability to prioritize tasks effectively. It organizes tasks by type and
-dynamically adjusts priorities to account for external constraints, like rate limitations. Tasks that might be slowed
-down by these factors are identified and de-prioritized, allowing other ready-to-run tasks to move forward. This
-strategy prevents bottlenecks caused by "stuck" tasks, ensuring a smooth and continuous workflow, and boosts overall
-productivity by reducing idle worker time.
-
-### Dynamic Worker Allocation
-
-Based on your system's capabilities, **specifically the CPU thread count plus two**, the Queue Processor adjusts the
-number of workers to handle incoming tasks efficiently. This scalable approach makes sure resources are used
-efficiently, adjusting to the workload as it changes in real-time.
-
-### Dynamic Worker Configuration
-
-While we **strongly recommend** sticking with the default settings, the Queue Processor does allow you to adjust the
-number of workers per task type. This can be useful if you have a specific task that requires more resources than
-others, enabling you to allocate more workers to that task type. However, please note that this is an **export level**
-feature and can cause **irreversible damage** to your computer if misused. It should only be used by those who fully
-understand the implications of changing these settings.
-
-In the **settings-server.json** file, add the following key to the Quartz section:
-
-```json
-"LimitedConcurrencyOverrides": {
-     "JOBNAME": COUNT
-   }
-```
-
-In the table below you'll find a list of job names and description.
-
-<EasyTable :columns="jobNameColumns" :data="jobNameData" />
+Tasks often wait even when workers are free: AniDB bans and rate limits, a lost internet connection, a suspended
+metadata source and per-type limits all hold work back. See [The Queue](/shoko-server/concepts/the-queue) for why,
+and for what pausing and clearing do.
 
 ## Unrecognized Files
 
 ![Shoko Server - Dashboard - Unrecognized Files](/images/shoko-server/shoko-server-dashboard-unrecognized.jpg)
 
-Unrecognized files are files that have been successfully hashed by Shoko but failed to find a match in AniDB's hashing
-database for various reasons. If you have a few files that need to be processed, clicking on the **Dump Truck** icon
+Unrecognized files are files Shoko has hashed but none of its release providers could identify, including files whose
+lookup is still waiting in the queue. See
+[Recognized & Unrecognized Files](/shoko-server/concepts/recognized-and-unrecognized-files) for why that happens. If you have a few files that need to be processed, clicking on the **Dump Truck** icon
 will initiate the AVDump process. After it's completed, you can click on the **Checkmark File** icon to copy the
-ED2K and proceed with dumping the file on AniDB.
+ED2K and proceed with dumping the file on AniDB. The **Link With Providers** icon next to it opens the file on the
+**Link With Providers** page, to [link it by hand](/shoko-server/unrecognized-files#manual-linking).
 
 For those dealing with a larger number of files or wanting to ensure there are no hashing issues, we recommend using
 the Unrecognized Utility.
@@ -187,23 +114,20 @@ giving you a quick overview of areas that may need attention.
 Media Type is represented by a simple horizontal bar chart that breaks down the various series in your collection
 by type, listing the number of each type and their overall percentage of your collection.
 
-## Import Folders
+## Managed Folders
 
-![Shoko Server - Dashboard - Import Folders](/images/shoko-server/shoko-server-dashboard-import.jpg)
+![Shoko Server - Dashboard - Managed Folders](/images/shoko-server/shoko-server-dashboard-import.jpg)
 
-The Import Folders section allows you to add and edit import folders while listing all the available folders used in
-your collection. You can add new import folders by clicking the **folder plus icon** located in the panel header. Each
-listed import folder has its own set of actions, including Rescan Folder and Edit Folder.
+The Managed Folders panel lists the folders Shoko imports files from. **Add Folder** in the panel header adds a new
+one, and each folder has two buttons:
 
-The first action, **Rescan Folder**, will rescan every file within the folder itself. This is useful if, for some reason,
-and depending on your settings, files added to that import folder were not automatically detected.
+- **Rescan Folder** checks every file in the folder: it finds files that weren't noticed and drops the records of
+  files that are gone. Use it after adding a folder, since a new folder isn't scanned by itself.
+- **Edit Folder** changes the folder's name, location, drop type and whether it's watched for new files. The fields
+  are described under [Managed Folders](/shoko-server/settings/import#managed-folders) in the import settings.
 
-The second action, **Edit Folder**, allows you to edit the selected import folder by changing its name, location,
-drop type, and watch indicator. You can refer to the table below for more information on each setting.
-
-### Import Folder Options
-
-<EasyTable :columns="importFolderColumns" :data="importFolderData" />
+See [Managed Folders & Drop Folders](/shoko-server/concepts/managed-folders-and-drop-folders) for what the drop types
+and watching mean.
 
 ## Shoko News
 
