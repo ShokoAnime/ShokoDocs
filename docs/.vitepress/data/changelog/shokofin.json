@@ -2,6 +2,106 @@
   "githubLink": "https://github.com/ShokoAnime/Shokofin/",
   "releases": [
     {
+      "version": "6.1.0",
+      "versionURL": "610",
+      "date": "November 27th, 2026",
+      "link": "https://github.com/ShokoAnime/Shokofin/releases/tag/v6.1.0",
+      "changes": [
+        {
+          "type": "breaking",
+          "text": "Requires Shoko Server 5.3.3 or 6.0, and Jellyfin 10.10.7, 10.11.11 or 12. Shokofin 6.0.x does not work with Shoko Server 6.0, so update Shokofin first."
+        },
+        {
+          "type": "added",
+          "text": "Shoko Server 6.0 support: the new image system, partial dates, and the new SignalR event formats."
+        },
+        {
+          "type": "added",
+          "text": "Jellyfin 12 support, alongside 10.10 and 10.11."
+        },
+        {
+          "type": "added",
+          "text": "A Shoko similar items provider for Jellyfin 12, filling \"More Like This\" from Shoko's suggestions."
+        },
+        {
+          "type": "added",
+          "text": "Specials can be placed where Shoko places them."
+        },
+        {
+          "type": "added",
+          "text": "Playlists for combinations of series and movies, and a per-series include tag with a tag filter mode."
+        },
+        {
+          "type": "added",
+          "text": "A setting to use Shoko's titles and images for series when using the TMDB structure."
+        },
+        {
+          "type": "added",
+          "text": "A setting to always use the episode title as the movie title for TMDB movies."
+        },
+        {
+          "type": "added",
+          "text": "External files in sub-directories are found by the VFS."
+        },
+        {
+          "type": "added",
+          "text": "User data follows media when VFS paths change."
+        },
+        {
+          "type": "added",
+          "text": "An option to show the source file names instead of the VFS file names."
+        },
+        {
+          "type": "added",
+          "text": "Settings for third-party display links, scheduled tasks that merge queued media, and a \"collect and sort\" debug option."
+        },
+        {
+          "type": "changed",
+          "text": "Playlist grouping is off by default."
+        },
+        {
+          "type": "changed",
+          "text": "New VFS libraries are set up without a manual library scan, and ignored media folders are handed back to Jellyfin."
+        },
+        {
+          "type": "fixed",
+          "text": "The user data and watch state sync, including failures when importing multi-version episodes and when migrating user data."
+        },
+        {
+          "type": "fixed",
+          "text": "The API path for TMDB movie and season files."
+        },
+        {
+          "type": "fixed",
+          "text": "Titles picked in the wrong language, duplicate titles, and movie overrides not being used."
+        },
+        {
+          "type": "fixed",
+          "text": "The first yearly season, the season merge, and groups merged within a Shoko group."
+        },
+        {
+          "type": "fixed",
+          "text": "Multiple versions sorted out of order, and TV content ratings not all being parsed."
+        },
+        {
+          "type": "fixed",
+          "text": "Playlists being duplicated every time they were rebuilt."
+        },
+        {
+          "type": "fixed",
+          "text": "The per-library metadata events setting and the auto-refresh metadata filters being ignored."
+        },
+        {
+          "type": "fixed",
+          "text": "File events arriving before their linked episodes and series exist in Shoko."
+        },
+        {
+          "type": "fixed",
+          "text": "The specials season using the wrong images, and backdrops missing as thumbnails."
+        }
+      ]
+    },
+    {
       "version": "6.0.5",
       "versionURL": "605",
       "date": "March 22th, 2026",
