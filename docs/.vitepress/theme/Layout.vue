@@ -52,6 +52,11 @@ router.onAfterRouteChanged = setupMediumZoom;
 </template>
 
 <style>
+/* The banner renders outside .vp-doc, which is where VitePress's block margins are scoped. */
+.daily-banner {
+  margin-bottom: 1.5rem;
+}
+
 .medium-zoom-overlay {
   backdrop-filter: blur(5rem);
 }

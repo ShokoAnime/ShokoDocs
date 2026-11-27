@@ -1,119 +1,90 @@
 ---
-title: Recommendations | Jellyfin
-description: Information on how to optimize your Shokofin setup for the best experience.
+title: Best Practices | Jellyfin
+description: Habits that keep a Shokofin library tidy, correct and easy to maintain.
 ---
 
-# Recommendations
+# Best Practices
 
-There are a few things we recommend when using Shokofin to make sure the plugin works as expected. Be sure to read the
-following so you know what to expect and how to optimize your setup to your needs.
+A handful of habits prevent most of the problems people run into with Shokofin. Each links to a page with the details.
 
-## General
+## Use the Virtual File System
 
-### Refreshing Metadata
+Leave the **Library Operation Mode** on **Virtual File System (VFS)**. The VFS lays out your files the way Jellyfin
+expects no matter how they're organized on disk, keeps unrecognized files out of your library, and makes extras,
+trailers and theme videos work. It also lets several libraries reuse the same media folders without conflicts.
+See [The Virtual File System](/jellyfin/concepts/virtual-file-system).
 
-Whenever you change a setting for Shokofin, existing media may not use the new changes until a full metadata refresh is
-done. This is done by performing a manual scan on the individual library and changing the refresh mode to replace all
-metadata. In most cases this will let the new settings take effect for existing media. A few settings will warrant a
-library re-creation instead such as anything that alters specials placement.
+On Windows, enable Developer Mode and restart Jellyfin before creating your first library. Without it, Shokofin can't
+create symbolic links, and a fresh install falls back to **Legacy Filtering (Strict)**. See
+[Library scans fail on Windows](/jellyfin/troubleshooting#library-scans-fail-on-windows).
 
-### Library Re-creation is your friend
+## Use Shoko as the Only Metadata Provider
 
-If something doesn't work as expected, the cleanest (but not necessarily the best) solution is to delete your existing
-library and create a new one. The watch data stored in Jellyfin is stored separate from the library structure and should
-survive the recreation, however it is recommended to enable [watch data syncing](/jellyfin/configuring-shokofin#users)
-for your Jellyfin users to corresponding accounts within Shoko Server to be safe. If watch data syncing was recently
-enabled, you will have to run **Sync User Data** in the **Scheduled Tasks** section of the Dashboard to ensure Shoko has
-the data. Though do note that some issues can be fixed simply by doing a full refresh on the entry or library, so you
-should try that first to see if it resolves the problem.
+In each Shokofin library, keep **Shoko** as the only enabled metadata downloader and the top image fetcher, and leave
+embedded titles and NFO metadata savers off. Other providers identify anime differently, and Jellyfin mixes their
+results into what Shokofin provides. The **Screen Grabber** image fetcher is safe to keep for episode thumbnails. See
+[Quick Start](/jellyfin/quick-start#creating-a-library).
 
-### Reusing Folders Across Libraries
+## Fix Things in Shoko, Not in Jellyfin
 
-With how Jellyfin stores metadata about library media folders, reusing the same folder between different libraries can
-be problematic. To ensure that Jellyfin works properly if you want to reuse the same folder across libraries, you can
-try any of the following:
+Shokofin shows what Shoko Server knows. If a show is split or grouped wrongly, has the wrong TMDB link, or
+an episode is in the wrong place, fix it in the Shoko Web UI by editing the group, the TMDB links or the series there, and
+then refresh or re-create the library. Edits made directly in Jellyfin's metadata editor are overwritten or lost the next
+time the library is refreshed or re-created.
 
-- **All Setups:** To have the plugin automatically do the work for you, enable the VFS for your libraries and enable the **Physically Attach VFS to Libraries** _advanced_ setting in Shokofin's plugin settings. If this is a new Shokofin install, all of these options are enabled by default if possible.
-- **Bare Metal:** Use symbolic links pointing to the root of the media library as a way to have a different media folder path that still points to the same media files.
-- **Docker:** Use multiple docker volume mounts that mount the same folder to different destinations.
+Per-series choices, such as which library structure a series uses, belong in the **Series** tab of the Shokofin
+settings. See [Library Structures & Seasons](/jellyfin/concepts/library-structures-and-seasons).
 
-This kind of configuration can be useful if you intend to have separate libraries for movies and series.
+## Don't Edit Shokofin's Tags by Hand
 
-### Library File Dates
+Shokofin saves per-series settings as custom tags on the series in Shoko (the `Shokofin/…` and `Series Type/…` tags).
+They show up in the **Custom Tags** modal in the Shoko Web UI, but change them from the **Series** tab in the Shokofin
+settings instead. See [Per-Series Settings](/jellyfin/concepts/library-structures-and-seasons#per-series-settings).
 
-Sometimes problems may arise from using the `Use date scanned into the library` as the date for newly added files.
-This setting can cause issues with sorting and organizing your media, as the date Jellyfin uses may not accurately
-reflect the actual creation or modification date of the files. Additionally, this date setting affects the season
-and show/series added dates, which can further complicate media organization.
+## Refreshing Metadata
 
-To avoid these issues, it's recommended to change the setting in `Dashboard -> Libraries -> Display -> Date added 
-behavior for new content` to `Use file creation date`. This ensures that the date used by Jellyfin for sorting and
-organizing your media reflects the actual creation date of the files, providing a more accurate and consistent experience
-across individual files, seasons, and entire series.
+Whenever you change a Shokofin setting, existing items keep their old metadata until they're refreshed. For settings that
+only affect metadata (titles, descriptions, tags, genres, images and ratings), refresh the library in Jellyfin with
+**Replace all metadata** selected (and **Replace existing images** if you changed image settings).
 
-## Virtual File System (**VFS**)
+Settings that change how shows, seasons and movies are built need a re-created library instead. The
+[Change Impact](/jellyfin/configuring-shokofin#change-impact) table lists which is which.
 
-### Using the VFS
+## Library Re-creation Is Your Friend
 
-The Virtual File System (VFS) allows you to disregard the underlying disk file structure, automatically meeting
-Jellyfin's system requirements for file organization through the use of symbolic links. This setup ensures that no
-unrecognized files appear in your library and allows you to fully leverage Jellyfin's native features effortlessly.
-While this approach is relatively new and still undergoing testing, it is stable enough for daily use. We encourage
-adopting this system and reporting any issues you encounter to help improve it further.
+If a library looks wrong after changing settings, or something doesn't behave as expected, re-creating the library is the
+cleanest fix: delete it, wait for it to disappear from the Jellyfin home screen, and create it again. Try a full metadata
+refresh first, since it's quicker and often enough.
 
-When using the VFS, Shokofin will also automatically symlink and manage external subtitles, audio files, and trickplay
-if present next to the media.
+Before re-creating, make sure watch state is safe: enable watch-state sync for each Jellyfin user and run **Export User
+Data**, then run **Import User Data** once the new library has finished scanning. Follow
+[Re-create a Library Safely](/jellyfin/how-to/re-create-a-library-safely) for the full steps.
 
-:::warning
-The VFS is automatically managed by the plugin and the folders and links it creates on the filesystem should not be
-manually altered. Changes in Shoko, such as adjustments to groupings or episode relocations, can trigger automatic
-updates in the VFS where it's structure may change. Other plugins may store some types of files directly in the VFS,
-such as subtitles and extras in folders not linked by a Shoko ID; these files will be correctly associated with their
-respective media items in the underlying library.
-:::
+## Keep Watch State and Metadata Up to Date
 
-#### Symbolic Links on Windows
+- Give the **Sync User Data** task a daily trigger under **Dashboard** → **Scheduled Tasks**, so anything missed during
+  playback, for example while Shoko was offline, is caught up. See [Sync Watch State](/jellyfin/how-to/sync-watch-state).
+- Give the **Auto-Refresh Metadata** task a daily trigger if you follow airing shows, so recently aired episodes pick up
+  titles and descriptions that were added after they first appeared. See [Scheduled Tasks](/jellyfin/scheduled-tasks).
+- Connect SignalR so new files and metadata updates reach Jellyfin without waiting for a scan. See
+  [New Episodes Automatically](/jellyfin/how-to/new-episodes-automatically).
 
-Symbolic links which are necessary for VFS functionality requires enabling developer mode in Windows. Perform the
-following to ensure the VFS can work properly:
+## Library File Dates
 
-1. Follow [Microsoft's official guide](https://learn.microsoft.com/en-us/windows/apps/get-started/developer-mode-features-and-debugging#use-regedit-to-enable-your-device) to enable Developer Mode.
-2. Restart Jellyfin afterwards so that Shokofin can recognize symbolic links can be created.
-3. Go into the Shokofin plugin settings and ensure that the Virtual File System (VFS) is enabled to make use of the
-   feature.
+Using `Use date scanned into the library` as the date for newly added files can cause issues with sorting and organizing
+your media, because that date may not reflect when the files were actually added. It also affects the dates of seasons
+and shows.
 
-### Not Using the VFS (Legacy Filtering)
+To avoid this, change `Dashboard` → `Libraries` → `Display` → `Date added behavior for new content` to
+`Use file creation date`. This keeps the dates Jellyfin uses consistent across individual files, seasons and entire
+series.
 
-It is best to adhere to an AniDB-compatible file structure, with the exception of the extras being placed in an `extras`
-folder, and OPs/EDs being placed in a `backdrops` folder for native Jellyfin integration. An AniDB-compatible file
-structure can easily be accomplished within Shoko Server using
-the [renamer system](/shoko-server/utilities/file-rename).
-To conditionally place media within a compatible `extras` or `backdrops` folder for Jellyfin to recognize, a more
-[custom renamer](/renaming-plugins/available-renamers) configuration would be needed. Alternatively, you can have a file
-structure using Shoko's groups too, but this is generally not advised since it can easily be messed up on Jellyfin's
-side if the groups change in Shoko.
+## Jellyfin's File Structure Requirements
 
-#### Unrecognized Files
+With the VFS you don't need to organize your files in any particular way. Shokofin builds the structure Jellyfin needs.
 
-Keep unrecognized files — files not recognized in **Shoko Server** — away from the folders provided to Jellyfin. They
-will not be handled by the plugin, and be either filtered out or clutter your library depending on the settings you've
-chosen. If you desire to have unrecognized files show up still in a Shokofin managed library, you can set the
-[Library Operation Mode](/jellyfin/configuring-shokofin#new-existing-library-settings) to **Legacy Filtering (Lax)**,
-and follow Jellyfin's File Structure requirements.
-
-#### Jellyfin's File Structure Requirements
-
-Jellyfin requires a specific file structure when not using the VFS:
-
-- Adhere to the structure guidelines provided in Jellyfin's [Series Guide](https://jellyfin.org/docs/general/server/media/shows/) and [Movies Guide](https://jellyfin.org/docs/general/server/media/movies/) to ensure compatibility.
-- Each AniDB series must be in separate folders from each other, otherwise Jellyfin will combine them incorrectly
-  compared to what you have in Shoko Server.
-- Failure to meet these requirements may lead to issues with media recognition and metadata handling.
-
-Any changes to file structure may require a full metadata refresh for Jellyfin to reflect your metadata properly.
-
-:::info
-Shokofin leverages AniDB as the primary source for metadata. Using Shoko's groups feature allows grouping multiple AniDB
-entries under a single show in Jellyfin, though not all configurations are compatible. Refer to the structure
-recommendations above.
-:::
+If you use **Legacy Filtering (Strict)** or **Legacy Filtering (Lax)** instead, your files must follow Jellyfin's own
+[Shows](https://jellyfin.org/docs/general/server/media/shows/) and
+[Movies](https://jellyfin.org/docs/general/server/media/movies/) naming guides, with each AniDB anime in its own folder.
+Files Shoko classifies as extras (such as credits and trailers) aren't shown in legacy libraries. See
+[The Virtual File System](/jellyfin/concepts/virtual-file-system) for the differences between the modes.
