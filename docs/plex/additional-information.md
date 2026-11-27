@@ -42,25 +42,25 @@ const contentRatingsData = [
 
 const taskReportColumns = [
   { name: 'Action', header: 'Dashboard Action' },
-  { name: 'Report', header: 'Log Filename' }
+  { name: 'Report', header: 'Report Filename' }
 ];
 
 const taskReportData = [
-  { Action: '**AnimeThemes:** Generate VFS', Report: '`at-vfs-build-report.log`' },
-  { Action: '**AnimeThemes:** Build Mapping', Report: '`at-map-build-report.log`' },
-  { Action: '**AnimeThemes:** Generate MP3 (Batch)', Report: '`at-mp3-build-report.log`' },
-  { Action: '**AnimeThemes:** Audit MP3s', Report: '`at-mp3-audit-report.log`' },
-  { Action: '**AnimeThemes:** Download WebMs', Report: '`at-webm-download-report.log`' },
-  { Action: '**Plex:** Auth Refresh', Report: '`plex-auth-refresh-report.log`' },
-  { Action: '**Plex:** Generate Collections', Report: '`plex-collections-build-report.log`' },
-  { Action: '**Plex:** Apply Critic Ratings', Report: '`plex-ratings-apply-report.log`' },
-  { Action: '**Plex:** Sync Plex Images', Report: '`plex-images-sync-report.log`' },
-  { Action: '**Plex:** Run Full Automation', Report: '`plex-automation-run-report.log`' },
-  { Action: '**Shoko:** Generate VFS', Report: '`shoko-vfs-build-report.log`' },
-  { Action: '**Shoko:** Audit VFS', Report: '`shoko-vfs-audit-report.log`' },
-  { Action: '**Shoko:** Purge Missing', Report: '`shoko-purge-missing-report.log`' },
-  { Action: '**Shoko:** Sync Watched States', Report: '`shoko-sync-watched-report.log`' },
-  { Action: '**Shoko:** Map Source Symlinks', Report: '`shoko-map-symlinks-report.log`' }
+  { Action: '**AnimeThemes:** Generate VFS', Report: '`at-vfs-build.report`' },
+  { Action: '**AnimeThemes:** Build Mapping', Report: '`at-map-build.report`' },
+  { Action: '**AnimeThemes:** Generate MP3 (Batch)', Report: '`at-mp3-build.report`' },
+  { Action: '**AnimeThemes:** Audit MP3s', Report: '`at-mp3-audit.report`' },
+  { Action: '**AnimeThemes:** Download WebMs', Report: '`at-webm-download.report`' },
+  { Action: '**Plex:** Auth Refresh', Report: '`plex-auth-refresh.report`' },
+  { Action: '**Plex:** Generate Collections', Report: '`plex-collections-build.report`' },
+  { Action: '**Plex:** Apply Critic Ratings', Report: '`plex-ratings-apply.report`' },
+  { Action: '**Plex:** Sync Plex Images', Report: '`plex-images-sync.report`' },
+  { Action: '**Plex:** Run Full Automation', Report: '`plex-automation-run.report`' },
+  { Action: '**Shoko:** Generate VFS', Report: '`shoko-vfs-build.report`' },
+  { Action: '**Shoko:** Audit VFS', Report: '`shoko-vfs-audit.report`' },
+  { Action: '**Shoko:** Purge Missing', Report: '`shoko-purge-missing.report`' },
+  { Action: '**Shoko:** Sync Watched States', Report: '`shoko-sync-watched.report`' },
+  { Action: '**Shoko:** Map Source Symlinks', Report: '`shoko-map-symlinks.report`' }
 ];
 </script>
 
@@ -81,7 +81,7 @@ Shoko Relay has full support for all of Plex's features which involve local meta
   - If enabled, anything inside a folder matching Plex extras naming conventions or with the inline filename suffixes will be ignored by Shoko
   - Season level extras are applied by adding a special suffix to the standard folder names (` S#`) which is not part of Plex's spec
     - e.g. `Scenes S2` would place the extras in `###/Season 2/Scenes`
-  - If you don't use and/or want this feature you can disable it under `Advanced Settings > Plex Local Extras`
+  - If you don't use and/or want this feature you can disable it under `Provider Settings > Advanced > Plex Local Extras`
   - _Requires the `Plex Local Media` provider to be added to the Shoko Relay Agent in Plex_
 - [NFO Metadata Files](https://support.plex.tv/articles/using-nfo-metadata-files-with-plex/).
   - Allows overriding most metadata fields for series and episodes to whatever you want
@@ -92,7 +92,7 @@ Shoko Relay has full support for all of Plex's features which involve local meta
 ## Virtual File System (VFS)
 
 :::important
-The VFS is created inside each of Shoko's managed folders: if they are configured as a "Destination", have no type set, or have not been excluded via `Managed Folder Exclusions`. A subfolder named `!ShokoRelayVFS` (renaming it is possible under `Advanced Settings > VFS Root Path`) will house it. Do not manage anything inside the VFS folders manually.
+The VFS is created inside each of Shoko's managed folders: if they are configured as a "Destination", have no type set, or have not been excluded via `Managed Folder Exclusions`. A subfolder named `!ShokoRelayVFS` (renaming it is possible under `Provider Settings > Advanced > VFS Root Path`) will house it. Do not manage anything inside the VFS folders manually.
 :::
 
 When building the VFS files are placed into folders which are named according to their Shoko SeriesID. Within those folders they will be split into subfolders depending on the type of episode. For regular episodes or specials this means placement into a `Season #` or `Specials` folder. Files placed into those folders are named with the following pattern: `S##E##(-pt#)(-dup#) [{ShokoFileID}]([{isVariation}]).ext` (the parts in parenthesis are conditional). Files with `-pt#` in their name will also have `[{ShokoFileID}]([{isVariation}])` stripped to fully follow the format described in [Combining Episodes](#combining-episodes). To avoid conflicts any file which is a crossover episode will not trigger local metadata/subtitle linking.\
@@ -122,11 +122,25 @@ Crossover episodes are files which are linked to multiple episodes spanning sepa
 
 ### VFS Audit
 
-The VFS includes built-in audit functionality that scans existing VFS directories to find and prune orphaned folders, empty subdirectories, and broken symlinks whose source files were deleted or moved. It also updates the VFS Browser blueprint and generates a report at `logs/shoko-vfs-audit-report.log` in the plugin directory. It can be accessed via the `VFS Audit` button (database checkmark) in the "Shoko: VFS" section of the dashboard.
+The VFS includes built-in audit functionality that scans existing VFS directories to find and prune orphaned folders, empty subdirectories, and broken symlinks whose source files were deleted or moved. It also updates the VFS Browser blueprint and generates a report at `reports/shoko-vfs-audit.report` in the plugin's cache directory. It can be accessed via the `VFS Audit` button (database checkmark) in the "Shoko: VFS" section of the dashboard.
 
 ### VFS Browser
 
-In order to help visualise the VFS and all of the files it contains there is a "VFS Browser" page included with the plugin. It can be navigated to by clicking the folder icon in the top right of the "Shoko: VFS" section of the dashboard, as an embed in Shoko's WebUI under `Settings > Plugins > Shoko Relay > VFS Browser`, or by a dedicated URL: `http(s)://{ShokoHost}:{ShokoPort}/api/plugin/ShokoRelay/browser`. Unlike opening the VFS in a normal file browser, this will list the series title and the AniDB/Shoko IDs which correspond to each folder. Each ID will link directly to its source and there is also an included link to the `/metadata/` endpoint for series and seasons. VFS regeneration can be called on any series by clicking the "Refresh VFS Folder" `⟳` icon next to its name in the tree view (this avoids having to look up AniDB/Shoko IDs to use the filter on the dashboard). Similar to the refresh button, there is a "Theme.mp3" `♬` button which tracks if a given VFS entry has a local AnimeThemes `.mp3` attached to it or not. Clicking the button will attempt to generate a theme for any series missing one.
+In order to help visualise the VFS and all of the files it contains there is a "VFS Browser" page included with the plugin. It can be navigated to by clicking the folder icon in the top right of the "Shoko: VFS" section of the dashboard, as an embed in Shoko's WebUI under `Settings > Plugins > Shoko Relay > VFS Browser`, or by a dedicated URL: `http(s)://{ShokoHost}:{ShokoPort}/api/plugin/ShokoRelay/browser`. Unlike opening the VFS in a normal file browser, this will list the series title and the AniDB/Shoko IDs which correspond to each folder. Each ID will link directly to its source and there is also an included link to the `/metadata/` endpoint for series and seasons. Changing the series title settings will not automatically update cached titles in the VFS Browser; use the refresh button next to the series count in the header to reload them without rebuilding the VFS. VFS regeneration can be called on any series by clicking the "Refresh VFS Folder" `⟳` icon next to its name in the tree view (this avoids having to look up AniDB/Shoko IDs to use the filter on the dashboard). Similar to the refresh button, there is a "Theme.mp3" `♬` button which tracks if a given VFS entry has a local AnimeThemes `.mp3` attached to it or not. Clicking the button will attempt to generate a theme for any series missing one.
+
+Shoko Relay automatically registers a `VFS Browser` external resource link on every series in Shoko's collection. This links directly to the branch in the tree containing the series in question via `?seriesId={id}`. Global and per-series executable actions (`Build VFS`, `Audit VFS`, `Apply AnimeThemes VFS`, `Sync Watched States`, `Rebuild VFS`, `Refresh Plex Metadata`) are also exposed directly through Shoko's Actions menu and WebUI series pages.
+
+### VFS Updates
+
+The VFS will automatically update in the background when Shoko Relay detects any of the following changes in Shoko:
+
+- **File & Release Events:** Video files are added/matched, unlinked, renamed, moved, or deleted
+- **Video & Episode Flags:** Videos are marked/unmarked as ignored/variation, or episodes are hidden/shown
+- **Series Deletion:** Series are removed from Shoko, pruning their orphaned VFS folders and stale blueprint entries
+- **TMDB Links & Ordering:** TMDB metadata cross-references are added, removed, or changed, or a linked TMDB series' preferred episode ordering changes
+  - This only triggers when `TMDB Episode Numbering` or `Auto Merge TMDB Series` is enabled
+
+Events are batched and debounced automatically, restoring AnimeThemes VFS links and invalidating cached metadata. Plex partial scans (if enabled) and metadata fixups will be triggered immediately unless `Defer VFS Creation` is enabled.
 
 ## Automatic Title Modification
 
@@ -152,7 +166,7 @@ The appended titles for both series and episodes will appear after an em dash (*
 
 ## Separate Movie Libraries
 
-If you prefer separate movie libraries (which is not recommended), Shoko Relay provides an opt-in feature to allow this. By enabling `Movie Generation Mode` under `Advanced Settings`, the plugin will generate a dedicated VFS root for movies (default `!ShokoRelayMovieVFS`) alongside the standard unified VFS.
+If you prefer separate movie libraries (which is not recommended), Shoko Relay provides an opt-in feature to allow this. By enabling `Movie Generation Mode` under `Provider Settings > Advanced`, the plugin will generate a dedicated VFS root for movies (default `!ShokoRelayMovieVFS`) alongside the standard unified VFS.
 
 ### Caveats
 
@@ -257,7 +271,7 @@ It is highly recommended to use this feature for series like "Akahori Gedou Hour
 An example `anidb_vfs_overrides.csv` is available [here](https://raw.githubusercontent.com/natyusha/ShokoRelay/master/Data/anidb_vfs_overrides.csv).
 
 :::tip
-If you want all Shoko series which share a TMDB series link to be merged automatically this can be achieved by enabling `Advanced Settings > Auto Merge TMDB Series`. This will automatically disable AniDB numbering for the affected series regardless of the configured `TMDB Episode Numbering` setting.
+If you want all Shoko series which share a TMDB series link to be merged automatically this can be achieved by enabling `Provider Settings > Advanced > Auto Merge TMDB Series`. This will automatically disable AniDB numbering for the affected series regardless of the configured `TMDB Episode Numbering` setting.
 :::
 
 ## Combining Episodes
@@ -270,33 +284,16 @@ If `Assumed Content Ratings` are enabled in the Provider Settings the [target au
 
 <EasyTable :columns="contentRatingsColumns" :data="contentRatingsData" />
 
-## Task Reports & Logs
+## Task Reports
 
 Most manual actions performed via the dashboard (as well as some direct API requests) generate a detailed report. These reports help you verify which items were processed and troubleshoot any skipped files or errors. A list of the actions which generate a log is provided below:
 
 <EasyTable :columns="taskReportColumns" :data="taskReportData" />
 
-### How Logs Work
+### How Reports Work
 
-- Logs are stored in the `logs/` subfolder within the plugin directory.
-- When a task completes, a toast notification appears on the dashboard with a `[view log]` link.
+- Reports are stored in the `reports/` subfolder within the plugin's cache directory.
+- When a task completes, a toast notification appears on the dashboard with a `[view report]` link.
 - These files are overwritten each time the corresponding task is run.
 - To save a specific report, you must download or copy the text before running that task again.
-- Links to the currently generated logs are available at the bottom of the dashboard in the "Task Logs" section
-
-## Plugin API
-
-Controlling this plugin directly is possible via HTTP GET/POST; see the [Controller API](/plex/shoko-relay-api) for more information.
-
-## Missing Info
-
-Due to this plugin relying on Plex's metadata provider feature (which is still under development) some things may be missing or not work correctly.
-
-### Missing from Shoko's Abstractions
-
-- **TMDB**: taglines
-
-### Missing Plex Provider Features
-
-- Collection metadata like summaries and custom sort titles/artwork (currently implemented via Plex's HTTP API)
-- Custom or generic rating icons
+- Links to the currently generated reports are available at the bottom of the dashboard in the "Task Reports" section

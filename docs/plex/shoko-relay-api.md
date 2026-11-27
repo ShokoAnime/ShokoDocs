@@ -16,8 +16,11 @@ Endpoints managed by `DashboardController`
 ---
 
 ```
+POST /auth/login                                               -> Login
+POST /auth/logout                                              -> Logout
+GET  /auth/verify?force={true|false}&player={true|false}       -> VerifyAuth
 GET  /dashboard                                                -> GetDashboardPage
-GET  /browser                                                  -> GetBrowserPage
+GET  /browser?seriesId={id}&anidbId={id}                       -> GetBrowserPage
 GET  /player                                                   -> GetPlayerPage
 GET  /dashboard/{*path}                                        -> GetAssetFile
 
@@ -31,12 +34,19 @@ GET  /tasks/active                                             -> GetActiveTasks
 GET  /tasks/completed                                          -> GetCompletedTasks
 POST /tasks/clear/{taskName}                                   -> ClearTaskResult
 
-GET  /logs/list                                                -> GetLogsList
-GET  /logs/{fileName}                                          -> GetLog
+GET  /reports/list                                             -> GetReportsList
+GET  /reports/{fileName}                                       -> GetReport
 ```
 
+- `Login` authenticates a Shoko administrator via username and password (`IUserService.AuthenticateUser`) and issues a signed `HttpOnly` session cookie.
+  - Accepts an optional `rememberMe` boolean; when `true`, persists the session cookie for 30 days instead of a browser-session cookie.
+- `Logout` clears the signed `HttpOnly` administrator session cookie.
+- `VerifyAuth` checks whether the caller satisfies administrator authorization when `Advanced.RequireAuth` is enabled (or unconditionally when `force=true`, used before enabling auth).
+  - Passing `player=true` permits an unauthenticated status check when `RequireAuth` is set to `Allow Player Access`.
 - `GetDashboardPage` Serves the main settings dashboard (`dashboard.cshtml`).
 - `GetBrowserPage` Serves the stand-alone VFS browser (`browser.cshtml`).
+  - `seriesId`: (optional) automatically switch to a matching root tab, expand the series folder, and scroll directly to it via Shoko SeriesID
+  - `anidbId`: (optional) automatically switch to a matching root tab, expand the series folder, and scroll directly to it via AniDB ID
 - `GetPlayerPage` Serves the stand-alone AnimeThemes video player (`player.cshtml`).
 - `GetAssetFile` Serves static assets (JS, CSS, fonts, images) from the `dashboard` folder using MIME type mapping and path traversal boundary checks.
 - `GetConfig` returns the current configuration payload (JSON) used by the dashboard page.
@@ -46,36 +56,45 @@ GET  /logs/{fileName}                                          -> GetLog
   - `/config` does not expose the Plex token. Instead the response includes `PlexLibrary.HasToken`.
 - `GetConfigSchema` returns a JSON schema representation of `RelayConfig` properties.
   - Properties within the `AdvancedConfig` class are automatically flagged with `Advanced: true`.
+  - Properties flagged with `[LanguageSetting]` are automatically flagged with `Language: true`.
 - `GetDynamicThemeCss` generates and serves a dynamically mapped CSS stylesheet.
   - It reads the selected Shoko WebUI theme (configured under `Advanced.SelectedTheme`) from Shoko's `themes/` directory via `IApplicationPaths`.
   - For custom WebUI themes, it appends a translation block that bridges Shoko's native CSS variables onto the plugin's custom layout variables.
 - `GetActiveTasks` returns a list of unique task identifiers currently running on the server.
 - `GetCompletedTasks` returns a dictionary of results for tasks that finished while the dashboard was disconnected or before a refresh.
 - `ClearTaskResult` acknowledges and removes a stored result from the server's memory.
-- `GetLogsList` returns a JSON list of all currently generated task logs that exist on disk.
-- `GetLog` serves report files created under the plugin's `logs` directory without browser caching.
-  - Access is restricted strictly to files ending with `-report.log` inside the `logs/` directory to prevent directory traversal.
+- `GetReportsList` returns a JSON list of all currently generated task reports that exist on disk.
+- `GetReport` serves report files from the plugin's reports cache directory without browser caching.
+  - Access is restricted strictly to files ending with `.report` inside the `reports/` cache directory to prevent directory traversal.
 
 **Notes:**
 
-All automation endpoints utilize the `LogAndReturn` helper (via `ExecuteTrackedTaskAsync`) to provide a direct `logUrl` in the response. Reports include:
+- Authentication: When `Advanced.RequireAuth` is enabled, all endpoints under `DashboardController`, `ShokoController`, `PlexController`, and `AnimeThemesController` require Shoko administrator authentication.
+  - This can be done using Shoko's standard `apikey` header for Swagger/curl, or the dashboard's `HttpOnly` session cookie via `POST /auth/login`.
+    - Cookie-authenticated requests leave Shoko's `IActorContext` actor as system.
+  - This excludes static UI pages/assets (`/dashboard`, `/browser`, `/player`, `/dashboard/{*path}`, `/theme.css`), `/auth/login`, `/auth/logout`, `/auth/verify`, and `MetadataController` (Plex requirement).
+  - When set to `Allow Player Access`, the read-only AnimeThemes Player data endpoints (`/webm/tree`, `/webm/stream`, and `GET /animethemes/webm/favourites`) are also accessible without authentication.
+    - Restricted-tag visibility filtering is not applied to player listings.
+  - The following endpoint is also excluded: `POST /plex/webhook` (validated via server UUID and user rules).
+
+All automation endpoints utilize the `LogAndReturn` helper (via `ExecuteTrackedTaskAsync`) to provide a direct `reportUrl` in the response. Reports include:
 
 ```
-/animethemes/vfs/build                                         -> at-vfs-build-report.log
-/animethemes/vfs/map                                           -> at-map-build-report.log
-/animethemes/mp3?batch=true                                    -> at-mp3-build-report.log
-/animethemes/mp3/audit                                         -> at-mp3-audit-report.log
-/animethemes/webm/download                                     -> at-webm-download-report.log
-/plex/auth/refresh                                             -> plex-auth-refresh-report.log
-/plex/collections/build                                        -> plex-collections-build-report.log
-/plex/ratings/apply                                            -> plex-ratings-apply-report.log
-/plex/images/sync                                              -> plex-images-sync-report.log
-/plex/automation/run                                           -> plex-automation-run-report.log
-/vfs                                                           -> shoko-vfs-build-report.log
-/vfs/audit                                                     -> shoko-vfs-audit-report.log
-/shoko/purge-missing                                           -> shoko-purge-missing-report.log
-/sync-watched                                                  -> shoko-sync-watched-report.log
-/map-symlinks                                                  -> shoko-map-symlinks-report.log
+/animethemes/vfs/build                                         -> at-vfs-build.report
+/animethemes/vfs/map                                           -> at-map-build.report
+/animethemes/mp3?batch=true                                    -> at-mp3-build.report
+/animethemes/mp3/audit                                         -> at-mp3-audit.report
+/animethemes/webm/download                                     -> at-webm-download.report
+/plex/auth/refresh                                             -> plex-auth-refresh.report
+/plex/collections/build                                        -> plex-collections-build.report
+/plex/ratings/apply                                            -> plex-ratings-apply.report
+/plex/images/sync                                              -> plex-images-sync.report
+/plex/automation/run                                           -> plex-automation-run.report
+/vfs                                                           -> shoko-vfs-build.report
+/vfs/audit                                                     -> shoko-vfs-audit.report
+/shoko/purge-missing                                           -> shoko-purge-missing.report
+/sync-watched                                                  -> shoko-sync-watched.report
+/map-symlinks                                                  -> shoko-map-symlinks.report
 ```
 
 ---
@@ -130,7 +149,7 @@ GET  /metadata/{ratingKey}/extras                              -> GetMetadataExt
   - Any setting under `#region Provider Config` in `RelayConfig.cs` can be overridden per-request. Semicolons are used as delimiters.
   - Settings primarily utilized by background automations or Quick Actions (e.g., `CollectionImages`, `CriticRatingMode`) fall outside the scope of Plex's active metadata requests.
   - These settings will fallback to the globally configured dashboard values.
-- TMDB episode-numbering is honoured when enabled (uses `IShokoEpisode.TmdbEpisodes`).
+- TMDB episode-numbering is honoured when enabled (uses `IShokoEpisode.GetLinkedEpisodes(MetadataSource.TMDB)`).
 - Hidden episodes are excluded from all metadata results.
 - Supported `RatingKey` formats:
   - `123` (Shoko Series ID) / `a890` (AniDB Series ID)
@@ -194,7 +213,6 @@ GET  /plex/automation/run                                      -> RunPlexAutomat
 - `ApplyAudienceRatings` updates ratings for a comma-separated list of series IDs based on the configured source (TMDB/AniDB).
 - `SyncPlexImages` queries Plex for generated episode thumbnails and scans VFS/collection paths for all local images, uploading and marking them as preferred in Shoko.
   - The generated episode thumbnails will not be uploaded if `TmdbThumbnails` is enabled or a local thumbnail is present.
-  - Tracks processed images via `images_shokorelay.cache` to avoid redundant uploads.
 - `RunPlexAutomationNow` triggers collection building, rating application, and image sync (if enabled) back-to-back for all series.
 
 **Notes:**
@@ -219,9 +237,10 @@ POST /plex/webhook                                             -> PluginPlexWebh
 - Strict Validation:
   - Validates the `Server.uuid` against known servers to prevent leaks from shared libraries.
   - Distinguishes between the actual Admin account and managed users.
-  - Managed users are only permitted to scrobble if listed in `Automation.ExtraPlexUsers`.
+  - Managed and regular Plex users (Plex Home or shared server) are permitted to scrobble if listed in `Automation.ExtraPlexUsers`.
+  - `Automation.AdvancedUserMappings` will also scrobble to specific Shoko/Plex users when configured.
 - Success logs use the format: `user='Name', series='Title', episode='S01E01'`.
-- Rating events update Shoko episode ratings via `IUserDataService.RateEpisode` if `Automation.ShokoSyncWatchedIncludeRatings` is enabled.
+- Rating events update Shoko episode ratings via `IUserDataService.RateEpisode` (or remove them via `IUserDataService.UnrateEpisode` when cleared) if `Automation.ShokoSyncWatchedIncludeRatings` is enabled.
 - Progress events (`media.stop` / `media.pause`) update the VideoUserData ProgressPosition via `IUserDataService.SaveVideoUserData`.
 
 ---
@@ -238,7 +257,7 @@ GET  /vfs/audit                                                -> AuditVfs
 
 POST /vfs/overrides                                            -> SaveVfsOverrides
 
-GET  /vfs/tree                                                 -> GetVfsTree
+GET  /vfs/tree?refresh={true|false}                            -> GetVfsTree
 ```
 
 - `BuildVfs` (all query parameters are optional)
@@ -247,7 +266,8 @@ GET  /vfs/tree                                                 -> GetVfsTree
   - `filter`: (optional) comma-separated Shoko or AniDB (prefixed with an 'a') series IDs.
 - `AuditVfs` scans physical VFS directories against the database to find and remove orphaned folders and broken symlinks.
 - `SaveVfsOverrides` accepts raw text for `anidb_vfs_overrides.csv`.
-- `GetVfsTree` returns a hierarchical representation of the VFS structure by reading `vfs_blueprint.cache`, utilizing in-memory caching keyed to file modification time.
+- `GetVfsTree` returns a hierarchical representation of the VFS structure by reading `vfs_blueprint.cache` in the plugin's `CachePath`, utilizing in-memory caching keyed to file modification time.
+  - `refresh`: (default false) set to true to re-resolve series display titles from current provider settings and update the blueprint cache.
 
 **Notes:**
 
@@ -260,7 +280,7 @@ GET  /vfs/tree                                                 -> GetVfsTree
 - `VfsWatcher` automatically triggers batch VFS builds when file events are detected.
 - If `Advanced.DeferVfsCreationUntilFixup` is enabled, `VfsWatcher` postpones generating VFS links until the Plex Fixup Delay window settles.
   - This prevents Plex from potentially scanning intermediate states.
-- Executing `BuildVfs` also generates or updates `vfs_blueprint.cache`.
+- Executing `BuildVfs` also generates or updates `vfs_blueprint.cache` in the plugin's `CachePath`.
 - If `Advanced.DisableVfsGeneration` is enabled, the endpoints will act as if a dry-run is being performed.
   - This will simulate the build in memory to populate the caches and frontend UI without writing actual symlinks/directories to disk.
 
@@ -279,7 +299,7 @@ GET  /shoko/import/start                                       -> StartShokoImpo
 
 GET  /sync-watched                                             -> SyncPlexWatched            (for preview/testing)
 POST /sync-watched                                             -> SyncPlexWatched
-     [?dryRun={true|false}&sinceHours={int}&ratings={true|false}&progress={true|false}&import={true|false}&users={All|Admin|Extra|None}&libraryName={name}]
+     [?dryRun={true|false}&sinceHours={int}&ratings={true|false}&progress={true|false}&import={true|false}&users={All|Admin|Extra|Advanced|None}&libraryName={name}]
 
 GET  /sync-watched/start                                       -> StartWatchedSyncNow
 ```
@@ -294,8 +314,8 @@ GET  /sync-watched/start                                       -> StartWatchedSy
   - `sinceHours`: (optional) limit processing to items viewed within this window.
   - `ratings`: (default to configuration) set to true/false to override the `Automation.ShokoSyncWatchedIncludeRatings` setting.
   - `progress`: (default to configuration) set to true/false to override the `Automation.ShokoSyncWatchedIncludeProgress` setting.
-  - `import`: (default false) Direction: true for Plex←Shoko, false for Plex→Shoko.
-  - `users`: (default to configuration) Restrict sync to specific user groups.
+  - `import`: (default false) Direction: true for Plex←Shoko (Import to Plex), false for Plex→Shoko (Sync to Shoko).
+  - `users`: (default to configuration) Restrict sync to specific user groups (`0: All`, `1: Admin`, `2: Extra`, `3: Advanced`, `4: None`). Defaults to configuration.
   - `libraryName`: (optional) restrict processing to a specific Plex library name (e.g. `Anime`).
     - If the library does not use Shoko Relay and it is a Plex to Shoko sync, a fallback mode which matches physical filenames instead of GUIDs will be used.
   - Direction and exclusion settings are read from `AutomationConfig`.
@@ -303,8 +323,26 @@ GET  /sync-watched/start                                       -> StartWatchedSy
 **Notes:**
 
 - The response for `PurgeMissingFiles` includes a `Processed` property containing the count of records removed.
+- When syncing `Plex←Shoko` (`import=true`) with `Include Ratings` enabled, the Plex query includes both watched and unwatched items so ratings on already-watched episodes can also be updated.
+  - This can be noticeably slower on large libraries than when ratings are disabled.
 - Scheduled automations are anchored to UTC midnight using `Automation.UtcOffsetHours`.
-- Managed user tokens are obtained transiently via Plex Home switching and are never persisted.
+- Plex Home user tokens are obtained transiently via Plex Home switching, and regular shared-server user tokens are read transiently from Plex.tv; neither is persisted.
+
+---
+
+### Shoko: Reports
+
+```
+GET /reports/tags                                              -> GetTagReport
+GET /reports/credits                                           -> GetCreditReport
+```
+
+- `GetTagReport` generates an in-memory CSV report of all tags across Shoko series after applying default tag overrides (`default_tag_overrides.csv`).
+- `GetCreditReport` generates an in-memory CSV report of all cast, crew, and studio credits across Shoko series after applying default credit overrides (`default_credit_overrides.csv`).
+
+**Notes:**
+
+- Each report is grouped by normalized key with merged variants appended after `;`.
 
 ---
 
@@ -376,15 +414,17 @@ Endpoints managed by `AnimeThemesController`
 
 ```
 GET  /animethemes/vfs/build?filter={csv}                       -> AnimeThemesVfsBuild
-GET  /animethemes/vfs/map?testPath={filename}                  -> AnimeThemesVfsMap
+GET  /animethemes/vfs/map                                      -> AnimeThemesVfsMap
      [?path={filename}&save={true|false}&anidbId={int}]
 POST /animethemes/vfs/import                                   -> ImportAnimeThemesMapping
 ```
 
-- `AnimeThemesVfsBuild` applies the mapping and generates `webm_animethemes.cache`.
+- `AnimeThemesVfsBuild` applies the mapping and generates `webm_animethemes.cache` in the plugin's `CachePath`.
   - `filter`: (optional) comma-separated Shoko or AniDB (prefixed with an 'a') series IDs.
   - Cache Format: `VfsPath|VideoId|Bitmask`.
   - Bitmask flags: `1:NC, 2:Lyrics, 4:Subs, 8:Uncen, 16:NSFW, 32:Spoil, 64:Trans, 128:Over`.
+  - Honours `Advanced.AnimeThemesCrossRootMode` (`Disabled`, `HardlinkOrCopy`, `Move`) to transfer missing `.webm` files across VFS-enabled managed folders before linking.
+    - This records cross-root transfer counts and details in `at-vfs-build.report` too.
 - `AnimeThemesVfsMap` generates the mapping CSV, tests a single filename mapping, or updates/populates mapping fields in the CSV without redownloading the video.
   - `path`: (optional) provide a filename or relative path to preview its mapping result, or update it.
   - `save`: (default false) set to true to update or save the resolved metadata fields into `anidb_animethemes_xrefs.csv` and refresh its VFS link.
@@ -402,18 +442,21 @@ HEAD /animethemes/webm/stream?path={path}                      -> AnimeThemesWeb
 GET  /animethemes/webm/favourites                              -> GetAnimeThemesFavourites
 POST /animethemes/webm/favourites                              -> UpdateAnimeThemesFavourite
 POST /animethemes/webm/download                                -> DownloadAnimeThemesWebm
-     [?name={string}&year={int}&season={string}&force={true|false}&destination={path}]
+     [?name={string}&year={int}&season={string}&recent={int}&force={true|false}&destination={path}]
 ```
 
-- `AnimeThemesWebmTree` returns the hierarchical tree including bitmask flags, `videoId`, and `relPath` (source folder path for folder view support).
+- `AnimeThemesWebmTree` returns the hierarchical tree including bitmask flags, `videoId`, `relPath` (source folder path for folder view support), and the configured `playbackMode`.
   - Employs single-pass in-memory dictionary caching of physical files to avoid redundant disk I/O on large mapping catalogs.
   - Differentiates deterministically between TV and Movie VFS structures.
+  - When `Advanced.RequireAuth` is set to `Allow Player Access`, this unauthenticated response includes full server filesystem paths (`path`) for streaming.
 - `AnimeThemesWebmStream` supports HTTP range requests for seekable browser playback.
   - Enforces `.webm` extension validation to prevent arbitrary file streaming.
-- `GetAnimeThemesFavourites` returns a list of `videoId` favourites from `favs_animethemes.cache`.
+- `GetAnimeThemesFavourites` returns a list of `videoId` favourites from `favs_animethemes.csv` in the plugin's configuration directory.
 - `UpdateAnimeThemesFavourite` toggles a `videoId` in the favourites list using a raw integer body.
 - `DownloadAnimeThemesWebm` fetches WebM files from the AnimeThemes API and organizes them by Year/Season inside the configured `!AnimeThemes` folder.
-  - At least one filter (`name` or `season`) is required to prevent accidentally downloading the entire database.
+  - Supports downloading by `name` (capped at 10 downloaded themes), `year`/`season`, or `recent` (`1`–`100` most recently added videos on AnimeThemes sorted by `CREATED_AT_DESC`).
+  - `recent` cannot be combined with `name`, `year`, or `season`.
+  - At least one filter (`name`, `year`, `season`, or `recent`) is required to prevent accidentally downloading the entire database.
   - If a `season` is provided without a `year`, it automatically defaults to the current year.
   - `force`: (default false) set to true to overwrite existing `.webm` files.
   - `destination`: (optional) absolute path to a specific managed folder to force downloads into.
@@ -435,17 +478,17 @@ GET  /animethemes/mp3/random?refresh={true|false}              -> AnimeThemesMp3
 ```
 
 - `AnimeThemesMp3` generates or batches Theme.mp3 files using parallelism.
-  - `path`: (required) relative or absolute Shoko/Plex path.
+  - `path`: (required) relative or absolute Shoko/Plex path (must resolve inside a configured Shoko managed folder).
   - `slug`: (optional) specific theme identifier (e.g., OP1).
   - `offset`: (default 0) selection index when multiple themes match.
   - `batch`: (default false) set to true to recursively process subfolders.
   - `force`: (default false) set to true to overwrite existing `Theme.mp3` files.
-  - `seasonal`: (default false) if `batch=true`, filter processing to the current anime season (with a one-month early buffer).
+  - `seasonal`: (default false) if `batch=true`, filter processing to anime which started airing in the current season (with a one-month early buffer).
 - `GetAnimeThemesMp3Cache` returns the dictionary of cached `Theme.mp3` folder paths mapped to their respective theme slugs.
 - `AuditAnimeThemesMp3` audits existing non-OP `Theme.mp3` files to check if an OP is available on AnimeThemes. It also repairs missing local cache slugs via ID3 tags.
 - `AnimeThemesMp3Stream` embeds ID3v2 tags in response headers.
-  - Headers: `X-Theme-Title`, `X-Theme-Slug`, `X-Theme-Artist`, `X-Theme-Album`.
-- `AnimeThemesMp3Random` uses a startup cache persisted in `mp3_animethemes.cache`.
+  - Headers: `X-Theme-Title`, `X-Theme-Slug`, `X-Theme-Artist`, `X-Theme-Album` (URI-encoded).
+- `AnimeThemesMp3Random` uses a startup cache persisted in `mp3_animethemes.cache` in the plugin's `CachePath`.
   - `refresh`: (default false) set to true to force a re-scan of managed roots for existing themes.
 
 **Notes:**

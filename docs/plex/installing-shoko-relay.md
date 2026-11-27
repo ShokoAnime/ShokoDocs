@@ -14,7 +14,7 @@ Due to the lack of a custom scanner this plugin leverages a VFS (Virtual File Sy
 ### Shoko
 
 > [!WARNING]
-> The VFS is created inside each of Shoko's managed folders (that aren't marked exclusively as a "Source") under a subfolder named `!ShokoRelayVFS` (configurable under `Advanced Settings > VFS Root Path`).
+> The VFS is created inside each of Shoko's managed folders (that aren't marked exclusively as a "Source") under a subfolder named `!ShokoRelayVFS` (configurable under `Provider Settings > Advanced > VFS Root Path`).
 > While Shoko Relay includes an internal ignore rule to block scans of VFS folders during manual and scheduled imports, **Shoko's live file watcher ("Watch For New Files") bypasses plugin ignore rules entirely**.
 > To stop Shoko Server from scanning the generated links and spawning duplicate file entries, it is highly recommended to add a manual exclusion as a safety net. This covers cases where Shoko Relay isn't loaded or a managed "Destination" folder has "Watch for New Files" enabled.
 >
@@ -48,9 +48,9 @@ Installation can be completed via Shoko's WebUI (Recommended) or Manually. Both 
 - **Mandatory:**
   - Click the `Generate VFS` button in the "Shoko: VFS" section to initialize your collection
     - First time generation may take several minutes to complete with a large library
-  - A report of the run will be written to `logs/shoko-vfs-build-report.log` inside the plugin directory
-    - You can download the report via the dashboard's "Task Logs" section or a toast that will appear on task completion
-  - The VFS will automatically update when it detects files have been added, renamed, moved or deleted
+  - A report of the run will be written to `reports/shoko-vfs-build.report` inside the plugin's cache directory
+    - You can download the report via the dashboard's "Task Reports" section or a toast that will appear on task completion
+  - Automatic VFS updates run in the background whenever files, releases, TMDB links, or hidden/ordering states change in Shoko
 - **Recommended:**
   - Link the plugin to your Plex account via the `Start Plex Auth` button in the "Plex Authentication" section
     - Once clicked it will change to a `Login` link which will redirect you to `app.plex.tv/auth`
