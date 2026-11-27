@@ -14,7 +14,7 @@ users will need to execute a command to start the container. While the exact com
 setup, it should resemble something like this:
 
 ```sh [Example Command]
-docker run -d --name shokoserver --restart always -p 8111:8111 -v "$HOME/.shoko:/home/shoko/.shoko" -v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import" -e PUID=$UID -e PGID=$GID ghcr.io/shokoanime/server:latest
+docker run -d --name shokoserver --restart unless-stopped -p 8111:8111 -v "$HOME/.shoko:/home/shoko/.shoko" -v "/path/to/anime:/mnt/anime" -v "/path/to/import:/mnt/import" -e PUID=$UID -e PGID=$GID ghcr.io/shokoanime/server:latest
 ```
 
 With Shoko Server running, open your browser and navigate to http://localhost:8111/ to access the Web UI. If Shoko
@@ -44,8 +44,9 @@ You'll need to create an account to use Shoko. This account allows Shoko to mana
 sites, enabling synchronization of watch states and collection status.
 
 There are no specific password requirements for your local account. However, we strongly recommend saving your login
-information, as we currently do not offer an easy way to reset your password. If you do forget it, refer to
-the [Frequently Asked Questions](/faq) page for instructions on how to reset it.
+information. If you do forget your password, refer to the
+[Frequently Asked Questions](/faq#reset-your-password) page for instructions on how to reset it with a
+`password-reset.json` file.
 
 ## AniDB Account
 
@@ -79,10 +80,12 @@ Shoko uses multiple metadata sites to gather information and images for the seri
 options are mostly self-explanatory, we recommend taking a few minutes to review and configure them according to
 your preferences.
 
-:::tip Relation Depth
-This setting determines how deep Shoko should go for related series when gathering information for a single
-series in your collection. If you're importing a **large collection**, we recommend setting this value to **1**
-to avoid temporary bans from AniDB.
+:::tip Related Depth
+**Related Depth** on the **AniDB** tab decides how far Shoko follows an anime's relations (sequels, prequels, side
+stories and so on) when it fetches related anime. It only applies while **Always Download Related Anime** or
+**Settings** → **Collection** → **Auto Group Series** is on, and every level means more requests to AniDB. If you're
+importing a **large collection**, keep it at its default of **1**. See
+[Import a Large Collection](/shoko-server/how-to/import-a-large-collection).
 :::
 
 ## Start Shoko Server
@@ -92,36 +95,48 @@ to avoid temporary bans from AniDB.
 With the initial configuration complete, it's time to start Shoko Server. Click the **Start Server** button to begin
 the process, which should only take a few minutes.
 
-If you encounter an error during this process, try starting the server again. If the error persists, we recommend
-joining our Discord server for assistance in resolving the issue.
+If the start fails, the status line shows why, and the wizard can't go on. Fix the cause, then restart Shoko Server.
+See [Setup Mode & Failure Mode](/shoko-server/concepts/setup-mode-and-failure-mode) for what to look at. If you're
+stuck, we recommend joining our Discord server for assistance in resolving the issue.
 
-## Import Folders
+## Managed Folders
 
 ![Shoko Server - First Run - Start Server](/images/shoko-server/shoko-server-first-run-import-folders.jpg)
 
-Import folders are the physical locations where your files are stored, and they are critical for Shoko's functionality.
+:::info Import Folders
+Shoko Server 5.x calls managed folders **import folders**, and uses **Add Import Folder** and **Import Folder Type** in
+place of **Add Folder** and **Drop Type**. They work the same way.
+:::
+
+Managed folders are the physical locations where your files are stored, and they are critical for Shoko's functionality.
 These locations must be consistently accessible and remain online to prevent Shoko from mistakenly removing files from
 your collection. While you can use removable or cloud-based media, Shoko is not optimized for these storage types.
 Operations like automatic imports or file checks might inadvertently remove items from your collection due to the
 nature of these storage solutions.
 
-When setting up an import folder, you have two options. The first option, **Watch For New Files**, instructs Shoko to
+When setting up a managed folder, you have two options. The first option, **Watch For New Files**, instructs Shoko to
 monitor the folder for any new files or changes, automatically importing any newly detected files. The second option
 involves using **Drop Folders** to move files from a **Drop Source** to a **Drop Destination**, helping with file
 management and organization.
 
 :::tip Best of Both Worlds
-You can use both Import Folder Types simultaneously, enabling Shoko to monitor your drop source and automatically
+You can use both options simultaneously, enabling Shoko to monitor your drop source and automatically
 move files upon detecting any changes.
 :::
 
-To create a new import folder, select **Add Import Folder**. Enter your preferred name for the folder and specify its
-location by choosing from the available options or entering it manually. Next, select the **Import Folder Type** that
-best suits your needs for this folder. Once done, click the **Save** button to finalize its addition. If you need to add
-more folders, make sure to do so before moving on to the next steps.
+:::info Watching doesn't work everywhere
+**Watch For New Files** depends on change notifications from the operating system, which often don't arrive for
+network shares or some Docker setups. In that case, have your tools notify Shoko through its API instead. See
+[Detecting New Files](/shoko-server/settings/import#detecting-new-files).
+:::
+
+To create a new managed folder, select **Add Folder**. Enter your preferred name for the folder and specify its
+location by choosing from the available options or entering it manually. Next, select the **Drop Type** and whether to
+**Watch For New Files** for this folder. Once done, click the **Save** button to finalize its addition. If you need to
+add more folders, make sure to do so before moving on to the next steps.
 
 :::info IP Addresses Allowed
-You can use an IP Address in place of a hostname when setting up an import folder.
+You can use an IP Address in place of a hostname when setting up a managed folder.
 :::
 
 ## Data Collection
@@ -141,6 +156,9 @@ Rest assured, we don't collect any personal information that could identify you.
 in your collection or what you watch. Our focus is solely on enhancing Shoko's performance, using non-personal,
 aggregate data to guide our improvements. Your privacy is important to us, and we stick to collecting only what we
 need to make Shoko work better for you.
+
+To turn error reports off, or send them to a Sentry-compatible server of your own, see
+[Set Up Error Reporting & Telemetry](/shoko-server/how-to/set-up-error-reporting-and-telemetry).
 
 :::info Additional Information on Data Collection
 If you have any questions or need further clarification regarding our data collection practices, please feel free

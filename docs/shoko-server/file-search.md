@@ -13,7 +13,10 @@ It is also useful for pulling specific information related to a file for verific
 
 The **Utility Navbar** allows you to search by filename to narrow down the results. When a file or multiple files are
 selected, it enables you to **Rehash** and/or **Rescan** them to fix possible hashing-related issues or retrieve
-missing file information.
+missing file information, **Rename** them, or **Delete** them. **Edit Link** opens the files on the
+**Link With Providers** page with their current release filled in, so you can change the episodes they're linked to or
+fill in their release group, source and so on. Saving there makes the file a manual link. See
+[Manual Linking](/shoko-server/unrecognized-files#manual-linking).
 
 Additionally, when you have a file or files selected, the **File Info** panel on the right will populate with
 information about the selected files. You can use the arrow buttons to switch between files, and if the file is

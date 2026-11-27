@@ -15,7 +15,7 @@ const projectsData = [
   {
     Project: '[Shoko Server](https://github.com/ShokoAnime/ShokoServer)',
     Language: 'C# / .NET',
-    'Maintainer(s)': 'Da3dsoul / Revam',
+    'Maintainer(s)': 'da3dsoul / revam',
     'Additional Notes': 'Tons of small tasks to help get you familiar with the codebase.'
   },
   {
@@ -39,25 +39,25 @@ const projectsData = [
   {
     Project: '[Shoko Relay (plugin)](https://github.com/natyusha/ShokoRelay) (New)',
     Language: 'C#',
-    'Maintainer(s)': 'Natyusha',
+    'Maintainer(s)': 'natyusha',
     'Additional Notes': 'No active work at the moment, but ongoing refactoring and improvements are always welcome.'
   },
   {
     Project: '[Shoko Relay (bundle)](https://github.com/natyusha/ShokoRelay.bundle) (Legacy)',
     Language: 'Python',
-    'Maintainer(s)': 'Natyusha',
+    'Maintainer(s)': 'natyusha',
     'Additional Notes': 'No active work at the moment, but ongoing refactoring and improvements are always welcome.'
   },
   {
     Project: '[Shokofin](https://github.com/ShokoAnime/Shokofin)',
     Language: 'C#',
-    'Maintainer(s)': 'Revam',
+    'Maintainer(s)': 'revam',
     'Additional Notes': 'No active work at the moment, but ongoing refactoring and improvements are always welcome.'
   },
   {
     Project: '[Shokodi](https://github.com/ShokoAnime/Shokodi)',
     Language: 'Python',
-    'Maintainer(s)': 'Da3dsoul',
+    'Maintainer(s)': 'da3dsoul',
     'Additional Notes': 'No active work at the moment, but ongoing refactoring and improvements are always welcome.'
   },
   {
