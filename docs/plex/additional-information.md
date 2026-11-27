@@ -297,3 +297,5 @@ Most manual actions performed via the dashboard (as well as some direct API requ
 - These files are overwritten each time the corresponding task is run.
 - To save a specific report, you must download or copy the text before running that task again.
 - Links to the currently generated reports are available at the bottom of the dashboard in the "Task Reports" section
+- Long-running dashboard tasks execute through Shoko's Job Queue (`ShokoRelay_VFS`, `ShokoRelay_Plex`, and `AnimeThemes` queues)
+  - These can be monitored or cancelled directly from Shoko's WebUI Dashboard under "Queue Processor"

@@ -76,25 +76,29 @@ GET  /reports/{fileName}                                       -> GetReport
   - When set to `Allow Player Access`, the read-only AnimeThemes Player data endpoints (`/webm/tree`, `/webm/stream`, and `GET /animethemes/webm/favourites`) are also accessible without authentication.
     - Restricted-tag visibility filtering is not applied to player listings.
   - The following endpoint is also excluded: `POST /plex/webhook` (validated via server UUID and user rules).
+- All long-running automation endpoints execute through Shoko's Job Queue (`Shoko.QueueProcessor`), making them visible with live progress and cancellable directly from Shoko's WebUI.
+  - `queue=false` (default) awaits completion and returns the full `RelayResponse` with `reportUrl`.
+  - `queue=true` (used by Dashboard buttons) enqueues the job and returns immediately (`status: "queued"`), while `/tasks/active` and `/tasks/completed` deliver the completion result and `reportUrl` once finished.
+  - Endpoints with conditional modes only enter the queue when executing a batch/full job (`run=true` on `/vfs`, omitting `path` on `/animethemes/vfs/map`, and `batch=true` on `/animethemes/mp3`).
 
-All automation endpoints utilize the `LogAndReturn` helper (via `ExecuteTrackedTaskAsync`) to provide a direct `reportUrl` in the response. Reports include:
+All queued automation endpoints write a report file (via `RelayJobBase.ExecuteWithTaskTrackingAsync`) and include `reportUrl` in their completion payload:
 
 ```
-/animethemes/vfs/build                                         -> at-vfs-build.report
-/animethemes/vfs/map                                           -> at-map-build.report
-/animethemes/mp3?batch=true                                    -> at-mp3-build.report
-/animethemes/mp3/audit                                         -> at-mp3-audit.report
-/animethemes/webm/download                                     -> at-webm-download.report
-/plex/auth/refresh                                             -> plex-auth-refresh.report
-/plex/collections/build                                        -> plex-collections-build.report
-/plex/ratings/apply                                            -> plex-ratings-apply.report
-/plex/images/sync                                              -> plex-images-sync.report
-/plex/automation/run                                           -> plex-automation-run.report
-/vfs                                                           -> shoko-vfs-build.report
-/vfs/audit                                                     -> shoko-vfs-audit.report
-/shoko/purge-missing                                           -> shoko-purge-missing.report
-/sync-watched                                                  -> shoko-sync-watched.report
-/map-symlinks                                                  -> shoko-map-symlinks.report
+/animethemes/vfs/build?queue={true|false}                      -> at-vfs-build.report
+/animethemes/vfs/map?queue={true|false}                        -> at-map-build.report (when path is omitted)
+/animethemes/mp3?batch=true&queue={true|false}                 -> at-mp3-build.report (when batch=true)
+/animethemes/mp3/audit?queue={true|false}                      -> at-mp3-audit.report
+/animethemes/webm/download?queue={true|false}                  -> at-webm-download.report
+/plex/auth/refresh?queue={true|false}                          -> plex-auth-refresh.report
+/plex/collections/build?queue={true|false}                     -> plex-collections-build.report
+/plex/ratings/apply?queue={true|false}                         -> plex-ratings-apply.report
+/plex/images/sync?queue={true|false}                           -> plex-images-sync.report
+/plex/automation/run?queue={true|false}                        -> plex-automation-run.report
+/vfs?run=true&queue={true|false}                               -> shoko-vfs-build.report (when run=true)
+/vfs/audit?queue={true|false}                                  -> shoko-vfs-audit.report
+/shoko/purge-missing?queue={true|false}                        -> shoko-purge-missing.report
+/sync-watched?queue={true|false}                               -> shoko-sync-watched.report
+/map-symlinks?queue={true|false}                               -> shoko-map-symlinks.report
 ```
 
 ---
@@ -175,7 +179,7 @@ Endpoints are managed by `PlexController`
 ```
 GET  /plex/auth                                                -> StartPlexAuth
 GET  /plex/auth/status?pinId={id}                              -> GetPlexAuthStatus
-POST /plex/auth/refresh                                        -> RefreshPlexLibraries
+POST /plex/auth/refresh?queue={true|false}                     -> RefreshPlexLibraries
 POST /plex/auth/unlink                                         -> UnlinkPlex
 ```
 
@@ -193,13 +197,13 @@ GET  /plex/library/refresh?filter={csv}                        -> RefreshPlexSer
 GET  /plex/metadata/refresh?filter={csv}                       -> RefreshPlexMetadata
 
 GET  /plex/collections/build                                   -> BuildPlexCollections
-     [?filter={csv}&assignment={true|false}&clean={true|false}]
+     [?filter={csv}&assignment={true|false}&clean={true|false}&queue={true|false}]
 
-GET  /plex/ratings/apply?filter={csv}                          -> ApplyAudienceRatings
+GET  /plex/ratings/apply?filter={csv}&queue={true|false}       -> ApplyAudienceRatings
 
-GET  /plex/images/sync?filter={csv}                            -> SyncPlexImages
+GET  /plex/images/sync?filter={csv}&queue={true|false}         -> SyncPlexImages
 
-GET  /plex/automation/run                                      -> RunPlexAutomationNow
+GET  /plex/automation/run?queue={true|false}                   -> RunPlexAutomationNow
 ```
 
 - `RefreshPlexSeries` triggers a partial library scan in Plex for a comma-separated list of series IDs.
@@ -252,8 +256,9 @@ Endpoints are managed by `ShokoController`
 ### Virtual File System (VFS)
 
 ```
-GET  /vfs?run={true|false}&clean={true|false}&filter={csv}     -> BuildVfs
-GET  /vfs/audit                                                -> AuditVfs
+GET  /vfs                                                      -> BuildVfs
+     [?run={true|false}&clean={true|false}&filter={csv}&queue={true|false}]
+GET  /vfs/audit?queue={true|false}                             -> AuditVfs
 
 POST /vfs/overrides                                            -> SaveVfsOverrides
 
@@ -264,6 +269,7 @@ GET  /vfs/tree?refresh={true|false}                            -> GetVfsTree
   - `run`: (default false) set to true to execute the VFS construction.
   - `clean`: (default true) clear the existing root before building.
   - `filter`: (optional) comma-separated Shoko or AniDB (prefixed with an 'a') series IDs.
+  - `queue`: (default false) when `run=true` and `queue=true`, enqueues the build in Shoko's queue and returns immediately.
 - `AuditVfs` scans physical VFS directories against the database to find and remove orphaned folders and broken symlinks.
 - `SaveVfsOverrides` accepts raw text for `anidb_vfs_overrides.csv`.
 - `GetVfsTree` returns a hierarchical representation of the VFS structure by reading `vfs_blueprint.cache` in the plugin's `CachePath`, utilizing in-memory caching keyed to file modification time.
@@ -290,16 +296,16 @@ GET  /vfs/tree?refresh={true|false}                            -> GetVfsTree
 
 ```
 GET  /shoko/purge-missing                                      -> PurgeMissingFiles          (for preview/testing)
-     [?dryRun={true|false}&trashOnly={true|false}&threshold={int}]
+     [?dryRun={true|false}&trashOnly={true|false}&threshold={int}&queue={true|false}]
 POST /shoko/purge-missing                                      -> PurgeMissingFiles
-     [?dryRun={true|false}&trashOnly={true|false}&threshold={int}]
+     [?dryRun={true|false}&trashOnly={true|false}&threshold={int}&queue={true|false}]
 
 POST /shoko/import                                             -> RunShokoImport
 GET  /shoko/import/start                                       -> StartShokoImportNow
 
 GET  /sync-watched                                             -> SyncPlexWatched            (for preview/testing)
 POST /sync-watched                                             -> SyncPlexWatched
-     [?dryRun={true|false}&sinceHours={int}&ratings={true|false}&progress={true|false}&import={true|false}&users={All|Admin|Extra|Advanced|None}&libraryName={name}]
+     [?dryRun={true|false}&sinceHours={int}&ratings={true|false}&progress={true|false}&import={true|false}&users={All|Admin|Extra|Advanced|None}&libraryName={name}&queue={true|false}]
 
 GET  /sync-watched/start                                       -> StartWatchedSyncNow
 ```
@@ -349,7 +355,8 @@ GET /reports/credits                                           -> GetCreditRepor
 ### Shoko Extras
 
 ```
-POST /map-symlinks?mapFile={path}&purgeLinks={true|false}      -> ProcessSourceLinks
+POST /map-symlinks                                             -> ProcessSourceLinks
+     [?mapFile={path}&purgeLinks={true|false}&queue={true|false}]
 
 POST /shoko/purge-relay-custom-images                          -> PurgeLocalImages
 POST /shoko/purge-all-custom-images                            -> PurgeAllLocalImages
@@ -371,6 +378,9 @@ POST /shoko/purge-all-custom-images                            -> PurgeAllLocalI
   - Destination paths are resolved relative to the Import Root and validated against path traversal outside the root.
   - Sidecar files (any file starting with `{baseName}`) and attachment folders (directories named `{baseName}_attachments`) are automatically identified and renamed to match the destination.
     - The `_attachments` folders are renamed to `_attach` at the destination to allow the `purgeLinks` operation to delete them without touching the originals.
+- Relative Pathing: Links are created with relative targets. They remain valid as long as the relative depth between the source and destination remains consistent.
+- Bookkeeping: Lines that are successfully processed are automatically prefixed with `#` to prevent redundant processing in future runs.
+- `PurgeAllLocalImages` will be removed once Shoko's v3 API has similar functionality.
 
 ---
 
@@ -413,9 +423,9 @@ Endpoints managed by `AnimeThemesController`
 ### VFS & Mapping
 
 ```
-GET  /animethemes/vfs/build?filter={csv}                       -> AnimeThemesVfsBuild
+GET  /animethemes/vfs/build?filter={csv}&queue={true|false}    -> AnimeThemesVfsBuild
 GET  /animethemes/vfs/map                                      -> AnimeThemesVfsMap
-     [?path={filename}&save={true|false}&anidbId={int}]
+     [?path={filename}&save={true|false}&anidbId={int}&queue={true|false}]
 POST /animethemes/vfs/import                                   -> ImportAnimeThemesMapping
 ```
 
@@ -429,6 +439,7 @@ POST /animethemes/vfs/import                                   -> ImportAnimeThe
   - `path`: (optional) provide a filename or relative path to preview its mapping result, or update it.
   - `save`: (default false) set to true to update or save the resolved metadata fields into `anidb_animethemes_xrefs.csv` and refresh its VFS link.
   - `anidbId`: (optional) manually override or provide the AniDB ID when saving.
+  - `queue`: (default false) only applies when `path` is omitted; enqueues the full mapping build in Shoko's queue and returns immediately.
   - The filename generation respects the `Advanced.AnimeThemesAppendTags` setting.
 
 ---
@@ -442,7 +453,7 @@ HEAD /animethemes/webm/stream?path={path}                      -> AnimeThemesWeb
 GET  /animethemes/webm/favourites                              -> GetAnimeThemesFavourites
 POST /animethemes/webm/favourites                              -> UpdateAnimeThemesFavourite
 POST /animethemes/webm/download                                -> DownloadAnimeThemesWebm
-     [?name={string}&year={int}&season={string}&recent={int}&force={true|false}&destination={path}]
+     [?name={string}&year={int}&season={string}&recent={int}&force={true|false}&destination={path}&queue={true|false}]
 ```
 
 - `AnimeThemesWebmTree` returns the hierarchical tree including bitmask flags, `videoId`, `relPath` (source folder path for folder view support), and the configured `playbackMode`.
@@ -469,9 +480,9 @@ POST /animethemes/webm/download                                -> DownloadAnimeT
 
 ```
 GET  /animethemes/mp3                                          -> AnimeThemesMp3
-     [?path={path}&slug={slug}&offset={int}&batch={true|false}&force={true|false}&seasonal={true|false}]
+     [?path={path}&slug={slug}&offset={int}&batch={true|false}&force={true|false}&seasonal={true|false}&queue={true|false}]
 GET  /animethemes/mp3/cache                                    -> GetAnimeThemesMp3Cache
-GET  /animethemes/mp3/audit                                    -> AuditAnimeThemesMp3
+GET  /animethemes/mp3/audit?queue={true|false}                 -> AuditAnimeThemesMp3
 GET  /animethemes/mp3/stream?path={path}                       -> AnimeThemesMp3Stream
 HEAD /animethemes/mp3/stream?path={path}                       -> AnimeThemesMp3Stream
 GET  /animethemes/mp3/random?refresh={true|false}              -> AnimeThemesMp3Random
@@ -484,6 +495,8 @@ GET  /animethemes/mp3/random?refresh={true|false}              -> AnimeThemesMp3
   - `batch`: (default false) set to true to recursively process subfolders.
   - `force`: (default false) set to true to overwrite existing `Theme.mp3` files.
   - `seasonal`: (default false) if `batch=true`, filter processing to anime which started airing in the current season (with a one-month early buffer).
+  - `queue`: (default false) only applies when `batch=true`; enqueues the batch MP3 run in Shoko's queue and returns immediately.
+    - Single-folder generation (`batch=false`) always runs inline and returns the result for immediate playback.
 - `GetAnimeThemesMp3Cache` returns the dictionary of cached `Theme.mp3` folder paths mapped to their respective theme slugs.
 - `AuditAnimeThemesMp3` audits existing non-OP `Theme.mp3` files to check if an OP is available on AnimeThemes. It also repairs missing local cache slugs via ID3 tags.
 - `AnimeThemesMp3Stream` embeds ID3v2 tags in response headers.
