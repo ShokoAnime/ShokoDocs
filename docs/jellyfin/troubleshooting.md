@@ -161,8 +161,7 @@ missing images being a common one.
 **Fix:**
 
 1. Install the Shokofin version that matches your Shoko Server. See the compatibility table on
-   [Installing Shokofin](/jellyfin/installing-shokofin). Stable Shokofin only works with stable Shoko Server. Until Shoko Server `6.0.0` is released, Shokofin development builds
-   work with both the latest stable Shoko Server and its development builds.
+   [Installing Shokofin](/jellyfin/installing-shokofin). Stable Shokofin only works with stable Shoko Server.
 2. Refresh the affected libraries in Jellyfin with **Replace existing images** enabled.
 
 Jellyfin clients never contact Shoko directly for images; they're passed through Jellyfin. So you don't need to expose

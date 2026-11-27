@@ -334,10 +334,6 @@
               Only useful with a plugin that uses hardware transcoding.
               The container installs ffmpeg for it<template v-if="extras.gpu === 'intel' || extras.gpu === 'amd'"> and the
               GPU's drivers</template>, along with any extra packages below.
-              <template v-if="extras.gpu === 'intel' && extras.channel === 'latest'">
-                The Intel driver used here, which can encode HEVC, is only available on the daily image for now, so pick
-                the daily release channel above for Intel.
-              </template>
               <template v-if="extras.gpu === 'nvidia'">
                 Needs the <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">NVIDIA Container Toolkit</a> on the host.
               </template>

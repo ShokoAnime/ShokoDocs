@@ -273,8 +273,7 @@ Shoko itself (for example a wrong TMDB link), fix it there first. See
 
 Your Shokofin and Shoko Server versions most likely don't match. Check the compatibility table on
 [Installing Shokofin](/jellyfin/installing-shokofin) and install the matching version. A stable Shokofin release never works
-with a Shoko Server development build. Until Shoko Server `6.0.0` is released, Shokofin development builds work with
-both the latest stable Shoko Server and its development builds. Afterwards,
+with a Shoko Server development build. After installing the matching version,
 refresh the library with **Replace existing images** enabled. See
 [Images are missing after updating Shoko Server](/jellyfin/troubleshooting#images-are-missing-after-updating-shoko-server).
 

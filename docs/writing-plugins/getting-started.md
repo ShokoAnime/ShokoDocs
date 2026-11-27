@@ -14,8 +14,7 @@ By the end of this page you have a plugin project that Shoko Server loads and li
 
 ## Before You Start
 
-- A Shoko Server v6 install you can restart at will. A daily build is fine, and is what the current plugin interfaces
-  ship in.
+- A Shoko Server v6 install you can restart at will.
 - The .NET SDK for the version the server targets.
 - An editor or IDE of your choice.
 
@@ -67,8 +66,7 @@ If you reference the server's projects directly while developing, those referenc
 the latest prerelease. Pick what your target server ships with, or an older one, and check nuget.org for the current
 version rather than copying the one above.
 
-`Shoko.QueueProcessor`, if you queue work, is meant to track the abstractions and the server from release on. While
-6.0 is in alpha the two numbers run apart, so take the latest prerelease of each rather than assuming they match.
+`Shoko.QueueProcessor`, if you queue work, is meant to track the abstractions and the server from release on.
 
 A plugin built against a **newer** abstraction than the server's is refused. It stays in the plugin list, marked as
 incompatible, and explains why instead of loading — and while it's enabled it also keeps the server from finishing its

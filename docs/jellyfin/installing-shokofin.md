@@ -72,9 +72,14 @@ const compatibilityTableData = [
     ShokoServer: '`5.2.0` &mdash; `5.3.3`'
   },
   {
+    Shokofin: '`6.1.0`',
+    Jellyfin: '`10.10.7`+, `10.11.11`+, `12`+',
+    ShokoServer: '`5.3.3` &mdash; `6.0.0`'
+  },
+  {
     Shokofin: '`dev`',
     Jellyfin: '`10.10.7`+, `10.11.11`+, `12`+',
-    ShokoServer: '`5.3.3`, `daily`'
+    ShokoServer: '`5.3.3`, `6.0.0`, `daily`'
   }
 ];
 </script>
@@ -104,20 +109,18 @@ install the correct version for your setup to guarantee functionality.
 <EasyTable :columns="containerColumns" :data="compatibilityTableData" />
 
 Each release ships one build per supported Jellyfin version. When you install from the repository, Jellyfin only offers
-the build that matches your server, so you don't have to pick one yourself. Development builds require at least
-Jellyfin `10.10.7` or `10.11.11` on those release lines.
+the build that matches your server, so you don't have to pick one yourself. Shokofin `6.1.0` and later, development
+builds included, require at least Jellyfin `10.10.7` or `10.11.11` on those release lines.
+
+:::warning Update Shokofin before Shoko Server
+Shokofin `6.1.0` works with both Shoko Server `5.3.3` and `6.0.0`, but Shokofin `6.0.x` doesn't work with Shoko Server
+`6.0.0`. If you're upgrading from Shoko Server `5.3.3`, update Shokofin first and the server after.
+:::
 
 :::danger Never run stable Shokofin with a Shoko Server development build
 A stable Shokofin release only works with the stable Shoko Server versions listed above. Running it against a Shoko
 Server development build is not supported, **ever**: things break in different ways as server development moves on,
 and we can't help with that setup.
-
-Shokofin development builds are the exception in the other direction: until Shoko Server `6.0.0` is released, they
-support both the latest stable Shoko Server and its development builds. After that, support for the older stable server
-may be dropped.
-
-The next stable Shokofin release will **probably** not be out until **near** or **after** the next stable Shoko Server
-release.
 :::
 
 ### Official Repository
