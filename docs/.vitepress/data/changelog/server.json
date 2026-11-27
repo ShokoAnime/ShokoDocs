@@ -93,7 +93,7 @@
         },
         {
           "type": "added",
-          "text": "One image system for every source: image providers, plugins adding images to entries of any source, and your own uploads, which always win. New image types: logos, banners and disc art."
+          "text": "One image system for every source: image providers, plugins adding images to entries of any source, and your own uploads, which always win. Image types were streamlined."
         },
         {
           "type": "added",
