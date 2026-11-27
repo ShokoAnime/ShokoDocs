@@ -2,6 +2,338 @@
   "githubLink": "https://github.com/ShokoAnime/ShokoServer/",
   "releases": [
     {
+      "version": "6.0.0",
+      "versionURL": "600",
+      "date": "November 27th, 2026",
+      "link": "https://shokoanime.com/blog/shoko-version-6-0-0-released",
+      "changes": [
+        {
+          "type": "breaking",
+          "text": "Shoko Server now runs on .NET 10."
+        },
+        {
+          "type": "breaking",
+          "text": "Plugins are built against the new Shoko.Abstractions package, which replaces Shoko.Plugin.Abstractions; plugins built for 5.x must be rebuilt and stop the server in failure mode until updated, disabled or removed."
+        },
+        {
+          "type": "breaking",
+          "text": "Upgrades are only supported from 5.x."
+        },
+        {
+          "type": "breaking",
+          "text": "Web UI 2.6.0 ships with the server; the 2.5.x Web UI only works with 5.x."
+        },
+        {
+          "type": "breaking",
+          "text": "Removed APIv1, which had no authentication. Shoko Desktop relied on it and no longer works."
+        },
+        {
+          "type": "breaking",
+          "text": "APIv3 file streaming requires authentication by default, and several APIv3 models and routes changed: file hashes and release info, managed folders, release management, images, resources, partial dates and filter expressions."
+        },
+        {
+          "type": "breaking",
+          "text": "Settings moved around (logging, MyList, images and more) and are carried over by settings migrations."
+        },
+        {
+          "type": "breaking",
+          "text": "The instance command line argument was replaced by --home, matching SHOKO_HOME."
+        },
+        {
+          "type": "breaking",
+          "text": "The playlist DSL prefixes changed: a<id> is an AniDB anime and s<id> a Shoko series."
+        },
+        {
+          "type": "added",
+          "text": "Plugins can provide hashes, release info, file relocation, whole metadata sources, images, episode orderings, airing schedules, scheduled actions, settings pages and stream handling."
+        },
+        {
+          "type": "added",
+          "text": "Plugin catalog in the Web UI, fed by package repositories: the Shoko Core Repository (on) and the Shoko Community Repository (opt-in)."
+        },
+        {
+          "type": "added",
+          "text": "Plugin dependencies, with version ranges, installed and enabled along with the plugins that need them, and orphan cleanup."
+        },
+        {
+          "type": "added",
+          "text": "Plugin upgrades installed before the plugins load (on by default), version pinning, optional upgrades while the server runs, and a release channel (stable or dev) to follow."
+        },
+        {
+          "type": "added",
+          "text": "Failure mode: a plugin that fails to load, set up or start keeps the web server up and names the plugin, instead of being skipped or crashing the server."
+        },
+        {
+          "type": "added",
+          "text": "Each plugin loads in an isolated context, so plugins can ship different versions of the same library."
+        },
+        {
+          "type": "added",
+          "text": "Plugins can keep their own database and folders, add API routes and live update feeds, and add queue jobs."
+        },
+        {
+          "type": "added",
+          "text": "Configurations with generated settings pages, validation and secrets masked on the way out."
+        },
+        {
+          "type": "added",
+          "text": "Build tools for plugin authors: shoko-build and Shoko.BuildTools.Targets."
+        },
+        {
+          "type": "added",
+          "text": "Release providers: AniDB is now one of several, used in the order you pick, and releases can link entries of any source."
+        },
+        {
+          "type": "added",
+          "text": "Relocation providers with saved presets replace the renamer system."
+        },
+        {
+          "type": "added",
+          "text": "Metadata sources from plugins are first-class citizens, with series, movies, collections, people, studios, tags, relations and suggestions."
+        },
+        {
+          "type": "added",
+          "text": "One image system for every source: image providers, plugins adding images to entries of any source, and your own uploads, which always win. New image types: logos, banners and disc art."
+        },
+        {
+          "type": "added",
+          "text": "One text system for every title and overview, with preferred sources and languages, and your own titles and descriptions on any entry."
+        },
+        {
+          "type": "added",
+          "text": "Alternate episode orderings for any series, from plugins or made by you, with a preferred ordering per series."
+        },
+        {
+          "type": "added",
+          "text": "Smarter metadata linking with scored candidates, a shared matching engine, match ratings, CSV import and export, and an action to re-judge dated links."
+        },
+        {
+          "type": "added",
+          "text": "A new job queue built for Shoko, replacing Quartz.NET."
+        },
+        {
+          "type": "added",
+          "text": "Scheduled actions: every recurring task can be run by hand, cancelled and rescheduled from the Web UI. \"Run Import\" was split into its parts."
+        },
+        {
+          "type": "added",
+          "text": "Actions that the core and plugins register, global or bound to a group, series, episode or file."
+        },
+        {
+          "type": "added",
+          "text": "Airing schedules and a season calendar."
+        },
+        {
+          "type": "added",
+          "text": "Suspensions: AniDB bans and TMDB rate limits hold the affected jobs and providers until they lift."
+        },
+        {
+          "type": "added",
+          "text": "Rewritten release management that compares a series' releases by your preferences."
+        },
+        {
+          "type": "added",
+          "text": "A rebuilt MyList with a local cache and syncing at group, series, episode or file level."
+        },
+        {
+          "type": "added",
+          "text": "Ratings, favorites and user tags in Shoko's own user data, and user data for groups."
+        },
+        {
+          "type": "added",
+          "text": "Many new filter and sorting options, and improved fuzzy search."
+        },
+        {
+          "type": "added",
+          "text": "Auth API to sign in and manage tokens, expiring API tokens, and login throttling."
+        },
+        {
+          "type": "added",
+          "text": "A setup token (SHOKO_SETUP_TOKEN) that protects setup and failure mode."
+        },
+        {
+          "type": "added",
+          "text": "Reset a forgotten password with a password-reset.json file in the data folder."
+        },
+        {
+          "type": "added",
+          "text": "Trusted proxies (SHOKO_TRUSTED_PROXIES) for X-Forwarded headers behind a reverse proxy."
+        },
+        {
+          "type": "added",
+          "text": "A new log service storing logs as JSON Lines, with an API, live stream and log level settings."
+        },
+        {
+          "type": "added",
+          "text": "OpenTelemetry export of traces, metrics and logs to your own collector, off by default."
+        },
+        {
+          "type": "added",
+          "text": "Error reporting to a Sentry-compatible service of your own (SHOKO_SENTRY_DSN)."
+        },
+        {
+          "type": "added",
+          "text": "The tray app runs on Windows, Linux and macOS."
+        },
+        {
+          "type": "added",
+          "text": "Docker variables ENABLE_RESTART, ENABLE_SHUTDOWN, NO_CHOWN and INSTALL_PACKAGES."
+        },
+        {
+          "type": "added",
+          "text": "Kill-switches for APIv2 and APIv3, a completion threshold setting, and overrides for the AniDB and TMDB endpoints."
+        },
+        {
+          "type": "added",
+          "text": "Managed folders can be marked as network shares, giving the file watcher a longer grace period there."
+        },
+        {
+          "type": "added",
+          "text": "Hard links, and symbolic links with their file, are kept as one group, so removing duplicates never breaks a link."
+        },
+        {
+          "type": "added",
+          "text": "Third-party notices for the server and every plugin."
+        },
+        {
+          "type": "added",
+          "text": "The Offline Importer 2.0.0, a release provider matching files by name, ships with the server. It has its own abstractions package for other plugins and a REST API."
+        },
+        {
+          "type": "added",
+          "text": "AniList support is available as a plugin from the catalog, for metadata and linking."
+        },
+        {
+          "type": "changed",
+          "text": "TMDB is now a bundled plugin; existing TMDB links, data and settings are migrated."
+        },
+        {
+          "type": "changed",
+          "text": "WebAOM is now a bundled plugin and the default relocation provider; existing presets are migrated."
+        },
+        {
+          "type": "changed",
+          "text": "Legacy Plex support is now a bundled plugin you can turn off."
+        },
+        {
+          "type": "changed",
+          "text": "Release info replaced the AniDB file tables, and existing file links were marked as manual links."
+        },
+        {
+          "type": "changed",
+          "text": "Import folders are now called managed folders."
+        },
+        {
+          "type": "changed",
+          "text": "The user, managed folder and file location tables were renamed after their models, so scripts that read the database directly need updating."
+        },
+        {
+          "type": "changed",
+          "text": "The AniDB file lookup no longer adds files to MyList itself; the AniDB release provider and the MyList sync do."
+        },
+        {
+          "type": "changed",
+          "text": "The legacy File Quality Filter was replaced by release management."
+        },
+        {
+          "type": "changed",
+          "text": "Secrets in the settings and plugin configurations are masked whenever they leave the server."
+        },
+        {
+          "type": "changed",
+          "text": "Restricted tags are checked everywhere, and routes that change the server are limited to admins."
+        },
+        {
+          "type": "changed",
+          "text": "Errors from third-party plugins are no longer sent to the Shoko team's Sentry."
+        },
+        {
+          "type": "changed",
+          "text": "Cut the memory the caches hold by more than half, and sped up the dashboard, filters and missing episode queries."
+        },
+        {
+          "type": "changed",
+          "text": "New SQLite installs name their database Shoko.db3."
+        },
+        {
+          "type": "fixed",
+          "text": "Restricted users could read and stream files of series hidden from them (GHSA-xpwh-jh8w-7fhh)."
+        },
+        {
+          "type": "fixed",
+          "text": "Path traversal in the external subtitle endpoint."
+        },
+        {
+          "type": "fixed",
+          "text": "The server refusing to start on Windows when its files carry the downloaded-from-the-internet mark."
+        },
+        {
+          "type": "fixed",
+          "text": "A race that could break every database read until a restart, and the three database backends drifting apart."
+        },
+        {
+          "type": "fixed",
+          "text": "Stream and subtitle languages not being recognised, and MediaInfo output not read as UTF-8."
+        },
+        {
+          "type": "fixed",
+          "text": "Watched state not carrying over when a watched release is replaced."
+        },
+        {
+          "type": "fixed",
+          "text": "Missing episode counts disagreeing between views, and episodes marked as aired too early."
+        },
+        {
+          "type": "fixed",
+          "text": "Season and year classification for anime with partial or overlapping dates."
+        },
+        {
+          "type": "fixed",
+          "text": "Search not matching fullwidth, halfwidth or compatibility characters."
+        },
+        {
+          "type": "fixed",
+          "text": "Case-only renames refused on case-sensitive file systems."
+        },
+        {
+          "type": "fixed",
+          "text": "\"Remove Missing Files\" removing every record of a managed folder whose drive or share was unmounted."
+        },
+        {
+          "type": "fixed",
+          "text": "Files Shoko had just moved or renamed being picked up again by the file watcher, especially on network shares."
+        },
+        {
+          "type": "fixed",
+          "text": "The Missing Permanent Votes, Shared Video Source and Years filters."
+        },
+        {
+          "type": "fixed",
+          "text": "Sort names not skipping a leading \"Gekijouban\" or 劇場版 and leading punctuation."
+        },
+        {
+          "type": "fixed",
+          "text": "Many TMDB, group, MyList and APIv2 issues, including Shokodi's group search and series listings."
+        },
+        {
+          "type": "fixed",
+          "text": "Missing CORS headers, and settings list patches being lost."
+        },
+        {
+          "type": "removed",
+          "text": "Trakt support was removed from the core."
+        },
+        {
+          "type": "removed",
+          "text": "APIv2's cast and staff data, and APIv2's config export, which returned every secret unmasked."
+        },
+        {
+          "type": "removed",
+          "text": "The application-level database lock, and the GITHUB_TOKEN variable, since update checks no longer use the GitHub API."
+        }
+      ]
+    },
+    {
       "version": "5.3.3",
       "versionURL": "533",
       "date": "March 27th, 2026",
